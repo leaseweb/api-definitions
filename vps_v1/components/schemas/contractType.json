@@ -1,8 +1,0 @@
-{
-  "description": "Select HOURLY for billing based on hourly usage, else MONTHLY for billing per month usage",
-  "type": "string",
-  "enum": [
-    "HOURLY",
-    "MONTHLY"
-  ]
-}

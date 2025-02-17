@@ -1,0 +1,31 @@
+title: ip
+type: object
+required:
+  - ip
+  - prefixLength
+  - version
+  - nullRouted
+  - reverseLookup
+  - mainIp
+  - networkType
+properties:
+  ip:
+    type: string
+    example: 127.0.0.1
+    description: Ip Address
+  prefixLength:
+    type: string
+    example: '28'
+    description: The number of leading bits in the IP address
+  version:
+    $ref: ./ipVersion.yaml
+  nullRouted:
+    type: boolean
+    description: Whether or not the IP has been nulled
+  mainIp:
+    type: boolean
+  networkType:
+    $ref: ./networkType.yaml
+  reverseLookup:
+    type: string
+    nullable: true

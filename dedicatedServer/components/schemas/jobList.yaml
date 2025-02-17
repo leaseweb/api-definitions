@@ -1,0 +1,9 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  jobs:
+    description: An array of jobs
+    items:
+      $ref: ./serverJob.yaml
+    type: array
+type: object

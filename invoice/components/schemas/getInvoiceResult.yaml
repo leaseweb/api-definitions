@@ -1,0 +1,147 @@
+properties:
+  credits:
+    description: All the credits attached to the invoice
+    items:
+      title: credit
+      properties:
+        date:
+          description: The date of the credit connected to the invoice
+          example:
+            - '2019-05-1T06:23:40+00:00'
+          type: string
+        id:
+          description: The unique id of the credit
+          example:
+            - '12346'
+          type: string
+        taxAmount:
+          description: The total tax amount of the credit connected to the invoice
+          example:
+            - 2.99
+          format: float
+          type: number
+        total:
+          description: The total amount of the credit connected to the invoice
+          example:
+            - 12.99
+          format: float
+          type: number
+      type: object
+    type: array
+  currency:
+    description: The currency of the invoice.
+    enum:
+      - EUR
+      - GBP
+      - USD
+      - SGD
+    example:
+      - EUR
+    type: string
+  date:
+    description: The date the invoice was issued
+    example:
+      - '2019-05-01T00:00:00+00:00'
+    type: string
+  dueDate:
+    description: The date the invoice is due for payment
+    example:
+      - '2019-05-01T00:00:00+00:00'
+    type: string
+  id:
+    description: The unique id of the invoice
+    example:
+      - '00000001'
+    type: string
+  isPartialPaymentAllowed:
+    description: The invoice can be paid partially
+    example:
+      - true
+    type: boolean
+  lineItems:
+    description: All the line items attached to the invoice
+    items:
+      title: lineItem
+      properties:
+        contractId:
+          description: The id of the contract
+          example:
+            - '12346789'
+          type: string
+        equipmentId:
+          description: The id of the equipment
+          example:
+            - '12346789'
+          type: string
+        product:
+          description: A string to indicate what kind of product this is.
+          example:
+            - Rackspace
+            - Switch
+          type: string
+        quantity:
+          description: The quantity of a product
+          example:
+            - 2
+          type: integer
+        reference:
+          description: The reference a customer gave to the service
+          example:
+            - This is my reference
+          type: string
+        total:
+          description: The total amount of the product
+          example:
+            - 129.99
+          format: float
+          type: number
+        unitAmount:
+          description: The amount it cost for a single product unit.
+          example:
+            - 19.99
+          format: float
+          type: number
+        fromDate:
+          description: The product start date (UTC)
+          format: date-time
+          nullable: true
+          example:
+            - '2019-05-01T00:00:00Z'
+          type: string
+        toDate:
+          description: The product end date (UTC)
+          format: date-time
+          nullable: true
+          example:
+            - '2019-05-01T00:00:00Z'
+          type: string
+      type: object
+    type: array
+  openAmount:
+    description: The open amount of the invoice
+    example:
+      - 12.99
+    format: float
+    type: number
+  status:
+    description: The status of the invoice.
+    enum:
+      - OPEN
+      - PAID
+      - OVERDUE
+      - CANCELLED
+    example:
+      - OPEN
+    type: string
+  taxAmount:
+    description: The tax amount of the invoice
+    example:
+      - 2.99
+    format: float
+    type: number
+  total:
+    description: The total amount of the invoice
+    example:
+      - 12.99
+    format: float
+    type: number

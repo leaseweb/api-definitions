@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/cdn/v2/debug \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"url":"http://example.com"}'

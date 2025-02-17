@@ -1,9 +1,0 @@
-{
-  "name": "custom",
-  "required": false,
-  "in": "query",
-  "schema": {
-    "type": "boolean"
-  },
-  "description": "Filters the list to include only custom images."
-}

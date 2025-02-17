@@ -1,0 +1,59 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  leases:
+    description: An array of active DHCP reservations
+    items:
+      title: lease
+      description: A single DHCP reservation
+      properties:
+        bootfile:
+          description: The PXE bootfile the server will network boot from
+          type: string
+        createdAt:
+          description: The time when the DHCP reservation was created
+          type: string
+        gateway:
+          description: The gateway for this DHCP reservation
+          type: string
+        hostname:
+          description: The hostname for the server
+          type: string
+        ip:
+          description: The IP address this DHCP reservation is for
+          type: string
+          format: ipv4
+        lastClientRequest:
+          title: lastClientRequest
+          description: >-
+            If the server acquired this DHCP reservation, this object shows
+            information about the client
+          properties:
+            relayAgent:
+              description: The relay agent that forwarded the DHCP traffic
+              nullable: true
+              type: string
+            type:
+              title: dhcpPacketType
+              description: The type of DHCP packet requested by the client
+              type: string
+            userAgent:
+              description: The user agent of the client making the DHCP request
+              type: string
+          type: object
+        mac:
+          $ref: ./macAddress.yaml
+        netmask:
+          description: The netmask for this DHCP reservation
+          type: string
+        site:
+          description: The site serving this DHCP reservation
+          type: string
+        updatedAt:
+          description: >-
+            The time when the DHCP reservation was last updated or used by a
+            client
+          type: string
+      type: object
+    type: array
+type: object

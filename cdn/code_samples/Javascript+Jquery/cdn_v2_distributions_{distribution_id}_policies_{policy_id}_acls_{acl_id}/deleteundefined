@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/cdn/v2/distributions/%7Bdistribution_id%7D/policies/%7Bpolicy_id%7D/acls/%7Bacl_id%7D",
+  "method": "DELETE",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

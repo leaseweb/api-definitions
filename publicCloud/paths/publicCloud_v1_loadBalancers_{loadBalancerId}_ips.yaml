@@ -1,0 +1,66 @@
+parameters:
+  - $ref: ../components/parameters/loadBalancerId.yaml
+  - $ref: ../components/parameters/ipVersion.yaml
+  - $ref: ../components/parameters/nullRouted.yaml
+  - $ref: ../components/parameters/ips.yaml
+get:
+  description: List the Load Balancers IPs
+  operationId: getLoadBalancerIPList
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 1
+              limit: 20
+              offset: 0
+            ips:
+              - ip: 10.0.0.1
+                prefixLength: '28'
+                version: 4
+                reverseLookup: null
+                mainIp: false
+                nullRouted: false
+                networkType: INTERNAL
+                ddos:
+                  detectionProfile: STANDARD_DEFAULT
+                  protectionType: STANDARD
+          schema:
+            $ref: ../components/schemas/getIPListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List IP addresses associated with a specific Load Balancer
+  tags:
+    - IPs
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers_{loadBalancerId}_ips/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers_{loadBalancerId}_ips/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_loadBalancers_{loadBalancerId}_ips/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers_{loadBalancerId}_ips/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_loadBalancers_{loadBalancerId}_ips/getundefined

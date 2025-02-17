@@ -1,0 +1,7 @@
+name: standard
+required: false
+in: query
+schema:
+  type: boolean
+example: 'true'
+description: Filters the list to include only standard images.

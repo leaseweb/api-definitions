@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/cdn/v2/originGroups/%7Borigin_group_id%7D/members/%7Borigin_group_member_id%7D",
+  "method": "PUT",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"resourceType\":\"string\",\"data\":[{\"key\":\"string\",\"value\":null}]}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

@@ -1,9 +1,0 @@
-{
-  "type": "string",
-  "description": "Algorithm to be used for load balancer",
-  "enum": [
-    "roundrobin",
-    "leastconn",
-    "source"
-  ]
-}

@@ -1,0 +1,7 @@
+schema:
+  type: string
+name: storageVMId
+in: path
+required: true
+description: UUID of the Storage VM.
+example: 1575dd1c-dddf-11ed-af62-000c299d72cd

@@ -1,0 +1,9 @@
+properties:
+  targetGroups:
+    type: array
+    items:
+      $ref: ./targetGroup.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+title: targetGroups
+type: object

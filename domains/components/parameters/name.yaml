@@ -1,0 +1,7 @@
+schema:
+  type: string
+name: name
+in: path
+required: true
+description: Record name
+example: example.com.

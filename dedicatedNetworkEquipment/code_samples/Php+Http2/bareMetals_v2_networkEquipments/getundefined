@@ -1,0 +1,27 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/bareMetals/v2/networkEquipments');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'limit' => '20',
+  'offset' => '10',
+  'reference' => 'my-switch',
+  'ip' => '127.0.0.4',
+  'macAddress' => 'aa:bb:cc:dd:ee:ff',
+  'site' => 'FRA-10',
+  'privateRackId' => '123',
+  'privateNetworkCapable' => 'SOME_STRING_VALUE',
+  'privateNetworkEnabled' => 'SOME_STRING_VALUE'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

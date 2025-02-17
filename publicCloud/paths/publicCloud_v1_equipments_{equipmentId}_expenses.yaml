@@ -1,0 +1,116 @@
+parameters:
+  - $ref: ../components/parameters/equipmentId.yaml
+get:
+  operationId: getExpenses
+  parameters:
+    - name: from
+      required: true
+      description: >-
+        Start date of the period to get costs for. It must be the first day of
+        the month
+      in: query
+      schema:
+        type: string
+        format: date
+      example: '2023-11-01'
+    - name: to
+      required: false
+      description: >-
+        End date of the period to get costs for. This date needs to be exactly
+        one month after the 'from' date. If this value is not passed, it will be
+        calculated based on 'from' parameter
+      in: query
+      schema:
+        type: string
+        format: date
+      example: '2023-12-01'
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getExpensesResult.yaml
+          example:
+            billing:
+              instances:
+                - id: b778824a-a96e-4f6f-9713-7b7196f09c4f
+                  reference: test-instance
+                  resources:
+                    cpu:
+                      value: 2
+                      unit: vCPU
+                    memory:
+                      value: 8
+                      unit: GB
+                    publicNetworkSpeed:
+                      value: 5
+                      unit: Gbps
+                    privateNetworkSpeed:
+                      value: 1000
+                      unit: Mbps
+                  contract:
+                    billingFrequency: 1
+                    term: 0
+                    type: HOURLY
+                    endsAt: null
+                    renewalsAt: '2024-04-09T15:28:28+00:00'
+                    createdAt: '2024-04-09T15:11:21+00:00'
+                    state: ACTIVE
+                  startedAt: '2023-11-30T16:31:46+00:00'
+                  endedAt: '2023-11-30T16:40:46+00:00'
+                  rootDiskSize: 15
+                  billingType: POSTPAID
+                  hours: 14
+                  from: '2023-12-01T00:00:00+00:00'
+                  to: '2023-12-01T13:18:41+00:00'
+                  rootDiskStorageType: CENTRAL
+                  price: '0.72'
+              traffic:
+                unit: GB
+                values:
+                  tier_0:
+                    usage: 1000
+                    price: 0
+                  tier_1:
+                    usage: 10000
+                    price: 15.54
+                  tier_2:
+                    usage: 10000
+                    price: 13.45
+                  tier_3:
+                    usage: 34.5
+                    price: 2.34
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get costs for a given month.
+  tags:
+    - Expenses
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_equipments_{equipmentId}_expenses/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_equipments_{equipmentId}_expenses/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_equipments_{equipmentId}_expenses/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_equipments_{equipmentId}_expenses/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_equipments_{equipmentId}_expenses/getundefined

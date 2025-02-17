@@ -1,0 +1,11 @@
+title: dataTrafficNotificationSetting
+allOf:
+  - $ref: ./notificationSetting.yaml
+  - properties:
+      unit:
+        description: Unit
+        enum:
+          - MB
+          - GB
+          - TB
+        type: string

@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'Authorization': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/aws/ec2/?Filter.N.instance-id=29145c92-4a68-4c63-aaeb-f2212d85a74a&Filter.N.ip-address=123.456.7.8&Filter.N.tag%3Areference=reference&Filter.N.instance-state-name=pending&Filter.N.instance-type=t2.micro&Filter.N.availability-zone=eu-west-1&MaxResults=10&NextToken=1&Action=DescribeInstances", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

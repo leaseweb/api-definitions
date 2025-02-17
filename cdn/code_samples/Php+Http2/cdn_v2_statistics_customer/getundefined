@@ -1,0 +1,24 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/cdn/v2/statistics/customer');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'fromDt' => 'SOME_STRING_VALUE',
+  'toDt' => 'SOME_STRING_VALUE',
+  'metric' => 'SOME_STRING_VALUE',
+  'distributionId' => 'SOME_STRING_VALUE',
+  'groupBy' => 'SOME_STRING_VALUE',
+  'granularity' => 'SOME_STRING_VALUE'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

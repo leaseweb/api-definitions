@@ -1,0 +1,9 @@
+description: Not Authorized.
+content:
+  application/json:
+    example:
+      correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+      errorCode: '403'
+      errorMessage: You are not authorized to view this resource.
+    schema:
+      $ref: ../schemas/errorResponse.yaml

@@ -1,0 +1,3 @@
+curl --request DELETE \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/mailboxes/%7BemailAddress%7D \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

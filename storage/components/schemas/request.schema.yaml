@@ -1,0 +1,7 @@
+properties:
+  growSize:
+    description: The amount by which the volume will be grown in GB.
+    type: integer
+required:
+  - growSize
+type: object

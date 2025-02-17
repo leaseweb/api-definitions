@@ -1,0 +1,195 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  domains:
+    type: array
+    description: An array of domains
+    items:
+      type: object
+      properties:
+        domainName:
+          type: string
+          description: The domain name
+          examples:
+            - example.com
+        suspended:
+          type: boolean
+          description: >-
+            Boolean indicating whether the domain is suspended, will be removed
+            in v3. Please use the status field
+          examples:
+            - true
+        dnsOnly:
+          type: boolean
+          description: Boolean indicating whether the domain is dns only
+          examples:
+            - true
+        status:
+          type: string
+          description: Status of the domain contract
+          enum:
+            - PENDING
+            - ACTIVE
+            - SUSPENDED
+          examples:
+            - ACTIVE
+        contractStartDate:
+          type: string
+          description: Contract start date in ISO 8601 format
+          examples:
+            - '2017-04-01T00:00:00+02:00'
+        contractEndDate:
+          type: string
+          description: Optional contract end date in ISO 8601 format
+          examples:
+            - '2018-04-01T00:00:00+02:00'
+        _links:
+          type: object
+          description: Links to related resource locations
+          properties:
+            self:
+              type: object
+              description: Link to the domain resource
+              properties:
+                href:
+                  type: string
+                  description: Hyperlink to the domain's location
+                  examples:
+                    - /domains/example.com
+            collection:
+              type: object
+              description: Link to the domain's collection
+              properties:
+                href:
+                  type: string
+                  description: Hyperlink to the domain's collection location
+                  examples:
+                    - /domains
+            catchAll:
+              type: object
+              description: Link to the domain's catch all resource
+              properties:
+                href:
+                  type: string
+                  description: Hyperlink to the domain's catch all resource location
+                  examples:
+                    - /domains/example.com/catchAll
+            contacts:
+              type: object
+              description: Link to the domain's contact collection
+              properties:
+                href:
+                  type: string
+                  description: Hyperlink to the domain's contact collection location
+                  examples:
+                    - /domains/example.com/contacts
+            nameservers:
+              type: object
+              description: Link to the domain's nameserver collection
+              properties:
+                href:
+                  type: string
+                  description: Hyperlink to the domain's nameserver collection location
+                  examples:
+                    - /domains/example.com/nameservers
+            emailAliases:
+              type: object
+              description: Link to the domain's email alias collection
+              properties:
+                href:
+                  type: string
+                  description: Hyperlink to the domain's email alias collection location
+                  examples:
+                    - /domains/example.com/emailAliases
+            forwards:
+              type: object
+              description: Link to the domain's forward collection
+              properties:
+                href:
+                  type: string
+                  description: Hyperlink to the domain's forward collection location
+                  examples:
+                    - /domains/example.com/forwards
+            mailboxes:
+              type: object
+              description: Link to the domain's mailbox collection
+              properties:
+                href:
+                  type: string
+                  description: Hyperlink to the domain's mailbox collection location
+                  examples:
+                    - /domains/example.com/mailboxes
+            resourceRecordSets:
+              type: object
+              description: Link to the domain's resource record sets
+              properties:
+                href:
+                  type: string
+                  description: >-
+                    Hyperlink to the domain's resource record sets collection
+                    location
+                  examples:
+                    - /domains/example.com/resourceRecordSets
+            validateZone:
+              type: object
+              description: Link to validate the domain's zone
+              properties:
+                href:
+                  type: string
+                  description: >-
+                    Hyperlink to validate resource record sets as a zone for the
+                    domain
+                  examples:
+                    - /domains/example.com/validateZone
+  _links:
+    type: object
+    description: Links to related resource locations
+    properties:
+      self:
+        type: object
+        description: Link to the domain collection
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the location of this collection
+            examples:
+              - /domains
+      dns:
+        type: object
+        description: Link to the DNS view of the domain collection
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the location of the DNS view of this collection
+            examples:
+              - /domains?type=dns
+      email:
+        type: object
+        description: Link to the email view of the domain collection
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the location of the email view of this collection
+            examples:
+              - /domains?type=email
+  _metadata:
+    type: object
+    description: Metadata about the collection
+    properties:
+      totalCount:
+        type: integer
+        description: The total number of domains
+        examples:
+          - 4
+      limit:
+        type: integer
+        description: The maximum number of results returned
+        default: 10
+        examples:
+          - 10
+      offset:
+        type: integer
+        description: Results are returned starting at the given offset
+        default: 0
+        examples:
+          - 0
+type: object

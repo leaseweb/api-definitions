@@ -1,0 +1,45 @@
+parameters:
+  - $ref: ../components/parameters/instanceId.yaml
+post:
+  description: The Instance must be running before the execution
+  operationId: stopInstance
+  responses:
+    '202':
+      description: Request has been accepted and the Instance is going to be stopped soon
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Stop a specific Instance
+  tags:
+    - Power
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_instances_{instanceId}_stop/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_instances_{instanceId}_stop/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_instances_{instanceId}_stop/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_instances_{instanceId}_stop/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_instances_{instanceId}_stop/postundefined

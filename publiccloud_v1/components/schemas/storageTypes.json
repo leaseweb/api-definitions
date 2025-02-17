@@ -1,8 +1,0 @@
-{
-  "type": "array",
-  "nullable": true,
-  "description": "The supported storage types for the instance type",
-  "items": {
-    "$ref": "./storageType.json"
-  }
-}

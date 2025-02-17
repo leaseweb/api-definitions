@@ -1,0 +1,22 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  active:
+    type: boolean
+    description: Boolean indicating whether the email alias is active
+    examples:
+      - true
+  spamChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether spam checks are enabled
+    examples:
+      - true
+  virusChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether virus checks are enabled
+    examples:
+      - true
+required:
+  - active
+  - spamChecksEnabled
+  - virusChecksEnabled
+type: object

@@ -1,0 +1,8 @@
+name: status
+in: query
+schema:
+  default: OPEN,WAITING,CLOSED
+  type: string
+description: |
+  Comma separated list of report statuses to filter on.
+example: OPEN,WAITING,CLOSED

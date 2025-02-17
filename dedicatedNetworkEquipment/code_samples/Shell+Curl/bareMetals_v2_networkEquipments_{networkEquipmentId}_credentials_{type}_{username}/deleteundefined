@@ -1,0 +1,3 @@
+curl --request DELETE \
+  --url https://api.leaseweb.com/bareMetals/v2/networkEquipments/12345/credentials/%7Btype%7D/root \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

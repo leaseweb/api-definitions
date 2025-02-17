@@ -1,0 +1,130 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+post:
+  operationId: importResourceRecordSets
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/importResourceRecordSetsOpts.yaml
+        example:
+          content: "$ORIGIN example.com. \r\n$TTL 86400 \r\n\tIN\tMX\t10\tmail.example.com.       \r\n\r\n\t\r\ndns1\tIN\tA\t10.0.1.1"
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/importResourceRecordSetsResult.yaml
+          example:
+            resourceRecordSets:
+              - name: example.com.
+                type: A
+                content:
+                  - 10.0.1.1
+                ttl: 3600
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/example.com./A
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: example.com.
+                type: MX
+                content:
+                  - 10 mail.example.com.
+                ttl: 3600
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/example.com./MX
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+    '400':
+      $ref: ../components/responses/4001.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Import dns records from bind file content
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets_import/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets_import/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets_import/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets_import/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets_import/postundefined
+get:
+  operationId: exportResourceRecordSets
+  responses:
+    '200':
+      description: The response is a bind file format
+      content:
+        text/plain:
+          example: >
+            example.com 3600 IN NS ns0.nameserver.com.
+
+            example.com. 3600 IN NS ns1.nameserver.com.
+
+            example.com. 3600 IN SOA ns0.nameserver.com.
+            postmaster.nameserver.com. 2024101701 10800 3600 1209600 3600
+    '400':
+      $ref: ../components/responses/4001.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Export dns records as a bind file content
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets_import/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets_import/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets_import/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets_import/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets_import/getundefined

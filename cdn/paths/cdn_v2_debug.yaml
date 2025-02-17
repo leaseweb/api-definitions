@@ -1,0 +1,103 @@
+post:
+  tags:
+    - Debug
+    - CDN | title
+  summary: Debug Url
+  description: >-
+    You can use this endpoint to debug your distributions on each CDN provider
+    independently. All of the returned headers per provider are included in the
+    response.
+
+
+    Note: Use the specific domain you want to debug since each distribution can
+    have multiple custom domains.
+  operationId: debug_url_v1_debug_post
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/DebugIn.yaml
+        examples:
+          Two Providers Debug:
+            value:
+              url: https://cdn-assets.leaseweb.com/asset.css?t=1
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/DebugResponse.yaml
+          examples:
+            Two Providers Debug:
+              value:
+                url: https://cdn-assets.leaseweb.com/asset.css?t=1
+                success: true
+                providerResponses:
+                  - providerType: gcore
+                    success: true
+                    ip: 93.123.17.254
+                    statusCode: 301
+                    message: null
+                    headers:
+                      - name: connection
+                        value: keep-alive
+                      - name: content-length
+                        value: '0'
+                      - name: date
+                        value: Thu, 05 Aug 2024 11:34:36 GMT
+                      - name: location
+                        value: >-
+                          https://cdn-assets-redirected.leaseweb.com/asset.css?t=1
+                  - providerType: edgio
+                    success: true
+                    ip: 41.63.96.130
+                    statusCode: 301
+                    message: null
+                    headers:
+                      - name: connection
+                        value: keep-alive
+                      - name: content-length
+                        value: '0'
+                      - name: date
+                        value: Thu, 05 Aug 2024 11:34:36 GMT
+                      - name: location
+                        value: >-
+                          https://cdn-assets-redirected.leaseweb.com/asset.css?t=1
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_debug/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_debug/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_debug/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_debug/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_debug/postundefined

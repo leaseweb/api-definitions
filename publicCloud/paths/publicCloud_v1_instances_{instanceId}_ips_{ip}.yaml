@@ -1,0 +1,124 @@
+parameters:
+  - $ref: ../components/parameters/instanceId.yaml
+  - $ref: ../components/parameters/ip.yaml
+get:
+  operationId: getInstanceIP
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            ip: 10.0.0.1
+            prefixLength: '28'
+            version: 4
+            reverseLookup: a-valid-domain.xpto
+            mainIp: false
+            networkType: INTERNAL
+            nullRouted: true
+            ddos:
+              detectionProfile: STANDARD_DEFAULT
+              protectionType: STANDARD
+          schema:
+            $ref: ../components/schemas/ipDetails.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get IP details for a specific Instance
+  tags:
+    - IPs
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_instances_{instanceId}_ips_{ip}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_instances_{instanceId}_ips_{ip}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_instances_{instanceId}_ips_{ip}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_instances_{instanceId}_ips_{ip}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_instances_{instanceId}_ips_{ip}/getundefined
+put:
+  description: Allows you to set the reverse lookup for the IP
+  operationId: updateInstanceIP
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/updateIPOpts.yaml
+        example:
+          reverseLookup: a-valid-domain.xpto
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            ip: 10.0.0.1
+            prefixLength: '28'
+            version: 4
+            reverseLookup: a-valid-domain.xpto
+            mainIp: false
+            networkType: INTERNAL
+            nullRouted: true
+            ddos:
+              detectionProfile: STANDARD_DEFAULT
+              protectionType: STANDARD
+          schema:
+            $ref: ../components/schemas/ipDetails.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update the IP address for a specific Instance
+  tags:
+    - IPs
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_instances_{instanceId}_ips_{ip}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_instances_{instanceId}_ips_{ip}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_instances_{instanceId}_ips_{ip}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_instances_{instanceId}_ips_{ip}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_instances_{instanceId}_ips_{ip}/putundefined

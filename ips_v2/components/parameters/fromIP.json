@@ -1,8 +1,0 @@
-{
-  "name": "fromIp",
-  "in": "query",
-  "schema": {
-    "type": "string"
-  },
-  "description": "Return only IPs greater or equal to the specified address"
-}

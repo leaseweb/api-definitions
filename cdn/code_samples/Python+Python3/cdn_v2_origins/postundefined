@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"resourceType\":\"SIMPLE_ORIGIN\",\"data\":[{\"key\":\"host\",\"value\":\"backend.leaseweb.com\"},{\"key\":\"description\",\"value\":\"Leaseweb Backend\"},{\"key\":\"enabled\",\"value\":true}]}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/cdn/v2/origins", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

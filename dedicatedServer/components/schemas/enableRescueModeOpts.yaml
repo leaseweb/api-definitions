@@ -1,0 +1,30 @@
+properties:
+  callbackUrl:
+    description: Url which will receive callbacks
+    format: uri
+    type: string
+  password:
+    description: Rescue mode password. If not provided, it would be automatically generated
+    minLength: 1
+    type: string
+  postInstallScript:
+    description: >-
+      Base64 Encoded string containing a valid bash script to be run right after
+      rescue mode is launched
+    type: string
+  powerCycle:
+    default: true
+    description: >-
+      If set to `true`, server will be power cycled in order to complete the
+      operation
+    type: boolean
+  rescueImageId:
+    default: GRML
+    description: Rescue image identifier
+    type: string
+  sshKeys:
+    description: User ssh keys
+    type: string
+required:
+  - rescueImageId
+type: object

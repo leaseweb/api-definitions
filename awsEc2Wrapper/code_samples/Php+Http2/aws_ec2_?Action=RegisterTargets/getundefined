@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/aws/ec2/');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'TargetGroupArn' => '29145c92-4a68-4c63-aaeb-f2212d85a74a',
+  'Targets.member.N.Id' => 'Targets.member.1.Id=800c43a4-8c74-4f92-9cd0-5fa883c8ca35&Targets.member.2.Id=810c43a4-8c74-4f92-9cd0-5fa883c8ca35',
+  'Action' => 'RegisterTargets'
+]));
+
+$request->setHeaders([
+  'Authorization' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

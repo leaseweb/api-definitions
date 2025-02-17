@@ -1,0 +1,26 @@
+required:
+  - currency
+  - currencySymbol
+  - compute
+  - storage
+type: object
+properties:
+  currency:
+    type: string
+    example: USD
+  currencySymbol:
+    type: string
+    example: $
+  compute:
+    $ref: ./price.yaml
+  storage:
+    required:
+      - local
+      - central
+    title: storage
+    type: object
+    properties:
+      local:
+        $ref: ./price.yaml
+      central:
+        $ref: ./price.yaml

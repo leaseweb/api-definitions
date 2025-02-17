@@ -1,0 +1,28 @@
+title: target
+type: object
+properties:
+  id:
+    type: string
+    description: The ID of the target
+  reference:
+    type: string
+    description: The reference of the target
+  image:
+    $ref: ./image.yaml
+  state:
+    type: string
+    description: The state of the target
+  ips:
+    type: array
+    description: The IP addresses of the target
+    items:
+      $ref: ./ip.yaml
+  healthCheck:
+    $ref: ./_schemas_healthCheckStatus.yaml
+required:
+  - id
+  - reference
+  - image
+  - state
+  - ips
+  - healthCheck

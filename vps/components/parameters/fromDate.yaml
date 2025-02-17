@@ -1,0 +1,7 @@
+name: from
+schema:
+  type: string
+  format: date
+  example: '2025-01-28'
+in: query
+description: The start of the interval to get the metric

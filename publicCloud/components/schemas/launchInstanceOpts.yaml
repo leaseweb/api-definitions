@@ -1,0 +1,75 @@
+properties:
+  region:
+    $ref: ./regionName.yaml
+  type:
+    $ref: ./typeName.yaml
+  imageId:
+    $ref: ./imageId.yaml
+  marketAppId:
+    type: string
+    description: Market App ID that must be installed into the instance
+    example: CPANEL
+  reference:
+    type: string
+    description: An identifying name you can refer to the instance
+  contractType:
+    $ref: ./contractType.yaml
+  contractTerm:
+    $ref: ./contractTerm.yaml
+  billingFrequency:
+    $ref: ./billingFrequency.yaml
+  rootDiskSize:
+    $ref: ./rootDiskSize.yaml
+  rootDiskStorageType:
+    $ref: ./storageType.yaml
+  sshKey:
+    type: string
+    description: >-
+      Public SSH key to be installed into the instance. Must be used only on
+      Linux/FreeBSD instances
+    example: >-
+      ssh-rsa
+      AAAAB3NzaC1yc2EAAAADAQABAAAAgQCyXsJHPbU4eQaXJMwxkZrk51w/3km1xJYLGjza45Nf1whpyg4j15kjOk3UVTNi/OatPgx/Re16XPxwA1d0RS2uwtmehYjN3lvmNfJJcvvz+CGZe8HQG1FzE1nNy3arSGdHhjvJlXg1ooS7TNBgo8FO37Awv6YDd2JO1TinAS/wkw==
+  userData:
+    type: string
+    description: >-
+      User data to be installed into the instance. Please note that this setting
+      cannot be used in combination with the 'sshKey' setting. Send the user
+      data as plain text, not encoded as base64.
+    example: >
+      #cloud-config
+
+      # vim: syntax=yaml
+
+      #
+
+      # This is the configuration syntax that the write_files module
+
+      # will know how to understand. Encoding can be given b64 or gzip or
+      (gz+b64).
+
+      # The content will be decoded accordingly and then written to the path
+      that is
+
+      # provided. 
+
+      #
+
+      # Note: Content strings here are truncated for example purposes.
+
+      write_files:
+
+      - encoding: b64
+        content: TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNlY3Rll1cyBtYXhpbXVzLg==
+        owner: root:root
+        path: /tmp/3.txt
+        permissions: '0644'
+required:
+  - region
+  - imageId
+  - contractType
+  - rootDiskStorageType
+  - contractTerm
+  - billingFrequency
+  - type
+type: object

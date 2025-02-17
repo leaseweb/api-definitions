@@ -1,0 +1,10 @@
+title: datacenter
+type: string
+enum:
+  - LON-01
+  - MTL-02
+  - AMS-01
+  - FRA-01
+  - WDC-02
+  - SFO-12
+  - SIN-01

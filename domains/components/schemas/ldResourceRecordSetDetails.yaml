@@ -1,0 +1,12 @@
+allOf:
+  - properties:
+      editable:
+        $ref: ./editable.yaml
+      _links:
+        $ref: ./ldLinks.yaml
+    required:
+      - _links
+      - editable
+    title: ldResourceRecordSetDetails
+    type: object
+  - $ref: ./ldResourceRecordSet.yaml

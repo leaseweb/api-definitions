@@ -1,0 +1,105 @@
+get:
+  description: >
+    Show all DDoS Protection related notification settings for this server.
+    These
+
+    settings control if you want to be notified via email in case a DDoS was
+
+    mitigated.
+  operationId: getDdosNotificationSetting
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            nulling: ENABLED
+            scrubbing: DISABLED
+          schema:
+            $ref: ../components/schemas/getDdosNotificationSettingResult.yaml
+      description: Ok.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Inspect DDoS notification settings
+  tags:
+    - Notification Settings
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_notificationSettings_ddos/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_notificationSettings_ddos/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_notificationSettings_ddos/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_notificationSettings_ddos/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_notificationSettings_ddos/getundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+put:
+  description: Update your DDoS notification settings for this server.
+  operationId: updateDdosNotificationSetting
+  requestBody:
+    content:
+      application/json:
+        example:
+          nulling: DISABLED
+          scrubbing: ENABLED
+        schema:
+          $ref: ../components/schemas/updateDdosNotificationSettingOpts.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Update DDoS notification settings
+  tags:
+    - Notification Settings
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_notificationSettings_ddos/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_notificationSettings_ddos/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_notificationSettings_ddos/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_notificationSettings_ddos/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_notificationSettings_ddos/putundefined

@@ -1,0 +1,23 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/aws/ec2/');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'LoadBalancerArns.member.N' => '29145c92-4a68-4c63-aaeb-f2212d85a74a',
+  'Names.member.N' => 'test-name',
+  'PageSize' => '10',
+  'Marker' => '1',
+  'Action' => 'DescribeLoadBalancers'
+]));
+
+$request->setHeaders([
+  'Authorization' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

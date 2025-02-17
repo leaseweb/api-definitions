@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/bareMetals/v2/operatingSystems/UBUNTU_22_04_64BIT/controlPanels');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'limit' => '20',
+  'offset' => '10',
+  'operatingSystemId' => 'SOME_STRING_VALUE'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

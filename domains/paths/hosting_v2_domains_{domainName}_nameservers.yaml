@@ -1,0 +1,153 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  description: ''
+  operationId: domains-nameservers-get
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-4.yaml
+          examples:
+            example:
+              value:
+                nameservers:
+                  - name: ns1.example.com
+                  - name: ns2.example.net
+                status: >-
+                  Nameservers update request is accepted. This request will be
+                  processed after 24 hours.
+                isLeasewebNameserver: false
+                _links:
+                  self:
+                    href: /domains/{domainName}/nameservers
+                _metadata:
+                  totalCount: 4
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List nameservers
+  tags:
+    - Domains
+    - Domains | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_nameservers/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_nameservers/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_nameservers/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_nameservers/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_nameservers/getundefined
+put:
+  description: |
+    Full replacement of all nameservers for a domain.
+
+    Please note that the request body should contain at least two nameservers.
+  operationId: domains-nameservers-put
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.put.request.schema.yaml
+        examples:
+          example:
+            value:
+              nameservers:
+                - name: ns1.example.com
+                - name: ns2.example.net
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.200.schema.yaml
+          examples:
+            example:
+              value:
+                nameservers:
+                  - name: ns1.example.com
+                  - name: ns2.example.net
+                status: >-
+                  Nameservers update request is accepted. This request will be
+                  processed after 24 hours.
+                _links:
+                  self:
+                    href: /domains/{domainName}/nameservers
+                _metadata:
+                  totalCount: 4
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '409':
+      description: >-
+        If there is a conflict (for example item is already in processing
+        state), you will receive a 409 Conflict.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.409.schema.yaml
+          examples:
+            example:
+              value:
+                errorMessage: Request is already in process.
+                userMessage: >-
+                  A request is already being processed and may take up to 25
+                  hours to complete after initiation.
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update nameservers
+  tags:
+    - Domains
+    - Domains | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_nameservers/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_nameservers/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_nameservers/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_nameservers/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_nameservers/putundefined

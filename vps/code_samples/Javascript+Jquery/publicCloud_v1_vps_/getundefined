@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/publicCloud/v1/vps/?limit=20&offset=10&id=999999999&reference=Foo%20bar&ip=10.0.0.1&state=SOME_STRING_VALUE&pack=SOME_STRING_VALUE&region=SOME_STRING_VALUE",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

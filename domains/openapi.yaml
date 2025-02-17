@@ -1,0 +1,118 @@
+openapi: 3.0.3
+info:
+  title: Domains
+  version: v2
+  description: '>The base URL for this API is: **https://api.leaseweb.com/hosting/v2**'
+  x-logo:
+    url: /images/logo.png
+    altText: Leaseweb developer documentation
+    backgroundColor: '#5484c6'
+    href: http://developer.leaseweb.com
+servers:
+  - url: https://api.leaseweb.com
+security:
+  - X-LSW-Auth: []
+tags:
+  - name: Errors
+    description: >
+      The API uses standard HTTP status codes to indicate the success or failure
+      of the API call. The response will be JSON. Most APIs use the following
+      format:
+
+
+      ```
+
+      {
+
+      "errorCode" : "APP00800",
+
+      "errorMessage" : "The connection with the DB cannot be established.",
+
+      "correlationId" : "550e8400-e29b-41d4-a716-446655440000",
+
+      "userMessage" : "Cannot handle your request at the moment. Please try
+      again later.",
+
+      "reference" : "http://developer.leaseweb.com/errors/APP00800"
+
+      }
+
+      ```
+    x-traitTag: true
+  - name: Authentication
+    description: >-
+      Authentication for the APIs is required. To authenticate your call, you
+      will need to sent your API key as `X-LSW-Auth` header.
+
+
+      You can generate API keys in the [Customer
+      Portal](https://secure.leaseweb.com/api-client-management/).
+    x-traitTag: true
+  - description: >
+      Authentication for the APIs is required. To authenticate your call, you
+      will need to sent your API key as `X-LSW-Auth` header.
+
+
+      You can generate API keys in the [Customer
+      Portal](https://secure.leaseweb.com/api-client-management/).
+    name: API Key Authentication
+    x-traitTag: true
+paths:
+  /hosting/v2/domains:
+    $ref: paths/hosting_v2_domains.yaml
+  /hosting/v2/domains/{domainName}:
+    $ref: paths/hosting_v2_domains_{domainName}.yaml
+  /hosting/v2/domains/{domainName}/available:
+    $ref: paths/hosting_v2_domains_{domainName}_available.yaml
+  /hosting/v2/domains/{domainName}/nameservers:
+    $ref: paths/hosting_v2_domains_{domainName}_nameservers.yaml
+  /hosting/v2/domains/{domainName}/dnssec:
+    $ref: paths/hosting_v2_domains_{domainName}_dnssec.yaml
+  /hosting/v2/domains/{domainName}/resourceRecordSets:
+    $ref: paths/hosting_v2_domains_{domainName}_resourceRecordSets.yaml
+  /hosting/v2/domains/{domainName}/resourceRecordSets/{name}/{type}:
+    $ref: >-
+      paths/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}.yaml
+  /hosting/v2/domains/{domainName}/resourceRecordSets/import:
+    $ref: paths/hosting_v2_domains_{domainName}_resourceRecordSets_import.yaml
+  /hosting/v2/domains/{domainName}/resourceRecordSets/validateSet:
+    $ref: paths/hosting_v2_domains_{domainName}_resourceRecordSets_validateSet.yaml
+  /hosting/v2/domains/{domainName}/validateZone:
+    $ref: paths/hosting_v2_domains_{domainName}_validateZone.yaml
+  /hosting/v2/domains/{domainName}/mailboxes:
+    $ref: paths/hosting_v2_domains_{domainName}_mailboxes.yaml
+  /hosting/v2/domains/{domainName}/mailboxes/{emailAddress}:
+    $ref: paths/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}.yaml
+  /hosting/v2/domains/{domainName}/catchAll:
+    $ref: paths/hosting_v2_domains_{domainName}_catchAll.yaml
+  /hosting/v2/domains/{domainName}/emailAliases:
+    $ref: paths/hosting_v2_domains_{domainName}_emailAliases.yaml
+  /hosting/v2/domains/{domainName}/emailAliases/{source}/{destination}:
+    $ref: >-
+      paths/hosting_v2_domains_{domainName}_emailAliases_{source}_{destination}.yaml
+  /hosting/v2/domains/{domainName}/forwards:
+    $ref: paths/hosting_v2_domains_{domainName}_forwards.yaml
+  /hosting/v2/domains/{domainName}/mailboxes/{emailAddress}/forwards:
+    $ref: >-
+      paths/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards.yaml
+  /hosting/v2/domains/{domainName}/mailboxes/{emailAddress}/forwards/{destination}:
+    $ref: >-
+      paths/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards_{destination}.yaml
+  /hosting/v2/domains/{domainName}/mailboxes/{emailAddress}/autoResponder:
+    $ref: >-
+      paths/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder.yaml
+components:
+  securitySchemes:
+    X-LSW-Auth:
+      name: X-LSW-Auth
+      type: apiKey
+      in: header
+      example: 213423-2134234-234234-23424
+      description: ''
+    Leaseweb_OAuth:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: ''
+          refreshUrl: ''
+          scopes: {}

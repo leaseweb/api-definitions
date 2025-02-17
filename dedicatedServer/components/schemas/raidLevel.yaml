@@ -1,0 +1,9 @@
+type: integer
+enum:
+  - 0
+  - 1
+  - 5
+  - 10
+description: >-
+  RAID level to apply, this value is only required if you specify a type HW or
+  SW

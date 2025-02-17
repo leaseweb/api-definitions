@@ -1,0 +1,10 @@
+title: bandwidthNotificationSetting
+allOf:
+  - $ref: ./notificationSetting.yaml
+  - properties:
+      unit:
+        description: Unit
+        enum:
+          - Mbps
+          - Gbps
+        type: string

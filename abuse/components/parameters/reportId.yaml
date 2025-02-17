@@ -1,0 +1,7 @@
+schema:
+  type: string
+name: reportId
+in: path
+required: true
+description: Report Id
+example: abc123

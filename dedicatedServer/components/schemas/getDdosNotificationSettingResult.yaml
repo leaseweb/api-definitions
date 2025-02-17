@@ -1,0 +1,8 @@
+properties:
+  nulling:
+    description: Email notifications for nulling events
+    type: string
+  scrubbing:
+    description: Email notifications for scrubbing events
+    type: string
+type: object

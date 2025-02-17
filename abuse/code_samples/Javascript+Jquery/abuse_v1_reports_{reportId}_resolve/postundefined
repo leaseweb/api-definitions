@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/abuse/v1/reports/abc123/resolve",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"resolutions\":[[\"CONTENT_REMOVED\",\"SUSPENDED\"]],\"message\":\"string\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

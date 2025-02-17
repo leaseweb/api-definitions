@@ -1,0 +1,110 @@
+openapi: 3.1.0
+info:
+  version: 2.0.1
+  title: CDN
+  summary: ''
+  description: '> The base URL for this API is: **https://api.leaseweb.com/cdn/v2**'
+  x-logo:
+    url: https://developer.leaseweb.com/images/logo.png
+    altText: Leaseweb CDN API Documentation
+    backgroundColor: '#5484c6'
+    href: https://developer.leaseweb.com
+servers:
+  - url: https://api.leaseweb.com
+security:
+  - X-LSW-Auth: []
+tags:
+  - name: Errors
+    description: >
+      The API uses standard HTTP status codes to indicate the success or failure
+      of the API call.The response will be JSON. Most APIs use the following
+      format:
+
+
+      ```
+
+      {
+
+      "errorCode" : "APP00800",
+
+      "errorMessage" : "The connection with the DB cannot be established.",
+
+      "correlationId" : "550e8400-e29b-41d4-a716-446655440000",
+
+      "userMessage" : "Cannot handle your request at the moment. Please try
+      again later.",
+
+      "reference" : "https://developer.leaseweb.com/errors/APP00800"
+
+      }
+
+      ```
+    x-traitTag: true
+  - name: Authentication
+    description: >-
+      Authentication for the APIs is required. To authenticate your call, you
+      will need to sent your API key as `X-LSW-Auth` header.
+
+
+      You can generate API keys in the [Customer
+      Portal](https://secure.leaseweb.com/api-client-management/).
+    x-traitTag: true
+paths:
+  /cdn/v2/origins:
+    $ref: paths/cdn_v2_origins.yaml
+  /cdn/v2/origins/{origin_id}:
+    $ref: paths/cdn_v2_origins_{origin_id}.yaml
+  /cdn/v2/originGroups:
+    $ref: paths/cdn_v2_originGroups.yaml
+  /cdn/v2/originGroups/{origin_group_id}:
+    $ref: paths/cdn_v2_originGroups_{origin_group_id}.yaml
+  /cdn/v2/originGroups/{origin_group_id}/members:
+    $ref: paths/cdn_v2_originGroups_{origin_group_id}_members.yaml
+  /cdn/v2/originGroups/{origin_group_id}/members/{origin_group_member_id}:
+    $ref: >-
+      paths/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}.yaml
+  /cdn/v2/debug:
+    $ref: paths/cdn_v2_debug.yaml
+  /cdn/v2/invalidations:
+    $ref: paths/cdn_v2_invalidations.yaml
+  /cdn/v2/certificates:
+    $ref: paths/cdn_v2_certificates.yaml
+  /cdn/v2/certificates/{certificate_id}:
+    $ref: paths/cdn_v2_certificates_{certificate_id}.yaml
+  /cdn/v2/actions:
+    $ref: paths/cdn_v2_actions.yaml
+  /cdn/v2/actions/{action_id}:
+    $ref: paths/cdn_v2_actions_{action_id}.yaml
+  /cdn/v2/distributions:
+    $ref: paths/cdn_v2_distributions.yaml
+  /cdn/v2/distributions/{distribution_id}:
+    $ref: paths/cdn_v2_distributions_{distribution_id}.yaml
+  /cdn/v2/distributions/{distribution_id}/domains:
+    $ref: paths/cdn_v2_distributions_{distribution_id}_domains.yaml
+  /cdn/v2/distributions/{distribution_id}/domains/{domain_id}:
+    $ref: paths/cdn_v2_distributions_{distribution_id}_domains_{domain_id}.yaml
+  /cdn/v2/distributions/{distribution_id}/policies:
+    $ref: paths/cdn_v2_distributions_{distribution_id}_policies.yaml
+  /cdn/v2/distributions/{distribution_id}/policies/{policy_id}:
+    $ref: paths/cdn_v2_distributions_{distribution_id}_policies_{policy_id}.yaml
+  /cdn/v2/distributions/{distribution_id}/policies/{policy_id}/acls:
+    $ref: >-
+      paths/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls.yaml
+  /cdn/v2/distributions/{distribution_id}/policies/{policy_id}/acls/{acl_id}:
+    $ref: >-
+      paths/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}.yaml
+  /cdn/v2/statistics/reseller:
+    $ref: paths/cdn_v2_statistics_reseller.yaml
+  /cdn/v2/statistics/reseller/totals:
+    $ref: paths/cdn_v2_statistics_reseller_totals.yaml
+  /cdn/v2/statistics/customer:
+    $ref: paths/cdn_v2_statistics_customer.yaml
+  /cdn/v2/statistics/customer/totals:
+    $ref: paths/cdn_v2_statistics_customer_totals.yaml
+components:
+  securitySchemes:
+    X-LSW-Auth:
+      name: X-LSW-Auth
+      type: apiKey
+      in: header
+      description: API key authentication by setting `X-LSW-Auth` header.

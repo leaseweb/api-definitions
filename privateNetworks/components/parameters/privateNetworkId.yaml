@@ -1,0 +1,7 @@
+description: The ID of a Private Network
+example: '892'
+in: path
+name: privateNetworkId
+required: true
+schema:
+  type: string

@@ -1,0 +1,7 @@
+type: string
+description: The current state
+enum:
+  - RUNNING
+  - STARTING
+  - STOPPED
+  - STOPPING

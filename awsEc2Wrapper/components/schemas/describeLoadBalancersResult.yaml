@@ -1,0 +1,48 @@
+type: object
+properties:
+  DescribeLoadBalancersResponse:
+    properties:
+      DescribeLoadBalancersResult:
+        properties:
+          NextMarker:
+            type: integer
+          LoadBalancers:
+            type: array
+            items:
+              title: loadBalancers
+              type: object
+              properties:
+                member:
+                  title: loadBalancersMember
+                  type: object
+                  properties:
+                    LoadBalancerArn:
+                      type: string
+                    LoadBalancerName:
+                      type: string
+                    CreatedTime:
+                      type: string
+                    Type:
+                      type: string
+                    State:
+                      title: state
+                      type: object
+                      properties:
+                        code:
+                          type: string
+                    AvailabilityZones:
+                      type: array
+                      items:
+                        title: availabilityZones
+                        type: object
+                        properties:
+                          member:
+                            title: availabilityZonesMember
+                            type: object
+                            properties:
+                              ZoneName:
+                                type: string
+      ResponseMetadata:
+        properties:
+          RequestId:
+            type: string

@@ -1,0 +1,350 @@
+post:
+  tags:
+    - Origin
+    - CDN | title
+  summary: Create Origin
+  description: |-
+    Create origin resouces to be used within distributions.
+
+    There are 2 types of origins:
+
+    - Simple Origin
+    - Advanced Origin
+  operationId: create_origin_v1_origins_post
+  requestBody:
+    description: ''
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            resourceType:
+              type: string
+              enum:
+                - SIMPLE_ORIGIN
+                - ADVANCED_ORIGIN
+              examples:
+                - SIMPLE_ORIGIN
+            data:
+              type: array
+              items:
+                - type: object
+                  properties:
+                    key:
+                      type: string
+                      examples:
+                        - host
+                    value:
+                      type: string
+                      examples:
+                        - backend.leaseweb.com
+                  required:
+                    - key
+                    - value
+                - type: object
+                  properties:
+                    key:
+                      type: string
+                      examples:
+                        - description
+                    value:
+                      type: string
+                      examples:
+                        - Leaseweb Backend
+                  required:
+                    - key
+                    - value
+                - type: object
+                  properties:
+                    key:
+                      type: string
+                      examples:
+                        - enabled
+                    value:
+                      type: boolean
+                      examples:
+                        - true
+                  required:
+                    - key
+                    - value
+          required:
+            - resourceType
+            - data
+        examples:
+          Simple Origin:
+            value:
+              resourceType: SIMPLE_ORIGIN
+              data:
+                - key: host
+                  value: backend.leaseweb.com
+                - key: description
+                  value: Leaseweb Backend
+                - key: enabled
+                  value: true
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              resourceType:
+                type: string
+                enum:
+                  - SIMPLE_ORIGIN
+                  - ADVANCED_ORIGIN
+                examples:
+                  - ADVANCED_ORIGIN
+              data:
+                type: array
+                items:
+                  - type: object
+                    properties:
+                      key:
+                        type: string
+                        examples:
+                          - id
+                      value:
+                        type: string
+                        examples:
+                          - or-4njkb2g
+                    required:
+                      - key
+                      - value
+                  - type: object
+                    properties:
+                      key:
+                        type: string
+                        examples:
+                          - customerId
+                      value:
+                        type: string
+                        examples:
+                          - cu-sndj3j24
+                    required:
+                      - key
+                      - value
+                  - type: object
+                    properties:
+                      key:
+                        type: string
+                        examples:
+                          - created
+                      value:
+                        type: string
+                        examples:
+                          - '2024-07-12T12:55:54'
+                    required:
+                      - key
+                      - value
+                  - type: object
+                    properties:
+                      key:
+                        type: string
+                        examples:
+                          - updated
+                      value:
+                        type: 'null'
+                        examples:
+                          - '2024-07-12T12:55:54'
+                    required:
+                      - key
+                      - value
+                  - type: object
+                    properties:
+                      key:
+                        type: string
+                        examples:
+                          - host
+                      value:
+                        type: string
+                        examples:
+                          - backend.leaseweb.com
+                    required:
+                      - key
+                      - value
+                  - type: object
+                    properties:
+                      key:
+                        type: string
+                        examples:
+                          - description
+                      value:
+                        type: string
+                        examples:
+                          - Leaseweb Backend
+                    required:
+                      - key
+                      - value
+                  - type: object
+                    properties:
+                      key:
+                        type: string
+                        examples:
+                          - enabled
+                      value:
+                        type: boolean
+                        examples:
+                          - true
+                    required:
+                      - key
+                      - value
+          examples:
+            Simple Origin:
+              value:
+                resourceType: SIMPLE_ORIGIN
+                data:
+                  - key: id
+                    value: or-4njkb2g
+                  - key: customerId
+                    value: cu-sndj3j24
+                  - key: created
+                    value: '2024-07-12T12:55:54'
+                  - key: updated
+                    value: '2024-07-12T12:55:54'
+                  - key: host
+                    value: backend.leaseweb.com
+                  - key: description
+                    value: Leaseweb Backend
+                  - key: enabled
+                    value: true
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-internal: false
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_origins/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_origins/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_origins/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_origins/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_origins/postundefined
+get:
+  tags:
+    - Origin
+    - CDN | title
+  summary: Get All Origins
+  description: >-
+    Get the list of origins including all of the origin types. Types are
+    specified in each record.
+  operationId: get_all_origins_v1_origins_get
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OriginsListResponse_Resource_.yaml
+          examples:
+            Origins:
+              value:
+                origins:
+                  - resourceType: SIMPLE_ORIGIN
+                    data:
+                      - key: id
+                        value: or-5dfg51fr
+                      - key: customerId
+                        value: cu-sndj3j24
+                      - key: created
+                        value: '2024-07-12T12:55:54'
+                      - key: updated
+                        value: '2024-07-12T12:55:54'
+                      - key: host
+                        value: backend.leaseweb.com
+                      - key: description
+                        value: Leaseweb Backend
+                      - key: enabled
+                        value: true
+                  - resourceType: ADVANCED_ORIGIN
+                    data:
+                      - key: id
+                        value: or-y71sg45
+                      - key: customerId
+                        value: cu-sndj3j24
+                      - key: created
+                        value: '2020-12-10T07:07:35'
+                      - key: updated
+                        value: '2021-12-08T12:20:25'
+                      - key: host
+                        value: backend.leaseweb.com
+                      - key: description
+                        value: LSW Custom Backend
+                      - key: enabled
+                        value: true
+                      - key: path
+                        value: /test
+                      - key: httpPort
+                        value: 8080
+                      - key: httpsPort
+                        value: 8081
+                _metadata:
+                  totalCount: 2
+                  limit: 20
+                  offset: 0
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_origins/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_origins/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_origins/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_origins/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_origins/getundefined

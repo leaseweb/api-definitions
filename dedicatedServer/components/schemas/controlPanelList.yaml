@@ -1,0 +1,21 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  controlPanels:
+    description: A list of control panels
+    items:
+      title: controlPanel
+      description: A single control panel
+      properties:
+        id:
+          description: The unique ID of this control panel
+          type: string
+        name:
+          description: A human readable name describing the control panel
+          type: string
+      required:
+        - id
+        - name
+      type: object
+    type: array
+type: object

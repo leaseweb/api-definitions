@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/cdn/v2/invalidations",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"files\":[\"http://leaseweb.com/test\"]}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

@@ -1,0 +1,12 @@
+properties:
+  comment:
+    type: string
+    description: The reason why the IP is being null-routed
+  automatedUnnulingAt:
+    type: integer
+    description: >-
+      If provided, reverts the operation automatically in the specified value,
+      in hours
+    minimum: 1
+    maximum: 17520
+type: object

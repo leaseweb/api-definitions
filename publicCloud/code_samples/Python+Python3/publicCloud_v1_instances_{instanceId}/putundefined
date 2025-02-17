@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"type\":\"lsw.m3.large\",\"reference\":\"string\",\"contractType\":\"HOURLY\",\"contractTerm\":0,\"billingFrequency\":1,\"rootDiskSize\":5}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("PUT", "/publicCloud/v1/instances/ace712e9-a166-47f1-9065-4af0f7e7fce1", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

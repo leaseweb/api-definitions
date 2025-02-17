@@ -1,0 +1,27 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/aws/ec2/');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'Filter.N.instance-id' => '29145c92-4a68-4c63-aaeb-f2212d85a74a',
+  'Filter.N.ip-address' => '123.456.7.8',
+  'Filter.N.tag:reference' => 'reference',
+  'Filter.N.instance-state-name' => 'pending',
+  'Filter.N.instance-type' => 't2.micro',
+  'Filter.N.availability-zone' => 'eu-west-1',
+  'MaxResults' => '10',
+  'NextToken' => '1',
+  'Action' => 'DescribeInstances'
+]));
+
+$request->setHeaders([
+  'Authorization' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

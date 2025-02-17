@@ -1,0 +1,8 @@
+properties:
+  reverseLookups:
+    type: array
+    items:
+      $ref: ./reverseLookup.yaml
+required:
+  - reverseLookups
+type: object

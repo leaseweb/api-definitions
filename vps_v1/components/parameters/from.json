@@ -1,9 +1,0 @@
-{
-  "name": "from",
-  "schema": {
-    "type": "string",
-    "format": "date"
-  },
-  "in": "query",
-  "description": "The start of the interval to get the metric"
-}

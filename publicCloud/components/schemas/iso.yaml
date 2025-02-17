@@ -1,0 +1,12 @@
+title: iso
+type: object
+nullable: true
+required:
+  - id
+  - name
+properties:
+  id:
+    type: string
+    format: uuid
+  name:
+    type: string

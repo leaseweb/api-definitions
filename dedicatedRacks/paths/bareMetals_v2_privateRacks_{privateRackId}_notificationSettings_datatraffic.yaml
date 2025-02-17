@@ -1,0 +1,326 @@
+get:
+  operationId: get/privateRacks/{privateRackId}/notificationSettings/datatraffic
+  summary: List datatraffic notification settings
+  description: ''
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            properties:
+              _metadata:
+                type: object
+                description: Metadata about the collection
+                properties:
+                  limit:
+                    type: integer
+                    description: The maximum number of results returned
+                    default: 20
+                  offset:
+                    type: integer
+                    description: Results are returned started at the given offset
+                    default: 0
+                  totalCount:
+                    type: integer
+                    description: The total amount of results
+              bandwidthNotificationSettings:
+                type: array
+                description: An array of Datatraffic Notification Settings
+                items:
+                  type: object
+                  $schema: http://json-schema.org/draft-04/schema
+                  id: http://jsonschema.net
+                  properties:
+                    actions:
+                      description: An array of notification setting actions
+                      items:
+                        properties:
+                          lastTriggeredAt:
+                            description: >-
+                              Date timestamp when the last notification email
+                              triggered
+                            type: string
+                          type:
+                            description: Type of action
+                            enum:
+                              - EMAIL
+                            type: string
+                        type: object
+                      type: array
+                    frequency:
+                      type: string
+                      description: Frequency
+                      enum:
+                        - DAILY
+                        - WEEKLY
+                        - MONTHLY
+                    id:
+                      type: string
+                      description: Identifier of the notification setting
+                    lastCheckedAt:
+                      description: >-
+                        Date timestamp when the system last checked the
+                        dedicated rack for threshold limit
+                      type: string
+                    threshold:
+                      description: Threshold Value
+                      type: string
+                    thresholdExceededAt:
+                      description: Date timestamp when the threshold exceeded the limit
+                      type: string
+                    unit:
+                      type: string
+                      description: Unit
+                      enum:
+                        - MB
+                        - GB
+                        - TB
+          examples:
+            example:
+              value:
+                _metadata:
+                  limit: 10
+                  offset: 0
+                  totalCount: 2
+                datatrafficNotificationSettings:
+                  - actions:
+                      - lastTriggeredAt: '2021-03-16T01:01:44+00:00'
+                        type: EMAIL
+                    frequency: WEEKLY
+                    id: '12345'
+                    lastCheckedAt: '2021-03-16T01:01:41+00:00'
+                    threshold: '1'
+                    thresholdExceededAt: '2021-03-16T01:01:41+00:00'
+                    unit: MB
+                  - actions:
+                      - lastTriggeredAt: '2021-03-16T01:01:44+00:00'
+                        type: EMAIL
+                    frequency: DAILY
+                    id: '123456'
+                    lastCheckedAt: '2021-03-16T01:01:41+00:00'
+                    threshold: '1'
+                    thresholdExceededAt: '2021-03-16T01:01:41+00:00'
+                    unit: GB
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+  tags:
+    - Dedicated racks
+    - Dedicated Racks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_datatraffic/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_datatraffic/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_datatraffic/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_datatraffic/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_datatraffic/getundefined
+post:
+  operationId: post/privateRacks/{privateRackId}/notificationSettings/datatraffic
+  summary: Create datatraffic notification settings
+  description: ''
+  requestBody:
+    content:
+      application/json:
+        examples:
+          example:
+            value:
+              frequency: DAILY
+              unit: MB
+              threshold: '1'
+        schema:
+          type: object
+          $schema: http://json-schema.org/draft-04/schema
+          id: http://jsonschema.net
+          properties:
+            frequency:
+              type: string
+              description: Frequency for the Datatraffic Notification
+              enum:
+                - DAILY
+                - WEEKLY
+                - MONTHLY
+              examples:
+                - DAILY
+            unit:
+              type: string
+              description: Unit for the Datatraffic Notification
+              enum:
+                - MB
+                - GB
+                - TB
+              examples:
+                - GB
+            threshold:
+              type: string
+              description: Threshold Value for the Datatraffic Notification
+              examples:
+                - '10'
+          required:
+            - frequency
+            - unit
+            - threshold
+  responses:
+    '201':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            properties:
+              actions:
+                description: An array of notification setting actions
+                items:
+                  properties:
+                    lastTriggeredAt:
+                      description: >-
+                        Date timestamp when the last notification email
+                        triggered
+                      type: string
+                    type:
+                      description: Type of action
+                      enum:
+                        - EMAIL
+                      type: string
+                  type: object
+                type: array
+              frequency:
+                type: string
+                description: Frequency
+                enum:
+                  - DAILY
+                  - WEEKLY
+                  - MONTHLY
+              id:
+                type: string
+                description: Identifier of the notification setting
+              lastCheckedAt:
+                description: >-
+                  Date timestamp when the system last checked the dedicated rack
+                  for threshold limit
+                type: string
+              threshold:
+                description: Threshold Value
+                type: string
+              thresholdExceededAt:
+                description: Date timestamp when the threshold exceeded the limit
+                type: string
+              unit:
+                type: string
+                description: Unit
+                enum:
+                  - MB
+                  - GB
+                  - TB
+          examples:
+            example:
+              value:
+                actions:
+                  - lastTriggeredAt: '2021-03-16T01:01:44+00:00'
+                    type: EMAIL
+                frequency: WEEKLY
+                id: '12345'
+                lastCheckedAt: '2021-03-16T01:01:41+00:00'
+                threshold: '1'
+                thresholdExceededAt: '2021-03-16T01:01:41+00:00'
+                unit: GB
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+  tags:
+    - Dedicated racks
+    - Dedicated Racks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_datatraffic/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_datatraffic/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_datatraffic/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_datatraffic/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_datatraffic/postundefined
+parameters:
+  - $ref: ../components/parameters/privateRackId.yaml

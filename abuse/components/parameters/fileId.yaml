@@ -1,0 +1,7 @@
+schema:
+  type: string
+name: fileId
+in: path
+required: true
+description: File Id
+example: sdfa73-adsfs-4fadf-sdfasdfa

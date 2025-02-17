@@ -1,0 +1,22 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/aws/ec2/');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'InstanceType' => 'lsw.t2.micro',
+  'ImageId' => 'UBUNTU_22_04_64BIT',
+  'Placement' => 'eu-west-1',
+  'Action' => 'RunInstances'
+]));
+
+$request->setHeaders([
+  'Authorization' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

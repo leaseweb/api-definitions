@@ -1,0 +1,14 @@
+type: object
+title: Resource
+properties:
+  resourceType:
+    type: string
+    title: Resourcetype
+  data:
+    type: array
+    title: Data
+    items:
+      $ref: ./ResourceData.yaml
+required:
+  - resourceType
+  - data

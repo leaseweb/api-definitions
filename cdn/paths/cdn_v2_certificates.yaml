@@ -1,0 +1,175 @@
+post:
+  tags:
+    - Certificate
+    - CDN | title
+  summary: Create Certificate
+  description: >-
+    Using this endpoint, you can upload your custom TLS certificates to be used
+    in your distributions.
+
+
+    Note: some CDN providers need more time to apply your new certificate to
+    your newly created distribution. Please be aware and always try to upload
+    your certificates as soon as possible.
+  operationId: create_certificate_v1_certificates_post
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          title: Resource Data
+          anyOf:
+            - $ref: ../components/schemas/NoValidationCertificateIn.yaml
+            - $ref: ../components/schemas/CertificateIn.yaml
+        examples:
+          Certificate:
+            value:
+              description: Main LSW Certificate 2024
+              certificate: '-----BEGIN CERTIFICATE----- {***} -----END CERTIFICATE-----'
+              privateKey: '-----BEGIN PRIVATE KEY----- {***} -----END PRIVATE KEY-----'
+              caBundle: '-----BEGIN CERTIFICATE----- {***} -----END CERTIFICATE-----'
+              validation: true
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            title: Response Create Certificate V1 Certificates Post
+            anyOf:
+              - $ref: ../components/schemas/NoValidationCertificate.yaml
+              - $ref: ../components/schemas/Certificate.yaml
+          examples:
+            Certificate:
+              value:
+                description: Main LSW Certificate 2024
+                certificate: Hidden for security reasons
+                privateKey: Hidden for security reasons
+                caBundle: Hidden for security reasons
+                validation: true
+                id: ce-5g8wbh25
+                commonName: c1
+                issuer: c1
+                valid: true
+                trusted: true
+                daysLeft: 364
+                validFrom: 1723118047
+                validUntil: 1754646847
+                created: '2024-03-19T08:15:23'
+                updated: '2024-03-19T08:15:23'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_certificates/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_certificates/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_certificates/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_certificates/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_certificates/postundefined
+get:
+  tags:
+    - Certificate
+    - CDN | title
+  summary: Get All Certificates
+  description: Get the list of your certificates.
+  operationId: get_all_certificates_v1_certificates_get
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            title: Response Get All Certificates V1 Certificates Get
+            anyOf:
+              - $ref: >-
+                  ../components/schemas/ListResponse_NoValidationCertificate_.yaml
+              - $ref: ../components/schemas/ListResponse_Certificate_.yaml
+          examples:
+            Certificates:
+              value:
+                certificates:
+                  - description: Main LSW Certificate 2024
+                    certificate: Hidden for security reasons
+                    privateKey: Hidden for security reasons
+                    caBundle: Hidden for security reasons
+                    validation: true
+                    id: ce-5g8wbh25
+                    commonName: c1
+                    issuer: c1
+                    valid: true
+                    trusted: true
+                    daysLeft: 364
+                    validFrom: 1723118047
+                    validUntil: 1754646847
+                    created: '2024-03-19T08:15:23'
+                    updated: '2024-03-19T08:15:23'
+                _metadata:
+                  totalCount: 1
+                  limit: -1
+                  offset: 0
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_certificates/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_certificates/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_certificates/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_certificates/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_certificates/getundefined

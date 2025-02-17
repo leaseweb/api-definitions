@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/ipMgmt/v2/nullRoutes?limit=20&offset=10&fromIp=SOME_STRING_VALUE&toIp=SOME_STRING_VALUE&fromDate=SOME_STRING_VALUE&toDate=SOME_STRING_VALUE&nulledBy=SOME_STRING_VALUE&unnulledBy=SOME_STRING_VALUE&ticketId=SOME_STRING_VALUE&contractId=SOME_STRING_VALUE&equipmentId=SOME_STRING_VALUE&sort=SOME_STRING_VALUE",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

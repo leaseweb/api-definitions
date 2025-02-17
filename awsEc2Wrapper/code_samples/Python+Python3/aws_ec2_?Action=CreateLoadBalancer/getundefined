@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'Authorization': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/aws/ec2/?Name=Test-Load-Blancer&Type=lsw.m3.large&Subnets.member.1=eu-west-3&Action=CreateLoadBalancer", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

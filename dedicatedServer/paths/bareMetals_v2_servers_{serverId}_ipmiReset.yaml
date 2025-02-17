@@ -1,0 +1,103 @@
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+post:
+  description: >
+    A reset makes sure that your IPMI interface of your server is compatible
+    with
+
+    Leaseweb automation.
+
+
+    An IPMI reset will require a reboot of your server. The contents of your
+    hard
+
+    drive won't be altered in any way. After a successful IPMI reset your server
+
+    is booted back into the original operating system.",
+  operationId: ipmiReset
+  requestBody:
+    content:
+      application/json:
+        example:
+          callbackUrl: https://callbacks.example.org
+        schema:
+          $ref: ../components/schemas/ipmiResetOpts.yaml
+  responses:
+    '202':
+      content:
+        application/json:
+          example:
+            createdAt: 2018-01-09T09:18:06+0000
+            flow: tasks
+            isRunning: true
+            node: 80:18:44:E0:AF:C4!JGNTQ92
+            payload:
+              fileserverBaseUrl: ''
+              hasPublicIpmiIp: false
+              jobType: ipmiReset
+              pop: AMS-01
+              powerCycle: true
+              serverId: '99944'
+            progress:
+              canceled: 0
+              expired: 0
+              failed: 0
+              finished: 0
+              inprogress: 0
+              pending: 1
+              percentage: 0
+              total: 1
+              waiting: 0
+            serverId: '99944'
+            status: ACTIVE
+            tasks:
+              - description: dummy
+                errorMessage: null
+                flow: tasks
+                onError: break
+                status: PENDING
+                statusTimestamps:
+                  PENDING: '2018-01-09T09:18:06+00:00'
+                  WAITING: '2018-01-09T09:18:06+00:00'
+                uuid: c1a56a5a-ae38-4b12-acb6-0cba9ceb1016
+            type: ipmiReset
+            updatedAt: 2018-01-09T09:18:06+0000
+            uuid: 754154c2-cc7f-4d5f-b8bf-b654084ba4a9
+          schema:
+            $ref: ../components/schemas/job.yaml
+      description: Accepted.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Launch IPMI reset
+  tags:
+    - Jobs
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_ipmiReset/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_ipmiReset/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_ipmiReset/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_ipmiReset/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_ipmiReset/postundefined

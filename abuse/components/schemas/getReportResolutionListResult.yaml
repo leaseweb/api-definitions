@@ -1,0 +1,28 @@
+properties:
+  resolutions:
+    type: array
+    description: Possible resolutions to resolve this report with.
+    items:
+      title: resolutionList
+      type: object
+      properties:
+        id:
+          type: string
+          description: The resolution ID to be used when calling /resolve.
+          example: CONTENT_REMOVED
+        description:
+          type: string
+          description: >-
+            The actual text the report will be resolved with when resolving with
+            this resolution.
+          example: The mentioned content has been removed.
+      required:
+        - id
+        - description
+  isMessageRequired:
+    type: boolean
+    description: '`true`, if any of the IP(s) related to this report are null routed'
+required:
+  - resolutions
+  - isMessageRequired
+type: object

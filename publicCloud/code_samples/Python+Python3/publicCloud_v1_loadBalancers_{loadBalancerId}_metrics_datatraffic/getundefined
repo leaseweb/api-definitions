@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/publicCloud/v1/loadBalancers/695ddd91-051f-4dd6-9120-938a927a47d0/metrics/datatraffic?from=2025-01-28&to=2025-01-28&granularity=SOME_STRING_VALUE&aggregation=SOME_STRING_VALUE", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

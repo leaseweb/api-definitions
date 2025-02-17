@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/storage/v1/storageVMs/1575dd1c-dddf-11ed-af62-000c299d72cd/jobs/d385ae54-3763-11ee-af62-000c299d72cd",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

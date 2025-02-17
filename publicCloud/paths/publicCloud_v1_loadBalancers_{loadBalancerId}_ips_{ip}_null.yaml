@@ -1,0 +1,75 @@
+parameters:
+  - $ref: ../components/parameters/loadBalancerId.yaml
+  - $ref: ../components/parameters/ip.yaml
+post:
+  description: >-
+    Null route an IP. It may take a few minutes before the change is propagated
+    across the network.
+
+
+    Only works for IPv4.
+  operationId: nullRouteLoadBalancerIP
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/nullRouteIPOpts.yaml
+        example:
+          automatedUnnulingAt: 2
+          comment: Getting DDoS
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            ip: 10.0.0.1
+            prefixLength: '28'
+            version: 4
+            reverseLookup: a-valid-domain.xpto
+            mainIp: false
+            networkType: INTERNAL
+            nullRouted: true
+            ddos:
+              detectionProfile: STANDARD_DEFAULT
+              protectionType: STANDARD
+          schema:
+            $ref: ../components/schemas/ipDetails.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Null route IP address for a specific resource Load Balancer
+  tags:
+    - IPs
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers_{loadBalancerId}_ips_{ip}_null/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers_{loadBalancerId}_ips_{ip}_null/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_loadBalancers_{loadBalancerId}_ips_{ip}_null/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers_{loadBalancerId}_ips_{ip}_null/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_loadBalancers_{loadBalancerId}_ips_{ip}_null/postundefined

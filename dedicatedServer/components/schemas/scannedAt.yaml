@@ -1,0 +1,4 @@
+description: Timestamp of hardware scan, the ISO-8601 format
+format: date-time
+type: string
+example: '2017-09-27T14:21:01Z'

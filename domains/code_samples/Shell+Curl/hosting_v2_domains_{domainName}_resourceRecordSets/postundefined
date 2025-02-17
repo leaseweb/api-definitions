@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/resourceRecordSets \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"name":"example.com.","type":"A","content":["85.17.150.50"],"ttl":60}'

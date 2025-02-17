@@ -1,0 +1,8 @@
+properties:
+  snapshots:
+    type: array
+    items:
+      $ref: ./snapshot.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+type: object

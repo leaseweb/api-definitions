@@ -1,0 +1,4 @@
+type: string
+enum:
+  - DAY
+description: Define the time interval for data aggregation

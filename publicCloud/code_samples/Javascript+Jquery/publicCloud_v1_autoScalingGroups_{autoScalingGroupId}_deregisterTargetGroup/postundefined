@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/publicCloud/v1/autoScalingGroups/fb769dab-3daa-47e4-89ed-06a4b6499176/deregisterTargetGroup",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"targetGroupId\":\"48ef2c38-9f7c-40bd-9b53-7e9ad33e6373\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

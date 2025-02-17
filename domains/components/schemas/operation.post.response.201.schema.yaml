@@ -1,0 +1,110 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  active:
+    type: boolean
+    description: Boolean indicating whether the mailbox is active
+    examples:
+      - true
+  currentSize:
+    type: integer
+    description: The current size of the mailbox measured in bytes
+    examples:
+      - 123456789
+  emailAddress:
+    type: string
+    description: The email address of the mailbox
+    examples:
+      - mailbox@example.com
+  maximumSize:
+    type: integer
+    description: The maximum size of the mailbox measured in bytes
+    examples:
+      - 5368709120
+  spamChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether spam checks are enabled
+    examples:
+      - true
+  suspended:
+    type: boolean
+    description: Boolean indicating whether the mailbox is suspended
+    examples:
+      - false
+  virusChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether virus checks are enabled
+    examples:
+      - false
+  localDelivery:
+    type: boolean
+    description: >-
+      Boolean indicating whether email to be stored as a local copy when there
+      is a forward
+    examples:
+      - true
+  _embedded:
+    type: object
+    description: Optional object containing embedded resources for the mailbox
+    properties:
+      autoResponder:
+        type: object
+        description: >-
+          Object that is present when the mailbox has an auto responder
+          configured
+        properties:
+          _links:
+            type: object
+            description: Links to related resource locations
+            properties:
+              self:
+                type: object
+                description: Link to the auto responder
+                properties:
+                  href:
+                    type: string
+                    description: Hyperlink to the auto responder's location
+                    examples:
+                      - >-
+                        /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+  _links:
+    type: object
+    description: Links to related resource locations
+    properties:
+      self:
+        type: object
+        description: Link to the mailbox
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the mailbox's location
+            examples:
+              - /domains/example.com/mailboxes/mailbox%40example.com
+      collection:
+        type: object
+        description: Link to the mailbox collection
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the mailbox collection location
+            examples:
+              - /domains/example.com/mailboxes
+      autoResponder:
+        type: object
+        description: Optional link to the mailbox's auto responder
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the auto responder's location
+            examples:
+              - >-
+                /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+      forwards:
+        type: object
+        description: Link to the forward collection of the mailbox
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the forward collection location
+            examples:
+              - /domains/example.com/mailboxes/mailbox%40example.com/forwards
+type: object

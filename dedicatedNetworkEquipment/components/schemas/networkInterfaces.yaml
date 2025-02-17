@@ -1,0 +1,10 @@
+title: networkInterfaces
+type: object
+description: Network interface information grouped by type
+properties:
+  public:
+    $ref: ./networkInterface.yaml
+  internal:
+    $ref: ./networkInterface.yaml
+  remoteManagement:
+    $ref: ./networkInterface.yaml

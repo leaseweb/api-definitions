@@ -1,0 +1,12 @@
+properties:
+  content:
+    type: string
+    description: Dns bind file content as string
+    example:
+      - >-
+        $ORIGIN example.com. \r\n$TTL 86400
+        \r\n\tIN\tMX\t10\tmail.example.com.      
+        \r\n\r\n\t\r\ndns1\tIN\tA\t10.0.1.1
+required:
+  - content
+type: object

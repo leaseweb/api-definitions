@@ -1,0 +1,77 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+post:
+  description: >-
+    This endpoint may be used to validate whether a resource record set is
+    valid, without actually creating it.
+  operationId: validateResourceRecordSet
+  requestBody:
+    content:
+      application/json - Validate resource with content:
+        schema:
+          $ref: ../components/schemas/resourceRecordSet.yaml
+        example:
+          content:
+            - 85.17.150.51
+            - 85.17.150.52
+            - 85.17.150.53
+          name: example.com.
+          ttl: 3600
+          type: A
+      application/json - Validate resource with geo content:
+        schema:
+          $ref: ../components/schemas/ldResourceRecordSet.yaml
+        example:
+          geoContent:
+            closestLocation:
+              - 1.2.3.4
+              - 5.6.7.8
+          name: geo-10.example.com.
+          ttl: 3600
+          type: A+GEO
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            infoMessage: Resource record set is valid.
+          schema:
+            $ref: ../components/schemas/infoMessageResult.yaml
+    '400':
+      $ref: ../components/responses/4001.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Validate a resource record set
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets_validateSet/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets_validateSet/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets_validateSet/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets_validateSet/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets_validateSet/postundefined

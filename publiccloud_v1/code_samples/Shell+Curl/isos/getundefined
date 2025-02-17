@@ -1,3 +1,0 @@
-curl --request GET \
-  --url https://api.leaseweb.com/publicCloud/v1/isos \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

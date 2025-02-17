@@ -1,0 +1,11 @@
+title: rackType
+description: rack type
+type: string
+enum:
+  - SHARED
+  - DEDICATED
+  - SHARED_10GE
+  - SHARED_40GE
+  - SHARED_100GE
+  - SHARED_200GE
+  - SHARED_400GE

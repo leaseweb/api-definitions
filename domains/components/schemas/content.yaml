@@ -1,0 +1,7 @@
+title: resourceRecordSetContent
+type: array
+description: Array of resource record set content entries
+items:
+  type: string
+  description: Content entries for the resource record set
+  example: 85.17.150.50

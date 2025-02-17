@@ -1,0 +1,3 @@
+curl --request POST \
+  --url https://api.leaseweb.com/publicCloud/v1/vps/999999999/ips/10.0.0.1/unnull \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

@@ -1,0 +1,33 @@
+description: >-
+  Validation failed. Check the error message and error details for more
+  information.
+content:
+  application/json:
+    example:
+      value:
+        errorMessage: Validation failed.
+        userMessage: Your data contains errors, please check the details.
+        errorDetails:
+          field1:
+            - This value should not be blank
+          field2:
+            - This field should be of type integer.
+    schema:
+      $schema: http://json-schema.org/draft-04/schema#
+      type: object
+      properties:
+        errorMessage:
+          type: string
+        userMessage:
+          type: string
+        errorDetails:
+          type: object
+          properties:
+            field1:
+              type: array
+              items:
+                type: string
+            field2:
+              type: array
+              items:
+                type: string

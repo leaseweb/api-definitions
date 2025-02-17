@@ -1,0 +1,11 @@
+description: Internal Server Error.
+content:
+  application/json:
+    example:
+      correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+      errorCode: '500'
+      errorMessage: >-
+        The server encountered an unexpected condition that prevented it from
+        fulfilling the request.
+    schema:
+      $ref: ../schemas/errorResponse.yaml

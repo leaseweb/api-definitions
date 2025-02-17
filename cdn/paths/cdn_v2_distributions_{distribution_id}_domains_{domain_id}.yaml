@@ -1,0 +1,140 @@
+get:
+  tags:
+    - Domain
+    - CDN | title
+  summary: Get Domain By Id
+  description: Get the details of a custom domain attached to a dsitribution.
+  operationId: get_domain_by_id_v1_distributions__distribution_id__domains__domain_id__get
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+    - name: domain_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Domain Id
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Domain.yaml
+          examples:
+            Custom Domain:
+              value:
+                domain: test2.com
+                id: test2.com
+                distributionId: di-yt84vrj
+                created: '2024-07-31T02:15:32'
+                updated: '2024-08-04T23:24:29'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/getundefined
+delete:
+  tags:
+    - Domain
+    - CDN | title
+  summary: Delete Domain By Id
+  operationId: >-
+    delete_domain_by_id_v1_distributions__distribution_id__domains__domain_id__delete
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+    - name: domain_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Domain Id
+  responses:
+    '204':
+      description: Successful Response
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/deleteundefined

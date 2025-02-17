@@ -1,0 +1,9 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  servers:
+    description: An array of servers
+    items:
+      $ref: ./server.yaml
+    type: array
+type: object

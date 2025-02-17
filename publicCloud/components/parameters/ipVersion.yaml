@@ -1,0 +1,9 @@
+name: version
+required: false
+schema:
+  type: integer
+  enum:
+    - 4
+    - 6
+  description: Ip version
+in: query

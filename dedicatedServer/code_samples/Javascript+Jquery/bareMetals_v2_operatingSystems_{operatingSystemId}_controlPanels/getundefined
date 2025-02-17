@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/bareMetals/v2/operatingSystems/UBUNTU_22_04_64BIT/controlPanels?limit=20&offset=10&operatingSystemId=SOME_STRING_VALUE",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

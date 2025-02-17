@@ -1,0 +1,6 @@
+properties:
+  metrics:
+    $ref: ./metricsProperties.yaml
+  _metadata:
+    $ref: ./metricsMetadataProperties.yaml
+type: object

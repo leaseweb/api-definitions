@@ -1,0 +1,385 @@
+get:
+  description: ''
+  operationId: domains-get
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - name: type
+      in: query
+      schema:
+        type: string
+        enum:
+          - dns
+          - email
+          - overview
+        example: overview
+      description: Supplement the domain listing with statistics about either DNS and Email
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema.yaml
+          examples:
+            example:
+              value:
+                domains:
+                  - domainName: example.com
+                    suspended: true
+                    dnsOnly: false
+                    status: SUSPENDED
+                    contractStartDate: '2017-04-01T00:00:00+02:00'
+                    contractEndDate: '2018-04-01T00:00:00+02:00'
+                    _links:
+                      self:
+                        href: /domains/example.com
+                      collection:
+                        href: /domains
+                      catchAll:
+                        href: /domains/example.com/catchAll
+                      contacts:
+                        href: /domains/example.com/contacts
+                      nameservers:
+                        href: /domains/example.com/nameservers
+                      emailAliases:
+                        href: /domains/example.com/emailAliases
+                      forwards:
+                        href: /domains/example.com/forwards
+                      mailboxes:
+                        href: /domains/example.com/mailboxes
+                      resourceRecordSets:
+                        href: /domains/example.com/resourceRecordSets
+                      validateZone:
+                        href: /domains/example.com/validateZone
+                  - domainName: example.org
+                    suspended: false
+                    dnsOnly: true
+                    status: ACTIVE
+                    contractStartDate: '2015-01-01T00:00:00+00:00'
+                    _links:
+                      self:
+                        href: /domains/example.org
+                      collection:
+                        href: /domains
+                      catchAll:
+                        href: /domains/example.org/catchAll
+                      contacts:
+                        href: /domains/example.com/contacts
+                      nameservers:
+                        href: /domains/example.com/nameservers
+                      emailAliases:
+                        href: /domains/example.org/emailAliases
+                      forwards:
+                        href: /domains/example.org/forwards
+                      mailboxes:
+                        href: /domains/example.org/mailboxes
+                      resourceRecordSets:
+                        href: /domains/example.org/resourceRecordSets
+                      validateZone:
+                        href: /domains/example.org/validateZone
+                  - domainName: example.nl
+                    suspended: false
+                    dnsOnly: false
+                    status: PENDING
+                    contractStartDate: '2017-08-01T00:00:00+02:00'
+                    contractEndDate: '2019-08-01T00:00:00+02:00'
+                    _links:
+                      self:
+                        href: /domains/example.nl
+                      collection:
+                        href: /domains
+                      catchAll:
+                        href: /domains/example.nl/catchAll
+                      contacts:
+                        href: /domains/example.com/contacts
+                      nameservers:
+                        href: /domains/example.com/nameservers
+                      emailAliases:
+                        href: /domains/example.nl/emailAliases
+                      forwards:
+                        href: /domains/example.nl/forwards
+                      mailboxes:
+                        href: /domains/example.nl/mailboxes
+                      resourceRecordSets:
+                        href: /domains/example.nl/resourceRecordSets
+                      validateZone:
+                        href: /domains/example.nl/validateZone
+                  - domainName: no-email-services-configured.com
+                    suspended: true
+                    dnsOnly: false
+                    status: SUSPENDED
+                    contractStartDate: '2012-11-01T00:00:00+01:00'
+                    _links:
+                      self:
+                        href: /domains/no-email-services-configured.com
+                      collection:
+                        href: /domains
+                      catchAll:
+                        href: /domains/no-email-services-configured.com/catchAll
+                      contacts:
+                        href: /domains/example.com/contacts
+                      nameservers:
+                        href: /domains/example.com/nameservers
+                      emailAliases:
+                        href: /domains/no-email-services-configured.com/emailAliases
+                      forwards:
+                        href: /domains/no-email-services-configured.com/forwards
+                      mailboxes:
+                        href: /domains/no-email-services-configured.com/mailboxes
+                      resourceRecordSets:
+                        href: >-
+                          /domains/no-email-services-configured.com/resourceRecordSets
+                      validateZone:
+                        href: /domains/no-email-services-configured.com/validateZone
+                _links:
+                  self:
+                    href: /domains
+                  dns:
+                    href: /domains?type=dns
+                  email:
+                    href: /domains?type=email
+                _metadata:
+                  totalCount: 4
+                  limit: 10
+                  offset: 0
+        type/dns:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-dns.yaml
+          examples:
+            example:
+              value:
+                domains:
+                  - domainName: example.com
+                    suspended: true
+                    dnsOnly: false
+                    contractStartDate: '2017-04-01T00:00:00+02:00'
+                    contractEndDate: '2018-04-01T00:00:00+02:00'
+                    _links:
+                      self:
+                        href: /domains/example.com
+                      collection:
+                        href: /domains
+                      resourceRecordSets:
+                        href: /domains/example.com/resourceRecordSets
+                      validateZone:
+                        href: /domains/example.com/validateZone
+                  - domainName: example.org
+                    suspended: false
+                    dnsOnly: true
+                    contractStartDate: '2015-01-01T00:00:00+00:00'
+                    _links:
+                      self:
+                        href: /domains/example.org
+                      collection:
+                        href: /domains
+                      resourceRecordSets:
+                        href: /domains/example.org/resourceRecordSets
+                      validateZone:
+                        href: /domains/example.org/validateZone
+                  - domainName: example.nl
+                    suspended: false
+                    dnsOnly: false
+                    contractStartDate: '2017-08-01T00:00:00+02:00'
+                    contractEndDate: '2019-08-01T00:00:00+02:00'
+                    _links:
+                      self:
+                        href: /domains/example.nl
+                      collection:
+                        href: /domains
+                      resourceRecordSets:
+                        href: /domains/example.nl/resourceRecordSets
+                      validateZone:
+                        href: /domains/example.nl/validateZone
+                  - domainName: no-email-services-configured.com
+                    suspended: true
+                    dnsOnly: false
+                    contractStartDate: '2012-11-01T00:00:00+01:00'
+                    _links:
+                      self:
+                        href: /domains/no-email-services-configured.com
+                      collection:
+                        href: /domains
+                      resourceRecordSets:
+                        href: >-
+                          /domains/no-email-services-configured.com/resourceRecordSets
+                      validateZone:
+                        href: /domains/no-email-services-configured.com/validateZone
+                _links:
+                  self:
+                    href: /domains?type=dns
+                _metadata:
+                  totalCount: 4
+                  limit: 10
+                  offset: 0
+        type/email:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-email.yaml
+          examples:
+            example:
+              value:
+                domains:
+                  - domainName: example.com
+                    suspended: true
+                    dnsOnly: false
+                    contractStartDate: '2017-04-01T00:00:00+02:00'
+                    contractEndDate: '2018-04-01T00:00:00+02:00'
+                    numberOfAutoResponders: 4
+                    numberOfEmailAliases: 25
+                    numberOfForwards: 11
+                    numberOfMailboxes: 5
+                    _embedded:
+                      catchAll:
+                        _links:
+                          self:
+                            href: /domains/example.com/catchAll
+                    _links:
+                      self:
+                        href: /domains/example.com
+                      collection:
+                        href: /domains
+                      catchAll:
+                        href: /domains/example.com/catchAll
+                      emailAliases:
+                        href: /domains/example.com/emailAliases
+                      forwards:
+                        href: /domains/example.com/forwards
+                      mailboxes:
+                        href: /domains/example.com/mailboxes
+                  - domainName: example.org
+                    suspended: false
+                    dnsOnly: true
+                    contractStartDate: '2015-01-01T00:00:00+00:00'
+                    numberOfAutoResponders: 12
+                    numberOfEmailAliases: 32
+                    numberOfForwards: 41
+                    numberOfMailboxes: 105
+                    _links:
+                      self:
+                        href: /domains/example.org
+                      collection:
+                        href: /domains
+                      catchAll:
+                        href: /domains/example.org/catchAll
+                      emailAliases:
+                        href: /domains/example.org/emailAliases
+                      forwards:
+                        href: /domains/example.org/forwards
+                      mailboxes:
+                        href: /domains/example.org/mailboxes
+                  - domainName: example.nl
+                    suspended: false
+                    dnsOnly: false
+                    contractStartDate: '2017-08-01T00:00:00+02:00'
+                    contractEndDate: '2019-08-01T00:00:00+02:00'
+                    numberOfAutoResponders: 2
+                    numberOfEmailAliases: 7
+                    numberOfForwards: 38
+                    numberOfMailboxes: 51
+                    _embedded:
+                      catchAll:
+                        _links:
+                          self:
+                            href: /domains/example.nl/catchAll
+                    _links:
+                      self:
+                        href: /domains/example.nl
+                      collection:
+                        href: /domains
+                      catchAll:
+                        href: /domains/example.nl/catchAll
+                      emailAliases:
+                        href: /domains/example.nl/emailAliases
+                      forwards:
+                        href: /domains/example.nl/forwards
+                      mailboxes:
+                        href: /domains/example.nl/mailboxes
+                  - domainName: no-email-services-configured.com
+                    suspended: true
+                    dnsOnly: false
+                    contractStartDate: '2012-11-01T00:00:00+01:00'
+                    numberOfAutoResponders: 0
+                    numberOfEmailAliases: 0
+                    numberOfForwards: 0
+                    numberOfMailboxes: 0
+                    _links:
+                      self:
+                        href: /domains/no-email-services-configured.com
+                      collection:
+                        href: /domains
+                      catchAll:
+                        href: /domains/no-email-services-configured.com/catchAll
+                      emailAliases:
+                        href: /domains/no-email-services-configured.com/emailAliases
+                      forwards:
+                        href: /domains/no-email-services-configured.com/forwards
+                      mailboxes:
+                        href: /domains/no-email-services-configured.com/mailboxes
+                _links:
+                  self:
+                    href: /domains?type=email
+                _metadata:
+                  totalCount: 4
+                  limit: 10
+                  offset: 0
+        type/overview:
+          schema:
+            $ref: >-
+              ../components/schemas/operation.get.response.200.schema-overview.yaml
+          examples:
+            example:
+              value:
+                domains:
+                  - domainName: domain.com
+                    status: ACTIVE
+                    suspended: false
+                    dnsOnly: false
+                    contractStartDate: '2009-06-01T00:00:00+00:00'
+                    webhostingContractOnly: false
+                    hasWebhosting: true
+                    _links:
+                      self:
+                        href: /domains/domain.com
+                      collection:
+                        href: /domains
+                      resourceRecordSets:
+                        href: /domains/domain.com/resourceRecordSets
+                      validateZone:
+                        href: /domains/domain.com/validateZone
+                _links:
+                  self:
+                    href: /domains?type=overview
+                _metadata:
+                  limit: 1
+                  offset: 0
+                  totalCount: 1
+                  allowedMailboxes: 0
+      headers: {}
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List domains
+  tags:
+    - Domains
+    - Domains | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/hosting_v2_domains/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/hosting_v2_domains/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/hosting_v2_domains/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/hosting_v2_domains/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/hosting_v2_domains/getundefined

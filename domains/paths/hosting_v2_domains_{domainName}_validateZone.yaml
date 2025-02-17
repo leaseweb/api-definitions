@@ -1,0 +1,127 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+post:
+  description: >
+    This endpoint may be used to validate whether a collection of resource
+    record sets constitute a valid zone, without creating them.
+  operationId: validateZone
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/resultRecordSets.yaml
+        example:
+          resourceRecordSets:
+            - name: example.com.
+              type: A
+              content:
+                - 85.17.150.50
+                - 85.17.150.50
+                - 85.17.150.53
+              ttl: 300
+            - name: '*.example.com.'
+              type: A
+              content:
+                - 85.17.150.54
+              ttl: 86400
+            - name: example.com.
+              type: AAAA
+              content:
+                - 2a02:2770:8:0:216:3eff:fead:8c93
+              ttl: 28800
+            - name: some.example.com.
+              type: AAAA
+              content:
+                - 2a02:2770:8:0:216:3eff:fead:8c93
+              ttl: 60
+            - name: example.com.
+              type: CAA
+              content:
+                - 0 issue "comodoca.com"
+              ttl: 300
+            - name: anotherurl.example.com.
+              type: CNAME
+              content:
+                - example.com.
+              ttl: 86400
+            - name: example.com.
+              type: MX
+              content:
+                - 10 mail.example.com.
+                - 20 mailfilter.leaseweb.com.
+              ttl: 3600
+            - name: subdomain.example.com.
+              type: NS
+              content:
+                - other.nameserver.com
+                - yet-another.nameserver.com
+              ttl: 3600
+            - name: _service._protocol.example.com.
+              type: SRV
+              content:
+                - 10 5 5060 sipserver.example.com.
+              ttl: 14400
+            - name: example.com.
+              type: TXT
+              content:
+                - '"google-site-verification=Kkalsdhl8a9792342lksdo9bSER233"'
+                - '"v=spf1 a mx -all"'
+              ttl: 3600
+            - name: another.example.com.
+              type: SOA
+              ttl: 3600
+              content:
+                - example.com
+            - name: ds.example.com.
+              type: DS
+              content:
+                - >-
+                  63708 13 2
+                  ce46cb792d263081fe23c7245a1ccce4d59e3e501db22932edf59d858c03fd6e
+              ttl: 14400
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/validateZoneResult.yaml
+          example:
+            infoMessage: Zone example.com is valid.
+    '400':
+      $ref: ../components/responses/4001.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Validate zone
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_validateZone/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_validateZone/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_validateZone/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_validateZone/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_validateZone/postundefined

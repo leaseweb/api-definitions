@@ -1,0 +1,21 @@
+title: loadBalancerListener
+type: object
+properties:
+  protocol:
+    $ref: ./protocol.yaml
+  port:
+    type: integer
+    description: Port for the listener
+  id:
+    type: string
+    format: uuid
+    description: The listener unique identifier
+  rules:
+    type: array
+    items:
+      $ref: ./loadBalancerListenerRule.yaml
+required:
+  - protocol
+  - port
+  - id
+  - rules

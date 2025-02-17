@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"automatedUnnullingAt":"2015-06-25T11:13:00Z","comment":"This IP is evil","ticketId":"188612"}');
+
+$request->setRequestUrl('https://api.leaseweb.com/ipMgmt/v2/nullRoutes/23234');
+$request->setRequestMethod('PUT');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

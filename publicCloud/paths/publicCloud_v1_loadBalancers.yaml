@@ -1,0 +1,296 @@
+post:
+  description: >-
+    Launch a Load balancer. 
+
+
+    Available regions can be obtained using `/v1/regions`.
+
+
+    Available load balancer types for your region can be obtained using
+    `/v1/loadBalancerTypes`.
+  operationId: launchLoadBalancer
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/launchLoadBalancerOpts.yaml
+        example:
+          billingFrequency: 1
+          contractTerm: 0
+          contractType: HOURLY
+          reference: my-loadbalancer-1
+          region: eu-west-3
+          type: lsw.m3.large
+  responses:
+    '201':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/loadBalancerDetails.yaml
+          example:
+            privateNetwork: null
+            id: 32082a93-d1e2-4bc0-8f5e-8fe4312b0844
+            type: lsw.m3.large
+            resources:
+              cpu:
+                value: 2
+                unit: vCPU
+              memory:
+                value: 7
+                unit: GiB
+              publicNetworkSpeed:
+                value: 1
+                unit: Gbps
+              privateNetworkSpeed:
+                value: 100
+                unit: Mbps
+            autoScalingGroup: null
+            region: eu-west-3
+            reference: my-loadbalancer1
+            state: RUNNING
+            ips:
+              - ip: 85.99.99.99
+                prefixLength: '28'
+                version: 4
+                nullRouted: false
+                reverseLookup: null
+                mainIp: false
+                networkType: PUBLIC
+                ddos:
+                  detectionProfile: STANDARD_DEFAULT
+                  protectionType: STANDARD
+            startedAt: '2024-04-09T15:11:37+00:00'
+            contract:
+              billingFrequency: 1
+              term: 0
+              type: HOURLY
+              endsAt: null
+              renewalsAt: '2024-04-09T15:28:28+00:00'
+              createdAt: '2024-04-09T15:11:21+00:00'
+              state: ACTIVE
+            configuration:
+              stickySession: null
+              balance: roundrobin
+              xForwardedFor: false
+              idleTimeOut: 60
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Launch Load balancer
+  tags:
+    - Load Balancer
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/publicCloud_v1_loadBalancers/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/publicCloud_v1_loadBalancers/postundefined
+get:
+  description: List and filter load balancers
+  operationId: getLoadBalancerList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - name: ip
+      required: false
+      in: query
+      schema:
+        type: string
+        format: ip
+      example: 10.0.0.1
+    - name: reference
+      required: false
+      in: query
+      schema:
+        type: string
+      example: my-lb
+    - name: id
+      required: false
+      in: query
+      schema:
+        type: string
+        format: uuid
+      example: a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11
+    - name: contractState
+      required: false
+      in: query
+      schema:
+        type: string
+        enum:
+          - ACTIVE
+          - DELETE_SCHEDULED
+    - name: contractType
+      required: false
+      in: query
+      schema:
+        type: string
+        enum:
+          - HOURLY
+          - MONTHLY
+      example: HOURLY
+    - name: state
+      required: false
+      in: query
+      schema:
+        type: string
+        enum:
+          - RUNNING
+          - STARTING
+          - STOPPED
+          - STOPPING
+          - CREATING
+          - DESTROYED
+          - DESTROYING
+      example: RUNNING
+    - name: region
+      required: false
+      in: query
+      schema:
+        title: regionName
+        description: region name
+        type: string
+        enum:
+          - eu-west-3
+          - us-east-1
+          - eu-central-1
+          - ap-southeast-1
+          - us-west-1
+          - eu-west-2
+          - ca-central-1
+          - ap-northeast-1
+      example: eu-west-3
+      description: Available regions can be found using the List Regions endpoint.
+    - name: type
+      required: false
+      in: query
+      schema:
+        type: string
+      example: lsw.c3.xlarge
+      description: >-
+        Available load balancer types can be found using the List Load Balancer
+        Types endpoint.
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 1
+              limit: 20
+              offset: 0
+            loadBalancers:
+              - privateNetwork: null
+                id: 5fd135a9-3ff6-4794-8b92-8cd8747a3ea3
+                type: lsw.c3.4xlarge
+                resources:
+                  cpu:
+                    value: 16
+                    unit: vCPU
+                  memory:
+                    value: 30
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                region: eu-west-3
+                reference: my-load-balancer
+                state: RUNNING
+                rootDiskSize: 10
+                ips:
+                  - ip: 85.99.99.99
+                    prefixLength: '28'
+                    version: 4
+                    nullRouted: false
+                    reverseLookup: null
+                    networkType: PUBLIC
+                    mainIp: false
+                startedAt: '2024-04-09T15:11:37+00:00'
+                contract:
+                  billingFrequency: 1
+                  term: 0
+                  type: HOURLY
+                  endsAt: null
+                  renewalsAt: '2024-04-09T15:28:28+00:00'
+                  createdAt: '2024-04-09T15:11:21+00:00'
+                  state: ACTIVE
+                configuration:
+                  stickySession:
+                    enabled: true
+                    maxLifeTime: 1000
+                  balance: roundrobin
+                  xForwardedFor: false
+                  idleTimeOut: 60
+                autoScalingGroup:
+                  id: 8714e190-8ca1-49cf-8594-0d019deff809
+                  type: MANUAL
+                  state: ACTIVE
+                  desiredAmount: 1
+                  region: eu-west-3
+                  reference: ono
+                  createdAt: '2024-06-14T09:12:08+00:00'
+                  updatedAt: '2024-06-14T09:12:08+00:00'
+                  startsAt: null
+                  endsAt: null
+                  minimumAmount: null
+                  maximumAmount: null
+                  cpuThreshold: null
+                  warmupTime: null
+                  cooldownTime: null
+          schema:
+            $ref: ../components/schemas/getLoadBalancerListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get load balancer list
+  tags:
+    - Load Balancer
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/publicCloud_v1_loadBalancers/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/publicCloud_v1_loadBalancers/getundefined

@@ -1,0 +1,17 @@
+properties:
+  ip:
+    description: The IP address for this DHCP reservation
+    type: string
+  mac:
+    description: The Mac address for this DHCP reservation
+    type: string
+  sticky:
+    description: >-
+      If false, this DHCP reservation will be automatically removed if not used
+      for a longer period
+    type: boolean
+required:
+  - ip
+  - mac
+  - sticky
+type: object

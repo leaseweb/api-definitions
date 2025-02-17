@@ -1,0 +1,25 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://api.leaseweb.com/cdn/v2/statistics/reseller?fromDt=SOME_STRING_VALUE&toDt=SOME_STRING_VALUE&metric=SOME_STRING_VALUE&distributionId=SOME_STRING_VALUE&groupBy=SOME_STRING_VALUE&granularity=SOME_STRING_VALUE"
+
+	req, _ := http.NewRequest("GET", url, nil)
+
+	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(res)
+	fmt.Println(string(body))
+
+}

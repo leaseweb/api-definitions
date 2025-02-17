@@ -1,0 +1,26 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  domainName:
+    type: string
+    description: The domain name
+    examples:
+      - example.com
+  available:
+    type: boolean
+    description: Boolean indicating whether the domain is available
+    examples:
+      - true
+  _links:
+    type: object
+    description: Links to related resource locations
+    properties:
+      self:
+        type: object
+        description: Link to check domain availability
+        properties:
+          href:
+            type: string
+            description: Hyperlink to check domain availability
+            examples:
+              - /domains/example.com/available
+type: object

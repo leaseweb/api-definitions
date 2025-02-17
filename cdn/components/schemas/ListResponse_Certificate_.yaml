@@ -1,0 +1,13 @@
+type: object
+title: ListResponse[Certificate]
+properties:
+  certificates:
+    type: array
+    title: Certificates
+    items:
+      $ref: ./Certificate.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - certificates
+  - _metadata

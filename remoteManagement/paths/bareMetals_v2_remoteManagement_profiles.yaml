@@ -1,0 +1,126 @@
+get:
+  operationId: get/remoteManagement/profiles
+  summary: List OpenVPN profiles
+  description: |-
+    These profiles are used to establish a OpenVPN connection to a data center
+    which will give you access to the IPMI interface of your dedicated server.
+    Access to this interface allows a user to remotely administer the server in
+    case it is not reachable.
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            properties:
+              _metadata:
+                type: object
+                description: Metadata about the collection
+                properties:
+                  limit:
+                    type: integer
+                    description: The maximum number of results returned
+                    default: 20
+                  offset:
+                    type: integer
+                    description: Results are returned started at the given offset
+                    default: 0
+                  totalCount:
+                    type: integer
+                    description: The total amount of results
+              profiles:
+                type: array
+                description: An array of OpenVPN profiles available for download
+                items:
+                  type: object
+                  description: A single OpenVPN profile
+                  properties:
+                    datacenter:
+                      type: string
+                      description: The datacenter code this profile is for
+                    satelliteDatacenters:
+                      type: array
+                      description: All datacenters from config
+                    file:
+                      type: string
+                      description: >-
+                        The location where this OpenVPN profile can be
+                        downloaded
+          examples:
+            example:
+              value:
+                _metadata:
+                  limit: 10
+                  offset: 0
+                  totalCount: 1
+                profiles:
+                  - datacenter: AMS-01
+                    satelliteDatacenters:
+                      - AMS-10
+                      - AMS-11
+                      - AMS-12
+                    file: >-
+                      https://api.leaseweb.com/bareMetals/v2/remoteManagement/profiles/lsw-rmvpn-AMS-01.ovpn
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Remote management
+    - Remote Management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_remoteManagement_profiles/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_remoteManagement_profiles/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_remoteManagement_profiles/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_remoteManagement_profiles/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_remoteManagement_profiles/getundefined

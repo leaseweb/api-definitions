@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/hosting/v2/domains/example.com/mailboxes/%7BemailAddress%7D/autoResponder",
+  "method": "PUT",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"active\":true,\"body\":\"I will be out of office until 14-12-2020. Please contact the reception desk for urgent matters.\",\"subject\":\"Out of office\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

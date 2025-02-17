@@ -1,0 +1,10 @@
+type: string
+enum:
+  - ACTIVE
+  - CREATING
+  - CREATED
+  - DESTROYED
+  - DESTROYING
+  - SCALING
+  - UPDATING
+description: The Auto Scaling Group's current state.

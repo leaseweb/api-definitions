@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/cdn/v2/origins/%7Borigin_id%7D \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"resourceType":"string","data":[{"key":"string","value":null}]}'

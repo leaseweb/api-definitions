@@ -1,0 +1,259 @@
+get:
+  tags:
+    - Distribution
+    - CDN | title
+  summary: Get Distribution By Id
+  description: Get the general details of a distribution by its ID.
+  operationId: get_distribution_by_id_v1_distributions__distribution_id__get
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Resource.yaml
+          examples:
+            Volume Distribution:
+              value:
+                resourceType: DISTRIBUTION_VOLUME
+                data:
+                  - key: description
+                    value: Test Volume Distribution
+                  - key: enabled
+                    value: true
+                  - key: ipv6
+                    value: false
+                  - key: tls
+                    value: false
+                  - key: tlsType
+                    value: null
+                  - key: certificateId
+                    value: null
+                  - key: logging
+                    value: false
+                  - key: id
+                    value: di-6wnk5n2b
+                  - key: customerId
+                    value: cu-27h4kb2v
+                  - key: created
+                    value: '2024-08-07T10:25:00'
+                  - key: updated
+                    value: null
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}/getundefined
+put:
+  tags:
+    - Distribution
+    - CDN | title
+  summary: Update Distribution By Id
+  operationId: update_distribution_by_id_v1_distributions__distribution_id__put
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Resource.yaml
+        examples:
+          Update Distribution:
+            value:
+              resourceType: DISTRIBUTION_VOLUME
+              data:
+                - key: description
+                  value: Test Volume Distribution 2
+                - key: enabled
+                  value: true
+                - key: ipv6
+                  value: false
+                - key: tls
+                  value: false
+                - key: tlsType
+                  value: null
+                - key: certificateId
+                  value: null
+                - key: logging
+                  value: false
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Resource.yaml
+          examples:
+            Updated Distribution:
+              value:
+                resourceType: DISTRIBUTION_VOLUME
+                data:
+                  - key: description
+                    value: Test Volume Distribution 2
+                  - key: enabled
+                    value: true
+                  - key: ipv6
+                    value: false
+                  - key: tls
+                    value: false
+                  - key: tlsType
+                    value: null
+                  - key: certificateId
+                    value: null
+                  - key: logging
+                    value: false
+                  - key: id
+                    value: di-6wnk5n2b
+                  - key: customerId
+                    value: cu-27h4kb2v
+                  - key: created
+                    value: '2024-08-07T10:25:00'
+                  - key: updated
+                    value: '2024-08-07T10:25:00'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}/putundefined
+delete:
+  tags:
+    - Distribution
+    - CDN | title
+  summary: Delete Distribution By Id
+  operationId: delete_distribution_by_id_v1_distributions__distribution_id__delete
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+  responses:
+    '204':
+      description: Successful Response
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}/deleteundefined

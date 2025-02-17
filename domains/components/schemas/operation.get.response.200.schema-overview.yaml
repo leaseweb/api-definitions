@@ -1,0 +1,107 @@
+description: ''
+properties:
+  domains:
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      required:
+        - domainName
+        - status
+        - suspended
+        - dnsOnly
+        - contractStartDate
+        - webhostingContractOnly
+        - hasWebhosting
+      properties:
+        domainName:
+          type: string
+          minLength: 1
+        status:
+          type: string
+          minLength: 1
+        suspended:
+          type: boolean
+        dnsOnly:
+          type: boolean
+        contractStartDate:
+          type: string
+          minLength: 1
+        webhostingContractOnly:
+          type: boolean
+        hasWebhosting:
+          type: boolean
+        _links:
+          type: object
+          properties:
+            self:
+              type: object
+              properties:
+                href:
+                  type: string
+                  minLength: 1
+              required:
+                - href
+            collection:
+              type: object
+              properties:
+                href:
+                  type: string
+                  minLength: 1
+              required:
+                - href
+            resourceRecordSets:
+              type: object
+              properties:
+                href:
+                  type: string
+                  minLength: 1
+              required:
+                - href
+            validateZone:
+              type: object
+              properties:
+                href:
+                  type: string
+                  minLength: 1
+              required:
+                - href
+          required:
+            - self
+            - collection
+            - resourceRecordSets
+            - validateZone
+  _links:
+    type: object
+    properties:
+      self:
+        type: object
+        properties:
+          href:
+            type: string
+            minLength: 1
+        required:
+          - href
+    required:
+      - self
+  _metadata:
+    type: object
+    properties:
+      limit:
+        type: number
+      offset:
+        type: number
+      totalCount:
+        type: number
+      allowedMailboxes:
+        type: number
+    required:
+      - limit
+      - offset
+      - totalCount
+      - allowedMailboxes
+required:
+  - domains
+  - _links
+  - _metadata
+type: object

@@ -1,0 +1,6 @@
+properties:
+  linkSpeed:
+    $ref: ./linkSpeed.yaml
+required:
+  - linkSpeed
+type: object

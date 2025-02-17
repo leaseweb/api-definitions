@@ -1,0 +1,83 @@
+get:
+  description: >
+    List your Aggregation Packs. This api call supports pagination. Use the
+
+    `limit` and `offset` query string parameters to paginate through all your
+
+    aggregation packs.
+
+
+    Every `aggregation pack` object in the json response lists a few properties
+    of a aggregation pack.
+
+    Use the single resource api call to get more details for a single
+    aggregation pack.
+  operationId: getAggregationPackList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 2
+              offset: 0
+              totalCount: 10
+            connectContractItems:
+              - id: '123456'
+                customerId: '1234'
+                salesOrgId: '2000'
+                contractStartDate: '2022-07-01T00:00:00Z'
+                billingType: 95TH
+                connectivityType: BANDWIDTH_POOL
+                contractTerm: 36
+                dataTrafficCommit: 20000
+                dataTrafficCommitUnit: Mbps
+                networkPerformanceType: VOLUME
+                aggregationType: Hybrid
+              - id: '1234567'
+                customerId: '1234'
+                salesOrgId: '2000'
+                contractStartDate: '2021-07-01T00:00:00Z'
+                billingType: 95TH
+                connectivityType: BANDWIDTH_POOL
+                contractTerm: 36
+                dataTrafficCommit: 30000
+                dataTrafficCommitUnit: Mbps
+                networkPerformanceType: VOLUME
+                aggregationType: Hybrid
+          schema:
+            $ref: ../components/schemas/getAggregationPackListResult.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List aggregation packs
+  tags:
+    - Aggregation Packs
+    - Aggregation packs | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/bareMetals_v2_aggregationPacks/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_aggregationPacks/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/bareMetals_v2_aggregationPacks/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_aggregationPacks/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/bareMetals_v2_aggregationPacks/getundefined

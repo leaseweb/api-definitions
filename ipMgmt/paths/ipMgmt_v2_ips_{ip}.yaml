@@ -1,0 +1,122 @@
+get:
+  operationId: inspectIP
+  parameters:
+    - $ref: ../components/parameters/ip.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            ip: 192.0.2.1
+            version: 4
+            type: NORMAL_IP
+            prefixLength: 32
+            primary: true
+            reverseLookup: mydomain1.example.com
+            nullRouted: false
+            nullLevel: null
+            unnullingAllowed: false
+            equipmentId: '1234'
+            assignedContract:
+              id: '5643634'
+            subnet:
+              id: 192.0.2.0_24
+              networkIp: 192.0.2.0
+              prefixLength: 24
+              gateway: 192.0.2.254
+          schema:
+            $ref: ../components/schemas/ip.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Inspect an IP
+  tags:
+    - IPs
+    - IP management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/ipMgmt_v2_ips_{ip}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/ipMgmt_v2_ips_{ip}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/ipMgmt_v2_ips_{ip}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/ipMgmt_v2_ips_{ip}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/ipMgmt_v2_ips_{ip}/getundefined
+put:
+  description: Use this operation to set reverse lookup for IPv4 IP addresses.
+  operationId: updateIP
+  parameters:
+    - $ref: ../components/parameters/ipv4.yaml
+  requestBody:
+    content:
+      application/json:
+        example:
+          reverseLookup: mydomain1.example.com
+        schema:
+          $ref: ../components/schemas/updateIPOpts.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            ip: 192.0.2.1
+            version: 4
+            type: NORMAL_IP
+            prefixLength: 32
+            primary: true
+            reverseLookup: mydomain1.example.com
+            nullRouted: false
+            nullLevel: null
+            unnullingAllowed: false
+            equipmentId: '1234'
+            assignedContract:
+              id: '5643634'
+            subnet:
+              id: 192.0.2.0_24
+              networkIp: 192.0.2.0
+              prefixLength: 24
+              gateway: 192.0.2.254
+          schema:
+            $ref: ../components/schemas/ip.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update an IP
+  tags:
+    - IPs
+    - IP management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/ipMgmt_v2_ips_{ip}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/ipMgmt_v2_ips_{ip}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/ipMgmt_v2_ips_{ip}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/ipMgmt_v2_ips_{ip}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/ipMgmt_v2_ips_{ip}/putundefined

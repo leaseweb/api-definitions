@@ -1,0 +1,76 @@
+get:
+  description: >
+    The server can either be `ON` or `OFF`. Servers can be powered on or off by
+
+    using the respective `/powerOn` and `/powerOff` API calls. In addition
+    servers
+
+    can also be rebooted using the `/powerCycle` API call.
+
+
+    The `pdu` object describes the power status from the power distribution unit
+
+    (PDU) point of view. If your server is connected to multiple PDU ports the
+
+    `status` property will report `on` if at least one PDU port has power.
+
+
+    The `ipmi` object describes the power status by quering the remote
+    management
+
+    interface of your server.
+
+
+    Note that `pdu.status` can report `on` but your server can still be powered
+
+    off if it was shutdown via `IPMI` for example.
+  operationId: getPowerStatus
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            ipmi:
+              status: 'off'
+            pdu:
+              status: 'on'
+          schema:
+            $ref: ../components/schemas/getPowerStatusResult.yaml
+      description: Ok.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Show power status
+  tags:
+    - Power
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_powerInfo/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_powerInfo/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_powerInfo/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_powerInfo/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_powerInfo/getundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml

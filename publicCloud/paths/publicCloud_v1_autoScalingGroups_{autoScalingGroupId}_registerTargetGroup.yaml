@@ -1,0 +1,80 @@
+parameters:
+  - $ref: ../components/parameters/autoScalingGroupId.yaml
+post:
+  description: Associates an auto scaling group with a target group.
+  operationId: registerAutoScalingGroupTargetGroup
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/targetGroupIdOpts.yaml
+        example:
+          targetGroupId: b05917e1-96a4-442a-900c-c41f273d95c9
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/autoScalingGroupDetails.yaml
+          example:
+            cooldownTime: null
+            cpuThreshold: null
+            createdAt: '2024-04-26T09:22:25+00:00'
+            desiredAmount: 2
+            endsAt: null
+            id: fb769dab-3daa-47e4-89ed-06a4b6499176
+            maximumAmount: null
+            minimumAmount: null
+            reference: Manual Auto Scaling Group
+            region: eu-west-3
+            startsAt: null
+            state: ACTIVE
+            targetGroups:
+              - id: c737e9e2-a1b7-4f06-af77-92fc62c0e4bd
+                name: foo
+                protocol: HTTP
+                port: 80
+                healthCheck: null
+                region: eu-west-3
+            type: MANUAL
+            updatedAt: '2024-04-26T09:22:25+00:00'
+            warmupTime: null
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Register Target Group
+  tags:
+    - Auto Scaling Groups
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_registerTargetGroup/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_registerTargetGroup/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_registerTargetGroup/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_registerTargetGroup/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_registerTargetGroup/postundefined

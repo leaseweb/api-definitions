@@ -1,0 +1,13 @@
+type: object
+title: ListResponse[Domain]
+properties:
+  resources:
+    type: array
+    title: Resources
+    items:
+      $ref: ./Domain.yaml
+  _metadata:
+    $ref: ./ListMetadata.yaml
+required:
+  - resources
+  - _metadata

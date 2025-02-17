@@ -1,0 +1,23 @@
+properties:
+  frequency:
+    description: Frequency for the Data Traffic Notification
+    enum:
+      - DAILY
+      - WEEKLY
+      - MONTHLY
+    type: string
+  threshold:
+    description: Threshold Value for the Data Traffic Notification
+    type: string
+  unit:
+    description: Unit for the Data Traffic Notification
+    enum:
+      - MB
+      - GB
+      - TB
+    type: string
+required:
+  - frequency
+  - threshold
+  - unit
+type: object

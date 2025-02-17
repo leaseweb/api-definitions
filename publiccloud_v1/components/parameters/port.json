@@ -1,9 +1,0 @@
-{
-  "name": "port",
-  "required": false,
-  "in": "query",
-  "schema": {
-    "type": "integer"
-  },
-  "example": "80"
-}

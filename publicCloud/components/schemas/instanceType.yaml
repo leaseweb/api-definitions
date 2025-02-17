@@ -1,0 +1,15 @@
+title: instanceType
+required:
+  - name
+  - resources
+  - storageTypes
+  - prices
+properties:
+  name:
+    $ref: ./typeName.yaml
+  resources:
+    $ref: ./resources.yaml
+  storageTypes:
+    $ref: ./storageTypes.yaml
+  prices:
+    $ref: ./prices.yaml

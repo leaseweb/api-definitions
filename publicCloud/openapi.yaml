@@ -1,0 +1,221 @@
+openapi: 3.0.0
+info:
+  title: Public Clouds
+  version: v1
+  description: >-
+    > The base URL for this API is: **https://api.leaseweb.com/publicCloud/v1/**
+
+
+    This API provides ways to launch and manage Public Cloud instances.
+
+
+    <div class="badge">BETA</div> This API is in BETA. Documentation might be
+    incorrect or incomplete. Functionality might change with the final release.>
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    altText: Leaseweb developer documentation
+    backgroundColor: '#5484c6'
+    href: https://developer.leaseweb.com
+    url: https://developer.leaseweb.com/images/logo.png
+servers:
+  - url: https://api.leaseweb.com
+security:
+  - X-LSW-Auth: []
+tags:
+  - description: >
+      The API uses standard HTTP status codes to indicate the success or failure
+      of the API call. The response will be JSON. Most APIs use the following
+      format:
+
+
+      ```json
+
+      {
+          "errorCode": "APP00800",
+          "errorMessage": "The connection with the DB cannot be established.",
+          "correlationId": "550e8400-e29b-41d4-a716-446655440000",
+          "userMessage": "Cannot handle your request at the moment. Please try again later.",
+          "reference": "https://developer.leaseweb.com/errors/APP00800"
+      }
+
+      ```
+    name: Errors
+    x-traitTag: true
+  - description: >
+      Authentication for the APIs is required. To authenticate your call, you
+      will need to sent your API key as `X-LSW-Auth` header.
+
+
+      You can generate API keys in the [Customer
+      Portal](https://secure.leaseweb.com/api-client-management/).
+    name: API Key Authentication
+    x-traitTag: true
+  - name: Regions
+  - name: Instance Types
+  - name: Instances
+  - name: Power
+  - name: Credentials
+  - name: Expenses
+  - name: ISOs
+  - name: Images
+  - name: Target Groups
+  - name: Marketplace Apps
+  - name: Metrics
+  - name: Snapshots
+  - name: IPs
+  - name: Private Networks
+  - name: Load Balancer
+  - name: Security
+  - name: Auto Scaling Groups
+  - name: Reinstall
+paths:
+  /publicCloud/v1/regions:
+    $ref: paths/publicCloud_v1_regions.yaml
+  /publicCloud/v1/instanceTypes:
+    $ref: paths/publicCloud_v1_instanceTypes.yaml
+  /publicCloud/v1/instances:
+    $ref: paths/publicCloud_v1_instances.yaml
+  /publicCloud/v1/instances/{instanceId}:
+    $ref: paths/publicCloud_v1_instances_{instanceId}.yaml
+  /publicCloud/v1/instances/{instanceId}/cancelTermination:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_cancelTermination.yaml
+  /publicCloud/v1/instances/{instanceId}/start:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_start.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/start:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_start.yaml
+  /publicCloud/v1/instances/{instanceId}/stop:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_stop.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/stop:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_stop.yaml
+  /publicCloud/v1/instances/{instanceId}/reboot:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_reboot.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/reboot:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_reboot.yaml
+  /publicCloud/v1/instances/{instanceId}/console:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_console.yaml
+  /publicCloud/v1/instances/{instanceId}/instanceTypesUpdate:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_instanceTypesUpdate.yaml
+  /publicCloud/v1/instances/{instanceId}/credentials:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_credentials.yaml
+  /publicCloud/v1/instances/{instanceId}/credentials/{type}:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_credentials_{type}.yaml
+  /publicCloud/v1/instances/{instanceId}/credentials/{type}/{username}:
+    $ref: >-
+      paths/publicCloud_v1_instances_{instanceId}_credentials_{type}_{username}.yaml
+  /publicCloud/v1/instances/{instanceId}/resetPassword:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_resetPassword.yaml
+  /publicCloud/v1/equipments/{equipmentId}/expenses:
+    $ref: paths/publicCloud_v1_equipments_{equipmentId}_expenses.yaml
+  /publicCloud/v1/isos:
+    $ref: paths/publicCloud_v1_isos.yaml
+  /publicCloud/v1/images:
+    $ref: paths/publicCloud_v1_images.yaml
+  /publicCloud/v1/images/{imageId}:
+    $ref: paths/publicCloud_v1_images_{imageId}.yaml
+  /publicCloud/v1/marketApps:
+    $ref: paths/publicCloud_v1_marketApps.yaml
+  /publicCloud/v1/instances/{instanceId}/attachIso:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_attachIso.yaml
+  /publicCloud/v1/instances/{instanceId}/detachIso:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_detachIso.yaml
+  /publicCloud/v1/instances/{instanceId}/reinstall/images:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_reinstall_images.yaml
+  /publicCloud/v1/instances/{instanceId}/reinstall:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_reinstall.yaml
+  /publicCloud/v1/loadBalancers:
+    $ref: paths/publicCloud_v1_loadBalancers.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/listeners:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_listeners.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/listeners/{listenerId}:
+    $ref: >-
+      paths/publicCloud_v1_loadBalancers_{loadBalancerId}_listeners_{listenerId}.yaml
+  /publicCloud/v1/instances/{instanceId}/ips:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_ips.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/ips:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_ips.yaml
+  /publicCloud/v1/instances/{instanceId}/ips/{ip}:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_ips_{ip}.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/ips/{ip}:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_ips_{ip}.yaml
+  /publicCloud/v1/instances/{instanceId}/ips/{ip}/null:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_ips_{ip}_null.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/ips/{ip}/null:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_ips_{ip}_null.yaml
+  /publicCloud/v1/instances/{instanceId}/ips/{ip}/unnull:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_ips_{ip}_unnull.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/ips/{ip}/unnull:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_ips_{ip}_unnull.yaml
+  /publicCloud/v1/instances/{instanceId}/metrics/datatraffic:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_metrics_datatraffic.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/datatraffic:
+    $ref: >-
+      paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_datatraffic.yaml
+  /publicCloud/v1/instances/{instanceId}/metrics/cpu:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_metrics_cpu.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/requests:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_requests.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/requestsPerSecond:
+    $ref: >-
+      paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_requestsPerSecond.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/dataTransferred:
+    $ref: >-
+      paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_dataTransferred.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/dataTransferredPerSecond:
+    $ref: >-
+      paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_dataTransferredPerSecond.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/connections:
+    $ref: >-
+      paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_connections.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/connectionsPerSecond:
+    $ref: >-
+      paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_connectionsPerSecond.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/responseCodes:
+    $ref: >-
+      paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_responseCodes.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/responseCodesPerSecond:
+    $ref: >-
+      paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_responseCodesPerSecond.yaml
+  /publicCloud/v1/instances/{instanceId}/addToPrivateNetwork:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_addToPrivateNetwork.yaml
+  /publicCloud/v1/instances/{instanceId}/removeFromPrivateNetwork:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_removeFromPrivateNetwork.yaml
+  /publicCloud/v1/instances/{instanceId}/snapshots:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_snapshots.yaml
+  /publicCloud/v1/instances/{instanceId}/snapshots/{snapshotId}:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_snapshots_{snapshotId}.yaml
+  /publicCloud/v1/autoScalingGroups:
+    $ref: paths/publicCloud_v1_autoScalingGroups.yaml
+  /publicCloud/v1/autoScalingGroups/{autoScalingGroupId}:
+    $ref: paths/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}.yaml
+  /publicCloud/v1/autoScalingGroups/{autoScalingGroupId}/instances:
+    $ref: paths/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_instances.yaml
+  /publicCloud/v1/autoScalingGroups/{autoScalingGroupId}/registerTargetGroup:
+    $ref: >-
+      paths/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_registerTargetGroup.yaml
+  /publicCloud/v1/autoScalingGroups/{autoScalingGroupId}/deregisterTargetGroup:
+    $ref: >-
+      paths/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_deregisterTargetGroup.yaml
+  /publicCloud/v1/targetGroups:
+    $ref: paths/publicCloud_v1_targetGroups.yaml
+  /publicCloud/v1/targetGroups/{targetGroupId}:
+    $ref: paths/publicCloud_v1_targetGroups_{targetGroupId}.yaml
+  /publicCloud/v1/targetGroups/{targetGroupId}/targets:
+    $ref: paths/publicCloud_v1_targetGroups_{targetGroupId}_targets.yaml
+  /publicCloud/v1/targetGroups/{targetGroupId}/registerTargets:
+    $ref: paths/publicCloud_v1_targetGroups_{targetGroupId}_registerTargets.yaml
+  /publicCloud/v1/targetGroups/{targetGroupId}/deregisterTargets:
+    $ref: paths/publicCloud_v1_targetGroups_{targetGroupId}_deregisterTargets.yaml
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+    X-LSW-Auth:
+      name: X-LSW-Auth
+      type: apiKey
+      in: header
+      description: API key authentication by setting `X-LSW-Auth` header.

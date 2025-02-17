@@ -1,0 +1,10 @@
+type: object
+title: InvalidationIn
+properties:
+  files:
+    type: array
+    title: Files
+    examples:
+      - - http://leaseweb.com/test
+    items:
+      type: string

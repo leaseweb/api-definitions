@@ -1,0 +1,99 @@
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+post:
+  description: >
+    A hardware scan collects hardware related information from your server.
+
+
+    A hardware scan will require a reboot of your server. The contents of your
+
+    hard drive won't be altered in any way. After a successful hardware scan
+    your
+
+    server is booted back into the original operating system.
+  operationId: scanHardware
+  requestBody:
+    content:
+      application/json:
+        example:
+          powerCycle: false
+        schema:
+          $ref: ../components/schemas/scanHardwareOpts.yaml
+  responses:
+    '202':
+      content:
+        application/json:
+          example:
+            createdAt: 2018-01-09T09:07:09+0000
+            flow: tasks
+            isRunning: true
+            node: 80:18:44:E0:AF:C4!JGNTQ92
+            payload:
+              fileserverBaseUrl: ''
+              jobType: hardwareScan
+              pop: AMS-01
+              powerCycle: true
+              serverId: '99944'
+            progress:
+              canceled: 0
+              expired: 0
+              failed: 0
+              finished: 0
+              inprogress: 0
+              pending: 1
+              percentage: 0
+              total: 5
+              waiting: 4
+            serverId: '99944'
+            status: ACTIVE
+            tasks:
+              - description: dummy
+                errorMessage: null
+                flow: tasks
+                onError: break
+                status: PENDING
+                statusTimestamps:
+                  PENDING: '2018-01-09T10:38:12+00:00'
+                  WAITING: '2018-01-09T10:38:12+00:00'
+                uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
+            type: hardwareScan
+            updatedAt: 2018-01-09T09:07:09+0000
+            uuid: 2dcca92d-b5df-4837-bd99-b568ac54569a
+          schema:
+            $ref: ../components/schemas/job.yaml
+      description: Accepted.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Launch hardware scan
+  tags:
+    - Jobs
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_hardwareScan/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_hardwareScan/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_hardwareScan/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_hardwareScan/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_hardwareScan/postundefined

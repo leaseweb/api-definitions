@@ -1,0 +1,12 @@
+type: object
+title: Header
+properties:
+  name:
+    type: string
+    title: Name
+  value:
+    type: string
+    title: Value
+required:
+  - name
+  - value

@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/bareMetals/v2/servers/12345/install",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"callbackUrl\":\"http://example.com\",\"controlPanelId\":\"string\",\"device\":\"string\",\"hostname\":\"string\",\"operatingSystemId\":\"string\",\"partitions\":[{\"filesystem\":\"string\",\"mountpoint\":\"string\",\"size\":\"string\"}],\"password\":\"string\",\"postInstallScript\":\"string\",\"powerCycle\":true,\"raid\":{\"level\":0,\"numberOfDisks\":0,\"type\":\"HW\"},\"sshKeys\":\"string\",\"timezone\":\"string\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

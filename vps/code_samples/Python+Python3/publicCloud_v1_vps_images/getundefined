@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/publicCloud/v1/vps/images?limit=20&offset=10&custom=SOME_BOOLEAN_VALUE&standard=true&state=SOME_STRING_VALUE&marketAppId=SOME_STRING_VALUE&storageType=SOME_STRING_VALUE&name=Ubuntu%2020.04%20LTS%20(x86_64)&flavour=SOME_STRING_VALUE&region=eu-west-3", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

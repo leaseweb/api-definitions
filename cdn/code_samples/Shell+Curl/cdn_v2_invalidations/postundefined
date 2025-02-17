@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/cdn/v2/invalidations \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"files":["http://leaseweb.com/test"]}'

@@ -1,0 +1,12 @@
+allOf:
+  - $ref: ./loadBalancer.yaml
+  - title: loadBalancerDetails
+    type: object
+    required:
+      - ips
+    nullable: true
+    properties:
+      ips:
+        type: array
+        items:
+          $ref: ./ipDetails.yaml

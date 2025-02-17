@@ -1,0 +1,10 @@
+properties:
+  body:
+    type: string
+    description: |-
+      Plain text body of the message, for newlines use '
+      '.
+    example: I have resolved this issue.
+required:
+  - body
+type: object

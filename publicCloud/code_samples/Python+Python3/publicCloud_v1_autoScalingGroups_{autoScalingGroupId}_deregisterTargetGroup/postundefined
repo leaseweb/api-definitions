@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"targetGroupId\":\"48ef2c38-9f7c-40bd-9b53-7e9ad33e6373\"}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/publicCloud/v1/autoScalingGroups/fb769dab-3daa-47e4-89ed-06a4b6499176/deregisterTargetGroup", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

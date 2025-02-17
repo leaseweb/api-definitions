@@ -1,0 +1,75 @@
+get:
+  description: >-
+    This endpoint will return an overview of contract items that will be
+    invoiced as of the 1st of the upcoming month.
+  operationId: getProforma
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: |
+        OK.
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 2
+            contractItems:
+              - contractId: '50000103'
+                currency: EUR
+                endDate: '2021-01-01T00:00:00+00:00'
+                equipmentId: '26430'
+                poNumber: '40002154000110'
+                price: 150.05
+                product: Backup
+                reference: this is a reference
+                startDate: '2020-01-01T00:00:00+00:00'
+              - contractId: '50000103'
+                currency: EUR
+                endDate: '2021-01-01T00:00:00+00:00'
+                equipmentId: '26430'
+                poNumber: '40002154000110'
+                price: 150.05
+                product: Dedicated server
+                reference: this is a reference
+                startDate: '2020-01-01T00:00:00+00:00'
+            currency: EUR
+            proformaDate: '2020-06-01T00: 00: 00+00: 00'
+            subTotal: 300.04
+            total: 352.55
+            vatAmount: 52.51
+          schema:
+            $ref: ../components/schemas/getProformaResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Pro Forma
+  tags:
+    - Invoices
+    - Invoices | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/invoices_v1_invoices_proforma/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/invoices_v1_invoices_proforma/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/invoices_v1_invoices_proforma/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/invoices_v1_invoices_proforma/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/invoices_v1_invoices_proforma/getundefined

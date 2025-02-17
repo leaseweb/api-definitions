@@ -1,0 +1,65 @@
+get:
+  summary: StartInstances
+  operationId: StartInstances
+  description: >
+    Starts a Public Cloud instance that you've previously stopped.
+
+
+    #### AWS CLI example
+
+
+    ```sh
+
+    aws ec2 start-instances --endpoint-url <LEASEWEB_AWS_EC2_SERVER_URL>
+    --instance-ids <INSTANCE_ID>
+
+    ```
+  tags:
+    - Aws Ec2 Wrapper | title
+  security:
+    - Authorization: []
+  parameters:
+    - description: The instance id.
+      example: 29145c92-4a68-4c63-aaeb-f2212d85a74a
+      in: query
+      name: InstanceId.1
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/startInstancesResult.yaml
+          example: " <?xml version='1.0' encoding='UTF-8'?>\n <StartInstancesResponse xmlns='http: //ec2.amazonaws.com/doc/2016-11-15/'>\n \t<instancesSet>\n \t\t<item>\n \t\t\t<instanceId>10a6163b-03c6-4303-a274-c96fa2217503</instanceId>\n \t\t</item>\n \t</instancesSet>\n \t<requestId>10a6163b-03c6-4303-a274</requestId>\n </StartInstancesResponse>\n "
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/aws_ec2_?Action=StartInstances/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/aws_ec2_?Action=StartInstances/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/aws_ec2_?Action=StartInstances/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/aws_ec2_?Action=StartInstances/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/aws_ec2_?Action=StartInstances/getundefined

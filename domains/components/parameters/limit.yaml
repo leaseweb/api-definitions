@@ -1,0 +1,7 @@
+name: limit
+in: query
+schema:
+  default: 10
+  type: integer
+description: Limit the number of results returned
+example: 10

@@ -1,0 +1,16 @@
+title: attachment
+type: object
+properties:
+  id:
+    type: string
+    description: The file ID of the attachment.
+    example:
+      - 1abd8e7f-0fdf-453c-b1f5-8fef436acbbe
+  mimeType:
+    type: string
+    description: The MIME type of the attachment.
+    example: part/xml
+  filename:
+    type: string
+    description: The filename of the attachment.
+    example: 000001.xml

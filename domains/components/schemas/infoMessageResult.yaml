@@ -1,0 +1,4 @@
+properties:
+  infoMessage:
+    $ref: ./infoMessage.yaml
+type: object

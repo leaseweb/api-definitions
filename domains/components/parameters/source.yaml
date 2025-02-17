@@ -1,0 +1,5 @@
+schema:
+  type: string
+name: source
+in: path
+required: true

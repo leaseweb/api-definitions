@@ -1,5 +1,0 @@
-curl --request PUT \
-  --url https://api.leaseweb.com/publicCloud/v1/instances/ace712e9-a166-47f1-9065-4af0f7e7fce1/ips/%7Bip%7D \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
-  --header 'content-type: application/json' \
-  --data '{"reverseLookup":"string"}'

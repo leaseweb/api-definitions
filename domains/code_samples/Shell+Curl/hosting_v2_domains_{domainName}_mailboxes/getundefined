@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/hosting/v2/domains/example.com/mailboxes?limit=10&offset=0' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

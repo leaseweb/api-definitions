@@ -1,0 +1,9 @@
+schema:
+  type: string
+name: rangeId
+in: path
+required: true
+description: >-
+  ID of a Floating IP Range, consisting of network IP and prefix length
+  (separated by an underscore)
+example: 10.0.0.0_29

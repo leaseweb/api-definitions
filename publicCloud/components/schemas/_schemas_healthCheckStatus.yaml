@@ -1,0 +1,12 @@
+title: healthCheckStatus
+required:
+  - state
+  - description
+type: object
+nullable: true
+properties:
+  state:
+    $ref: ./healthCheckStatus.yaml
+  description:
+    type: string
+    description: Description of the health check status

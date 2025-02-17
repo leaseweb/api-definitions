@@ -1,0 +1,24 @@
+properties:
+  metrics:
+    type: object
+    title: dataTrafficMetrics
+    properties:
+      downPublic:
+        $ref: ./trafficMetric.yaml
+      upPublic:
+        $ref: ./trafficMetric.yaml
+  _metadata:
+    title: trafficMetricsMetaData
+    type: object
+    allOf:
+      - $ref: ./metricsDataTrafficMetadataProperties.yaml
+      - properties:
+          summary:
+            title: summary
+            type: object
+            properties:
+              downPublic:
+                $ref: ./trafficMetricSummary.yaml
+              upPublic:
+                $ref: ./trafficMetricSummary.yaml
+type: object

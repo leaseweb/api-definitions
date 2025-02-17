@@ -1,0 +1,13 @@
+type: object
+title: ListResponse[NoValidationCertificate]
+properties:
+  certificates:
+    type: array
+    title: Certificates
+    items:
+      $ref: ./NoValidationCertificate.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - certificates
+  - _metadata

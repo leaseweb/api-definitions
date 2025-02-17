@@ -1,0 +1,7 @@
+description: The ID of a server
+example: '12345'
+in: path
+name: serverId
+required: true
+schema:
+  type: string

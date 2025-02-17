@@ -1,0 +1,58 @@
+get:
+  description: Show all storages for the given customer.
+  operationId: List storages
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/response.200.schema.yaml
+          example:
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 3
+            storages:
+              - id: '10812374'
+                quantity:
+                  value: 70000
+                  unit: GB
+                type: SANS
+              - id: '10812375'
+                quantity:
+                  value: 350000
+                  unit: GB
+                type: SANS
+              - id: '10938904'
+                quantity:
+                  value: 65000
+                  unit: GB
+                type: SANS
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  tags:
+    - Storage | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/storage_v1_storages/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/storage_v1_storages/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/storage_v1_storages/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/storage_v1_storages/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/storage_v1_storages/getundefined

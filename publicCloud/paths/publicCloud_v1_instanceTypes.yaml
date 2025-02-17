@@ -1,0 +1,366 @@
+get:
+  description: Get instance types
+  operationId: getInstanceTypeList
+  parameters:
+    - name: region
+      example: eu-west-3
+      in: query
+      required: true
+      schema:
+        title: regionName
+        description: region name
+        type: string
+        enum:
+          - eu-west-3
+          - us-east-1
+          - eu-central-1
+          - ap-southeast-1
+          - us-west-1
+          - eu-west-2
+          - ca-central-1
+          - ap-northeast-1
+    - name: limit
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        default: 50
+    - name: offset
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/instanceTypes.yaml
+          example:
+            instanceTypes:
+              - name: lsw.c3.large
+                resources:
+                  cpu:
+                    value: 2
+                    unit: vCPU
+                  memory:
+                    value: 3
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                prices:
+                  currency: EUR
+                  currencySymbol: €
+                  compute:
+                    hourlyPrice: '0.0395'
+                    monthlyPrice: '26.0200'
+                  storage:
+                    local:
+                      hourlyPrice: '0.00004'
+                      monthlyPrice: '0.03000'
+                    central:
+                      hourlyPrice: '0.00011'
+                      monthlyPrice: '0.08000'
+                storageTypes:
+                  - CENTRAL
+              - name: lsw.c3.xlarge
+                resources:
+                  cpu:
+                    value: 4
+                    unit: vCPU
+                  memory:
+                    value: 7
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                prices:
+                  currency: EUR
+                  currencySymbol: €
+                  compute:
+                    hourlyPrice: '0.0798'
+                    monthlyPrice: '52.5000'
+                  storage:
+                    local:
+                      hourlyPrice: '0.00004'
+                      monthlyPrice: '0.03000'
+                    central:
+                      hourlyPrice: '0.00011'
+                      monthlyPrice: '0.08000'
+                storageTypes:
+                  - CENTRAL
+              - name: lsw.c3.2xlarge
+                resources:
+                  cpu:
+                    value: 8
+                    unit: vCPU
+                  memory:
+                    value: 15
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                prices:
+                  currency: EUR
+                  currencySymbol: €
+                  compute:
+                    hourlyPrice: '0.1604'
+                    monthlyPrice: '105.4500'
+                  storage:
+                    local:
+                      hourlyPrice: '0.00004'
+                      monthlyPrice: '0.03000'
+                    central:
+                      hourlyPrice: '0.00011'
+                      monthlyPrice: '0.08000'
+                storageTypes:
+                  - CENTRAL
+              - name: lsw.c3.4xlarge
+                resources:
+                  cpu:
+                    value: 16
+                    unit: vCPU
+                  memory:
+                    value: 30
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                prices:
+                  currency: EUR
+                  currencySymbol: €
+                  compute:
+                    hourlyPrice: '0.3203'
+                    monthlyPrice: '210.5100'
+                  storage:
+                    local:
+                      hourlyPrice: '0.00004'
+                      monthlyPrice: '0.03000'
+                    central:
+                      hourlyPrice: '0.00011'
+                      monthlyPrice: '0.08000'
+                storageTypes:
+                  - CENTRAL
+              - name: lsw.m3.large
+                resources:
+                  cpu:
+                    value: 2
+                    unit: vCPU
+                  memory:
+                    value: 7
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                prices:
+                  currency: EUR
+                  currencySymbol: €
+                  compute:
+                    hourlyPrice: '0.0447'
+                    monthlyPrice: '29.4400'
+                  storage:
+                    local:
+                      hourlyPrice: '0.00004'
+                      monthlyPrice: '0.03000'
+                    central:
+                      hourlyPrice: '0.00011'
+                      monthlyPrice: '0.08000'
+                storageTypes:
+                  - CENTRAL
+              - name: lsw.m3.xlarge
+                resources:
+                  cpu:
+                    value: 4
+                    unit: vCPU
+                  memory:
+                    value: 15
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                prices:
+                  currency: EUR
+                  currencySymbol: €
+                  compute:
+                    hourlyPrice: '0.0902'
+                    monthlyPrice: '59.3300'
+                  storage:
+                    local:
+                      hourlyPrice: '0.00004'
+                      monthlyPrice: '0.03000'
+                    central:
+                      hourlyPrice: '0.00011'
+                      monthlyPrice: '0.08000'
+                storageTypes:
+                  - CENTRAL
+              - name: lsw.m3.2xlarge
+                resources:
+                  cpu:
+                    value: 8
+                    unit: vCPU
+                  memory:
+                    value: 30
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                prices:
+                  currency: EUR
+                  currencySymbol: €
+                  compute:
+                    hourlyPrice: '0.1799'
+                    monthlyPrice: '118.2700'
+                  storage:
+                    local:
+                      hourlyPrice: '0.00004'
+                      monthlyPrice: '0.03000'
+                    central:
+                      hourlyPrice: '0.00011'
+                      monthlyPrice: '0.08000'
+                storageTypes:
+                  - CENTRAL
+              - name: lsw.r3.large
+                resources:
+                  cpu:
+                    value: 2
+                    unit: vCPU
+                  memory:
+                    value: 15.25
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                prices:
+                  currency: EUR
+                  currencySymbol: €
+                  compute:
+                    hourlyPrice: '0.0555'
+                    monthlyPrice: '36.4900'
+                  storage:
+                    local:
+                      hourlyPrice: '0.00004'
+                      monthlyPrice: '0.03000'
+                    central:
+                      hourlyPrice: '0.00011'
+                      monthlyPrice: '0.08000'
+                storageTypes:
+                  - CENTRAL
+              - name: lsw.r3.xlarge
+                resources:
+                  cpu:
+                    value: 4
+                    unit: vCPU
+                  memory:
+                    value: 30.5
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                prices:
+                  currency: EUR
+                  currencySymbol: €
+                  compute:
+                    hourlyPrice: '0.1104'
+                    monthlyPrice: '72.5700'
+                  storage:
+                    local:
+                      hourlyPrice: '0.00004'
+                      monthlyPrice: '0.03000'
+                    central:
+                      hourlyPrice: '0.00011'
+                      monthlyPrice: '0.08000'
+                storageTypes:
+                  - CENTRAL
+              - name: lsw.r3.2xlarge
+                resources:
+                  cpu:
+                    value: 8
+                    unit: vCPU
+                  memory:
+                    value: 61
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                prices:
+                  currency: EUR
+                  currencySymbol: €
+                  compute:
+                    hourlyPrice: '0.2202'
+                    monthlyPrice: '144.7400'
+                  storage:
+                    local:
+                      hourlyPrice: '0.00004'
+                      monthlyPrice: '0.03000'
+                    central:
+                      hourlyPrice: '0.00011'
+                      monthlyPrice: '0.08000'
+                storageTypes:
+                  - CENTRAL
+            _metadata:
+              totalCount: 10
+              limit: 50
+              offset: 0
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List instance types
+  tags:
+    - Instance Types
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/publicCloud_v1_instanceTypes/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_instanceTypes/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/publicCloud_v1_instanceTypes/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_instanceTypes/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/publicCloud_v1_instanceTypes/getundefined

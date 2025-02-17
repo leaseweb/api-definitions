@@ -1,0 +1,72 @@
+properties:
+  _metadata:
+    description: Metadata about the collection
+    properties:
+      limit:
+        default: 10
+        description: The maximum number of results returned
+        type: integer
+      offset:
+        default: 0
+        description: Results are returned started at the given offset
+        type: integer
+      totalCount:
+        description: The total amount of results
+        type: integer
+    type: object
+  volumes:
+    description: A list of volumes for a storage VM
+    type: array
+    items:
+      description: A storage VM volume.
+      type: object
+      properties:
+        id:
+          type: string
+          description: UUID of the volume
+          minLength: 1
+        name:
+          type: string
+          description: Volume name
+          minLength: 1
+        space:
+          type: object
+          description: Data about the space of the volume
+          properties:
+            size:
+              type: object
+              description: Total size of the volume
+              properties:
+                value:
+                  type: number
+                  description: Size value
+                  minimum: 0
+                unit:
+                  type: string
+                  description: Size unit
+                  minLength: 1
+            available:
+              type: object
+              description: Available space in the volume
+              properties:
+                value:
+                  type: number
+                  description: Size value
+                  minimum: 0
+                unit:
+                  type: string
+                  description: Size unit
+                  minLength: 1
+            used:
+              type: object
+              description: Used space in the volume
+              properties:
+                value:
+                  type: number
+                  description: Size value
+                  minimum: 0
+                unit:
+                  type: string
+                  description: Size unit
+                  minLength: 1
+type: object

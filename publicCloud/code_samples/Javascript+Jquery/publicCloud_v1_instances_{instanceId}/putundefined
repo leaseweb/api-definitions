@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/publicCloud/v1/instances/ace712e9-a166-47f1-9065-4af0f7e7fce1",
+  "method": "PUT",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"type\":\"lsw.m3.large\",\"reference\":\"string\",\"contractType\":\"HOURLY\",\"contractTerm\":0,\"billingFrequency\":1,\"rootDiskSize\":5}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

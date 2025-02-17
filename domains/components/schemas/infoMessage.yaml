@@ -1,0 +1,5 @@
+type: string
+description: Optional additional information
+example: >-
+  Sorry, but your domain is not yet listed on our nameservers. Please create a
+  DNS record first so we can add your domain.

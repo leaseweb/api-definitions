@@ -1,9 +1,0 @@
-{
-  "description": "Limit the number of results returned",
-  "in": "query",
-  "name": "limit",
-  "schema": {
-    "default": 10,
-    "type": "integer"
-  }
-}

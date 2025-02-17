@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"content":["$ORIGIN example.com. \\\\r\\\\n$TTL 86400 \\\\r\\\\n\\\\tIN\\\\tMX\\\\t10\\\\tmail.example.com.       \\\\r\\\\n\\\\r\\\\n\\\\t\\\\r\\\\ndns1\\\\tIN\\\\tA\\\\t10.0.1.1"]}');
+
+$request->setRequestUrl('https://api.leaseweb.com/hosting/v2/domains/example.com/resourceRecordSets/import');
+$request->setRequestMethod('POST');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

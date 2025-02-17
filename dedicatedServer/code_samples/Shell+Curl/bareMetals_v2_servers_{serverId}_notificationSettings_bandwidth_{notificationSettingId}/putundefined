@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/bareMetals/v2/servers/12345/notificationSettings/bandwidth/839111 \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"frequency":"DAILY","threshold":"string","unit":"Gbps"}'

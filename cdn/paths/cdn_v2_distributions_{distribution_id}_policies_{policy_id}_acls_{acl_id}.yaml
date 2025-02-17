@@ -1,0 +1,155 @@
+get:
+  tags:
+    - ACL
+    - CDN | title
+  summary: Get Acl By Id
+  description: Get an ACL by its ID.
+  operationId: >-
+    get_acl_by_id_v1_distributions__distribution_id__policies__policy_id__acls__acl_id__get
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+    - name: policy_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Policy Id
+    - name: acl_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Acl Id
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ACLSecuritySettings.yaml
+          examples:
+            IP ACL:
+              value:
+                action: REJECT
+                value: 1.1.1.5/32
+                type: IP_ACL
+                id: iacl-2
+                policyId: po-wk0ksi0x
+                created: '2024-08-06T08:55:37'
+                updated: '2024-08-07T23:31:44'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/getundefined
+delete:
+  tags:
+    - ACL
+    - CDN | title
+  summary: Delete Acl By Id
+  operationId: >-
+    delete_acl_by_id_v1_distributions__distribution_id__policies__policy_id__acls__acl_id__delete
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+    - name: policy_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Policy Id
+    - name: acl_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Acl Id
+  responses:
+    '204':
+      description: Successful Response
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/deleteundefined

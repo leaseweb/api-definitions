@@ -1,0 +1,14 @@
+title: partition
+properties:
+  filesystem:
+    description: File system in which partition would be mounted
+    type: string
+  mountpoint:
+    description: >-
+      The partition mount point (eg `/home`). Mandatory for the root partition
+      (`/`) and not intended to be used in swap partition
+    type: string
+  size:
+    description: Size of the partition (Normally in MB, but this is OS-specific)
+    type: string
+type: object

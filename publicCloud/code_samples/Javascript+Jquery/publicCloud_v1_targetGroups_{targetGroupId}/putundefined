@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/publicCloud/v1/targetGroups/fb769dab-3daa-47e4-89ed-06a4b6499176",
+  "method": "PUT",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"name\":\"string\",\"port\":0,\"healthCheck\":{\"protocol\":\"HTTP\",\"method\":\"GET\",\"uri\":\"/\",\"host\":\"string\",\"port\":0}}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

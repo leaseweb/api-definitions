@@ -1,0 +1,51 @@
+get:
+  description: List all available ISO images
+  operationId: getIsoList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 2
+              limit: 20
+              offset: 0
+            isos:
+              - id: GRML
+                name: GRML 2022.11
+              - id: ACRONIS_BOOT_MEDIA
+                name: Acronis Boot Media
+          schema:
+            $ref: ../components/schemas/getIsoListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List available ISOs
+  tags:
+    - ISOs
+    - VPS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/publicCloud_v1_vps_isos/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/publicCloud_v1_vps_isos/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/publicCloud_v1_vps_isos/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/publicCloud_v1_vps_isos/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/publicCloud_v1_vps_isos/getundefined

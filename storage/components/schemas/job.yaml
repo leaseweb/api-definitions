@@ -1,0 +1,24 @@
+type: object
+properties:
+  id:
+    type: string
+    description: The id of the job
+    minLength: 1
+  status:
+    type: string
+    description: The status of the job
+    enum:
+      - PENDING
+      - ACTIVE
+      - SUSPENDED
+      - COMPLETED
+      - FAILED
+    minLength: 1
+  startedAt:
+    type: string
+    format: date-time
+    description: Start time of the job (present if job is started)
+  completedAt:
+    type: string
+    format: date-time
+    description: End time of the job (present if job is completed or failed)

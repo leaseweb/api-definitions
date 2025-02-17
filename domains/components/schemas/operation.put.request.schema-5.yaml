@@ -1,0 +1,24 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  active:
+    type: boolean
+    description: Boolean indicating whether the auto responder is active
+    examples:
+      - true
+  body:
+    type: string
+    description: The body of the auto responder email message
+    examples:
+      - >-
+        I will be out of office until 14-12-2020. Please contact the reception
+        desk for urgent matters.
+  subject:
+    type: string
+    description: The subject of the auto responder email message
+    examples:
+      - Out of office
+required:
+  - active
+  - body
+  - subject
+type: object

@@ -1,0 +1,5 @@
+description: Filter the services endpoint with a reference
+in: query
+name: reference
+schema:
+  type: string

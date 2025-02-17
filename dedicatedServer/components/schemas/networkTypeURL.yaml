@@ -1,0 +1,7 @@
+type: string
+description: Type of network
+enum:
+  - internal
+  - public
+  - remoteManagement
+example: internal

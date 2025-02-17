@@ -1,0 +1,128 @@
+delete:
+  description: |
+    This API call will remove the dedicated server from the private network.
+
+    It takes a few minutes before the server has been removed from the private
+    network.
+
+    To get the current status of the server you can call
+    `/bareMetals/v2/servers/{serverId}`.
+
+    While the server is being removed the status changes to `REMOVING`.
+  operationId: deleteFromPrivateNetwork
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '400':
+      content:
+        application/json:
+          example:
+            correlationId: f8d84555-9822-49fb-919a-d4945b201fe3
+            errorCode: '400'
+            errorMessage: Equipment 27072 is not part of private network 3943
+          schema:
+            $ref: ../components/schemas/errorResult.yaml
+      description: Bad Request.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete a server from a private network
+  tags:
+    - Private Networks
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}/deleteundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+  - $ref: ../components/parameters/privateNetworkId.yaml
+put:
+  description: |
+    It takes a few minutes before the server has access to the private network.
+
+    To get the current status of the server you can call
+    `/bareMetals/v2/servers/{serverId}`.
+
+    Once the server is added to the private network the status changes from
+    `CONFIGURING` to `CONFIGURED`.
+  operationId: addToPrivateNetwork
+  requestBody:
+    content:
+      application/json:
+        example:
+          linkSpeed: 100
+        schema:
+          $ref: ../components/schemas/addToPrivateNetworkOpts.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '400':
+      content:
+        application/json:
+          example:
+            correlationId: f8d84555-9822-49fb-919a-d4945b201fe3
+            errorCode: '400'
+            errorMessage: Equipment 27072 is not part of private network 3943
+          schema:
+            $ref: ../components/schemas/errorResult.yaml
+      description: Bad Request.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Add a server to private network
+  tags:
+    - Private Networks
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}/putundefined

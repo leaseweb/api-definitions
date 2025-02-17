@@ -1,0 +1,204 @@
+get:
+  description: >
+    List your Dedicated Servers. This api call supports pagination. Use the
+
+    `limit` and `offset` query string parameters to paginate through all your
+
+    dedicated servers.
+
+
+    Every `server` object in the json response lists a few properties of a
+    server.
+
+    Use the single resource api call to get more details for a single server.
+  operationId: getServerList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - description: Filter the list of servers by reference.
+      example: my-db
+      in: query
+      name: reference
+      schema:
+        type: string
+    - description: Filter the list of servers by ip address.
+      example: 127.0.0.4
+      in: query
+      name: ip
+      schema:
+        type: string
+        format: ipv4
+    - description: Filter the list of servers by mac address.
+      example: aa:bb:cc:dd:ee:ff
+      in: query
+      name: macAddress
+      schema:
+        type: string
+        description: >-
+          Represents a MAC Address in the standard colon delimited format. Eg.
+          `01:23:45:67:89:0A`
+        pattern: >-
+          ([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})|([0-9a-fA-F]{4}\.[0-9a-fA-F]{4}\.[0-9a-fA-F]{4})$
+        example: 00:15:17:DB:63:01
+    - description: Filter the list of servers by site (location).
+      example: FRA-10
+      in: query
+      name: site
+      schema:
+        type: string
+    - description: Filter the list of servers by dedicated rack id.
+      example: '123'
+      in: query
+      name: privateRackId
+      schema:
+        type: string
+    - description: Filter the list for private network capable servers
+      in: query
+      name: privateNetworkCapable
+      schema:
+        enum:
+          - 'true'
+          - 'false'
+        type: string
+    - description: Filter the list for private network enabled servers
+      in: query
+      name: privateNetworkEnabled
+      schema:
+        enum:
+          - 'true'
+          - 'false'
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 2
+              offset: 80
+              totalCount: 132
+            servers:
+              - assetId: '627293'
+                contract:
+                  customerId: '32923828192'
+                  deliveryStatus: ACTIVE
+                  id: '674382'
+                  reference: database.server
+                  salesOrgId: '2300'
+                featureAvailability:
+                  automation: true
+                  ipmiReboot: false
+                  powerCycle: true
+                  privateNetwork: true
+                  remoteManagement: false
+                id: '12345'
+                location:
+                  rack: A83
+                  site: AMS-01
+                  suite: '99'
+                  unit: 16-17
+                networkInterfaces:
+                  internal:
+                    gateway: 10.22.192.12
+                    ip: 10.22.192.3
+                    mac: AA:BB:CC:DD:EE:FF
+                    ports:
+                      - name: EVO-AABB-01
+                        port: '30'
+                  public:
+                    gateway: 95.211.162.62
+                    ip: 95.211.162.0
+                    mac: AA:AC:CC:88:EE:E4
+                    ports: []
+                  remoteManagement:
+                    gateway: 10.22.192.126
+                    ip: 10.22.192.1
+                    mac: AA:AC:CC:88:EE:E4
+                    ports: []
+                powerPorts:
+                  - name: EVO-JV12-APC02
+                    port: '10'
+                privateNetworks:
+                  - id: '1'
+                    linkSpeed: 1000
+                    status: CONFIGURED
+                    subnet: 127.0.0.80/24
+                    vlanId: '2120'
+                rack:
+                  type: SHARED
+              - assetId: '627294'
+                contract:
+                  customerId: '32923828192'
+                  deliveryStatus: ACTIVE
+                  id: '929282'
+                  reference: web.server
+                  salesOrgId: '2300'
+                featureAvailability:
+                  automation: false
+                  powerCycle: false
+                  privateNetwork: false
+                  remoteManagement: false
+                id: '47854'
+                location:
+                  rack: '13'
+                  site: AMS-01
+                  suite: A6
+                  unit: '18'
+                networkInterfaces:
+                  internal:
+                    mac: null
+                    ip: null
+                    nullRouted: null
+                    gateway: null
+                    ports: []
+                  public:
+                    mac: null
+                    ip: null
+                    nullRouted: null
+                    gateway: null
+                    ports: []
+                  remoteManagement:
+                    mac: null
+                    ip: null
+                    nullRouted: null
+                    gateway: null
+                    ports: []
+                privateNetworks:
+                  - id: '2'
+                    linkSpeed: 1000
+                    status: CONFIGURED
+                    subnet: 127.0.0.80/24
+                    vlanId: '2130'
+                rack:
+                  type: SHARED
+          schema:
+            $ref: ../components/schemas/getServerListResult.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List servers
+  tags:
+    - Getting Started
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/bareMetals_v2_servers/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/bareMetals_v2_servers/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/bareMetals_v2_servers/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/bareMetals_v2_servers/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/bareMetals_v2_servers/getundefined

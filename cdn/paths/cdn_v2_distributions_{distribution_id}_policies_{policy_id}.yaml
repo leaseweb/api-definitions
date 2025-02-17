@@ -1,0 +1,353 @@
+get:
+  tags:
+    - Policy
+    - CDN | title
+  summary: Get Policy By Id
+  description: Get the details of a policy using its ID.
+  operationId: get_policy_by_id_v1_distributions__distribution_id__policies__policy_id__get
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+    - name: policy_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Policy Id
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Policy.yaml
+          examples:
+            Volume Policy:
+              value:
+                securityToken: false
+                securityTokenVendor: null
+                securityTokenMethod: null
+                securityTokenSecret: null
+                securityTokenAesKey: null
+                securityTokenShaKey: null
+                securityTokenClientIp: false
+                securityTokenExpirationParam: null
+                securityTokenParam: null
+                securityTokenNumberOfPathComponents: -1
+                securityTokenEmbedIntoPath: false
+                securityGeoAcl: false
+                securityGeoAclDefault: null
+                securityIpAcl: true
+                securityIpAclDefault: null
+                securityReferrerAcl: false
+                securityReferrerAclDefault: null
+                originPullProtocol: HTTP
+                originPullCompressed: false
+                originPullHostHeader: test.invalid
+                originPullId: or-r8n157f
+                originPullGroupId: null
+                originPullShieldId: null
+                originPullXff: false
+                originPullPassCookie: false
+                originPullPassVary: false
+                cacheQueryString: false
+                cacheDefaultTtl: 86400
+                cacheHonorOriginTtl: false
+                cacheStale: false
+                cacheByPass: false
+                cacheSegmented: true
+                deliveryTtlInherit: false
+                deliveryTtlOverride: 0
+                deliveryCompress: false
+                deliveryRateLimit: false
+                deliveryTransferRate: null
+                deliveryBurstSize: null
+                deliveryForceHttps: false
+                deliveryPassThroughAllHeaders: false
+                description: test-policy-4
+                allowedMethods: GET,POST,HEAD,PUT,OPTIONS
+                path: /
+                id: po-48nwon
+                customerId: cu-a4c79393
+                created: '2024-08-06T08:55:37'
+                updated: '2024-08-07T23:31:44'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/getundefined
+put:
+  tags:
+    - Policy
+    - CDN | title
+  summary: Update Policy By Id
+  operationId: >-
+    update_policy_by_id_v1_distributions__distribution_id__policies__policy_id__put
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+    - name: policy_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Policy Id
+  requestBody:
+    description: Update the options available in each policy.
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/PolicyIn.yaml
+        examples:
+          Update Policy:
+            value:
+              securityToken: false
+              securityTokenVendor: null
+              securityTokenMethod: null
+              securityTokenSecret: null
+              securityTokenAesKey: null
+              securityTokenShaKey: null
+              securityTokenClientIp: false
+              securityTokenExpirationParam: null
+              securityTokenParam: null
+              securityTokenNumberOfPathComponents: -1
+              securityTokenEmbedIntoPath: false
+              securityGeoAcl: false
+              securityGeoAclDefault: null
+              securityIpAcl: true
+              securityIpAclDefault: null
+              securityReferrerAcl: false
+              securityReferrerAclDefault: null
+              originPullProtocol: HTTP
+              originPullCompressed: false
+              originPullHostHeader: test.invalid
+              originPullId: or-r8n157f
+              originPullGroupId: null
+              originPullShieldId: null
+              originPullXff: false
+              originPullPassCookie: false
+              originPullPassVary: false
+              cacheQueryString: false
+              cacheDefaultTtl: 86400
+              cacheHonorOriginTtl: false
+              cacheStale: false
+              cacheByPass: false
+              cacheSegmented: true
+              deliveryTtlInherit: false
+              deliveryTtlOverride: 0
+              deliveryCompress: false
+              deliveryRateLimit: false
+              deliveryTransferRate: null
+              deliveryBurstSize: null
+              deliveryForceHttps: false
+              deliveryPassThroughAllHeaders: false
+              description: test-policy-4-upated
+              allowedMethods: GET,POST,HEAD,PUT
+              path: /
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Policy.yaml
+          examples:
+            Updated Policy:
+              value:
+                securityToken: false
+                securityTokenVendor: null
+                securityTokenMethod: null
+                securityTokenSecret: null
+                securityTokenAesKey: null
+                securityTokenShaKey: null
+                securityTokenClientIp: false
+                securityTokenExpirationParam: null
+                securityTokenParam: null
+                securityTokenNumberOfPathComponents: -1
+                securityTokenEmbedIntoPath: false
+                securityGeoAcl: false
+                securityGeoAclDefault: null
+                securityIpAcl: true
+                securityIpAclDefault: null
+                securityReferrerAcl: false
+                securityReferrerAclDefault: null
+                originPullProtocol: HTTP
+                originPullCompressed: false
+                originPullHostHeader: test.invalid
+                originPullId: or-r8n157f
+                originPullGroupId: null
+                originPullShieldId: null
+                originPullXff: false
+                originPullPassCookie: false
+                originPullPassVary: false
+                cacheQueryString: false
+                cacheDefaultTtl: 86400
+                cacheHonorOriginTtl: false
+                cacheStale: false
+                cacheByPass: false
+                cacheSegmented: true
+                deliveryTtlInherit: false
+                deliveryTtlOverride: 0
+                deliveryCompress: false
+                deliveryRateLimit: false
+                deliveryTransferRate: null
+                deliveryBurstSize: null
+                deliveryForceHttps: false
+                deliveryPassThroughAllHeaders: false
+                description: test-policy-4-updated
+                allowedMethods: GET,POST,HEAD,PUT
+                path: /
+                id: po-48nwon
+                customerId: cu-a4c79393
+                created: '2024-08-06T08:55:37'
+                updated: '2024-08-07T23:31:44'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/putundefined
+delete:
+  tags:
+    - Policy
+    - CDN | title
+  summary: Delete Policy By Id
+  operationId: >-
+    delete_policy_by_id_v1_distributions__distribution_id__policies__policy_id__delete
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+    - name: policy_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Policy Id
+  responses:
+    '204':
+      description: Successful Response
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/deleteundefined

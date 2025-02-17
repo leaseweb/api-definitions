@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'Authorization': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/aws/ec2/?InstanceType=lsw.t2.micro&ImageId=UBUNTU_22_04_64BIT&Placement=eu-west-1&Action=RunInstances", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

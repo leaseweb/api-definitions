@@ -1,0 +1,243 @@
+get:
+  tags:
+    - OriginGroup
+    - CDN | title
+  summary: Get Origin Group Member By Id
+  description: Get the details of an origin group member by its ID.
+  operationId: >-
+    get_origin_group_member_by_id_v1_originGroups__origin_group_id__members__origin_group_member_id__get
+  parameters:
+    - name: origin_group_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Id
+    - name: origin_group_member_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Member Id
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Resource.yaml
+          examples:
+            Origin Group:
+              value:
+                resourceType: ORIGIN_GROUP_MEMBER
+                data:
+                  - key: originId
+                    value: or-du7n2vo8
+                  - key: status
+                    value: active
+                  - key: id
+                    value: or-6j2vgb3
+                  - key: originHost
+                    value: origin.leaseweb.com
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/getundefined
+put:
+  tags:
+    - OriginGroup
+    - CDN | title
+  summary: Update Origin Group Member By Id
+  description: Update the parameters in an origin group member.
+  operationId: >-
+    update_origin_group_member_by_id_v1_originGroups__origin_group_id__members__origin_group_member_id__put
+  parameters:
+    - name: origin_group_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Id
+    - name: origin_group_member_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Member Id
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Resource.yaml
+        examples:
+          Updated Member:
+            value:
+              resourceType: ORIGIN_GROUP_MEMBER
+              data:
+                - key: originId
+                  value: or-du7n2vo8
+                - key: status
+                  value: inactive
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Resource.yaml
+          examples:
+            Updated Member:
+              value:
+                resourceType: ORIGIN_GROUP_MEMBER
+                data:
+                  - key: originId
+                    value: or-du7n2vo8
+                  - key: status
+                    value: inactive
+                  - key: id
+                    value: or-6j2vgb3
+                  - key: originHost
+                    value: origin.leaseweb.com
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/putundefined
+delete:
+  tags:
+    - OriginGroup
+    - CDN | title
+  summary: Delete Origin Group Member By Id
+  operationId: >-
+    delete_origin_group_member_by_id_v1_originGroups__origin_group_id__members__origin_group_member_id__delete
+  parameters:
+    - name: origin_group_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Id
+    - name: origin_group_member_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Member Id
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/deleteundefined

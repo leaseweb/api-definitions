@@ -1,0 +1,3 @@
+curl --request DELETE \
+  --url https://api.leaseweb.com/cdn/v2/distributions/%7Bdistribution_id%7D/domains/%7Bdomain_id%7D \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

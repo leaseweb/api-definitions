@@ -1,0 +1,54 @@
+title: targetGroup
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    example: 7e59b33d-05f3-4078-b251-c7831ae8fe14
+  name:
+    type: string
+    description: The name of the target group
+  protocol:
+    type: string
+    description: The protocol of the target group
+    $ref: ./protocol.yaml
+  port:
+    type: integer
+    description: The port of the target group
+  region:
+    type: string
+    description: The region of the target group
+    $ref: ./regionName.yaml
+  healthCheck:
+    title: healthCheck
+    required:
+      - protocol
+      - method
+      - uri
+      - host
+      - port
+    type: object
+    nullable: true
+    properties:
+      protocol:
+        $ref: ./protocol.yaml
+      method:
+        $ref: ./httpMethod.yaml
+      uri:
+        type: string
+        description: URI to check in the target instances
+        example: /
+      host:
+        type: string
+        description: Host for the health check if any
+        nullable: true
+      port:
+        type: integer
+        description: Port number
+required:
+  - id
+  - name
+  - protocol
+  - port
+  - region
+  - healthCheck

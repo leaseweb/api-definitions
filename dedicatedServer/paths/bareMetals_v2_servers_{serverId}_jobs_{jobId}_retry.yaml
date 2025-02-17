@@ -1,0 +1,109 @@
+post:
+  description: Retry a job for a specific server.
+  operationId: retryJob
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            createdAt: 2021-01-09T10:38:12+0000
+            flow: tasks
+            isRunning: true
+            metadata:
+              BATCH_ID: biannual-os-upgrade-installs
+            node: 80:18:44:E0:AF:C4!JGNTQ92
+            payload:
+              configurable: true
+              device: SATA2TB
+              fileserverBaseUrl: ''
+              jobType: install
+              numberOfDisks: null
+              operatingSystemId: UBUNTU_22_04_64BIT
+              os:
+                architecture: 64bit
+                family: ubuntu
+                name: Ubuntu 22.04 LTS (Jammy Jellyfish) (amd64)
+                type: linux
+                version: '22.04'
+              partitions:
+                - filesystem: swap
+                  size: '4096'
+              pop: AMS-01
+              powerCycle: true
+              raidLevel: null
+              serverId: '99944'
+              timezone: UTC
+            progress:
+              canceled: 0
+              expired: 0
+              failed: 0
+              finished: 0
+              inprogress: 0
+              pending: 1
+              percentage: 0
+              total: 1
+              waiting: 0
+            serverId: '99944'
+            status: ACTIVE
+            tasks:
+              - description: dummy
+                errorMessage: null
+                flow: tasks
+                onError: break
+                status: PENDING
+                statusTimestamps:
+                  PENDING: '2021-01-09T10:38:12+00:00'
+                  WAITING: '2021-01-09T10:38:12+00:00'
+                uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
+            type: install
+            updatedAt: 2021-01-09T10:38:12+0000
+            uuid: 3a867358-5b4b-44ee-88ac-4274603ef641
+          schema:
+            $ref: ../components/schemas/currentJob.yaml
+      description: Ok.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Retry a job
+  tags:
+    - Jobs
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_jobs_{jobId}_retry/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_jobs_{jobId}_retry/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_jobs_{jobId}_retry/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_jobs_{jobId}_retry/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_jobs_{jobId}_retry/postundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+  - description: The ID of a Job
+    example: 3a867358-5b4b-44ee-88ac-4274603ef641
+    in: path
+    name: jobId
+    required: true
+    schema:
+      type: string

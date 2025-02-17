@@ -1,3 +1,0 @@
-curl --request GET \
-  --url https://api.leaseweb.com/publicCloud/v1/loadBalancers/695ddd91-051f-4dd6-9120-938a927a47d0/metrics/responseCodes \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

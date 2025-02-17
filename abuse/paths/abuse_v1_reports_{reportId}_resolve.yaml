@@ -1,0 +1,61 @@
+parameters:
+  - $ref: ../components/parameters/reportId.yaml
+post:
+  description: Resolve a report
+  operationId: resolveReport
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/resolveReportResult.yaml
+        example:
+          message: >-
+            The IP address associated with this report has been null routed due
+            to policy violations. Further access will be restricted until the
+            issue is resolved.
+          resolutions:
+            - CONTENT_REMOVED
+            - SUSPENDED
+  responses:
+    '204':
+      description: |
+        No Content.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
+  summary: Resolve a report
+  tags:
+    - Abuse Reports
+    - Abuse Reports | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/abuse_v1_reports_{reportId}_resolve/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/abuse_v1_reports_{reportId}_resolve/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/abuse_v1_reports_{reportId}_resolve/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/abuse_v1_reports_{reportId}_resolve/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/abuse_v1_reports_{reportId}_resolve/postundefined

@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/cdn/v2/distributions/%7Bdistribution_id%7D/policies?limit=20&offset=10' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

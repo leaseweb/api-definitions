@@ -1,0 +1,6 @@
+properties:
+  name:
+    type: string
+  port:
+    type: string
+type: object

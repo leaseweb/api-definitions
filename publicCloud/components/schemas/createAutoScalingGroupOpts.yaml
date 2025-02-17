@@ -1,0 +1,75 @@
+properties:
+  desiredAmount:
+    type: integer
+    description: >-
+      Required for "MANUAL" and "SCHEDULED" auto scaling group. Number of
+      instances to be launched
+    minimum: 1
+  minimumAmount:
+    type: integer
+    minimum: 1
+    description: >-
+      Required for "CPU_BASED". The minimum number of instances that should be
+      running
+  maximumAmount:
+    type: integer
+    minimum: 1
+    description: >-
+      Required for "CPU_BASED" auto scaling group. The maximum number of
+      instances that can be running
+  cpuThreshold:
+    type: integer
+    minimum: 1
+    maximum: 100
+    description: >-
+      Required for "CPU_BASED" auto scaling group. The target average CPU
+      utilization for scaling
+  warmupTime:
+    type: integer
+    minimum: 60
+    maximum: 900
+    description: >-
+      Required for "CPU_BASED" auto scaling group. Warm-up time in seconds for
+      new instances
+  cooldownTime:
+    type: integer
+    minimum: 300
+    maximum: 900
+    description: >-
+      Required for "CPU_BASED" auto scaling group. Cool-down time in seconds for
+      new instances
+  instanceId:
+    type: string
+    format: uuid
+    description: >-
+      The instance on which instances will be based on. This instance needs to
+      be either Running or Stopped
+  reference:
+    type: string
+    maxLength: 255
+    description: The identifying name set to the auto scaling group
+  type:
+    type: string
+    enum:
+      - MANUAL
+      - SCHEDULED
+      - CPU_BASED
+  startsAt:
+    type: string
+    format: date-time
+    description: >-
+      Required for "SCHEDULED" auto scaling group. Date and time (UTC) that the
+      instances need to be launched
+    example: '2024-04-25 08:00:00'
+  endsAt:
+    type: string
+    format: date-time
+    description: >-
+      Required for "SCHEDULED" auto scaling group. Date and time (UTC) that the
+      instances need to be terminated
+    example: '2024-04-25 08:00:00'
+required:
+  - reference
+  - type
+  - instanceId
+type: object

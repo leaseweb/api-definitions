@@ -1,0 +1,29 @@
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+    description: The unique identifier of the instance
+  type:
+    type: string
+    description: The instance type, which determines the amount of resources
+  resources:
+    $ref: ./resources.yaml
+  region:
+    $ref: ./regionName.yaml
+  reference:
+    type: string
+    description: The identifying name set to the instance
+  state:
+    $ref: ./state.yaml
+  productType:
+    type: string
+    enum:
+      - INSTANCE
+      - AUTO_SCALED_INSTANCE
+  hasPrivateNetwork:
+    type: boolean
+  ips:
+    type: array
+    items:
+      $ref: ./ipDetails.yaml

@@ -1,0 +1,7 @@
+properties:
+  reverseLookup:
+    type: string
+    example: mydomain1.example.com
+required:
+  - reverseLookup
+type: object

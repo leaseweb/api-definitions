@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://api.leaseweb.com/storage/v1/storageVMs/1575dd1c-dddf-11ed-af62-000c299d72cd/volumes/1575dd1c-dddf-11ed-af62-000c299d72cd/grow"
+
+	payload := strings.NewReader("{\"growSize\":0}")
+
+	req, _ := http.NewRequest("POST", url, payload)
+
+	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+	req.Header.Add("content-type", "application/json")
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(res)
+	fmt.Println(string(body))
+
+}

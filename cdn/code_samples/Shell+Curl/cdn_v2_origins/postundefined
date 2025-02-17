@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/cdn/v2/origins \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"resourceType":"SIMPLE_ORIGIN","data":[{"key":"host","value":"backend.leaseweb.com"},{"key":"description","value":"Leaseweb Backend"},{"key":"enabled","value":true}]}'

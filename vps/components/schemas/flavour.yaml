@@ -1,0 +1,12 @@
+title: flavour
+type: string
+description: Standard images flavours
+enum:
+  - ubuntu
+  - debian
+  - freebsd
+  - centos
+  - almalinux
+  - rockylinux
+  - archlinux
+  - windows

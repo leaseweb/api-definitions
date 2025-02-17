@@ -1,0 +1,47 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  emailAddress:
+    type: string
+    description: The email address of the mailbox
+    examples:
+      - mailbox@example.com
+  active:
+    type: boolean
+    description: Boolean indicating whether the mailbox is active
+    examples:
+      - true
+  password:
+    type: string
+    description: The password of the mailbox
+    examples:
+      - CHANGETHIS
+  spamChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether spam checks are enabled
+    examples:
+      - true
+  virusChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether virus checks are enabled
+    examples:
+      - false
+  localDelivery:
+    type: boolean
+    description: >-
+      Boolean indicating whether email to be stored as a local copy when there
+      is a forward
+    example:
+      - true
+  setMxRecord:
+    type: boolean
+    description: Boolean indicating whether MX record needs to be updated for mailbox
+    example:
+      - true
+required:
+  - emailAddress
+  - active
+  - password
+  - spamChecksEnabled
+  - virusChecksEnabled
+  - localDelivery
+type: object

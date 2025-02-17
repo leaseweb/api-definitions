@@ -1,0 +1,40 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  nameservers:
+    type: array
+    description: Array of nameservers
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the nameserver
+          examples:
+            - ns1.example.com
+      required:
+        - name
+  status:
+    type: string
+    description: A human readable message.
+    examples:
+      - >-
+        Nameservers update request is accepted. This request will be processed
+        after 24 hours.
+      - The nameservers update request has been completed.
+  _links:
+    type: object
+    description: Links to related resource locations
+    properties:
+      self:
+        type: object
+        description: Link to the nameservers
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the nameservers location
+            examples:
+              - /domains/example.com/nameservers
+required:
+  - nameservers
+  - status
+type: object

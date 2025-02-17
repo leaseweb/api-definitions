@@ -1,0 +1,9 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  networkEquipments:
+    description: An array of network equipment
+    items:
+      $ref: ./networkEquipment.yaml
+    type: array
+type: object

@@ -1,0 +1,62 @@
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+  - $ref: ../components/parameters/ip.yaml
+post:
+  description: |
+    Null the given IP address. It might take a few minutes before the change is
+    propagated across the network.
+  operationId: nullIpRoute
+  responses:
+    '202':
+      content:
+        application/json:
+          example:
+            ddos:
+              detectionProfile: ADVANCED_LOW_UDP
+              protectionType: ADVANCED
+            floatingIp: false
+            gateway: 12.123.123.254
+            ip: 12.123.123.1/24
+            mainIp: true
+            networkType: PUBLIC
+            nullRouted: false
+            reverseLookup: domain.example.com
+            version: 4
+          schema:
+            $ref: ../components/schemas/ip.yaml
+      description: Accepted.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Null route an IP
+  tags:
+    - IPs
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_ips_{ip}_null/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_ips_{ip}_null/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_ips_{ip}_null/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_ips_{ip}_null/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_ips_{ip}_null/postundefined

@@ -1,0 +1,158 @@
+delete:
+  description: Delete a DHCP reservation for this server.
+  operationId: deleteDhcpReservation
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Delete a DHCP reservation
+  tags:
+    - DHCP Leases
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_leases/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_leases/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_leases/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_leases/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_leases/deleteundefined
+get:
+  description: >-
+    Please note that this will only show reservations for the public network
+    interface.
+  operationId: getDhcpReservationList
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 1
+            leases:
+              - bootfile: http://mirror.leaseweb.com/ipxe-files/ubuntu-18.04.ipxe
+                createdAt: '2019-10-18T17:31:01+00:00'
+                gateway: 192.168.0.254
+                hostname: my-server
+                ip: 192.168.0.100
+                lastClientRequest:
+                  relayAgent: null
+                  type: DHCP_REQUEST
+                  userAgent: Ubuntu 18.04 dhcpc
+                mac: AA:BB:CC:DD:EE:FF
+                netmask: 255.255.255.0
+                site: AMS-01
+                updatedAt: '2019-11-18T19:29:01+00:00'
+          schema:
+            $ref: ../components/schemas/getDhcpReservationListResult.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: List DHCP reservations
+  tags:
+    - DHCP Leases
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_leases/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_leases/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_leases/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_leases/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_leases/getundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+post:
+  description: |
+    After rebooting your server it will acquire this DHCP reservation and boot
+    from the specified `bootfile` url.
+
+    Please note that this API call will not reboot or power cycle your server.
+  operationId: createDhcpReservation
+  requestBody:
+    content:
+      application/json:
+        example:
+          bootfile: http://example.com/bootme.ipxe
+          hostname: my-server
+        schema:
+          $ref: ../components/schemas/createDhcpReservationOpts.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Create a DHCP reservation
+  tags:
+    - DHCP Leases
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_leases/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_leases/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_leases/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_leases/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_leases/postundefined

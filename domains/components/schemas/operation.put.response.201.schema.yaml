@@ -1,0 +1,42 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  destination:
+    type: string
+    description: >-
+      The email address to which email messages will be delivered for the catch
+      all
+    examples:
+      - destination@example.org
+  spamChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether spam checks are enabled
+    examples:
+      - true
+  virusChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether virus checks are enabled
+    examples:
+      - false
+  _links:
+    type: object
+    description: Links to related resource locations
+    properties:
+      self:
+        type: object
+        description: Link to the catch all
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the catch all's location
+            examples:
+              - /domains/example.com/catchAll
+      parent:
+        type: object
+        description: Link to the parent resource
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the parent resource location
+            examples:
+              - /domains/example.com
+type: object

@@ -1,0 +1,14 @@
+description: Reverse lookup set for a specific IP address
+required:
+  - ip
+  - reverseLookup
+properties:
+  ip:
+    type: string
+    description: IP address
+  reverseLookup:
+    type: string
+    description: Reverse lookup value
+    nullable: true
+title: reverseLookup
+type: object

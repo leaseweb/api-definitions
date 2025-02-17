@@ -1,0 +1,18 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  rescueImages:
+    description: A list of operating systems
+    items:
+      title: rescueImage
+      description: A single rescue image
+      properties:
+        id:
+          description: The unique ID of this rescue image
+          type: string
+        name:
+          description: A human readable name describing the rescue image
+          type: string
+      type: object
+    type: array
+type: object

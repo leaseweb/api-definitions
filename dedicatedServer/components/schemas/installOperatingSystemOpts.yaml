@@ -1,0 +1,64 @@
+properties:
+  callbackUrl:
+    description: >-
+      Url which will receive callbacks when the installation is finished or
+      failed
+    format: uri
+    type: string
+  controlPanelId:
+    description: Control panel identifier
+    type: string
+  device:
+    description: >-
+      Block devices in a disk set in which the partitions will be installed.
+      Supported values are any disk set id, SATA_SAS or NVME
+    type: string
+  hostname:
+    description: Hostname to be used in your installation
+    type: string
+  operatingSystemId:
+    description: Operating system identifier
+    type: string
+  partitions:
+    description: Array of partition objects that should be installed per partition
+    items:
+      $ref: ./partition.yaml
+    type: array
+  password:
+    description: Server root password. If not provided, it would be automatically generated
+    type: string
+  postInstallScript:
+    description: >-
+      Base64 Encoded string containing a valid bash script to be run right after
+      the installation
+    type: string
+  powerCycle:
+    description: >-
+      If true, allows system reboots to happen automatically within the process.
+      Otherwise, you should do them manually
+    type: boolean
+  raid:
+    title: raid
+    description: Contains RAID related information about the installation request
+    properties:
+      level:
+        $ref: ./raidLevel.yaml
+      numberOfDisks:
+        description: >-
+          The number of disks you want to apply RAID on. If not specified all
+          disks are used
+        type: integer
+      type:
+        $ref: ./raidType.yaml
+    type: object
+  sshKeys:
+    description: >-
+      List of public sshKeys to be setup in your installation, separated by new
+      lines
+    type: string
+  timezone:
+    description: Timezone represented as Geographical_Area/City
+    type: string
+required:
+  - operatingSystemId
+type: object

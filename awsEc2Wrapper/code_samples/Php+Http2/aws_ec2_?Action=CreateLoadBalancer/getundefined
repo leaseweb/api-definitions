@@ -1,0 +1,22 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/aws/ec2/');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'Name' => 'Test-Load-Blancer',
+  'Type' => 'lsw.m3.large',
+  'Subnets.member.1' => 'eu-west-3',
+  'Action' => 'CreateLoadBalancer'
+]));
+
+$request->setHeaders([
+  'Authorization' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

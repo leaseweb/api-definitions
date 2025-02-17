@@ -1,0 +1,8 @@
+type: object
+properties:
+  errorMessage:
+    type: string
+  userMessage:
+    type: string
+  correlationId:
+    type: string

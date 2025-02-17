@@ -1,3 +1,0 @@
-curl --request GET \
-  --url 'https://api.leaseweb.com/abuse/v1/reports/abc123/messages?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE' \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

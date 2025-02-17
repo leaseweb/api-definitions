@@ -1,0 +1,5 @@
+description: Filter the services endpoint with a productId
+in: query
+name: productId
+schema:
+  type: string

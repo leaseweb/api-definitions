@@ -1,0 +1,11 @@
+allOf:
+  - $ref: ./vpsBase.yaml
+  - type: object
+    title: vps
+    required:
+      - ips
+    properties:
+      ips:
+        type: array
+        items:
+          $ref: ./ip.yaml

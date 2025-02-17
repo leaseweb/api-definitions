@@ -1,6 +1,0 @@
-{
-  "type": "integer",
-  "description": "The root disk's size in GB. Must be at least 5 GB for Linux and FreeBSD instances and 50 GB for Windows instances",
-  "minimum": 5,
-  "maximum": 1000
-}

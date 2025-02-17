@@ -1,0 +1,225 @@
+get:
+  operationId: get/privateRacks/{privateRackId}/notificationSettings/ddos
+  summary: Inspect DDos notification settings
+  description: ''
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                nulling: ENABLED
+                scrubbing: DISABLED
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Dedicated racks
+    - Dedicated Racks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_ddos/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_ddos/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_ddos/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_ddos/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_ddos/getundefined
+put:
+  operationId: put/privateRacks/{privateRackId}/notificationSettings/ddos
+  summary: Update DDos notification settings
+  description: |
+    To configure DDoS notification for this resource, send a PUT request. On
+    success the response will be a HTTP `204 No Content`.
+
+    Notifications will be sent to all technical contact email addresses of the
+    customer.
+  requestBody:
+    content:
+      application/json:
+        examples:
+          example:
+            value:
+              scrubbing: ENABLED
+              nulling: DISABLED
+        schema:
+          type: object
+          $schema: http://json-schema.org/draft-04/schema
+          id: http://jsonschema.net
+          properties:
+            scrubbing:
+              type: string
+              description: Enable or disable email notifications for nulling events
+              enum:
+                - ENABLED
+                - DISABLED
+              examples:
+                - ENABLED
+            nulling:
+              type: string
+              description: Enable or disable email notifications for nulling events
+              enum:
+                - ENABLED
+                - DISABLED
+              examples:
+                - ENABLED
+          required:
+            - scrubbing
+            - nulling
+  responses:
+    '204':
+      description: >-
+        If the new settings are stored successfully, a `204 No Content` is
+        returned.
+      content: {}
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Dedicated racks
+    - Dedicated Racks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_ddos/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_ddos/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_ddos/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_ddos/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateRacks_{privateRackId}_notificationSettings_ddos/putundefined
+parameters:
+  - $ref: ../components/parameters/privateRackId.yaml

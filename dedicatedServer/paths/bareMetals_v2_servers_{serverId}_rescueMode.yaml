@@ -1,0 +1,119 @@
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+post:
+  description: >
+    Rescue mode allows you to trouble shoot your server in case your installed
+
+    operating system is no longer reachable.
+
+
+    You can supply a `postInstallScript` key in the body of the request which
+
+    should contain a base64 encoded string with a valid script. This script will
+
+    be executed as soon as rescue mode is launched and can be used to further
+
+    automate the process. A requirement for the post install script is that it
+
+    starts with a shebang line like `#!/usr/bin/env bash`.
+
+
+    After a rescue mode is launched you can manually reboot the server. After
+    this
+
+    reboot the server will boot into the existing operating system.
+
+
+    To get a list of available rescue images, you could do so by sending a `GET`
+
+    request to `/bareMetals/v2/rescueImages`.
+  operationId: enableRescueMode
+  requestBody:
+    content:
+      application/json:
+        example:
+          callbackUrl: https://example.com/urlExecutedOnCallback
+          powerCycle: true
+          rescueImageId: GRML
+          sshKeys: ssh-rsa AAAAB3NzaC1y... user@domain.com
+        schema:
+          $ref: ../components/schemas/enableRescueModeOpts.yaml
+  responses:
+    '202':
+      content:
+        application/json:
+          example:
+            createdAt: 2018-03-06T22:53:31+0000
+            flow: tasks
+            isRunning: true
+            node: AA:BB:CC:DD:EE:FF!JKDJFK890
+            payload:
+              fileserverBaseUrl: 10.11.20.2
+              isUnassignedServer: false
+              jobType: rescueMode
+              pop: AMS-01
+              powerCycle: true
+              serverId: '2349839'
+            progress:
+              canceled: 0
+              expired: 0
+              failed: 0
+              finished: 0
+              inprogress: 0
+              pending: 1
+              percentage: 0
+              total: 12
+              waiting: 11
+            serverId: '2349839'
+            status: ACTIVE
+            tasks:
+              - description: dummy
+                errorMessage: null
+                flow: tasks
+                onError: break
+                status: PENDING
+                statusTimestamps:
+                  PENDING: '2018-01-09T10:38:12+00:00'
+                  WAITING: '2018-01-09T10:38:12+00:00'
+                uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
+            type: rescueMode
+            updatedAt: 2018-03-06T22:53:31+0000
+            uuid: ac99431b-640d-4282-95a9-a444eedb9309
+          schema:
+            $ref: ../components/schemas/job.yaml
+      description: Accepted.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Launch rescue mode
+  tags:
+    - Jobs
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_rescueMode/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_rescueMode/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_rescueMode/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_rescueMode/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_rescueMode/postundefined

@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"desiredAmount":1,"minimumAmount":1,"maximumAmount":1,"cpuThreshold":1,"warmupTime":60,"cooldownTime":300,"instanceId":"64d2028c-ae87-4069-a624-66089d957ef9","reference":"string","type":"MANUAL","startsAt":"2024-04-25 08:00:00","endsAt":"2024-04-25 08:00:00"}');
+
+$request->setRequestUrl('https://api.leaseweb.com/publicCloud/v1/autoScalingGroups');
+$request->setRequestMethod('POST');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

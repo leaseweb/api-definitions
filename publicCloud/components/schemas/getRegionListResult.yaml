@@ -1,0 +1,19 @@
+properties:
+  regions:
+    type: array
+    items:
+      type: object
+      title: region
+      required:
+        - name
+        - location
+      properties:
+        name:
+          $ref: ./regionName.yaml
+        location:
+          type: string
+          description: The city where the region is located.
+          example: Amsterdam
+  _metadata:
+    $ref: ./_metadata.yaml
+type: object

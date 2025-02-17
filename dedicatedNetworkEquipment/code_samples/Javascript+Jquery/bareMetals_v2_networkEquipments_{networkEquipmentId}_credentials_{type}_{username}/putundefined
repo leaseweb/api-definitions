@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/bareMetals/v2/networkEquipments/12345/credentials/%7Btype%7D/root",
+  "method": "PUT",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"password\":\"string\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

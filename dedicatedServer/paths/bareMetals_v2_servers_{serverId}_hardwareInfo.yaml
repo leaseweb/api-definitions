@@ -1,0 +1,202 @@
+get:
+  description: >
+    This information is generated when running a hardware scan for your server.
+    A
+
+    hardware scan collects hardware information about your system.
+  operationId: getHardware
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            id: '2378237'
+            parserVersion: '3.6'
+            result:
+              chassis:
+                description: Rack Mount Chassis
+                firmware:
+                  date: 07/01/2013
+                  description: BIOS
+                  vendor: HP
+                  version: J01
+                motherboard:
+                  product: ''
+                  serial: ''
+                  vendor: ''
+                product: ProLiant DL120 G7 (647339-B21)
+                serial: CZ33109CHV
+                vendor: HP
+              cpu:
+                - capabilities:
+                    cpufreq: CPU Frequency scaling
+                    ht: HyperThreading
+                    vmx: false
+                    x86-64: 64bits extensions (x86-64)
+                  description: Intel(R) Xeon(R) CPU E31230
+                  hz: '2792640000'
+                  serial_number: ''
+                  settings:
+                    cores: '4'
+                    enabledcores: '4'
+                    threads: '8'
+                  slot: Proc 1
+                  vendor: Intel Corp.
+              disks:
+                - description: ATA Disk
+                  id: disk:0
+                  product: Hitachi HDS72302
+                  serial_number: MS77215W07S6SA
+                  size: '2000398934016'
+                  smartctl:
+                    ata_version: ATA8-ACS T13/1699-D revision 4
+                    attributes:
+                      Power_On_Hours:
+                        flag: '0x0012'
+                        id: '  9'
+                        raw_value: '39832'
+                        thresh: '000'
+                        type: Old_age
+                        updated: Always
+                        value: '095'
+                        when_failed: '-'
+                        worst: '095'
+                      Reallocated_Sector_Ct:
+                        flag: '0x0033'
+                        id: '  5'
+                        raw_value: '0'
+                        thresh: '005'
+                        type: Pre-fail
+                        updated: Always
+                        value: '100'
+                        when_failed: '-'
+                        worst: '100'
+                    device_model: Hitachi HDS723020BLE640
+                    execution_status: '0'
+                    firmware_version: MX4OAAB0
+                    is_sas: false
+                    overall_health: PASSED
+                    rpm: 7200 rpm
+                    sata_version: 'SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)'
+                    sector_size: 512 bytes logical, 4096 bytes physical
+                    serial_number: MS77215W07S6SA
+                    smart_error_log: No Errors Logged
+                    smart_support:
+                      available: true
+                      enabled: true
+                    smartctl_version: '6.2'
+                    user_capacity: 2,000,398,934,016 bytes [2.00 TB]
+                  vendor: Hitachi
+              ipmi:
+                defgateway: 10.19.79.126
+                firmware: '1.88'
+                ipaddress: 10.19.79.67
+                ipsource: DHCP Address
+                macaddress: 28:92:4a:33:48:e8
+                subnetmask: 255.255.255.192
+                vendor: Hewlett-Packard
+              memory:
+                - clock_hz: '1333000000'
+                  description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+                  id: memory/bank:0
+                  serial_number: 8369AF58
+                  size_bytes: '4294967296'
+                - clock_hz: '1333000000'
+                  description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+                  id: memory/bank:1
+                  serial_number: 8369B174
+                  size_bytes: '4294967296'
+              network:
+                - capabilities:
+                    autonegotiation: Auto-negotiation
+                    bus_master: bus mastering
+                    cap_list: PCI capabilities listing
+                    ethernet: ''
+                    link_speeds:
+                      1000bt-fd: 1Gbit/s (full duplex)
+                      100bt: 100Mbit/s
+                      100bt-fd: 100Mbit/s (full duplex)
+                      10bt: 10Mbit/s
+                      10bt-fd: 10Mbit/s (full duplex)
+                    msi: Message Signalled Interrupts
+                    msix: MSI-X
+                    pciexpress: PCI Express
+                    physical: Physical interface
+                    pm: Power Management
+                    tp: twisted pair
+                  lldp:
+                    chassis:
+                      description: >-
+                        Juniper Networks, Inc. ex3300-48t Ethernet Switch,
+                        kernel JUNOS 15.1R5.5, Build date: 2016-11-25 16:02:59
+                        UTC Copyright (c) 1996-2016 Juniper Networks, Inc.
+                      mac_address: 4c:16:fc:3a:84:c0
+                      name: EVO-NS19-1
+                    port:
+                      auto_negotiation:
+                        enabled: 'yes'
+                        supported: 'yes'
+                      description: ge-0/0/2.0
+                    vlan:
+                      id: '0'
+                      label: VLAN
+                      name: default
+                  logical_name: eth0
+                  mac_address: 28:92:4a:33:48:e6
+                  product: 82574L Gigabit Network Connection
+                  settings:
+                    autonegotiation: 'on'
+                    broadcast: 'yes'
+                    driver: e1000e
+                    driverversion: 3.2.6-k
+                    duplex: full
+                    firmware: 2.1-2
+                    ip: 212.32.230.67
+                    latency: '0'
+                    link: 'yes'
+                    multicast: 'yes'
+                    port: twisted pair
+                    speed: 1Gbit/s
+                  vendor: Intel Corporation
+            scannedAt: '2017-09-27T14:21:01Z'
+            serverId: '62264'
+          schema:
+            $ref: ../components/schemas/getHardwareResult.yaml
+      description: Ok.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Show hardware information
+  tags:
+    - Getting Started
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_hardwareInfo/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_hardwareInfo/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_hardwareInfo/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_hardwareInfo/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_hardwareInfo/getundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml

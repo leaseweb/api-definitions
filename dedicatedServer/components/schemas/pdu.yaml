@@ -1,0 +1,7 @@
+description: Object describing the PDU power information
+title: pdu
+properties:
+  status:
+    description: The current power status of the network equipment.
+    type: string
+type: object

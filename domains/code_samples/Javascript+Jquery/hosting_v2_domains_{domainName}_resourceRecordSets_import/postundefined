@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/hosting/v2/domains/example.com/resourceRecordSets/import",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"content\":[\"$ORIGIN example.com. \\\\r\\\\n$TTL 86400 \\\\r\\\\n\\\\tIN\\\\tMX\\\\t10\\\\tmail.example.com.       \\\\r\\\\n\\\\r\\\\n\\\\t\\\\r\\\\ndns1\\\\tIN\\\\tA\\\\t10.0.1.1\"]}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

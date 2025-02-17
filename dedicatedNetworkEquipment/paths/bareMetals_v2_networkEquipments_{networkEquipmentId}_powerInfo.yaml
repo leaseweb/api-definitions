@@ -1,0 +1,59 @@
+get:
+  description: |
+    The network equipment can either be `ON` or `OFF`. Network Equipment can be
+    powered on or off by using the respective `/powerOn` and `/powerOff` API
+    calls. In addition network equipment can also be rebooted using the
+    `/powerCycle` API call.
+
+    The `pdu` object describes the power status from the power distribution unit
+    (PDU) point of view. If your network equipment is connected to multiple PDU
+    ports the `status` property will report `on` if at least one PDU port has
+    power.
+  operationId: getPowerStatus
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            pdu:
+              status: 'on'
+          schema:
+            $ref: ../components/schemas/getPowerStatusResult.yaml
+      description: Ok.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Show power status
+  tags:
+    - Power
+    - Dedicated Network Equipments | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_networkEquipments_{networkEquipmentId}_powerInfo/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_networkEquipments_{networkEquipmentId}_powerInfo/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_networkEquipments_{networkEquipmentId}_powerInfo/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_networkEquipments_{networkEquipmentId}_powerInfo/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_networkEquipments_{networkEquipmentId}_powerInfo/getundefined
+parameters:
+  - $ref: ../components/parameters/networkEquipmentId.yaml

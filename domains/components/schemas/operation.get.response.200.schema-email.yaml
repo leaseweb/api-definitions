@@ -1,0 +1,102 @@
+$schema: http://json-schema.org/draft-04/schema#
+properties:
+  domains:
+    type: array
+    items:
+      type: object
+      properties:
+        domainName:
+          type: string
+        suspended:
+          type: boolean
+        dnsOnly:
+          type: boolean
+        contractStartDate:
+          type: string
+        contractEndDate:
+          type: string
+        numberOfAutoResponders:
+          type: number
+        numberOfEmailAliases:
+          type: number
+        numberOfForwards:
+          type: number
+        numberOfMailboxes:
+          type: number
+        _embedded:
+          type: object
+          properties:
+            catchAll:
+              type: object
+              properties:
+                _links:
+                  type: object
+                  properties:
+                    self:
+                      type: object
+                      properties:
+                        href:
+                          type: string
+        _links:
+          type: object
+          properties:
+            self:
+              type: object
+              properties:
+                href:
+                  type: string
+            collection:
+              type: object
+              properties:
+                href:
+                  type: string
+            catchAll:
+              type: object
+              properties:
+                href:
+                  type: string
+            emailAliases:
+              type: object
+              properties:
+                href:
+                  type: string
+            forwards:
+              type: object
+              properties:
+                href:
+                  type: string
+            mailboxes:
+              type: object
+              properties:
+                href:
+                  type: string
+      required:
+        - domainName
+        - suspended
+        - dnsOnly
+        - contractStartDate
+        - contractEndDate
+        - numberOfAutoResponders
+        - numberOfEmailAliases
+        - numberOfForwards
+        - numberOfMailboxes
+        - _embedded
+        - _links
+  _links:
+    type: object
+    properties:
+      self:
+        type: object
+        properties:
+          href:
+            type: string
+  _metadata:
+    type: object
+    properties:
+      totalCount:
+        type: number
+      limit:
+        type: number
+      offset:
+        type: number
+type: object

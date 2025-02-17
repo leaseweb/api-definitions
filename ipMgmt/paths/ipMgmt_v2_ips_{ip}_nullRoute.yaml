@@ -1,0 +1,102 @@
+post:
+  operationId: nullRouteIP
+  requestBody:
+    content:
+      application/json:
+        example:
+          automatedUnnullingAt: '2015-06-25T11:13:00Z'
+          comment: This IP is evil
+          ticketId: '188612'
+        schema:
+          $ref: ../components/schemas/nullRouteIPOpts.yaml
+    description: ''
+  responses:
+    '201':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/nullRoutedIP.yaml
+          example:
+            assignedContract:
+              id: '123456'
+            automatedUnnullingAt: '2015-06-25T11:13:00Z'
+            comment: This IP is evil
+            equipmentId: '456'
+            id: '4534536'
+            ip: 192.0.2.1
+            nullLevel: 1
+            nulledAt: '2015-06-28T12:00:00Z'
+            nulledBy: john.doe@example.com
+            ticketId: '188612'
+            unnulledAt: null
+            unnulledBy: null
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Null route an IP
+  tags:
+    - IPs
+    - IP management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/ipMgmt_v2_ips_{ip}_nullRoute/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ipMgmt_v2_ips_{ip}_nullRoute/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/ipMgmt_v2_ips_{ip}_nullRoute/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ipMgmt_v2_ips_{ip}_nullRoute/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/ipMgmt_v2_ips_{ip}_nullRoute/postundefined
+delete:
+  operationId: removeIPNullRoute
+  responses:
+    '200':
+      description: Null-route successfully deleted
+      content: {}
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Remove a null route
+  tags:
+    - IPs
+    - IP management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ipMgmt_v2_ips_{ip}_nullRoute/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ipMgmt_v2_ips_{ip}_nullRoute/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/ipMgmt_v2_ips_{ip}_nullRoute/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ipMgmt_v2_ips_{ip}_nullRoute/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/ipMgmt_v2_ips_{ip}_nullRoute/deleteundefined
+parameters:
+  - $ref: ../components/parameters/ip.yaml

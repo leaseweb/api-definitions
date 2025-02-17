@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/ipMgmt/v2/nullRoutes/23234 \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"automatedUnnullingAt":"2015-06-25T11:13:00Z","comment":"This IP is evil","ticketId":"188612"}'

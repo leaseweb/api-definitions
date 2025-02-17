@@ -1,0 +1,24 @@
+required:
+  - jobType
+title: defaultPayload
+type: object
+properties:
+  fileserverBaseUrl:
+    type: string
+  jobType:
+    type: string
+    enum:
+      - rescueMode
+      - hardwareScan
+      - ipmiReset
+  pop:
+    type: string
+  powerCycle:
+    type: boolean
+  isUnassignedServer:
+    type: boolean
+  serverId:
+    description: Id of the server
+    type: string
+discriminator:
+  propertyName: jobType

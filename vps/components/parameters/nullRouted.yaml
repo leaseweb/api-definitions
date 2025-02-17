@@ -1,0 +1,5 @@
+name: nullRouted
+required: false
+schema:
+  type: boolean
+in: query

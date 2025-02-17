@@ -1,0 +1,14 @@
+properties:
+  nulling:
+    description: Enable or disable email notifications for nulling events
+    enum:
+      - ENABLED
+      - DISABLED
+    type: string
+  scrubbing:
+    description: Enable or disable email notifications for nulling events
+    enum:
+      - ENABLED
+      - DISABLED
+    type: string
+type: object

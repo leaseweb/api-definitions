@@ -1,0 +1,63 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  active:
+    type: boolean
+    description: Boolean indicating whether the forward is active
+    examples:
+      - true
+  destination:
+    type: string
+    description: The email address to which email messages will be forwarded
+    examples:
+      - destination@example.org
+  source:
+    type: string
+    description: >-
+      The email address of the mailbox for which email messages will be
+      forwarded
+    examples:
+      - mailbox@example.com
+  spamChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether spam checks are enabled
+    examples:
+      - false
+  virusChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether virus checks are enabled
+    examples:
+      - true
+  createdAt:
+    type: string
+    description: Indicate the time at which the alias is created
+    examples:
+      - '2023-05-01T00:00:00+00:00'
+  modifiedAt:
+    type: string
+    description: Indicate the time at which the alias is modified
+    examples:
+      - '2023-05-01T00:00:00+00:00'
+  _links:
+    type: object
+    description: Links to related resource locations
+    properties:
+      self:
+        type: object
+        description: Link to the forward
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the forward's location
+            examples:
+              - >-
+                /domains/example.com/mailboxes/mailbox%40example.com/forwards/destination%40example.org
+      collection:
+        type: object
+        description: Link to the forward collection for the mailbox
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the forward collection location for the mailbox
+            examples:
+              - /domains/example.com/mailboxes/mailbox%40example.com/forwards
+type: object

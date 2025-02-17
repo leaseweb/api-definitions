@@ -1,0 +1,20 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/bareMetals/v2/networkEquipments/12345/nullRouteHistory');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'limit' => '20',
+  'offset' => '10'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

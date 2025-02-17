@@ -1,0 +1,68 @@
+type: object
+required:
+  - id
+  - type
+  - resources
+  - region
+  - reference
+  - marketAppId
+  - state
+  - productType
+  - hasPublicIpV4
+  - hasPrivateNetwork
+  - hasUserData
+  - rootDiskSize
+  - rootDiskStorageType
+  - ips
+  - contract
+  - startedAt
+  - autoScalingGroup
+  - image
+properties:
+  id:
+    type: string
+    format: uuid
+    description: The unique identifier of the instance
+  type:
+    $ref: ./typeName.yaml
+  resources:
+    $ref: ./resources.yaml
+  region:
+    $ref: ./regionName.yaml
+  reference:
+    type: string
+    description: The identifying name set to the instance
+    nullable: true
+  startedAt:
+    type: string
+    description: >-
+      Date and time when the instance was started for the first time, right
+      after launching it
+    format: date-time
+    nullable: true
+  marketAppId:
+    type: string
+    description: Market App ID that must be installed into the instance
+    example: CPANEL
+    nullable: true
+  state:
+    $ref: ./state.yaml
+  productType:
+    type: string
+    description: The product type
+  hasPublicIpV4:
+    type: boolean
+  hasPrivateNetwork:
+    type: boolean
+  hasUserData:
+    type: boolean
+  rootDiskSize:
+    $ref: ./rootDiskSize.yaml
+  rootDiskStorageType:
+    $ref: ./storageType.yaml
+  contract:
+    $ref: ./contract.yaml
+  autoScalingGroup:
+    $ref: ./autoScalingGroup.yaml
+  image:
+    $ref: ./image.yaml

@@ -1,0 +1,14 @@
+type: object
+title: featureAvailability
+description: List of features that are available for this device
+properties:
+  automation:
+    type: boolean
+  powerCycle:
+    type: boolean
+  ipmiReboot:
+    type: boolean
+  privateNetwork:
+    type: boolean
+  remoteManagement:
+    type: boolean

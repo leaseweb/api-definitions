@@ -1,8 +1,0 @@
-{
-  "name": "sort",
-  "in": "query",
-  "schema": {
-    "type": "string"
-  },
-  "description": "Comma-separated list of sort field names. Prepend the field name with '-' for descending order. E.g. `sort=ip,-nullrouted`. Sortable field names are ip, nullRouted, reverseLookup."
-}

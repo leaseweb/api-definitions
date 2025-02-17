@@ -1,0 +1,187 @@
+get:
+  description: >
+    List your Dedicated Network Equipment. This api call supports pagination.
+    Use
+
+    the `limit` and `offset` query string parameters to paginate through all
+    your
+
+    dedicated network equipment.
+
+
+    Every `network equipment` object in the json response lists a few properties
+
+    of a network equipment. Use the single resource api call to get more details
+
+    for a single network equipment.
+  operationId: getNetworkEquipmentList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - description: Filter the list of network equipment by reference.
+      example: my-switch
+      in: query
+      name: reference
+      schema:
+        type: string
+    - description: Filter the list of network equipment by ip address.
+      example: 127.0.0.4
+      in: query
+      name: ip
+      schema:
+        type: string
+        format: ipv4
+    - description: Filter the list of network equipment by mac address.
+      example: aa:bb:cc:dd:ee:ff
+      in: query
+      name: macAddress
+      schema:
+        type: string
+        description: >-
+          Represents a MAC Address in the standard colon delimited format. Eg.
+          `01:23:45:67:89:0A`
+        pattern: >-
+          ([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})|([0-9a-fA-F]{4}\.[0-9a-fA-F]{4}\.[0-9a-fA-F]{4})$
+        example: 00:15:17:DB:63:01
+    - description: Filter the list of network equipment by site (location).
+      example: FRA-10
+      in: query
+      name: site
+      schema:
+        type: string
+    - description: Filter the list of network equipment by dedicated rack id.
+      example: '123'
+      in: query
+      name: privateRackId
+      schema:
+        type: string
+    - description: Filter the list for private network capable network equipment
+      in: query
+      name: privateNetworkCapable
+      schema:
+        enum:
+          - 'true'
+          - 'false'
+        type: string
+    - description: Filter the list for private network enabled network equipment
+      in: query
+      name: privateNetworkEnabled
+      schema:
+        enum:
+          - 'true'
+          - 'false'
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 20
+              offset: 0
+              totalCount: 2
+            networkEquipments:
+              - contract:
+                  customerId: '10085996'
+                  deliveryStatus: ACTIVE
+                  id: '49031391001170'
+                  reference: My Private Switch
+                  salesOrgId: '2000'
+                featureAvailability:
+                  automation: true
+                  ipmiReboot: false
+                  powerCycle: true
+                  privateNetwork: false
+                  remoteManagement: false
+                id: '12345'
+                location:
+                  rack: YY11
+                  site: AMS-01
+                  suite: HALL3
+                  unit: '21'
+                networkInterfaces:
+                  internal:
+                    gateway: null
+                    ip: null
+                    ports: []
+                  public:
+                    gateway: 127.0.2.254
+                    ip: 127.0.2.1/24
+                    locationId: ''
+                    nullRouted: false
+                    ports: []
+                  remoteManagement:
+                    gateway: null
+                    ip: null
+                    locationId: null
+                    ports: []
+                type: SWITCH
+              - contract:
+                  customerId: '10085996'
+                  deliveryStatus: ACTIVE
+                  id: '49031513001110'
+                  reference: My Other Private Switch
+                  salesOrgId: '2000'
+                featureAvailability:
+                  automation: false
+                  ipmiReboot: false
+                  powerCycle: false
+                  privateNetwork: false
+                  remoteManagement: false
+                id: '45678'
+                location:
+                  rack: XX00
+                  site: AMS-01
+                  suite: HALL3
+                  unit: '21'
+                networkInterfaces:
+                  internal:
+                    gateway: null
+                    ip: null
+                    ports: []
+                  public:
+                    gateway: 127.1.1.254
+                    ip: 127.1.1.68/24
+                    locationId: ''
+                    nullRouted: false
+                    ports: []
+                  remoteManagement:
+                    gateway: null
+                    ip: null
+                    locationId: null
+                    ports: []
+                type: SWITCH
+          schema:
+            $ref: ../components/schemas/getNetworkEquipmentListResult.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List network equipment
+  tags:
+    - Getting Started
+    - Dedicated Network Equipments | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_networkEquipments/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_networkEquipments/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/bareMetals_v2_networkEquipments/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_networkEquipments/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/bareMetals_v2_networkEquipments/getundefined

@@ -1,0 +1,198 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - $ref: ../components/parameters/emailAddress.yaml
+get:
+  description: ''
+  operationId: domains-mailboxes-emailaddress-autoresponder-get
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-9.yaml
+          examples:
+            example:
+              value:
+                active: true
+                body: >-
+                  I will be out of office until 14-12-2020. Please contact the
+                  reception desk for urgent matters.
+                subject: Out of office
+                _links:
+                  self:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                  parent:
+                    href: /domains/example.com/mailboxes/mailbox%40example.com
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Inspect an auto responder
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/getundefined
+put:
+  description: ''
+  operationId: domains-mailboxes-emailaddress-autoresponder-put
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.put.request.schema-5.yaml
+        examples:
+          example:
+            value:
+              active: true
+              body: >-
+                I will be out of office until 14-12-2020. Please contact the
+                reception desk for urgent matters.
+              subject: Out of office
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.200.schema-5.yaml
+          examples:
+            example:
+              value:
+                active: true
+                body: >-
+                  I will be out of office until 14-12-2020. Please contact the
+                  reception desk for urgent matters.
+                subject: Out of office
+                _links:
+                  self:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                  parent:
+                    href: /domains/example.com/mailboxes/mailbox%40example.com
+    '201':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.201.schema-2.yaml
+          examples:
+            example:
+              value:
+                active: true
+                body: >-
+                  I will be out of office until 14-12-2020. Please contact the
+                  reception desk for urgent matters.
+                subject: Out of office
+                _links:
+                  self:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                  parent:
+                    href: /domains/example.com/mailboxes/mailbox%40example.com
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Change an auto responder
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/putundefined
+delete:
+  description: ''
+  operationId: domains-mailboxes-emailaddress-autoresponder-delete
+  responses:
+    '204':
+      description: Successfully deleted the auto responder.
+      content: {}
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete an auto responder
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder/deleteundefined

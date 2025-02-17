@@ -1,0 +1,74 @@
+get:
+  description: >
+    Lists all Rescue Images which are available for launching a dedicated server
+
+    into rescue mode.
+
+
+    A `rescueImageId` can be supplied to the `POST /rescueMode` API call and
+    will
+
+    reboot your server into rescue mode.
+
+
+    Launching rescue mode for a server is often used to troubleshoot an existing
+
+    installation.
+
+
+    Note that launching rescue mode does not modify any data on the disks of
+    your
+
+    server. It will require your server to be rebooted.
+  operationId: getRescueImageList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 2
+            rescueImages:
+              - id: GRML
+                name: GRML Linux Rescue Image (amd64)
+              - id: CENTOS_7
+                name: CentOS 7 Linux Rescue Image (amd64)
+              - id: FREEBSD
+                name: FreeBSD Rescue Image (amd64)
+          schema:
+            $ref: ../components/schemas/getRescueImageListResult.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Rescue Images
+  tags:
+    - Rescue Images
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/bareMetals_v2_rescueImages/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/bareMetals_v2_rescueImages/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/bareMetals_v2_rescueImages/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_rescueImages/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/bareMetals_v2_rescueImages/getundefined

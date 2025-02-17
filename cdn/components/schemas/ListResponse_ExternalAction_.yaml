@@ -1,0 +1,13 @@
+type: object
+title: ListResponse[ExternalAction]
+properties:
+  actions:
+    type: array
+    title: Actions
+    items:
+      $ref: ./ExternalAction.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - actions
+  - _metadata

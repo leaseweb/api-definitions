@@ -1,0 +1,12 @@
+title: rack
+description: Rack details where this network equipment is located at
+properties:
+  id:
+    description: Rack id
+    type: string
+  capacity:
+    description: Rack capacity
+    type: string
+  type:
+    $ref: ./rackType.yaml
+type: object

@@ -1,0 +1,7 @@
+description: Operating system ID
+in: path
+name: operatingSystemId
+required: true
+schema:
+  example: UBUNTU_22_04_64BIT
+  type: string

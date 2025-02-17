@@ -1,0 +1,299 @@
+get:
+  operationId: get/privateRacks/{privateRackId}
+  summary: Inspect a dedicated rack
+  description: |
+    Retrieve information about a single dedicated rack.
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            properties:
+              id:
+                type: string
+                description: Id of the dedicated rack
+              location:
+                type: object
+                description: Location of the dedicated rack
+              networkInterfaces:
+                type: object
+                description: Network interface information grouped by type
+              featureAvailability:
+                type: object
+                description: List of features that are available for this dedicated rack
+              powerPorts:
+                type: array
+                description: >-
+                  List of ports that can be used to manage power of the
+                  dedicated rack
+              contract:
+                type: object
+                description: Contract information
+              units:
+                type: array
+                description: List of units for this dedicated rack
+                items:
+                  type: object
+                  description: A single object of the unit
+                  properties:
+                    unit:
+                      type: string
+                      description: The number of the unit
+                      examples:
+                        - '1'
+                    status:
+                      type: string
+                      description: The status of the unit
+                      enum:
+                        - FREE
+                        - OCCUPIED
+                      examples:
+                        - FREE
+                    connectedUnits:
+                      type: array
+                      description: >-
+                        If this unit is occupied by an equipment show all
+                        connected units including the unit itself
+                      examples:
+                        - - '13'
+                          - '14'
+          examples:
+            example:
+              value:
+                contract:
+                  customerId: '2738283'
+                  deliveryStatus: ACTIVE
+                  endsAt: null
+                  id: '2893829'
+                  networkTraffic:
+                    datatrafficLimit: 0
+                    datatrafficUnit: null
+                    trafficType: CUSTOM
+                    type: CONNECTIVITY
+                  reference: AAAA - Private rack 002
+                  salesOrgId: '2000'
+                  sla: Platinum - 24x7x½
+                  startsAt: '2017-08-01T00:00:00'
+                featureAvailability:
+                  powerCycle: false
+                  privateNetwork: false
+                id: '2893829'
+                location:
+                  rack: MI15
+                  site: AMS-01
+                  suite: Hall3
+                networkInterfaces:
+                  public:
+                    ports:
+                      - name: ce05.ams-01
+                        port: 0-26
+                powerPorts: []
+                units:
+                  - unit: '1'
+                    status: FREE
+                    connectedUnits:
+                      - '1'
+                  - unit: '13'
+                    status: OCCUPIED
+                    connectedUnits:
+                      - '13'
+                      - '14'
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Dedicated racks
+    - Dedicated Racks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateRacks_{privateRackId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateRacks_{privateRackId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateRacks_{privateRackId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateRacks_{privateRackId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateRacks_{privateRackId}/getundefined
+put:
+  operationId: put/privateRacks/{privateRackId}
+  summary: Update a dedicated rack
+  description: >-
+    A reference can be used to uniquely identify a dedicated rack with a name,
+    such as
+
+    `production`.
+  requestBody:
+    content:
+      application/json:
+        examples:
+          example:
+            value:
+              reference: production
+        schema:
+          type: object
+          $schema: http://json-schema.org/draft-04/schema
+          id: http://jsonschema.net
+          properties:
+            reference:
+              type: string
+              description: The reference for this dedicated rack
+              examples:
+                - production
+          required:
+            - reference
+  responses:
+    '204':
+      description: If the reference was successfully set a `204 No Content` is returned
+      content: {}
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Dedicated racks
+    - Dedicated Racks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateRacks_{privateRackId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateRacks_{privateRackId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateRacks_{privateRackId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateRacks_{privateRackId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateRacks_{privateRackId}/putundefined
+parameters:
+  - $ref: ../components/parameters/privateRackId.yaml

@@ -1,0 +1,44 @@
+properties:
+  ddos:
+    title: dDos
+    description: DDoS IP Protection Details
+    properties:
+      detectionProfile:
+        description: The applied detection profile
+        enum:
+          - STANDARD_DEFAULT
+          - ADVANCED_DEFAULT
+          - ADVANCED_LOW_UDP
+          - ADVANCED_MED_UDP
+        type: string
+      protectionType:
+        description: The type of DDoS protection
+        enum:
+          - STANDARD
+          - ADVANCED
+        type: string
+    type: object
+  floatingIp:
+    description: Indicates if the IP is a Floating IP
+    type: boolean
+  gateway:
+    description: Gateway
+    type: string
+  ip:
+    description: IP address in CIDR notation
+    type: string
+  mainIp:
+    description: IP address is main
+    type: boolean
+  networkType:
+    $ref: ./networkType.yaml
+  nullRouted:
+    description: IP address null routed
+    type: boolean
+  reverseLookup:
+    description: The reverse lookup value
+    type: string
+  version:
+    description: IP version
+    type: integer
+type: object

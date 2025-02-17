@@ -1,0 +1,6 @@
+schema:
+  type: string
+name: emailAddress
+in: path
+required: true
+description: Email address

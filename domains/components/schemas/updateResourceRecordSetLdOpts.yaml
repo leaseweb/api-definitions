@@ -1,0 +1,9 @@
+properties:
+  geoContent:
+    $ref: ./geoContent.yaml
+  ttl:
+    $ref: ./ttl.yaml
+required:
+  - geoContent
+  - ttl
+type: object

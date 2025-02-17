@@ -1,0 +1,87 @@
+get:
+  summary: CreateLoadBalancer
+  operationId: CreateLoadBalancer
+  description: >
+    Create a load balancer, by providing the type, subnet, and a name.
+
+
+    #### AWS CLI example
+
+
+    ```sh
+
+    aws elbv2 create-load-balancer --type <TYPE> --name <NAME> --subnets
+    <REGION> --endpoint-url <LEASEWEB_AWS_EC2_SERVER_URL>
+
+    ```
+  tags:
+    - Aws Ec2 Wrapper | title
+  security:
+    - Authorization: []
+  parameters:
+    - description: An identifying name you can refer to the load balancer.
+      example: Test-Load-Blancer
+      in: query
+      name: Name
+      schema:
+        type: string
+      required: true
+    - description: >-
+        Load balancer type. The documentation has a complete
+        [list](https://developer.leaseweb.com/api-docs/publiccloud_v1.html#tag/Instance-Types/operation/getInstanceTypeList)
+      example: lsw.m3.large
+      in: query
+      name: Type
+      schema:
+        type: string
+      required: true
+    - description: >-
+        Region to launch the load balancer into. The documentation has a
+        complete
+        [list](https://developer.leaseweb.com/api-docs/publiccloud_v1.html#tag/Regions/operation/getRegionList)
+      example: eu-west-3
+      in: query
+      name: Subnets.member.1
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/createLoadBalancerResult.yaml
+          example: " <?xml version='1.0' encoding='UTF-8'?>\n <CreateLoadBalancerResponse xmlns='http://elasticloadbalancing.amazonaws.com/doc/2015-12-01/'>\n \t<CreateLoadBalancerResult>\n \t\t<LoadBalancers>\n \t\t\t<member>\n \t\t\t\t<LoadBalancerArn>1ac942f4-cdd9-4c00-973f-ed82a92940cb</LoadBalancerArn>\n \t\t\t\t<LoadBalancerName>Test-Load-Blancer</LoadBalancerArn>\n \t\t\t\t<CreatedTime>2024-06-14T09:02,:31+00:00</CreatedTime>,\n \t\t\t\t<Type>lsw.m3.large</Type>\n \t\t\t\t<State>\n \t\t\t\t\t<Code>provisioning</Code>\n \t\t\t\t</State>\n \t\t\t\t<AvailabilityZones>\n \t\t\t\t\t<member>\n \t\t\t\t\t\t<ZoneName>eu-west-3</ZoneName>\n \t\t\t\t\t</member>\n \t\t\t\t</AvailabilityZones>\n \t\t\t</member>\n \t\t</LoadBalancers>\n \t</CreateLoadBalancerResult>\n \t<ResponseMetadata>\n \t\t<RequestId>8008e3fb-f671-46ab-ade4-871ca5508845</RequestId>\n \t</ResponseMetadata>\n </CreateLoadBalancerResponse>\n "
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/aws_ec2_?Action=CreateLoadBalancer/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/aws_ec2_?Action=CreateLoadBalancer/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/aws_ec2_?Action=CreateLoadBalancer/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/aws_ec2_?Action=CreateLoadBalancer/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/aws_ec2_?Action=CreateLoadBalancer/getundefined

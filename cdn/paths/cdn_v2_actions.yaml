@@ -1,0 +1,108 @@
+get:
+  tags:
+    - Action
+    - CDN | title
+  summary: Get All Actions
+  description: >-
+    Get the list of all of the actions to monitor the progress of your
+    background jobs.
+  operationId: get_all_actions_v1_actions_get
+  parameters:
+    - name: filters
+      in: query
+      required: false
+      schema:
+        type: array
+        title: Filters
+        items:
+          type: string
+          enum:
+            - INVALIDATION
+            - CREATE_DIST
+            - UPDATE_DIST
+            - DELETE_DIST
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListResponse_ExternalAction_.yaml
+          examples:
+            All Actions:
+              value:
+                actions:
+                  - type: INVALIDATION
+                    resource:
+                      invalidation_id: in-gt7m1s5
+                      status: FINISHED
+                      url_status:
+                        - url: https://cdn-assets.leaseweb.com/styles.css
+                          distribution_group_id: ''
+                          status: SUCCESS
+                          message: ''
+                      submitted: '2024-07-10T13:10:14'
+                      completed: null
+                    status: FINISHED
+                    id: dac57900-0109-4615-b808-003f2c07cb40
+                    customerId: '59841258'
+                    created: '2024-07-10T13:10:15Z'
+                    updated: '2024-08-08T12:52:09Z'
+                  - type: INVALIDATION
+                    resource:
+                      invalidation_id: in-80ot20ls
+                      status: FINISHED
+                      url_status:
+                        - url: https://cdn-assets.leaseweb.com/logo.png
+                          distribution_group_id: ''
+                          status: SUCCESS
+                          message: ''
+                      submitted: '2024-07-10T13:11:12'
+                      completed: null
+                    status: FINISHED
+                    id: 755ad32d-264d-4ace-bd4c-c30399c71675
+                    customerId: '59841258'
+                    created: '2024-07-10T13:11:13Z'
+                    updated: '2024-08-08T12:52:09Z'
+                _metadata:
+                  totalCount: 2
+                  limit: -1
+                  offset: 0
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_actions/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_actions/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_actions/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_actions/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_actions/getundefined

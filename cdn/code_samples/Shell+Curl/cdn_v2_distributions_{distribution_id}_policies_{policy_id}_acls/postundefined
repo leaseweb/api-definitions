@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/cdn/v2/distributions/%7Bdistribution_id%7D/policies/%7Bpolicy_id%7D/acls \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"action":"REJECT","value":"string","type":"IP_ACL"}'

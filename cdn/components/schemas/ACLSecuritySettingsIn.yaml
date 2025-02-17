@@ -1,0 +1,23 @@
+type: object
+title: ACLSecuritySettingsIn
+properties:
+  action:
+    type: string
+    enum:
+      - REJECT
+      - ALLOW
+    title: Action
+    default: REJECT
+  value:
+    type: string
+    title: Value
+  type:
+    type: string
+    enum:
+      - IP_ACL
+      - GEO_ACL
+      - REFERRER_ACL
+    title: Type
+required:
+  - value
+  - type

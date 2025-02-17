@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/dnssec \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"status":"ENABLED","nsec3":{"active":true},"dnssecKeys":[{"flags":257,"protocol":3,"algorithm":13,"key":"string","name":"string"}]}'

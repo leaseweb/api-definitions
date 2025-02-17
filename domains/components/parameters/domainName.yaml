@@ -1,0 +1,7 @@
+schema:
+  type: string
+name: domainName
+in: path
+required: true
+description: Domain name
+example: example.com

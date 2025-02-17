@@ -1,0 +1,346 @@
+get:
+  operationId: get/privateRacks/{privateRackId}/ips/{ip}
+  summary: Inspect an IP
+  description: ''
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            properties:
+              ip:
+                type: string
+                description: IP address in CIDR notation
+              gateway:
+                type: string
+                description: Gateway
+              floatingIp:
+                type: boolean
+                description: Indicates if the IP is a Floating IP
+              version:
+                type: string
+                description: IP version
+              nullRouted:
+                type: boolean
+                description: IP address null routed
+              mainIp:
+                type: boolean
+                description: IP address is main
+              networkType:
+                type: string
+                description: Type of network
+                enum:
+                  - PUBLIC
+                  - REMOTE_MANAGEMENT
+              reverseLookup:
+                type: string
+                description: The reverse lookup value
+                examples:
+                  - domain.example.com
+              ddos:
+                type: object
+                description: DDoS IP Protection Details
+                properties:
+                  detectionProfile:
+                    type: string
+                    description: The applied detection profile
+                    enum:
+                      - STANDARD_DEFAULT
+                      - ADVANCED_DEFAULT
+                      - ADVANCED_LOW_UDP
+                      - ADVANCED_MED_UDP
+                  protectionType:
+                    type: string
+                    description: The type of DDoS protection
+                    enum:
+                      - STANDARD
+                      - ADVANCED
+          examples:
+            example:
+              value:
+                ip: 12.123.123.1/24
+                gateway: 12.123.123.254
+                floatingIp: false
+                version: 4
+                nullRouted: false
+                reverseLookup: domain.example.com
+                mainIp: true
+                networkType: PUBLIC
+                ddos:
+                  detectionProfile: ADVANCED_LOW_UDP
+                  protectionType: ADVANCED
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Dedicated racks
+    - Dedicated Racks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateRacks_{privateRackId}_ips_{ip}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateRacks_{privateRackId}_ips_{ip}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateRacks_{privateRackId}_ips_{ip}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateRacks_{privateRackId}_ips_{ip}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateRacks_{privateRackId}_ips_{ip}/getundefined
+put:
+  operationId: put/privateRacks/{privateRackId}/ips/{ip}
+  summary: Update an IP
+  description: >-
+    Update the reverse lookup or DDoS detection profile for the ip address. For
+    more information about DDoS detection profiles [click
+    here](https://kb.leaseweb.com/products/cyber-security/ddos-ip-protection#DDOSIPProtection-DDoSIPProtectionAdvancedDetectionprofiles)
+    for our KB related article.
+  requestBody:
+    content:
+      application/json:
+        examples:
+          example:
+            value:
+              reverseLookup: domain.example.com
+              detectionProfile: ADVANCED_LOW_UDP
+        schema:
+          type: object
+          $schema: http://json-schema.org/draft-04/schema
+          id: http://jsonschema.net
+          properties:
+            reverseLookup:
+              type: string
+              description: The reverse lookup value
+              examples:
+                - domain.example.com
+            detectionProfile:
+              type: string
+              description: The detection profile value
+              enum:
+                - ADVANCED_DEFAULT
+                - ADVANCED_LOW_UDP
+                - ADVANCED_MED_UDP
+              examples:
+                - ADVANCED_LOW_UDP
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            properties:
+              ip:
+                type: string
+                description: IP address in CIDR notation
+              gateway:
+                type: string
+                description: Gateway
+              floatingIp:
+                type: boolean
+                description: Indicates if the IP is a Floating IP
+              version:
+                type: string
+                description: IP version
+              nullRouted:
+                type: boolean
+                description: IP address null routed
+              mainIp:
+                type: boolean
+                description: IP address is main
+              networkType:
+                type: string
+                description: Type of network
+                enum:
+                  - PUBLIC
+                  - REMOTE_MANAGEMENT
+              reverseLookup:
+                type: string
+                description: The reverse lookup value
+                examples:
+                  - domain.example.com
+              ddos:
+                type: object
+                description: DDoS IP Protection Details
+                properties:
+                  detectionProfile:
+                    type: string
+                    description: The applied detection profile
+                    enum:
+                      - STANDARD_DEFAULT
+                      - ADVANCED_DEFAULT
+                      - ADVANCED_LOW_UDP
+                      - ADVANCED_MED_UDP
+                  protectionType:
+                    type: string
+                    description: The type of DDoS protection
+                    enum:
+                      - STANDARD
+                      - ADVANCED
+          examples:
+            example:
+              value:
+                ip: 12.123.123.1/24
+                gateway: 12.123.123.254
+                floatingIp: false
+                version: 4
+                nullRouted: false
+                reverseLookup: domain.example.com
+                mainIp: true
+                networkType: PUBLIC
+                ddos:
+                  detectionProfile: ADVANCED_LOW_UDP
+                  protectionType: ADVANCED
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Dedicated racks
+    - Dedicated Racks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateRacks_{privateRackId}_ips_{ip}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateRacks_{privateRackId}_ips_{ip}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateRacks_{privateRackId}_ips_{ip}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateRacks_{privateRackId}_ips_{ip}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateRacks_{privateRackId}_ips_{ip}/putundefined
+parameters:
+  - $ref: ../components/parameters/ip.yaml
+  - $ref: ../components/parameters/privateRackId.yaml

@@ -1,0 +1,23 @@
+title: nullRoute
+properties:
+  automatedUnnullingAt:
+    description: The time the null route was removed or will be removed.
+    format: date-time
+    type: string
+  comment:
+    description: An optional comment for the reason of the null route
+    type: string
+  ip:
+    description: The ip address that was null routed
+    type: string
+  nullLevel:
+    description: The level of the null route
+    type: integer
+  nulledAt:
+    description: The time the null route was created
+    format: date-time
+    type: string
+  ticketId:
+    description: A ticket number if available
+    type: string
+type: object

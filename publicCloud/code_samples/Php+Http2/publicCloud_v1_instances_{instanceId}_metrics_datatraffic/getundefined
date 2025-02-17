@@ -1,0 +1,22 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/publicCloud/v1/instances/ace712e9-a166-47f1-9065-4af0f7e7fce1/metrics/datatraffic');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'from' => '2025-01-28',
+  'to' => '2025-01-28',
+  'granularity' => 'SOME_STRING_VALUE',
+  'aggregation' => 'SOME_STRING_VALUE'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

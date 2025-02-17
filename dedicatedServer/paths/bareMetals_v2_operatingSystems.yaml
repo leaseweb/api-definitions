@@ -1,0 +1,112 @@
+get:
+  description: >
+    An `id` of a operating system can be supplied when (re)installing a
+    dedicated
+
+    server (for more information on how to install dedicated servers via the API
+
+    refer to the API documentation).
+  operationId: getOperatingSystemList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - description: Filter operating systems by control panel id
+      in: query
+      name: controlPanelId
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 100
+              offset: 0
+              totalCount: 26
+            operatingSystems:
+              - id: ALMALINUX_8_64BIT
+                name: AlmaLinux 8 (x86_64)
+              - id: CENTOS_7_64BIT
+                name: CentOS 7 (x86_64)
+              - id: ROCKY_LINUX_8_64BIT
+                name: Rocky Linux 8 (x86_64)
+              - id: DEBIAN_11_64BIT
+                name: Debian 11 (amd64)
+              - id: DEBIAN_10_64BIT
+                name: Debian 10 (amd64)
+              - id: UBUNTU_22_04_64BIT
+                name: Ubuntu 22.04 LTS (Jammy Jellyfish) (amd64)
+              - id: UBUNTU_20_04_64BIT
+                name: Ubuntu 20.04 LTS (Focal Fossa) (amd64)
+              - id: UBUNTU_18_04_64BIT
+                name: Ubuntu 18.04 LTS (Bionic Beaver) (amd64)
+              - id: WINDOWS_SERVER_2019_STANDARD_64BIT
+                name: Windows Server 2019 Standard (x64)
+              - id: WINDOWS_SERVER_2019_DATACENTER_64BIT
+                name: Windows Server 2019 Datacenter (x64)
+              - id: WINDOWS_SERVER_2016_STANDARD_64BIT
+                name: Windows Server 2016 Standard (x64)
+              - id: WINDOWS_SERVER_2016_DATACENTER_64BIT
+                name: Windows Server 2016 Datacenter (x64)
+              - id: WINDOWS_SERVER_2012_R2_STANDARD_64BIT
+                name: Windows Server 2012 R2 Standard (x64)
+              - id: WINDOWS_SERVER_2012_R2_DATACENTER_64BIT
+                name: Windows Server 2012 R2 Datacenter (x64)
+              - id: WINDOWS_SERVER_2012_STANDARD_64BIT
+                name: >-
+                  Windows Server 2012 Standard (x64) (Only available to existing
+                  license holders)
+              - id: WINDOWS_SERVER_2012_DATACENTER_64BIT
+                name: >-
+                  Windows Server 2012 Datacenter (x64) (Only available to
+                  existing license holders)
+              - id: ESXI_7_0_64BIT_CSTM
+                name: ESXi 7.0 Targeted (x86_64)
+              - id: ESXI_7_0_64BIT
+                name: ESXi 7.0 (x86_64)
+              - id: ESXI_6_7_64BIT_CSTM
+                name: ESXi 6.7 Targeted (x86_64)
+              - id: ESXI_6_7_64BIT
+                name: ESXi 6.7 (x86_64)
+              - id: ESXI_6_5_64BIT_CSTM
+                name: ESXi 6.5 Targeted (x86_64)
+              - id: ESXI_6_5_64BIT
+                name: ESXi 6.5 (x86_64)
+              - id: FREEBSD_13_64BIT
+                name: FreeBSD 13.1 (amd64)
+              - id: FREEBSD_12_64BIT
+                name: FreeBSD 12.3 (amd64)
+          schema:
+            $ref: ../components/schemas/getOperatingSystemListResult.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: List Operating Systems
+  tags:
+    - Operating Systems
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/bareMetals_v2_operatingSystems/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_operatingSystems/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/bareMetals_v2_operatingSystems/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_operatingSystems/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/bareMetals_v2_operatingSystems/getundefined

@@ -1,0 +1,266 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  description: Retrieve the DNSSEC status for your domain.
+  operationId: domains-dnssec-get
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-5.yaml
+          examples:
+            Example:
+              value:
+                status: ENABLED
+                nsec3:
+                  active: true
+                keyRollover:
+                  status: INITIALIZED
+                  type: KSK
+                  message: >-
+                    It would take 25 hours to complete the process from the time
+                    its been initialized
+                _links:
+                  self:
+                    href: /domains/example.com/dnssec
+            Example - Retrieve DNSSEC keys when you have non-leaseweb nameservers (If both Key and DS Data were available in RRP Proxy):
+              value:
+                status: ENABLED
+                dnssecKeys:
+                  - keytag: 0
+                    digestType: 0
+                    digest: ''
+                    flags: 256
+                    algorithm: 13
+                    protocol: 3
+                    key: >-
+                      qLzQOBmmIWW01eCjwN/s9wRKvaKIFRgbVxQiPd685hBICYeuWc1uOGeUCyobb5Tu3yUphPHaImXgKmzPqdS3oQ==
+                    name: dnskey
+                keyRollover:
+                  status: INITIALIZED
+                  type: KSK
+                  message: >-
+                    It would take 25 hours to complete the process from the time
+                    its been initialized
+                _links:
+                  self:
+                    href: /domains/example.com/dnssec
+            Example - Retrieve DNSSEC keys when you have non-leaseweb nameservers (if only DS Data is available in RRP Proxy):
+              value:
+                status: ENABLED
+                dnssecKeys:
+                  - keytag: 8656
+                    digestType: 2
+                    digest: >-
+                      C4DBBCC0210B78B0D9981AB508912A54C20FF31A411B4C8AA8D76C0A1E81AC03
+                    flags: 0
+                    algorithm: 13
+                    protocol: 3
+                    key: ''
+                    name: dsdata
+                keyRollover:
+                  status: INITIALIZED
+                  type: KSK
+                  message: >-
+                    It would take 25 hours to complete the process from the time
+                    its been initialized
+                _links:
+                  self:
+                    href: /domains/example.com/dnssec
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: >-
+        The domain name is recognized but cannot be processed. This action is
+        not automated for this tld.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.422.schema.yaml
+          examples:
+            example:
+              value:
+                errorMessage: The action you requested is not automated for this tld.
+                userMessage: >-
+                  The action you requested is not automated for this tld. Please
+                  contact leaseweb support
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Inspect DNS Security (DNSSEC)
+  tags:
+    - Domains
+    - Domains | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_dnssec/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_dnssec/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_dnssec/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_dnssec/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_dnssec/getundefined
+put:
+  description: >-
+    Enable or Disable DNSSEC for your domain.
+
+
+    Please note : If you are using Leaseweb nameservers we will add DNSSEC keys
+    automatically when enabling DNSSEC. If you are managing your own nameservers
+    (non-leaseweb nameservers) then you can add your own keys as shown in
+    example.
+  operationId: domains-dnssec-put
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.put.request.schema-2.yaml
+        examples:
+          Example - Disable DNSSEC:
+            value:
+              status: DISABLED
+          Example - Enable DNSSEC:
+            value:
+              status: ENABLED
+              nsec3:
+                active: true
+          Example - Enable DNSSEC keys when you have non-leaseweb nameservers:
+            value:
+              status: ENABLED
+              dnssecKeys:
+                - flags: 257
+                  protocol: 3
+                  algorithm: 13
+                  key: 775e6b78ad9c5f386418d71570ae51b9f4a6c1e7
+                  name: dnskey
+  responses:
+    '200':
+      description: >-
+        DNSSEC enabled/disabled successfully. It may take up to 25 hours to
+        reflect.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.200.schema-2.yaml
+          examples:
+            Example - Disable DNSSEC:
+              value:
+                infoMessage: >-
+                  DNSSEC disabled successfully. It may take up to 25 hours to
+                  reflect.
+            Example - Enable DNSSEC:
+              value:
+                infoMessage: >-
+                  DNSSEC enabled successfully. It may take up to 25 hours to
+                  reflect.
+            Example - Enable DNSSEC keys when you have non-leaseweb nameservers:
+              value:
+                infoMessage: DNSSEC keys successfully updated in the registry.
+    '400':
+      description: >-
+        Validation failed. Check the error message and error details for more
+        information.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.400.schema.yaml
+          examples:
+            example:
+              value:
+                errorMessage: Validation failed.
+                userMessage: Your data contains errors, please check the details.
+                errorDetails:
+                  status:
+                    - The valid status are enabled or disabled
+                  dnsseckeys:
+                    - algorithm:
+                        - >-
+                          Invalid algorithm, supported algorithm are:
+                          7,8,10,13,14
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '409':
+      description: >-
+        If there is a conflict (for example item is already in processing
+        state), you will receive a 409 Conflict.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.409.schema.yaml
+          examples:
+            example:
+              value:
+                errorMessage: Request is already in process.
+                userMessage: >-
+                  A request is already being processed and may take up to 25
+                  hours to complete after initiation.
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+    '422':
+      description: >-
+        The domain name is recognized but cannot be processed. This action is
+        not automated for this tld.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.422.schema.yaml
+          examples:
+            example:
+              value:
+                errorMessage: The action you requested is not automated for this tld.
+                userMessage: >-
+                  The action you requested is not automated for this tld. Please
+                  contact leaseweb support
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update DNS Security (DNSSEC)
+  tags:
+    - Domains
+    - Domains | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_dnssec/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_dnssec/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_dnssec/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_dnssec/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_dnssec/putundefined

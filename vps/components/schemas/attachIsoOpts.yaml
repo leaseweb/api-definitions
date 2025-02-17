@@ -1,0 +1,7 @@
+properties:
+  isoId:
+    type: string
+    description: The ISO ID, obtained using the ISO endpoints
+required:
+  - isoId
+type: object

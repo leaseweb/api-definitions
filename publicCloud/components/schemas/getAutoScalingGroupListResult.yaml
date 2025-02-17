@@ -1,0 +1,9 @@
+properties:
+  autoScalingGroups:
+    type: array
+    items:
+      $ref: ./autoScalingGroup.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+title: autoScalingGroups
+type: object

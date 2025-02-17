@@ -1,0 +1,19 @@
+properties:
+  automatedUnnullingAt:
+    type: string
+    description: >-
+      The date and time when the null route is to be deactivated. The date and
+      time should be specified using the format yyyy-mm-ddThh:mm:ss±hh:mm (with
+      time zone designator) or yyyy-mm-ddThh:mm:ssZ (UTC). If this field is not
+      present then the null route will not be automatically removed.
+    format: date-time
+    example: '2015-06-25T11:13:00Z'
+  comment:
+    type: string
+    description: A comment to be stored with the null route (e.g. null route reason)
+    example: This IP is evil
+  ticketId:
+    type: string
+    description: A reference to be stored with the null route
+    example: '188612'
+type: object

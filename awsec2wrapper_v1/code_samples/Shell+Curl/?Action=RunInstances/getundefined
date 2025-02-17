@@ -1,3 +1,0 @@
-curl --request GET \
-  --url 'https://api.leaseweb.com/aws/ec2/?InstanceType=SOME_STRING_VALUE&ImageId=SOME_STRING_VALUE&Placement=SOME_STRING_VALUE&Action=RunInstances' \
-  --header 'Authorization: REPLACE_KEY_VALUE'

@@ -1,0 +1,7 @@
+description: The ID of a dedicated network equipment
+example: '12345'
+in: path
+name: networkEquipmentId
+required: true
+schema:
+  type: string

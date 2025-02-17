@@ -1,0 +1,6 @@
+type: string
+enum:
+  - HTTP
+  - HTTPS
+  - TCP
+example: HTTP

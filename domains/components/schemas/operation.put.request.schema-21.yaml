@@ -1,0 +1,24 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  destination:
+    type: string
+    description: >-
+      The email address to which email messages will be delivered for the catch
+      all
+    examples:
+      - destination@example.org
+  spamChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether spam checks are enabled
+    examples:
+      - true
+  virusChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether virus checks are enabled
+    examples:
+      - false
+required:
+  - destination
+  - spamChecksEnabled
+  - virusChecksEnabled
+type: object

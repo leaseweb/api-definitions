@@ -1,0 +1,21 @@
+required:
+  - protocol
+  - uri
+  - port
+type: object
+title: healthCheckOpts
+properties:
+  protocol:
+    $ref: ./protocol.yaml
+  method:
+    $ref: ./httpMethodOpt.yaml
+  uri:
+    type: string
+    description: URI to check in the target instances
+    example: /
+  host:
+    type: string
+    description: Host for the health check if any
+  port:
+    type: integer
+    description: Port number

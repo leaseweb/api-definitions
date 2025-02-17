@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'Authorization': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/aws/ec2/?TargetGroupArn=29145c92-4a68-4c63-aaeb-f2212d85a74a&Targets.member.N.Id=Targets.member.1.Id%3D800c43a4-8c74-4f92-9cd0-5fa883c8ca35%26Targets.member.2.Id%3D810c43a4-8c74-4f92-9cd0-5fa883c8ca35&Action=RegisterTargets", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

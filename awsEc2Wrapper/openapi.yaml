@@ -1,0 +1,152 @@
+openapi: 3.0.0
+info:
+  title: Aws Ec2 Wrapper
+  version: v1
+  description: >+
+    This is the AWS compatible Public Cloud API Reference. It provides
+    descriptions, API request parameters, and the XML response for each of the
+    API actions that Leaseweb supports.
+
+
+    The purpose of the AWS compatible Public Cloud API is to make the migration
+    easy for the users to switch from the AWS EC2 to the Leaseweb Public Cloud
+    APIs.
+
+
+    NOTE: Since AWS EC2 and Public Cloud APIs are not 100% matched, Leaseweb
+    hard-coded some request/response attributes, which you can see in schema
+    definition.
+
+
+    NOTE: This API is in BETA. Documentation might be incorrect or incomplete.
+    Functionality might change with the final release. <div
+    class="badge">BETA</div>
+
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    altText: Leaseweb developer documentation
+    backgroundColor: '#5484c6'
+    href: https://developer.leaseweb.com
+    url: https://developer.leaseweb.com/images/logo.png
+servers:
+  - url: https://api.leaseweb.com
+tags:
+  - name: Errors
+    description: >
+      AWS compatible APIs have two types of error codes:
+
+
+      Client errors: These errors are usually caused by something the client
+      did, such as specifying an incorrect or invalid parameter in the request,
+      or using an action or resource on behalf of a user that doesn't have
+      permission to use the action or resource. These errors are accompanied by
+      a 400-series HTTP response code.
+
+
+      Server errors: These errors are usually caused by an AWS compatible APIs
+      server-side issue. These errors are accompanied by a 500-series HTTP
+      response code.
+
+
+      ```xml
+
+      <?xml version="1.0" encoding="UTF-8"?>
+
+      <Response>
+          <Errors>
+              <Error>
+                  <Code>ERROR CODE 1</Code>
+                  <Message>ERROR MESSAGE 1</Message>
+              </Error>
+              <Error>
+                  <Code>ERROR CODE 2</Code>
+                  <Message>ERROR MESSAGE 2</Message>
+              </Error>
+          </Errors>
+          <RequestID>REQUEST ID</RequestID>
+      </Response>
+
+      ```
+  - name: Authentication
+    description: >
+      ### Amazon EC2 API
+
+
+      You can send Query requests over HTTPS protocol.
+
+
+      The HTTP Authorization header is the most common method of authenticating
+      a request. All REST API operations require this header. 
+
+
+      The following is an example of the Authorization header value. Line breaks
+      are added to this example for readability. In your code, the header must
+      be a continuous string. There is no comma between the algorithm and
+      Credential, but the other elements must be separated by commas.
+
+
+      ```sh
+
+      curl --location
+      'https://api.leaseweb.com/aws/ec2?Action=DescribeInstances' \
+
+      --header 'Authorization: Credential=<LEASEWEB_API_KEY>/20130524/'
+
+      ```
+
+
+      ### Amazon EC2 CLI 
+
+
+      You are able to interact with the aws-cli via AWS compatible APIs, first
+      make sure you installed the aws-cli,
+      [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+      you can find how to install it.
+
+
+      Now you need to configure aws-cli, for this you need to add the following
+      information:
+
+
+      ```sh
+
+      aws configure
+
+
+      1. AWS Access Key ID: <LEASEWEB_API_KEY>
+
+      2. AWS Secret Access Key: anything
+
+      3. Default region name: eu-west-3 
+
+      4. Default output format: json 
+
+      ```
+paths:
+  /aws/ec2/?Action=DescribeInstances:
+    $ref: paths/aws_ec2_?Action=DescribeInstances.yaml
+  /aws/ec2/?Action=RunInstances:
+    $ref: paths/aws_ec2_?Action=RunInstances.yaml
+  /aws/ec2/?Action=StartInstances:
+    $ref: paths/aws_ec2_?Action=StartInstances.yaml
+  /aws/ec2/?Action=StopInstances:
+    $ref: paths/aws_ec2_?Action=StopInstances.yaml
+  /aws/ec2/?Action=RebootInstances:
+    $ref: paths/aws_ec2_?Action=RebootInstances.yaml
+  /aws/ec2/?Action=CreateLoadBalancer:
+    $ref: paths/aws_ec2_?Action=CreateLoadBalancer.yaml
+  /aws/ec2/?Action=DescribeLoadBalancers:
+    $ref: paths/aws_ec2_?Action=DescribeLoadBalancers.yaml
+  /aws/ec2/?Action=RegisterTargets:
+    $ref: paths/aws_ec2_?Action=RegisterTargets.yaml
+  /aws/ec2/?Action=CreateListener:
+    $ref: paths/aws_ec2_?Action=CreateListener.yaml
+components:
+  securitySchemes:
+    Authorization:
+      name: Authorization
+      type: apiKey
+      in: header
+      description: API key authentication by setting `Authorization` header.

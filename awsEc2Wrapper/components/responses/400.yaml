@@ -1,0 +1,6 @@
+description: Bad Request.
+content:
+  application/xml:
+    schema:
+      $ref: ../schemas/errorResult.yaml
+    example: " <?xml version='1.0' encoding='UTF-8'?>\n <Response>\n \t<Errors>\n \t\t<Error>\n \t\t\t<Code>InvalidAction</Code>\n \t\t\t<Message>The action or operation requested is not valid. Verify that the action is typed correctly.</Message>\n \t\t</Error>\n \t</Errors>\n \t<RequestID>d7e2274d-61d7-4949-a5cf-06918ca345fd</RequestID>\n </Response>\n "

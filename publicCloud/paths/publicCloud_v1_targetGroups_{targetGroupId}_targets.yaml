@@ -1,0 +1,77 @@
+parameters:
+  - $ref: ../components/parameters/targetGroupId.yaml
+  - $ref: ../components/parameters/limit.yaml
+  - $ref: ../components/parameters/offset.yaml
+get:
+  description: Get targets in a Target Group
+  operationId: getTargetList
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getTargetListResult.yaml
+          example:
+            _metadata:
+              totalCount: 1
+              limit: 10
+              offset: 0
+            targets:
+              - id: 8be7f8c6-e8c0-4321-a01e-ac754e2f6872
+                reference: Target reference
+                image:
+                  id: 9be7f8c6-e8c0-4321-a01e-ac754e2f6873
+                  name: Custom image
+                  family: linux
+                  flavour: ubuntu
+                  custom: true
+                state: RUNNING
+                ips:
+                  - ip: 10.0.0.1
+                    prefixLength: '28'
+                    version: 4
+                    reverseLookup: a-valid-domain.xpto
+                    mainIp: false
+                    networkType: INTERNAL
+                    nullRouted: true
+                healthCheck:
+                  state: HEALTHY
+                  description: HTTP check passed
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get Targets
+  tags:
+    - Target Groups
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_targetGroups_{targetGroupId}_targets/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_targetGroups_{targetGroupId}_targets/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_targetGroups_{targetGroupId}_targets/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_targetGroups_{targetGroupId}_targets/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_targetGroups_{targetGroupId}_targets/getundefined

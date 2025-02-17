@@ -1,0 +1,222 @@
+post:
+  tags:
+    - Distribution
+    - CDN | title
+  summary: Create Distribution
+  description: |-
+    Create any kind of distribution using this endpoint.
+
+    Available distribution types:
+
+    - DISTRIBUTION_VOLUME
+    - DISTRIBUTION_PREMIUM
+    - SHIELD_CDN
+  operationId: create_distribution_v1_distributions_post
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Resource.yaml
+        examples:
+          Create Volume Distribution:
+            value:
+              resourceType: DISTRIBUTION_VOLUME
+              data:
+                - key: description
+                  value: Test Volume Distribution
+                - key: enabled
+                  value: true
+                - key: tls
+                  value: false
+          Create Premium Distribution:
+            value:
+              resourceType: DISTRIBUTION_PREMIUM
+              data:
+                - key: description
+                  value: Test Premium Distribution
+                - key: enabled
+                  value: true
+                - key: tls
+                  value: false
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Resource.yaml
+          examples:
+            Created Volume Distribution:
+              value:
+                resourceType: DISTRIBUTION_VOLUME
+                data:
+                  - key: description
+                    value: Test Volume Distribution
+                  - key: enabled
+                    value: true
+                  - key: ipv6
+                    value: false
+                  - key: tls
+                    value: false
+                  - key: tlsType
+                    value: null
+                  - key: certificateId
+                    value: null
+                  - key: logging
+                    value: false
+                  - key: id
+                    value: di-6wnk5n2b
+                  - key: customerId
+                    value: cu-27h4kb2v
+                  - key: created
+                    value: '2024-08-07T10:25:00'
+                  - key: updated
+                    value: null
+            Created Premium Distribution:
+              value:
+                resourceType: DISTRIBUTION_PREMIUM
+                data:
+                  - key: description
+                    value: Test Premium Distribution
+                  - key: enabled
+                    value: true
+                  - key: ipv6
+                    value: false
+                  - key: tls
+                    value: false
+                  - key: tlsType
+                    value: null
+                  - key: certificateId
+                    value: null
+                  - key: logging
+                    value: false
+                  - key: id
+                    value: di-6wnk5n2b
+                  - key: customerId
+                    value: cu-27h4kb2v
+                  - key: created
+                    value: '2024-08-07T10:25:00'
+                  - key: updated
+                    value: null
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_distributions/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_distributions/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_distributions/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_distributions/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_distributions/postundefined
+get:
+  tags:
+    - Distribution
+    - CDN | title
+  summary: Get All Distributions
+  description: Get the list of your distributions.
+  operationId: get_all_distributions_v1_distributions_get
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListResponse_Resource_.yaml
+          examples:
+            All Distributions:
+              value:
+                distributions:
+                  - resourceType: DISTRIBUTION_VOLUME
+                    data:
+                      - key: description
+                        value: Test Distribution
+                      - key: enabled
+                        value: true
+                      - key: ipv6
+                        value: true
+                      - key: tls
+                        value: false
+                      - key: tlsType
+                        value: null
+                      - key: certificateId
+                        value: null
+                      - key: logging
+                        value: true
+                      - key: id
+                        value: di-dkn3lb5vc
+                      - key: customerId
+                        value: cu-8smmd9n
+                      - key: created
+                        value: '2020-11-03T12:04:43'
+                      - key: updated
+                        value: '2024-02-22T20:29:14'
+                _metadata:
+                  totalCount: 1
+                  limit: 25
+                  offset: 0
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_distributions/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_distributions/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_distributions/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_distributions/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_distributions/getundefined

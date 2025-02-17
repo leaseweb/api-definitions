@@ -1,0 +1,9 @@
+type: string
+enum:
+  - 5m
+  - 10m
+  - 30m
+  - 1h
+  - 1d
+  - 1w
+description: Defines the time interval for data aggregation

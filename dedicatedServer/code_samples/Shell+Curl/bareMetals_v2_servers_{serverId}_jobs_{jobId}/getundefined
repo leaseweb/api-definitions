@@ -1,0 +1,3 @@
+curl --request GET \
+  --url https://api.leaseweb.com/bareMetals/v2/servers/12345/jobs/3a867358-5b4b-44ee-88ac-4274603ef641 \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

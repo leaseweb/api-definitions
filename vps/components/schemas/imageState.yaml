@@ -1,0 +1,9 @@
+title: imageState
+type: string
+description: Images state
+enum:
+  - CREATING
+  - READY
+  - DESTROYED
+  - DESTROYING
+  - FAILED

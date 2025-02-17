@@ -1,0 +1,47 @@
+parameters:
+  - $ref: ../components/parameters/instanceId.yaml
+post:
+  description: >-
+    Cancel the termination process of monthly instances. Must be executed prior
+    to the instance's `contractEndsAt`.
+  operationId: cancelInstanceTermination
+  responses:
+    '204':
+      description: No content. Cancellation has been cancelled and contract is reinstated.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/401.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Cancel instance termination
+  tags:
+    - Instances
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_instances_{instanceId}_cancelTermination/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_instances_{instanceId}_cancelTermination/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_instances_{instanceId}_cancelTermination/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_instances_{instanceId}_cancelTermination/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_instances_{instanceId}_cancelTermination/postundefined

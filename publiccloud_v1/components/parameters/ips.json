@@ -1,9 +1,0 @@
-{
-  "name": "ips",
-  "required": false,
-  "description": "A list of IPs separated by `|`",
-  "schema": {
-    "type": "string"
-  },
-  "in": "query"
-}

@@ -1,0 +1,178 @@
+parameters:
+  - $ref: ../components/parameters/targetGroupId.yaml
+get:
+  description: Get Target Group details.
+  operationId: getTargetGroup
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/targetGroup.yaml
+          example:
+            id: 7e59b33d-05f3-4078-b251-c7831ae8fe14
+            name: Target group name
+            protocol: HTTP
+            port: 80
+            region: eu-west-2
+            healthCheck:
+              protocol: HTTP
+              method: GET
+              uri: /
+              host: example.com
+              port: 80
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get Target Group details
+  tags:
+    - Target Groups
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_targetGroups_{targetGroupId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_targetGroups_{targetGroupId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_targetGroups_{targetGroupId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_targetGroups_{targetGroupId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_targetGroups_{targetGroupId}/getundefined
+put:
+  description: Update a Target Group
+  operationId: updateTargetGroup
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/updateTargetGroupOpts.yaml
+        example:
+          name: Target group name
+          port: 80
+          healthCheck:
+            protocol: HTTP
+            method: GET
+            uri: /
+            host: example.com
+            port: 80
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/targetGroup.yaml
+          example:
+            id: 7e59b33d-05f3-4078-b251-c7831ae8fe14
+            name: Target group name
+            protocol: HTTP
+            port: 80
+            region: eu-west-2
+            healthCheck:
+              protocol: HTTP
+              method: GET
+              uri: /
+              host: example.com
+              port: 80
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update Target Group
+  tags:
+    - Target Groups
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_targetGroups_{targetGroupId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_targetGroups_{targetGroupId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_targetGroups_{targetGroupId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_targetGroups_{targetGroupId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_targetGroups_{targetGroupId}/putundefined
+delete:
+  description: Delete a Target Group.
+  operationId: deleteTargetGroup
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete Target Group
+  tags:
+    - Target Groups
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_targetGroups_{targetGroupId}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_targetGroups_{targetGroupId}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_targetGroups_{targetGroupId}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_targetGroups_{targetGroupId}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_targetGroups_{targetGroupId}/deleteundefined

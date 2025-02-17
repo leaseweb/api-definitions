@@ -1,0 +1,69 @@
+get:
+  description: List reports
+  operationId: getReportList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/status.yaml
+  responses:
+    '200':
+      description: |
+        OK.
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 2
+              limit: 10
+              offset: 0
+            reports:
+              - id: '000000'
+                subject: Report description
+                status: OPEN
+                reportedAt: '2015-01-01T00:00:00+00:00'
+                updatedAt: '2015-01-01T00:00:00+00:00'
+                notifier: REDACTED_FOR_PRIVACY
+                customerId: '10000001'
+                legalEntityId: '2000'
+                deadline: '2015-01-01T00:00:00+00:00'
+              - id: '000001'
+                subject: Report description
+                status: CLOSED
+                reportedAt: '2015-01-01T00:00:00+00:00'
+                updatedAt: '2015-01-01T00:00:00+00:00'
+                notifier: REDACTED_FOR_PRIVACY
+                customerId: '10000001'
+                legalEntityId: '2600'
+                deadline: '2015-01-01T00:00:00+00:00'
+          schema:
+            $ref: ../components/schemas/getReportListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
+  summary: List reports
+  tags:
+    - Abuse Reports
+    - Abuse Reports | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/abuse_v1_reports/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/abuse_v1_reports/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/abuse_v1_reports/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/abuse_v1_reports/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/abuse_v1_reports/getundefined

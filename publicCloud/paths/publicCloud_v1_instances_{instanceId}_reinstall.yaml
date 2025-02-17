@@ -1,0 +1,67 @@
+parameters:
+  - $ref: ../components/parameters/instanceId.yaml
+put:
+  description: >-
+    Recreates the Instance, with optionally different Image and Marketplace App.
+
+
+    Cannot be performed when the instance has snapshots.
+
+
+    Available Images can be obtained using
+    `/v1/{resource}/{instanceId}/reinstall/images`.
+
+
+    Available Marketplace Apps can be obtained using
+    `/v1/images/{imageId}/marketApps`.
+  operationId: reinstallInstance
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/reinstallResourceOpts.yaml
+        example:
+          imageId: UBUNTU_22_04_64BIT
+  responses:
+    '202':
+      description: >-
+        Accepted. The reinstall process has started and may take a few moments
+        to complete.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Reinstall an Instance
+  tags:
+    - Reinstall
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_instances_{instanceId}_reinstall/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_instances_{instanceId}_reinstall/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_instances_{instanceId}_reinstall/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_instances_{instanceId}_reinstall/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_instances_{instanceId}_reinstall/putundefined

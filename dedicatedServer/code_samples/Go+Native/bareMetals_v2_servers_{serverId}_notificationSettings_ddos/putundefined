@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://api.leaseweb.com/bareMetals/v2/servers/12345/notificationSettings/ddos"
+
+	payload := strings.NewReader("{\"nulling\":\"ENABLED\",\"scrubbing\":\"ENABLED\"}")
+
+	req, _ := http.NewRequest("PUT", url, payload)
+
+	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+	req.Header.Add("content-type", "application/json")
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(res)
+	fmt.Println(string(body))
+
+}

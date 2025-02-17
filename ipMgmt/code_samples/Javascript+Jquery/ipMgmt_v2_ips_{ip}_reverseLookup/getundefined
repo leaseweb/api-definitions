@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/ipMgmt/v2/ips/192.0.2.1/reverseLookup?ip=SOME_STRING_VALUE&reverseLookup=mydomain1.example.com&limit=20&offset=10",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

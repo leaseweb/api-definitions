@@ -1,0 +1,8 @@
+allOf:
+  - $ref: ./baseResources.yaml
+  - type: object
+    required:
+      - privateNetworkSpeed
+    properties:
+      privateNetworkSpeed:
+        $ref: ./networkSpeed.yaml

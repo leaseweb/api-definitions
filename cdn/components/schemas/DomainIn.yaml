@@ -1,0 +1,8 @@
+type: object
+title: DomainIn
+properties:
+  domain:
+    type: string
+    title: Domain
+required:
+  - domain

@@ -1,0 +1,4 @@
+type: string
+enum:
+  - ACTIVE
+  - DELETE_SCHEDULED

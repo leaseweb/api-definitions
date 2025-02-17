@@ -1,0 +1,7 @@
+name: username
+description: Username
+example: root
+in: path
+required: true
+schema:
+  type: string

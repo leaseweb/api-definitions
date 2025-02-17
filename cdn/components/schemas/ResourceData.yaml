@@ -1,0 +1,11 @@
+type: object
+title: ResourceData
+properties:
+  key:
+    type: string
+    title: Key
+  value:
+    title: Value
+required:
+  - key
+  - value

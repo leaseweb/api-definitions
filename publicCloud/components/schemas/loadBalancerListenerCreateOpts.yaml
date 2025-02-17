@@ -1,0 +1,9 @@
+allOf:
+  - $ref: ./loadBalancerListenerOpts.yaml
+  - title: loadBalancerListenerCreateOpts
+    type: object
+    properties: {}
+    required:
+      - protocol
+      - port
+      - defaultRule

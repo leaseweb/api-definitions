@@ -1,0 +1,162 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  description: ''
+  operationId: domains-emailaliases-get
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-41.yaml
+          examples:
+            example:
+              value:
+                emailAliases:
+                  - active: true
+                    destination: destination@example.com
+                    source: source@example.com
+                    spamChecksEnabled: true
+                    virusChecksEnabled: true
+                    createdAt: '2023-05-08T10:01:25+00:00'
+                    modifiedAt: '2023-05-08T10:01:25+00:00'
+                  - active: true
+                    destination: destination@example.org
+                    source: source@example.com
+                    spamChecksEnabled: false
+                    virusChecksEnabled: true
+                    createdAt: '2023-05-08T10:01:25+00:00'
+                    modifiedAt: '2023-05-08T10:01:25+00:00'
+                  - active: true
+                    destination: mailbox@example.org
+                    source: not-a-mailbox@example.com
+                    spamChecksEnabled: true
+                    virusChecksEnabled: false
+                    createdAt: '2023-05-08T10:01:25+00:00'
+                    modifiedAt: '2023-05-08T10:01:25+00:00'
+                _links:
+                  self:
+                    href: /domains/example.com/emailAliases
+                  parent:
+                    href: /domains/example.com
+                nameserver: EXTERNAL
+                _metadata:
+                  totalCount: 3
+                  limit: 25
+                  offset: 0
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List email aliases
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_emailAliases/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_emailAliases/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_emailAliases/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_emailAliases/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_emailAliases/getundefined
+post:
+  description: >-
+    > Please note that the source address should always be part of the domain it
+    is created for.
+  operationId: domains-emailaliases-post
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.post.request.schema-2.yaml
+        examples:
+          example:
+            value:
+              active: true
+              destination: destination@example.com
+              source: source@test.example.com
+              spamChecksEnabled: true
+              virusChecksEnabled: true
+              setMxRecord: true
+  responses:
+    '201':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.post.response.201.schema-2.yaml
+          examples:
+            example:
+              value:
+                active: true
+                destination: destination@example.com
+                source: source@example.com
+                spamChecksEnabled: true
+                virusChecksEnabled: true
+                _links:
+                  self:
+                    href: >-
+                      /domains/example.com/emailAliases/source%40example.com/destination%40example.com
+                  collection:
+                    href: /domains/example.com/emailAliases
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create an email alias
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_emailAliases/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_emailAliases/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_emailAliases/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_emailAliases/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_emailAliases/postundefined

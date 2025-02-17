@@ -1,0 +1,19 @@
+allOf:
+  - $ref: ./vpsBase.yaml
+  - type: object
+    title: vps
+    required:
+      - ips
+      - contract
+      - resources
+    properties:
+      iso:
+        $ref: ./iso.yaml
+      ips:
+        type: array
+        items:
+          $ref: ./ipDetails.yaml
+      resources:
+        $ref: ./baseResources.yaml
+      contract:
+        $ref: ./vpsContract.yaml

@@ -1,0 +1,86 @@
+get:
+  description: |
+    This endpoint returns all your Services.
+  operationId: services-list-get
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            metadata:
+              limit: 2
+              offset: 0
+              totalCount: 10
+            services:
+              - billingCycle: 1 MONTH
+                cancellable: false
+                contractId: '00000110'
+                contractTerm: 1 YEAR
+                contractTermEndDate: '2020-01-31T00:00:00+00:00'
+                currency: EUR
+                deliveryDate: '2019-01-01T00:00:00+00:00'
+                deliveryEstimate: 5 - 7 business days
+                endDate: '2020-01-31T00:00:00+00:00'
+                equipmentId: '12345678'
+                id: '10000000000010'
+                orderDate: '2019-01-01T00:00:00+00:00'
+                pricePerFrequency: 396.01
+                productId: DEDICATED_SERVER
+                reference: this is a reference
+                startDate: '2019-01-01T00:00:00+00:00'
+                status: ACTIVE
+                uncancellable: true
+              - attributes:
+                  domainName: test.com
+                billingCycle: 1 YEAR
+                cancellable: true
+                contractId: '00000110'
+                contractTerm: 1 YEAR
+                contractTermEndDate: '2020-01-31T00:00:00+00:00'
+                currency: EUR
+                deliveryDate: '2019-01-01T00:00:00+00:00'
+                deliveryEstimate: 5 - 7 business days
+                id: '10000000000011'
+                orderDate: '2019-01-01T00:00:00+00:00'
+                pricePerFrequency: 139.99
+                productId: DOMAIN
+                startDate: '2019-01-01T00:00:00+00:00'
+                status: ACTIVE
+                uncancellable: false
+          schema:
+            $ref: ../components/schemas/response.200.schema.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get all your Services
+  tags:
+    - Services
+    - Services | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/services_v1_services/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/services_v1_services/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/services_v1_services/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/services_v1_services/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/services_v1_services/getundefined
+parameters:
+  - $ref: ../components/parameters/limit.yaml
+  - $ref: ../components/parameters/offset.yaml
+  - $ref: ../components/parameters/productId.yaml
+  - $ref: ../components/parameters/reference.yaml
+  - $ref: ../components/parameters/equipmentId.yaml

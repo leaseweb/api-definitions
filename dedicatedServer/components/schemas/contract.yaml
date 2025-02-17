@@ -1,0 +1,108 @@
+description: Contract information
+type: object
+properties:
+  id:
+    type: string
+  customerId:
+    type: string
+  salesOrgId:
+    type: string
+  deliveryStatus:
+    type: string
+  reference:
+    type: string
+    nullable: true
+  privateNetworkPortSpeed:
+    type: number
+    nullable: true
+  subnets:
+    type: array
+    items:
+      title: subnet
+      type: object
+      properties:
+        quantity:
+          type: integer
+        subnetSize:
+          type: string
+        networkType:
+          $ref: ./networkType.yaml
+  status:
+    type: string
+  startsAt:
+    type: string
+    format: date-time
+  endsAt:
+    type: string
+    format: date-time
+    nullable: true
+  sla:
+    type: string
+    description: Service Level Agreement
+  contractTerm:
+    type: integer
+  contractType:
+    type: string
+    enum:
+      - NORMAL
+  billingCycle:
+    type: integer
+    description: Applied billing cycle
+  billingFrequency:
+    type: string
+    description: The interval for which billing will be done
+  pricePerFrequency:
+    type: string
+    description: Price per billing frequency
+  currency:
+    $ref: ./currency.yaml
+  networkTraffic:
+    title: networkTraffic
+    type: object
+    description: Network traffic associated to the server
+    properties:
+      type:
+        type: string
+        description: Type of network traffic
+        nullable: true
+      connectivityType:
+        type: string
+        nullable: true
+      trafficType:
+        type: string
+        description: Type of traffic
+        nullable: true
+      datatrafficUnit:
+        type: string
+        description: Unit in which the data traffic limit is represented
+        nullable: true
+      datatrafficLimit:
+        type: number
+        description: Data traffic limit
+        nullable: true
+  softwareLicenses:
+    type: array
+    items:
+      title: softwareLicense
+      type: object
+      properties:
+        name:
+          type: string
+        price:
+          type: number
+          nullable: true
+        currency:
+          $ref: ./currency.yaml
+        type:
+          type: string
+          example: CONTROL_PANEL
+  managedServices:
+    type: array
+    items:
+      type: string
+  aggregationPackId:
+    type: string
+    nullable: true
+  ipv4Quantity:
+    type: integer
+    nullable: true

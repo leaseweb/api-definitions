@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/cdn/v2/actions');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'filters' => 'SOME_ARRAY_VALUE',
+  'limit' => '20',
+  'offset' => '10'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

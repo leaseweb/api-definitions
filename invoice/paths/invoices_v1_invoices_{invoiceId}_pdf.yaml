@@ -1,0 +1,42 @@
+get:
+  description: This endpoint will return a PDf of a single invoice for the customer.
+  operationId: getInvoicePdf
+  parameters:
+    - $ref: ../components/parameters/invoiceId.yaml
+  responses:
+    '200':
+      description: |
+        Accepted.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get invoice PDF
+  tags:
+    - Invoices
+    - Invoices | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/invoices_v1_invoices_{invoiceId}_pdf/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/invoices_v1_invoices_{invoiceId}_pdf/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/invoices_v1_invoices_{invoiceId}_pdf/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/invoices_v1_invoices_{invoiceId}_pdf/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/invoices_v1_invoices_{invoiceId}_pdf/getundefined

@@ -1,0 +1,13 @@
+type: object
+title: ListResponse[Policy]
+properties:
+  resources:
+    type: array
+    title: Resources
+    items:
+      $ref: ./Policy.yaml
+  _metadata:
+    $ref: ./ListMetadata.yaml
+required:
+  - resources
+  - _metadata

@@ -1,0 +1,18 @@
+type: object
+properties:
+  StartInstancesResponse:
+    properties:
+      requestId:
+        type: string
+      instancesSet:
+        type: array
+        items:
+          title: instancesSet
+          type: object
+          properties:
+            item:
+              title: instancesSetItem
+              type: object
+              properties:
+                instancesId:
+                  type: string

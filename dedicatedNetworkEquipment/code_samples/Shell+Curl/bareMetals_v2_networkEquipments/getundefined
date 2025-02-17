@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/bareMetals/v2/networkEquipments?limit=20&offset=10&reference=my-switch&ip=127.0.0.4&macAddress=aa%3Abb%3Acc%3Add%3Aee%3Aff&site=FRA-10&privateRackId=123&privateNetworkCapable=SOME_STRING_VALUE&privateNetworkEnabled=SOME_STRING_VALUE' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

@@ -1,0 +1,104 @@
+get:
+  description: >-
+    List all IP Addresses associated with this network equipment. Optionally
+    filtered.
+  operationId: getIpList
+  parameters:
+    - description: Filter the collection of ip addresses by network type
+      in: query
+      name: networkType
+      schema:
+        type: string
+        description: Type of network
+        enum:
+          - INTERNAL
+          - PUBLIC
+          - REMOTE_MANAGEMENT
+        example: INTERNAL
+    - description: Filter the collection by ip version
+      in: query
+      name: version
+      schema:
+        type: string
+    - description: Filter Ips by Nulled-Status
+      in: query
+      name: nullRouted
+      schema:
+        type: string
+    - description: Filter the collection of Ips for the comma separated list of Ips
+      in: query
+      name: ips
+      schema:
+        type: string
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 2
+            ips:
+              - ddos:
+                  detectionProfile: ADVANCED_LOW_UDP
+                  protectionType: ADVANCED
+                floatingIp: false
+                gateway: 12.123.123.254
+                ip: 12.123.123.1/24
+                mainIp: true
+                networkType: PUBLIC
+                nullRouted: true
+                reverseLookup: domain.example.com
+                version: 4
+              - ddos:
+                  detectionProfile: STANDARD_DEFAULT
+                  protectionType: STANDARD
+                floatingIp: false
+                gateway: 2001:db8:85a3::8a2e:370:1
+                ip: 2001:db8:85a3::8a2e:370:7334/64
+                mainIp: false
+                networkType: REMOTE_MANAGEMENT
+                nullRouted: false
+                reverseLookup: domain.example.com
+                version: 6
+          schema:
+            $ref: ../components/schemas/ipList.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: List IPs
+  tags:
+    - IPs
+    - Dedicated Network Equipments | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_networkEquipments_{networkEquipmentId}_ips/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_networkEquipments_{networkEquipmentId}_ips/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_networkEquipments_{networkEquipmentId}_ips/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_networkEquipments_{networkEquipmentId}_ips/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_networkEquipments_{networkEquipmentId}_ips/getundefined
+parameters:
+  - $ref: ../components/parameters/networkEquipmentId.yaml

@@ -1,0 +1,6 @@
+name: reverseLookup
+in: query
+schema:
+  type: string
+description: Filter by reverse lookup.
+example: mydomain1.example.com

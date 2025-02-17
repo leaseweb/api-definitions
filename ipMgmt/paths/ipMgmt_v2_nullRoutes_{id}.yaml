@@ -1,0 +1,121 @@
+get:
+  operationId: inspectNullRouteHistory
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            assignedContract:
+              id: '123456'
+            automatedUnnullingAt: '2015-06-25T11:13:00Z'
+            comment: This IP is evil
+            equipmentId: '456'
+            id: '4534536'
+            ip: 192.0.2.1
+            nullLevel: 1
+            nulledAt: '2015-06-28T12:00:00Z'
+            nulledBy: john.doe@example.com
+            ticketId: '188612'
+            unnulledAt: null
+            unnulledBy: null
+          schema:
+            $ref: ../components/schemas/nullRoutedIP.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Inspect null route history
+  tags:
+    - IPs
+    - IP management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/ipMgmt_v2_nullRoutes_{id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/ipMgmt_v2_nullRoutes_{id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/ipMgmt_v2_nullRoutes_{id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ipMgmt_v2_nullRoutes_{id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/ipMgmt_v2_nullRoutes_{id}/getundefined
+put:
+  operationId: updateNullRoute
+  requestBody:
+    content:
+      application/json:
+        example:
+          automatedUnnullingAt: '2015-06-25T11:13:00Z'
+          comment: This IP is evil
+          ticketId: '188612'
+        schema:
+          $ref: ../components/schemas/updateNullRouteOpts.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            assignedContract:
+              id: '123456'
+            automatedUnnullingAt: '2015-06-25T11:13:00Z'
+            comment: This IP is evil
+            equipmentId: '456'
+            id: '4534536'
+            ip: 192.0.2.1
+            nullLevel: 1
+            nulledAt: '2015-06-28T12:00:00Z'
+            nulledBy: john.doe@example.com
+            ticketId: '188612'
+            unnulledAt: null
+            unnulledBy: null
+          schema:
+            $ref: ../components/schemas/nullRoutedIP.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update a null route
+  tags:
+    - IPs
+    - IP management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/ipMgmt_v2_nullRoutes_{id}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/ipMgmt_v2_nullRoutes_{id}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/ipMgmt_v2_nullRoutes_{id}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ipMgmt_v2_nullRoutes_{id}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/ipMgmt_v2_nullRoutes_{id}/putundefined
+parameters:
+  - schema:
+      type: string
+      example: '23234'
+    name: id
+    in: path
+    required: true
+    description: Null route ID

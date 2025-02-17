@@ -1,3 +1,0 @@
-curl --request GET \
-  --url 'https://api.leaseweb.com/aws/ec2/?TargetGroupArn=SOME_STRING_VALUE&Targets.member.N.Id=SOME_STRING_VALUE&Action=RegisterTargets' \
-  --header 'Authorization: REPLACE_KEY_VALUE'

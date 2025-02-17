@@ -1,0 +1,28 @@
+type: object
+properties:
+  CreateListenerResponse:
+    properties:
+      CreateListenerResult:
+        properties:
+          Listeners:
+            type: array
+            items:
+              title: listeners
+              type: object
+              properties:
+                member:
+                  title: listenersMember
+                  type: object
+                  properties:
+                    LoadBalancerArn:
+                      type: string
+                    Protocol:
+                      type: string
+                    Port:
+                      type: integer
+                    ListenerArn:
+                      type: string
+      ResponseMetadata:
+        properties:
+          RequestId:
+            type: string

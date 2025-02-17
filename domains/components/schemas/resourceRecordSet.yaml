@@ -1,0 +1,16 @@
+properties:
+  name:
+    $ref: ./name.yaml
+  type:
+    $ref: ./resourceRecordSetType.yaml
+  content:
+    $ref: ./content.yaml
+  ttl:
+    $ref: ./ttl.yaml
+required:
+  - name
+  - type
+  - content
+  - ttl
+type: object
+title: resourceRecordSet

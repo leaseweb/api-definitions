@@ -1,0 +1,558 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  operationId: getResourceRecordSetList
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getResourceRecordSetListResult.yaml
+          example:
+            _links:
+              self:
+                href: /domains/example.com/resourceRecordSets
+              parent:
+                href: /domains/example.com
+              validateSet:
+                href: /domains/example.com/resourceRecordSets/validateSet
+            infoMessage: >-
+              EXAMPLE: Sorry, but your domain is not yet listed on our
+              nameservers. Please create a DNS record first so we can add your
+              domain.
+            resourceRecordSets:
+              - name: example.com.
+                type: A
+                content:
+                  - 85.17.150.50
+                  - 85.17.150.50
+                  - 85.17.150.53
+                ttl: 300
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/example.com./A
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: subdomain.example.com.
+                type: A
+                content:
+                  - 85.17.150.54
+                ttl: 86400
+                editable: true
+                _links:
+                  self:
+                    href: >-
+                      /domains/example.com/resourceRecordSets/subdomain.example.com./A
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: example.com.
+                type: AAAA
+                content:
+                  - 2a02:2770:8:0:216:3eff:fead:8c93
+                ttl: 28800
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/example.com./AAAA
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: some.example.com.
+                type: AAAA
+                content:
+                  - 2a02:2770:8:0:216:3eff:fead:8c93
+                ttl: 300
+                editable: true
+                _links:
+                  self:
+                    href: >-
+                      /domains/example.com/resourceRecordSets/some.example.com./AAAA
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: example.com.
+                type: CAA
+                content:
+                  - 0 issue "comodoca.com"
+                ttl: 300
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/example.com./CAA
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: anotherurl.example.com.
+                type: CNAME
+                content:
+                  - example.com.
+                ttl: 86400
+                editable: true
+                _links:
+                  self:
+                    href: >-
+                      /domains/example.com/resourceRecordSets/anotherurl.example.com./CNAME
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: example.com.
+                type: MX
+                content:
+                  - 10 mail.example.com.
+                  - 20 mailfilter.leaseweb.com.
+                ttl: 3600
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/example.com./MX
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: subdomain.example.com.
+                type: NS
+                content:
+                  - other.nameserver.com
+                  - yet-another.nameserver.com
+                ttl: 3600
+                editable: true
+                _links:
+                  self:
+                    href: >-
+                      /domains/example.com/resourceRecordSets/subdomain.example.com./NS
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: _service._protocol.example.com.
+                type: SRV
+                content:
+                  - 10 5 5060 sipserver.example.com.
+                ttl: 14400
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/example.com./SRV
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: example.com.
+                type: TXT
+                content:
+                  - '"google-site-verification=Kkalsdhl8a9792342lksdo9bSER233"'
+                  - '"v=spf1 a mx -all"'
+                ttl: 3600
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/example.com./TXT
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: example.com.
+                type: SOA
+                content:
+                  - >-
+                    ns0.example.com. postmaster.example.com. 2020021901 10800
+                    3600 604800 300
+                ttl: 3600
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/example.com./SOA
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: ds.example.com.
+                type: DS
+                content:
+                  - >-
+                    63708 13 2
+                    ce46cb792d263081fe23c7245a1ccce4d59e3e501db22932edf59d858c03fd6e
+                ttl: 3600
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/ds.example.com./DS
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+              - name: _443._tcp.example.com.
+                type: TLSA
+                content:
+                  - >-
+                    3 1 1
+                    9141610c47dab44af34daa405017f576c6d2beb5a083a16ba83a52ce27d91988
+                ttl: 3600
+                editable: true
+                _links:
+                  self:
+                    href: >-
+                      /domains/example.com/resourceRecordSets/_443._tcp.example.com./TLSA
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+        application/ld+json:
+          schema:
+            $ref: ../components/schemas/getResourceRecordSetListLdResult.yaml
+          example:
+            _links:
+              self:
+                href: /domains/example.com/resourceRecordSets
+              parent:
+                href: /domains/example.com
+              validateSet:
+                href: /domains/example.com/resourceRecordSets/validateSet
+            infoMessage: >-
+              EXAMPLE: Sorry, but your domain is not yet listed on our
+              nameservers. Please create a DNS record first so we can add your
+              domain.
+            resourceRecordSets:
+              - name: geo-10.example.com.
+                type: A+GEO
+                geoContent:
+                  closestLocation:
+                    - 1.2.3.4
+                    - 5.6.7.8
+                ttl: 3600
+                editable: true
+                _links:
+                  self:
+                    href: /domains/example.com/resourceRecordSets/example.com./A+GEO
+                  collection:
+                    href: /domains/example.com/resourceRecordSets
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: List resource record sets
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets/getundefined
+post:
+  operationId: createResourceRecordSet
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/resourceRecordSet.yaml
+        example:
+          content:
+            - 85.17.150.51
+            - 85.17.150.52
+            - 85.17.150.53
+          name: example.com.
+          ttl: 3600
+          type: A
+      application/ld+json:
+        schema:
+          $ref: ../components/schemas/ldResourceRecordSet.yaml
+        example:
+          geoContent:
+            closestLocation:
+              - 1.2.3.4
+              - 5.6.7.8
+          name: geo-10.example.com.
+          ttl: 3600
+          type: A+GEO
+  responses:
+    '201':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/resourceRecordSetDetails.yaml
+          example:
+            _links:
+              self:
+                href: /domains/example.com/resourceRecordSets/example.com./A
+              collection:
+                href: /domains/example.com/resourceRecordSets
+            content:
+              - 85.17.150.51
+              - 85.17.150.52
+              - 85.17.150.53
+            editable: true
+            name: example.com.
+            ttl: 3600
+            type: A
+        application/ld+json:
+          schema:
+            $ref: ../components/schemas/ldResourceRecordSetDetails.yaml
+          example:
+            _links:
+              self:
+                href: /domains/example.com/resourceRecordSets/example.com./A+GEO
+              collection:
+                href: /domains/example.com/resourceRecordSets
+            editable: true
+            geoContent:
+              closestLocation:
+                - 1.2.3.4
+                - 5.6.7.8
+            name: geo-10.example.com.
+            ttl: 3600
+            type: A+GEO
+    '400':
+      $ref: ../components/responses/4001.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Create a resource record set
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets/postundefined
+put:
+  description: >
+    > This is a full replacement of all editable resource records sets for a
+    domain.
+  operationId: updateResourceRecordSets
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/resultRecordSets.yaml
+        example:
+          resourceRecordSets:
+            - name: example.com.
+              type: A
+              content:
+                - 85.17.150.50
+                - 85.17.150.50
+                - 85.17.150.53
+              ttl: 300
+            - name: '*.example.com.'
+              type: A
+              content:
+                - 85.17.150.54
+              ttl: 86400
+            - name: example.com.
+              type: AAAA
+              content:
+                - 2a02:2770:8:0:216:3eff:fead:8c93
+              ttl: 28800
+            - name: some.example.com.
+              type: AAAA
+              content:
+                - 2a02:2770:8:0:216:3eff:fead:8c93
+              ttl: 60
+            - name: example.com.
+              type: CAA
+              content:
+                - 0 issue "comodoca.com"
+              ttl: 300
+            - name: anotherurl.example.com.
+              type: CNAME
+              content:
+                - example.com.
+              ttl: 86400
+            - name: example.com.
+              type: MX
+              content:
+                - 10 mail.example.com.
+                - 20 mailfilter.leaseweb.com.
+              ttl: 3600
+            - name: subdomain.example.com.
+              type: NS
+              content:
+                - other.nameserver.com
+                - yet-another.nameserver.com
+              ttl: 3600
+            - name: _service._protocol.example.com.
+              type: SRV
+              content:
+                - 10 5 5060 sipserver.example.com.
+              ttl: 14400
+            - name: example.com.
+              type: TXT
+              content:
+                - '"google-site-verification=Kkalsdhl8a9792342lksdo9bSER233"'
+                - '"v=spf1 a mx -all"'
+              ttl: 3600
+            - name: another.example.com.
+              type: SOA
+              ttl: 3600
+              content:
+                - example.com
+            - name: ds.example.com.
+              type: DS
+              content:
+                - >-
+                  63708 13 2
+                  ce46cb792d263081fe23c7245a1ccce4d59e3e501db22932edf59d858c03fd6e
+              ttl: 14400
+      application/ld+json:
+        schema:
+          $ref: ../components/schemas/updateResourceRecordSetsLdOpts.yaml
+        example:
+          resourceRecordSets:
+            - name: example.com.
+              type: A+GEO
+              geoContent:
+                closestLocation:
+                  - 1.2.3.4
+                  - 5.6.7.8
+              ttl: 300
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/resourceRecordSetDetails.yaml
+          example:
+            _links:
+              self:
+                href: /domains/example.com/resourceRecordSets/example.com./A
+              collection:
+                href: /domains/example.com/resourceRecordSets
+            content:
+              - 85.17.150.51
+              - 85.17.150.52
+              - 85.17.150.53
+            editable: true
+            name: example.com.
+            ttl: 3600
+            type: A
+        application/ld+json:
+          schema:
+            $ref: ../components/schemas/ldResourceRecordSetDetails.yaml
+          example:
+            _links:
+              self:
+                href: /domains/example.com/resourceRecordSets/example.com./A+GEO
+              collection:
+                href: /domains/example.com/resourceRecordSets
+            editable: true
+            geoContent:
+              closestLocation:
+                - 1.2.3.4
+                - 5.6.7.8
+            name: geo-10.example.com.
+            ttl: 3600
+            type: A+GEO
+    '400':
+      $ref: ../components/responses/4001.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Update resource record sets
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets/putundefined
+delete:
+  description: |
+    Delete all editable resource record sets for a domain.
+
+    Please note that this action will keep the domain's zone in place.
+  operationId: deleteResourceRecordSets
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Delete resource record sets
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets/deleteundefined

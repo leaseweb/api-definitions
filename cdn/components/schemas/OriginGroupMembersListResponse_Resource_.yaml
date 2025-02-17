@@ -1,0 +1,13 @@
+type: object
+title: ListResponse[Resource]
+properties:
+  originGroupMembers:
+    type: array
+    title: OriginGroups
+    items:
+      $ref: ./Resource.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - originGroupMembers
+  - _metadata

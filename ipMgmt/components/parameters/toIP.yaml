@@ -1,0 +1,5 @@
+name: toIp
+in: query
+schema:
+  type: string
+description: Return only IPs lower or equal to the specified address

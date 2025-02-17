@@ -1,0 +1,80 @@
+get:
+  description: |
+    This endpoint will return our predefined cancellation reasons.
+  operationId: services-cancel-reasons-get
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            cancellationReasons:
+              - reason: End of trial period?
+                reasonCode: CANCEL_TRIAL_PERIOD
+              - reason: Product switch within Leaseweb?
+                reasonCode: CANCEL_PRODUCT_SWITCH
+              - reason: Missing functions/features of product?
+                reasonCode: CANCEL_FEATURE_QUALITY
+              - reason: High prices?
+                reasonCode: CANCEL_HIGH_PRICE
+              - reason: Suspension of service?
+                reasonCode: CANCEL_SUSPENSION
+              - reason: Disagreement with the offered substitution?
+                reasonCode: CANCEL_NEW_OFFER
+              - reason: Long order delivery time?
+                reasonCode: CANCEL_DELIVERY_TIME
+              - reason: Order was out of stock?
+                reasonCode: CANCEL_OUT_OF_STOCK
+              - reason: Faulty delivery?
+                reasonCode: CANCEL_FAULTY_DELIVERY
+              - reason: Inconsistency of contract and offer?
+                reasonCode: CANCEL_INCONSISTENCY
+              - reason: Performance of product?
+                reasonCode: CANCEL_PERFORMANCE
+              - reason: Network issues?
+                reasonCode: CANCEL_NETWORK
+              - reason: Technical knowledge of Support?
+                reasonCode: CANCEL_SUPPORT_QUALITY
+              - reason: Slow response of Support?
+                reasonCode: CANCEL_SUPPORT_RESPONSE
+              - reason: Long resolution times of Support?
+                reasonCode: CANCEL_SUPPORT_RESOLUTION_TIME
+              - reason: Usability issues on Customer Portal/API?
+                reasonCode: CANCEL_CP_USABILITY
+              - reason: Missing functions/features on Customer Portal/API?
+                reasonCode: CANCEL_CP_FEATURE_QUALITY
+              - reason: Reliability of product?
+                reasonCode: CANCEL_RELIABILITY
+              - reason: Other selection?
+                reasonCode: CANCEL_OTHER
+          schema:
+            $ref: ../components/schemas/response.200.schema-2.yaml
+      description: Ok.
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get cancellation reasons
+  tags:
+    - Services
+    - Services | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/services_v1_services_cancellationReasons/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/services_v1_services_cancellationReasons/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/services_v1_services_cancellationReasons/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/services_v1_services_cancellationReasons/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/services_v1_services_cancellationReasons/getundefined

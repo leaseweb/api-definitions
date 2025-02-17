@@ -1,0 +1,13 @@
+type: object
+title: resourceRecordSetGeoContent
+description: GeoContent comprising of closest location ip addresses
+required:
+  - closestLocation
+properties:
+  closestLocation:
+    type: array
+    description: Array of closest location ip addresses
+    items:
+      type: string
+      description: IP address
+      example: 1.2.3.4

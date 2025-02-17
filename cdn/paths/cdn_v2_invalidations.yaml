@@ -1,0 +1,152 @@
+post:
+  tags:
+    - Invalidation
+    - CDN | title
+  summary: Do Invalidation
+  description: >-
+    You can submit multiple URLs to be invalidated and purged on all of the CDN
+    PoPs. The time to finish the purge depends on the CDN providers and the
+    number of cached files.
+  operationId: do_invalidation_v1_invalidations_post
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/InvalidationIn.yaml
+        examples:
+          Simple Invalidation:
+            value:
+              files:
+                - https://cdn-assets.leaseweb.com/styles.css
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                examples:
+                  - invalidation
+              resource:
+                type: object
+                properties:
+                  invalidation_id:
+                    type: string
+                    examples:
+                      - in-dj5bk2b4h23n
+                  status:
+                    type: string
+                    examples:
+                      - PENDING
+                  url_status:
+                    type: array
+                    examples:
+                      - - url: http://leaseweb.com
+                          distribution_group_id: ''
+                          status: PENDING
+                          message: ''
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          examples:
+                            - http://leaseweb.com/test
+                        distribution_group_id:
+                          type: string
+                          examples:
+                            - ''
+                        status:
+                          type: string
+                          examples:
+                            - PENDING
+                        message:
+                          type: string
+                          examples:
+                            - ''
+                  submitted:
+                    type: string
+                    examples:
+                      - '2024-07-11T12:14:41'
+                  completed:
+                    type: string
+                    format: nullable
+              status:
+                type: string
+                examples:
+                  - pending
+              id:
+                type: string
+                examples:
+                  - 0533396e-e5c6-4de2-bd08-06dfa91a3ab6
+              customerId:
+                type: string
+                examples:
+                  - '47927462'
+              created:
+                type: string
+                format: date-time
+                examples:
+                  - '2024-07-11T12:14:43Z'
+              updated:
+                type: string
+                format: nullable
+          examples:
+            Simple Invalidation:
+              value:
+                type: INVALIDATION
+                resource:
+                  invalidation_id: in-f141ghed5
+                  status: PENDING
+                  url_status:
+                    - url: https://cdn-assets.leaseweb.com/styles.css
+                      distribution_group_id: ''
+                      status: PENDING
+                      message: ''
+                  submitted: '2024-07-11T12:14:41'
+                  completed: ''
+                status: PENDING
+                id: 0533396e-e5c6-4de2-bd08-06dfa91a3ab6
+                customerId: '47927462'
+                created: '2024-07-11T12:14:43Z'
+                updated: ''
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_invalidations/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_invalidations/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_invalidations/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_invalidations/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_invalidations/postundefined

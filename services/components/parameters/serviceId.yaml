@@ -1,0 +1,7 @@
+description: The ID of a service
+example: '41000000000000'
+in: path
+name: id
+required: true
+schema:
+  type: string

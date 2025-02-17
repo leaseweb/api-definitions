@@ -1,0 +1,9 @@
+items:
+  type: string
+  description: >-
+    A message explaining the message is posted, but might not be processed yet,
+    so /messages needs to be checked.
+  default: >-
+    To make sure the request has been processed please see if the message is
+    added to the list.
+type: array

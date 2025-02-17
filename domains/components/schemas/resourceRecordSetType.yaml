@@ -1,0 +1,14 @@
+type: string
+description: Type of the resource record set
+enum:
+  - A
+  - AAAA
+  - CAA
+  - CNAME
+  - MX
+  - NS
+  - SRV
+  - TXT
+  - SOA
+  - DS
+  - TLSA

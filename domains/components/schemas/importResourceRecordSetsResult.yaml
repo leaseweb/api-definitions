@@ -1,0 +1,11 @@
+properties:
+  infoMessage:
+    $ref: ./infoMessage.yaml
+  resourceRecordSets:
+    type: array
+    description: Array of resource record sets
+    items:
+      $ref: ./resourceRecordSetDetails.yaml
+  _links:
+    $ref: ./links.yaml
+type: object

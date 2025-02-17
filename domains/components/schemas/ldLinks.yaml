@@ -1,0 +1,20 @@
+title: ldLinks
+type: object
+description: Links to related resource locations
+required:
+  - self
+  - collection
+properties:
+  self:
+    $ref: ./self.yaml
+  collection:
+    title: collection
+    type: object
+    description: Link to the resource record sets collection
+    required:
+      - href
+    properties:
+      href:
+        type: string
+        description: Hyperlink to the resource record sets collection location
+        example: /domains/example.com/resourceRecordSets

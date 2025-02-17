@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"active\":true,\"body\":\"I will be out of office until 14-12-2020. Please contact the reception desk for urgent matters.\",\"subject\":\"Out of office\"}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("PUT", "/hosting/v2/domains/example.com/mailboxes/%7BemailAddress%7D/autoResponder", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

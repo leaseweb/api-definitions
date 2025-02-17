@@ -1,0 +1,12 @@
+description: Internal server error.
+content:
+  application/json:
+    example:
+      value:
+        errorMessage: >-
+          The server encountered an unexpected condition that prevented it from
+          fulfilling the request.
+        userMessage: Cannot handle your request at the moment.
+        correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+    schema:
+      $ref: ../schemas/errorResponseSchema.yaml

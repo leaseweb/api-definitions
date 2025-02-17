@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/aws/ec2/?Filter.N.instance-id=29145c92-4a68-4c63-aaeb-f2212d85a74a&Filter.N.ip-address=123.456.7.8&Filter.N.tag%3Areference=reference&Filter.N.instance-state-name=pending&Filter.N.instance-type=t2.micro&Filter.N.availability-zone=eu-west-1&MaxResults=10&NextToken=1&Action=DescribeInstances",
+  "method": "GET",
+  "headers": {
+    "Authorization": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

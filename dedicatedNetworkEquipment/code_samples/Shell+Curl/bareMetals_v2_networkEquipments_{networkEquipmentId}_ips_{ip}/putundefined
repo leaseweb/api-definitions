@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/bareMetals/v2/networkEquipments/12345/ips/127.0.0.6 \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"detectionProfile":"ADVANCED_DEFAULT","reverseLookup":"string"}'

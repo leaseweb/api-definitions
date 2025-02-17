@@ -1,0 +1,20 @@
+title: loadBalancerListenerOpts
+type: object
+properties:
+  protocol:
+    $ref: ./protocol.yaml
+  port:
+    type: integer
+    description: Port that the listener listens to
+  certificate:
+    $ref: ./sslCertificate.yaml
+  defaultRule:
+    type: object
+    title: loadBalancerListenerDefaultRule
+    required:
+      - targetGroupId
+    properties:
+      targetGroupId:
+        type: string
+        format: uuid
+        description: The target group unique identifier

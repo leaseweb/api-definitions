@@ -1,0 +1,60 @@
+title: installOperatingSystemPayload
+type: object
+required:
+  - jobType
+properties:
+  fileserverBaseUrl:
+    type: string
+  pop:
+    type: string
+  powerCycle:
+    type: boolean
+  isUnassignedServer:
+    type: boolean
+  serverId:
+    description: Id of the server
+    type: string
+  jobType:
+    type: string
+    enum:
+      - install
+  configurable:
+    type: boolean
+  device:
+    type: string
+  numberOfDisks:
+    type: integer
+    nullable: true
+  operatingSystemId:
+    type: string
+  os:
+    title: os
+    type: object
+    properties:
+      architecture:
+        description: The architecture of the operating system
+        type: string
+      family:
+        description: The operating system family
+        type: string
+      name:
+        description: A human readable name for the operating system
+        type: string
+      type:
+        title: operatingSystemType
+        description: The type of operating system
+        type: string
+      version:
+        description: The version of the operating system
+        type: string
+  partitions:
+    type: array
+    items:
+      $ref: ./partition.yaml
+  raidLevel:
+    type: integer
+    nullable: true
+  timezone:
+    description: Timezone represented as Geographical_Area/City
+    type: string
+    example: UTC

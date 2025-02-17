@@ -1,0 +1,126 @@
+get:
+  description: |
+    Use this API to get DHCP the reservations of a private network.
+  operationId: dhcp-reservations-get
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 20
+              offset: 0
+              totalCount: 1
+            reservations:
+              - ip: 127.0.0.1
+                mac: d8:87:03:52:0a:0f
+                sticky: true
+          schema:
+            $ref: ../components/schemas/response.200.schema.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get DHCP reservations
+  tags:
+    - Private networks
+    - Private Networks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations/getundefined
+post:
+  description: |
+    Create a DHCP reservation for a private network.
+  operationId: dhcp-reservations-post
+  requestBody:
+    content:
+      application/json:
+        example:
+          ip: 127.0.0.1
+          mac: D8:87:03:52:0A:0F
+          sticky: true
+        schema:
+          $ref: ../components/schemas/request.schema.yaml
+    required: true
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            ip: 127.0.0.1
+            mac: d8:87:03:52:0a:0f
+            sticky: true
+          schema:
+            $ref: ../components/schemas/response.200.schema-2.yaml
+    '400':
+      content:
+        application/json:
+          example:
+            correlationId: f8d84555-9822-49fb-919a-d4945b201fe3
+            errorCode: '400'
+            errorMessage: Ip address doesn't belong to a subnet of that private network
+          schema:
+            $ref: ../components/schemas/errorResponse.yaml
+      description: Bad Request.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create a DHCP reservation
+  tags:
+    - Private networks
+    - Private Networks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations/postundefined
+parameters:
+  - $ref: ../components/parameters/privateNetworkId.yaml

@@ -1,0 +1,49 @@
+get:
+  description: Gets status details about a job running in the specified storage VM.
+  operationId: Show a job
+  parameters:
+    - $ref: ../components/parameters/storageVMId.yaml
+    - $ref: ../components/parameters/jobId.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/job.yaml
+          example:
+            id: d385ae54-3763-11ee-af62-000c299d72cd
+            status: COMPLETED
+            startedAt: '2023-07-31T12:39:23+00:00'
+            completedAt: '2023-07-31T12:39:24+00:00'
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  tags:
+    - Storage | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/storage_v1_storageVMs_{storageVMId}_jobs_{jobId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/storage_v1_storageVMs_{storageVMId}_jobs_{jobId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/storage_v1_storageVMs_{storageVMId}_jobs_{jobId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/storage_v1_storageVMs_{storageVMId}_jobs_{jobId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/storage_v1_storageVMs_{storageVMId}_jobs_{jobId}/getundefined

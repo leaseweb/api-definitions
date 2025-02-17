@@ -1,0 +1,9 @@
+type: string
+enum:
+  - NORMAL_IP
+  - NETWORK
+  - BROADCAST
+  - GATEWAY
+  - ROUTER1
+  - ROUTER2
+  - IPMI

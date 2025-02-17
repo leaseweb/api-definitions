@@ -1,0 +1,142 @@
+get:
+  tags:
+    - Certificate
+    - CDN | title
+  summary: Get Certificate By Id
+  description: Get the details of a certificate by its ID
+  operationId: get_certificate_by_id_v1_certificates__certificate_id__get
+  parameters:
+    - name: certificate_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Certificate Id
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            title: >-
+              Response Get Certificate By Id V1 Certificates  Certificate Id 
+              Get
+            anyOf:
+              - $ref: ../components/schemas/NoValidationCertificate.yaml
+              - $ref: ../components/schemas/Certificate.yaml
+          examples:
+            Certificate:
+              value:
+                description: Main LSW Certificate 2024
+                certificate: Hidden for security reasons
+                privateKey: Hidden for security reasons
+                caBundle: Hidden for security reasons
+                validation: true
+                id: ce-5g8wbh25
+                commonName: c1
+                issuer: c1
+                valid: true
+                trusted: true
+                daysLeft: 364
+                validFrom: 1723118047
+                validUntil: 1754646847
+                created: '2024-03-19T08:15:23'
+                updated: '2024-03-19T08:15:23'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_certificates_{certificate_id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_certificates_{certificate_id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_certificates_{certificate_id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_certificates_{certificate_id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_certificates_{certificate_id}/getundefined
+delete:
+  tags:
+    - Certificate
+    - CDN | title
+  summary: Delete Certificate By Id
+  operationId: delete_certificate_by_id_v1_certificates__certificate_id__delete
+  parameters:
+    - name: certificate_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Certificate Id
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_certificates_{certificate_id}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_certificates_{certificate_id}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_certificates_{certificate_id}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_certificates_{certificate_id}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_certificates_{certificate_id}/deleteundefined

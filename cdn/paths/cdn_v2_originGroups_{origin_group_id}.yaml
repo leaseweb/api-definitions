@@ -1,0 +1,259 @@
+get:
+  tags:
+    - OriginGroup
+    - CDN | title
+  summary: Get Origin Group By Id
+  description: Get the details of an origin group by its ID.
+  operationId: get_origin_group_by_id_v1_originGroups__origin_group_id__get
+  parameters:
+    - name: origin_group_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Id
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Resource.yaml
+          examples:
+            Origin Group:
+              value:
+                resourceType: ORIGIN_GROUP
+                data:
+                  - key: balancingMethod
+                    value: CONSISTENT
+                  - key: description
+                    value: LSW Origin Group
+                  - key: failTimeOut
+                    value: 8
+                  - key: keepAlive
+                    value: true
+                  - key: keepAliveSeconds
+                    value: 27
+                  - key: enabled
+                    value: true
+                  - key: id
+                    value: og-3h47bjs
+                  - key: customerId
+                    value: cu-47dbh4n2
+                  - key: created
+                    value: '2024-08-07T10:38:49'
+                  - key: updated
+                    value: null
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_originGroups_{origin_group_id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_originGroups_{origin_group_id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_originGroups_{origin_group_id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_originGroups_{origin_group_id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}/getundefined
+put:
+  tags:
+    - OriginGroup
+    - CDN | title
+  summary: Update Origin Group By Id
+  description: |-
+    Update the parameters in an origin group.
+
+    Note: members are managed by another endpoint.
+  operationId: update_origin_group_by_id_v1_originGroups__origin_group_id__put
+  parameters:
+    - name: origin_group_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Id
+  requestBody:
+    description: ''
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Resource.yaml
+        examples:
+          Updated Origin Group:
+            value:
+              resourceType: ORIGIN_GROUP
+              data:
+                - key: balancingMethod
+                  value: CONSISTENT
+                - key: description
+                  value: LSW Origin Group 2
+                - key: failTimeOut
+                  value: 8
+                - key: keepAlive
+                  value: true
+                - key: keepAliveSeconds
+                  value: 27
+                - key: enabled
+                  value: true
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Resource.yaml
+          examples:
+            Origin Group:
+              value:
+                resourceType: ORIGIN_GROUP
+                data:
+                  - key: balancingMethod
+                    value: CONSISTENT
+                  - key: description
+                    value: LSW Origin Group 2
+                  - key: failTimeOut
+                    value: 8
+                  - key: keepAlive
+                    value: true
+                  - key: keepAliveSeconds
+                    value: 27
+                  - key: enabled
+                    value: true
+                  - key: id
+                    value: og-3h47bjs
+                  - key: customerId
+                    value: cu-47dbh4n2
+                  - key: created
+                    value: '2024-08-07T10:38:49'
+                  - key: updated
+                    value: null
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_originGroups_{origin_group_id}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_originGroups_{origin_group_id}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_originGroups_{origin_group_id}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_originGroups_{origin_group_id}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}/putundefined
+delete:
+  tags:
+    - OriginGroup
+    - CDN | title
+  summary: Delete Origin Group By Id
+  description: Delete an origin group by its ID.
+  operationId: delete_origin_group_by_id_v1_originGroups__origin_group_id__delete
+  parameters:
+    - name: origin_group_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Id
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_originGroups_{origin_group_id}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_originGroups_{origin_group_id}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_originGroups_{origin_group_id}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_originGroups_{origin_group_id}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}/deleteundefined

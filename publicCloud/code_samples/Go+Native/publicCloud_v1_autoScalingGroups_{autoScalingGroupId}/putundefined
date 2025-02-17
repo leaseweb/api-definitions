@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://api.leaseweb.com/publicCloud/v1/autoScalingGroups/fb769dab-3daa-47e4-89ed-06a4b6499176"
+
+	payload := strings.NewReader("{\"desiredAmount\":1,\"minimumAmount\":1,\"maximumAmount\":1,\"cpuThreshold\":1,\"warmupTime\":60,\"cooldownTime\":300,\"reference\":\"string\",\"startsAt\":\"2024-04-25 08:00:00\",\"endsAt\":\"2024-04-25 08:00:00\"}")
+
+	req, _ := http.NewRequest("PUT", url, payload)
+
+	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+	req.Header.Add("content-type", "application/json")
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(res)
+	fmt.Println(string(body))
+
+}

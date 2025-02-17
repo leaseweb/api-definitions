@@ -1,0 +1,58 @@
+type: object
+title: ExternalAction
+properties:
+  type:
+    type: string
+    enum:
+      - INVALIDATION
+      - CREATE_DIST
+      - UPDATE_DIST
+      - DELETE_DIST
+    title: Type
+  status:
+    type: string
+    enum:
+      - PENDING
+      - IN_PROGRESS
+      - FINISHED
+      - ERROR
+    title: Status
+  id:
+    type: string
+    title: Id
+  customerId:
+    type: string
+    title: Customerid
+  created:
+    type: string
+    title: Created
+    format: date-time
+  updated:
+    title: Updated
+    anyOf:
+      - type: string
+        format: date-time
+      - type: 'null'
+required:
+  - type
+  - status
+  - id
+  - customerId
+  - created
+examples:
+  - type: INVALIDATION
+    resource:
+      invalidation_id: in-80ot20ls
+      status: ERROR
+      url_status:
+        - url: http://di-52.cdn.leaseweb.com/test
+          distribution_group_id: unknown
+          status: ERROR
+          message: Unable to map domain to distribution
+      submitted: '2024-07-10T13:11:12'
+      completed: '2024-07-10T13:12:05'
+    status: ERROR
+    id: 8e275b01-f045-409c-91a2-71de23fe2e31
+    customerId: '10085996'
+    created: '2024-07-10T13:11:13Z'
+    updated: '2024-08-12T13:10:43Z'

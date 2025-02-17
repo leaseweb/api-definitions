@@ -1,0 +1,39 @@
+type: object
+title: TimeSeries
+properties:
+  fromTs:
+    type: string
+    format: date-time
+    title: fromTs
+  toTs:
+    type: string
+    format: date-time
+    title: toTs
+  service:
+    type: string
+    title: service
+    default: cdn
+  granularity:
+    type: string
+    title: granularity
+    default: 5MIN
+  groupBy:
+    anyOf:
+      - type: string
+      - type: 'null'
+    title: groupBy
+  distributionId:
+    anyOf:
+      - type: string
+      - type: 'null'
+    title: distributionId
+  series:
+    anyOf:
+      - items: {}
+        type: array
+      - type: 'null'
+    title: series
+required:
+  - fromTs
+  - toTs
+  - series

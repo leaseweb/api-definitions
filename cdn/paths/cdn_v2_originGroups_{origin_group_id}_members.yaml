@@ -1,0 +1,188 @@
+post:
+  tags:
+    - OriginGroup
+    - CDN | title
+  summary: Create Origin Group Member
+  description: >-
+    Add members (origins) to your origin group.
+
+
+    These are the backend servers that are going to be used within the
+    loadbalancer.
+  operationId: create_origin_group_member_v1_originGroups__origin_group_id__members_post
+  parameters:
+    - name: origin_group_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Id
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Resource.yaml
+        examples:
+          Origin Group Member:
+            value:
+              resourceType: ORIGIN_GROUP_MEMBER
+              data:
+                - key: originId
+                  value: or-du7n2vo8
+                - key: status
+                  value: active
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Resource.yaml
+          examples:
+            Origin Group Member:
+              value:
+                resourceType: ORIGIN_GROUP_MEMBER
+                data:
+                  - key: originId
+                    value: or-du7n2vo8
+                  - key: status
+                    value: active
+                  - key: id
+                    value: or-6j2vgb3
+                  - key: originHost
+                    value: origin.leaseweb.com
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_originGroups_{origin_group_id}_members/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_originGroups_{origin_group_id}_members/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_originGroups_{origin_group_id}_members/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_originGroups_{origin_group_id}_members/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}_members/postundefined
+get:
+  tags:
+    - OriginGroup
+    - CDN | title
+  summary: Get All Origin Group Members
+  description: Get all of the members belonging to an origin group.
+  operationId: get_all_origin_group_members_v1_originGroups__origin_group_id__members_get
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - name: origin_group_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Origin Group Id
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: >-
+              ../components/schemas/OriginGroupMembersListResponse_Resource_.yaml
+          examples:
+            Origin Group Members:
+              value:
+                originGroupMembers:
+                  - resourceType: ORIGIN_GROUP_MEMBER
+                    data:
+                      - key: originId
+                        value: or-du7n2vo8
+                      - key: status
+                        value: active
+                      - key: id
+                        value: or-g2n6l2v5
+                      - key: originHost
+                        value: origin1.leaseweb.com
+                  - resourceType: ORIGIN_GROUP_MEMBER
+                    data:
+                      - key: originId
+                        value: or-du7n2vo8
+                      - key: status
+                        value: backup
+                      - key: id
+                        value: or-kn6l2bb5
+                      - key: originHost
+                        value: origin2.leaseweb.com
+                _metadata:
+                  totalCount: 2
+                  limit: 25
+                  offset: 0
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_originGroups_{origin_group_id}_members/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_originGroups_{origin_group_id}_members/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_originGroups_{origin_group_id}_members/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_originGroups_{origin_group_id}_members/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}_members/getundefined

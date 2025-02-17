@@ -1,0 +1,8 @@
+type: object
+properties:
+  RebootInstancesResponse:
+    properties:
+      return:
+        type: string
+      requestId:
+        type: string

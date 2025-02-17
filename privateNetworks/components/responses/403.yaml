@@ -1,0 +1,9 @@
+description: Forbidden.
+content:
+  application/json:
+    example:
+      correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+      errorCode: '403'
+      errorMessage: The access token is expired or invalid.
+    schema:
+      $ref: ../schemas/errorResponse.yaml

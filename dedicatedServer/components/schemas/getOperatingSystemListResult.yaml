@@ -1,0 +1,21 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  operatingSystems:
+    description: A list of operating systems
+    items:
+      title: operatingSystem
+      description: A single operating system
+      properties:
+        id:
+          description: The unique ID of this operating system
+          type: string
+        name:
+          description: A human readable name describing the operating system
+          type: string
+      required:
+        - id
+        - name
+      type: object
+    type: array
+type: object

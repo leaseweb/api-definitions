@@ -1,0 +1,60 @@
+get:
+  description: |
+    Use this API to get information about a single aggregation pack.
+  operationId: getAggregationPack
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            aggregationType: Hybrid
+            billingType: 95TH
+            connectivityType: BANDWIDTH_POOL
+            contractStartDate: '2022-07-01T00:00:00Z'
+            contractTerm: 36
+            customerId: '1234'
+            dataTrafficCommit: 20000
+            dataTrafficCommitUnit: Mbps
+            id: '123456'
+            networkPerformanceType: VOLUME
+            salesOrgId: '2000'
+          schema:
+            $ref: ../components/schemas/aggregationPack.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get aggregation pack
+  tags:
+    - Aggregation Packs
+    - Aggregation packs | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_aggregationPacks_{aggregationPackId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_aggregationPacks_{aggregationPackId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_aggregationPacks_{aggregationPackId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_aggregationPacks_{aggregationPackId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_aggregationPacks_{aggregationPackId}/getundefined
+parameters:
+  - $ref: ../components/parameters/aggregationPackId.yaml

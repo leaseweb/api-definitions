@@ -1,0 +1,11 @@
+properties:
+  nullroutes:
+    type: array
+    items:
+      $ref: ./nullRoutedIP.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - nullroutes
+  - _metadata
+type: object

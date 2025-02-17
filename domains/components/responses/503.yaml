@@ -1,0 +1,12 @@
+description: Service unavailable.
+content:
+  application/json:
+    example:
+      value:
+        errorMessage: >-
+          The server is currently unable to handle the request due to a
+          temporary overloading or maintenance of the server.
+        userMessage: Cannot handle your request at the moment. Please try again later.
+        correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+    schema:
+      $ref: ../schemas/errorResponseSchema.yaml

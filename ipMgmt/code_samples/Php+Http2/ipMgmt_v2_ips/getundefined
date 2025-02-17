@@ -1,0 +1,32 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/ipMgmt/v2/ips');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'limit' => '20',
+  'offset' => '10',
+  'subnetId' => 'SOME_STRING_VALUE',
+  'version' => 'SOME_INTEGER_VALUE',
+  'type' => 'SOME_STRING_VALUE',
+  'nullRouted' => 'SOME_BOOLEAN_VALUE',
+  'primary' => 'SOME_BOOLEAN_VALUE',
+  'fromIp' => 'SOME_STRING_VALUE',
+  'toIp' => 'SOME_STRING_VALUE',
+  'ips' => 'SOME_STRING_VALUE',
+  'equipmentIds' => 'SOME_STRING_VALUE',
+  'assignedContractIds' => 'SOME_STRING_VALUE',
+  'sort' => 'SOME_STRING_VALUE',
+  'reverseLookup' => 'mydomain1.example.com'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

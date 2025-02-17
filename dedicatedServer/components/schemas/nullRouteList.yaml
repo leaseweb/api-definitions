@@ -1,0 +1,9 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  nullRoutes:
+    description: An array of server null route events
+    items:
+      $ref: ./nullRoute.yaml
+    type: array
+type: object

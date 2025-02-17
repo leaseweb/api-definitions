@@ -1,0 +1,7 @@
+schema:
+  type: string
+name: jobId
+in: path
+required: true
+description: UUID of a queue job.
+example: d385ae54-3763-11ee-af62-000c299d72cd

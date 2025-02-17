@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/bareMetals/v2/privateRacks?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE&reference=my-db&privateNetworkCapable=SOME_BOOLEAN_VALUE&privateNetworkEnabled=SOME_BOOLEAN_VALUE",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

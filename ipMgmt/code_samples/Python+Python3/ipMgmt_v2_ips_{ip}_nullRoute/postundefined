@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"automatedUnnullingAt\":\"2015-06-25T11:13:00Z\",\"comment\":\"This IP is evil\",\"ticketId\":\"188612\"}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/ipMgmt/v2/ips/192.0.2.1/nullRoute", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

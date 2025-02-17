@@ -1,0 +1,24 @@
+title: targetGroup
+type: object
+required:
+  - name
+  - protocol
+  - port
+  - region
+properties:
+  name:
+    type: string
+    description: The name of the target group
+  protocol:
+    type: string
+    description: The protocol of the target group
+    $ref: ./protocol.yaml
+  port:
+    type: integer
+    description: The port of the target group
+  region:
+    type: string
+    description: The region of the target group
+    $ref: ./regionName.yaml
+  healthCheck:
+    $ref: ./healthCheckOpts.yaml

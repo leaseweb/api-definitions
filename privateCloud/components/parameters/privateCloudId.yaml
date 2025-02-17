@@ -1,0 +1,7 @@
+schema:
+  type: string
+name: privateCloudId
+in: path
+required: true
+description: Id of the private cloud
+example: '123242'

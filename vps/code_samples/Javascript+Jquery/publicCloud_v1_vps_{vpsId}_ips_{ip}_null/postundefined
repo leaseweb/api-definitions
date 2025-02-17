@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/publicCloud/v1/vps/999999999/ips/10.0.0.1/null",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"comment\":\"string\",\"automatedUnnulingAt\":1}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

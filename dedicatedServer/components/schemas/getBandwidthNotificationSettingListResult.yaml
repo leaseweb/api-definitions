@@ -1,0 +1,9 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  bandwidthNotificationSettings:
+    description: An array of Bandwidth Notification Settings
+    items:
+      $ref: ./bandwidthNotificationSetting.yaml
+    type: array
+type: object

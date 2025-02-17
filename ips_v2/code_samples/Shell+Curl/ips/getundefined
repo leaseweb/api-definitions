@@ -1,3 +1,0 @@
-curl --request GET \
-  --url 'https://api.leaseweb.com/ipMgmt/v2/ips?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE&subnetId=SOME_STRING_VALUE&version=SOME_INTEGER_VALUE&type=SOME_STRING_VALUE&nullRouted=SOME_BOOLEAN_VALUE&primary=SOME_BOOLEAN_VALUE&fromIp=SOME_STRING_VALUE&toIp=SOME_STRING_VALUE&ips=SOME_STRING_VALUE&equipmentIds=SOME_STRING_VALUE&assignedContractIds=SOME_STRING_VALUE&sort=SOME_STRING_VALUE&reverseLookup=SOME_STRING_VALUE' \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

@@ -1,0 +1,76 @@
+get:
+  summary: RegisterTargets
+  operationId: RegisterTargets
+  description: >
+    Register one/multiple instance(s) to load balancer.
+
+
+    #### AWS CLI example
+
+
+    ```sh
+
+    aws elbv2 register-targets --target-group-arn <LOAD_BALANCER_ID> --targets
+    Id=<INSTANCE_ID> Id=<ANOTHER_INSTANCE_ID> --endpoint-url
+    <LEASEWEB_AWS_EC2_SERVER_URL>
+
+    ```
+  tags:
+    - Aws Ec2 Wrapper | title
+  security:
+    - Authorization: []
+  parameters:
+    - description: The ID of the load balancer.
+      example: 29145c92-4a68-4c63-aaeb-f2212d85a74a
+      in: query
+      name: TargetGroupArn
+      schema:
+        type: string
+      required: true
+    - description: Instance ID(s) register to load balancer.
+      example: >-
+        Targets.member.1.Id=800c43a4-8c74-4f92-9cd0-5fa883c8ca35&Targets.member.2.Id=810c43a4-8c74-4f92-9cd0-5fa883c8ca35
+      in: query
+      name: Targets.member.N.Id
+      schema:
+        type: string
+      required: true
+  responses:
+    '200':
+      content:
+        application/xml:
+          example: |2-
+             <?xml version='1.0' encoding='UTF-8'?>
+             <Empty/>
+             
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/aws_ec2_?Action=RegisterTargets/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/aws_ec2_?Action=RegisterTargets/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/aws_ec2_?Action=RegisterTargets/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/aws_ec2_?Action=RegisterTargets/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/aws_ec2_?Action=RegisterTargets/getundefined

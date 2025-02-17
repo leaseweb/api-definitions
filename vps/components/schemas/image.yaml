@@ -1,0 +1,22 @@
+title: image
+type: object
+required:
+  - id
+  - name
+  - family
+  - flavour
+  - custom
+properties:
+  id:
+    $ref: ./imageId.yaml
+  name:
+    type: string
+    example: Ubuntu 20.04 LTS (x86_64)
+  family:
+    type: string
+    example: linux
+  flavour:
+    $ref: ./flavour.yaml
+  custom:
+    description: Standard or Custom image
+    type: boolean

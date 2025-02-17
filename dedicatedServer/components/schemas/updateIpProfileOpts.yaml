@@ -1,0 +1,12 @@
+properties:
+  detectionProfile:
+    description: The detection profile value
+    enum:
+      - ADVANCED_DEFAULT
+      - ADVANCED_LOW_UDP
+      - ADVANCED_MED_UDP
+    type: string
+  reverseLookup:
+    description: The reverse lookup value
+    type: string
+type: object

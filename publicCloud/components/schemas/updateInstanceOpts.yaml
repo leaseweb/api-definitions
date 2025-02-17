@@ -1,0 +1,15 @@
+properties:
+  type:
+    $ref: ./typeName.yaml
+  reference:
+    type: string
+    description: An identifying name you can refer to the instance
+  contractType:
+    $ref: ./contractType.yaml
+  contractTerm:
+    $ref: ./contractTerm.yaml
+  billingFrequency:
+    $ref: ./billingFrequency.yaml
+  rootDiskSize:
+    $ref: ./rootDiskSize.yaml
+type: object

@@ -1,0 +1,27 @@
+type: object
+title: Domain
+properties:
+  domain:
+    type: string
+    title: Domain
+  id:
+    type: string
+    title: Id
+  distributionId:
+    type: string
+    title: Distributionid
+  created:
+    type: string
+    title: Created
+    format: date-time
+  updated:
+    title: Updated
+    anyOf:
+      - type: string
+        format: date-time
+      - type: 'null'
+required:
+  - domain
+  - id
+  - distributionId
+  - created

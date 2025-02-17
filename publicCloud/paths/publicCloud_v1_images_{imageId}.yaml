@@ -1,0 +1,72 @@
+parameters:
+  - $ref: ../components/parameters/imageId.yaml
+put:
+  description: Update a Custom Image
+  operationId: updateImage
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/updateImageOpts.yaml
+        example:
+          name: Custom image
+  responses:
+    '201':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/imageDetails.yaml
+          example:
+            architecture: null
+            createdAt: '2024-07-05T10:54:27+00:00'
+            custom: true
+            family: linux
+            flavour: ubuntu
+            id: ace712e9-a166-47f1-9065-4af0f7e7fce1
+            marketApps: []
+            minDiskSize: null
+            name: Custom image - 03
+            region: eu-west-3
+            state: READY
+            stateReason: null
+            storageSize:
+              size: 2.03
+              unit: GB
+            storageTypes: []
+            updatedAt: '2024-07-17T13:14:01+00:00'
+            version: null
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update Custom Image
+  tags:
+    - Images
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_images_{imageId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_images_{imageId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/publicCloud_v1_images_{imageId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_images_{imageId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/publicCloud_v1_images_{imageId}/putundefined

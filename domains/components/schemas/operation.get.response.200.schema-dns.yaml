@@ -1,0 +1,65 @@
+$schema: http://json-schema.org/draft-04/schema#
+properties:
+  domains:
+    type: array
+    items:
+      type: object
+      properties:
+        domainName:
+          type: string
+        suspended:
+          type: boolean
+        dnsOnly:
+          type: boolean
+        contractStartDate:
+          type: string
+        contractEndDate:
+          type: string
+        _links:
+          type: object
+          properties:
+            self:
+              type: object
+              properties:
+                href:
+                  type: string
+            collection:
+              type: object
+              properties:
+                href:
+                  type: string
+            resourceRecordSets:
+              type: object
+              properties:
+                href:
+                  type: string
+            validateZone:
+              type: object
+              properties:
+                href:
+                  type: string
+      required:
+        - domainName
+        - suspended
+        - dnsOnly
+        - contractStartDate
+        - _links
+        - contractEndDate
+  _links:
+    type: object
+    properties:
+      self:
+        type: object
+        properties:
+          href:
+            type: string
+  _metadata:
+    type: object
+    properties:
+      totalCount:
+        type: number
+      limit:
+        type: number
+      offset:
+        type: number
+type: object

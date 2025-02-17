@@ -1,8 +1,0 @@
-{
-  "description": "Filter the services endpoint with an equipmentId",
-  "in": "query",
-  "name": "equipmentId",
-  "schema": {
-    "type": "string"
-  }
-}

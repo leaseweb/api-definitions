@@ -1,0 +1,8 @@
+properties:
+  ips:
+    type: array
+    items:
+      $ref: ./ipDetails.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+type: object

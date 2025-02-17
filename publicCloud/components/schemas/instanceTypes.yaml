@@ -1,0 +1,8 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  instanceTypes:
+    type: array
+    items:
+      $ref: ./instanceType.yaml
+type: object

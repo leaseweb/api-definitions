@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/cdn/v2/statistics/customer/totals?fromDt=SOME_STRING_VALUE&toDt=SOME_STRING_VALUE&metric=SOME_STRING_VALUE&distributionId=SOME_STRING_VALUE&groupBy=SOME_STRING_VALUE",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

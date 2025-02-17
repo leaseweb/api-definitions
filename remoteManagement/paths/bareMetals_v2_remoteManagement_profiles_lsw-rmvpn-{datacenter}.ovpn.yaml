@@ -1,0 +1,125 @@
+get:
+  operationId: get/remoteManagement/profiles/lsw-rmvpn-{datacenter}.ovpn
+  summary: Inspect an OpenVPN profile
+  description: >
+    Retrieve a OpenVPN profile for the given data center.
+
+
+    On success the response will be a pop specific OpenVPN profile containing a
+
+    certificate and configuration.
+
+
+    This file can be used with OpenVPN clients to initiate a connection to
+    Leaseweb
+
+    Remote Management network.
+  responses:
+    '200':
+      description: ''
+      content:
+        application/x-openvpn-profile:
+          examples:
+            example-1:
+              value: |-
+                client
+
+                proto udp
+                port 1194
+                dev tun
+
+                remote-random
+                remote
+
+                keepalive 10 60
+
+                remote-cert-tls server
+                resolv-retry infinite
+
+                comp-lzo
+                auth-user-pass
+                auth-retry interact
+                explicit-exit-notify 2
+
+                <ca>
+                -----BEGIN CERTIFICATE-----
+                AAAAAAAAAAAAAA.................
+                -----END CERTIFICATE-----
+                </ca>
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Remote management
+    - Remote Management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_remoteManagement_profiles_lsw-rmvpn-{datacenter}.ovpn/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_remoteManagement_profiles_lsw-rmvpn-{datacenter}.ovpn/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_remoteManagement_profiles_lsw-rmvpn-{datacenter}.ovpn/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_remoteManagement_profiles_lsw-rmvpn-{datacenter}.ovpn/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_remoteManagement_profiles_lsw-rmvpn-{datacenter}.ovpn/getundefined
+parameters:
+  - schema:
+      type: string
+    name: datacenter
+    in: path
+    required: true
+    description: Datacenter location

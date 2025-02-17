@@ -1,0 +1,12 @@
+type: object
+description: An explanation about the purpose of this instance.
+nullable: true
+example:
+  id: '123456'
+required:
+  - id
+properties:
+  id:
+    type: string
+    description: ID of the contract connected to the IP.
+    example: '123456'

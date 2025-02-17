@@ -1,0 +1,28 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/publicCloud/v1/vps/images');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'limit' => '20',
+  'offset' => '10',
+  'custom' => 'SOME_BOOLEAN_VALUE',
+  'standard' => 'true',
+  'state' => 'SOME_STRING_VALUE',
+  'marketAppId' => 'SOME_STRING_VALUE',
+  'storageType' => 'SOME_STRING_VALUE',
+  'name' => 'Ubuntu 20.04 LTS (x86_64)',
+  'flavour' => 'SOME_STRING_VALUE',
+  'region' => 'eu-west-3'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

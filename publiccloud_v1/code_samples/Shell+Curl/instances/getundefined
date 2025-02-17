@@ -1,3 +1,0 @@
-curl --request GET \
-  --url 'https://api.leaseweb.com/publicCloud/v1/instances?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE&ip=SOME_STRING_VALUE&reference=SOME_STRING_VALUE&id=SOME_STRING_VALUE&contractType=SOME_STRING_VALUE&contractState=SOME_STRING_VALUE&imageId=UBUNTU_22_04_64BIT&state=SOME_STRING_VALUE&region=SOME_STRING_VALUE&type=SOME_STRING_VALUE' \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

@@ -1,0 +1,162 @@
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+post:
+  description: >
+    Install your server with an Operating System and optional Control Panel.
+
+
+    To retrieve a list of available operating systems use the
+
+    `/v2/operatingSystems` endpoint.
+
+
+    To retrieve a list of available control panels use the `/v2/controlPanels`
+
+    endpoint.
+
+
+    The default device / partitions to be used are operating system depended and
+
+    can be retrieved via the `/v2/operatingSystems/{operatingSystemId}`
+    endpoint.
+
+
+    You are now able to target a specific diskset, like SATA1TB, SATA2TB,
+    SSD256GB,
+
+    etc. To see which disksets are available in your server check the
+    `/v2/servers/{serverId}`
+
+    endpoint and look for the corresponding diskset id from the hdd array.
+
+
+    For more information about Dedicated Server installation, [click
+    here](https://kb.leaseweb.com/products/dedicated-server/reinstalling-your-dedicated-server)
+    for our related Knowledge Base article.
+  operationId: installOperatingSystem
+  requestBody:
+    content:
+      application/json:
+        example:
+          controlPanelId: PLESK_12
+          device: SATA2TB
+          hostname: ubuntu22.local
+          operatingSystemId: UBUNTU_22_04_64BIT
+          partitions:
+            - filesystem: ext2
+              mountpoint: /boot
+              size: '1024'
+            - filesystem: swap
+              size: '4096'
+            - filesystem: ext4
+              mountpoint: /tmp
+              size: '4096'
+            - filesystem: ext4
+              mountpoint: /
+              size: '*'
+          sshKeys: ssh-rsa AAAAB3NzaC1y... user@domain.com
+        schema:
+          $ref: ../components/schemas/installOperatingSystemOpts.yaml
+  responses:
+    '202':
+      content:
+        application/json:
+          example:
+            createdAt: '2021-03-06T21:55:32Z'
+            flow: tasks
+            isRunning: true
+            node: AA:BB:CC:DD:EE:FF!DKFJKD8989
+            payload:
+              configurable: true
+              device: SATA2TB
+              fileserverBaseUrl: 10.11.20.2
+              isUnassignedServer: false
+              jobType: install
+              numberOfDisks: null
+              operatingSystemId: UBUNTU_22_04_64BIT
+              os:
+                architecture: 64bit
+                family: ubuntu
+                name: Ubuntu 22.04 LTS (Jammy Jellyfish) (amd64)
+                type: linux
+                version: '22.04'
+              partitions:
+                - filesystem: ext2
+                  mountpoint: /boot
+                  size: '1024'
+                - filesystem: swap
+                  size: '4096'
+                - filesystem: ext4
+                  mountpoint: /tmp
+                  size: '4096'
+                - filesystem: ext4
+                  mountpoint: /
+                  size: '*'
+              pop: AMS-01
+              powerCycle: true
+              raidLevel: null
+              serverId: '12345'
+              timezone: UTC
+            progress:
+              canceled: 0
+              expired: 0
+              failed: 0
+              finished: 0
+              inprogress: 0
+              pending: 1
+              percentage: 0
+              total: 26
+              waiting: 25
+            serverId: '12345'
+            status: ACTIVE
+            tasks:
+              - description: dummy
+                errorMessage: null
+                flow: tasks
+                onError: break
+                status: PENDING
+                statusTimestamps:
+                  PENDING: '2021-01-09T09:18:06Z'
+                  WAITING: '2021-01-09T09:18:06Z'
+                uuid: c1a56a5a-ae38-4b12-acb6-0cba9ceb1016
+            type: install
+            updatedAt: '2021-03-06T21:55:32Z'
+            uuid: bcf2bedf-8450-4b22-86a8-f30aeb3a38f9
+          schema:
+            $ref: ../components/schemas/serverJob.yaml
+      description: Accepted.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Launch installation
+  tags:
+    - Jobs
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_install/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_install/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_install/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_install/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_install/postundefined

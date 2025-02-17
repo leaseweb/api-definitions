@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/hosting/v2/domains/example.com/emailAliases/%7Bsource%7D/%7Bdestination%7D",
+  "method": "PUT",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"active\":true,\"spamChecksEnabled\":true,\"virusChecksEnabled\":true}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

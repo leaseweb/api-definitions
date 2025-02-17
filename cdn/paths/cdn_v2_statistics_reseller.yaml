@@ -1,0 +1,157 @@
+get:
+  tags:
+    - Statistics
+    - CDN | title
+  summary: Get Statistics For Reseller Customer
+  description: >-
+    Query statistics for reseller customer
+
+    This endpoint is intended to be used for getting various statistics from the
+    reporting backend
+
+
+    It currently supports DATATRANSFER, BANDWIDTH, REQUESTS, STATUS_2XX,
+    STATUS_4XX, STATUS_5XX, CACHEHIT and 95TH as a metric.
+
+        DATATRANSFER: used to get the consumed amount of traffic (in bytes) in the queried period.
+        BANDWIDTH: used to get the mean amount of bits per second in the queried period.
+        STATUS_2XX/4XX/5XX: used to get a percentage of the amount of response codes in the queried period.
+        CACHEHIT: used to get the mean cache-hit ratio in the queried period.
+        REQUESTS: used to get the total amount of serviced requests in the queried period.
+        95TH: used to get the 95th percentile in bits per second for the queried period.
+
+    The fromDt and toDt must use the format YYYY-MM-ddTHH:mm:ss eg..
+    2024-07-14T13:40:00.
+
+
+    Using the 'groupBy' parameter will allow you to group results together.
+    Supported groupings are PROVIDER, DISTRIBUTION, CUSTOMER and REGION.
+
+
+    By specifying the distributionId as an additional filter the query will run
+    just for the specified distribution.
+
+    The granularity of the data can be specified in 5MIN (5 minutes), 15MIN (15
+    minutes), HOUR (1 hour), DAY (1 day) and WEEK (1 Week).
+
+
+    ---
+  operationId: get_statistics_for_reseller_customer_v1_statistics_reseller_get
+  parameters:
+    - name: fromDt
+      in: query
+      required: true
+      schema:
+        type: string
+        format: date-time
+        title: fromDt
+    - name: toDt
+      in: query
+      required: true
+      schema:
+        type: string
+        format: date-time
+        title: toDt
+    - name: metric
+      in: query
+      required: true
+      schema:
+        type: string
+        title: metric
+        enum:
+          - DATATRANSFER
+          - BANDWIDTH
+          - REQUESTS
+          - STATUS_2XX
+          - STATUS_4XX
+          - STATUS_5XX
+          - CACHEHIT
+          - 95TH
+    - name: distributionId
+      in: query
+      required: false
+      schema:
+        type: string
+        title: distributionId
+    - name: groupBy
+      in: query
+      required: false
+      schema:
+        type: string
+        title: groupBy
+        enum:
+          - PROVIDER
+          - DISTRIBUTION
+          - CUSTOMER
+          - REGION
+    - name: granularity
+      in: query
+      required: false
+      schema:
+        type: string
+        default: 5MIN
+        title: granularity
+        enum:
+          - 5MIN
+          - 15MIN
+          - HOUR
+          - DAY
+          - WEEK
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/TimeSeries.yaml
+          examples:
+            TimeSeries:
+              value:
+                fromTs: '2024-07-13T14:45:00'
+                toTs: '2024-07-13T14:55:00'
+                service: cdn
+                granularity: 5MIN
+                groupBy: null
+                distributionId: null
+                series:
+                  - all:
+                      - '2024-07-13T14:45:00Z': 38091909.25333333
+                      - '2024-07-13T14:50:00Z': 68605244.58666667
+                      - '2024-07-13T14:55:00Z': 116197768.13333331
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_statistics_reseller/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_statistics_reseller/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_statistics_reseller/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_statistics_reseller/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_statistics_reseller/getundefined

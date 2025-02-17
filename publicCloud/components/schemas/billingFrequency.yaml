@@ -1,0 +1,8 @@
+type: integer
+description: The billing frequency (in months) of the instance.
+example: 1
+enum:
+  - 1
+  - 3
+  - 6
+  - 12

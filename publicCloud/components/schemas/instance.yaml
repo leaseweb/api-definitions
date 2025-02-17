@@ -1,0 +1,9 @@
+allOf:
+  - $ref: ./instanceBase.yaml
+  - title: instance
+    type: object
+    properties:
+      ips:
+        type: array
+        items:
+          $ref: ./ip.yaml

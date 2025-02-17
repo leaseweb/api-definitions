@@ -1,0 +1,7 @@
+properties:
+  reference:
+    description: The reference for this server
+    type: string
+required:
+  - reference
+type: object

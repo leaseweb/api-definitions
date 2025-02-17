@@ -1,0 +1,21 @@
+title: attribute
+type: object
+properties:
+  flag:
+    type: string
+  id:
+    type: string
+  raw_value:
+    type: string
+  thresh:
+    type: string
+  type:
+    type: string
+  updated:
+    type: string
+  value:
+    type: string
+  when_failed:
+    type: string
+  worst:
+    type: string

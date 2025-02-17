@@ -1,0 +1,9 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  networkInterfaces:
+    description: An array of network interfaces
+    items:
+      $ref: ./operationNetworkInterface.yaml
+    type: array
+type: object

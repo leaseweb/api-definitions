@@ -1,0 +1,216 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - $ref: ../components/parameters/name.yaml
+  - $ref: ../components/parameters/type.yaml
+get:
+  operationId: getResourceRecordSet
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/resourceRecordSetDetails.yaml
+          example:
+            _links:
+              self:
+                href: /domains/example.com/resourceRecordSets/example.com./A
+              collection:
+                href: /domains/example.com/resourceRecordSets
+            content:
+              - 85.17.150.51
+              - 85.17.150.52
+              - 85.17.150.53
+            editable: true
+            name: example.com.
+            ttl: 3600
+            type: A
+        application/ld+json:
+          schema:
+            $ref: ../components/schemas/ldResourceRecordSetDetails.yaml
+          example:
+            _links:
+              self:
+                href: /domains/example.com/resourceRecordSets/example.com./A+GEO
+              collection:
+                href: /domains/example.com/resourceRecordSets
+            editable: true
+            geoContent:
+              closestLocation:
+                - 1.2.3.4
+                - 5.6.7.8
+            name: geo-10.example.com.
+            ttl: 3600
+            type: A+GEO
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Inspect resource record set
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/getundefined
+put:
+  operationId: updateResourceRecordSet
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/updateResourceRecordSetOpts.yaml
+        example:
+          content:
+            - 85.17.150.51
+            - 85.17.150.52
+            - 85.17.150.53
+          ttl: 3600
+      application/ld+json:
+        schema:
+          $ref: ../components/schemas/updateResourceRecordSetLdOpts.yaml
+        example:
+          geoContent:
+            closestLocation:
+              - 1.2.3.4
+              - 5.6.7.8
+          ttl: 3600
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/resourceRecordSetDetails.yaml
+          example:
+            _links:
+              self:
+                href: /domains/example.com/resourceRecordSets/example.com./A
+              collection:
+                href: /domains/example.com/resourceRecordSets
+            content:
+              - 85.17.150.51
+              - 85.17.150.52
+              - 85.17.150.53
+            editable: true
+            name: example.com.
+            ttl: 3600
+            type: A
+        application/ld+json:
+          schema:
+            $ref: ../components/schemas/ldResourceRecordSetDetails.yaml
+          example:
+            _links:
+              self:
+                href: /domains/example.com/resourceRecordSets/example.com./A+GEO
+              collection:
+                href: /domains/example.com/resourceRecordSets
+            editable: true
+            geoContent:
+              closestLocation:
+                - 1.2.3.4
+                - 5.6.7.8
+            name: geo-10.example.com.
+            ttl: 3600
+            type: A+GEO
+    '400':
+      $ref: ../components/responses/4001.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Update a resource record set
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/putundefined
+delete:
+  operationId: deleteResourceRecordSet
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Delete a resource record set
+  tags:
+    - DNS
+    - DNS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}/deleteundefined

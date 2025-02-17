@@ -1,0 +1,87 @@
+parameters:
+  - $ref: ../components/parameters/autoScalingGroupId.yaml
+get:
+  description: List instances belonging to an Auto Scaling Group
+  operationId: getAutoScalingGroupInstanceList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getAutoScalingGroupInstanceListResult.yaml
+          example:
+            _metadata:
+              totalCount: 1
+              limit: 10
+              offset: 0
+            instances:
+              - id: 59bc4aa1-7e14-42cd-848f-7de2921ffdc0
+                type: lsw.m3.large
+                resources:
+                  cpu:
+                    value: 2
+                    unit: vCPU
+                  memory:
+                    value: 7
+                    unit: GiB
+                  publicNetworkSpeed:
+                    value: 1
+                    unit: Gbps
+                  privateNetworkSpeed:
+                    value: 100
+                    unit: Mbps
+                region: eu-west-3
+                reference: My web server
+                state: RUNNING
+                productType: INSTANCE
+                ips:
+                  - ip: 0.0.0.0
+                    prefixLength: '32'
+                    version: 4
+                    reverseLookup: www.example.com
+                    mainIp: true
+                    networkType: PUBLIC
+                    nullRouted: false
+                    ddos: null
+                hasPrivateNetwork: false
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get list of instances belonging to an Auto Scaling Group
+  tags:
+    - Auto Scaling Groups
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_instances/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_instances/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_instances/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_instances/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_instances/getundefined

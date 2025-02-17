@@ -1,0 +1,207 @@
+get:
+  description: Use this API to get information about a single server.
+  operationId: getServer
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            assetId: '1234561882'
+            contract:
+              id: '12123412312'
+              customerId: '1235458'
+              salesOrgId: '2200'
+              deliveryStatus: ACTIVE
+              reference: this is ref
+              privateNetworkPortSpeed: 10000
+              subnets: []
+              status: ACTIVE
+              startsAt: '2024-04-01T00:00:00Z'
+              endsAt: null
+              sla: Bronze
+              contractTerm: 36
+              contractType: NORMAL
+              billingCycle: 1
+              billingFrequency: MONTH
+              pricePerFrequency: '12.5'
+              currency: EUR
+              networkTraffic:
+                type: 90TH
+                connectivityType: CONNECTED_AGGREGATION_POOL
+                trafficType: VOLUME
+                datatrafficLimit: null
+                datatrafficUnit: null
+              softwareLicenses:
+                - name: No Control Panel
+                  price: null
+                  currency: EUR
+                  type: CONTROL_PANEL
+              managedServices: []
+              aggregationPackId: '127648'
+              ipv4Quantity: 1
+            featureAvailability:
+              automation: true
+              powerCycle: true
+              ipmiReboot: false
+              privateNetwork: true
+              remoteManagement: true
+            id: '123456'
+            isPrivateNetworkCapable: true
+            isPrivateNetworkEnabled: true
+            isRedundantPrivateNetworkCapable: false
+            location:
+              site: AMS-02
+              suite: HALL1
+              rack: LK18
+              unit: '12'
+            networkInterfaces:
+              public:
+                mac: macmacmac
+                ip: 127.0.0.1
+                nullRouted: false
+                gateway: 127.0.0.1
+                ports:
+                  - name: AMS-01-PUB-SW01231
+                    port: 0-0-21
+                locationId: '274912387'
+              internal:
+                mac: macmacmac
+                ip: null
+                nullRouted: null
+                gateway: null
+                ports:
+                  - name: AMS-02-INT-SW0123441
+                    port: 0-0-21
+                locationId: null
+              remoteManagement:
+                mac: macmacmac
+                ip: 127.0.0.1
+                gateway: 127.0.0.1
+                ports:
+                  - name: AMS-02-INT-SW0123441
+                    port: 0-0-21
+                locationId: '1238427449'
+            powerPorts:
+              - name: AMS-02-INT-SW0123441
+                port: '14'
+              - name: AMS-02-INT-SW0123441222
+                port: '11'
+            privateNetworks:
+              - id: '1238793'
+                linkSpeed: 10000
+                status: CONFIGURED
+                dhcp: DISABLED
+                subnet: '24'
+                vlanId: '1912639'
+            rack:
+              id: '5162'
+              type: SHARED_100GE
+              capacity: 12G
+            serialNumber: HN2XGHSD02H04
+            specs:
+              brand: HP
+              chassis: Dell R7612121 (8xSF/2NVMe)
+              hardwareRaidCapable: false
+              cpu:
+                type: AMD INT AMD
+                quantity: 2
+              ram:
+                size: 64
+                unit: GB
+              hdd:
+                - id: SSDDD480GB
+                  size: 480
+                  unit: GB
+                  amount: 1
+                  type: SSD
+                  performanceType: WRITE_INTENSIVE
+              pciCards: []
+          schema:
+            $ref: ../components/schemas/server.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get server
+  tags:
+    - Getting Started
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}/getundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+put:
+  description: Update the reference for a server.
+  operationId: updateReference
+  requestBody:
+    content:
+      application/json:
+        example:
+          reference: database-server
+        schema:
+          $ref: ../components/schemas/updateReferenceOpts.yaml
+    required: true
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Update server
+  tags:
+    - Getting Started
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}/putundefined

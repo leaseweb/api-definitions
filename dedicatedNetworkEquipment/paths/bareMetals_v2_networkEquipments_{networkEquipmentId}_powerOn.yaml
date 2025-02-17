@@ -1,0 +1,43 @@
+parameters:
+  - $ref: ../components/parameters/networkEquipmentId.yaml
+post:
+  description: Power on the given network equipment.
+  operationId: powerOn
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Power on network equipment
+  tags:
+    - Power
+    - Dedicated Network Equipments | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_networkEquipments_{networkEquipmentId}_powerOn/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_networkEquipments_{networkEquipmentId}_powerOn/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_networkEquipments_{networkEquipmentId}_powerOn/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_networkEquipments_{networkEquipmentId}_powerOn/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_networkEquipments_{networkEquipmentId}_powerOn/postundefined

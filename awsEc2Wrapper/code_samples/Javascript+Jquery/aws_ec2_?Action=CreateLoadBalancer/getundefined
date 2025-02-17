@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/aws/ec2/?Name=Test-Load-Blancer&Type=lsw.m3.large&Subnets.member.1=eu-west-3&Action=CreateLoadBalancer",
+  "method": "GET",
+  "headers": {
+    "Authorization": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

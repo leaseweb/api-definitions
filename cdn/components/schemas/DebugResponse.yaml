@@ -1,0 +1,17 @@
+type: object
+title: DebugResponse
+properties:
+  url:
+    type: string
+    title: Url
+    readOnly: true
+  success:
+    type: boolean
+    title: Success
+    readOnly: true
+  providerResponses:
+    type: array
+    title: Providerresponses
+    readOnly: true
+    items:
+      $ref: ./ProviderResponse.yaml

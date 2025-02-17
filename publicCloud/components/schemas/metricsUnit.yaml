@@ -1,0 +1,12 @@
+type: string
+description: The unit of the metric
+enum:
+  - '%'
+  - B
+  - b/s
+  - requests
+  - requests/sec
+  - responses
+  - responses/s
+  - connections
+  - connections/s

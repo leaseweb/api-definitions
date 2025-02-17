@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/bareMetals/v2/privateRacks/2314213/ips/192.168.0.1",
+  "method": "PUT",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"reverseLookup\":\"domain.example.com\",\"detectionProfile\":\"ADVANCED_LOW_UDP\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

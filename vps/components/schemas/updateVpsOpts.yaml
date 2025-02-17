@@ -1,0 +1,5 @@
+properties:
+  reference:
+    type: string
+    description: An identifying name you can refer to the VPS
+type: object

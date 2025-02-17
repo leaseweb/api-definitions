@@ -1,0 +1,9 @@
+properties:
+  resourceRecordSets:
+    type: array
+    description: Array of resource record sets
+    items:
+      $ref: ./ldResourceRecordSet.yaml
+required:
+  - resourceRecordSets
+type: object

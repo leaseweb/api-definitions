@@ -1,0 +1,130 @@
+parameters:
+  - $ref: ../components/parameters/reportId.yaml
+get:
+  description: ''
+  operationId: getReportMessageList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: |
+        OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getReportMessageListResult.yaml
+          example:
+            _metadata:
+              totalCount: 2
+              limit: 10
+              offset: 0
+            messages:
+              - postedBy: CUSTOMER
+                postedAt: '2015-09-30T06:23:40+00:00'
+                body: Hello, this is my first message!
+              - postedBy: ABUSE_AGENT
+                postedAt: '2015-10-08T08:25:29+00:00'
+                body: Hi, this is our first reply.
+                attachment:
+                  id: 436acbbe-0fdf-453c-b1f5-1abd8e7f8fef
+                  mimeType: image/png
+                  filename: notification.png
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
+  summary: List report messages
+  tags:
+    - Abuse Reports
+    - Abuse Reports | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/abuse_v1_reports_{reportId}_messages/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/abuse_v1_reports_{reportId}_messages/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/abuse_v1_reports_{reportId}_messages/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/abuse_v1_reports_{reportId}_messages/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/abuse_v1_reports_{reportId}_messages/getundefined
+post:
+  description: >-
+    Sent a new message to the Leaseweb compliance team related to an abuse
+    report.
+  operationId: createReportMessage
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/createReportMessageOpts.yaml
+        example:
+          body: Hello, this is my first message.
+  responses:
+    '202':
+      description: |
+        Accepted.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/createReportMessageResult.yaml
+          example:
+            - >-
+              To make sure the request has been processed please see if the
+              message is added to the list.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
+  summary: Create new message
+  tags:
+    - Abuse Reports
+    - Abuse Reports | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/abuse_v1_reports_{reportId}_messages/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/abuse_v1_reports_{reportId}_messages/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/abuse_v1_reports_{reportId}_messages/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/abuse_v1_reports_{reportId}_messages/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/abuse_v1_reports_{reportId}_messages/postundefined

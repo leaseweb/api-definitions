@@ -1,3 +1,0 @@
-curl --request GET \
-  --url 'https://api.leaseweb.com/publicCloud/v1/vps/999999999/snapshots?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE' \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

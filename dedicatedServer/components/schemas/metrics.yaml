@@ -1,0 +1,29 @@
+properties:
+  _metadata:
+    title: metricsMetadata
+    description: Metadata about the collection
+    properties:
+      aggregation:
+        description: The aggregation type for this request
+        type: string
+      from:
+        description: Start of date interval in ISO-8601 format
+        format: date-time
+        type: string
+      granularity:
+        description: The interval for each metric
+        type: string
+      to:
+        description: End of date interval in ISO-8601 format
+        format: date-time
+        type: string
+    type: object
+  metrics:
+    title: metricValues
+    description: Object containing all metrics
+    properties:
+      UP_PUBLIC:
+        $ref: ./metric.yaml
+      DOWN_PUBLIC:
+        $ref: ./metric.yaml
+    type: object

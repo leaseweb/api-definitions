@@ -1,0 +1,28 @@
+properties:
+  _metadata:
+    description: Metadata about the collection
+    properties:
+      limit:
+        default: 10
+        description: The maximum number of results returned
+        type: integer
+      offset:
+        default: 0
+        description: Results are returned started at the given offset
+        type: integer
+      totalCount:
+        description: The total amount of results
+        type: integer
+    type: object
+  storageVMs:
+    description: A list of storage VMs for a customer
+    type: array
+    items:
+      description: A storage VM.
+      type: object
+      properties:
+        id:
+          type: string
+          description: UUID of the storage VM
+          minLength: 1
+type: object

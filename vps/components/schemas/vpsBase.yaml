@@ -1,0 +1,47 @@
+title: vps
+type: object
+required:
+  - id
+  - pack
+  - region
+  - datacenter
+  - reference
+  - image
+  - state
+  - hasPublicIpV4
+  - rootDiskSize
+  - startedAt
+properties:
+  id:
+    type: string
+    example: '123581321'
+  pack:
+    type: string
+    description: Vps package
+    $ref: ./vpsPackType.yaml
+  region:
+    $ref: ./regionName.yaml
+  datacenter:
+    $ref: ./datacenter.yaml
+  reference:
+    type: string
+    description: The identifying name set to the instance
+  image:
+    $ref: ./image.yaml
+  marketAppId:
+    oneOf:
+      - type: 'null'
+      - $ref: ./marketAppId.yaml
+  state:
+    $ref: ./vpsState.yaml
+  hasPublicIpV4:
+    type: boolean
+  rootDiskSize:
+    $ref: ./rootDiskSize.yaml
+  startedAt:
+    type: string
+    description: >-
+      Date and time when the VPS was started for the first time, right after
+      launching it
+    format: date-time
+    nullable: true

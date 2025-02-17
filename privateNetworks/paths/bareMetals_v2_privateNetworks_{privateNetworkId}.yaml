@@ -1,0 +1,350 @@
+get:
+  operationId: get/privateNetworks/{privateNetworkId}
+  summary: Inspect a private network
+  description: |-
+    Every dedicated server in your private network contains a `status` key
+    explaining the current state of your server in your private network.
+
+    Possible state values are:
+
+    - `CONFIGURING` Your server is currently being added to the private network
+      (can take ~5 minute)
+    - `REMOVING` Your server is currently being removed from the private network
+      (can take ~5 minute)
+    - `CONFIGURED` Your server is part of the private network.
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            properties:
+              id:
+                type: string
+                description: The identifier of the private network
+              name:
+                type: string
+                description: The name of the private network
+              createdAt:
+                type: date
+                description: Date timestamp when the resource was created
+              updatedAt:
+                type: date
+                description: Date timestamp when the resource was last updated
+          examples:
+            example:
+              value:
+                id: '12345'
+                name: default
+                createdAt: 2015-01-21T14:34:12+0000
+                updatedAt: 2015-01-21T14:34:12+0000
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Private networks
+    - Private Networks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateNetworks_{privateNetworkId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateNetworks_{privateNetworkId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateNetworks_{privateNetworkId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateNetworks_{privateNetworkId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateNetworks_{privateNetworkId}/getundefined
+put:
+  operationId: put/privateNetworks/{privateNetworkId}
+  summary: Update a private network
+  description: ''
+  requestBody:
+    content:
+      application/json:
+        examples:
+          example:
+            value:
+              name: production
+        schema:
+          type: object
+          $schema: http://json-schema.org/draft-04/schema
+          id: http://jsonschema.net
+          properties:
+            name:
+              type: string
+              description: A name to describe this private network
+              examples:
+                - production
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            properties:
+              id:
+                type: string
+                description: The identifier of the private network
+              name:
+                type: string
+                description: The name of the private network
+              createdAt:
+                type: date
+                description: Date timestamp when the resource was created
+              updatedAt:
+                type: date
+                description: Date timestamp when the resource was last updated
+              servers:
+                type: array
+                description: Array of servers connected to this private network
+                deprecated: true
+                items:
+                  type: object
+          examples:
+            example:
+              value:
+                id: '12345'
+                name: default
+                createdAt: 2015-01-21T14:34:12+0000
+                updatedAt: 2015-01-21T14:34:12+0000
+                servers: []
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Private networks
+    - Private Networks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateNetworks_{privateNetworkId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateNetworks_{privateNetworkId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateNetworks_{privateNetworkId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateNetworks_{privateNetworkId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateNetworks_{privateNetworkId}/putundefined
+delete:
+  operationId: delete/privateNetworks/{privateNetworkId}
+  summary: Delete a private network
+  description: >-
+    > You can only delete a private network if it has no equipments attached to
+    it anymore.
+  responses:
+    '204':
+      description: A `204` will be returned if your private network was deleted.
+      content: {}
+    '400':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 36ddff0b-0fc5-4bc5-cb4f-4a16a3895204
+                errorCode: 400
+                errorMessage: >-
+                  You can only delete a private network if all equipments are
+                  removed from it.
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Private networks
+    - Private Networks | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_privateNetworks_{privateNetworkId}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_privateNetworks_{privateNetworkId}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_privateNetworks_{privateNetworkId}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_privateNetworks_{privateNetworkId}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_privateNetworks_{privateNetworkId}/deleteundefined
+parameters:
+  - schema:
+      type: string
+    name: privateNetworkId
+    in: path
+    required: true
+    description: Id of the privateNetwork

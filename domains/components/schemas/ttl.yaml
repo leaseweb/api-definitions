@@ -1,0 +1,11 @@
+type: integer
+description: Time to live of the resource record set
+enum:
+  - 60
+  - 300
+  - 1800
+  - 3600
+  - 14400
+  - 28800
+  - 43200
+  - 86400

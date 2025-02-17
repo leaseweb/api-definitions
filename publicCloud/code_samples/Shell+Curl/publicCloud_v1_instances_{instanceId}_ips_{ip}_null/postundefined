@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/publicCloud/v1/instances/ace712e9-a166-47f1-9065-4af0f7e7fce1/ips/10.0.0.1/null \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"comment":"string","automatedUnnulingAt":1}'

@@ -1,0 +1,7 @@
+schema:
+  type: string
+name: ip
+in: path
+required: true
+description: IP Address
+example: 192.168.0.1

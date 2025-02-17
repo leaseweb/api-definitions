@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/ipMgmt/v2/nullRoutes/23234",
+  "method": "PUT",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"automatedUnnullingAt\":\"2015-06-25T11:13:00Z\",\"comment\":\"This IP is evil\",\"ticketId\":\"188612\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

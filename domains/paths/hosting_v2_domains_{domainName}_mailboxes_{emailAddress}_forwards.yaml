@@ -1,0 +1,164 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - $ref: ../components/parameters/emailAddress.yaml
+get:
+  description: ''
+  operationId: domains-mailboxes-emailaddress-forwards-get
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-7.yaml
+          examples:
+            example:
+              value:
+                forwards:
+                  - active: true
+                    destination: destination@example.org
+                    source: mailbox@example.com
+                    spamChecksEnabled: true
+                    virusChecksEnabled: true
+                    createdAt: '2023-05-08T10:01:25+00:00'
+                    modifiedAt: '2023-05-08T10:01:25+00:00'
+                    _links:
+                      self:
+                        href: >-
+                          /domains/example.com/mailboxes/mailbox%40example.com/forwards/destination%40example.org
+                      collection:
+                        href: >-
+                          /domains/example.com/mailboxes/mailbox%40example.com/forwards
+                  - active: true
+                    destination: destination@example.com
+                    source: mailbox@example.com
+                    spamChecksEnabled: false
+                    virusChecksEnabled: true
+                    createdAt: '2023-05-08T10:01:25+00:00'
+                    modifiedAt: '2023-05-08T10:01:25+00:00'
+                    _links:
+                      self:
+                        href: >-
+                          /domains/example.com/mailboxes/mailbox%40example.com/forwards/destination%40example.com
+                      collection:
+                        href: >-
+                          /domains/example.com/mailboxes/mailbox%40example.com/forwards
+                _links:
+                  self:
+                    href: /domains/example.com/mailbox%40example.com/forwards
+                  parent:
+                    href: /domains/example.com/mailbox%40example.com
+                _metadata:
+                  totalCount: 2
+                  limit: 25
+                  offset: 0
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List forwards
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards/getundefined
+post:
+  description: ''
+  operationId: domains-mailboxes-emailaddress-forwards-post
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.post.request.schema-3.yaml
+        examples:
+          example:
+            value:
+              active: true
+              destination: destination@example.org
+              source: originating@example.com
+              spamChecksEnabled: false
+              virusChecksEnabled: true
+  responses:
+    '201':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.post.response.201.schema-3.yaml
+          examples:
+            example:
+              value:
+                active: true
+                destination: destination@example.org
+                source: mailbox@example.com
+                spamChecksEnabled: false
+                virusChecksEnabled: true
+                _links:
+                  self:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/forwards/destination%40example.org
+                  collection:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/forwards
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create a forward
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_forwards/postundefined

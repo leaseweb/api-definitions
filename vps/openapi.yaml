@@ -1,0 +1,120 @@
+openapi: 3.0.0
+info:
+  title: VPS
+  version: v1
+  description: >-
+    > The base URL for this API is: **https://api.leaseweb.com/publicCloud/v1/**
+
+
+    This API provides ways to launch and manage VPS.
+
+
+    <div class="badge">BETA</div> This API is in BETA. Documentation might be
+    incorrect or incomplete. Functionality might change with the final release.>
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    altText: Leaseweb developer documentation
+    backgroundColor: '#5484c6'
+    href: https://developer.leaseweb.com
+    url: https://developer.leaseweb.com/images/logo.png
+servers:
+  - url: https://api.leaseweb.com
+security:
+  - X-LSW-Auth: []
+tags:
+  - description: >
+      The API uses standard HTTP status codes to indicate the success or failure
+      of the API call. The response will be JSON. Most APIs use the following
+      format:
+
+
+      ```json
+
+      {
+          "errorCode": "APP00800",
+          "errorMessage": "The connection with the DB cannot be established.",
+          "correlationId": "550e8400-e29b-41d4-a716-446655440000",
+          "userMessage": "Cannot handle your request at the moment. Please try again later.",
+          "reference": "https://developer.leaseweb.com/errors/APP00800"
+      }
+
+      ```
+    name: Errors
+    x-traitTag: true
+  - description: >
+      Authentication for the APIs is required. To authenticate your call, you
+      will need to sent your API key as `X-LSW-Auth` header.
+
+
+      You can generate API keys in the [Customer
+      Portal](https://secure.leaseweb.com/api-client-management/).
+    name: API Key Authentication
+    x-traitTag: true
+  - name: Power
+  - name: Credentials
+  - name: ISOs
+  - name: Images
+  - name: Metrics
+  - name: Snapshots
+  - name: IPs
+  - name: Security
+  - name: Reinstall
+paths:
+  /publicCloud/v1/vps/{vpsId}/start:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_start.yaml
+  /publicCloud/v1/vps/{vpsId}/stop:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_stop.yaml
+  /publicCloud/v1/vps/{vpsId}/reboot:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_reboot.yaml
+  /publicCloud/v1/vps/{vpsId}/console:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_console.yaml
+  /publicCloud/v1/vps/{vpsId}/credentials:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_credentials.yaml
+  /publicCloud/v1/vps/{vpsId}/credentials/{type}:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_credentials_{type}.yaml
+  /publicCloud/v1/vps/{vpsId}/credentials/{type}/{username}:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_credentials_{type}_{username}.yaml
+  /publicCloud/v1/vps/{vpsId}/resetPassword:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_resetPassword.yaml
+  /publicCloud/v1/vps/{vpsId}/attachIso:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_attachIso.yaml
+  /publicCloud/v1/vps/{vpsId}/detachIso:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_detachIso.yaml
+  /publicCloud/v1/vps/{vpsId}/reinstall/images:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_reinstall_images.yaml
+  /publicCloud/v1/vps/{vpsId}/reinstall:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_reinstall.yaml
+  /publicCloud/v1/vps/{vpsId}/ips:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_ips.yaml
+  /publicCloud/v1/vps/{vpsId}/ips/{ip}:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_ips_{ip}.yaml
+  /publicCloud/v1/vps/{vpsId}/ips/{ip}/null:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_ips_{ip}_null.yaml
+  /publicCloud/v1/vps/{vpsId}/ips/{ip}/unnull:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_ips_{ip}_unnull.yaml
+  /publicCloud/v1/vps/{vpsId}/metrics/datatraffic:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_metrics_datatraffic.yaml
+  /publicCloud/v1/vps/{vpsId}/snapshots:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_snapshots.yaml
+  /publicCloud/v1/vps/{vpsId}/snapshots/{snapshotId}:
+    $ref: paths/publicCloud_v1_vps_{vpsId}_snapshots_{snapshotId}.yaml
+  /publicCloud/v1/vps/:
+    $ref: paths/publicCloud_v1_vps_.yaml
+  /publicCloud/v1/vps/{vpsId}:
+    $ref: paths/publicCloud_v1_vps_{vpsId}.yaml
+  /publicCloud/v1/vps/images:
+    $ref: paths/publicCloud_v1_vps_images.yaml
+  /publicCloud/v1/vps/isos:
+    $ref: paths/publicCloud_v1_vps_isos.yaml
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+    X-LSW-Auth:
+      name: X-LSW-Auth
+      type: apiKey
+      in: header
+      description: API key authentication by setting `X-LSW-Auth` header.

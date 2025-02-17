@@ -1,0 +1,55 @@
+parameters:
+  - $ref: ../components/parameters/serviceId.yaml
+post:
+  description: |
+    This endpoint will uncancel an already cancelled service.
+  operationId: services-uncancel-post
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '409':
+      content:
+        application/json:
+          example:
+            errorCode: CONFLICT
+            errorDetails:
+              dependentItems:
+                - '40000123000100'
+                - '40000123000150'
+            errorMessage: Uncancellation is blocked with the following dependencies
+          schema:
+            $ref: ../components/schemas/errorResponse.yaml
+      description: >-
+        If there is a conflict (for example item already cancelled), you will
+        receive a 409 Conflict.
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Uncancel a service
+  tags:
+    - Services
+    - Services | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/services_v1_services_{id}_uncancel/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/services_v1_services_{id}_uncancel/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/services_v1_services_{id}_uncancel/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/services_v1_services_{id}_uncancel/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/services_v1_services_{id}_uncancel/postundefined

@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/resourceRecordSets/import \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"content":["$ORIGIN example.com. \\r\\n$TTL 86400 \\r\\n\\tIN\\tMX\\t10\\tmail.example.com.       \\r\\n\\r\\n\\t\\r\\ndns1\\tIN\\tA\\t10.0.1.1"]}'

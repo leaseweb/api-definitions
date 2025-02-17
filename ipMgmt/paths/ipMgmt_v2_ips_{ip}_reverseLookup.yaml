@@ -1,0 +1,134 @@
+get:
+  description: Get reverse lookup values set for IPs in the specified range
+  operationId: getReverseLookupRecordList
+  parameters:
+    - name: ip
+      in: query
+      description: Filter the list by IP address
+      schema:
+        type: string
+    - $ref: ../components/parameters/reverseLookup.yaml
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 3
+              offset: 0
+              limit: 2
+            reverseLookups:
+              - ip: 2001:db8::0
+                reverseLookup: name1.example.com
+              - ip: 2001:db8::1
+                reverseLookup: name2.example.com
+          schema:
+            $ref: ../components/schemas/getReverseLookupRecordListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List reverse lookup records for an IPv6 range
+  tags:
+    - IPs
+    - IP management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ipMgmt_v2_ips_{ip}_reverseLookup/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ipMgmt_v2_ips_{ip}_reverseLookup/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/ipMgmt_v2_ips_{ip}_reverseLookup/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ipMgmt_v2_ips_{ip}_reverseLookup/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/ipMgmt_v2_ips_{ip}_reverseLookup/getundefined
+put:
+  description: >
+    This endpoint allows to set or unset reverse lookup for multiple IPv6 IPs in
+    a specific IP range. To remove reverse lookup for an IP address set it to
+    `null` or `""`.
+
+    Reverse lookup values of IPs not listed in the request body will not be
+    affected.
+
+    You can set up to 20 records in a single request.
+  operationId: updateReverseLookupRecords
+  requestBody:
+    content:
+      application/json:
+        example:
+          reverseLookups:
+            - ip: 2001:db8::0
+              reverseLookup: name1.example.com
+            - ip: 2001:db8::1
+              reverseLookup: name2.example.com
+        schema:
+          $ref: ../components/schemas/updateReverseLookupRecordsOpts.yaml
+  responses:
+    '200':
+      description: The request has been processed.
+      content:
+        application/json:
+          example:
+            reverseLookups:
+              - ip: 2001:db8::0
+                reverseLookup: name1.example.com
+              - ip: 2001:db8::1
+                reverseLookup: name2.example.com
+          schema:
+            $ref: ../components/schemas/updateReverseLookupRecordsResult.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Set or remove reverse lookup records for an IPv6 range
+  tags:
+    - IPs
+    - IP management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ipMgmt_v2_ips_{ip}_reverseLookup/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ipMgmt_v2_ips_{ip}_reverseLookup/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/ipMgmt_v2_ips_{ip}_reverseLookup/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ipMgmt_v2_ips_{ip}_reverseLookup/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/ipMgmt_v2_ips_{ip}_reverseLookup/putundefined
+parameters:
+  - $ref: ../components/parameters/ip.yaml

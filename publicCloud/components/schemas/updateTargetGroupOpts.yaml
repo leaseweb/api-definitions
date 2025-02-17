@@ -1,0 +1,11 @@
+title: targetGroup
+type: object
+properties:
+  name:
+    type: string
+    description: The name of the target group
+  port:
+    type: integer
+    description: The port of the target group
+  healthCheck:
+    $ref: ./healthCheckOpts.yaml

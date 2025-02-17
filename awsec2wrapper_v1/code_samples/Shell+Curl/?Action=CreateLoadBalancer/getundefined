@@ -1,3 +1,0 @@
-curl --request GET \
-  --url 'https://api.leaseweb.com/aws/ec2/?Name=SOME_STRING_VALUE&Type=SOME_STRING_VALUE&Subnets.member.1=SOME_STRING_VALUE&Action=CreateLoadBalancer' \
-  --header 'Authorization: REPLACE_KEY_VALUE'

@@ -1,0 +1,135 @@
+properties:
+  assetId:
+    description: The Asset Id of the server
+    type: string
+  contract:
+    $ref: ./contract.yaml
+  featureAvailability:
+    $ref: ./featureAvailability.yaml
+  id:
+    description: Id of the server
+    type: string
+  isPrivateNetworkEnabled:
+    description: Whether private network enabled or not
+    type: boolean
+  isPrivateNetworkCapable:
+    description: Whether capable of private network or not
+    type: boolean
+  isRedundantPrivateNetworkCapable:
+    description: Whether capable of redundant private network or not
+    type: boolean
+  location:
+    $ref: ./location.yaml
+  networkInterfaces:
+    $ref: ./networkInterfaces.yaml
+  powerPorts:
+    description: List of ports that can be used to manage power of the server
+    items:
+      $ref: ./port.yaml
+    type: array
+  privateNetworks:
+    description: An array of private networks
+    items:
+      title: privateNetwork
+      properties:
+        id:
+          description: Private network id
+          example: '892'
+          type: string
+        linkSpeed:
+          $ref: ./linkSpeed.yaml
+        status:
+          type: string
+          description: Configuration status
+        dhcp:
+          type: string
+          description: dhcp status
+        subnet:
+          type: string
+          example: 10.0.0.0/16
+        vlanId:
+          description: VLAN id
+          example: '2130'
+          type: string
+      type: object
+    type: array
+  rack:
+    $ref: ./rack.yaml
+  serialNumber:
+    description: Serial number of server
+    type: string
+  specs:
+    title: serverSpecs
+    description: Hardware information of the server
+    properties:
+      brand:
+        description: The brand description of the server
+        type: string
+      chassis:
+        description: The chassis description of the server
+        type: string
+      cpu:
+        title: cpu
+        description: CPU of the server
+        properties:
+          quantity:
+            description: The quantity of CPUs in the server
+            type: integer
+          type:
+            description: The type of CPUs in the server
+            type: string
+        type: object
+      hardwareRaidCapable:
+        description: Hardware RAID capability of the server
+        type: boolean
+      hdd:
+        description: List of hard disk drives of the server
+        items:
+          title: hdd
+          description: A single object of the hard disk drive
+          properties:
+            id:
+              description: Id of the hard disk drive
+              type: string
+            amount:
+              description: The total amount of hard disk drives
+              type: integer
+            size:
+              description: The size number of the hard disk drive
+              type: number
+            type:
+              description: The type of the hard disk drive
+              type: string
+            unit:
+              description: The unit of the hard disk drive
+              type: string
+            performanceType:
+              description: Hard disk drive performance type
+              type: string
+              nullable: true
+          type: object
+        type: array
+      pciCards:
+        description: List of PCI cards of the server
+        items:
+          title: pciCard
+          description: A single object of the PCI card
+          properties:
+            description:
+              description: The description of the PCI card of the server
+              type: string
+          type: object
+        type: array
+      ram:
+        title: ram
+        description: RAM of the server
+        properties:
+          size:
+            description: The total RAM size of the server
+            type: integer
+          unit:
+            description: RAM type of the server
+            type: string
+        type: object
+    type: object
+type: object

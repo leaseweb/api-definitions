@@ -1,0 +1,12 @@
+required:
+  - hourlyPrice
+  - monthlyPrice
+title: price
+type: object
+properties:
+  hourlyPrice:
+    type: string
+    example: '0.00004'
+  monthlyPrice:
+    type: string
+    example: '0.03000'

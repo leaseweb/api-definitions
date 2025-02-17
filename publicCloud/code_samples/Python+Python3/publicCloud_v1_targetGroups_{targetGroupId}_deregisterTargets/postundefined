@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "[\"497f6eca-6276-4993-bfeb-53cbbbba6f08\"]"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/publicCloud/v1/targetGroups/fb769dab-3daa-47e4-89ed-06a4b6499176/deregisterTargets", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

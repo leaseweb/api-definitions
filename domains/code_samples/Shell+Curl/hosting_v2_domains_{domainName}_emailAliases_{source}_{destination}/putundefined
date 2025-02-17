@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/emailAliases/%7Bsource%7D/%7Bdestination%7D \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"active":true,"spamChecksEnabled":true,"virusChecksEnabled":true}'

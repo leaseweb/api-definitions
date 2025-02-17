@@ -1,0 +1,138 @@
+get:
+  description: List and filter Target Groups
+  operationId: getTargetGroupList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/id.yaml
+    - $ref: ../components/parameters/name.yaml
+    - $ref: ../components/parameters/protocol.yaml
+    - $ref: ../components/parameters/port.yaml
+    - $ref: ../components/parameters/region.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getTargetGroupListResult.yaml
+          example:
+            _metadata:
+              totalCount: 1
+              limit: 10
+              offset: 0
+            targetGroups:
+              - id: 7e59b33d-05f3-4078-b251-c7831ae8fe14
+                name: Target group name
+                protocol: HTTP
+                port: 80
+                region: eu-west-2
+                healthCheck:
+                  protocol: HTTP
+                  method: GET
+                  uri: /
+                  host: my-host
+                  port: 80
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get Target Group list
+  tags:
+    - Target Groups
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/publicCloud_v1_targetGroups/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_targetGroups/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/publicCloud_v1_targetGroups/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_targetGroups/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/publicCloud_v1_targetGroups/getundefined
+post:
+  description: Create a Target Group
+  operationId: createTargetGroup
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/createTargetGroupOpts.yaml
+        example:
+          name: Target group name
+          protocol: HTTP
+          port: 80
+          region: eu-west-2
+          healthCheck:
+            protocol: HTTP
+            method: GET
+            uri: /
+            host: example.com
+            port: 80
+  responses:
+    '201':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/targetGroup.yaml
+          example:
+            id: 7e59b33d-05f3-4078-b251-c7831ae8fe14
+            name: Target group name
+            protocol: HTTP
+            port: 80
+            region: eu-west-2
+            healthCheck:
+              protocol: HTTP
+              method: GET
+              uri: /
+              host: example.com
+              port: 80
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create Target Group
+  tags:
+    - Target Groups
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/publicCloud_v1_targetGroups/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_targetGroups/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/publicCloud_v1_targetGroups/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_targetGroups/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/publicCloud_v1_targetGroups/postundefined

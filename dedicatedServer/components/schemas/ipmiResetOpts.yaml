@@ -1,0 +1,12 @@
+properties:
+  callbackUrl:
+    description: Url which will receive callbacks
+    format: uri
+    type: string
+  powerCycle:
+    default: true
+    description: >-
+      If set to `true`, server will be power cycled in order to complete the
+      operation
+    type: boolean
+type: object

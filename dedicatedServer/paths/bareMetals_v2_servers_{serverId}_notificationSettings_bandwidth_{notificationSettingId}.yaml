@@ -1,0 +1,157 @@
+delete:
+  description: Remove a Bandwidth Notification setting for this server.
+  operationId: deleteBandwidthNotificationSetting
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Delete a bandwidth notification setting
+  tags:
+    - Notification Settings
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/deleteundefined
+get:
+  description: Get a bandwidth notification setting for this server.
+  operationId: getBandwidthNotificationSetting
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            actions:
+              - lastTriggeredAt: '2021-03-16T01:01:44+00:00'
+                type: EMAIL
+            frequency: WEEKLY
+            id: '12345'
+            lastCheckedAt: '2021-03-16T01:01:41+00:00'
+            threshold: '1'
+            thresholdExceededAt: '2021-03-16T01:01:41+00:00'
+            unit: Gbps
+          schema:
+            $ref: ../components/schemas/bandwidthNotificationSetting.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Show a bandwidth notification setting
+  tags:
+    - Notification Settings
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/getundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+  - $ref: ../components/parameters/notificationSettingId.yaml
+put:
+  description: Update an existing bandwidth notification setting for this server.
+  operationId: updateBandwidthNotificationSetting
+  requestBody:
+    content:
+      application/json:
+        example:
+          frequency: DAILY
+          threshold: '1'
+          unit: Gbps
+        schema:
+          $ref: ../components/schemas/bandwidthNotificationSettingOpts.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            actions:
+              - lastTriggeredAt: '2021-03-16T01:01:44+00:00'
+                type: EMAIL
+            frequency: WEEKLY
+            id: '12345'
+            lastCheckedAt: '2021-03-16T01:01:41+00:00'
+            threshold: '1'
+            thresholdExceededAt: '2021-03-16T01:01:41+00:00'
+            unit: Gbps
+          schema:
+            $ref: ../components/schemas/bandwidthNotificationSetting.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Update a bandwidth notification setting
+  tags:
+    - Notification Settings
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}/putundefined

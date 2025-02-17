@@ -1,0 +1,245 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  description: ''
+  operationId: domains-mailboxes-get
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema1.yaml
+          examples:
+            example:
+              value:
+                mailboxes:
+                  - active: true
+                    currentSize: 1234
+                    emailAddress: mailbox@example.com
+                    maximumSize: 4321
+                    spamChecksEnabled: true
+                    suspended: true
+                    virusChecksEnabled: false
+                    createdAt: '2023-05-08T10:01:25+00:00'
+                    modifiedAt: '2023-05-08T10:01:25+00:00'
+                    _embedded:
+                      autoResponder:
+                        _links:
+                          self:
+                            href: >-
+                              /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                    _links:
+                      self:
+                        href: /domains/example.com/mailboxes/mailbox%40example.com
+                      collection:
+                        href: /domains/example.com/mailboxes
+                      autoResponder:
+                        href: >-
+                          /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                      forwards:
+                        href: >-
+                          /domains/example.com/mailboxes/mailbox%40example.com/forwards
+                  - active: false
+                    currentSize: 1234
+                    emailAddress: info@example.com
+                    maximumSize: 4321
+                    spamChecksEnabled: false
+                    suspended: false
+                    virusChecksEnabled: true
+                    createdAt: '2023-05-08T10:01:25+00:00'
+                    modifiedAt: '2023-05-08T10:01:25+00:00'
+                    _links:
+                      self:
+                        href: /domains/example.com/mailboxes/info%40example.com
+                      collection:
+                        href: /domains/example.com/mailboxes
+                      autoResponder:
+                        href: >-
+                          /domains/example.com/mailboxes/info%40example.com/autoResponder
+                      forwards:
+                        href: >-
+                          /domains/example.com/mailboxes/info%40example.com/forwards
+                  - active: true
+                    currentSize: 1234
+                    emailAddress: admin@example.com
+                    maximumSize: 4321
+                    spamChecksEnabled: false
+                    suspended: false
+                    virusChecksEnabled: false
+                    createdAt: '2023-05-08T10:01:25+00:00'
+                    modifiedAt: '2023-05-08T10:01:25+00:00'
+                    _links:
+                      self:
+                        href: /domains/example.com/mailboxes/admin%40example.com
+                      collection:
+                        href: /domains/example.com/mailboxes
+                      autoResponder:
+                        href: >-
+                          /domains/example.com/mailboxes/admin%40example.com/autoResponder
+                      forwards:
+                        href: >-
+                          /domains/example.com/mailboxes/admin%40example.com/forwards
+                  - active: true
+                    currentSize: 1234
+                    emailAddress: user@example.com
+                    maximumSize: 4321
+                    spamChecksEnabled: true
+                    suspended: true
+                    virusChecksEnabled: true
+                    createdAt: '2023-05-08T10:01:25+00:00'
+                    modifiedAt: '2023-05-08T10:01:25+00:00'
+                    _links:
+                      self:
+                        href: /domains/example.com/mailboxes/user%40example.com
+                      collection:
+                        href: /domains/example.com/mailboxes
+                      autoResponder:
+                        href: >-
+                          /domains/example.com/mailboxes/user%40example.com/autoResponder
+                      forwards:
+                        href: >-
+                          /domains/example.com/mailboxes/user%40example.com/forwards
+                catchAll: false
+                _links:
+                  self:
+                    href: /domains/example.com/mailboxes
+                  parent:
+                    href: /domains/example.com
+                nameservers: LEASEWEB
+                _metadata:
+                  totalCount: 4
+                  allowedMailboxes: 250
+                  limit: 25
+                  offset: 0
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List mailboxes
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_mailboxes/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_mailboxes/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_mailboxes/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_mailboxes/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_mailboxes/getundefined
+post:
+  description: >
+    > Please note that it is only possible to create mailboxes when you have a
+    web hosting pack with Leaseweb. Per web hosting pack it is possible to have
+    up to 250 mailboxes.
+  operationId: domains-mailboxes-post
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.post.request.schema.yaml
+        examples:
+          example:
+            value:
+              emailAddress: mailbox@example.com
+              active: true
+              password: CHANGETHIS
+              spamChecksEnabled: true
+              virusChecksEnabled: false
+              localDelivery: true
+              setMxRecord: true
+  responses:
+    '201':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.post.response.201.schema.yaml
+          examples:
+            example:
+              value:
+                active: true
+                currentSize: 123456789
+                emailAddress: mailbox@example.com
+                maximumSize: 5368709120
+                spamChecksEnabled: true
+                suspended: false
+                virusChecksEnabled: false
+                localDelivery: true
+                _embedded:
+                  autoResponder:
+                    _links:
+                      self:
+                        href: >-
+                          /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                _links:
+                  self:
+                    href: /domains/example.com/mailboxes/mailbox%40example.com
+                  collection:
+                    href: /domains/example.com/mailboxes
+                  autoResponder:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                  forwards:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/forwards
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create a mailbox
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_mailboxes/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_mailboxes/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_mailboxes/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_mailboxes/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_mailboxes/postundefined

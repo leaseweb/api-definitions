@@ -1,0 +1,20 @@
+properties:
+  linkSpeed:
+    description: The link speed
+    type: string
+  operStatus:
+    description: The operational status
+    type: string
+  status:
+    description: The administrative status
+    type: string
+  switchInterface:
+    description: The switch port number
+    type: string
+  switchName:
+    description: The switch name
+    type: string
+  type:
+    description: The network type
+    type: string
+type: object

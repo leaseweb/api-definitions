@@ -1,0 +1,35 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  active:
+    type: boolean
+    description: Boolean indicating whether the mailbox is active
+    examples:
+      - true
+  password:
+    type: string
+    description: The password of the mailbox
+    examples:
+      - CHANGETHIS
+  spamChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether spam checks are enabled
+    examples:
+      - true
+  virusChecksEnabled:
+    type: boolean
+    description: Boolean indicating whether virus checks are enabled
+    examples:
+      - false
+  localDelivery:
+    type: boolean
+    description: >-
+      Boolean indicating whether email to be stored as a local copy when there
+      is a forward
+    examples:
+      - false
+required:
+  - active
+  - spamChecksEnabled
+  - virusChecksEnabled
+  - localDelivery
+type: object

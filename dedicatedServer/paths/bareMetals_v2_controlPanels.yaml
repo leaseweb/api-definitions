@@ -1,0 +1,68 @@
+get:
+  description: |
+    An `id` of a control panel can be supplied when (re)installing a dedicated
+    server (for more information on how to install dedicated servers via the API
+    refer to the API documentation).
+  operationId: getControlPanelList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 2
+            controlPanels:
+              - id: CPANEL_PREMIER_100
+                name: cPanel Premier 100
+              - id: CPANEL_PREMIER_150
+                name: cPanel Premier 150
+              - id: CPANEL_PREMIER_200
+                name: cPanel Premier 200
+              - id: CPANEL_PREMIER_250
+                name: cPanel Premier 250
+              - id: PLESK_DEDSER_WEB_ADMIN
+                name: Plesk Web Admin 10 Domains
+              - id: PLESK_DEDSER_WEB_PRO
+                name: Plesk Web Pro 30 Domains
+              - id: PLESK_DEDSER_WEB_HOST
+                name: Plesk Web Host Unlimited Domains
+              - id: VESTA
+                name: Vesta CP
+          schema:
+            $ref: ../components/schemas/controlPanelList.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: List control panels
+  tags:
+    - Control Panels
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/bareMetals_v2_controlPanels/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_controlPanels/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/bareMetals_v2_controlPanels/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_controlPanels/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/bareMetals_v2_controlPanels/getundefined

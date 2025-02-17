@@ -1,0 +1,16 @@
+properties:
+  name:
+    $ref: ./name.yaml
+  type:
+    $ref: ./ldResourceRecordSetType.yaml
+  geoContent:
+    $ref: ./geoContent.yaml
+  ttl:
+    $ref: ./ttl.yaml
+type: object
+title: ldResourceRecordSet
+required:
+  - name
+  - type
+  - geoContent
+  - ttl

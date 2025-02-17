@@ -1,0 +1,22 @@
+properties:
+  frequency:
+    description: Frequency for the Bandwidth Notification
+    enum:
+      - DAILY
+      - WEEKLY
+      - MONTHLY
+    type: string
+  threshold:
+    description: Threshold Value for the Bandwidth Notification
+    type: string
+  unit:
+    description: Unit for the Bandwidth Notification
+    enum:
+      - Gbps
+      - Mbps
+    type: string
+required:
+  - frequency
+  - threshold
+  - unit
+type: object

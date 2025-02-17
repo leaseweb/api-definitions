@@ -1,0 +1,5 @@
+properties:
+  url:
+    type: string
+    description: The URL to the console
+type: object

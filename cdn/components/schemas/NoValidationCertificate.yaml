@@ -1,0 +1,70 @@
+type: object
+title: NoValidationCertificate
+properties:
+  description:
+    title: Description
+    anyOf:
+      - type: string
+      - type: 'null'
+  certificate:
+    type: string
+    title: Certificate
+  privateKey:
+    type: string
+    title: Privatekey
+  caBundle:
+    type: string
+    title: Cabundle
+  validation:
+    type: boolean
+    title: Validation
+    default: true
+  id:
+    type: string
+    title: Id
+  commonName:
+    title: Commonname
+    anyOf:
+      - type: string
+      - type: 'null'
+  issuer:
+    title: Issuer
+    anyOf:
+      - type: string
+      - type: 'null'
+  valid:
+    type: boolean
+    title: Valid
+    default: false
+  trusted:
+    type: boolean
+    title: Trusted
+    default: false
+  daysLeft:
+    type: integer
+    title: Daysleft
+    default: 0
+  validFrom:
+    type: number
+    title: Validfrom
+    default: 1720173548.168787
+  validUntil:
+    type: number
+    title: Validuntil
+    default: 1720173548.168803
+  created:
+    type: string
+    title: Created
+    format: date-time
+  updated:
+    title: Updated
+    anyOf:
+      - type: string
+        format: date-time
+      - type: 'null'
+required:
+  - certificate
+  - privateKey
+  - caBundle
+  - id
+  - created

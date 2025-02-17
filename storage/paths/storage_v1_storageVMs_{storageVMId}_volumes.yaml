@@ -1,0 +1,75 @@
+get:
+  description: Show all the volumes in a StorageVM.
+  operationId: List volumes
+  parameters:
+    - $ref: ../components/parameters/storageVMId.yaml
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/response.200.schema-3.yaml
+          example:
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 2
+            volumes:
+              - id: 15ca9bf3-dddf-11ed-af62-000c299d72cd
+                name: volume1
+                space:
+                  size:
+                    value: 0.021
+                    unit: GB
+                  available:
+                    value: 0.018
+                    unit: GB
+                  used:
+                    value: 0.002
+                    unit: GB
+              - id: 75a7e5ed-dde1-11ed-af62-000c299d72cd
+                name: volume2
+                space:
+                  size:
+                    value: 5.369
+                    unit: GB
+                  available:
+                    value: 5.368
+                    unit: GB
+                  used:
+                    value: 0
+                    unit: GB
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  tags:
+    - Storage | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/storage_v1_storageVMs_{storageVMId}_volumes/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/storage_v1_storageVMs_{storageVMId}_volumes/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/storage_v1_storageVMs_{storageVMId}_volumes/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/storage_v1_storageVMs_{storageVMId}_volumes/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/storage_v1_storageVMs_{storageVMId}_volumes/getundefined

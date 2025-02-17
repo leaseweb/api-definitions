@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/services/v1/services?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE&productId=SOME_STRING_VALUE&reference=SOME_STRING_VALUE&equipmentId=SOME_STRING_VALUE' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

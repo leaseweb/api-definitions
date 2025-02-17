@@ -1,0 +1,6 @@
+properties:
+  reverseLookup:
+    type: string
+required:
+  - reverseLookup
+type: object

@@ -1,0 +1,68 @@
+parameters:
+  - $ref: ../components/parameters/loadBalancerId.yaml
+  - $ref: ../components/parameters/fromDateTime.yaml
+  - $ref: ../components/parameters/toDateTime.yaml
+  - $ref: ../components/parameters/loadBalancerMetricsGranularity.yaml
+get:
+  operationId: getRequestsPerSecondMetrics
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            _metadata:
+              from: '2024-08-20T00:00:00+00:00'
+              to: '2024-09-24T12:10:00+00:00'
+              granularity: 60m
+              aggregation: SUM
+            metrics:
+              values:
+                - value: 0.0038027332144979203
+                  timestamp: '2024-09-18T00:00:00+00:00'
+                - value: 0.005555555555555556
+                  timestamp: '2024-09-19T00:00:00+00:00'
+                - value: 0.0021064814814814813
+                  timestamp: '2024-09-23T00:00:00+00:00'
+                - value: 0.003321759259259259
+                  timestamp: '2024-09-24T00:00:00+00:00'
+              unit: requests/sec
+          schema:
+            $ref: ../components/schemas/getRequestsPerSecondMetricsResult.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get load balancer requests per second metrics
+  tags:
+    - Metrics
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_requestsPerSecond/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_requestsPerSecond/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_requestsPerSecond/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_requestsPerSecond/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_requestsPerSecond/getundefined

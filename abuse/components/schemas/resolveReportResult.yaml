@@ -1,0 +1,19 @@
+properties:
+  resolutions:
+    type: array
+    description: List of selected resolution ID's to explain how the report is resolved.
+    items:
+      title: resolutionList
+      type: string
+      description: ID of the selected resolution.
+      example:
+        - CONTENT_REMOVED
+        - SUSPENDED
+  message:
+    type: string
+    description: >-
+      Message is required and only allowed if any of the IP(s) related to this
+      report are null routed.
+required:
+  - resolutions
+type: object

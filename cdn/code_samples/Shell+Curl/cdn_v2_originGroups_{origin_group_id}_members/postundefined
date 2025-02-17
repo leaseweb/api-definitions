@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/cdn/v2/originGroups/%7Borigin_group_id%7D/members \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"resourceType":"string","data":[{"key":"string","value":null}]}'

@@ -1,0 +1,22 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/bareMetals/v2/servers/12345/metrics/datatraffic');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'from' => '2019-06-01T00:00:00Z',
+  'to' => '2019-06-05T00:00:00Z',
+  'granularity' => 'SOME_STRING_VALUE',
+  'aggregation' => 'SOME_STRING_VALUE'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

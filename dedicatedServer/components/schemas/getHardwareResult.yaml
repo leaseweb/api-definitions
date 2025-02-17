@@ -1,0 +1,332 @@
+properties:
+  id:
+    description: Id of this hardware scan result
+    type: string
+  parserVersion:
+    description: Version of the parser used for this hardware info
+    type: string
+  result:
+    title: result
+    description: Hardware info e.g. chassis, cpu, memory and etc.
+    properties:
+      chassis:
+        title: chassis
+        type: object
+        properties:
+          description:
+            type: string
+          firmware:
+            title: firmware
+            type: object
+            properties:
+              date:
+                type: string
+                format: date
+              description:
+                type: string
+              vendor:
+                $ref: ./vendor.yaml
+              version:
+                type: string
+                example: J01
+          motherboard:
+            title: motherboard
+            type: object
+            properties:
+              product:
+                type: string
+              serial:
+                $ref: ./serialNumber.yaml
+              vendor:
+                $ref: ./vendor.yaml
+          product:
+            type: string
+          serial:
+            $ref: ./serialNumber.yaml
+          vendor:
+            $ref: ./vendor.yaml
+      cpu:
+        type: array
+        items:
+          title: hardwareCpu
+          properties:
+            capabilities:
+              title: cpuCapabilities
+              type: object
+              properties:
+                cpufreq:
+                  type: string
+                ht:
+                  type: string
+                vmx:
+                  type: boolean
+                x86-64:
+                  type: string
+            description:
+              type: string
+            hz:
+              type: string
+            serial_number:
+              $ref: ./serialNumber.yaml
+            settings:
+              title: cpuSettings
+              type: object
+              properties:
+                cores:
+                  type: string
+                enabledcores:
+                  type: string
+                threads:
+                  type: string
+            slot:
+              type: string
+            vendor:
+              $ref: ./vendor.yaml
+      disks:
+        type: array
+        minItems: 1
+        items:
+          title: disk
+          properties:
+            description:
+              type: string
+            id:
+              $ref: ./diskId.yaml
+            product:
+              type: string
+            serial_number:
+              $ref: ./serialNumber.yaml
+            size:
+              type: string
+            smartctl:
+              type: object
+              title: smartctl
+              properties:
+                ata_version:
+                  type: string
+                attributes:
+                  type: object
+                  title: attributes
+                  properties:
+                    Power_On_Hours:
+                      $ref: ./attribute.yaml
+                    Reallocated_Sector_Ct:
+                      $ref: ./attribute.yaml
+                device_model:
+                  type: string
+                execution_status:
+                  type: string
+                firmware_version:
+                  type: string
+                is_sas:
+                  type: boolean
+                overall_health:
+                  type: string
+                rpm:
+                  type: string
+                sata_version:
+                  type: string
+                sector_size:
+                  type: string
+                serial_number:
+                  $ref: ./serialNumber.yaml
+                smart_error_log:
+                  type: string
+                smart_support:
+                  title: smartSupport
+                  type: object
+                  properties:
+                    available:
+                      type: boolean
+                    enabled:
+                      type: boolean
+                smartctl_version:
+                  type: string
+                user_capacity:
+                  type: string
+            vendor:
+              $ref: ./vendor.yaml
+      ipmi:
+        title: hardwareIpmi
+        type: object
+        properties:
+          defgateway:
+            type: string
+            format: ipv4
+          firmware:
+            type: string
+          ipaddress:
+            type: string
+            format: ipv4
+          ipsource:
+            type: string
+          macaddress:
+            $ref: ./macAddress.yaml
+          subnetmask:
+            type: string
+            format: ipv4
+          vendor:
+            $ref: ./vendor.yaml
+      memory:
+        items:
+          title: memoryBank
+          type: object
+          properties:
+            description:
+              type: string
+            id:
+              $ref: ./memoryId.yaml
+            clock_hz:
+              type: string
+              example: '1333000000'
+            serial_number:
+              $ref: ./serialNumber.yaml
+            size_bytes:
+              type: string
+              example: '4294967296'
+        minItems: 1
+        type: array
+      network:
+        type: array
+        title: network
+        items:
+          title: network
+          properties:
+            capabilities:
+              title: networkCapabilities
+              type: object
+              properties:
+                autonegotiation:
+                  type: string
+                bus_master:
+                  type: string
+                cap_list:
+                  type: string
+                ethernet:
+                  type: string
+                link_speeds:
+                  title: linkSpeeds
+                  type: object
+                  properties:
+                    1000bt-fd:
+                      type: string
+                    100bt:
+                      type: string
+                    100bt-fd:
+                      type: string
+                    10bt:
+                      type: string
+                    10bt-fd:
+                      type: string
+                msi:
+                  type: string
+                msix:
+                  type: string
+                pciexpress:
+                  type: string
+                physical:
+                  type: string
+                pm:
+                  type: string
+                tp:
+                  type: string
+            lldp:
+              title: lldp
+              type: object
+              properties:
+                chassis:
+                  title: lldpChassis
+                  type: object
+                  properties:
+                    description:
+                      type: string
+                    mac_address:
+                      $ref: ./macAddress.yaml
+                    name:
+                      type: string
+                port:
+                  title: hardwarePort
+                  type: object
+                  properties:
+                    auto_negotiation:
+                      title: autoNegotiation
+                      type: object
+                      properties:
+                        enabled:
+                          type: string
+                          enum:
+                            - 'yes'
+                            - 'no'
+                        supported:
+                          type: string
+                          enum:
+                            - 'yes'
+                            - 'no'
+                    description:
+                      type: string
+                vlan:
+                  title: vlan
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    label:
+                      type: string
+                    name:
+                      type: string
+            logical_name:
+              type: string
+            mac_address:
+              $ref: ./macAddress.yaml
+            product:
+              type: string
+            settings:
+              title: networkSettings
+              type: object
+              properties:
+                autonegotiation:
+                  type: string
+                  enum:
+                    - 'on'
+                    - 'off'
+                broadcast:
+                  type: string
+                  enum:
+                    - 'yes'
+                    - 'no'
+                driver:
+                  type: string
+                driverversion:
+                  type: string
+                duplex:
+                  type: string
+                  example: full
+                firmware:
+                  type: string
+                ip:
+                  type: string
+                  format: ipv4
+                latency:
+                  type: string
+                link:
+                  type: string
+                  enum:
+                    - 'yes'
+                    - 'no'
+                multicast:
+                  type: string
+                  enum:
+                    - 'yes'
+                    - 'no'
+                port:
+                  type: string
+                speed:
+                  type: string
+                  example: 1Gbit/s
+            vendor:
+              $ref: ./vendor.yaml
+  scannedAt:
+    $ref: ./scannedAt.yaml
+  serverId:
+    $ref: ./serverId.yaml
+type: object

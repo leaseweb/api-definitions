@@ -1,0 +1,6 @@
+description: The ID of aggregation pack
+in: path
+name: aggregationPackId
+required: true
+schema:
+  type: string

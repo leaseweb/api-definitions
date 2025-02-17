@@ -1,0 +1,40 @@
+properties:
+  contract:
+    $ref: ./contract.yaml
+  featureAvailability:
+    $ref: ./featureAvailability.yaml
+  id:
+    description: Id of the network equipment
+    type: string
+  location:
+    $ref: ./location.yaml
+  name:
+    description: The name of the network equipment
+    type: string
+  type:
+    description: The network equipment type
+    type: string
+  networkInterfaces:
+    $ref: ./networkInterfaces.yaml
+  powerPorts:
+    description: List of ports that can be used to manage power of the network equipment
+    items:
+      $ref: ./port.yaml
+    type: array
+  rack:
+    $ref: ./rack.yaml
+  serialNumber:
+    description: Serial number of network equipment
+    type: string
+  specs:
+    title: networkEquipmentSpecs
+    description: Hardware information of the network equipment
+    properties:
+      brand:
+        description: The brand of the network equipment
+        type: string
+      model:
+        description: The model of the network equipment
+        type: string
+    type: object
+type: object

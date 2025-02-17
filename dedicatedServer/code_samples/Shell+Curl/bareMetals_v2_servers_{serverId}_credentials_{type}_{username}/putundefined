@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/bareMetals/v2/servers/12345/credentials/%7Btype%7D/root \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"password":"string"}'

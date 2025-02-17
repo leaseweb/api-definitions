@@ -1,0 +1,173 @@
+openapi: 3.0.0
+info:
+  contact:
+    email: development-networkautomation@leaseweb.com
+    name: Network Automation Team
+  description: |-
+    This is the description of the Dedicated Server API.
+
+    The base url of this API is `https://api.leaseweb.com`.
+  title: Dedicated Servers
+  version: v2
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    altText: Leaseweb developer documentation
+    backgroundColor: '#5484c6'
+    href: https://developer.leaseweb.com
+    url: https://developer.leaseweb.com/images/logo.png
+servers:
+  - url: https://api.leaseweb.com
+security:
+  - X-LSW-Auth: []
+tags:
+  - description: >
+      The API uses standard HTTP status codes to indicate the success or failure
+      of the API call. The response will be JSON. Most APIs use the following
+      format:
+
+
+      ```json
+
+      {
+          "errorCode": "APP00800",
+          "errorMessage": "The connection with the DB cannot be established.",
+          "correlationId": "550e8400-e29b-41d4-a716-446655440000",
+          "userMessage": "Cannot handle your request at the moment. Please try again later.",
+          "reference": "https://developer.leaseweb.com/errors/APP00800"
+      }
+
+      ```
+    name: Errors
+    x-traitTag: true
+  - description: >
+      Authentication for the APIs is required. To authenticate your call, you
+      will need to sent your API key as `X-LSW-Auth` header.
+
+
+      You can generate API keys in the [Customer
+      Portal](https://secure.leaseweb.com/api-client-management/).
+    name: API Key Authentication
+    x-traitTag: true
+  - name: Getting Started
+  - name: IPs
+  - name: Network Interfaces
+  - name: Private Networks
+  - name: DHCP Leases
+  - name: Jobs
+  - name: Credentials
+  - name: Metrics
+  - name: Notification Settings
+  - name: Power
+  - name: Hardware
+  - name: Operating Systems
+  - name: Control Panels
+  - name: Rescue Images
+paths:
+  /bareMetals/v2/servers:
+    $ref: paths/bareMetals_v2_servers.yaml
+  /bareMetals/v2/servers/{serverId}:
+    $ref: paths/bareMetals_v2_servers_{serverId}.yaml
+  /bareMetals/v2/servers/{serverId}/ips:
+    $ref: paths/bareMetals_v2_servers_{serverId}_ips.yaml
+  /bareMetals/v2/servers/{serverId}/ips/{ip}:
+    $ref: paths/bareMetals_v2_servers_{serverId}_ips_{ip}.yaml
+  /bareMetals/v2/servers/{serverId}/ips/{ip}/null:
+    $ref: paths/bareMetals_v2_servers_{serverId}_ips_{ip}_null.yaml
+  /bareMetals/v2/servers/{serverId}/ips/{ip}/unnull:
+    $ref: paths/bareMetals_v2_servers_{serverId}_ips_{ip}_unnull.yaml
+  /bareMetals/v2/servers/{serverId}/nullRouteHistory:
+    $ref: paths/bareMetals_v2_servers_{serverId}_nullRouteHistory.yaml
+  /bareMetals/v2/servers/{serverId}/privateNetworks/{privateNetworkId}:
+    $ref: >-
+      paths/bareMetals_v2_servers_{serverId}_privateNetworks_{privateNetworkId}.yaml
+  /bareMetals/v2/servers/{serverId}/networkInterfaces:
+    $ref: paths/bareMetals_v2_servers_{serverId}_networkInterfaces.yaml
+  /bareMetals/v2/servers/{serverId}/networkInterfaces/close:
+    $ref: paths/bareMetals_v2_servers_{serverId}_networkInterfaces_close.yaml
+  /bareMetals/v2/servers/{serverId}/networkInterfaces/open:
+    $ref: paths/bareMetals_v2_servers_{serverId}_networkInterfaces_open.yaml
+  /bareMetals/v2/servers/{serverId}/networkInterfaces/{networkTypeURL}:
+    $ref: >-
+      paths/bareMetals_v2_servers_{serverId}_networkInterfaces_{networkTypeURL}.yaml
+  /bareMetals/v2/servers/{serverId}/networkInterfaces/{networkTypeURL}/close:
+    $ref: >-
+      paths/bareMetals_v2_servers_{serverId}_networkInterfaces_{networkTypeURL}_close.yaml
+  /bareMetals/v2/servers/{serverId}/networkInterfaces/{networkTypeURL}/open:
+    $ref: >-
+      paths/bareMetals_v2_servers_{serverId}_networkInterfaces_{networkTypeURL}_open.yaml
+  /bareMetals/v2/servers/{serverId}/notificationSettings/ddos:
+    $ref: paths/bareMetals_v2_servers_{serverId}_notificationSettings_ddos.yaml
+  /bareMetals/v2/servers/{serverId}/metrics/bandwidth:
+    $ref: paths/bareMetals_v2_servers_{serverId}_metrics_bandwidth.yaml
+  /bareMetals/v2/servers/{serverId}/metrics/datatraffic:
+    $ref: paths/bareMetals_v2_servers_{serverId}_metrics_datatraffic.yaml
+  /bareMetals/v2/servers/{serverId}/notificationSettings/bandwidth:
+    $ref: paths/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth.yaml
+  /bareMetals/v2/servers/{serverId}/notificationSettings/bandwidth/{notificationSettingId}:
+    $ref: >-
+      paths/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth_{notificationSettingId}.yaml
+  /bareMetals/v2/servers/{serverId}/notificationSettings/datatraffic:
+    $ref: >-
+      paths/bareMetals_v2_servers_{serverId}_notificationSettings_datatraffic.yaml
+  /bareMetals/v2/servers/{serverId}/notificationSettings/datatraffic/{notificationSettingId}:
+    $ref: >-
+      paths/bareMetals_v2_servers_{serverId}_notificationSettings_datatraffic_{notificationSettingId}.yaml
+  /bareMetals/v2/servers/{serverId}/hardwareInfo:
+    $ref: paths/bareMetals_v2_servers_{serverId}_hardwareInfo.yaml
+  /bareMetals/v2/controlPanels:
+    $ref: paths/bareMetals_v2_controlPanels.yaml
+  /bareMetals/v2/operatingSystems:
+    $ref: paths/bareMetals_v2_operatingSystems.yaml
+  /bareMetals/v2/operatingSystems/{operatingSystemId}:
+    $ref: paths/bareMetals_v2_operatingSystems_{operatingSystemId}.yaml
+  /bareMetals/v2/operatingSystems/{operatingSystemId}/controlPanels:
+    $ref: >-
+      paths/bareMetals_v2_operatingSystems_{operatingSystemId}_controlPanels.yaml
+  /bareMetals/v2/rescueImages:
+    $ref: paths/bareMetals_v2_rescueImages.yaml
+  /bareMetals/v2/servers/{serverId}/cancelActiveJob:
+    $ref: paths/bareMetals_v2_servers_{serverId}_cancelActiveJob.yaml
+  /bareMetals/v2/servers/{serverId}/credentials:
+    $ref: paths/bareMetals_v2_servers_{serverId}_credentials.yaml
+  /bareMetals/v2/servers/{serverId}/credentials/{type}:
+    $ref: paths/bareMetals_v2_servers_{serverId}_credentials_{type}.yaml
+  /bareMetals/v2/servers/{serverId}/credentials/{type}/{username}:
+    $ref: paths/bareMetals_v2_servers_{serverId}_credentials_{type}_{username}.yaml
+  /bareMetals/v2/servers/{serverId}/expireActiveJob:
+    $ref: paths/bareMetals_v2_servers_{serverId}_expireActiveJob.yaml
+  /bareMetals/v2/servers/{serverId}/hardwareScan:
+    $ref: paths/bareMetals_v2_servers_{serverId}_hardwareScan.yaml
+  /bareMetals/v2/servers/{serverId}/install:
+    $ref: paths/bareMetals_v2_servers_{serverId}_install.yaml
+  /bareMetals/v2/servers/{serverId}/ipmiReset:
+    $ref: paths/bareMetals_v2_servers_{serverId}_ipmiReset.yaml
+  /bareMetals/v2/servers/{serverId}/jobs:
+    $ref: paths/bareMetals_v2_servers_{serverId}_jobs.yaml
+  /bareMetals/v2/servers/{serverId}/jobs/{jobId}:
+    $ref: paths/bareMetals_v2_servers_{serverId}_jobs_{jobId}.yaml
+  /bareMetals/v2/servers/{serverId}/jobs/{jobId}/retry:
+    $ref: paths/bareMetals_v2_servers_{serverId}_jobs_{jobId}_retry.yaml
+  /bareMetals/v2/servers/{serverId}/leases:
+    $ref: paths/bareMetals_v2_servers_{serverId}_leases.yaml
+  /bareMetals/v2/servers/{serverId}/powerCycle:
+    $ref: paths/bareMetals_v2_servers_{serverId}_powerCycle.yaml
+  /bareMetals/v2/servers/{serverId}/powerInfo:
+    $ref: paths/bareMetals_v2_servers_{serverId}_powerInfo.yaml
+  /bareMetals/v2/servers/{serverId}/powerOff:
+    $ref: paths/bareMetals_v2_servers_{serverId}_powerOff.yaml
+  /bareMetals/v2/servers/{serverId}/powerOn:
+    $ref: paths/bareMetals_v2_servers_{serverId}_powerOn.yaml
+  /bareMetals/v2/servers/{serverId}/rescueMode:
+    $ref: paths/bareMetals_v2_servers_{serverId}_rescueMode.yaml
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+    X-LSW-Auth:
+      name: X-LSW-Auth
+      type: apiKey
+      in: header
+      description: API key authentication by setting `X-LSW-Auth` header.

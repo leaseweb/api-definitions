@@ -1,0 +1,14 @@
+description: >-
+  Object containing a list of reverse lookup values set for ips in a specific
+  range
+properties:
+  reverseLookups:
+    type: array
+    items:
+      $ref: ./reverseLookup.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - reverseLookups
+  - _metadata
+type: object

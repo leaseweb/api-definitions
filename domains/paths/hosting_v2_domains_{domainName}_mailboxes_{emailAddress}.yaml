@@ -1,0 +1,210 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - $ref: ../components/parameters/emailAddress.yaml
+get:
+  description: ''
+  operationId: domain-mailboxes-emailaddress-get
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-21.yaml
+          examples:
+            example:
+              value:
+                active: true
+                currentSize: 123456789
+                emailAddress: mailbox@example.com
+                maximumSize: 5368709120
+                spamChecksEnabled: true
+                suspended: false
+                virusChecksEnabled: false
+                localDelivery: false
+                createdAt: '2023-05-08T10:01:25+00:00'
+                modifiedAt: '2023-05-08T10:01:25+00:00'
+                _embedded:
+                  autoResponder:
+                    _links:
+                      self:
+                        href: >-
+                          /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                _links:
+                  self:
+                    href: /domains/example.com/mailboxes/mailbox%40example.com
+                  collection:
+                    href: /domains/example.com/mailboxes
+                  autoResponder:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                  forwards:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/forwards
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Inspect a mailbox
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/getundefined
+put:
+  description: ''
+  operationId: domains-mailboxes-emailaddress-put
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.put.request.schema1.yaml
+        examples:
+          example:
+            value:
+              active: true
+              password: CHANGETHIS
+              spamChecksEnabled: true
+              virusChecksEnabled: false
+              localDelivery: false
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.200.schema1.yaml
+          examples:
+            example:
+              value:
+                active: true
+                currentSize: 123456789
+                emailAddress: mailbox@example.com
+                maximumSize: 5368709120
+                spamChecksEnabled: true
+                suspended: false
+                virusChecksEnabled: false
+                localDelivery: false
+                _embedded:
+                  autoResponder:
+                    _links:
+                      self:
+                        href: >-
+                          /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                _links:
+                  self:
+                    href: /domains/example.com/mailboxes/mailbox%40example.com
+                  collection:
+                    href: /domains/example.com/mailboxes
+                  autoResponder:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                  forwards:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/forwards
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update a mailbox
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/putundefined
+delete:
+  description: >-
+    > Please note that deleting a mailbox also removes all associated alias and
+    forwards
+  operationId: domains-mailboxes-emailaddress-delete
+  responses:
+    '204':
+      description: Successfully deleted the mailbox.
+      content: {}
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete a mailbox
+  tags:
+    - Email
+    - Emails | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}/deleteundefined

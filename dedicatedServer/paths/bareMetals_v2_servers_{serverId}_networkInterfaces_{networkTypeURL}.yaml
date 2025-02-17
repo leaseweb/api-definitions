@@ -1,0 +1,55 @@
+get:
+  description: >-
+    Show the network interface of the given type of this server, including its
+    status.
+  operationId: getNetworkInterface
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            linkSpeed: 100Mbps
+            operStatus: OPEN
+            status: OPEN
+            switchInterface: '33'
+            switchName: EVO-JV12-1
+            type: PUBLIC
+          schema:
+            $ref: ../components/schemas/operationNetworkInterface.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Show a network interface
+  tags:
+    - Network Interfaces
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_networkInterfaces_{networkTypeURL}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_networkInterfaces_{networkTypeURL}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_networkInterfaces_{networkTypeURL}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_networkInterfaces_{networkTypeURL}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_networkInterfaces_{networkTypeURL}/getundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+  - $ref: ../components/parameters/networkTypeURL.yaml

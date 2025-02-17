@@ -1,0 +1,9 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  connectContractItems:
+    description: An array of aggregation packs
+    items:
+      $ref: ./aggregationPack.yaml
+    type: array
+type: object

@@ -1,0 +1,27 @@
+type: object
+title: networkInterface
+properties:
+  mac:
+    type: string
+    description: >-
+      Represents a MAC Address in the standard colon delimited format. Eg.
+      `01:23:45:67:89:0A`
+    nullable: true
+  ip:
+    type: string
+    format: ipv4
+    nullable: true
+  nullRouted:
+    type: boolean
+    nullable: true
+  gateway:
+    type: string
+    format: ipv4
+    nullable: true
+  ports:
+    items:
+      $ref: ./port.yaml
+    type: array
+  locationId:
+    type: string
+    nullable: true

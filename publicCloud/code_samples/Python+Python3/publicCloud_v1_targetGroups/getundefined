@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/publicCloud/v1/targetGroups?limit=20&offset=10&id=a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11&name=Foo%20bar&protocol=HTTP&port=80&region=SOME_STRING_VALUE", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

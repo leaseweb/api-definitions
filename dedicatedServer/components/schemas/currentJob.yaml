@@ -1,0 +1,11 @@
+allOf:
+  - $ref: ./serverJob.yaml
+  - properties:
+      metadata:
+        title: jobMetadata
+        description: The Job Metadata schema
+        properties:
+          BATCH_ID:
+            description: Batch ID for batch jobs
+            type: string
+        type: object

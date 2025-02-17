@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"status\":\"ENABLED\",\"nsec3\":{\"active\":true},\"dnssecKeys\":[{\"flags\":257,\"protocol\":3,\"algorithm\":13,\"key\":\"string\",\"name\":\"string\"}]}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("PUT", "/hosting/v2/domains/example.com/dnssec", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

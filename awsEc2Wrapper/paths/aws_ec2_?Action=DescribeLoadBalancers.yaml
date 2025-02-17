@@ -1,0 +1,109 @@
+get:
+  summary: DescribeLoadBalancers
+  operationId: DescribeLoadBalancers
+  description: >
+    Describes the specified load balancer or all load balancers.
+
+
+    If you specify load balancer IDs, the output includes information for only
+    the specified load balancer. 
+
+
+    If you specify names, the output includes information for only those load
+    balancers that meet the name criteria. 
+
+
+    If you do not specify load balancer IDs or names, the output includes
+    information for all load balancers, which can affect performance. We
+    recommend that you use pagination to ensure that the operation returns
+    quickly and successfully.
+
+
+    If you specify a load balancer ID that is not valid, an error is returned.
+    If you specify a load balancer that you do not own, it is not included in
+    the output.
+
+
+    #### AWS CLI example
+
+
+    ```sh
+
+    aws elbv2 describe-load-balancers --load-balancer-arns <LOAD_BALANCER_ID> 
+    --names <NAME> --endpoint-url <LEASEWEB_AWS_EC2_SERVER_URL>
+
+    ```
+  tags:
+    - Aws Ec2 Wrapper | title
+  security:
+    - Authorization: []
+  parameters:
+    - description: The ID of the load balancer.
+      example: 29145c92-4a68-4c63-aaeb-f2212d85a74a
+      in: query
+      name: LoadBalancerArns.member.N
+      schema:
+        type: string
+    - description: The name of the load balancer.
+      example: test-name
+      in: query
+      name: Names.member.N
+      schema:
+        type: string
+    - description: >-
+        The maximum number of items to return for this request. To get the next
+        page of items, make another request with the token returned in the
+        output.
+      example: 10
+      in: query
+      name: PageSize
+      schema:
+        type: integer
+    - description: >-
+        The token returned from a previous paginated request. Pagination
+        continues from the end of the items returned by the previous request.
+      example: 1
+      in: query
+      name: Marker
+      schema:
+        type: integer
+  responses:
+    '200':
+      content:
+        application/xml:
+          schema:
+            $ref: ../components/schemas/describeLoadBalancersResult.yaml
+          example: " <?xml version='1.0' encoding='UTF-8'?>\n <DescribeLoadBalancersResponse xmlns='http://elasticloadbalancing.amazonaws.com/doc/2015-12-01/'>\n \t<DescribeLoadBalancersResult>\n \t\t<NextMarker>1</NextMarker>\n \t\t<LoadBalancers>\n \t\t\t<member>\n \t\t\t\t<LoadBalancerArn>1ac942f4-cdd9-4c00-973f-ed82a92940cb</LoadBalancerArn>\n \t\t\t\t<LoadBalancerName>Test</LoadBalancerArn>\n \t\t\t\t<CreatedTime>2024-06-14T09:02,:31+00:00</CreatedTime>,\n \t\t\t\t<Type>lsw.m3.large</Type>\n \t\t\t\t<State>\n \t\t\t\t\t<Code>active</Code>\n \t\t\t\t</State>\n \t\t\t\t<AvailabilityZones>\n \t\t\t\t\t<member>\n \t\t\t\t\t\t<ZoneName>eu-west-3</ZoneName>\n \t\t\t\t\t</member>\n \t\t\t\t</AvailabilityZones>\n \t\t\t</member>\n \t\t</LoadBalancers>\n \t</DescribeLoadBalancersResult>\n \t<ResponseMetadata>\n \t\t<RequestId>8008e3fb-f671-46ab-ade4-871ca5508845</RequestId>\n \t</ResponseMetadata>\n </DescribeLoadBalancersResponse>\n "
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/aws_ec2_?Action=DescribeLoadBalancers/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/aws_ec2_?Action=DescribeLoadBalancers/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/aws_ec2_?Action=DescribeLoadBalancers/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/aws_ec2_?Action=DescribeLoadBalancers/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/aws_ec2_?Action=DescribeLoadBalancers/getundefined

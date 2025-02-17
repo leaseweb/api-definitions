@@ -1,0 +1,12 @@
+properties:
+  ipmi:
+    title: ipmi
+    description: Object describing the IPMI power information
+    properties:
+      status:
+        description: The current power status of the server.
+        type: string
+    type: object
+  pdu:
+    $ref: ./pdu.yaml
+type: object

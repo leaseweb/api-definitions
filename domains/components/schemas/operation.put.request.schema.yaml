@@ -1,0 +1,18 @@
+$schema: http://json-schema.org/draft-04/schema
+properties:
+  nameservers:
+    type: array
+    description: Array of nameservers
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the nameserver
+          examples:
+            - ns1.example.com
+      required:
+        - name
+required:
+  - nameservers
+type: object

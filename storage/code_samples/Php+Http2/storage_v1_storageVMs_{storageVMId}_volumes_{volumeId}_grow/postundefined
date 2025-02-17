@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"growSize":0}');
+
+$request->setRequestUrl('https://api.leaseweb.com/storage/v1/storageVMs/1575dd1c-dddf-11ed-af62-000c299d72cd/volumes/1575dd1c-dddf-11ed-af62-000c299d72cd/grow');
+$request->setRequestMethod('POST');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

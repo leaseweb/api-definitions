@@ -1,0 +1,44 @@
+properties:
+  actions:
+    description: An array of notification setting actions
+    items:
+      title: actions
+      properties:
+        lastTriggeredAt:
+          description: Date timestamp when the last notification email triggered
+          type: string
+          nullable: true
+        type:
+          description: Type of action
+          enum:
+            - EMAIL
+          type: string
+      type: object
+    type: array
+  frequency:
+    description: Frequency
+    enum:
+      - DAILY
+      - WEEKLY
+      - MONTHLY
+    type: string
+  id:
+    description: Identifier of the notification setting
+    type: string
+  lastCheckedAt:
+    description: Date timestamp when the system last checked the server for threshold limit
+    type: string
+    nullable: true
+  threshold:
+    description: Threshold Value
+    type: string
+  thresholdExceededAt:
+    description: Date timestamp when the threshold exceeded the limit
+    type: string
+    nullable: true
+required:
+  - id
+  - frequency
+  - threshold
+  - unit
+type: object

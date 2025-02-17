@@ -1,0 +1,116 @@
+get:
+  operationId: getNullRouteHistoryList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/fromIP.yaml
+    - $ref: ../components/parameters/toIP.yaml
+    - name: fromDate
+      in: query
+      schema:
+        type: string
+        format: date
+      description: Return only null routes active after the specified date and time
+    - name: toDate
+      in: query
+      schema:
+        type: string
+        format: date
+      description: Return only null routes active before the specified date and time
+    - name: nulledBy
+      in: query
+      schema:
+        type: string
+      description: Filter by the email address of the user who created the null route
+    - name: unnulledBy
+      in: query
+      schema:
+        type: string
+      description: Filter by the email address of the user who removed the null route
+    - name: ticketId
+      in: query
+      schema:
+        type: string
+      description: Filter by the reference stored with the null route
+    - name: contractId
+      in: query
+      schema:
+        type: string
+      description: >-
+        Filter by ID of the contract assigned to the IP at the time of null
+        route creation
+    - name: equipmentId
+      in: query
+      schema:
+        type: string
+      description: >-
+        Filter by ID of the server assigned to the IP at the time of null route
+        creation
+    - $ref: ../components/parameters/sort.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 2
+              offset: 0
+              limit: 50
+            nullroutes:
+              - id: '4534536'
+                ip: 192.0.2.1
+                nulledAt: '2015-06-28T12:00:00Z'
+                nulledBy: john.doe@example.com
+                nullLevel: 1
+                automatedUnnullingAt: '2015-06-28T13:00:00Z'
+                unnulledAt: null
+                unnulledBy: null
+                ticketId: '188612'
+                comment: This IP is evil
+                equipmentId: '456'
+                assignedContract:
+                  id: '123456'
+              - id: '4534535'
+                ip: 192.0.2.1
+                nulledAt: '2015-06-27T12:00:00Z'
+                nulledBy: john.doe@example.com
+                nullLevel: 1
+                automatedUnnullingAt: '2015-06-27T13:00:00Z'
+                unnulledAt: '2015-06-27T13:00:05Z'
+                unnulledBy: UnnullRunner
+                ticketId: '188612'
+                comment: This IP is evil
+                equipmentId: '456'
+                assignedContract:
+                  id: '123456'
+          schema:
+            $ref: ../components/schemas/getNullRouteHistoryListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Inspect null route history
+  tags:
+    - IPs
+    - IP management | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/ipMgmt_v2_nullRoutes/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/ipMgmt_v2_nullRoutes/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/ipMgmt_v2_nullRoutes/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/ipMgmt_v2_nullRoutes/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/ipMgmt_v2_nullRoutes/getundefined

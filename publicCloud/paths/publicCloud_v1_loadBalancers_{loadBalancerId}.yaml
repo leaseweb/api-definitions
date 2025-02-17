@@ -1,0 +1,245 @@
+parameters:
+  - $ref: ../components/parameters/loadBalancerId.yaml
+get:
+  description: Get details about the load balancer
+  operationId: getLoadBalancer
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            privateNetwork: null
+            id: 32082a93-d1e2-4bc0-8f5e-8fe4312b0844
+            type: lsw.m3.large
+            resources:
+              cpu:
+                value: 2
+                unit: vCPU
+              memory:
+                value: 7
+                unit: GiB
+              publicNetworkSpeed:
+                value: 1
+                unit: Gbps
+              privateNetworkSpeed:
+                value: 100
+                unit: Mbps
+            autoScalingGroup: null
+            region: eu-west-3
+            reference: my-loadbalancer1
+            state: RUNNING
+            ips:
+              - ip: 85.99.99.99
+                prefixLength: '28'
+                version: 4
+                nullRouted: false
+                reverseLookup: null
+                mainIp: false
+                networkType: PUBLIC
+                ddos:
+                  detectionProfile: STANDARD_DEFAULT
+                  protectionType: STANDARD
+            startedAt: '2024-04-09T15:11:37+00:00'
+            contract:
+              billingFrequency: 1
+              term: 0
+              type: HOURLY
+              endsAt: null
+              renewalsAt: '2024-04-09T15:28:28+00:00'
+              createdAt: '2024-04-09T15:11:21+00:00'
+              state: ACTIVE
+            configuration:
+              stickySession: null
+              balance: roundrobin
+              xForwardedFor: false
+              idleTimeOut: 60
+          schema:
+            $ref: ../components/schemas/loadBalancerDetails.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get load balancer details
+  tags:
+    - Load Balancer
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers_{loadBalancerId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers_{loadBalancerId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_loadBalancers_{loadBalancerId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers_{loadBalancerId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_loadBalancers_{loadBalancerId}/getundefined
+delete:
+  description: Terminate a Load balancer
+  operationId: terminateLoadBalancer
+  responses:
+    '202':
+      description: >-
+        If load balancer contractType is hourly, it is scheduled for termination
+        immediately, otherwise, will be marked for termination at the date
+        specified by the load balancer field `contractEndAt`
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete load balancer
+  tags:
+    - Load Balancer
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers_{loadBalancerId}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers_{loadBalancerId}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_loadBalancers_{loadBalancerId}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers_{loadBalancerId}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_loadBalancers_{loadBalancerId}/deleteundefined
+put:
+  description: Update load balancer configurations
+  operationId: updateLoadBalancer
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/updateLoadBalancerOpts.yaml
+        example:
+          balance: roundrobin
+          contractType: HOURLY
+          idleTimeOut: 60
+          reference: foo
+          type: lsw.m3.xlarge
+          xForwardedFor: false
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            privateNetwork: null
+            id: 32082a93-d1e2-4bc0-8f5e-8fe4312b0844
+            type: lsw.m3.large
+            resources:
+              cpu:
+                value: 2
+                unit: vCPU
+              memory:
+                value: 7
+                unit: GiB
+              publicNetworkSpeed:
+                value: 1
+                unit: Gbps
+              privateNetworkSpeed:
+                value: 100
+                unit: Mbps
+            autoScalingGroup: null
+            region: eu-west-3
+            reference: my-loadbalancer1
+            state: RUNNING
+            ips:
+              - ip: 85.99.99.99
+                prefixLength: '28'
+                version: 4
+                nullRouted: false
+                reverseLookup: null
+                mainIp: false
+                networkType: PUBLIC
+                ddos:
+                  detectionProfile: STANDARD_DEFAULT
+                  protectionType: STANDARD
+            startedAt: '2024-04-09T15:11:37+00:00'
+            contract:
+              billingFrequency: 1
+              term: 0
+              type: HOURLY
+              endsAt: null
+              renewalsAt: '2024-04-09T15:28:28+00:00'
+              createdAt: '2024-04-09T15:11:21+00:00'
+              state: ACTIVE
+            configuration:
+              stickySession: null
+              balance: roundrobin
+              xForwardedFor: false
+              idleTimeOut: 60
+          schema:
+            $ref: ../components/schemas/loadBalancerDetails.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update load balancer
+  tags:
+    - Load Balancer
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers_{loadBalancerId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers_{loadBalancerId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_loadBalancers_{loadBalancerId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers_{loadBalancerId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_loadBalancers_{loadBalancerId}/putundefined

@@ -1,0 +1,6 @@
+name: name
+required: false
+in: query
+schema:
+  type: string
+example: Foo bar

@@ -1,0 +1,68 @@
+get:
+  tags:
+    - Action
+    - CDN | title
+  summary: Get Action By Id
+  description: Get an action by ID to monitor the progress.
+  operationId: get_action_by_id_v1_actions__actio_nid__get
+  parameters:
+    - name: action_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Action Id
+        format: uuid
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ExternalAction.yaml
+          examples:
+            Invalidation Action:
+              value:
+                type: INVALIDATION
+                status: PENDING
+                id: 50ea5204-4827-41d2-a940-cb5afdfb2426
+                customerId: '215468472'
+                created: '2019-08-24T14:15:22Z'
+                updated: '2019-08-24T14:15:22Z'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_actions_{action_id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_actions_{action_id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_actions_{action_id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_actions_{action_id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_actions_{action_id}/getundefined

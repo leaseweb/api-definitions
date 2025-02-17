@@ -1,0 +1,10 @@
+name: protocol
+required: false
+in: query
+schema:
+  type: string
+  enum:
+    - HTTP
+    - HTTPS
+    - TCP
+  example: HTTP

@@ -1,0 +1,7 @@
+description: The ID of a notification setting
+example: '839111'
+in: path
+name: notificationSettingId
+required: true
+schema:
+  type: string

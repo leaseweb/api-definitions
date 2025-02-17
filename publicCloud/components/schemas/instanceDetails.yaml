@@ -1,0 +1,16 @@
+allOf:
+  - $ref: ./instanceBase.yaml
+  - title: instanceDetails
+    required:
+      - iso
+      - privateNetwork
+    type: object
+    properties:
+      iso:
+        $ref: ./iso.yaml
+      privateNetwork:
+        $ref: ./privateNetwork.yaml
+      ips:
+        type: array
+        items:
+          $ref: ./ipDetails.yaml

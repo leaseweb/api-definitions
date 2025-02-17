@@ -1,0 +1,9 @@
+properties:
+  vps:
+    type: array
+    items:
+      $ref: ./vpsList.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+title: vps
+type: object

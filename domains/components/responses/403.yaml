@@ -1,0 +1,10 @@
+description: Access denied.
+content:
+  application/json:
+    example:
+      value:
+        errorMessage: Access to the requested resource is forbidden.
+        userMessage: Sorry, but you do not have access at the moment.
+        correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+    schema:
+      $ref: ../schemas/errorResponseSchema.yaml

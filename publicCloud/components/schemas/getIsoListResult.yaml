@@ -1,0 +1,8 @@
+properties:
+  isos:
+    type: array
+    items:
+      $ref: ./iso.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+type: object

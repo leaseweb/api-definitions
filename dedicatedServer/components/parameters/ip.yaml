@@ -1,0 +1,7 @@
+description: The IP Address
+example: 127.0.0.6
+in: path
+name: ip
+required: true
+schema:
+  type: string

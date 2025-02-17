@@ -1,0 +1,10 @@
+title: self
+type: object
+required:
+  - href
+description: Link to the resource record set resource
+properties:
+  href:
+    type: string
+    description: Hyperlink to the resource record set's location
+    example: /domains/example.com/resourceRecordSets/example.com./A+GEO

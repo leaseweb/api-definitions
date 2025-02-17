@@ -1,0 +1,198 @@
+post:
+  tags:
+    - ACL
+    - CDN | title
+  summary: Create Acl
+  description: |-
+    Create an ACL to control the traffic to a policy.
+
+    There are 3 types of ACLs:
+
+    - IP_ACL: Reject or allow certain IP subnets.
+    - GEO_ACL: Reject or allow certain countries.
+    - REFERRER_ACL: Reject or allow certain referrers.
+  operationId: create_acl_v1_distributions__distribution_id__policies__policy_id__acls_post
+  parameters:
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+    - name: policy_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Policy Id
+  requestBody:
+    description: ''
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/ACLSecuritySettingsIn.yaml
+        examples:
+          IP ACL:
+            value:
+              action: REJECT
+              value: 1.1.1.5/32
+              type: IP_ACL
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ACLSecuritySettings.yaml
+          examples:
+            IP ACL:
+              value:
+                action: REJECT
+                value: 1.1.1.5/32
+                type: IP_ACL
+                id: iacl-2
+                policyId: po-wk0ksi0x
+                created: '2024-08-06T08:55:37'
+                updated: '2024-08-07T23:31:44'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/postundefined
+get:
+  tags:
+    - ACL
+    - CDN | title
+  summary: Get All Acls
+  description: Get the list of active ACLs in a policy.
+  operationId: >-
+    get_all_acls_v1_distributions__distribution_id__policies__policy_id__acls_get
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - name: distribution_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Distribution Id
+    - name: policy_id
+      in: path
+      required: true
+      schema:
+        type: string
+        title: Policy Id
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ListResponse_ACLSecuritySettings_.yaml
+          examples:
+            ACLs:
+              value:
+                acls:
+                  - action: REJECT
+                    value: 1.1.1.2/32
+                    type: IP_ACL
+                    id: iacl-0
+                    policyId: po-wk0ksi0x
+                    created: '2024-08-06T08:55:37'
+                    updated: '2024-08-07T23:31:44'
+                  - action: REJECT
+                    value: 1.1.1.3/32
+                    type: IP_ACL
+                    id: iacl-1
+                    policyId: po-wk0ksi0x
+                    created: '2024-08-06T08:55:37'
+                    updated: '2024-08-07T23:31:44'
+                  - action: REJECT
+                    value: 1.1.1.5/32
+                    type: IP_ACL
+                    id: iacl-2
+                    policyId: po-wk0ksi0x
+                    created: '2024-08-06T08:55:37'
+                    updated: '2024-08-07T23:31:44'
+                _metadata:
+                  totalCount: 3
+                  limit: 10
+                  offset: 0
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/getundefined

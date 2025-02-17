@@ -1,0 +1,13 @@
+type: object
+title: ListResponse[ACLSecuritySettings]
+properties:
+  resources:
+    type: array
+    title: Resources
+    items:
+      $ref: ./ACLSecuritySettings.yaml
+  _metadata:
+    $ref: ./ListMetadata.yaml
+required:
+  - resources
+  - _metadata

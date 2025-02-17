@@ -1,0 +1,80 @@
+title: ip
+type: object
+required:
+  - ip
+  - version
+  - type
+  - prefixLength
+  - primary
+  - reverseLookup
+  - nullRouted
+  - nullLevel
+  - unnullingAllowed
+  - equipmentId
+  - assignedContract
+  - subnet
+properties:
+  ip:
+    type: string
+    description: IP address
+  version:
+    $ref: ./protocolVersion.yaml
+  type:
+    $ref: ./ipType.yaml
+  prefixLength:
+    type: integer
+    description: >-
+      Prefix length of the IP range represented by the record. Note: this is not
+      the same as `subnet.prefixLength`.
+    default: 0
+  primary:
+    type: boolean
+    description: Boolean indicating if this is the primary IP of the assigned equipment
+  reverseLookup:
+    type: string
+    description: >-
+      Reverse lookup set for the IP. This only applies to IPv4. For IPv6 see
+      [GET /ips/{ip}/reverseLookup](#operation/get/ips/{ip}/reverseLookup).
+    nullable: true
+  nullRouted:
+    type: boolean
+    description: Boolean to indicate if the IP is null-routed
+    default: false
+  nullLevel:
+    type: integer
+    nullable: true
+    description: Null route level
+  unnullingAllowed:
+    type: boolean
+    description: Boolean indicating if the null route can be removed
+    default: false
+  equipmentId:
+    type: string
+    description: ID of the equipment using the IP
+  assignedContract:
+    $ref: ./assignedContract.yaml
+  subnet:
+    title: subnet
+    type: object
+    description: Object containing information about the network and gateway
+    required:
+      - id
+      - networkIp
+      - prefixLength
+      - gateway
+    properties:
+      id:
+        type: string
+        description: >-
+          Subnet identifier consisting of network IP and prefix length separated
+          by underscore (e.g. 192.0.2.0_24)
+      networkIp:
+        type: string
+        description: Network IP of the subnet
+      prefixLength:
+        type: integer
+        description: Address prefix length
+        default: 0
+      gateway:
+        type: string
+        description: The gateway IP to be used in network settings

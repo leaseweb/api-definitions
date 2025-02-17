@@ -1,0 +1,18 @@
+type: object
+title: ErrorResponse
+properties:
+  errorCode:
+    type: integer
+    title: Errorcode
+    description: The error code.
+  errorMessage:
+    type: string
+    title: Errormessage
+    description: A human friendly description of the error.
+  correlationId:
+    type: string
+    title: Correlationid
+    description: The correlation ID of the current request.
+  errorDetails:
+    type: object
+    title: Errordetails

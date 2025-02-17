@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/catchAll \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"destination":"destination@example.org","spamChecksEnabled":true,"virusChecksEnabled":false}'

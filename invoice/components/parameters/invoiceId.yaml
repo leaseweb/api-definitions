@@ -1,0 +1,7 @@
+description: Invoice Id
+example: '00000001'
+in: path
+name: invoiceId
+required: true
+schema:
+  type: string

@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"active\":true,\"destination\":\"destination@example.com\",\"source\":\"source@example.com\",\"spamChecksEnabled\":true,\"virusChecksEnabled\":true,\"setMxRecord\":true}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/hosting/v2/domains/example.com/emailAliases", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

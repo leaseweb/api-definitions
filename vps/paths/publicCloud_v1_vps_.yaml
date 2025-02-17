@@ -1,0 +1,78 @@
+get:
+  description: List and filter VPS
+  operationId: getVpsList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/vpsIdQuery.yaml
+    - $ref: ../components/parameters/reference.yaml
+    - $ref: ../components/parameters/ipFilter.yaml
+    - $ref: ../components/parameters/vpsState.yaml
+    - $ref: ../components/parameters/vpsPack.yaml
+    - $ref: ../components/parameters/region.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getVpsListResult.yaml
+          example:
+            _metadata:
+              totalCount: 1
+              limit: 10
+              offset: 0
+            vps:
+              - id: '123581321'
+                pack: Leaseweb VPS 2
+                region: eu-central-1
+                datacenter: FRA-01
+                reference: testing
+                image:
+                  id: UBUNTU_22_04_64BIT
+                  name: Ubuntu 22.04 LTS (x86_64)
+                  family: linux
+                  flavour: ubuntu
+                  custom: false
+                marketAppId: null
+                state: RUNNING
+                hasPublicIpV4: true
+                rootDiskSize: 50
+                ips:
+                  - ip: 88.17.128.0
+                    prefixLength: '16'
+                    version: 4
+                    nullRouted: false
+                    reverseLookup: ''
+                    mainIp: true
+                    networkType: PUBLIC
+                startedAt: '2024-10-24T21:13:25+00:00'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get VPS list
+  tags:
+    - VPS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/publicCloud_v1_vps_/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/publicCloud_v1_vps_/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/publicCloud_v1_vps_/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/publicCloud_v1_vps_/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/publicCloud_v1_vps_/getundefined

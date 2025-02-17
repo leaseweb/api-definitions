@@ -1,0 +1,8 @@
+properties:
+  infoMessage:
+    $ref: ./infoMessage.yaml
+  _links:
+    $ref: ./links.yaml
+type: object
+required:
+  - _links

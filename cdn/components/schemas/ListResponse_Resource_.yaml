@@ -1,0 +1,13 @@
+type: object
+title: ListResponse[Resource]
+properties:
+  resources:
+    type: array
+    title: Resources
+    items:
+      $ref: ./Resource.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - resources
+  - _metadata

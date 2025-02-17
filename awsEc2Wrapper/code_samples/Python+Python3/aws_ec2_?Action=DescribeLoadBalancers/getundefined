@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'Authorization': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/aws/ec2/?LoadBalancerArns.member.N=29145c92-4a68-4c63-aaeb-f2212d85a74a&Names.member.N=test-name&PageSize=10&Marker=1&Action=DescribeLoadBalancers", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

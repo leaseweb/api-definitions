@@ -1,0 +1,51 @@
+properties:
+  architecture:
+    description: The architecture of the operating system
+    type: string
+  configurable:
+    description: If the default options are configurable or not
+    type: boolean
+  defaults:
+    title: defaults
+    description: An object containing defaults for this operating system
+    type: object
+    properties:
+      device:
+        type: string
+        description: Device name
+      partitions:
+        type: array
+        items:
+          $ref: ./partition.yaml
+  family:
+    description: The operating system family
+    type: string
+  id:
+    description: The operating system ID
+    type: string
+  name:
+    description: A human readable name for the operating system
+    type: string
+  type:
+    title: operatingSystemType
+    description: The type of operating system
+    type: string
+  version:
+    description: The version of the operating system
+    type: string
+  features:
+    type: array
+    description: Operating system features
+    items:
+      type: string
+  supportedFileSystems:
+    type: array
+    description: Operating system supported file systems
+    items:
+      type: string
+  supportedBootDevices:
+    type: array
+    description: Operating system supported boot devices
+    items:
+      type: string
+type: object

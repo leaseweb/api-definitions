@@ -1,0 +1,119 @@
+parameters:
+  - $ref: ../components/parameters/vpsId.yaml
+get:
+  description: List VPS snapshots
+  operationId: getSnapshotList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 1
+              limit: 20
+              offset: 0
+            snapshots:
+              - id: 624c53c3-48e9-41d1-833f-90a9abf5fd95
+                displayName: snapshot 1
+                state: READY
+                created: 2023-11-02T07:31:28+0000
+          schema:
+            $ref: ../components/schemas/getSnapshotListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List snapshots
+  tags:
+    - Snapshots
+    - VPS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_vps_{vpsId}_snapshots/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_vps_{vpsId}_snapshots/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_vps_{vpsId}_snapshots/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_vps_{vpsId}_snapshots/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_vps_{vpsId}_snapshots/getundefined
+post:
+  description: >-
+    The VPS must be running before the execution.
+
+
+    The time taken to create the snapshot depends on several factors, including
+    memory size and usage.
+
+
+    Allowed only one snapshot per VPS.
+  operationId: createSnapshot
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/createSnapshotOpts.yaml
+        example:
+          name: my snapshot
+  responses:
+    '202':
+      description: Request has been accepted and snapshot is going to be ready soon.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create VPS snapshot
+  tags:
+    - Snapshots
+    - VPS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_vps_{vpsId}_snapshots/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_vps_{vpsId}_snapshots/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_vps_{vpsId}_snapshots/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_vps_{vpsId}_snapshots/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_vps_{vpsId}_snapshots/postundefined

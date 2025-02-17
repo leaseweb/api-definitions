@@ -1,0 +1,28 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/publicCloud/v1/loadBalancers');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'limit' => '20',
+  'offset' => '10',
+  'ip' => '10.0.0.1',
+  'reference' => 'my-lb',
+  'id' => 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
+  'contractState' => 'SOME_STRING_VALUE',
+  'contractType' => 'HOURLY',
+  'state' => 'RUNNING',
+  'region' => 'eu-west-3',
+  'type' => 'lsw.c3.xlarge'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

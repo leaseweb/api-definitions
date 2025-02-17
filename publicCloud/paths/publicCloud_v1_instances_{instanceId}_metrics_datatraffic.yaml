@@ -1,0 +1,101 @@
+parameters:
+  - $ref: ../components/parameters/instanceId.yaml
+  - $ref: ../components/parameters/fromDate.yaml
+  - $ref: ../components/parameters/toDate.yaml
+  - name: granularity
+    schema:
+      type: string
+      enum:
+        - DAY
+    in: query
+    description: How the metrics are grouped by
+  - name: aggregation
+    schema:
+      type: string
+      enum:
+        - SUM
+    in: query
+    description: How the metrics are aggregated
+get:
+  operationId: getInstanceDataTrafficMetrics
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            _metadata:
+              from: '2023-10-01T00:00:00+00:00'
+              to: '2023-10-31T00:00:00+00:00'
+              granularity: DAY
+              aggregation: SUM
+              unit: B
+              summary:
+                downPublic:
+                  average: 340733979
+                  expected: 10222019370
+                  total: 1022201937
+                  peak:
+                    value: 896116855
+                    timestamp: '2023-10-28T00:00:00+00:00'
+                upPublic:
+                  average: 59920023.67
+                  expected: 1797600710.1
+                  total: 179760071
+                  peak:
+                    value: 85089279
+                    timestamp: '2023-10-28T00:00:00+00:00'
+            metrics:
+              downPublic:
+                values:
+                  - value: 461323
+                    timestamp: '2023-10-27T00:00:00+00:00'
+                  - value: 1249243
+                    timestamp: '2023-10-28T00:00:00+00:00'
+                unit: B
+              upPublic:
+                values:
+                  - value: 437565
+                    timestamp: '2023-10-27T00:00:00+00:00'
+                  - value: 6938590
+                    timestamp: '2023-10-28T00:00:00+00:00'
+                unit: B
+          schema:
+            $ref: ../components/schemas/getDataTrafficMetricsResult.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get data traffic metrics for a specific Instance
+  tags:
+    - Metrics
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_instances_{instanceId}_metrics_datatraffic/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_instances_{instanceId}_metrics_datatraffic/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_instances_{instanceId}_metrics_datatraffic/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_instances_{instanceId}_metrics_datatraffic/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_instances_{instanceId}_metrics_datatraffic/getundefined

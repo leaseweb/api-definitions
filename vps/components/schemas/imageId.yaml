@@ -1,0 +1,4 @@
+type: string
+title: imageId
+description: imageId can be either an Operating System or a UUID in case of a Custom Image
+example: UBUNTU_22_04_64BIT

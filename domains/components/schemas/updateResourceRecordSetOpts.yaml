@@ -1,0 +1,9 @@
+properties:
+  content:
+    $ref: ./content.yaml
+  ttl:
+    $ref: ./ttl.yaml
+required:
+  - content
+  - ttl
+type: object

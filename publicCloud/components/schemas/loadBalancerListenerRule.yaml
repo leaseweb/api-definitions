@@ -1,0 +1,18 @@
+title: loadBalancerListenerRule
+type: object
+required:
+  - id
+  - default
+  - targetGroupId
+properties:
+  id:
+    type: string
+    format: uuid
+    description: The listener unique identifier
+  default:
+    type: boolean
+    description: Condition of the rule
+  targetGroupId:
+    type: string
+    format: uuid
+    description: The target group unique identifier

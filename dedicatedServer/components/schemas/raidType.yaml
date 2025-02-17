@@ -1,0 +1,8 @@
+type: string
+description: >-
+  RAID type to apply. NONE is the equivalent of pass-through mode on HW RAID
+  equipped servers
+enum:
+  - HW
+  - SW
+  - NONE

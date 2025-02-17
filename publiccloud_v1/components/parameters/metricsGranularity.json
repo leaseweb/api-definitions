@@ -1,8 +1,0 @@
-{
-  "name": "granularity",
-  "schema": {
-    "$ref": "../schemas/metricsGranularity.json"
-  },
-  "in": "query",
-  "description": "The interval for each metric"
-}

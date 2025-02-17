@@ -1,0 +1,23 @@
+properties:
+  marketApps:
+    type: array
+    items:
+      title: marketApp
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        category:
+          type: string
+        version:
+          type: string
+          nullable: true
+        family:
+          type: string
+        image:
+          $ref: ./image.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+type: object

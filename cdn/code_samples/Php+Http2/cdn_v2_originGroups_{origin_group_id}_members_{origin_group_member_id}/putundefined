@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"resourceType":"string","data":[{"key":"string","value":null}]}');
+
+$request->setRequestUrl('https://api.leaseweb.com/cdn/v2/originGroups/%7Borigin_group_id%7D/members/%7Borigin_group_member_id%7D');
+$request->setRequestMethod('PUT');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

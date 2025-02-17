@@ -1,0 +1,47 @@
+nullable: true
+type: object
+title: loadBalancer
+required:
+  - id
+  - type
+  - resources
+  - reference
+  - state
+  - startedAt
+  - contract
+  - region
+  - configuration
+  - privateNetwork
+  - autoScalingGroup
+properties:
+  id:
+    type: string
+    format: uuid
+    description: The load balancer unique identifier
+  type:
+    $ref: ./typeName.yaml
+  resources:
+    $ref: ./resources.yaml
+  reference:
+    type: string
+    description: The identifying name set to the load balancer
+    nullable: true
+  state:
+    $ref: ./state.yaml
+  startedAt:
+    type: string
+    description: >-
+      Date and time when the load balancer was started for the first time, right
+      after launching it
+    format: date-time
+    nullable: true
+  region:
+    $ref: ./regionName.yaml
+  configuration:
+    $ref: ./loadBalancerConfiguration.yaml
+  autoScalingGroup:
+    $ref: ./autoScalingGroup.yaml
+  privateNetwork:
+    $ref: ./privateNetwork.yaml
+  contract:
+    $ref: ./contract.yaml

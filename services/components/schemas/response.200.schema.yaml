@@ -1,0 +1,129 @@
+properties:
+  _metadata:
+    properties:
+      limit:
+        default: 10
+        description: The offset used to generate this response
+        example: 10
+        title: The limit used to generate this response.
+        type: integer
+      offset:
+        default: 0
+        description: The limit used to generate this response
+        title: The offset used to generate this response.
+        type: integer
+      totalCount:
+        description: Total amount of services in this collection
+        example: 27
+        title: Total amount of invoices in this collection.
+        type: integer
+    title: Metadata about the collection.
+    type: object
+  services:
+    description: An array of services
+    items:
+      properties:
+        attributes:
+          description: an object product specific attributes
+          properties:
+            domainName:
+              description: Name of the domain
+              example: test.com
+              title: domain name
+              type: string
+          title: an object product specific attributes
+          type: object
+        billingCycle:
+          description: The frequency of the billing
+          example: 1 MONTH
+          type: string
+        cancellable:
+          description: Indicates if the service can be cancelled
+          title: Indicates if the service can be cancelled
+          type: boolean
+        contractId:
+          description: The Unique id of the contract
+          example: '00000110'
+          title: The Unique id of the contract
+          type: string
+        contractTerm:
+          description: The term of the contract
+          example: 1 YEAR
+          type: string
+        contractTermEndDate:
+          description: End date of the current contract term
+          example: '2019-05-01T00:00:00+00:00'
+          title: End date of the current contract term
+          type: string
+        currency:
+          description: The currency of the service price
+          example: EUR
+          type: string
+        deliveryDate:
+          description: Delivery date of the service
+          example: '2019-05-01T00:00:00+00:00'
+          type: string
+        deliveryEstimate:
+          description: Estimated delivery of the service
+          example: 5 - 7 business days
+          type: string
+        endDate:
+          description: The date the service is ended
+          example: '2019-05-01T00:00:00+00:00'
+          title: The date the service is ended
+          type: string
+        equipmentId:
+          description: The id of the equipment
+          example: '12345678'
+          title: The id of the equipment
+          type: string
+        id:
+          description: The unique id of the service
+          example: '10000000000010'
+          title: The unique id of the service
+          type: string
+        orderDate:
+          description: The date of order
+          example: '2019-05-01T00:00:00+00:00'
+          type: string
+        pricePerFrequency:
+          description: The price per frequency
+          example: 18.01
+          format: float
+          type: number
+        productId:
+          description: The identifier of a product
+          example: DEDICATED_SERVER
+          title: The identifier of a product
+          type: string
+        reference:
+          description: The reference a customer gave to the service
+          example: This is my reference
+          title: The reference a customer gave to the service
+          type: string
+        startDate:
+          description: The date the service started
+          example: '2019-05-01T00:00:00+00:00'
+          title: The date the service started
+          type: string
+        status:
+          description: Status of the service
+          enum:
+            - NEW_CONTRACT
+            - ACTIVE
+            - SCHEDULED
+            - TO_BE_MODIFIED
+            - TO_BE_PROVISIONED
+            - TO_BE_SUSPENDED
+            - SUSPENDED
+            - TO_BE_RECONNECTED
+          title: Status of the service
+          type: string
+        uncancellable:
+          description: Indicates if the service can be uncancelled
+          title: Indicates if the service can be uncancelled
+          type: boolean
+      type: object
+    title: An array of services.
+    type: array
+type: object

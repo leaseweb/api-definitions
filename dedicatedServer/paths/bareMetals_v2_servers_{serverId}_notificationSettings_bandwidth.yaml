@@ -1,0 +1,137 @@
+get:
+  description: List all bandwidth notification settings for this server.
+  operationId: getBandwidthNotificationSettingList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 2
+            bandwidthNotificationSettings:
+              - actions:
+                  - lastTriggeredAt: '2021-03-16T01:01:44+00:00'
+                    type: EMAIL
+                frequency: WEEKLY
+                id: '12345'
+                lastCheckedAt: '2021-03-16T01:01:41+00:00'
+                threshold: '1'
+                thresholdExceededAt: '2021-03-16T01:01:41+00:00'
+                unit: Gbps
+              - actions:
+                  - lastTriggeredAt: '2021-03-16T01:01:44+00:00'
+                    type: EMAIL
+                frequency: DAILY
+                id: '123456'
+                lastCheckedAt: '2021-03-16T01:01:41+00:00'
+                threshold: '1'
+                thresholdExceededAt: '2021-03-16T01:01:41+00:00'
+                unit: Mbps
+          schema:
+            $ref: >-
+              ../components/schemas/getBandwidthNotificationSettingListResult.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: List bandwidth notification settings
+  tags:
+    - Notification Settings
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth/getundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml
+post:
+  description: Create a new bandwidth notification setting for this server.
+  operationId: createBandwidthNotificationSetting
+  requestBody:
+    content:
+      application/json:
+        example:
+          frequency: DAILY
+          threshold: '1'
+          unit: Gbps
+        schema:
+          $ref: ../components/schemas/bandwidthNotificationSettingOpts.yaml
+  responses:
+    '201':
+      content:
+        application/json:
+          example:
+            actions:
+              - lastTriggeredAt: '2021-03-16T01:01:44+00:00'
+                type: EMAIL
+            frequency: WEEKLY
+            id: '12345'
+            lastCheckedAt: '2021-03-16T01:01:41+00:00'
+            threshold: '1'
+            thresholdExceededAt: '2021-03-16T01:01:41+00:00'
+            unit: Gbps
+          schema:
+            $ref: ../components/schemas/bandwidthNotificationSetting.yaml
+      description: Created.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Create a bandwidth notification setting
+  tags:
+    - Notification Settings
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_notificationSettings_bandwidth/postundefined

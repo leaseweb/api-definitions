@@ -1,0 +1,293 @@
+get:
+  operationId: getImageList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/custom.yaml
+    - $ref: ../components/parameters/standard.yaml
+    - name: state
+      required: false
+      in: query
+      schema:
+        title: imageState
+        type: string
+        description: Images state
+        enum:
+          - CREATING
+          - READY
+          - DESTROYED
+          - DESTROYING
+          - FAILED
+      description: Filters the list by the state of custom images.
+    - name: marketAppId
+      required: false
+      in: query
+      schema:
+        title: marketAppId
+        type: string
+        description: Standard images market apps
+        enum:
+          - CPANEL_30
+          - CPANEL_100
+          - PLESK_WEB_PRO
+          - PLESK_WEB_ADMIN
+      description: Filters the list by the market app of standard images.
+    - name: storageType
+      required: false
+      in: query
+      schema:
+        type: string
+        description: Storage type
+        enum:
+          - LOCAL
+          - CENTRAL
+      description: Filters the list by the market app of standard images.
+    - name: name
+      required: false
+      in: query
+      schema:
+        type: string
+      example: Ubuntu 20.04 LTS (x86_64)
+      description: Filters the list by the name of images.
+    - name: flavour
+      required: false
+      in: query
+      schema:
+        title: flavour
+        type: string
+        description: Standard images flavours
+        enum:
+          - ubuntu
+          - debian
+          - freebsd
+          - centos
+          - almalinux
+          - rockylinux
+          - archlinux
+          - windows
+      description: Filters the list by the flavour of standard images.
+    - name: region
+      required: false
+      in: query
+      schema:
+        type: string
+      example: eu-west-3
+      description: Available regions can be found using the List Regions endpoint.
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            images:
+              - id: UBUNTU_24_04_64BIT
+                name: Ubuntu 24.04 LTS (x86_64)
+                version: '24.04'
+                family: linux
+                flavour: ubuntu
+                architecture: x86_64
+                marketApps: []
+                storageTypes:
+                  - LOCAL
+                  - CENTRAL
+                storageSize: null
+                state: READY
+                stateReason: null
+                region: eu-west-3
+                createdAt: null
+                updatedAt: null
+                custom: false
+                minDiskSize: null
+              - id: UBUNTU_22_04_64BIT
+                name: Ubuntu 22.04 LTS (x86_64)
+                version: '22.04'
+                family: linux
+                flavour: ubuntu
+                architecture: x86_64
+                marketApps:
+                  - PLESK_WEB_ADMIN
+                storageTypes:
+                  - LOCAL
+                  - CENTRAL
+                storageSize: null
+                state: READY
+                stateReason: null
+                region: eu-west-3
+                createdAt: null
+                updatedAt: null
+                custom: false
+                minDiskSize: null
+              - id: UBUNTU_20_04_64BIT
+                name: Ubuntu 20.04 LTS (x86_64)
+                version: '20.04'
+                family: linux
+                flavour: ubuntu
+                architecture: x86_64
+                marketApps: []
+                storageTypes:
+                  - LOCAL
+                  - CENTRAL
+                storageSize: null
+                state: READY
+                stateReason: null
+                region: eu-west-3
+                createdAt: null
+                updatedAt: null
+                custom: false
+                minDiskSize: null
+              - id: abcc1630-362f-48ba-832f-c496aff24121
+                name: Custom image - 01
+                flavour: ubuntu
+                family: linux
+                version: null
+                architecture: null
+                marketApps: []
+                storageTypes: []
+                storageSize:
+                  size: 2.03
+                  unit: GB
+                state: READY
+                stateReason: null
+                region: eu-west-3
+                createdAt: '2024-07-05T10:44:08+00:00'
+                updatedAt: '2024-07-18T08:52:08+00:00'
+                custom: true
+                minDiskSize: null
+              - id: 8600b94b-45b4-4887-86e1-2792b06dbb32
+                name: Custom image - 02
+                flavour: ubuntu
+                family: linux
+                version: null
+                architecture: null
+                marketApps: []
+                storageTypes: []
+                storageSize:
+                  size: 2.03
+                  unit: GB
+                state: READY
+                stateReason: null
+                region: eu-west-3
+                createdAt: '2024-07-05T10:47:01+00:00'
+                updatedAt: '2024-07-17T13:14:01+00:00'
+                custom: true
+                minDiskSize: null
+              - id: ace712e9-a166-47f1-9065-4af0f7e7fce1
+                name: Custom image - 03
+                flavour: ubuntu
+                family: linux
+                version: null
+                architecture: null
+                marketApps: []
+                storageTypes: []
+                storageSize:
+                  size: 2.03
+                  unit: GB
+                state: READY
+                stateReason: null
+                region: eu-west-3
+                createdAt: '2024-07-05T10:54:27+00:00'
+                updatedAt: '2024-07-17T13:14:01+00:00'
+                custom: true
+                minDiskSize: null
+            _metadata:
+              totalCount: 6
+              limit: 6
+              offset: 0
+          schema:
+            $ref: ../components/schemas/getImageListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List all available Images
+  tags:
+    - Images
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/publicCloud_v1_images/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/publicCloud_v1_images/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/publicCloud_v1_images/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/publicCloud_v1_images/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/publicCloud_v1_images/getundefined
+post:
+  description: Create a Custom Image
+  operationId: createImage
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/createImageOpts.yaml
+        example:
+          name: New custom image
+          instanceId: 695ddd91-051f-4dd6-9120-938a927a47d0
+  responses:
+    '201':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/imageDetails.yaml
+          example:
+            architecture: null
+            createdAt: '2024-07-05T10:54:27+00:00'
+            custom: true
+            family: linux
+            flavour: ubuntu
+            id: ace712e9-a166-47f1-9065-4af0f7e7fce1
+            marketApps: []
+            minDiskSize: null
+            name: Custom image - 03
+            region: eu-west-3
+            state: READY
+            stateReason: null
+            storageSize:
+              size: 2.03
+              unit: GB
+            storageTypes: []
+            updatedAt: '2024-07-17T13:14:01+00:00'
+            version: null
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create Custom Image
+  tags:
+    - Images
+    - Public Clouds | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/publicCloud_v1_images/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/publicCloud_v1_images/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/publicCloud_v1_images/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/publicCloud_v1_images/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/publicCloud_v1_images/postundefined

@@ -1,0 +1,111 @@
+get:
+  description: >-
+    At this moment only bandwidth information for the public interface is
+    supported.
+  operationId: getDataTrafficMetrics
+  parameters:
+    - description: >-
+        Start of date interval in ISO-8601 format. The returned data will
+        include everything up from - and including - the specified date time.
+      example: '2019-06-01T00:00:00Z'
+      in: query
+      name: from
+      required: true
+      schema:
+        format: date-time
+        type: string
+    - description: >-
+        End of date interval in ISO-8601 format. The returned data will include
+        everything up until - but not including - the specified date time.
+      example: '2019-06-05T00:00:00Z'
+      in: query
+      name: to
+      required: true
+      schema:
+        format: date-time
+        type: string
+    - description: >-
+        Specify the preferred interval for each metric. If granularity is
+        omitted from the request, only one metric is returned.
+      in: query
+      name: granularity
+      schema:
+        enum:
+          - DAY
+          - WEEK
+          - MONTH
+          - YEAR
+        type: string
+    - description: Aggregate each metric using the given aggregation function.
+      in: query
+      name: aggregation
+      required: true
+      schema:
+        enum:
+          - SUM
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              aggregation: SUM
+              from: '2016-10-20T09:00:00Z'
+              granularity: HOUR
+              to: '2016-10-20T11:00:00Z'
+            metrics:
+              DOWN_PUBLIC:
+                unit: B
+                values:
+                  - timestamp: '2016-10-20T09:00:00Z'
+                    value: 202499
+                  - timestamp: '2016-10-20T10:00:00Z'
+                    value: 29900
+              UP_PUBLIC:
+                unit: B
+                values:
+                  - timestamp: '2016-10-20T09:00:00Z'
+                    value: 43212393
+                  - timestamp: '2016-10-20T10:00:00Z'
+                    value: 12342929
+          schema:
+            $ref: ../components/schemas/metrics.yaml
+      description: Ok.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Show datatraffic metrics
+  tags:
+    - Metrics
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_servers_{serverId}_metrics_datatraffic/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_servers_{serverId}_metrics_datatraffic/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_servers_{serverId}_metrics_datatraffic/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_servers_{serverId}_metrics_datatraffic/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_servers_{serverId}_metrics_datatraffic/getundefined
+parameters:
+  - $ref: ../components/parameters/serverId.yaml

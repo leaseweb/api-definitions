@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"active":true,"body":"I will be out of office until 14-12-2020. Please contact the reception desk for urgent matters.","subject":"Out of office"}');
+
+$request->setRequestUrl('https://api.leaseweb.com/hosting/v2/domains/example.com/mailboxes/%7BemailAddress%7D/autoResponder');
+$request->setRequestMethod('PUT');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

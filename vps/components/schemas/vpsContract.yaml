@@ -1,0 +1,37 @@
+allOf:
+  - $ref: ./baseContract.yaml
+  - type: object
+    required:
+      - id
+      - sla
+      - controlPanel
+      - inModification
+      - dataTraffic
+    properties:
+      id:
+        type: string
+        example: '41228459000100'
+      sla:
+        type: string
+        example: Basic
+      controlPanel:
+        type: string
+        example: cPanel Admin 5
+        nullable: true
+      inModification:
+        type: boolean
+        example: false
+      dataTraffic:
+        title: dataTraffic
+        description: Data traffic commitment
+        type: object
+        properties:
+          value:
+            type: number
+            example: 30
+          unit:
+            type: string
+            enum:
+              - TB
+              - GB
+            example: TB

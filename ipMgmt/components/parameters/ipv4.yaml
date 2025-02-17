@@ -1,0 +1,9 @@
+schema:
+  type: string
+  format: ipv4
+name: ip
+in: path
+required: true
+description: >-
+  IP address or IP address with prefixLength {ip}_{prefix}. If prefixLength is
+  not given, then we assume 32

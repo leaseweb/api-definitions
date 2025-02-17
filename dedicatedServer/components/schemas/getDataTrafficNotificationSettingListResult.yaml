@@ -1,0 +1,9 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  datatrafficNotificationSettings:
+    description: An array of Data traffic Notification Settings
+    items:
+      $ref: ./dataTrafficNotificationSetting.yaml
+    type: array
+type: object

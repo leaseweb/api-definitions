@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: Private Networks
+  version: v2
+  description: '> The base URL for this API is: **https://api.leaseweb.com/bareMetals/v2/**'
+  x-logo:
+    url: /images/logo.png
+    altText: Leaseweb developer documentation
+    backgroundColor: '#5484c6'
+    href: http://developer.leaseweb.com
+servers:
+  - url: https://api.leaseweb.com
+security:
+  - X-LSW-Auth: []
+tags:
+  - name: Errors
+    description: >
+      The API uses standard HTTP status codes to indicate the success or failure
+      of the API call. The response will be JSON. Most APIs use the following
+      format:
+
+
+      ```
+
+      {
+
+      "errorCode" : "APP00800",
+
+      "errorMessage" : "The connection with the DB cannot be established.",
+
+      "correlationId" : "550e8400-e29b-41d4-a716-446655440000",
+
+      "userMessage" : "Cannot handle your request at the moment. Please try
+      again later.",
+
+      "reference" : "http://developer.leaseweb.com/errors/APP00800"
+
+      }
+
+      ```
+    x-traitTag: true
+  - name: Authentication
+    description: >-
+      Authentication for the APIs is required. To authenticate your call, you
+      will need to sent your API key as `X-LSW-Auth` header.
+
+
+      You can generate API keys in the [Customer
+      Portal](https://secure.leaseweb.com/api-client-management/).
+    x-traitTag: true
+paths:
+  /bareMetals/v2/privateNetworks:
+    $ref: paths/bareMetals_v2_privateNetworks.yaml
+  /bareMetals/v2/privateNetworks/{privateNetworkId}:
+    $ref: paths/bareMetals_v2_privateNetworks_{privateNetworkId}.yaml
+  /bareMetals/v2/privateNetworks/{privateNetworkId}/reservations:
+    $ref: paths/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations.yaml
+  /bareMetals/v2/privateNetworks/{privateNetworkId}/reservations/{ip}:
+    $ref: >-
+      paths/bareMetals_v2_privateNetworks_{privateNetworkId}_reservations_{ip}.yaml
+components:
+  securitySchemes:
+    X-LSW-Auth:
+      name: X-LSW-Auth
+      type: apiKey
+      in: header
+      example: 213423-2134234-234234-23424
+      description: ''

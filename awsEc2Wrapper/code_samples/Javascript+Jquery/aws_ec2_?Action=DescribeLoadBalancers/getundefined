@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/aws/ec2/?LoadBalancerArns.member.N=29145c92-4a68-4c63-aaeb-f2212d85a74a&Names.member.N=test-name&PageSize=10&Marker=1&Action=DescribeLoadBalancers",
+  "method": "GET",
+  "headers": {
+    "Authorization": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

@@ -1,0 +1,3 @@
+curl --request POST \
+  --url https://api.leaseweb.com/bareMetals/v2/servers/12345/networkInterfaces/open \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

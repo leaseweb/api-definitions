@@ -1,0 +1,12 @@
+type: object
+title: location
+description: Device location
+properties:
+  site:
+    type: string
+  suite:
+    type: string
+  rack:
+    type: string
+  unit:
+    type: string

@@ -1,0 +1,32 @@
+title: links
+type: object
+required:
+  - self
+  - parent
+  - validateSet
+description: Links to related resource locations
+properties:
+  self:
+    $ref: ./self.yaml
+  parent:
+    title: parent
+    type: object
+    description: Link to the parent resource
+    required:
+      - href
+    properties:
+      href:
+        type: string
+        description: Hyperlink to the parent resource location
+        example: /domains/example.com
+  validateSet:
+    title: validateSet
+    type: object
+    required:
+      - href
+    description: Link to validate a single resource record set
+    properties:
+      href:
+        type: string
+        description: Hyperlink to validate a single resource record set for a domain
+        example: /domains/example.com/resourceRecordSets/validateSet

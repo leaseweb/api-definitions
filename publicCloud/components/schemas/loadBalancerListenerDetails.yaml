@@ -1,0 +1,11 @@
+allOf:
+  - $ref: ./loadBalancerListener.yaml
+  - title: loadBalancerListener
+    type: object
+    properties:
+      sslCertificates:
+        type: array
+        items:
+          $ref: ./sslCertificate.yaml
+    required:
+      - sslCertificates

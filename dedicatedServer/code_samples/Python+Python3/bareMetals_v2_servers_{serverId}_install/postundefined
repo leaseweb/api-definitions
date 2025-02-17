@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"callbackUrl\":\"http://example.com\",\"controlPanelId\":\"string\",\"device\":\"string\",\"hostname\":\"string\",\"operatingSystemId\":\"string\",\"partitions\":[{\"filesystem\":\"string\",\"mountpoint\":\"string\",\"size\":\"string\"}],\"password\":\"string\",\"postInstallScript\":\"string\",\"powerCycle\":true,\"raid\":{\"level\":0,\"numberOfDisks\":0,\"type\":\"HW\"},\"sshKeys\":\"string\",\"timezone\":\"string\"}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/bareMetals/v2/servers/12345/install", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

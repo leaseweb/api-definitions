@@ -1,0 +1,106 @@
+get:
+  description: >
+    This detailed information shows default options when installing the given
+
+    operating system on a dedicated server.
+
+
+    For some operating systems these defaults can be adjusted when making the
+
+    `POST` request to `/install`. If the `configurable` parameter is `true`
+    these
+
+    defaults can be adjusted by the client.
+  operationId: getOperatingSystem
+  parameters:
+    - description: The Control Panel ID
+      in: query
+      name: controlPanelId
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            architecture: 64bit
+            configurable: true
+            defaults:
+              device: SATA_SAS
+              partitions:
+                - mountpoint: /boot
+                  size: '1024'
+                  filesystem: ext2
+                - size: '4096'
+                  filesystem: swap
+                - mountpoint: /tmp
+                  size: '4096'
+                  filesystem: ext4
+                - mountpoint: /
+                  size: '*'
+                  filesystem: ext4
+            family: centos
+            features:
+              - PARTITIONING
+              - SW_RAID
+              - TIMEZONE
+              - HOSTNAME
+              - SSH_KEYS
+              - POST_INSTALL_SCRIPTS
+              - CONTROL_PANEL
+              - DB_MARIADB
+              - DB_REDIS
+              - DB_MONGODB
+              - DB_POSTGRESQL
+            id: CENTOS_7_64BIT
+            name: CentOS 7 (x86_64)
+            supportedBootDevices:
+              - SATA_SAS
+              - NVME
+            supportedFileSystems:
+              - ext2
+              - ext3
+              - ext4
+              - xfs
+              - swap
+            type: linux
+            version: '7'
+          schema:
+            $ref: ../components/schemas/getOperatingSystemResult.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Show an operating system
+  tags:
+    - Operating Systems
+    - Dedicated Servers | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_operatingSystems_{operatingSystemId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_operatingSystems_{operatingSystemId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_operatingSystems_{operatingSystemId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_operatingSystems_{operatingSystemId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_operatingSystems_{operatingSystemId}/getundefined
+parameters:
+  - $ref: ../components/parameters/operatingSystemId.yaml

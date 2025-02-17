@@ -1,0 +1,21 @@
+properties:
+  region:
+    $ref: ./regionName.yaml
+  type:
+    $ref: ./typeName.yaml
+  reference:
+    type: string
+    description: An identifying name you can refer to the load balancer
+  contractType:
+    $ref: ./contractType.yaml
+  contractTerm:
+    $ref: ./contractTerm.yaml
+  billingFrequency:
+    $ref: ./billingFrequency.yaml
+required:
+  - region
+  - type
+  - contractType
+  - contractTerm
+  - billingFrequency
+type: object

@@ -1,0 +1,10 @@
+properties:
+  bootfile:
+    description: The URL of PXE boot you want your server to boot from
+    type: string
+  hostname:
+    description: The hostname for the server
+    type: string
+required:
+  - bootfile
+type: object

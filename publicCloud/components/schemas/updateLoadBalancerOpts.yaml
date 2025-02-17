@@ -1,0 +1,19 @@
+properties:
+  type:
+    $ref: ./typeName.yaml
+  reference:
+    type: string
+    description: An identifying name you can refer to the load balancer
+  contractType:
+    $ref: ./contractType.yaml
+  stickySession:
+    $ref: ./stickySession.yaml
+  balance:
+    $ref: ./balance.yaml
+  xForwardedFor:
+    type: boolean
+    description: Is xForwardedFor enabled or not
+  idleTimeOut:
+    type: integer
+    description: Time to close the connection if load balancer is idle
+type: object

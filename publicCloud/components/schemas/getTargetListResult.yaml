@@ -1,0 +1,9 @@
+properties:
+  targets:
+    type: array
+    items:
+      $ref: ./target.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+title: targets
+type: object

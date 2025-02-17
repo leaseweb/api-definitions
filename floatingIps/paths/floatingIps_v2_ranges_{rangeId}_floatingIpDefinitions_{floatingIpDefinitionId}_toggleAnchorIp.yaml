@@ -1,0 +1,187 @@
+post:
+  operationId: >-
+    put/ranges/{rangeId}/floatingIpDefinitions/{floatingIpDefinitionId}/toggleAnchorIp
+  summary: Toggle the anchor IP with the passive anchor IP
+  description: >-
+    Imagine you have 2 dedicated servers in AMS-01, in different racks. And you
+
+    have a Floating IP definition for Floating IP 10.0.0.0_32. You have
+    configured
+
+    the ip address 10.0.0.0/32 on both dedicated servers.
+
+
+    If the Anchor IP in the Floating IP definition is pointing to your first
+    server,
+
+    all traffic goes to that server.  With this `PUT` request you can toggle the
+
+    Anchor IP address to point to, for example, your second server, or any other
+    server registered as the Passive Anchor IP.  Within a
+
+    matter of seconds the Anchor IP and the Passive Anchor IP will switch places
+    and all the traffic destined for the Floating IP will now end up
+
+    at the new Anchor IP. In the above example, your second server.
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            description: Single Floating IP Definition
+            properties:
+              id:
+                type: string
+                description: The ID of this Floating IP Definition
+              rangeId:
+                type: string
+                description: The ID of the range to which this Floating IP belongs
+              location:
+                type: string
+                description: The location of this Floating IP
+              type:
+                type: string
+                description: The type of this Floating IP
+                enum:
+                  - SITE
+                  - METRO
+              customerId:
+                type: string
+                description: The ID of the customer associated with this Floating IP
+              salesOrgId:
+                type: string
+                description: Sales Org ID of the customer associated with this Floating IP
+              floatingIp:
+                type: string
+                description: The Floating IP address
+              anchorIp:
+                type: string
+                description: The Anchor IP address
+              passiveAnchorIp:
+                type: string
+                description: The Passive anchor IP address used for Anchor IP toggling
+              status:
+                type: string
+                description: Status of the Floating IP Definition
+                enum:
+                  - ACTIVE
+                  - CREATING
+                  - UPDATING
+                  - REMOVING
+                  - ERROR
+              createdAt:
+                type: string
+                description: Date timestamp when the resource was created
+              updatedAt:
+                type: string
+                description: Date timestamp when the resource was updated
+          examples:
+            example:
+              value:
+                id: 88.17.34.108_32
+                rangeId: 88.17.0.0_17
+                location: AMS-01
+                type: SITE
+                customerId: '10001234'
+                salesOrgId: '2000'
+                floatingIp: 88.17.34.108/32
+                anchorIp: 95.10.126.2
+                passiveAnchorIp: 95.10.126.1
+                status: ACTIVE
+                createdAt: 2019-03-13T09:10:02+0000
+                updatedAt: 2019-03-13T09:10:02+0000
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 39e010ed-0e93-42c3-c28f-3ffc373553d5
+                errorCode: 404
+                errorMessage: Floating Ip definition with id 88.17.34.108_32 does not exist.
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  tags:
+    - Floating IP ranges
+    - Floating IPs | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/floatingIps_v2_ranges_{rangeId}_floatingIpDefinitions_{floatingIpDefinitionId}_toggleAnchorIp/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/floatingIps_v2_ranges_{rangeId}_floatingIpDefinitions_{floatingIpDefinitionId}_toggleAnchorIp/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/floatingIps_v2_ranges_{rangeId}_floatingIpDefinitions_{floatingIpDefinitionId}_toggleAnchorIp/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/floatingIps_v2_ranges_{rangeId}_floatingIpDefinitions_{floatingIpDefinitionId}_toggleAnchorIp/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/floatingIps_v2_ranges_{rangeId}_floatingIpDefinitions_{floatingIpDefinitionId}_toggleAnchorIp/postundefined
+parameters:
+  - $ref: ../components/parameters/rangeId.yaml
+  - schema:
+      type: string
+    name: floatingIpDefinitionId
+    in: path
+    required: true
+    description: >-
+      ID of a Floating IP Definition, consisting of network IP and prefix length
+      (separated by an underscore)

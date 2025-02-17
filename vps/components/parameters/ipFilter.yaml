@@ -1,0 +1,7 @@
+name: ip
+required: false
+schema:
+  type: string
+  format: ip
+  example: 10.0.0.1
+in: query

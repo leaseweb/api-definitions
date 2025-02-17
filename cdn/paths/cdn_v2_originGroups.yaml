@@ -1,0 +1,227 @@
+post:
+  tags:
+    - OriginGroup
+    - CDN | title
+  summary: Create Origin Group
+  description: |
+    Using origin groups you can define loadbalancers on top of your origins. 
+
+    Available loadbalancing methods:
+
+    - ROUNDROBIN
+    - CONSISTENT
+    - STICKY
+    - FAILOVER
+  operationId: create_origin_group_v1_originGroups_post
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Resource.yaml
+          x-examples:
+            Example 1:
+              resourceType: ORIGIN_GROUP
+              data:
+                - key: balancingMethod
+                  value: CONSISTENT
+                - key: description
+                  value: LSW Origin Group
+                - key: failTimeOut
+                  value: 8
+                - key: keepAlive
+                  value: true
+                - key: keepAliveSeconds
+                  value: 27
+                - key: enabled
+                  value: true
+        examples:
+          Consistent Origin Group:
+            value:
+              resourceType: ORIGIN_GROUP
+              data:
+                - key: balancingMethod
+                  value: CONSISTENT
+                - key: description
+                  value: LSW Origin Group
+                - key: failTimeOut
+                  value: 8
+                - key: keepAlive
+                  value: true
+                - key: keepAliveSeconds
+                  value: 27
+                - key: enabled
+                  value: true
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Resource.yaml
+          examples:
+            Consistent Origin Group:
+              value:
+                resourceType: ORIGIN_GROUP
+                data:
+                  - key: balancingMethod
+                    value: CONSISTENT
+                  - key: description
+                    value: LSW Origin Group
+                  - key: failTimeOut
+                    value: 8
+                  - key: keepAlive
+                    value: true
+                  - key: keepAliveSeconds
+                    value: 27
+                  - key: enabled
+                    value: true
+                  - key: id
+                    value: og-3h47bjs
+                  - key: customerId
+                    value: cu-47dbh4n2
+                  - key: created
+                    value: '2024-08-07T10:38:49'
+                  - key: updated
+                    value: null
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_originGroups/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_originGroups/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_originGroups/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_originGroups/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_originGroups/postundefined
+get:
+  tags:
+    - OriginGroup
+    - CDN | title
+  summary: Get All Origin Groups
+  description: Get the list of your origin groups.
+  operationId: get_all_origin_groups_v1_originGroups_get
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/OriginGroupsListResponse_Resource_.yaml
+          examples:
+            Origin Groups:
+              value:
+                originGroups:
+                  - resourceType: ORIGIN_GROUP
+                    data:
+                      - key: balancingMethod
+                        value: ROUNDROBIN
+                      - key: description
+                        value: Origin Group 1
+                      - key: failTimeOut
+                        value: 1
+                      - key: keepAlive
+                        value: true
+                      - key: keepAliveSeconds
+                        value: 30
+                      - key: enabled
+                        value: true
+                      - key: id
+                        value: og-84ynk6g
+                      - key: customerId
+                        value: cu-4kb3vb64
+                      - key: created
+                        value: '2020-12-14T11:52:17'
+                      - key: updated
+                        value: '2024-07-05T11:38:45'
+                  - resourceType: ORIGIN_GROUP
+                    data:
+                      - key: balancingMethod
+                        value: CONSISTENT
+                      - key: description
+                        value: origin group 1
+                      - key: failTimeOut
+                        value: 15
+                      - key: keepAlive
+                        value: true
+                      - key: keepAliveSeconds
+                        value: 30
+                      - key: enabled
+                        value: true
+                      - key: id
+                        value: og-dg9enj3
+                      - key: customerId
+                        value: cu-4kb3vb64
+                      - key: created
+                        value: '2020-12-17T14:02:37'
+                      - key: updated
+                        value: '2021-11-29T11:27:03'
+                _metadata:
+                  totalCount: 2
+                  limit: 25
+                  offset: 0
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_originGroups/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_originGroups/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_originGroups/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_originGroups/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_originGroups/getundefined

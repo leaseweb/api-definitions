@@ -1,0 +1,4 @@
+type: string
+description: Type of the resource record set
+enum:
+  - A+GEO
