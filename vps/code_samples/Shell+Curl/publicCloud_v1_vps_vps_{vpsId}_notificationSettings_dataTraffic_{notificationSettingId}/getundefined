@@ -1,0 +1,3 @@
+curl --request GET \
+  --url https://api.leaseweb.com/publicCloud/v1/vps/vps/999999999/notificationSettings/dataTraffic/3a042956-0689-45dc-8322-8b8325464182 \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

@@ -55,12 +55,12 @@ tags:
   - name: Power
   - name: Credentials
   - name: ISOs
-  - name: Images
   - name: Metrics
   - name: Snapshots
   - name: IPs
   - name: Security
   - name: Reinstall
+  - name: Notification Settings
 paths:
   /publicCloud/v1/vps/{vpsId}/start:
     $ref: paths/publicCloud_v1_vps_{vpsId}_start.yaml
@@ -108,6 +108,11 @@ paths:
     $ref: paths/publicCloud_v1_vps_images.yaml
   /publicCloud/v1/vps/isos:
     $ref: paths/publicCloud_v1_vps_isos.yaml
+  /publicCloud/v1/vps/vps/{vpsId}/notificationSettings/dataTraffic:
+    $ref: paths/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic.yaml
+  /publicCloud/v1/vps/vps/{vpsId}/notificationSettings/dataTraffic/{notificationSettingId}:
+    $ref: >-
+      paths/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}.yaml
 components:
   securitySchemes:
     BearerAuth:

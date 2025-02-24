@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/publicCloud/v1/vps/vps/999999999/notificationSettings/dataTraffic/3a042956-0689-45dc-8322-8b8325464182",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"threshold\":{\"value\":0,\"unit\":\"MB\"},\"timePeriod\":\"DAY\",\"action\":\"POWER_OFF\",\"channels\":[{\"type\":\"EMAIL\",\"contactGroup\":\"TECHNICAL\"}]}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

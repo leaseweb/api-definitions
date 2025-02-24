@@ -1,0 +1,250 @@
+parameters:
+  - $ref: ../components/parameters/vpsId.yaml
+  - $ref: ../components/parameters/notificationSettingId.yaml
+get:
+  operationId: getNotificationSetting
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            action: POWER_OFF
+            channels:
+              - type: EMAIL
+                contactGroup: TECHNICAL
+                contacts:
+                  - john.doe@example.com
+                  - jim.doe@example.com
+            id: ff6bbd04-c24c-4ecf-b09d-e6c415a65d63
+            threshold:
+              unit: GB
+              value: 1000
+            timePeriod: DAY
+            type: DATA_TRAFFIC
+          schema:
+            $ref: ../components/schemas/notificationSetting.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get details of a notification Setting
+  tags:
+    - Notification Settings
+    - VPS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/getundefined
+post:
+  description: Create a notification setting
+  operationId: createNotificationSetting
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/createNotificationSettingOpts.yaml
+        example:
+          action: POWER_OFF
+          channels:
+            - type: EMAIL
+              contactGroup: GENERAL
+          threshold:
+            unit: GB
+            value: 1000
+          timePeriod: DAY
+  responses:
+    '201':
+      description: OK.
+      content:
+        application/json:
+          example:
+            action: POWER_OFF
+            channels:
+              - type: EMAIL
+                contactGroup: TECHNICAL
+                contacts:
+                  - john.doe@example.com
+                  - jim.doe@example.com
+            id: ff6bbd04-c24c-4ecf-b09d-e6c415a65d63
+            threshold:
+              unit: GB
+              value: 1000
+            timePeriod: DAY
+            type: DATA_TRAFFIC
+          schema:
+            $ref: ../components/schemas/notificationSetting.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create a notification setting
+  tags:
+    - Notification Settings
+    - VPS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/postundefined
+put:
+  operationId: updateNotificationSetting
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/updateNotificationSettingOpts.yaml
+        example:
+          action: POWER_OFF
+          channels:
+            - type: EMAIL
+              contactGroup: GENERAL
+          threshold:
+            unit: GB
+            value: 1000
+          timePeriod: DAY
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            action: POWER_OFF
+            channels:
+              - type: EMAIL
+                contactGroup: TECHNICAL
+                contacts:
+                  - john.doe@example.com
+                  - jim.doe@example.com
+            id: ff6bbd04-c24c-4ecf-b09d-e6c415a65d63
+            threshold:
+              unit: GB
+              value: 1000
+            timePeriod: DAY
+            type: DATA_TRAFFIC
+          schema:
+            $ref: ../components/schemas/notificationSetting.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update Notification Setting details
+  tags:
+    - Notification Settings
+    - VPS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/putundefined
+delete:
+  operationId: deleteNotificationSetting
+  responses:
+    '204':
+      description: No content.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete a notification setting setting
+  tags:
+    - Notification Settings
+    - VPS | title
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}/deleteundefined

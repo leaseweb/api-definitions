@@ -1,0 +1,15 @@
+type: object
+title: channel
+properties:
+  type:
+    type: string
+    example: EMAIL
+  contactGroup:
+    type: string
+    example: TECHNICAL
+  contacts:
+    type: array
+required:
+  - type
+  - contactGroup
+  - contacts

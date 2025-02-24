@@ -1,0 +1,37 @@
+type: object
+title: notificationSetting
+properties:
+  id:
+    type: string
+    format: uuid
+    example: 3a042956-0689-45dc-8322-8b8325464182
+  threshold:
+    properties:
+      value:
+        description: Threshold value for the notification setting
+        type: integer
+      unit:
+        $ref: ./unit.yaml
+    required:
+      - value
+      - unit
+  type:
+    description: Type of the notification
+    type: string
+    enum:
+      - DATA_TRAFFIC
+  timePeriod:
+    $ref: ./timePeriod.yaml
+  action:
+    $ref: ./action.yaml
+  channels:
+    type: array
+    items:
+      $ref: ./channel.yaml
+required:
+  - id
+  - threshold
+  - timePeriod
+  - type
+  - action
+  - channels
