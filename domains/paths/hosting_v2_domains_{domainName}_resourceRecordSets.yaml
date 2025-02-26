@@ -223,7 +223,6 @@ get:
   summary: List resource record sets
   tags:
     - DNS
-    - DNS | title
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -324,7 +323,6 @@ post:
   summary: Create a resource record set
   tags:
     - DNS
-    - DNS | title
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -487,10 +485,9 @@ put:
       $ref: ../components/responses/5001.yaml
     '503':
       $ref: ../components/responses/5031.yaml
-  summary: Update resource record sets
+  summary: Update all DNS records
   tags:
     - DNS
-    - DNS | title
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -531,10 +528,9 @@ delete:
       $ref: ../components/responses/5001.yaml
     '503':
       $ref: ../components/responses/5031.yaml
-  summary: Delete resource record sets
+  summary: Delete all DNS records
   tags:
     - DNS
-    - DNS | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

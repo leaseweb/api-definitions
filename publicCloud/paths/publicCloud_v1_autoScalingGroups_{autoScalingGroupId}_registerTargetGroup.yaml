@@ -56,7 +56,7 @@ post:
   summary: Register Target Group
   tags:
     - Auto Scaling Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

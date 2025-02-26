@@ -1,7 +1,7 @@
 post:
   tags:
     - Debug
-    - CDN | title
+    - CDN
   summary: Debug Url
   description: >-
     You can use this endpoint to debug your distributions on each CDN provider

@@ -203,7 +203,7 @@ get:
                 type: string
   tags:
     - Private clouds
-    - Private Clouds | title
+    - Private Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

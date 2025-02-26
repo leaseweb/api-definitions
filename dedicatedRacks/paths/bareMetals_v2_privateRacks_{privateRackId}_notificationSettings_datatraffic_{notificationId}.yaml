@@ -96,7 +96,7 @@ get:
                 errorMessage: Resource not found
   tags:
     - Dedicated racks
-    - Dedicated Racks | title
+    - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -244,7 +244,7 @@ put:
                 errorMessage: The access token is expired or invalid.
   tags:
     - Dedicated racks
-    - Dedicated Racks | title
+    - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -289,7 +289,7 @@ delete:
                 errorMessage: The access token is expired or invalid.
   tags:
     - Dedicated racks
-    - Dedicated Racks | title
+    - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl
       source:

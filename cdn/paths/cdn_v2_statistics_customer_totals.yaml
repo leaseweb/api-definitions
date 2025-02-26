@@ -1,7 +1,7 @@
 get:
   tags:
     - Statistics
-    - CDN | title
+    - CDN
   summary: Get Total Statistics For Customer
   description: >-
     Query total statistics for customer

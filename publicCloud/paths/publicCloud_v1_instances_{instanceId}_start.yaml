@@ -21,7 +21,7 @@ post:
   summary: Start a specific resource Instance
   tags:
     - Power
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

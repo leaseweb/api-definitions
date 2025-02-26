@@ -57,7 +57,7 @@ get:
   summary: Get load balancer data transferred per second metrics
   tags:
     - Metrics
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

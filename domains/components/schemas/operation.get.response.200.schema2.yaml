@@ -1,0 +1,30 @@
+properties:
+  name:
+    type: string
+  ttl:
+    type: integer
+  policies:
+    type: array
+    items:
+      type: object
+      properties:
+        policy:
+          type: string
+        type:
+          type: string
+        rule:
+          type: object
+          properties:
+            ips:
+              type: array
+              items:
+                type: string
+      required:
+        - policy
+        - type
+        - rule
+required:
+  - name
+  - ttl
+  - policies
+type: object

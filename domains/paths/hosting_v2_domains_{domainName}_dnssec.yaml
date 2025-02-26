@@ -98,7 +98,6 @@ get:
   summary: Inspect DNS Security (DNSSEC)
   tags:
     - Domains
-    - Domains | title
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -242,7 +241,6 @@ put:
   summary: Update DNS Security (DNSSEC)
   tags:
     - Domains
-    - Domains | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

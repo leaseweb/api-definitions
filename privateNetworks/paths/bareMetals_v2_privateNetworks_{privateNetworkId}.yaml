@@ -89,7 +89,7 @@ get:
                   temporary overloading or maintenance of the server.
   tags:
     - Private networks
-    - Private Networks | title
+    - Private Networks
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -227,7 +227,7 @@ put:
                   temporary overloading or maintenance of the server.
   tags:
     - Private networks
-    - Private Networks | title
+    - Private Networks
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -319,7 +319,7 @@ delete:
                   temporary overloading or maintenance of the server.
   tags:
     - Private networks
-    - Private Networks | title
+    - Private Networks
   x-codeSamples:
     - lang: Shell + Curl
       source:

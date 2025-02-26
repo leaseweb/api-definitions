@@ -53,7 +53,6 @@ get:
   summary: Inspect a domain
   tags:
     - Domains
-    - Domains | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -33,7 +33,7 @@ get:
   summary: Get snapshot detail
   tags:
     - Snapshots
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -77,7 +77,7 @@ put:
   summary: Restore instance snapshot
   tags:
     - Snapshots
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -121,7 +121,7 @@ delete:
   summary: Delete instance snapshot
   tags:
     - Snapshots
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

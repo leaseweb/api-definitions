@@ -38,7 +38,7 @@ get:
                 errorMessage: The access token is expired or invalid.
   tags:
     - Dedicated racks
-    - Dedicated Racks | title
+    - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl
       source:

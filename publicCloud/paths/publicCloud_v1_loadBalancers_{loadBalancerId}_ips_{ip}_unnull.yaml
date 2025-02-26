@@ -39,7 +39,7 @@ post:
   summary: Remove an IP null route for a specific Load Balancer
   tags:
     - IPs
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

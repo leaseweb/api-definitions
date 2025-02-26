@@ -63,7 +63,7 @@ get:
   summary: Get list of instances belonging to an Auto Scaling Group
   tags:
     - Auto Scaling Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

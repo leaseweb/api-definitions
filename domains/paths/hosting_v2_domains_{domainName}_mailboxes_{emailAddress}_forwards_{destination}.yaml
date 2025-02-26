@@ -42,7 +42,7 @@ get:
   summary: Inspect a forward
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -115,7 +115,7 @@ put:
   summary: Update a forward
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -157,7 +157,7 @@ delete:
   summary: Delete a forward
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:

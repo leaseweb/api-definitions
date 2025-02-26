@@ -80,7 +80,7 @@ get:
   summary: Get instance details
   tags:
     - Instances
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -126,7 +126,7 @@ delete:
   summary: Terminate instance
   tags:
     - Instances
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -261,7 +261,7 @@ put:
   summary: Update instance
   tags:
     - Instances
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

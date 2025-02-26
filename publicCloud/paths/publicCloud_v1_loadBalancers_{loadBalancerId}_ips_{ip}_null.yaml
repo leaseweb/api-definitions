@@ -51,7 +51,7 @@ post:
   summary: Null route IP address for a specific resource Load Balancer
   tags:
     - IPs
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

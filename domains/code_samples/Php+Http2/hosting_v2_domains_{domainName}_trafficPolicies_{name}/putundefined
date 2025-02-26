@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"ttl":60,"policies":[{"policy":"PICKCLOSEST","type":"A","rule":{"ips":["string"]}}]}');
+
+$request->setRequestUrl('https://api.leaseweb.com/hosting/v2/domains/example.com/trafficPolicies/test.example.com');
+$request->setRequestMethod('PUT');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

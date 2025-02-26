@@ -34,7 +34,7 @@ post:
   summary: Attach ISO to a specific Instance
   tags:
     - ISOs
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

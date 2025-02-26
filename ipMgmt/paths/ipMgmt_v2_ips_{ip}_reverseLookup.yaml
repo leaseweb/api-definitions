@@ -38,7 +38,7 @@ get:
   summary: List reverse lookup records for an IPv6 range
   tags:
     - IPs
-    - IP management | title
+    - IP management
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -108,7 +108,7 @@ put:
   summary: Set or remove reverse lookup records for an IPv6 range
   tags:
     - IPs
-    - IP management | title
+    - IP management
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -27,7 +27,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get console access
   tags:
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -46,7 +46,7 @@ get:
   summary: Get Target Group list
   tags:
     - Target Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -117,7 +117,7 @@ post:
   summary: Create Target Group
   tags:
     - Target Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

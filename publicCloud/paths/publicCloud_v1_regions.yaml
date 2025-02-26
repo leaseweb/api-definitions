@@ -41,7 +41,7 @@ get:
   summary: List regions
   tags:
     - Regions
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -20,7 +20,7 @@ delete:
   summary: Delete a DHCP reservation
   tags:
     - Private networks
-    - Private Networks | title
+    - Private Networks
   x-codeSamples:
     - lang: Shell + Curl
       source:

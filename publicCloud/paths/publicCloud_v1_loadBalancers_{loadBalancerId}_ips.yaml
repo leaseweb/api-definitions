@@ -42,7 +42,7 @@ get:
   summary: List IP addresses associated with a specific Load Balancer
   tags:
     - IPs
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

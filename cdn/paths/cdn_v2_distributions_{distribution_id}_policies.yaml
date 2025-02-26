@@ -1,7 +1,7 @@
 post:
   tags:
     - Policy
-    - CDN | title
+    - CDN
   summary: Create Policy
   description: >-
     Apply custom configurations using policies.
@@ -146,7 +146,7 @@ post:
 get:
   tags:
     - Policy
-    - CDN | title
+    - CDN
   summary: Get All Policies
   description: |-
     Get the list of policies for a distribution.

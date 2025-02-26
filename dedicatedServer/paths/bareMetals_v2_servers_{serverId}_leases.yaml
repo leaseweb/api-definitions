@@ -15,7 +15,7 @@ delete:
   summary: Delete a DHCP reservation
   tags:
     - DHCP Leases
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -79,7 +79,7 @@ get:
   summary: List DHCP reservations
   tags:
     - DHCP Leases
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -134,7 +134,7 @@ post:
   summary: Create a DHCP reservation
   tags:
     - DHCP Leases
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:

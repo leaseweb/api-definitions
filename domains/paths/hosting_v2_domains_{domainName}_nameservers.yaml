@@ -38,7 +38,6 @@ get:
   summary: List nameservers
   tags:
     - Domains
-    - Domains | title
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -129,7 +128,6 @@ put:
   summary: Update nameservers
   tags:
     - Domains
-    - Domains | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

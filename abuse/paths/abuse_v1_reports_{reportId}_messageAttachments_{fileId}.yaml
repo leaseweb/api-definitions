@@ -25,7 +25,6 @@ get:
   summary: Inspect a message attachment
   tags:
     - Abuse Reports
-    - Abuse Reports | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

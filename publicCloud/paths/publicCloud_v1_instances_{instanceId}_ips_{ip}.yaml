@@ -34,7 +34,7 @@ get:
   summary: Get IP details for a specific Instance
   tags:
     - IPs
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -100,7 +100,7 @@ put:
   summary: Update the IP address for a specific Instance
   tags:
     - IPs
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

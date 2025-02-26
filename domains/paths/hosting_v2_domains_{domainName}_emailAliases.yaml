@@ -61,7 +61,7 @@ get:
   summary: List email aliases
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -138,7 +138,7 @@ post:
   summary: Create an email alias
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:

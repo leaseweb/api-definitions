@@ -1,7 +1,7 @@
 get:
   tags:
     - OriginGroup
-    - CDN | title
+    - CDN
   summary: Get Origin Group By Id
   description: Get the details of an origin group by its ID.
   operationId: get_origin_group_by_id_v1_originGroups__origin_group_id__get
@@ -88,7 +88,7 @@ get:
 put:
   tags:
     - OriginGroup
-    - CDN | title
+    - CDN
   summary: Update Origin Group By Id
   description: |-
     Update the parameters in an origin group.
@@ -202,7 +202,7 @@ put:
 delete:
   tags:
     - OriginGroup
-    - CDN | title
+    - CDN
   summary: Delete Origin Group By Id
   description: Delete an origin group by its ID.
   operationId: delete_origin_group_by_id_v1_originGroups__origin_group_id__delete

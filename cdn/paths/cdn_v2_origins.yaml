@@ -1,7 +1,7 @@
 post:
   tags:
     - Origin
-    - CDN | title
+    - CDN
   summary: Create Origin
   description: |-
     Create origin resouces to be used within distributions.
@@ -250,7 +250,7 @@ post:
 get:
   tags:
     - Origin
-    - CDN | title
+    - CDN
   summary: Get All Origins
   description: >-
     Get the list of origins including all of the origin types. Types are

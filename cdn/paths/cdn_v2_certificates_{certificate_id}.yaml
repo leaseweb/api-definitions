@@ -1,7 +1,7 @@
 get:
   tags:
     - Certificate
-    - CDN | title
+    - CDN
   summary: Get Certificate By Id
   description: Get the details of a certificate by its ID
   operationId: get_certificate_by_id_v1_certificates__certificate_id__get
@@ -86,7 +86,7 @@ get:
 delete:
   tags:
     - Certificate
-    - CDN | title
+    - CDN
   summary: Delete Certificate By Id
   operationId: delete_certificate_by_id_v1_certificates__certificate_id__delete
   parameters:

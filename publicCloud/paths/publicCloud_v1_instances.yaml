@@ -126,7 +126,7 @@ post:
   summary: Launch instance
   tags:
     - Instances
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -604,7 +604,7 @@ get:
   summary: Get instance list
   tags:
     - Instances
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

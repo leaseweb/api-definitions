@@ -61,7 +61,6 @@ get:
   summary: Get all your Services
   tags:
     - Services
-    - Services | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

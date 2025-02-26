@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/trafficPolicies/test.example.com \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"ttl":60,"policies":[{"policy":"PICKCLOSEST","type":"A","rule":{"ips":["string"]}}]}'

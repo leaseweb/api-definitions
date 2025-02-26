@@ -45,7 +45,7 @@ get:
   summary: Get listener details
   tags:
     - Load Balancer
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -202,7 +202,7 @@ put:
   summary: Update a listener
   tags:
     - Load Balancer
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -245,7 +245,7 @@ delete:
   summary: Delete load balancer listener
   tags:
     - Load Balancer
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

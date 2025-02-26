@@ -37,7 +37,6 @@ post:
   summary: Resolve a report
   tags:
     - Abuse Reports
-    - Abuse Reports | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

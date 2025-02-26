@@ -38,7 +38,7 @@ get:
   summary: Inspect an auto responder
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -132,7 +132,7 @@ put:
   summary: Change an auto responder
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -174,7 +174,7 @@ delete:
   summary: Delete an auto responder
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:

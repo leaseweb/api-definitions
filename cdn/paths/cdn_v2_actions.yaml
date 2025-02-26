@@ -1,7 +1,7 @@
 get:
   tags:
     - Action
-    - CDN | title
+    - CDN
   summary: Get All Actions
   description: >-
     Get the list of all of the actions to monitor the progress of your

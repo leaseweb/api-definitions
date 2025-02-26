@@ -55,7 +55,6 @@ post:
   summary: Import dns records from bind file content
   tags:
     - DNS
-    - DNS | title
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -106,7 +105,6 @@ get:
   summary: Export dns records as a bind file content
   tags:
     - DNS
-    - DNS | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

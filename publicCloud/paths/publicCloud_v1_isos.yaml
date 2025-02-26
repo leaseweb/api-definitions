@@ -32,7 +32,7 @@ get:
   summary: List available ISOs
   tags:
     - ISOs
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

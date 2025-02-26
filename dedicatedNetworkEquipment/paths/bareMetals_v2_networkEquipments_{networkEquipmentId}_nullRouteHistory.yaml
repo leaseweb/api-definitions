@@ -36,7 +36,7 @@ get:
   summary: Show null route history
   tags:
     - IPs
-    - Dedicated Network Equipments | title
+    - Dedicated Network Equipments
   x-codeSamples:
     - lang: Shell + Curl
       source:

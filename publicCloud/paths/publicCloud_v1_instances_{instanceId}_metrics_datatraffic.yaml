@@ -77,7 +77,7 @@ get:
   summary: Get data traffic metrics for a specific Instance
   tags:
     - Metrics
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

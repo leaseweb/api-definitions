@@ -21,7 +21,7 @@ delete:
   summary: Delete Auto Scaling Group
   tags:
     - Auto Scaling Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -133,7 +133,7 @@ put:
   summary: Update Auto Scaling Group
   tags:
     - Auto Scaling Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -203,7 +203,7 @@ get:
   summary: Get Auto Scaling Group details
   tags:
     - Auto Scaling Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -1,7 +1,7 @@
 get:
   tags:
     - ACL
-    - CDN | title
+    - CDN
   summary: Get Acl By Id
   description: Get an ACL by its ID.
   operationId: >-
@@ -86,7 +86,7 @@ get:
 delete:
   tags:
     - ACL
-    - CDN | title
+    - CDN
   summary: Delete Acl By Id
   operationId: >-
     delete_acl_by_id_v1_distributions__distribution_id__policies__policy_id__acls__acl_id__delete

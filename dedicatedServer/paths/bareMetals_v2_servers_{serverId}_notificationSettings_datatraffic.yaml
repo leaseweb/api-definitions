@@ -47,7 +47,7 @@ get:
   summary: List data traffic notification settings
   tags:
     - Notification Settings
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -113,7 +113,7 @@ post:
   summary: Create a data traffic notification setting
   tags:
     - Notification Settings
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:

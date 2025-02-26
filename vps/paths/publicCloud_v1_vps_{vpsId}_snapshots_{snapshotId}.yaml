@@ -33,7 +33,7 @@ get:
   summary: Get snapshot detail
   tags:
     - Snapshots
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -77,7 +77,7 @@ put:
   summary: Restore VPS snapshot
   tags:
     - Snapshots
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -121,7 +121,7 @@ delete:
   summary: Delete VPS snapshot
   tags:
     - Snapshots
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -1,7 +1,7 @@
 get:
   tags:
     - Action
-    - CDN | title
+    - CDN
   summary: Get Action By Id
   description: Get an action by ID to monitor the progress.
   operationId: get_action_by_id_v1_actions__actio_nid__get

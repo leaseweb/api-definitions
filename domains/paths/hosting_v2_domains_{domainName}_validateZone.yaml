@@ -103,7 +103,6 @@ post:
   summary: Validate zone
   tags:
     - DNS
-    - DNS | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

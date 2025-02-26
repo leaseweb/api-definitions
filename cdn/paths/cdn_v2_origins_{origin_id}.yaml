@@ -1,7 +1,7 @@
 get:
   tags:
     - Origin
-    - CDN | title
+    - CDN
   summary: Get Origin By Id
   description: Get an origin by its ID.
   operationId: get_origin_by_id_v1_origins__origin_id__get
@@ -84,7 +84,7 @@ get:
 put:
   tags:
     - Origin
-    - CDN | title
+    - CDN
   summary: Update Origin By Id
   description: >-
     Update the options available in an origin.
@@ -183,7 +183,7 @@ put:
 delete:
   tags:
     - Origin
-    - CDN | title
+    - CDN
   summary: Delete Origin By Id
   operationId: delete_origin_by_id_v1_origins__origin_id__delete
   parameters:

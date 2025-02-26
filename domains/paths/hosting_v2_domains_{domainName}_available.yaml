@@ -31,7 +31,6 @@ get:
   summary: Check availability
   tags:
     - Domains
-    - Domains | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

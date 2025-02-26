@@ -92,7 +92,7 @@ get:
   summary: Get costs for a given month.
   tags:
     - Expenses
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

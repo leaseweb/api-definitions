@@ -55,7 +55,6 @@ get:
   summary: Inspect resource record set
   tags:
     - DNS
-    - DNS | title
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -149,10 +148,9 @@ put:
       $ref: ../components/responses/5001.yaml
     '503':
       $ref: ../components/responses/5031.yaml
-  summary: Update a resource record set
+  summary: Update a specific DNS record
   tags:
     - DNS
-    - DNS | title
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -189,10 +187,9 @@ delete:
       $ref: ../components/responses/5001.yaml
     '503':
       $ref: ../components/responses/5031.yaml
-  summary: Delete a resource record set
+  summary: Delete a specific DNS record
   tags:
     - DNS
-    - DNS | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

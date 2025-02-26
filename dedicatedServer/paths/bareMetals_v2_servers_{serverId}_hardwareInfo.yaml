@@ -176,7 +176,7 @@ get:
   summary: Show hardware information
   tags:
     - Getting Started
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:

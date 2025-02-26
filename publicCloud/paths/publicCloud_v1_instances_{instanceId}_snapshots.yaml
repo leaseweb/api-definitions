@@ -36,7 +36,7 @@ get:
   summary: List snapshots
   tags:
     - Snapshots
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -95,7 +95,7 @@ post:
   summary: Create instance snapshot
   tags:
     - Snapshots
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

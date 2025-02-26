@@ -35,8 +35,7 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete a server from a private network
   tags:
-    - Private Networks
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -103,8 +102,7 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Add a server to private network
   tags:
-    - Private Networks
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:

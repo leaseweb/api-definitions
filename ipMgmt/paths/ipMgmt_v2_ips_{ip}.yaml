@@ -38,7 +38,7 @@ get:
   summary: Inspect an IP
   tags:
     - IPs
-    - IP management | title
+    - IP management
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -103,7 +103,7 @@ put:
   summary: Update an IP
   tags:
     - IPs
-    - IP management | title
+    - IP management
   x-codeSamples:
     - lang: Shell + Curl
       source:

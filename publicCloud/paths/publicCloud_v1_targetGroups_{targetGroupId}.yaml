@@ -37,7 +37,7 @@ get:
   summary: Get Target Group details
   tags:
     - Target Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -111,7 +111,7 @@ put:
   summary: Update Target Group
   tags:
     - Target Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -154,7 +154,7 @@ delete:
   summary: Delete Target Group
   tags:
     - Target Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

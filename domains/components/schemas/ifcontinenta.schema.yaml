@@ -1,0 +1,16 @@
+properties:
+  continentCode:
+    type: string
+  primaryIps:
+    type: array
+    items:
+      type: string
+  fallBackIp:
+    type: string
+    format: ipv4
+required:
+  - primaryIps
+  - fallBackIp
+  - continentCode
+title: ifContinentA
+type: object

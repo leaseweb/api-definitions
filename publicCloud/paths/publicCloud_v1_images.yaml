@@ -206,7 +206,7 @@ get:
   summary: List all available Images
   tags:
     - Images
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -274,7 +274,7 @@ post:
   summary: Create Custom Image
   tags:
     - Images
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -1,7 +1,7 @@
 post:
   tags:
     - OriginGroup
-    - CDN | title
+    - CDN
   summary: Create Origin Group Member
   description: >-
     Add members (origins) to your origin group.
@@ -96,7 +96,7 @@ post:
 get:
   tags:
     - OriginGroup
-    - CDN | title
+    - CDN
   summary: Get All Origin Group Members
   description: Get all of the members belonging to an origin group.
   operationId: get_all_origin_group_members_v1_originGroups__origin_group_id__members_get

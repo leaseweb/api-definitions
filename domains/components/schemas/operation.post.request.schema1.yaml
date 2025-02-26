@@ -1,0 +1,59 @@
+properties:
+  name:
+    type: string
+    description: This can be domain name or subdomain name.
+    example: test.example.com
+  ttl:
+    type: integer
+    enum:
+      - 60
+      - 300
+      - 1800
+      - 3600
+      - 14400
+      - 28800
+      - 43200
+      - 86400
+    example: 3600
+  policies:
+    type: array
+    items:
+      type: object
+      properties:
+        policy:
+          type: string
+          enum:
+            - PICKCLOSEST
+            - IF_PORT_UP
+            - IF_URL_UP
+            - IF_COUNTRY
+            - IF_CONTINENT
+            - PICKCHASED
+            - PICKWHASHED
+        type:
+          type: string
+          enum:
+            - A
+            - AAAA
+            - CNAME
+        rule:
+          type: object
+          anyOf:
+            - $ref: ./pickclosest.schema.yaml
+            - $ref: ./portup.schema.yaml
+            - $ref: ./urlup.schema.yaml
+            - $ref: ./ifcountrya.schema.yaml
+            - $ref: ./ifcountrycname.schema.yaml
+            - $ref: ./ifcontinenta.schema.yaml
+            - $ref: ./ifcontinentcname.schema.yaml
+            - $ref: ./pickchased.schema.yaml
+            - $ref: ./pickwhashed.schema.yaml
+      required:
+        - policy
+        - type
+        - rule
+required:
+  - name
+  - ttl
+  - policies
+type: object

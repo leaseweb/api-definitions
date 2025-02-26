@@ -34,7 +34,7 @@ get:
   summary: Retrieve catch all information
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -120,7 +120,7 @@ put:
   summary: Change/create catch all
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -162,7 +162,7 @@ delete:
   summary: Delete a catch all
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:

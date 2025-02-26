@@ -1,7 +1,7 @@
 post:
   tags:
     - OriginGroup
-    - CDN | title
+    - CDN
   summary: Create Origin Group
   description: |
     Using origin groups you can define loadbalancers on top of your origins. 
@@ -123,7 +123,7 @@ post:
 get:
   tags:
     - OriginGroup
-    - CDN | title
+    - CDN
   summary: Get All Origin Groups
   description: Get the list of your origin groups.
   operationId: get_all_origin_groups_v1_originGroups_get

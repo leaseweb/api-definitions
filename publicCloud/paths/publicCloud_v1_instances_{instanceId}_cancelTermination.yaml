@@ -23,7 +23,7 @@ post:
   summary: Cancel instance termination
   tags:
     - Instances
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

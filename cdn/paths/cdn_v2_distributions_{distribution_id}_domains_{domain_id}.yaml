@@ -1,7 +1,7 @@
 get:
   tags:
     - Domain
-    - CDN | title
+    - CDN
   summary: Get Domain By Id
   description: Get the details of a custom domain attached to a dsitribution.
   operationId: get_domain_by_id_v1_distributions__distribution_id__domains__domain_id__get
@@ -77,7 +77,7 @@ get:
 delete:
   tags:
     - Domain
-    - CDN | title
+    - CDN
   summary: Delete Domain By Id
   operationId: >-
     delete_domain_by_id_v1_distributions__distribution_id__domains__domain_id__delete

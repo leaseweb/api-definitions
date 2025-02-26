@@ -128,7 +128,7 @@ get:
   summary: List mailboxes
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -221,7 +221,7 @@ post:
   summary: Create a mailbox
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:

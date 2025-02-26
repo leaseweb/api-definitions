@@ -34,7 +34,7 @@ get:
 
     ```
   tags:
-    - Aws Ec2 Wrapper | title
+    - Aws Ec2 Wrapper
   security:
     - Authorization: []
   parameters:

@@ -1,7 +1,7 @@
 get:
   tags:
     - Distribution
-    - CDN | title
+    - CDN
   summary: Get Distribution By Id
   description: Get the general details of a distribution by its ID.
   operationId: get_distribution_by_id_v1_distributions__distribution_id__get
@@ -90,7 +90,7 @@ get:
 put:
   tags:
     - Distribution
-    - CDN | title
+    - CDN
   summary: Update Distribution By Id
   operationId: update_distribution_by_id_v1_distributions__distribution_id__put
   parameters:
@@ -203,7 +203,7 @@ put:
 delete:
   tags:
     - Distribution
-    - CDN | title
+    - CDN
   summary: Delete Distribution By Id
   operationId: delete_distribution_by_id_v1_distributions__distribution_id__delete
   parameters:

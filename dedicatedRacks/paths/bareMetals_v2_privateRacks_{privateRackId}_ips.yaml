@@ -183,7 +183,7 @@ get:
                   temporary overloading or maintenance of the server.
   tags:
     - Dedicated racks
-    - Dedicated Racks | title
+    - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl
       source:

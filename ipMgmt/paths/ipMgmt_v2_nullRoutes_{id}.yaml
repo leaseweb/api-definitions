@@ -32,7 +32,7 @@ get:
   summary: Inspect null route history
   tags:
     - IPs
-    - IP management | title
+    - IP management
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -93,7 +93,7 @@ put:
   summary: Update a null route
   tags:
     - IPs
-    - IP management | title
+    - IP management
   x-codeSamples:
     - lang: Shell + Curl
       source:

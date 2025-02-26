@@ -39,7 +39,7 @@ post:
   summary: Remove an IP null route for a specific VPS
   tags:
     - IPs
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:

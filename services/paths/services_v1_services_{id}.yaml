@@ -41,7 +41,6 @@ get:
   summary: Inspect a service
   tags:
     - Services
-    - Services | title
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -112,7 +111,6 @@ put:
   summary: Update a service
   tags:
     - Services
-    - Services | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

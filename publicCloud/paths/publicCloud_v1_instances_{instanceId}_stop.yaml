@@ -21,7 +21,7 @@ post:
   summary: Stop a specific Instance
   tags:
     - Power
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

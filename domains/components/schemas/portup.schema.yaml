@@ -1,0 +1,23 @@
+properties:
+  port:
+    type: integer
+  primaryIps:
+    type: array
+    items:
+      type: string
+  secondaryIps:
+    type: array
+    items:
+      type: string
+  selector:
+    type: string
+    enum:
+      - pickclosest
+      - random
+      - all
+    example: pickclosest
+required:
+  - port
+  - primaryIps
+title: ifPortUp
+type: object

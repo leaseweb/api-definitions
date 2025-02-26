@@ -144,7 +144,7 @@ get:
   summary: List images available for reinstall
   tags:
     - Reinstall
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

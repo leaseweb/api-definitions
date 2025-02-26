@@ -28,7 +28,7 @@ get:
   summary: Get console access
   tags:
     - Instances
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

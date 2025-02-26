@@ -62,7 +62,7 @@ get:
   summary: List aggregation packs
   tags:
     - Aggregation Packs
-    - Aggregation packs | title
+    - Aggregation packs
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -86,7 +86,7 @@ get:
   summary: Get connections per second metrics
   tags:
     - Metrics
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

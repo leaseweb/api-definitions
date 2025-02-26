@@ -42,7 +42,7 @@ get:
   summary: List IP addresses associated with a specific VPS
   tags:
     - IPs
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:

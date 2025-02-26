@@ -50,7 +50,7 @@ put:
   summary: Update Custom Image
   tags:
     - Images
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

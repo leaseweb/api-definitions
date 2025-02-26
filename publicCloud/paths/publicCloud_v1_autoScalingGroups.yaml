@@ -72,7 +72,7 @@ post:
   summary: Create Auto Scaling Group
   tags:
     - Auto Scaling Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -233,7 +233,7 @@ get:
   summary: Get Auto Scaling Group list
   tags:
     - Auto Scaling Groups
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

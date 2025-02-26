@@ -153,7 +153,7 @@ post:
                   temporary overloading or maintenance of the server.
   tags:
     - Floating IP ranges
-    - Floating IPs | title
+    - Floating IPs
   x-codeSamples:
     - lang: Shell + Curl
       source:

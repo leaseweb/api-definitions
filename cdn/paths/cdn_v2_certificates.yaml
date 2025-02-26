@@ -1,7 +1,7 @@
 post:
   tags:
     - Certificate
-    - CDN | title
+    - CDN
   summary: Create Certificate
   description: >-
     Using this endpoint, you can upload your custom TLS certificates to be used
@@ -96,7 +96,7 @@ post:
 get:
   tags:
     - Certificate
-    - CDN | title
+    - CDN
   summary: Get All Certificates
   description: Get the list of your certificates.
   operationId: get_all_certificates_v1_certificates_get

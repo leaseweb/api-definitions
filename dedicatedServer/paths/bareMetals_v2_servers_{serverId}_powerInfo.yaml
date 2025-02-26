@@ -50,7 +50,7 @@ get:
   summary: Show power status
   tags:
     - Power
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:

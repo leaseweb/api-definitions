@@ -34,7 +34,7 @@ post:
   summary: Attach ISO to a specific VPS
   tags:
     - ISOs
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -97,7 +97,7 @@ get:
   summary: Inspect null route history
   tags:
     - IPs
-    - IP management | title
+    - IP management
   x-codeSamples:
     - lang: Shell + Curl
       source:

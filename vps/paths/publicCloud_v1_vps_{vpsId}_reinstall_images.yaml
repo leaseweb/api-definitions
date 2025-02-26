@@ -143,7 +143,7 @@ get:
   summary: List images available for reinstall
   tags:
     - Reinstall
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:

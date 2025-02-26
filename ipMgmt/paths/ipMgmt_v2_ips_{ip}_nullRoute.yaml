@@ -42,7 +42,7 @@ post:
   summary: Null route an IP
   tags:
     - IPs
-    - IP management | title
+    - IP management
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -78,7 +78,7 @@ delete:
   summary: Remove a null route
   tags:
     - IPs
-    - IP management | title
+    - IP management
   x-codeSamples:
     - lang: Shell + Curl
       source:

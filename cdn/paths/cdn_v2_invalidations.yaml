@@ -1,7 +1,7 @@
 post:
   tags:
     - Invalidation
-    - CDN | title
+    - CDN
   summary: Do Invalidation
   description: >-
     You can submit multiple URLs to be invalidated and purged on all of the CDN

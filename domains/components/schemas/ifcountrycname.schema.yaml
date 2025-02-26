@@ -1,0 +1,13 @@
+properties:
+  countryCode:
+    type: string
+  primaryAddress:
+    type: string
+  fallBackAddress:
+    type: string
+required:
+  - primaryAddress
+  - fallBackAddress
+  - countryCode
+title: ifCountryCNAME
+type: object

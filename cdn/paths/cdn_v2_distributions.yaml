@@ -1,7 +1,7 @@
 post:
   tags:
     - Distribution
-    - CDN | title
+    - CDN
   summary: Create Distribution
   description: |-
     Create any kind of distribution using this endpoint.
@@ -138,7 +138,7 @@ post:
 get:
   tags:
     - Distribution
-    - CDN | title
+    - CDN
   summary: Get All Distributions
   description: Get the list of your distributions.
   operationId: get_all_distributions_v1_distributions_get

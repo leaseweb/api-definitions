@@ -31,7 +31,7 @@ get:
   summary: Get DHCP reservations
   tags:
     - Private networks
-    - Private Networks | title
+    - Private Networks
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -100,7 +100,7 @@ post:
   summary: Create a DHCP reservation
   tags:
     - Private networks
-    - Private Networks | title
+    - Private Networks
   x-codeSamples:
     - lang: Shell + Curl
       source:

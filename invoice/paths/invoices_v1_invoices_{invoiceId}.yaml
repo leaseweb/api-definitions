@@ -47,7 +47,6 @@ get:
   summary: Inspect an invoice
   tags:
     - Invoices
-    - Invoices | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

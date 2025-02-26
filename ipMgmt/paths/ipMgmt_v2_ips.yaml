@@ -121,7 +121,7 @@ get:
   summary: List IPs
   tags:
     - IPs
-    - IP management | title
+    - IP management
   x-codeSamples:
     - lang: Shell + Curl
       source:

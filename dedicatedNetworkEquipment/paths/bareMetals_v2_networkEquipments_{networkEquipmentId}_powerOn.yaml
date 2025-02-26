@@ -19,7 +19,7 @@ post:
   summary: Power on network equipment
   tags:
     - Power
-    - Dedicated Network Equipments | title
+    - Dedicated Network Equipments
   x-codeSamples:
     - lang: Shell + Curl
       source:

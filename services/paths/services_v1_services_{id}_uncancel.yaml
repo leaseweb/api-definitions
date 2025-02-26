@@ -31,7 +31,6 @@ post:
   summary: Uncancel a service
   tags:
     - Services
-    - Services | title
   x-codeSamples:
     - lang: Shell + Curl
       source:

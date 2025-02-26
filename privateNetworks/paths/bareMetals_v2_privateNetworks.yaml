@@ -2,7 +2,7 @@ get:
   operationId: get/privateNetworks
   tags:
     - Private networks
-    - Private Networks | title
+    - Private Networks
   summary: List private networks
   description: ''
   parameters:
@@ -133,7 +133,7 @@ post:
   operationId: post/privateNetworks
   tags:
     - Private networks
-    - Private Networks | title
+    - Private Networks
   summary: Create a private network
   description: >-
     Currently only one Private Network is allowed per customer.

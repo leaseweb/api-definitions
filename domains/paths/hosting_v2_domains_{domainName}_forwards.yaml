@@ -93,7 +93,7 @@ get:
   summary: List domain forwards
   tags:
     - Email
-    - Emails | title
+    - Emails
   x-codeSamples:
     - lang: Shell + Curl
       source:

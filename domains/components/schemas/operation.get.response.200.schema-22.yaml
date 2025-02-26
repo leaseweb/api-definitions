@@ -1,0 +1,10 @@
+items:
+  type: object
+  properties:
+    name:
+      type: string
+      example: test.example.com
+    ttl:
+      type: integer
+      example: 3600
+type: array

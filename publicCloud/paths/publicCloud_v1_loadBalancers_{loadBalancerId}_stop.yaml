@@ -23,7 +23,7 @@ post:
   summary: Stop a specific Load Balancer
   tags:
     - Power
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

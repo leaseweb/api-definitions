@@ -69,7 +69,7 @@ get:
   summary: Get load balancer details
   tags:
     - Load Balancer
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -115,7 +115,7 @@ delete:
   summary: Delete load balancer
   tags:
     - Load Balancer
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -221,7 +221,7 @@ put:
   summary: Update load balancer
   tags:
     - Load Balancer
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

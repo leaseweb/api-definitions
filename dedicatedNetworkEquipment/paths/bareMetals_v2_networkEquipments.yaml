@@ -165,7 +165,7 @@ get:
   summary: List network equipment
   tags:
     - Getting Started
-    - Dedicated Network Equipments | title
+    - Dedicated Network Equipments
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -50,7 +50,7 @@ get:
   summary: Get instance CPU metrics
   tags:
     - Metrics
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

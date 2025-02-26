@@ -1,7 +1,7 @@
 post:
   tags:
     - Domain
-    - CDN | title
+    - CDN
   summary: Create Domain
   description: Add custom domains to a distribution.
   operationId: create_domain_v1_distributions__distribution_id__domains_post
@@ -81,7 +81,7 @@ post:
 get:
   tags:
     - Domain
-    - CDN | title
+    - CDN
   summary: Get All Domains
   description: Get the list of custom domains attached to a distribution.
   operationId: get_all_domains_v1_distributions__distribution_id__domains_get

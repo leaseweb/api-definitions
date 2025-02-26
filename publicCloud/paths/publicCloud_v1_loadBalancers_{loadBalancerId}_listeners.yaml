@@ -39,7 +39,7 @@ get:
   summary: Get listener list
   tags:
     - Load Balancer
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -197,7 +197,7 @@ post:
   summary: Create listener
   tags:
     - Load Balancer
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

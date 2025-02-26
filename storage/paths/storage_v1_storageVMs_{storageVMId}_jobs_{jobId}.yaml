@@ -25,7 +25,7 @@ get:
     '503':
       $ref: ../components/responses/503.yaml
   tags:
-    - Storage | title
+    - Storage
   x-codeSamples:
     - lang: Shell + Curl
       source:

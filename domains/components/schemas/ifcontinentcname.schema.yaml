@@ -1,0 +1,13 @@
+properties:
+  continentCode:
+    type: string
+  primaryAddress:
+    type: string
+  fallBackAddress:
+    type: string
+required:
+  - primaryAddress
+  - fallBackAddress
+  - continentCode
+title: ifContinentCNAME
+type: object

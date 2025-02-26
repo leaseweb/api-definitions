@@ -36,7 +36,7 @@ get:
   summary: Get marketplace apps
   tags:
     - Marketplace Apps
-    - Public Clouds | title
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:

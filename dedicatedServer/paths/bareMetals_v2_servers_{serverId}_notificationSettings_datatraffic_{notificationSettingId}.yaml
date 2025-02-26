@@ -15,7 +15,7 @@ delete:
   summary: Delete a data traffic notification setting
   tags:
     - Notification Settings
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -68,7 +68,7 @@ get:
   summary: Show a data traffic notification setting
   tags:
     - Notification Settings
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -127,7 +127,7 @@ put:
   summary: Update a data traffic notification setting
   tags:
     - Notification Settings
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:

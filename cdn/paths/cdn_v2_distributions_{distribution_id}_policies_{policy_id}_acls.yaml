@@ -1,7 +1,7 @@
 post:
   tags:
     - ACL
-    - CDN | title
+    - CDN
   summary: Create Acl
   description: |-
     Create an ACL to control the traffic to a policy.
@@ -99,7 +99,7 @@ post:
 get:
   tags:
     - ACL
-    - CDN | title
+    - CDN
   summary: Get All Acls
   description: Get the list of active ACLs in a policy.
   operationId: >-

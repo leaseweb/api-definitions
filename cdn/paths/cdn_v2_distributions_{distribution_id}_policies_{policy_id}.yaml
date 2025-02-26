@@ -1,7 +1,7 @@
 get:
   tags:
     - Policy
-    - CDN | title
+    - CDN
   summary: Get Policy By Id
   description: Get the details of a policy using its ID.
   operationId: get_policy_by_id_v1_distributions__distribution_id__policies__policy_id__get
@@ -119,7 +119,7 @@ get:
 put:
   tags:
     - Policy
-    - CDN | title
+    - CDN
   summary: Update Policy By Id
   operationId: >-
     update_policy_by_id_v1_distributions__distribution_id__policies__policy_id__put
@@ -290,7 +290,7 @@ put:
 delete:
   tags:
     - Policy
-    - CDN | title
+    - CDN
   summary: Delete Policy By Id
   operationId: >-
     delete_policy_by_id_v1_distributions__distribution_id__policies__policy_id__delete

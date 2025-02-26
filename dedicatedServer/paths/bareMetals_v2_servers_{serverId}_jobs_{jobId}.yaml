@@ -72,7 +72,7 @@ get:
   summary: Show a job
   tags:
     - Jobs
-    - Dedicated Servers | title
+    - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
       source:

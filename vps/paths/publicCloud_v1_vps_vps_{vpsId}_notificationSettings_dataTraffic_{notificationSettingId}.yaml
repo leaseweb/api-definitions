@@ -37,7 +37,7 @@ get:
   summary: Get details of a notification Setting
   tags:
     - Notification Settings
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -113,7 +113,7 @@ post:
   summary: Create a notification setting
   tags:
     - Notification Settings
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -186,7 +186,7 @@ put:
   summary: Update Notification Setting details
   tags:
     - Notification Settings
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -226,7 +226,7 @@ delete:
   summary: Delete a notification setting setting
   tags:
     - Notification Settings
-    - VPS | title
+    - VPS
   x-codeSamples:
     - lang: Shell + Curl
       source:

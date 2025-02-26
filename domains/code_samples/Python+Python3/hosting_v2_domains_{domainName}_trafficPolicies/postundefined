@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"name\":\"test.example.com\",\"ttl\":3600,\"policies\":[{\"policy\":\"PICKCLOSEST\",\"type\":\"A\",\"rule\":{\"ips\":[\"string\"]}}]}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/hosting/v2/domains/example.com/trafficPolicies", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

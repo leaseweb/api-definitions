@@ -33,7 +33,7 @@ get:
   summary: Show a network equipment IP
   tags:
     - IPs
-    - Dedicated Network Equipments | title
+    - Dedicated Network Equipments
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -112,7 +112,7 @@ put:
   summary: Update an IP
   tags:
     - IPs
-    - Dedicated Network Equipments | title
+    - Dedicated Network Equipments
   x-codeSamples:
     - lang: Shell + Curl
       source:
