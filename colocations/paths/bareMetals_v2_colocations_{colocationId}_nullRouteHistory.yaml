@@ -1,0 +1,64 @@
+get:
+  operationId: get/colocations/{colocationId}/nullRouteHistory
+  summary: Inspect null route history
+  description: ''
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                _metadata:
+                  limit: 10
+                  offset: 0
+                  totalCount: 1
+                nullRoutes:
+                  - automatedUnnullingAt: '2016-08-12T07:45:33+00:00'
+                    comment: Device Null Route related to DDoS Mitigation
+                    ip: 1.1.1.1/32
+                    nullLevel: 3
+                    nulledAt: '2016-08-12T07:40:27+00:00'
+                    ticketId: '282912'
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+  tags:
+    - Colocations
+    - Colocation
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_colocations_{colocationId}_nullRouteHistory/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_colocations_{colocationId}_nullRouteHistory/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_colocations_{colocationId}_nullRouteHistory/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_colocations_{colocationId}_nullRouteHistory/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_colocations_{colocationId}_nullRouteHistory/getundefined
+parameters:
+  - $ref: ../components/parameters/colocationId.yaml

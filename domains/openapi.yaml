@@ -101,10 +101,6 @@ paths:
   /hosting/v2/domains/{domainName}/mailboxes/{emailAddress}/autoResponder:
     $ref: >-
       paths/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder.yaml
-  /hosting/v2/domains/{domainName}/trafficPolicies/{name}:
-    $ref: paths/hosting_v2_domains_{domainName}_trafficPolicies_{name}.yaml
-  /hosting/v2/domains/{domainName}/trafficPolicies:
-    $ref: paths/hosting_v2_domains_{domainName}_trafficPolicies.yaml
 components:
   securitySchemes:
     X-LSW-Auth:

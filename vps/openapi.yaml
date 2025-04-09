@@ -113,6 +113,10 @@ paths:
   /publicCloud/v1/vps/vps/{vpsId}/notificationSettings/dataTraffic/{notificationSettingId}:
     $ref: >-
       paths/publicCloud_v1_vps_vps_{vpsId}_notificationSettings_dataTraffic_{notificationSettingId}.yaml
+  /publicCloud/v1/vps/vps/{vpsId}/monitoring/status:
+    $ref: paths/publicCloud_v1_vps_vps_{vpsId}_monitoring_status.yaml
+  /publicCloud/v1/vps/vps/{vpsId}/monitoring:
+    $ref: paths/publicCloud_v1_vps_vps_{vpsId}_monitoring.yaml
 components:
   securitySchemes:
     BearerAuth:

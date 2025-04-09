@@ -221,7 +221,6 @@ get:
                 region: eu-west-3
                 reference: my-load-balancer
                 state: RUNNING
-                rootDiskSize: 10
                 ips:
                   - ip: 85.99.99.99
                     prefixLength: '28'
@@ -263,7 +262,7 @@ get:
                   warmupTime: null
                   cooldownTime: null
           schema:
-            $ref: ../components/schemas/getLoadBalancerListResult.yaml
+            $ref: ../components/schemas/loadBalancers.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':

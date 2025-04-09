@@ -1,0 +1,29 @@
+properties:
+  threshold:
+    properties:
+      value:
+        description: Threshold value for the notification setting
+        type: integer
+      unit:
+        $ref: ./unit.yaml
+    required:
+      - value
+      - unit
+  timePeriod:
+    $ref: ./timePeriod.yaml
+  action:
+    $ref: ./action.yaml
+  channels:
+    type: array
+    items:
+      properties:
+        type:
+          type: string
+          example: EMAIL
+        contactGroup:
+          type: string
+          example: TECHNICAL
+    required:
+      - type
+      - contactGroup
+type: object

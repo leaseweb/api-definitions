@@ -1,8 +1,0 @@
-properties:
-  loadBalancers:
-    type: array
-    items:
-      $ref: ./loadBalancerListItem.yaml
-  _metadata:
-    $ref: ./_metadata.yaml
-type: object

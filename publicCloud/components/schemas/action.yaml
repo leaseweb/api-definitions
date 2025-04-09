@@ -1,0 +1,6 @@
+type: string
+description: The action for when the threshold is exceeded
+enum:
+  - POWER_OFF
+  - null
+nullable: true

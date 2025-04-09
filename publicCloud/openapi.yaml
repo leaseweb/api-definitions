@@ -209,6 +209,12 @@ paths:
     $ref: paths/publicCloud_v1_targetGroups_{targetGroupId}_registerTargets.yaml
   /publicCloud/v1/targetGroups/{targetGroupId}/deregisterTargets:
     $ref: paths/publicCloud_v1_targetGroups_{targetGroupId}_deregisterTargets.yaml
+  /publicCloud/v1/instances/{instanceId}/notificationSettings/dataTraffic:
+    $ref: >-
+      paths/publicCloud_v1_instances_{instanceId}_notificationSettings_dataTraffic.yaml
+  /publicCloud/v1/instances/{instanceId}/notificationSettings/dataTraffic/{notificationSettingId}:
+    $ref: >-
+      paths/publicCloud_v1_instances_{instanceId}_notificationSettings_dataTraffic_{notificationSettingId}.yaml
 components:
   securitySchemes:
     BearerAuth:

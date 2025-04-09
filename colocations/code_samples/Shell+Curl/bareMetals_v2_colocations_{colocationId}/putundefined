@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/bareMetals/v2/colocations/12312 \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"reference":"production"}'

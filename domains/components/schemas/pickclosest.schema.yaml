@@ -1,9 +1,0 @@
-properties:
-  ips:
-    type: array
-    items:
-      type: string
-required:
-  - ips
-title: pickclosest
-type: object

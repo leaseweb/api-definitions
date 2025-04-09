@@ -1,0 +1,7 @@
+description: Frequency of the notification setting
+type: string
+example: DAY
+enum:
+  - DAY
+  - WEEK
+  - MONTH

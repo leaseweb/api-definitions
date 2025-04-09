@@ -73,6 +73,34 @@ properties:
         description: Timezone represented as Geographical_Area/City
         type: string
         example: UTC
+      raid:
+        title: raidPayload
+        type: object
+        nullable: true
+        properties:
+          type:
+            description: The type of RAID
+            enum:
+              - HW
+              - SW
+              - NONE
+            type: string
+          level:
+            description: The RAID level
+            enum:
+              - 0
+              - 1
+              - 5
+              - 10
+            type: integer
+            nullable: true
+          numberOfDisks:
+            description: The number of disks in the RAID
+            type: integer
+            nullable: true
+      hostname:
+        description: The hostname of the server
+        type: string
   progress:
     title: progress
     description: Describes progress of the jobs on the server

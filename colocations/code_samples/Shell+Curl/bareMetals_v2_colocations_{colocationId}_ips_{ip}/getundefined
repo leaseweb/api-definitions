@@ -1,0 +1,3 @@
+curl --request GET \
+  --url https://api.leaseweb.com/bareMetals/v2/colocations/12312/ips/192.168.0.1 \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

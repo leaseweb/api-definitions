@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/bareMetals/v2/colocations/12312/credentials?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

@@ -1,37 +1,59 @@
-allOf:
-  - $ref: ./baseContract.yaml
-  - type: object
-    required:
-      - id
-      - sla
-      - controlPanel
-      - inModification
-      - dataTraffic
+type: object
+required:
+  - type
+  - term
+  - billingFrequency
+  - endsAt
+  - createdAt
+  - state
+  - id
+  - sla
+  - controlPanel
+  - inModification
+  - dataTraffic
+properties:
+  billingFrequency:
+    $ref: ./billingFrequency.yaml
+  term:
+    $ref: ./contractTerm.yaml
+  type:
+    $ref: ./contractType.yaml
+  endsAt:
+    type: string
+    format: date-time
+    example: '2023-11-30T16:31:28+00:00'
+    nullable: true
+  createdAt:
+    type: string
+    description: Date when the contract was created
+    format: date-time
+    example: '2023-11-30T16:31:28+00:00'
+  state:
+    $ref: ./contractState.yaml
+  id:
+    type: string
+    example: '41228459000100'
+  sla:
+    type: string
+    example: Basic
+  controlPanel:
+    type: string
+    example: cPanel Admin 5
+    nullable: true
+  inModification:
+    type: boolean
+    example: false
+  dataTraffic:
+    title: dataTraffic
+    description: Data traffic commitment
+    type: object
     properties:
-      id:
+      value:
+        type: number
+        example: 30
+      unit:
         type: string
-        example: '41228459000100'
-      sla:
-        type: string
-        example: Basic
-      controlPanel:
-        type: string
-        example: cPanel Admin 5
-        nullable: true
-      inModification:
-        type: boolean
-        example: false
-      dataTraffic:
-        title: dataTraffic
-        description: Data traffic commitment
-        type: object
-        properties:
-          value:
-            type: number
-            example: 30
-          unit:
-            type: string
-            enum:
-              - TB
-              - GB
-            example: TB
+        enum:
+          - TB
+          - GB
+        example: TB

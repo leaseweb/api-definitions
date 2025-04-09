@@ -592,7 +592,7 @@ get:
                   createdAt: '2024-04-09T15:11:21+00:00'
                   state: ACTIVE
           schema:
-            $ref: ../components/schemas/getInstanceListResult.yaml
+            $ref: ../components/schemas/instanceList.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':

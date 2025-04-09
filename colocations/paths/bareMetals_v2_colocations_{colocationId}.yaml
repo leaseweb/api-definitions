@@ -1,0 +1,266 @@
+get:
+  operationId: get/colocations/{colocationId}
+  tags:
+    - Colocations
+    - Colocation
+  summary: Inspect a colocation
+  description: ''
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            properties:
+              id:
+                type: string
+                description: Id of the colocation
+              location:
+                type: object
+                description: Location of the colocation
+              networkInterfaces:
+                type: object
+                description: Network interface information grouped by type
+              featureAvailability:
+                type: object
+                description: List of features that are available for this colocation
+              powerPorts:
+                type: array
+                description: >-
+                  List of ports that can be used to manage power of the
+                  colocation
+              contract:
+                type: object
+                description: Contract information
+              units:
+                type: array
+                description: List of units for this colocation
+                items:
+                  type: object
+                  description: A single object of the unit
+                  properties:
+                    unit:
+                      type: string
+                      description: The number of the unit
+                      examples:
+                        - '1'
+                    status:
+                      type: string
+                      description: The status of the unit
+                      enum:
+                        - FREE
+                        - OCCUPIED
+                      examples:
+                        - FREE
+                    connectedUnits:
+                      type: array
+                      description: >-
+                        If this unit is occupied by an equipment show all
+                        connected units including the unit itself
+                      examples:
+                        - - '13'
+                          - '14'
+          examples:
+            example:
+              value:
+                contract:
+                  customerId: '1234567899'
+                  deliveryStatus: ACTIVE
+                  endsAt: null
+                  id: '654321'
+                  networkTraffic:
+                    datatrafficLimit: 0
+                    datatrafficUnit: null
+                    trafficType: CUSTOM
+                    type: 95TH
+                  reference: AAAA - Colocation 002
+                  salesOrgId: '2000'
+                  startsAt: '2017-08-01T00:00:00'
+                featureAvailability:
+                  powerCycle: false
+                  privateNetwork: false
+                id: '654321'
+                location:
+                  rack: rack name
+                  site: site label
+                  suite: suite label
+                networkInterfaces:
+                  public:
+                    ports:
+                      - name: ce05.ams-01
+                        port: 0-26
+                powerPorts: []
+                units:
+                  - unit: '1'
+                    status: FREE
+                    connectedUnits:
+                      - '1'
+                  - unit: '13'
+                    status: OCCUPIED
+                    connectedUnits:
+                      - '13'
+                      - '14'
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '418':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: I'M A TEAPOT
+  parameters: []
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_colocations_{colocationId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_colocations_{colocationId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_colocations_{colocationId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_colocations_{colocationId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_colocations_{colocationId}/getundefined
+put:
+  operationId: put/colocations/{colocationId}
+  tags:
+    - Colocations
+    - Colocation
+  summary: Update a colocation
+  description: >-
+    A reference can be set to uniquely identify a colocation with a name, such
+    as
+
+    `production`.
+  requestBody:
+    content:
+      application/json:
+        examples:
+          example:
+            value:
+              reference: production
+        schema:
+          type: object
+          $schema: http://json-schema.org/draft-04/schema
+          id: http://jsonschema.net
+          properties:
+            reference:
+              type: string
+              description: The reference for this colocation
+              examples:
+                - production
+          required:
+            - reference
+  responses:
+    '204':
+      description: If the reference was successfully set a `204 No Content` is returned
+      content: {}
+    '400':
+      description: The `errorDetails` value is an object describing why validation failed.
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 945bef2e-1caf-4027-bd0a-8976848f3dee
+                errorCode: 400
+                errorDetails: {}
+                errorMessage: Validation Failed
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '418':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: I'M A TEAPOT
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_colocations_{colocationId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_colocations_{colocationId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_colocations_{colocationId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_colocations_{colocationId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_colocations_{colocationId}/putundefined
+parameters:
+  - $ref: ../components/parameters/colocationId.yaml

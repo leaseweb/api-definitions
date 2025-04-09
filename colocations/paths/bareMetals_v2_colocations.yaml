@@ -1,0 +1,143 @@
+get:
+  operationId: get-colocations
+  tags:
+    - Colocations
+    - Colocation
+  summary: List colocations
+  description: |+
+
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - description: Filter the list of colocations by reference.
+      example: my-db
+      in: query
+      name: reference
+      schema:
+        type: string
+    - schema:
+        type: boolean
+        enum:
+          - true
+          - false
+      in: query
+      name: privateNetworkCapable
+      description: Filter the list of private network capable colocations
+    - schema:
+        type: boolean
+        enum:
+          - true
+          - false
+      in: query
+      name: privateNetworkEnabled
+      description: Filter the list of private network enabled colocations
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            type: object
+            $schema: http://json-schema.org/draft-04/schema
+            id: http://jsonschema.net
+            properties:
+              _metadata:
+                type: object
+                description: Metadata about the collection
+                properties:
+                  limit:
+                    type: integer
+                    description: The maximum number of results returned
+                    default: 20
+                  offset:
+                    type: integer
+                    description: Results are returned started at the given offset
+                    default: 0
+                  totalCount:
+                    type: integer
+                    description: The total amount of results
+              colocations:
+                type: array
+                description: An array of colocations
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: Id of the colocation
+                    location:
+                      type: object
+                      description: Location of the colocation
+                    networkInterfaces:
+                      type: object
+                      description: Network interface information grouped by type
+                    featureAvailability:
+                      type: object
+                      description: List of features that are available for this colocation
+                    contract:
+                      type: object
+                      description: Contract information
+          examples:
+            example:
+              value:
+                _metadata:
+                  limit: 20
+                  offset: 0
+                  totalCount: 1
+                colocations:
+                  - contract:
+                      customerId: '1234567899'
+                      deliveryStatus: ACTIVE
+                      id: '123456'
+                      reference: AAAA - Colocation 001
+                      salesOrgId: '2000'
+                    featureAvailability:
+                      powerCycle: false
+                      privateNetwork: false
+                    id: '123456'
+                    location:
+                      rack: '22'
+                      site: AMS-01
+                      suite: '8.24'
+                    networkInterfaces:
+                      public:
+                        ports:
+                          - name: EVO-BB99-1
+                            port: 0-9
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '418':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: I'M A TEAPOT
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/bareMetals_v2_colocations/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/bareMetals_v2_colocations/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/bareMetals_v2_colocations/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_colocations/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/bareMetals_v2_colocations/getundefined

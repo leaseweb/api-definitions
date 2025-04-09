@@ -1,0 +1,8 @@
+properties:
+  status:
+    $ref: ./monitoringStatus.yaml
+  description:
+    type: string
+    title: monitoringDescription
+    example: Service is Up
+type: object

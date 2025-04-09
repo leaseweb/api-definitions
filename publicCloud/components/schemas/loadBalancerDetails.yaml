@@ -1,12 +1,50 @@
-allOf:
-  - $ref: ./loadBalancer.yaml
-  - title: loadBalancerDetails
-    type: object
-    required:
-      - ips
+type: object
+required:
+  - id
+  - type
+  - resources
+  - reference
+  - state
+  - startedAt
+  - contract
+  - region
+  - configuration
+  - privateNetwork
+  - autoScalingGroup
+  - ips
+properties:
+  id:
+    type: string
+    format: uuid
+    description: The load balancer unique identifier
+  type:
+    $ref: ./typeName.yaml
+  resources:
+    $ref: ./resources.yaml
+  reference:
+    type: string
+    description: The identifying name set to the load balancer
     nullable: true
-    properties:
-      ips:
-        type: array
-        items:
-          $ref: ./ipDetails.yaml
+  state:
+    $ref: ./state.yaml
+  startedAt:
+    type: string
+    description: >-
+      Date and time when the load balancer was started for the first time, right
+      after launching it
+    format: date-time
+    nullable: true
+  region:
+    $ref: ./regionName.yaml
+  configuration:
+    $ref: ./loadBalancerConfiguration.yaml
+  autoScalingGroup:
+    $ref: ./autoScalingGroup.yaml
+  privateNetwork:
+    $ref: ./privateNetwork.yaml
+  contract:
+    $ref: ./contract.yaml
+  ips:
+    type: array
+    items:
+      $ref: ./ipDetails.yaml

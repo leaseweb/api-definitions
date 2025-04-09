@@ -1,6 +1,4 @@
-nullable: true
 type: object
-title: loadBalancer
 required:
   - id
   - type
@@ -13,6 +11,7 @@ required:
   - configuration
   - privateNetwork
   - autoScalingGroup
+  - ips
 properties:
   id:
     type: string
@@ -45,3 +44,7 @@ properties:
     $ref: ./privateNetwork.yaml
   contract:
     $ref: ./contract.yaml
+  ips:
+    type: array
+    items:
+      $ref: ./ip.yaml

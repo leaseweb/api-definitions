@@ -68,8 +68,13 @@ get:
                   pop: AMS-01
                   powerCycle: true
                   raidLevel: null
-                  serverId: '12345'
+                  serverId: '99944'
                   timezone: UTC
+                  raid:
+                    type: SW
+                    level: 0
+                    numberOfDisks: 2
+                  hostname: server.leaseweb.com
                 progress:
                   canceled: 0
                   expired: 0

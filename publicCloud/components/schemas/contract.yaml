@@ -1,11 +1,34 @@
-allOf:
-  - $ref: ./baseContract.yaml
-  - type: object
-    required:
-      - renewalsAt
-    properties:
-      renewalsAt:
-        type: string
-        description: Date when the contract will be automatically renewed
-        format: date-time
-        example: '2023-11-30T16:31:28+00:00'
+type: object
+title: contract
+required:
+  - renewalsAt
+  - type
+  - term
+  - billingFrequency
+  - endsAt
+  - createdAt
+  - state
+properties:
+  billingFrequency:
+    $ref: ./billingFrequency.yaml
+  term:
+    $ref: ./contractTerm.yaml
+  type:
+    $ref: ./contractType.yaml
+  endsAt:
+    type: string
+    format: date-time
+    example: '2023-11-30T16:31:28+00:00'
+    nullable: true
+  createdAt:
+    type: string
+    description: Date when the contract was created
+    format: date-time
+    example: '2023-11-30T16:31:28+00:00'
+  state:
+    $ref: ./contractState.yaml
+  renewalsAt:
+    type: string
+    description: Date when the contract will be automatically renewed
+    format: date-time
+    example: '2023-11-30T16:31:28+00:00'

@@ -14,7 +14,10 @@ properties:
     properties:
       active:
         type: boolean
-        description: Setting the state to active defines dnssec will be signed with nsec3
+        default: true
+        description: >-
+          Dnssec will be signed with nsec3 by default. Setting this value to
+          false, disables use of nsec3
         examples:
           - true
     required:

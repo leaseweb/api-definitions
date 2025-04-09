@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/bareMetals/v2/colocations?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE&reference=my-db&privateNetworkCapable=SOME_BOOLEAN_VALUE&privateNetworkEnabled=SOME_BOOLEAN_VALUE", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

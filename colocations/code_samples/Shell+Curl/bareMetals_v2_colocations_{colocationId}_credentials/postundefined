@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/bareMetals/v2/colocations/12312/credentials \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"type":"OPERATING_SYSTEM","username":"root","password":"s0m3th1ngs3cr3t"}'

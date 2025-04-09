@@ -1,0 +1,97 @@
+get:
+  operationId: get/colocations/{colocationId}/networkInterfaces/public
+  tags:
+    - Colocations
+    - Colocation
+  summary: Inspect public network interface
+  description: ''
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                linkSpeed: 100Mbps
+                status: OPEN
+                switchInterface: '33'
+                switchName: EVO-JV12-1
+                type: PUBLIC
+    '401':
+      description: Authentication is required.
+      content: {}
+    '403':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: ACCESS_DENIED
+                errorMessage: The access token is expired or invalid.
+    '404':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '404'
+                errorMessage: Resource not found
+    '418':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                errorCode: I'M A TEAPOT
+    '500':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '500'
+                errorMessage: >-
+                  The server encountered an unexpected condition that prevented
+                  it from fulfilling the request.
+    '503':
+      description: ''
+      content:
+        application/json:
+          examples:
+            example:
+              value:
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+                errorCode: '503'
+                errorMessage: >-
+                  The server is currently unable to handle the request due to a
+                  temporary overloading or maintenance of the server.
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_colocations_{colocationId}_networkInterfaces_public/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_colocations_{colocationId}_networkInterfaces_public/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_colocations_{colocationId}_networkInterfaces_public/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_colocations_{colocationId}_networkInterfaces_public/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_colocations_{colocationId}_networkInterfaces_public/getundefined
+parameters:
+  - $ref: ../components/parameters/colocationId.yaml
