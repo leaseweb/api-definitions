@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"request":{"visitors":[{"firstName":"string","lastName":"string","email":"string","phoneNumber":"string","smsConfirmation":true,"citizenship":"string"}],"visitDateStart":"2019-08-24T14:15:22Z","visitDateEnd":"2019-08-24T14:15:22Z","site":"string","allowedItems":["string"]}}');
+
+$request->setRequestUrl('https://api.leaseweb.com/datacenterAccess/v1/visitRequests');
+$request->setRequestMethod('POST');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

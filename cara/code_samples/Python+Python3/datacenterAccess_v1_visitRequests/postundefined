@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"request\":{\"visitors\":[{\"firstName\":\"string\",\"lastName\":\"string\",\"email\":\"string\",\"phoneNumber\":\"string\",\"smsConfirmation\":true,\"citizenship\":\"string\"}],\"visitDateStart\":\"2019-08-24T14:15:22Z\",\"visitDateEnd\":\"2019-08-24T14:15:22Z\",\"site\":\"string\",\"allowedItems\":[\"string\"]}}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/datacenterAccess/v1/visitRequests", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

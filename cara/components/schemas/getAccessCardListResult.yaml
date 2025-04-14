@@ -1,0 +1,11 @@
+properties:
+  accessCards:
+    type: array
+    items:
+      $ref: ./accessCard.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - accessCards
+  - _metadata
+type: object

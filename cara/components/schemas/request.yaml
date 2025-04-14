@@ -1,0 +1,71 @@
+title: Request
+type: object
+properties:
+  id:
+    description: Identifier of a request
+    type: string
+  requestCode:
+    description: Request code for checking in
+    type: string
+  salesOrgId:
+    description: salesOrg id
+    type: string
+  customerId:
+    description: Customer who is requesting access
+    type: string
+  customerName:
+    description: Customer name
+    type: string
+  firstName:
+    description: First name of the person who will access the datacenter
+    type: string
+  lastName:
+    description: Last name of the person who will access the datacenter
+    type: string
+  email:
+    description: Email address of the requestor
+    type: string
+  phoneNumber:
+    description: Phone number of the requestor
+    type: string
+  smsConfirmation:
+    description: Whether or not SMS should be sent when request is accepted
+    type: boolean
+  visitDateStart:
+    description: Date of start of the visit in the datacenter in UTC
+    type: string
+    format: date-time
+  visitDateEnd:
+    description: Date of end of the visit in the datacenter in UTC
+    type: string
+    format: date-time
+  requestDate:
+    description: Date/time when request was made in UTC
+    type: string
+    format: date-time
+  site:
+    description: Datacenter ID
+    type: string
+  createdByUser:
+    description: Username of the requestor
+    type: string
+  allowedItems:
+    description: Items which the visitor wants to get access to
+    type: array
+    minItems: 1
+    items:
+      title: allowedItem
+      type: object
+      properties:
+        equipmentId:
+          type: string
+          description: Identifier of the equipment
+        location:
+          type: string
+          description: Location of the equipment
+        colocationType:
+          $ref: ./colocationType.yaml
+    uniqueItems: true
+  ticketId:
+    type: string
+    description: ID of the support ticket created for this request

@@ -1,0 +1,194 @@
+get:
+  operationId: getAccessCardList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - name: email
+      in: query
+      schema:
+        type: string
+      description: Filter access cards by email address
+    - name: sort
+      in: query
+      schema:
+        type: string
+      description: >-
+        Sort field and order. Sort order is specified by prefixing the field
+        name with a '+' (for ascending) or '-' (for descending). Ascending order
+        is default. Multiple sort fields should be separated with comma.
+        Sortable fields: createdAt
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 2
+              offset: 0
+              limit: 2
+            accessCards:
+              - id: 43f0747e-32ce-4f19-b35e-b8cc1420c921
+                hasUser: true
+                customerId: '123456789'
+                salesOrgId: '1000'
+                firstName: John
+                lastName: Smith
+                phoneNumber: '+441134960000'
+                email: john.smith@example.com
+                multipleAccess: false
+                approved: true
+                enabled: false
+                allowedItems:
+                  - '22'
+                  - '232323'
+                allItemsAllowed: false
+                hasPermanentBadge: false
+                isAccessCardHolder: true
+                createdBy: john.doe@example.com
+                createdAt: '2015-01-19T12:32:05Z'
+                updatedBy: john.doe@example.com
+                updatedAt: '2015-01-19T12:32:05Z'
+                badgeStatus: PENDING
+                accessBadgeNumber: null
+              - id: c5eea038-6a4a-4130-8824-78e0e72a5157
+                hasUser: true
+                customerId: '343434343'
+                salesOrgId: '2000'
+                firstName: Jake
+                lastName: Smith
+                phoneNumber: '+441134960001'
+                email: jake.smith@example.com
+                multipleAccess: false
+                approved: true
+                enabled: false
+                allowedItems: []
+                allItemsAllowed: true
+                hasPermanentBadge: false
+                isAccessCardHolder: true
+                createdBy: john.doe@example.com
+                createdAt: '2015-01-19T12:32:05Z'
+                updatedBy: john.doe@example.com
+                updatedAt: '2015-01-19T12:32:05Z'
+                badgeStatus: PENDING
+                accessBadgeNumber: null
+          schema:
+            $ref: ../components/schemas/getAccessCardListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get a list of access cards
+  tags:
+    - Access Cards
+    - LeaseWeb API for Common DC Access
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/datacenterAccess_v1_accessCards/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/datacenterAccess_v1_accessCards/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/datacenterAccess_v1_accessCards/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/datacenterAccess_v1_accessCards/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/datacenterAccess_v1_accessCards/getundefined
+post:
+  operationId: createAccessCard
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/createAccessCardOpts.yaml
+        example:
+          allItemsAllowed: false
+          allowedItems:
+            - '123'
+            - '456'
+            - '7890'
+          email: customer@mail.com
+          firstName: John
+          hasPermanentBadge: false
+          hasUser: true
+          lastName: Doe
+          multipleAccess: true
+          phoneNumber: '+441134960000'
+  responses:
+    '201':
+      description: |
+        Created.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/accessCard.yaml
+          example:
+            id: 43f0747e-32ce-4f19-b35e-b8cc1420c921
+            hasUser: true
+            customerId: '123456789'
+            salesOrgId: '2000'
+            firstName: John
+            lastName: Smith
+            phoneNumber: '+441134960000'
+            email: john.smith@example.com
+            multipleAccess: false
+            approved: true
+            enabled: false
+            allowedItems:
+              - '22'
+              - '232323'
+            allItemsAllowed: false
+            hasPermanentBadge: false
+            isAccessCardHolder: true
+            createdBy: john.doe@example.com
+            createdAt: '2015-01-19T12:32:05Z'
+            updatedBy: john.doe@example.com
+            updatedAt: '2015-01-19T12:32:05Z'
+            badgeStatus: PENDING
+            accessBadgeNumber: null
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create an access card
+  tags:
+    - Access Cards
+    - LeaseWeb API for Common DC Access
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/datacenterAccess_v1_accessCards/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/datacenterAccess_v1_accessCards/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/datacenterAccess_v1_accessCards/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/datacenterAccess_v1_accessCards/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/datacenterAccess_v1_accessCards/postundefined

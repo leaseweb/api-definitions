@@ -1,0 +1,67 @@
+get:
+  operationId: getVisitRequest
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            id: '1'
+            requestCode: ASDF1234
+            ticketId: '1001'
+            salesOrgId: '2000'
+            customerId: '123456789'
+            customerName: ACME
+            firstName: John
+            lastName: Doe
+            email: john.doe@example.com
+            phoneNumber: '+441134960000'
+            smsConfirmation: true
+            visitDateStart: '2015-01-20T18:08:00Z'
+            visitDateEnd: '2015-01-20T18:10:00Z'
+            requestDate: '2015-01-19T12:32:05Z'
+            site: AMS-01
+            createdByUser: john.doe@example.com
+            allowedItems:
+              - equipmentId: '1234'
+                location: Hall1/HZ01
+                colocationType: SHARED
+          schema:
+            $ref: ../components/schemas/request.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get access request by ID
+  tags:
+    - Access Requests
+    - LeaseWeb API for Common DC Access
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/datacenterAccess_v1_visitRequests_{id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/datacenterAccess_v1_visitRequests_{id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/datacenterAccess_v1_visitRequests_{id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/datacenterAccess_v1_visitRequests_{id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/datacenterAccess_v1_visitRequests_{id}/getundefined
+parameters:
+  - $ref: ../components/parameters/requestId.yaml

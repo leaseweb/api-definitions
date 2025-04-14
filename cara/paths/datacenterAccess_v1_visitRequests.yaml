@@ -1,0 +1,255 @@
+get:
+  operationId: getVisitRequestList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - name: fromDate
+      in: query
+      schema:
+        type: string
+      description: >-
+        Show requests with visit date from this date. Time should be given in
+        UTC.
+    - name: toDate
+      in: query
+      schema:
+        type: string
+      description: >-
+        Show requests with visit date ending on this date. Time should be given
+        in UTC.
+    - name: site
+      in: query
+      schema:
+        type: string
+      description: Show requests for this datacenter
+    - name: email
+      in: query
+      schema:
+        type: string
+      description: Filter access requests by email
+    - name: createdBy
+      in: query
+      schema:
+        type: string
+      description: Filter by createdBy
+    - name: q
+      in: query
+      schema:
+        type: string
+      description: >-
+        Search for access request by site (e.g. "AMS-01") or email or createdBy
+        (e.g. "test@example.com") or first name (e.g. "John") or last name
+    - name: sort
+      in: query
+      schema:
+        type: string
+      description: >-
+        Sort field and order. Sort order is specified by prefixing the field
+        name with a '+' (for ascending) or '-' (for descending). Ascending order
+        is default. Multiple sort fields should be separated with comma.
+        Sortable fields: id, firstName, lastName, createdByUser, requestDate,
+        email, phoneNumber, visitDateStart, visitDateEnd, requestCode, site
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 2
+              offset: 0
+              limit: 2
+            requests:
+              - id: '1'
+                requestCode: ASDF1234
+                ticketId: '1001'
+                salesOrgId: '2000'
+                customerId: '12345678'
+                customerName: ACME
+                firstName: John
+                lastName: Doe
+                email: john.doe@example.com
+                phoneNumber: '+441134960000'
+                smsConfirmation: true
+                visitDateStart: '2015-01-20T18:08:00Z'
+                visitDateEnd: '2015-01-20T18:10:00Z'
+                requestDate: '2015-01-19T12:32:05Z'
+                site: AMS-01
+                createdByUser: john.doe@example.com
+                allowedItems:
+                  - equipmentId: '1000'
+                    location: Hall1/AB01
+                    colocationType: SHARED
+              - id: '2'
+                requestCode: QWER1234
+                ticketId: '1001'
+                salesOrgId: '2000'
+                customerId: '123456789'
+                customerName: ACME
+                firstName: John
+                lastName: Smith
+                email: john.smith@example.com
+                phoneNumber: '+441134960001'
+                smsConfirmation: false
+                visitDateStart: '2015-01-20T18:08:00Z'
+                visitDateEnd: '2015-01-20T18:10:00Z'
+                requestDate: '2015-01-19T12:32:05Z'
+                site: AMS-01
+                createdByUser: john.doe@example.com
+                allowedItems:
+                  - equipmentId: '3000'
+                    location: Hall11/CD01
+                    colocationType: PRIVATE
+          schema:
+            $ref: ../components/schemas/getVisitRequestListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get a list of access requests
+  tags:
+    - Access Requests
+    - LeaseWeb API for Common DC Access
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/datacenterAccess_v1_visitRequests/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/datacenterAccess_v1_visitRequests/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/datacenterAccess_v1_visitRequests/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/datacenterAccess_v1_visitRequests/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/datacenterAccess_v1_visitRequests/getundefined
+post:
+  operationId: createVisitRequest
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/createVisitRequestOpts.yaml
+        example:
+          request:
+            visitDateStart: '2015-01-20T18:08:00Z'
+            visitDateEnd: '2015-01-20T18:10:00Z'
+            allowedItems:
+              - '3421'
+              - '2716'
+              - '8176'
+            site: AMS-01
+            visitors:
+              - firstName: John
+                lastName: Doe
+                email: john.doe@example.com
+                phoneNumber: '+441134960000'
+                smsConfirmation: true
+                citizenship: British
+              - firstName: John
+                lastName: Smith
+                email: john.smith@example.com
+                phoneNumber: '+441134960001'
+                smsConfirmation: false
+                citizenship: British
+  responses:
+    '201':
+      description: |
+        Created.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/createVisitRequestResult.yaml
+          example:
+            _metadata:
+              totalCount: 2
+              offset: 0
+              limit: 2
+            requests:
+              - id: '1'
+                requestCode: ASDF1234
+                ticketId: '1001'
+                salesOrgId: '2000'
+                customerId: '12345678'
+                customerName: ACME
+                firstName: John
+                lastName: Doe
+                email: john.doe@example.com
+                phoneNumber: '+441134960000'
+                smsConfirmation: true
+                visitDateStart: '2015-01-20T18:08:00Z'
+                visitDateEnd: '2015-01-20T18:10:00Z'
+                requestDate: '2015-01-19T12:32:05Z'
+                site: AMS-01
+                createdByUser: john.doe@example.com
+                allowedItems:
+                  - equipmentId: '1000'
+                    location: Hall1/AB01
+                    colocationType: SHARED
+              - id: '2'
+                requestCode: QWER1234
+                ticketId: '1001'
+                salesOrgId: '2000'
+                customerId: '123456789'
+                customerName: ACME
+                firstName: John
+                lastName: Smith
+                email: john.smith@example.com
+                phoneNumber: '+441134960001'
+                smsConfirmation: false
+                visitDateStart: '2015-01-20T18:08:00Z'
+                visitDateEnd: '2015-01-20T18:10:00Z'
+                requestDate: '2015-01-19T12:32:05Z'
+                site: AMS-01
+                createdByUser: john.doe@example.com
+                allowedItems:
+                  - equipmentId: '3000'
+                    location: Hall11/CD01
+                    colocationType: PRIVATE
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create access request
+  tags:
+    - Access Requests
+    - LeaseWeb API for Common DC Access
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/datacenterAccess_v1_visitRequests/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/datacenterAccess_v1_visitRequests/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/datacenterAccess_v1_visitRequests/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/datacenterAccess_v1_visitRequests/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/datacenterAccess_v1_visitRequests/postundefined

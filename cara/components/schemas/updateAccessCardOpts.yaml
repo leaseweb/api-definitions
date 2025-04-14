@@ -1,0 +1,35 @@
+properties:
+  firstName:
+    type: string
+    description: First Name
+  lastName:
+    type: string
+    description: Last Name
+  phoneNumber:
+    type: string
+    description: Phone Number
+    nullable: false
+  multipleAccess:
+    type: boolean
+    description: Is multiple access allowed
+  allowedItems:
+    type: array
+    description: Allowed equipments
+    items:
+      type: string
+  allItemsAllowed:
+    type: boolean
+    description: Are all equipments allowed
+  enabled:
+    type: boolean
+    description: Is access card enabled
+  hasPermanentBadge:
+    type: boolean
+    description: >-
+      If true then, unless they already have one, a permanent badge will be
+      requested for this user. If false then the permanent badge, if any, will
+      be deactivated.
+  hasUser:
+    type: boolean
+    description: Whether or not this person has a Customer Portal login
+type: object

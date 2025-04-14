@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/datacenterAccess/v1/accessCards",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"email\":\"string\",\"hasUser\":true,\"firstName\":\"string\",\"lastName\":\"string\",\"phoneNumber\":\"string\",\"multipleAccess\":true,\"allowedItems\":[\"string\"],\"allItemsAllowed\":true,\"hasPermanentBadge\":true}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

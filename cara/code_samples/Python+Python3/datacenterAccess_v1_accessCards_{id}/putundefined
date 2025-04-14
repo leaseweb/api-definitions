@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"firstName\":\"string\",\"lastName\":\"string\",\"phoneNumber\":\"string\",\"multipleAccess\":true,\"allowedItems\":[\"string\"],\"allItemsAllowed\":true,\"enabled\":true,\"hasPermanentBadge\":true,\"hasUser\":true}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("PUT", "/datacenterAccess/v1/accessCards/%7Bid%7D", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

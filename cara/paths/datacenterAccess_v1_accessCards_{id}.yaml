@@ -1,0 +1,195 @@
+get:
+  operationId: getAccessCard
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            id: 43f0747e-32ce-4f19-b35e-b8cc1420c921
+            hasUser: true
+            customerId: '123456789'
+            salesOrgId: '2000'
+            firstName: John
+            lastName: Smith
+            phoneNumber: '+441134960000'
+            email: john.smith@example.com
+            multipleAccess: false
+            approved: true
+            enabled: false
+            allowedItems:
+              - '22'
+              - '232323'
+            allItemsAllowed: false
+            hasPermanentBadge: false
+            isAccessCardHolder: true
+            createdBy: john.doe@example.com
+            createdAt: '2015-01-19T12:32:05Z'
+            updatedBy: john.doe@example.com
+            updatedAt: '2015-01-19T12:32:05Z'
+            badgeStatus: PENDING
+            accessBadgeNumber: null
+          schema:
+            $ref: ../components/schemas/accessCard.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get an access card by User Id
+  tags:
+    - Access Cards
+    - LeaseWeb API for Common DC Access
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/datacenterAccess_v1_accessCards_{id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/datacenterAccess_v1_accessCards_{id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/datacenterAccess_v1_accessCards_{id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/datacenterAccess_v1_accessCards_{id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/datacenterAccess_v1_accessCards_{id}/getundefined
+put:
+  operationId: updateAccessCard
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/updateAccessCardOpts.yaml
+        example:
+          allItemsAllowed: true
+          allowedItems: []
+          enabled: false
+          firstName: John
+          hasPermanentBadge: false
+          hasUser: true
+          lastName: Doe
+          multipleAccess: true
+          phoneNumber: '+441134960000'
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/accessCard.yaml
+          example:
+            id: 43f0747e-32ce-4f19-b35e-b8cc1420c921
+            hasUser: true
+            customerId: '123456789'
+            salesOrgId: '2000'
+            firstName: John
+            lastName: Smith
+            phoneNumber: '+441134960000'
+            email: john.smith@example.com
+            multipleAccess: false
+            approved: true
+            enabled: false
+            allowedItems:
+              - '22'
+              - '232323'
+            allItemsAllowed: false
+            hasPermanentBadge: false
+            isAccessCardHolder: true
+            createdBy: john.doe@example.com
+            createdAt: '2015-01-19T12:32:05Z'
+            updatedBy: john.doe@example.com
+            updatedAt: '2015-01-19T12:32:05Z'
+            badgeStatus: PENDING
+            accessBadgeNumber: null
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update an access card
+  tags:
+    - Access Cards
+    - LeaseWeb API for Common DC Access
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/datacenterAccess_v1_accessCards_{id}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/datacenterAccess_v1_accessCards_{id}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/datacenterAccess_v1_accessCards_{id}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/datacenterAccess_v1_accessCards_{id}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/datacenterAccess_v1_accessCards_{id}/putundefined
+delete:
+  operationId: deleteAccessCard
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete an access card
+  tags:
+    - Access Cards
+    - LeaseWeb API for Common DC Access
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/datacenterAccess_v1_accessCards_{id}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/datacenterAccess_v1_accessCards_{id}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/datacenterAccess_v1_accessCards_{id}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/datacenterAccess_v1_accessCards_{id}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/datacenterAccess_v1_accessCards_{id}/deleteundefined
+parameters:
+  - $ref: ../components/parameters/userId.yaml

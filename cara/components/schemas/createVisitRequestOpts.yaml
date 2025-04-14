@@ -1,0 +1,65 @@
+properties:
+  request:
+    description: Object describing the request
+    title: request
+    type: object
+    required:
+      - visitors
+      - visitDateStart
+      - visitDateEnd
+      - site
+      - allowedItems
+    properties:
+      visitors:
+        type: array
+        description: List of visitors
+        minItems: 1
+        items:
+          title: visitor
+          type: object
+          properties:
+            firstName:
+              description: First name of the person who will access the datacenter
+              type: string
+            lastName:
+              description: Last name of the person who will access the datacenter
+              type: string
+            email:
+              description: Email address of the requestor
+              type: string
+            phoneNumber:
+              description: Phone number of the requestor
+              type: string
+            smsConfirmation:
+              description: Whether or not SMS should be sent when request is accepted
+              type: boolean
+            citizenship:
+              type: string
+              description: Citizenship of the person who will access the datacenter
+          required:
+            - firstName
+            - lastName
+            - email
+            - phoneNumber
+            - smsConfirmation
+      visitDateStart:
+        description: Date and time of start of the visit in the datacenter in UTC
+        type: string
+        format: date-time
+      visitDateEnd:
+        description: Date and time of end of the visit in the datacenter in UTC
+        type: string
+        format: date-time
+      site:
+        description: The datacenter to visit
+        type: string
+      allowedItems:
+        description: Items (colocation Id) which the visitor wants to get access to
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items:
+          type: string
+required:
+  - request
+type: object

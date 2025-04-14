@@ -1,0 +1,5 @@
+type: string
+description: Which type of colocation the customer has, private or shared.
+enum:
+  - SHARED
+  - PRIVATE

@@ -1,0 +1,11 @@
+properties:
+  requests:
+    type: array
+    items:
+      $ref: ./request.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - requests
+  - _metadata
+type: object

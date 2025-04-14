@@ -1,0 +1,8 @@
+type: string
+nullable: true
+description: Access badge status
+enum:
+  - PENDING
+  - APPROVED
+  - TERMINATED
+  - SUSPENDED

@@ -1,0 +1,72 @@
+title: AccessCard
+type: object
+properties:
+  id:
+    type: string
+    description: Access Card ID
+  hasUser:
+    type: boolean
+    description: Whether or not this person has a Customer Portal login
+  email:
+    type: string
+    description: Email
+    nullable: true
+  customerId:
+    type: string
+    description: Customer Id
+  salesOrgId:
+    type: string
+    description: Sales OrgId
+  firstName:
+    type: string
+    description: First Name
+  phoneNumber:
+    type: string
+    description: Phone Number
+    nullable: true
+  lastName:
+    type: string
+    description: Last Name
+  multipleAccess:
+    type: boolean
+    description: Is multiple access allowed
+  approved:
+    type: boolean
+    description: Is access card approved
+  enabled:
+    type: boolean
+    description: Is access card enabled
+  allowedItems:
+    type: array
+    description: Allowed equipments
+    items:
+      type: string
+  allItemsAllowed:
+    type: boolean
+    description: Are all equipments allowed
+  hasPermanentBadge:
+    type: boolean
+    description: Whether or not this user has a permanent badge
+  isAccessCardHolder:
+    type: boolean
+    description: >-
+      If true then this is a data center access only user. Users like this are
+      only allowed to use the Customer Portal to request data center access.
+  createdAt:
+    type: string
+    description: Access card creation date and time
+  createdBy:
+    type: string
+    description: Access card creator user
+  updatedAt:
+    type: string
+    description: Access card updating date and time
+  updatedBy:
+    type: string
+    description: Access card updater user
+  badgeStatus:
+    $ref: ./badgeStatus.yaml
+  accessBadgeNumber:
+    type: string
+    description: Access badge number
+    nullable: true

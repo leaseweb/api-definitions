@@ -1,0 +1,40 @@
+properties:
+  email:
+    type: string
+    pattern: '[^\s@]+@[^\s@]+\.[^\s@]'
+    description: Customer Email
+  hasUser:
+    type: boolean
+    description: Whether or not this user should be allowed to log in to Customer Portal.
+  firstName:
+    type: string
+    description: First Name
+  lastName:
+    type: string
+    description: Last Name
+  phoneNumber:
+    type: string
+    description: Phone Number
+    nullable: false
+  multipleAccess:
+    type: boolean
+    description: Whether or not this user can bring visitors
+  allowedItems:
+    type: array
+    description: Allowed equipments
+    items:
+      type: string
+  allItemsAllowed:
+    type: boolean
+    description: Are all equipments allowed. If true then `allowedItems` must be empty.
+  hasPermanentBadge:
+    type: boolean
+    description: If true then a permanent badge will be requested for this user
+required:
+  - email
+  - firstName
+  - lastName
+  - multipleAccess
+  - allItemsAllowed
+  - hasUser
+type: object

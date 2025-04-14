@@ -1,0 +1,25 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://api.leaseweb.com/datacenterAccess/v1/visitRequests?limit=20&offset=10&fromDate=SOME_STRING_VALUE&toDate=SOME_STRING_VALUE&site=SOME_STRING_VALUE&email=SOME_STRING_VALUE&createdBy=SOME_STRING_VALUE&q=SOME_STRING_VALUE&sort=SOME_STRING_VALUE"
+
+	req, _ := http.NewRequest("GET", url, nil)
+
+	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(res)
+	fmt.Println(string(body))
+
+}

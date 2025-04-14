@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/datacenterAccess/v1/visitRequests?limit=20&offset=10&fromDate=SOME_STRING_VALUE&toDate=SOME_STRING_VALUE&site=SOME_STRING_VALUE&email=SOME_STRING_VALUE&createdBy=SOME_STRING_VALUE&q=SOME_STRING_VALUE&sort=SOME_STRING_VALUE", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

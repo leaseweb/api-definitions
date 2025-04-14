@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/datacenterAccess/v1/accessCards/%7Bid%7D \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"firstName":"string","lastName":"string","phoneNumber":"string","multipleAccess":true,"allowedItems":["string"],"allItemsAllowed":true,"enabled":true,"hasPermanentBadge":true,"hasUser":true}'
