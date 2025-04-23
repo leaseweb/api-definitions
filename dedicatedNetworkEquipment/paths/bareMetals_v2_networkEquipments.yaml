@@ -164,7 +164,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List network equipment
   tags:
-    - Getting Started
     - Dedicated Network Equipments
   x-codeSamples:
     - lang: Shell + Curl

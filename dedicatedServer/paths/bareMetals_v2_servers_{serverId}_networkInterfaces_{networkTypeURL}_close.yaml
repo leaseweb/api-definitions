@@ -17,7 +17,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Close network interface
   tags:
-    - Network Interfaces
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

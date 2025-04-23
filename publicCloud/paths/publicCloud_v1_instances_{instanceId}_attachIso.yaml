@@ -33,7 +33,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Attach ISO to a specific Instance
   tags:
-    - ISOs
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

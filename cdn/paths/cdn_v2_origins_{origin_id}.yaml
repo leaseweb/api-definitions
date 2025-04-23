@@ -1,6 +1,5 @@
 get:
   tags:
-    - Origin
     - CDN
   summary: Get Origin By Id
   description: Get an origin by its ID.
@@ -83,7 +82,6 @@ get:
         $ref: ../code_samples/Go+Native/cdn_v2_origins_{origin_id}/getundefined
 put:
   tags:
-    - Origin
     - CDN
   summary: Update Origin By Id
   description: >-
@@ -182,7 +180,6 @@ put:
         $ref: ../code_samples/Go+Native/cdn_v2_origins_{origin_id}/putundefined
 delete:
   tags:
-    - Origin
     - CDN
   summary: Delete Origin By Id
   operationId: delete_origin_by_id_v1_origins__origin_id__delete

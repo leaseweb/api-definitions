@@ -22,7 +22,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Start a specific resource Load Balancer
   tags:
-    - Power
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

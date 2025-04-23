@@ -2,7 +2,6 @@ get:
   operationId: get/colocations/{colocationId}/notificationSettings/ddos
   tags:
     - Colocations
-    - Colocation
   summary: Inspect DDoS notification settings
   description: ''
   responses:
@@ -105,7 +104,6 @@ put:
   operationId: put/colocations/{colocationId}/notificationSettings/ddos
   tags:
     - Colocations
-    - Colocation
   summary: Update DDoS notifications settings
   description: ''
   requestBody:

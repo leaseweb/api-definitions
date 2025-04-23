@@ -56,7 +56,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: List control panels by Operating System
   tags:
-    - Operating Systems
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

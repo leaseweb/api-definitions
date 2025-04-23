@@ -88,7 +88,6 @@ get:
                   The server is currently unable to handle the request due to a
                   temporary overloading or maintenance of the server.
   tags:
-    - Private networks
     - Private Networks
   x-codeSamples:
     - lang: Shell + Curl
@@ -226,7 +225,6 @@ put:
                   The server is currently unable to handle the request due to a
                   temporary overloading or maintenance of the server.
   tags:
-    - Private networks
     - Private Networks
   x-codeSamples:
     - lang: Shell + Curl
@@ -318,7 +316,6 @@ delete:
                   The server is currently unable to handle the request due to a
                   temporary overloading or maintenance of the server.
   tags:
-    - Private networks
     - Private Networks
   x-codeSamples:
     - lang: Shell + Curl

@@ -22,7 +22,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Detach ISO from a specific Instance
   tags:
-    - ISOs
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

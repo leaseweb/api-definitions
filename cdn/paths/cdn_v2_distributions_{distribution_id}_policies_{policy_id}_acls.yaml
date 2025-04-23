@@ -1,6 +1,5 @@
 post:
   tags:
-    - ACL
     - CDN
   summary: Create Acl
   description: |-
@@ -98,7 +97,6 @@ post:
           ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls/postundefined
 get:
   tags:
-    - ACL
     - CDN
   summary: Get All Acls
   description: Get the list of active ACLs in a policy.

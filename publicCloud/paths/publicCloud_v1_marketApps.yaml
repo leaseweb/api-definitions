@@ -35,7 +35,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get marketplace apps
   tags:
-    - Marketplace Apps
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

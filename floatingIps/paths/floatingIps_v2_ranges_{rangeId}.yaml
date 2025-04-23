@@ -100,7 +100,6 @@ get:
                   The server is currently unable to handle the request due to a
                   temporary overloading or maintenance of the server.
   tags:
-    - Floating IP ranges
     - Floating IPs
   x-codeSamples:
     - lang: Shell + Curl

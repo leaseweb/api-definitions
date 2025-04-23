@@ -94,7 +94,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Launch rescue mode
   tags:
-    - Jobs
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

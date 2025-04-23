@@ -131,7 +131,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get server
   tags:
-    - Getting Started
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
@@ -182,7 +181,6 @@ put:
       $ref: ../components/responses/403.yaml
   summary: Update server
   tags:
-    - Getting Started
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

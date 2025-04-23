@@ -184,7 +184,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List servers
   tags:
-    - Getting Started
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

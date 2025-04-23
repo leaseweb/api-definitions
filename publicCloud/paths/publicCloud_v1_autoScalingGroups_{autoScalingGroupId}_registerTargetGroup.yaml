@@ -55,7 +55,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Register Target Group
   tags:
-    - Auto Scaling Groups
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

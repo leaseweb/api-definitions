@@ -2,7 +2,6 @@ post:
   operationId: post/colocations/{colocationId}/ips/{ip}/null
   tags:
     - Colocations
-    - Colocation
   summary: Null route an IP
   description: >-
     > It might take a few minutes before the null route is propagated across the

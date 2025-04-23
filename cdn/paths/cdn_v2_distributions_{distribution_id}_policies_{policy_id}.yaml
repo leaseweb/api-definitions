@@ -1,6 +1,5 @@
 get:
   tags:
-    - Policy
     - CDN
   summary: Get Policy By Id
   description: Get the details of a policy using its ID.
@@ -118,7 +117,6 @@ get:
           ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/getundefined
 put:
   tags:
-    - Policy
     - CDN
   summary: Update Policy By Id
   operationId: >-
@@ -289,7 +287,6 @@ put:
           ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}/putundefined
 delete:
   tags:
-    - Policy
     - CDN
   summary: Delete Policy By Id
   operationId: >-

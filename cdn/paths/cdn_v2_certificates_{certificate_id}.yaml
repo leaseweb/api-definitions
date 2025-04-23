@@ -1,6 +1,5 @@
 get:
   tags:
-    - Certificate
     - CDN
   summary: Get Certificate By Id
   description: Get the details of a certificate by its ID
@@ -85,7 +84,6 @@ get:
           ../code_samples/Go+Native/cdn_v2_certificates_{certificate_id}/getundefined
 delete:
   tags:
-    - Certificate
     - CDN
   summary: Delete Certificate By Id
   operationId: delete_certificate_by_id_v1_certificates__certificate_id__delete

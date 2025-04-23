@@ -41,7 +41,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List IP addresses associated with a specific VPS
   tags:
-    - IPs
     - VPS
   x-codeSamples:
     - lang: Shell + Curl

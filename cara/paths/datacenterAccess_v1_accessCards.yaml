@@ -84,7 +84,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get a list of access cards
   tags:
-    - Access Cards
     - LeaseWeb API for Common DC Access
   x-codeSamples:
     - lang: Shell + Curl
@@ -169,7 +168,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create an access card
   tags:
-    - Access Cards
     - LeaseWeb API for Common DC Access
   x-codeSamples:
     - lang: Shell + Curl

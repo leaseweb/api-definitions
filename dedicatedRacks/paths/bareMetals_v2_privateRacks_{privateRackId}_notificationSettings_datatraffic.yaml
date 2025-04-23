@@ -131,7 +131,6 @@ get:
                 errorCode: '404'
                 errorMessage: Resource not found
   tags:
-    - Dedicated racks
     - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl
@@ -299,7 +298,6 @@ post:
                 errorCode: '404'
                 errorMessage: Resource not found
   tags:
-    - Dedicated racks
     - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl

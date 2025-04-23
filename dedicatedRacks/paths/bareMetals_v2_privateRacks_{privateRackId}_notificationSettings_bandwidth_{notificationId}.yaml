@@ -99,7 +99,6 @@ get:
                 errorCode: '404'
                 errorMessage: Resource not found
   tags:
-    - Dedicated racks
     - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl
@@ -245,7 +244,6 @@ put:
                 errorCode: ACCESS_DENIED
                 errorMessage: The access token is expired or invalid.
   tags:
-    - Dedicated racks
     - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl
@@ -290,7 +288,6 @@ delete:
                 errorCode: ACCESS_DENIED
                 errorMessage: The access token is expired or invalid.
   tags:
-    - Dedicated racks
     - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl

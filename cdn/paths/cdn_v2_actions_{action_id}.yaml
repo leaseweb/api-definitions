@@ -1,6 +1,5 @@
 get:
   tags:
-    - Action
     - CDN
   summary: Get Action By Id
   description: Get an action by ID to monitor the progress.

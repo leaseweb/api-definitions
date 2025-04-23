@@ -22,7 +22,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Stop a specific Load Balancer
   tags:
-    - Power
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

@@ -2,7 +2,6 @@ get:
   operationId: get/colocations/{colocationId}/ips/{ip}
   tags:
     - Colocations
-    - Colocation
   summary: Inspect an IP
   description: ''
   responses:
@@ -142,7 +141,6 @@ put:
   operationId: put/colocations/{colocationId}/ips/{ip}
   tags:
     - Colocations
-    - Colocation
   summary: Update an IP
   description: >-
     Update the reverse lookup or DDoS detection profile for the ip address. For

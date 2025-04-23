@@ -1,6 +1,5 @@
 get:
   tags:
-    - Statistics
     - CDN
   summary: Get Statistics For Reseller Customer
   description: >-

@@ -14,7 +14,6 @@ delete:
       $ref: ../components/responses/403.yaml
   summary: Delete a bandwidth notification setting
   tags:
-    - Notification Settings
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
@@ -67,7 +66,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: Show a bandwidth notification setting
   tags:
-    - Notification Settings
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
@@ -132,7 +130,6 @@ put:
       $ref: ../components/responses/403.yaml
   summary: Update a bandwidth notification setting
   tags:
-    - Notification Settings
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

@@ -1,6 +1,5 @@
 post:
   tags:
-    - Domain
     - CDN
   summary: Create Domain
   description: Add custom domains to a distribution.
@@ -80,7 +79,6 @@ post:
           ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_domains/postundefined
 get:
   tags:
-    - Domain
     - CDN
   summary: Get All Domains
   description: Get the list of custom domains attached to a distribution.

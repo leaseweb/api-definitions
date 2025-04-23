@@ -29,7 +29,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: Inspect DDoS notification settings
   tags:
-    - Notification Settings
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
@@ -80,7 +79,6 @@ put:
       $ref: ../components/responses/403.yaml
   summary: Update DDoS notification settings
   tags:
-    - Notification Settings
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

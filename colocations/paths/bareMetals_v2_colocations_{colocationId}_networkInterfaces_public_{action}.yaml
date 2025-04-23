@@ -2,7 +2,6 @@ post:
   operationId: post/colocations/{colocationId}/networkInterfaces/public/{action}
   tags:
     - Colocations
-    - Colocation
   summary: Open or close public network interface
   description: ''
   responses:

@@ -30,7 +30,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: List network interfaces
   tags:
-    - Network Interfaces
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

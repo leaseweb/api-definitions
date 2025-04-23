@@ -344,7 +344,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List instance types
   tags:
-    - Instance Types
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

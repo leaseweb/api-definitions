@@ -46,7 +46,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: List control panels
   tags:
-    - Control Panels
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

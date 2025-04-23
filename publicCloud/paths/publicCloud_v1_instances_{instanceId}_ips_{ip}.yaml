@@ -33,7 +33,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get IP details for a specific Instance
   tags:
-    - IPs
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
@@ -99,7 +98,6 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Update the IP address for a specific Instance
   tags:
-    - IPs
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

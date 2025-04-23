@@ -2,7 +2,6 @@ get:
   operationId: get/colocations/{colocationId}/ips
   tags:
     - Colocations
-    - Colocation
   summary: List IPs
   description: ''
   parameters:

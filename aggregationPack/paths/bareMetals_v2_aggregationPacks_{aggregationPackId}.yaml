@@ -33,7 +33,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get aggregation pack
   tags:
-    - Aggregation Packs
     - Aggregation packs
   x-codeSamples:
     - lang: Shell + Curl

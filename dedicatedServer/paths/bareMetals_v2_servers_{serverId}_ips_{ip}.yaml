@@ -32,7 +32,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: Show a server IP
   tags:
-    - IPs
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
@@ -111,7 +110,6 @@ put:
       $ref: ../components/responses/403.yaml
   summary: Update an IP
   tags:
-    - IPs
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

@@ -205,7 +205,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List all available Images
   tags:
-    - Images
     - VPS
   x-codeSamples:
     - lang: Shell + Curl

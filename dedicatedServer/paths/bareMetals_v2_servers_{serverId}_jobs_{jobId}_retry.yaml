@@ -75,7 +75,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Retry a job
   tags:
-    - Jobs
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

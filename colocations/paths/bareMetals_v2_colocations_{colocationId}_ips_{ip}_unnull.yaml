@@ -2,7 +2,6 @@ post:
   operationId: post/colocations/{colocationId}/ips/{ip}/unnull
   tags:
     - Colocations
-    - Colocation
   summary: Remove a null route
   description: >-
     > It might take a few minutes before the removal is propagated across the

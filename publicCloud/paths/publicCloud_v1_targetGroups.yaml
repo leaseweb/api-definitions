@@ -45,7 +45,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get Target Group list
   tags:
-    - Target Groups
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
@@ -116,7 +115,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create Target Group
   tags:
-    - Target Groups
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

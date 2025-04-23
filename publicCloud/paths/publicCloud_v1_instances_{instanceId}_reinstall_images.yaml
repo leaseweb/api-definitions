@@ -143,7 +143,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List images available for reinstall
   tags:
-    - Reinstall
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

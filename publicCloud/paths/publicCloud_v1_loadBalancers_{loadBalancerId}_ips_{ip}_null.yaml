@@ -50,7 +50,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Null route IP address for a specific resource Load Balancer
   tags:
-    - IPs
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

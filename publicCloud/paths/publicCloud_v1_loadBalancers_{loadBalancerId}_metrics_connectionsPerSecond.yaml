@@ -85,7 +85,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get connections per second metrics
   tags:
-    - Metrics
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

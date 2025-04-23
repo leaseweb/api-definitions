@@ -50,7 +50,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Null route IP address for a specific resource VPS
   tags:
-    - IPs
     - VPS
   x-codeSamples:
     - lang: Shell + Curl

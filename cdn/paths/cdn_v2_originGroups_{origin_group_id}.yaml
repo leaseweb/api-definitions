@@ -1,6 +1,5 @@
 get:
   tags:
-    - OriginGroup
     - CDN
   summary: Get Origin Group By Id
   description: Get the details of an origin group by its ID.
@@ -87,7 +86,6 @@ get:
           ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}/getundefined
 put:
   tags:
-    - OriginGroup
     - CDN
   summary: Update Origin Group By Id
   description: |-
@@ -201,7 +199,6 @@ put:
           ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}/putundefined
 delete:
   tags:
-    - OriginGroup
     - CDN
   summary: Delete Origin Group By Id
   description: Delete an origin group by its ID.

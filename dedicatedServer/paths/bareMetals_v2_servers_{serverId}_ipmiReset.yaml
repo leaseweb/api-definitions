@@ -78,7 +78,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Launch IPMI reset
   tags:
-    - Jobs
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

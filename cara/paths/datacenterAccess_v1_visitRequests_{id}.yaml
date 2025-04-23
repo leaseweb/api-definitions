@@ -40,7 +40,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get access request by ID
   tags:
-    - Access Requests
     - LeaseWeb API for Common DC Access
   x-codeSamples:
     - lang: Shell + Curl

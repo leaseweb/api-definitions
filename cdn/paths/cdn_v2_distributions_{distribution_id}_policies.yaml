@@ -1,6 +1,5 @@
 post:
   tags:
-    - Policy
     - CDN
   summary: Create Policy
   description: >-
@@ -145,7 +144,6 @@ post:
           ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies/postundefined
 get:
   tags:
-    - Policy
     - CDN
   summary: Get All Policies
   description: |-

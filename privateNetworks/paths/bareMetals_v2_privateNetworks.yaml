@@ -1,7 +1,6 @@
 get:
   operationId: get/privateNetworks
   tags:
-    - Private networks
     - Private Networks
   summary: List private networks
   description: ''
@@ -132,7 +131,6 @@ get:
 post:
   operationId: post/privateNetworks
   tags:
-    - Private networks
     - Private Networks
   summary: Create a private network
   description: >-

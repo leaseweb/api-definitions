@@ -20,7 +20,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Start a specific resource Instance
   tags:
-    - Power
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

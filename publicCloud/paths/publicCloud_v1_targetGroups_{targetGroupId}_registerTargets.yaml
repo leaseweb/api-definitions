@@ -30,7 +30,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Register Targets
   tags:
-    - Target Groups
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

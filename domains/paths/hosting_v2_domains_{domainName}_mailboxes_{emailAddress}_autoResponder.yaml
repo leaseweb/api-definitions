@@ -37,7 +37,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Inspect an auto responder
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl
@@ -131,7 +130,6 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Change an auto responder
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl
@@ -173,7 +171,6 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete an auto responder
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl

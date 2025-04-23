@@ -1,6 +1,5 @@
 post:
   tags:
-    - Invalidation
     - CDN
   summary: Do Invalidation
   description: >-

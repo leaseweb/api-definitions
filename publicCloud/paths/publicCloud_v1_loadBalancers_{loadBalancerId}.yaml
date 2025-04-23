@@ -68,7 +68,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get load balancer details
   tags:
-    - Load Balancer
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
@@ -114,7 +113,6 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete load balancer
   tags:
-    - Load Balancer
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
@@ -220,7 +218,6 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Update load balancer
   tags:
-    - Load Balancer
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

@@ -87,7 +87,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Launch Load balancer
   tags:
-    - Load Balancer
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
@@ -273,7 +272,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get load balancer list
   tags:
-    - Load Balancer
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

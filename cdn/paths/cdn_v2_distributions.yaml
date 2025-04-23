@@ -1,6 +1,5 @@
 post:
   tags:
-    - Distribution
     - CDN
   summary: Create Distribution
   description: |-
@@ -137,7 +136,6 @@ post:
         $ref: ../code_samples/Go+Native/cdn_v2_distributions/postundefined
 get:
   tags:
-    - Distribution
     - CDN
   summary: Get All Distributions
   description: Get the list of your distributions.

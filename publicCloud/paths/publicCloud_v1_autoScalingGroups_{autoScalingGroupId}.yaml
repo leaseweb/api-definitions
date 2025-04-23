@@ -20,7 +20,6 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete Auto Scaling Group
   tags:
-    - Auto Scaling Groups
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
@@ -132,7 +131,6 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Update Auto Scaling Group
   tags:
-    - Auto Scaling Groups
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
@@ -202,7 +200,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get Auto Scaling Group details
   tags:
-    - Auto Scaling Groups
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

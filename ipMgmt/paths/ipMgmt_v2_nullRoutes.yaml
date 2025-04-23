@@ -96,7 +96,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Inspect null route history
   tags:
-    - IPs
     - IP management
   x-codeSamples:
     - lang: Shell + Curl

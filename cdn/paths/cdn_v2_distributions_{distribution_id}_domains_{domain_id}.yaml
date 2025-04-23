@@ -1,6 +1,5 @@
 get:
   tags:
-    - Domain
     - CDN
   summary: Get Domain By Id
   description: Get the details of a custom domain attached to a dsitribution.
@@ -76,7 +75,6 @@ get:
           ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/getundefined
 delete:
   tags:
-    - Domain
     - CDN
   summary: Delete Domain By Id
   operationId: >-

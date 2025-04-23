@@ -2,7 +2,6 @@ get:
   operationId: get/colocations/{colocationId}/networkInterfaces/public
   tags:
     - Colocations
-    - Colocation
   summary: Inspect public network interface
   description: ''
   responses:

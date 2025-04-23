@@ -79,7 +79,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: Show an operating system
   tags:
-    - Operating Systems
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

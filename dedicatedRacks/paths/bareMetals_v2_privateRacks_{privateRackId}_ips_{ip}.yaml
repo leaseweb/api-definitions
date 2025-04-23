@@ -131,7 +131,6 @@ get:
                   The server is currently unable to handle the request due to a
                   temporary overloading or maintenance of the server.
   tags:
-    - Dedicated racks
     - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl
@@ -318,7 +317,6 @@ put:
                   The server is currently unable to handle the request due to a
                   temporary overloading or maintenance of the server.
   tags:
-    - Dedicated racks
     - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl

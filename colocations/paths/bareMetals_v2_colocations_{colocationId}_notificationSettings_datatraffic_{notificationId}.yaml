@@ -96,7 +96,6 @@ get:
                 errorMessage: Resource not found
   tags:
     - Colocations
-    - Colocation
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -244,7 +243,6 @@ put:
                 errorMessage: The access token is expired or invalid.
   tags:
     - Colocations
-    - Colocation
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -289,7 +287,6 @@ delete:
                 errorMessage: The access token is expired or invalid.
   tags:
     - Colocations
-    - Colocation
   x-codeSamples:
     - lang: Shell + Curl
       source:

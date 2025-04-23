@@ -40,7 +40,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List regions
   tags:
-    - Regions
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

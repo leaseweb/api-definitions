@@ -77,7 +77,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: List IPs
   tags:
-    - IPs
     - Dedicated Network Equipments
   x-codeSamples:
     - lang: Shell + Curl

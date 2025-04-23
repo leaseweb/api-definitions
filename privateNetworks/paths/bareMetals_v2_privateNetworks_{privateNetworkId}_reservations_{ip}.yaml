@@ -19,7 +19,6 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete a DHCP reservation
   tags:
-    - Private networks
     - Private Networks
   x-codeSamples:
     - lang: Shell + Curl

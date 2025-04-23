@@ -1,6 +1,5 @@
 get:
   tags:
-    - Action
     - CDN
   summary: Get All Actions
   description: >-

@@ -90,7 +90,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: Show bandwidth metrics
   tags:
-    - Metrics
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

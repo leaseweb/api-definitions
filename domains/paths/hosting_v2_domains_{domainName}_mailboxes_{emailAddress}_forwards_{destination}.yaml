@@ -41,7 +41,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Inspect a forward
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl
@@ -114,7 +113,6 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Update a forward
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl
@@ -156,7 +154,6 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete a forward
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl

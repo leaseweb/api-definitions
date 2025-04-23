@@ -2,7 +2,6 @@ get:
   operationId: get-colocations
   tags:
     - Colocations
-    - Colocation
   summary: List colocations
   description: |+
 

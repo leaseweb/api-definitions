@@ -56,7 +56,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List the notification settings of a customer
   tags:
-    - Notification Settings
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

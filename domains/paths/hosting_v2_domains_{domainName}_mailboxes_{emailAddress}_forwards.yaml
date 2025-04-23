@@ -64,7 +64,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List forwards
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl
@@ -139,7 +138,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create a forward
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl

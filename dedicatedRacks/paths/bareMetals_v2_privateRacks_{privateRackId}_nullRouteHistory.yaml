@@ -37,7 +37,6 @@ get:
                 errorCode: ACCESS_DENIED
                 errorMessage: The access token is expired or invalid.
   tags:
-    - Dedicated racks
     - Dedicated Racks
   x-codeSamples:
     - lang: Shell + Curl

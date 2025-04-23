@@ -125,7 +125,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Launch instance
   tags:
-    - Instances
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
@@ -603,7 +602,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get instance list
   tags:
-    - Instances
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

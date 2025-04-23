@@ -2,7 +2,6 @@ get:
   operationId: get/colocations/{colocationId}
   tags:
     - Colocations
-    - Colocation
   summary: Inspect a colocation
   description: ''
   responses:
@@ -170,7 +169,6 @@ put:
   operationId: put/colocations/{colocationId}
   tags:
     - Colocations
-    - Colocation
   summary: Update a colocation
   description: >-
     A reference can be set to uniquely identify a colocation with a name, such

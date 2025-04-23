@@ -131,7 +131,6 @@ get:
                 errorMessage: Resource not found
   tags:
     - Colocations
-    - Colocation
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -297,7 +296,6 @@ post:
                 errorMessage: Resource not found
   tags:
     - Colocations
-    - Colocation
   x-codeSamples:
     - lang: Shell + Curl
       source:

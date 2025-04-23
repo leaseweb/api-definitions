@@ -18,7 +18,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Power on server
   tags:
-    - Power
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

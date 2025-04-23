@@ -142,7 +142,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List images available for reinstall
   tags:
-    - Reinstall
     - VPS
   x-codeSamples:
     - lang: Shell + Curl

@@ -120,7 +120,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List IPs
   tags:
-    - IPs
     - IP management
   x-codeSamples:
     - lang: Shell + Curl

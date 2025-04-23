@@ -14,7 +14,6 @@ delete:
       $ref: ../components/responses/403.yaml
   summary: Delete a DHCP reservation
   tags:
-    - DHCP Leases
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
@@ -78,7 +77,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: List DHCP reservations
   tags:
-    - DHCP Leases
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
@@ -133,7 +131,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Create a DHCP reservation
   tags:
-    - DHCP Leases
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

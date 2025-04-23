@@ -92,7 +92,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List domain forwards
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl

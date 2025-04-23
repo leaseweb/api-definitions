@@ -35,7 +35,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List snapshots
   tags:
-    - Snapshots
     - VPS
   x-codeSamples:
     - lang: Shell + Curl
@@ -94,7 +93,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create VPS snapshot
   tags:
-    - Snapshots
     - VPS
   x-codeSamples:
     - lang: Shell + Curl

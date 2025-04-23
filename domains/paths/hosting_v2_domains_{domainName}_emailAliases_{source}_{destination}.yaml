@@ -34,7 +34,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Inspect email alias
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl
@@ -100,7 +99,6 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Update an email alias
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl
@@ -142,7 +140,6 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete an email alias
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl

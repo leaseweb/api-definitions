@@ -1,6 +1,5 @@
 get:
   tags:
-    - ACL
     - CDN
   summary: Get Acl By Id
   description: Get an ACL by its ID.
@@ -85,7 +84,6 @@ get:
           ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}/getundefined
 delete:
   tags:
-    - ACL
     - CDN
   summary: Delete Acl By Id
   operationId: >-

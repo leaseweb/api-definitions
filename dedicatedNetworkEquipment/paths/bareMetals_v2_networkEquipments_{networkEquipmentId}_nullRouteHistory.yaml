@@ -35,7 +35,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: Show null route history
   tags:
-    - IPs
     - Dedicated Network Equipments
   x-codeSamples:
     - lang: Shell + Curl

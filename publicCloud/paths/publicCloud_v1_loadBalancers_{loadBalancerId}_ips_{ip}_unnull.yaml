@@ -38,7 +38,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Remove an IP null route for a specific Load Balancer
   tags:
-    - IPs
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

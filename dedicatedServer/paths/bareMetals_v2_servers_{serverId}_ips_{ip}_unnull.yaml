@@ -37,7 +37,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Remove a null route
   tags:
-    - IPs
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

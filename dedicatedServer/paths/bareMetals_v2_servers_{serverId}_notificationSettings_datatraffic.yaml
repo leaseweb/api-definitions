@@ -46,7 +46,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: List data traffic notification settings
   tags:
-    - Notification Settings
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
@@ -112,7 +111,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Create a data traffic notification setting
   tags:
-    - Notification Settings
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

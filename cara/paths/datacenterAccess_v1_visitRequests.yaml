@@ -112,7 +112,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get a list of access requests
   tags:
-    - Access Requests
     - LeaseWeb API for Common DC Access
   x-codeSamples:
     - lang: Shell + Curl
@@ -230,7 +229,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create access request
   tags:
-    - Access Requests
     - LeaseWeb API for Common DC Access
   x-codeSamples:
     - lang: Shell + Curl

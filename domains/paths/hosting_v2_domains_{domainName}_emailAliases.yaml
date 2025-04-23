@@ -60,7 +60,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List email aliases
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl
@@ -137,7 +136,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create an email alias
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl

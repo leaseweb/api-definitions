@@ -42,7 +42,6 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Reinstall a VPS
   tags:
-    - Reinstall
     - VPS
   x-codeSamples:
     - lang: Shell + Curl

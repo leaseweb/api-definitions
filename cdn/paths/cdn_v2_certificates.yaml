@@ -1,6 +1,5 @@
 post:
   tags:
-    - Certificate
     - CDN
   summary: Create Certificate
   description: >-
@@ -95,7 +94,6 @@ post:
         $ref: ../code_samples/Go+Native/cdn_v2_certificates/postundefined
 get:
   tags:
-    - Certificate
     - CDN
   summary: Get All Certificates
   description: Get the list of your certificates.

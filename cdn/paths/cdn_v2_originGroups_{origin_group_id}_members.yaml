@@ -1,6 +1,5 @@
 post:
   tags:
-    - OriginGroup
     - CDN
   summary: Create Origin Group Member
   description: >-
@@ -95,7 +94,6 @@ post:
           ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}_members/postundefined
 get:
   tags:
-    - OriginGroup
     - CDN
   summary: Get All Origin Group Members
   description: Get all of the members belonging to an origin group.

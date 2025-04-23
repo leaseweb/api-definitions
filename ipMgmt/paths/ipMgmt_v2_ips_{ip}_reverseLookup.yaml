@@ -37,7 +37,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List reverse lookup records for an IPv6 range
   tags:
-    - IPs
     - IP management
   x-codeSamples:
     - lang: Shell + Curl
@@ -107,7 +106,6 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Set or remove reverse lookup records for an IPv6 range
   tags:
-    - IPs
     - IP management
   x-codeSamples:
     - lang: Shell + Curl

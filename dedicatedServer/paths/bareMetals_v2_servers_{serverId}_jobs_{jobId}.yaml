@@ -85,7 +85,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: Show a job
   tags:
-    - Jobs
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

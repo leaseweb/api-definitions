@@ -82,7 +82,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Expire active job
   tags:
-    - Jobs
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

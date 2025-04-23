@@ -62,7 +62,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get list of instances belonging to an Auto Scaling Group
   tags:
-    - Auto Scaling Groups
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

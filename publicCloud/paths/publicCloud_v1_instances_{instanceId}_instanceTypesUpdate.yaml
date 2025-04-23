@@ -331,7 +331,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List available instance types for update
   tags:
-    - Instances
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

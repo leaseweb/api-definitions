@@ -52,7 +52,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get Targets
   tags:
-    - Target Groups
     - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl

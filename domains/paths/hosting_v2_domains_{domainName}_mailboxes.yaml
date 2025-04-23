@@ -127,7 +127,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List mailboxes
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl
@@ -220,7 +219,6 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create a mailbox
   tags:
-    - Email
     - Emails
   x-codeSamples:
     - lang: Shell + Curl

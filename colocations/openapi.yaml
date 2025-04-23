@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Colocation
+  title: Colocations
   version: v2
   description: '> The base URL for this API is: **https://api.leaseweb.com/bareMetals/v2/**'
   x-logo:

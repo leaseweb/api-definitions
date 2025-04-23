@@ -175,7 +175,6 @@ get:
       $ref: ../components/responses/403.yaml
   summary: Show hardware information
   tags:
-    - Getting Started
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

@@ -76,7 +76,6 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get data traffic metrics for a specific VPS
   tags:
-    - Metrics
     - VPS
   x-codeSamples:
     - lang: Shell + Curl

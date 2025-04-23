@@ -76,7 +76,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Cancel active job
   tags:
-    - Jobs
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl

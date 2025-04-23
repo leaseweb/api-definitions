@@ -2,7 +2,6 @@ get:
   operationId: get/colocations/{colocationId}/metrics/datatraffic
   tags:
     - Colocations
-    - Colocation
   summary: Inspect datatraffic metrics
   description: |-
     > At this moment only bandwidth information for the public interface is

@@ -16,7 +16,6 @@ post:
       $ref: ../components/responses/403.yaml
   summary: Open all network interfaces
   tags:
-    - Network Interfaces
     - Dedicated Servers
   x-codeSamples:
     - lang: Shell + Curl
