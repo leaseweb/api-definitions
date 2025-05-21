@@ -1,0 +1,7 @@
+title: currentTask
+description: The current task of the job
+type: object
+nullable: true
+properties:
+  task:
+    $ref: ./task.yaml

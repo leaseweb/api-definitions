@@ -5,6 +5,8 @@ get:
     - $ref: ../components/parameters/limit.yaml
     - $ref: ../components/parameters/offset.yaml
     - $ref: ../components/parameters/status.yaml
+    - $ref: ../components/parameters/ticketId.yaml
+    - $ref: ../components/parameters/ip.yaml
   responses:
     '200':
       description: |
@@ -26,6 +28,8 @@ get:
                 customerId: '10000001'
                 legalEntityId: '2000'
                 deadline: '2015-01-01T00:00:00+00:00'
+                detectedIpAddresses:
+                  - 127.0.0.1
               - id: '000001'
                 subject: Report description
                 status: CLOSED
@@ -35,6 +39,8 @@ get:
                 customerId: '10000001'
                 legalEntityId: '2600'
                 deadline: '2015-01-01T00:00:00+00:00'
+                detectedIpAddresses:
+                  - 127.0.0.1
           schema:
             $ref: ../components/schemas/getReportListResult.yaml
     '401':

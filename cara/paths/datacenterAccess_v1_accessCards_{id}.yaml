@@ -43,7 +43,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get an access card by User Id
   tags:
-    - LeaseWeb API for Common DC Access
+    - Datacenter Access
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -127,7 +127,7 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Update an access card
   tags:
-    - LeaseWeb API for Common DC Access
+    - Datacenter Access
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -166,7 +166,7 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete an access card
   tags:
-    - LeaseWeb API for Common DC Access
+    - Datacenter Access
   x-codeSamples:
     - lang: Shell + Curl
       source:

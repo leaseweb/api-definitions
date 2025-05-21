@@ -62,66 +62,142 @@ post:
       content:
         application/json:
           example:
-            createdAt: '2021-03-06T21:55:32Z'
-            flow: tasks
+            bareMetalId: '123'
+            createdAt: '2025-03-17T13:44:47+00:00'
+            currentTask:
+              uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
+              status: PENDING
+              description: dummy placeholder
+              onError: break
+              errorMessage: null
+              flow: main
+              statusTimestamps:
+                PENDING: '2025-03-17T13:44:47+00:00'
+                WAITING: '2025-03-17T13:44:47+00:00'
+              type: test_task
+              actor: server
+              createdAt: '2025-03-17T13:44:47+00:00'
+              updatedAt: '2025-03-17T13:44:47+00:00'
+              timeout: 32400
+            flow: main
             isRunning: true
-            node: AA:BB:CC:DD:EE:FF!DKFJKD8989
+            metadata:
+              BATCH_ID: batch-id-123
+            node: 00:11:22:AA:BB:CC
             payload:
-              configurable: true
-              device: SATA2TB
-              fileserverBaseUrl: 10.11.20.2
-              isUnassignedServer: false
-              jobType: install
-              numberOfDisks: null
-              operatingSystemId: UBUNTU_22_04_64BIT
               os:
-                architecture: 64bit
-                family: ubuntu
-                name: Ubuntu 22.04 LTS (Jammy Jellyfish) (amd64)
                 type: linux
-                version: '22.04'
+                name: Ubuntu 24.04 LTS (64bit)
+                family: ubuntu
+                version: '24.04'
+                architecture: 64bit
+                engine: tarbuilder
+              device: SSD256GB
               partitions:
-                - filesystem: ext2
-                  mountpoint: /boot
+                - mountpoint: /boot
+                  filesystem: ext4
                   size: '1024'
                 - filesystem: swap
                   size: '4096'
-                - filesystem: ext4
-                  mountpoint: /tmp
+                - mountpoint: /tmp
+                  filesystem: ext4
                   size: '4096'
-                - filesystem: ext4
-                  mountpoint: /
+                - mountpoint: /
+                  filesystem: ext4
                   size: '*'
-              pop: AMS-01
-              powerCycle: true
-              raidLevel: null
-              serverId: '12345'
+              configurable: true
               timezone: UTC
+              powerCycle: true
+              doEmailNotification: false
+              operatingSystemId: UBUNTU_24_04_64BIT
+              database:
+                networkType: PUBLIC
+                dbName: test_db
+                type: MONGODB
+              raid:
+                type: SW
+                level: 0
+                numberOfDisks: 2
+              callbackUrl: https://leaseweb.com
+              hostname: s123.dedi.leaseweb.net
+              sshKeys: >-
+                ssh-ed25519
+                AAAAC3NzaC1lZDI1NTE5AAAAIKA8HyZ72HYYYtTCjHeN6rvMVkmTY2hb2nouORWMm8vv
+                noname
+              network:
+                public:
+                  ip: 192.168.1.1
+                  mac: 00:AA:BB:CC:DD:EE
+                  cidr: 192.168.1.1/27
+                  prefix: 27
+                  gateway: 192.168.1.1
+                  netmask: 255.255.255.224
+                  network: 192.168.1.0
+                  isCustom: false
+                  broadcast: 192.168.1.31
+                  nameservers:
+                    - 192.168.1.21
+                    - 127.0.0.1
+                  netmask_hex: '0xffffffe0'
+                internal:
+                  mac: '00:11:22:33:44:55'
+              featuresUtilized:
+                - PARTITIONING
+                - HOSTNAME
+                - SSH_KEYS
+                - DB_MONGODB
+                - SW_RAID
+                - TIMEZONE
+              features:
+                - PARTITIONING
+                - SW_RAID
+                - TIMEZONE
+                - HOSTNAME
+                - SSH_KEYS
+                - POST_INSTALL_SCRIPTS
+                - CONTROL_PANEL
+                - DB_MARIADB
+                - DB_REDIS
+                - DB_MONGODB
+                - DB_POSTGRESQL
+              serverBrand: SUPERMICRO
+              serverChassis: SM 846TQ (24xLFF)
+              serverHardwareRaid: true
+              site: AMS-01
+              fileserverBaseUrl: 192.168.1.123
+              initiatedBy: EMPLOYEE
             progress:
-              canceled: 0
-              expired: 0
-              failed: 0
-              finished: 0
-              inprogress: 0
+              total: 1
+              waiting: 0
               pending: 1
+              inprogress: 0
+              finished: 0
+              failed: 0
+              expired: 0
+              canceled: 0
+              warning: 0
+              skipped: 0
               percentage: 0
-              total: 26
-              waiting: 25
-            serverId: '12345'
+            serverId: '123'
             status: ACTIVE
             tasks:
-              - description: dummy
-                errorMessage: null
-                flow: tasks
-                onError: break
+              - uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
                 status: PENDING
+                description: dummy placeholder
+                onError: break
+                errorMessage: null
+                flow: main
                 statusTimestamps:
-                  PENDING: '2021-01-09T09:18:06Z'
-                  WAITING: '2021-01-09T09:18:06Z'
-                uuid: c1a56a5a-ae38-4b12-acb6-0cba9ceb1016
+                  PENDING: '2018-01-09T10:38:12+00:00'
+                  WAITING: '2018-01-09T10:38:12+00:00'
+                type: test_task
+                actor: server
+                createdAt: '2025-03-17T13:37:19+00:00'
+                updatedAt: '2025-03-17T13:37:19+00:00'
+                timeout: 32400
             type: install
-            updatedAt: '2021-03-06T21:55:32Z'
-            uuid: bcf2bedf-8450-4b22-86a8-f30aeb3a38f9
+            updatedAt: '2025-03-17T13:44:47+00:00'
+            uuid: a1b22827-b6aa-47ce-abad-6bc28a70223d
           schema:
             $ref: ../components/schemas/serverJob.yaml
       description: Accepted.

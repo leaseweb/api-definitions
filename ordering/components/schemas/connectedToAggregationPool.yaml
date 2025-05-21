@@ -1,0 +1,4 @@
+default: 'false'
+description: To add the dedicated server in the connectivity aggregation pool
+example: 'true'
+type: boolean

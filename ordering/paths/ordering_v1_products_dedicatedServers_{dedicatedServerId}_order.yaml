@@ -1,0 +1,58 @@
+post:
+  description: |
+    Dedicated Server ordering.
+  operationId: orderDedicatedServer
+  requestBody:
+    content:
+      application/json:
+        example:
+          connectedToAggregationPool: true
+          contractTerm: 1_MONTH
+          location: AMS-01
+        schema:
+          $ref: ../components/schemas/orderDedicatedServerOpts.yaml
+  responses:
+    '201':
+      content:
+        application/json:
+          example:
+            orderId: 44011723
+          schema:
+            $ref: ../components/schemas/dedicatedServerOrder.yaml
+      description: Created.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Dedicated Server ordering.
+  tags:
+    - Ordering
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+parameters:
+  - $ref: ../components/parameters/dedicatedServerId.yaml

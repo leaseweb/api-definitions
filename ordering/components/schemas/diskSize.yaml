@@ -1,0 +1,3 @@
+description: The disk size information
+example: SSD480GB
+type: string

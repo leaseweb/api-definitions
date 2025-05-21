@@ -1,0 +1,6 @@
+name: ticketId
+in: query
+required: false
+schema:
+  type: string
+description: Optional ticket ID to filter results

@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	url := "https://api.leaseweb.com/hosting/v2/domains?limit=10&offset=0&type=overview"
+	url := "https://api.leaseweb.com/hosting/v2/domains?limit=10&offset=0&type=overview&domainName=example.com&status=ACTIVE"
 
 	req, _ := http.NewRequest("GET", url, nil)
 

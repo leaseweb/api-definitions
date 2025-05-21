@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"location\":\"AMS-01\",\"connectedToAggregationPool\":true,\"contractTerm\":\"2_YEARS\"}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/ordering/v1/products/dedicatedServers/27f38ef06cf3bf62e21e75401feac6cd/order", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

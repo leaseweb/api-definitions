@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/ordering/v1/products/dedicatedServers/27f38ef06cf3bf62e21e75401feac6cd?location=AMS-01&connectedToAggregationPool=true' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"location":"AMS-01","connectedToAggregationPool":true,"contractTerm":"2_YEARS"}');
+
+$request->setRequestUrl('https://api.leaseweb.com/ordering/v1/products/dedicatedServers/27f38ef06cf3bf62e21e75401feac6cd/order');
+$request->setRequestMethod('POST');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

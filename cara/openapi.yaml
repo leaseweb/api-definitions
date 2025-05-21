@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: LeaseWeb API for Common DC Access
+  title: Datacenter Access
   version: v1
   description: >-
     > The base URL for this API is:

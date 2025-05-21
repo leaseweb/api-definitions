@@ -1,175 +1,96 @@
 properties:
+  status:
+    description: Status of the job
+    type: string
+  uuid:
+    description: Unique identifier of the job
+    type: string
+  type:
+    $ref: ./jobType.yaml
+  serverId:
+    $ref: ./serverId.yaml
   bareMetalId:
     deprecated: true
     description: Id of the server (deprecated, use serverId instead)
+    type: string
+  node:
+    description: Node ID for this server
     type: string
   createdAt:
     description: Creation timestamp
     format: date-time
     type: string
+  updatedAt:
+    description: Update timestamp
+    format: date-time
+    type: string
   flow:
     description: Job flow
     type: string
-  isRunning:
-    description: Describes whether the job is running
-    type: boolean
-  node:
-    description: Node ID for this server
-    type: string
-  payload:
-    title: serverJobPayload
-    type: object
-    properties:
-      fileserverBaseUrl:
-        type: string
-      pop:
-        type: string
-      powerCycle:
-        type: boolean
-      isUnassignedServer:
-        type: boolean
-      serverId:
-        description: Id of the server
-        type: string
-      jobType:
-        type: string
-      configurable:
-        type: boolean
-      device:
-        type: string
-      numberOfDisks:
-        type: integer
-        nullable: true
-      operatingSystemId:
-        type: string
-      os:
-        title: os
-        type: object
-        properties:
-          architecture:
-            description: The architecture of the operating system
-            type: string
-          family:
-            description: The operating system family
-            type: string
-          name:
-            description: A human readable name for the operating system
-            type: string
-          type:
-            title: operatingSystemType
-            description: The type of operating system
-            type: string
-          version:
-            description: The version of the operating system
-            type: string
-      partitions:
-        type: array
-        items:
-          $ref: ./partition.yaml
-      raidLevel:
-        type: integer
-        nullable: true
-      timezone:
-        description: Timezone represented as Geographical_Area/City
-        type: string
-        example: UTC
-      raid:
-        title: raidPayload
-        type: object
-        nullable: true
-        properties:
-          type:
-            description: The type of RAID
-            enum:
-              - HW
-              - SW
-              - NONE
-            type: string
-          level:
-            description: The RAID level
-            enum:
-              - 0
-              - 1
-              - 5
-              - 10
-            type: integer
-            nullable: true
-          numberOfDisks:
-            description: The number of disks in the RAID
-            type: integer
-            nullable: true
-      hostname:
-        description: The hostname of the server
-        type: string
+  currentTask:
+    allOf:
+      - $ref: ./currentTask.yaml
   progress:
     title: progress
     description: Describes progress of the jobs on the server
     type: object
     properties:
-      canceled:
-        type: integer
-      expired:
-        type: integer
-      failed:
-        type: integer
-      finished:
-        type: integer
-      inprogress:
-        type: integer
-      pending:
-        type: integer
-      percentage:
-        type: integer
       total:
         type: integer
+        description: Total number of tasks
       waiting:
         type: integer
-  serverId:
-    description: Id of the server
-    type: string
-  status:
-    description: Status of the job
-    type: string
+        description: Number of tasks waiting
+      pending:
+        type: integer
+        description: Number of tasks pending
+      inprogress:
+        type: integer
+        description: Number of tasks in progress
+      finished:
+        type: integer
+        description: Number of tasks finished
+      failed:
+        type: integer
+        description: Number of tasks failed
+      expired:
+        type: integer
+        description: Number of tasks expired
+      canceled:
+        type: integer
+        description: Number of tasks canceled
+      warning:
+        type: integer
+        description: Number of tasks with warnings
+      skipped:
+        type: integer
+        description: Number of tasks skipped
+      percentage:
+        type: integer
+        description: Percentage of tasks completed
+  isRunning:
+    description: Describes whether the job is running
+    type: boolean
+  metadata:
+    title: metadata
+    type: object
+    description: Metadata of the job
+    nullable: true
+    properties:
+      BATCH_ID:
+        description: The batch ID of the job
+        type: string
+        nullable: true
+  payload:
+    title: jobPayload
+    anyOf:
+      - $ref: ./installOperatingSystemPayload.yaml
+      - $ref: ./genericPayload.yaml
+      - $ref: ./rescueModePayload.yaml
   tasks:
+    title: tasks
     description: List of tasks in the job
-    items:
-      type: object
-      title: task
-      properties:
-        description:
-          description: Description of the task
-          type: string
-        errorMessage:
-          description: An optional error message
-          nullable: true
-          type: string
-        flow:
-          description: The flow this task is part of
-          type: string
-        onError:
-          description: The behaviour if this task fails
-          type: string
-        status:
-          description: The status of the task
-          type: string
-        statusTimestamps:
-          title: statusTimestamps
-          description: Timestamp for each state change
-          type: object
-          additionalProperties:
-            type: string
-            format: date-time
-        uuid:
-          description: Unique ID for this task
-          type: string
     type: array
-  type:
-    $ref: ./jobType.yaml
-  updatedAt:
-    description: Update timestamp
-    format: date-time
-    type: string
-  uuid:
-    description: Unique identifier of the job
-    type: string
+    items:
+      $ref: ./task.yaml
 type: object

@@ -4,3 +4,4 @@ enum:
   - rescueMode
   - hardwareScan
   - ipmiReset
+description: Type of the job

@@ -1,0 +1,130 @@
+get:
+  description: |
+    Get a single dedicated server and its price.
+  operationId: getDedicatedServer
+  parameters:
+    - name: location
+      in: query
+      required: true
+      schema:
+        description: The datacenter location
+        example: AMS-01
+        type: string
+    - name: connectedToAggregationPool
+      in: query
+      required: false
+      schema:
+        default: 'false'
+        description: To add the dedicated server in the connectivity aggregation pool
+        example: 'true'
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            chassis: Dell R730XD (12xLFF)
+            cpu:
+              coresPerCPU: '12'
+              totalCores: '24'
+              quantity: Dual
+              speed: 2,2 GHz
+              type: Intel Xeon E5-2650v4
+            deliveryMethod: 1 hour
+            hdd:
+              - amount: '2'
+                size: SSD480GB
+            id: dd41f6fa95aa88bcea58eddd15eb0fa0
+            location:
+              - AMS-01
+            name: Dell R730XD (12xLFF) 2x Intel Xeon E5-2650v4
+            price:
+              currency: EUR
+              basePrice: 147.5
+              tax: 1
+              setupFee: 2
+              fee: 3
+              discounts:
+                total: -30
+                details:
+                  - description: Black Friday
+                    value: -20
+                  - description: Reseller
+                    value: -10
+                  - description: 1 year (-5%)
+                    value: -6.175
+              total: 117.32
+              billingCycle: 1 month
+              contractTerms:
+                - key: 1_MONTH
+                  description: 1 month
+                  discount_text: 0%
+                  discount_value: 0
+                  total: 123.5
+                - key: 3_MONTHS
+                  description: 3 months
+                  discount_text: '-1%'
+                  discount_value: -1.23
+                  total: 122.26
+                - key: 6_MONTHS
+                  description: 6 months
+                  discount_text: '-3%'
+                  discount_value: -3.7
+                  total: 120.93
+                - key: 1_YEAR
+                  description: 1 year
+                  discount_text: '-5%'
+                  discount_value: -6.17
+                  total: 117.32
+                - key: 2_YEARS
+                  description: 2 years
+                  discount_text: '-10%'
+                  discount_value: -12.35
+                  total: 113.59
+                - key: 3_YEARS
+                  description: 3 years
+                  discount_text: '-15%'
+                  discount_value: -18.52
+                  total: 109.86
+            ram:
+              size: '32'
+              unit: GB
+          schema:
+            $ref: ../components/schemas/dedicatedServer.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get a single dedicated server and its price.
+  tags:
+    - Ordering
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ordering_v1_products_dedicatedServers_{dedicatedServerId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ordering_v1_products_dedicatedServers_{dedicatedServerId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/ordering_v1_products_dedicatedServers_{dedicatedServerId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ordering_v1_products_dedicatedServers_{dedicatedServerId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/ordering_v1_products_dedicatedServers_{dedicatedServerId}/getundefined
+parameters:
+  - $ref: ../components/parameters/dedicatedServerId.yaml

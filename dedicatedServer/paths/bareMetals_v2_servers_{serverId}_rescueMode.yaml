@@ -43,42 +43,91 @@ post:
       content:
         application/json:
           example:
-            createdAt: 2018-03-06T22:53:31+0000
-            flow: tasks
+            bareMetalId: '123'
+            createdAt: '2025-03-17T14:06:12+00:00'
+            currentTask:
+              uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
+              status: PENDING
+              description: dummy placeholder
+              onError: break
+              errorMessage: null
+              flow: main
+              statusTimestamps:
+                WAITING: '2025-03-17T14:06:12+00:00'
+                PENDING: '2025-03-17T14:06:12+00:00'
+              type: test_task
+              actor: server
+              createdAt: '2025-03-17T14:06:12+00:00'
+              updatedAt: '2025-03-17T14:06:12+00:00'
+              timeout: 32400
+            flow: main
             isRunning: true
-            node: AA:BB:CC:DD:EE:FF!JKDJFK890
+            metadata:
+              BATCH_ID: null
+            node: '00:11:22:33:44:55'
             payload:
-              fileserverBaseUrl: 10.11.20.2
-              isUnassignedServer: false
-              jobType: rescueMode
-              pop: AMS-01
               powerCycle: true
-              serverId: '2349839'
+              doEmailNotification: false
+              rescueImageId: ROCKY_LINUX
+              callbackUrl: https://leaseweb.com
+              sshKeys: >-
+                ssh-ed25519
+                AAAAC3NzaC1lZDI1NTE5AAAAIKA8HyZ72HYYYtTCjHeN6rvMVkmTY2hb2nouORWMm8vv
+              network:
+                public:
+                  ip: 192.168.1.1
+                  mac: '00:11:22:33:44:55'
+                  cidr: 192.168.1.1/27
+                  prefix: 27
+                  netmask: 255.255.255.224
+                  netmask_hex: '0xffffffe0'
+                  gateway: 192.168.1.1
+                  network: 192.168.1.0
+                  broadcast: 192.168.1.31
+                  nameservers:
+                    - 192.168.1.21
+                    - 127.0.0.1
+                  isCustom: false
+                internal:
+                  mac: '00:11:22:33:44:55'
+              serverBrand: SUPERMICRO
+              serverChassis: SM 846TQ (24xLFF)
+              serverHardwareRaid: true
+              site: AMS-01
+              fileserverBaseUrl: 192.168.1.123
+              initiatedBy: EMPLOYEE
             progress:
-              canceled: 0
-              expired: 0
-              failed: 0
-              finished: 0
-              inprogress: 0
+              total: 1
+              waiting: 0
               pending: 1
+              inprogress: 0
+              finished: 0
+              failed: 0
+              expired: 0
+              canceled: 0
+              warning: 0
+              skipped: 0
               percentage: 0
-              total: 12
-              waiting: 11
-            serverId: '2349839'
+            serverId: '123'
             status: ACTIVE
             tasks:
-              - description: dummy
-                errorMessage: null
-                flow: tasks
-                onError: break
+              - uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
                 status: PENDING
+                description: dummy placeholder
+                onError: break
+                errorMessage: null
+                flow: main
                 statusTimestamps:
-                  PENDING: '2018-01-09T10:38:12+00:00'
-                  WAITING: '2018-01-09T10:38:12+00:00'
-                uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
+                  WAITING: '2025-03-17T14:06:12+00:00'
+                  PENDING: '2025-03-17T14:06:12+00:00'
+                type: test_task
+                actor: server
+                createdAt: '2025-03-17T14:06:12+00:00'
+                updatedAt: '2025-03-17T14:06:12+00:00'
+                timeout: 32400
             type: rescueMode
-            updatedAt: 2018-03-06T22:53:31+0000
-            uuid: ac99431b-640d-4282-95a9-a444eedb9309
+            updatedAt: '2025-03-17T14:06:12+00:00'
+            uuid: 7f869a99-2c26-4281-bd75-a45786a8c2d2
           schema:
             $ref: ../components/schemas/job.yaml
       description: Accepted.

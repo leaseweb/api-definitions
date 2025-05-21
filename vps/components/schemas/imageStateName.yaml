@@ -1,0 +1,11 @@
+title: imageStateName
+type: string
+nullable: true
+description: Images state
+enum:
+  - CREATING
+  - READY
+  - DESTROYED
+  - DESTROYING
+  - FAILED
+  - null

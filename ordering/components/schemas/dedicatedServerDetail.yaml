@@ -1,0 +1,64 @@
+type: object
+properties:
+  id:
+    description: Id of the server
+    type: string
+  name:
+    description: Name of the server
+    type: string
+  chassis:
+    description: Chassis of the server
+    type: string
+  cpu:
+    description: CPU info of the server
+    title: cpu
+    type: object
+    properties:
+      coresPerCPU:
+        description: Quantity of cores per CPU
+        type: string
+      totalCores:
+        description: Sum of CPU cores
+        nullable: true
+        type: string
+      quantity:
+        description: Quantity of CPUs
+        type: string
+      speed:
+        description: CPU speed
+        type: string
+      type:
+        description: CPU type
+        type: string
+  deliveryMethod:
+    description: Time to get the server ready
+    type: string
+  hdd:
+    description: HDD info of the server
+    type: array
+    items:
+      title: hdd
+      type: object
+      properties:
+        amount:
+          description: Amount of disks
+          type: string
+        size:
+          description: Disk size
+          type: string
+  ram:
+    description: Ram info of the server
+    title: ram
+    type: object
+    properties:
+      size:
+        description: Ram size
+        type: string
+      unit:
+        description: Unit description
+        type: string
+  location:
+    description: Location of the server
+    type: array
+    items:
+      type: string

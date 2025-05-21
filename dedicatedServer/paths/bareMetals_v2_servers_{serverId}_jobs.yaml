@@ -35,61 +35,106 @@ get:
               offset: 0
               totalCount: 1
             jobs:
-              - createdAt: '2018-01-09T10:38:12+00:00'
-                flow: tasks
-                isRunning: true
-                node: 80:18:44:E0:AF:C4!JGNTQ92
+              - status: FINISHED
+                uuid: cc2112b7-40fd-2000-b841-04bb1bf5aa1b
+                type: install
+                serverId: '123'
+                bareMetalId: '123'
+                node: 00:11:22:AA:BB:CC
+                createdAt: '2025-03-11T09:53:49+00:00'
+                updatedAt: '2025-03-11T09:54:46+00:00'
+                flow: '#stop'
+                currentTask: null
+                progress:
+                  total: 13
+                  waiting: 0
+                  pending: 0
+                  inprogress: 0
+                  finished: 11
+                  failed: 1
+                  expired: 0
+                  canceled: 0
+                  warning: 0
+                  skipped: 1
+                  percentage: 100
+                isRunning: false
                 payload:
-                  configurable: true
-                  device: SATA2TB
-                  fileserverBaseUrl: 10.11.20.2
-                  isUnassignedServer: false
-                  jobType: install
-                  numberOfDisks: null
-                  operatingSystemId: UBUNTU_22_04_64BIT
                   os:
-                    architecture: 64bit
-                    family: ubuntu
-                    name: Ubuntu 22.04 LTS (Jammy Jellyfish) (amd64)
+                    name: Ubuntu 24.04 LTS (Noble Numbat) (64bit)
                     type: linux
-                    version: '22.04'
-                  partitions:
-                    - filesystem: ext2
-                      mountpoint: /boot
-                      size: '1024'
-                    - filesystem: swap
-                      size: '4096'
-                    - filesystem: ext4
-                      mountpoint: /tmp
-                      size: '4096'
-                    - filesystem: ext4
-                      mountpoint: /
-                      size: '*'
-                  pop: AMS-01
-                  powerCycle: true
-                  raidLevel: null
-                  serverId: '99944'
-                  timezone: UTC
+                    engine: tarbuilder
+                    family: ubuntu
+                    version: '24.04'
+                    architecture: 64bit
                   raid:
                     type: SW
-                    level: 0
+                    level: 1
                     numberOfDisks: 2
-                  hostname: server.leaseweb.com
-                progress:
-                  canceled: 0
-                  expired: 0
-                  failed: 0
-                  finished: 0
-                  inprogress: 0
-                  pending: 1
-                  percentage: 0
-                  total: 1
-                  waiting: 0
-                serverId: '99944'
-                status: FINISHED
-                type: install
-                updatedAt: '2018-01-09T10:38:12+00:00'
-                uuid: bcf2bedf-8450-4b22-86a8-f30aeb3a38f9
+                  site: AMS-01
+                  device: SSD256GB
+                  network:
+                    public:
+                      ip: 192.168.1.1
+                      mac: 00:AA:BB:CC:DD:EE
+                      cidr: 192.168.1.1/27
+                      prefix: 27
+                      gateway: 192.168.1.1
+                      netmask: 255.255.255.224
+                      network: 192.168.1.0
+                      isCustom: false
+                      broadcast: 192.168.1.31
+                      nameservers:
+                        - 192.168.1.21
+                        - 127.0.0.1
+                      netmask_hex: '0xffffffe0'
+                    internal:
+                      mac: '00:11:22:33:44:55'
+                  features:
+                    - PARTITIONING
+                    - SW_RAID
+                    - TIMEZONE
+                    - HOSTNAME
+                    - SSH_KEYS
+                    - POST_INSTALL_SCRIPTS
+                    - CONTROL_PANEL
+                    - DB_MARIADB
+                    - DB_REDIS
+                    - DB_POSTGRESQL
+                  hostname: s123.dedi.leaseweb.net
+                  timezone: UTC
+                  partitions:
+                    - size: '1024'
+                      filesystem: ext4
+                      mountpoint: /boot
+                    - size: '4096'
+                      filesystem: swap
+                    - size: '4096'
+                      filesystem: ext4
+                      mountpoint: /tmp
+                    - size: '1024'
+                      filesystem: xfs
+                      mountpoint: /test
+                    - size: '*'
+                      filesystem: ext4
+                      mountpoint: /
+                  sshKeys: >-
+                    ssh-ed25519
+                    AAAAC3NzaC1lZDI1NTE5AAAAIMRnDNPjhz3WnGO6EPTj/rWqBGXxTNUrPW1uYXkGfQ3J
+                  powerCycle: true
+                  callbackUrl: https://leaseweb.com
+                  initiatedBy: EMPLOYEE
+                  serverBrand: SUPERMICRO
+                  configurable: true
+                  serverChassis: SM 846TQ (24xLFF)
+                  featuresUtilized:
+                    - PARTITIONING
+                    - HOSTNAME
+                    - SW_RAID
+                    - TIMEZONE
+                  fileserverBaseUrl: 192.168.1.123
+                  operatingSystemId: UBUNTU_24_04_64BIT
+                  serverHardwareRaid: true
+                  doEmailNotification: true
           schema:
             $ref: ../components/schemas/jobList.yaml
       description: Ok.

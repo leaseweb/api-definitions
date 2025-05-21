@@ -3,19 +3,28 @@ type: object
 properties:
   flag:
     type: string
+    description: Flag of the attribute
   id:
     type: string
+    description: ID of the attribute
   raw_value:
     type: string
+    description: Raw value of the attribute
   thresh:
     type: string
+    description: Threshold value of the attribute
   type:
     type: string
+    description: Type of the attribute
   updated:
     type: string
+    description: Last updated timestamp of the attribute
   value:
     type: string
+    description: Value of the attribute
   when_failed:
     type: string
+    description: Timestamp when the attribute failed
   worst:
     type: string
+    description: Worst value of the attribute

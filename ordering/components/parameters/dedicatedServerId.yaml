@@ -1,0 +1,7 @@
+description: The ID of a dedicated server
+example: 27f38ef06cf3bf62e21e75401feac6cd
+in: path
+name: dedicatedServerId
+required: true
+schema:
+  type: string

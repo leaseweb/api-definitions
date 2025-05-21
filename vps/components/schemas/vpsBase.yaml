@@ -29,9 +29,7 @@ properties:
   image:
     $ref: ./image.yaml
   marketAppId:
-    oneOf:
-      - type: 'null'
-      - $ref: ./marketAppId.yaml
+    $ref: ./nullableMarketAppId.yaml
   state:
     $ref: ./vpsState.yaml
   hasPublicIpV4:

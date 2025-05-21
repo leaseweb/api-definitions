@@ -27,42 +27,85 @@ post:
       content:
         application/json:
           example:
-            createdAt: 2018-01-09T09:18:06+0000
-            flow: tasks
+            bareMetalId: '123'
+            createdAt: '2025-03-17T13:48:15+00:00'
+            currentTask:
+              uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
+              status: PENDING
+              description: dummy placeholder
+              onError: break
+              errorMessage: null
+              flow: main
+              statusTimestamps:
+                WAITING: '2025-03-17T13:48:15+00:00'
+                PENDING: '2025-03-17T13:48:15+00:00'
+              type: test_task
+              actor: server
+              createdAt: '2025-03-17T13:48:15+00:00'
+              updatedAt: '2025-03-17T13:48:15+00:00'
+              timeout: 32400
+            flow: main
             isRunning: true
-            node: 80:18:44:E0:AF:C4!JGNTQ92
+            metadata:
+              BATCH_ID: null
+            node: 00:11:22:AA:BB:CC
             payload:
-              fileserverBaseUrl: ''
-              hasPublicIpmiIp: false
-              jobType: ipmiReset
-              pop: AMS-01
               powerCycle: true
-              serverId: '99944'
+              network:
+                public:
+                  ip: 213.227.153.72
+                  mac: 00:11:22:AA:BB:CC
+                  cidr: 213.227.153.72/27
+                  prefix: 27
+                  netmask: 255.255.255.224
+                  netmask_hex: '0xffffffe0'
+                  gateway: 213.227.153.94
+                  network: 213.227.153.64
+                  broadcast: 213.227.153.95
+                  nameservers:
+                    - 23.19.53.53
+                    - 23.19.52.52
+                  isCustom: false
+                internal:
+                  mac: 00:25:90:E6:D3:FD
+              serverBrand: SUPERMICRO
+              serverChassis: SM 846TQ (24xLFF)
+              serverHardwareRaid: true
+              site: AMS-01
+              fileserverBaseUrl: 192.168.1.123
+              initiatedBy: EMPLOYEE
             progress:
-              canceled: 0
-              expired: 0
-              failed: 0
-              finished: 0
-              inprogress: 0
-              pending: 1
-              percentage: 0
               total: 1
               waiting: 0
-            serverId: '99944'
+              pending: 1
+              inprogress: 0
+              finished: 0
+              failed: 0
+              expired: 0
+              canceled: 0
+              warning: 0
+              skipped: 0
+              percentage: 0
+            serverId: '123'
             status: ACTIVE
             tasks:
-              - description: dummy
-                errorMessage: null
-                flow: tasks
-                onError: break
+              - uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
                 status: PENDING
+                description: dummy placeholder
+                onError: break
+                errorMessage: null
+                flow: main
                 statusTimestamps:
-                  PENDING: '2018-01-09T09:18:06+00:00'
-                  WAITING: '2018-01-09T09:18:06+00:00'
-                uuid: c1a56a5a-ae38-4b12-acb6-0cba9ceb1016
+                  WAITING: '2025-03-17T13:48:15+00:00'
+                  PENDING: '2025-03-17T13:48:15+00:00'
+                type: test_task
+                actor: server
+                createdAt: '2025-03-17T13:48:15+00:00'
+                updatedAt: '2025-03-17T13:48:15+00:00'
+                timeout: 32400
             type: ipmiReset
-            updatedAt: 2018-01-09T09:18:06+0000
-            uuid: 754154c2-cc7f-4d5f-b8bf-b654084ba4a9
+            updatedAt: '2025-03-17T13:48:15+00:00'
+            uuid: 101e3a46-e878-4807-bf03-d3d796f42ecf
           schema:
             $ref: ../components/schemas/job.yaml
       description: Accepted.

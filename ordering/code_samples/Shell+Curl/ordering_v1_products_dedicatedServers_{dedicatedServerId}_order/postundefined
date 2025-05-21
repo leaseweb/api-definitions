@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/ordering/v1/products/dedicatedServers/27f38ef06cf3bf62e21e75401feac6cd/order \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"location":"AMS-01","connectedToAggregationPool":true,"contractTerm":"2_YEARS"}'

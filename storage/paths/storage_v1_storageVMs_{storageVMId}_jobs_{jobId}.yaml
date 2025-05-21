@@ -1,4 +1,5 @@
 get:
+  tags: []
   description: Gets status details about a job running in the specified storage VM.
   operationId: Show a job
   parameters:
@@ -24,8 +25,6 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  tags:
-    - Storage
   x-codeSamples:
     - lang: Shell + Curl
       source:

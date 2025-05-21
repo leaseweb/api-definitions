@@ -24,41 +24,85 @@ post:
       content:
         application/json:
           example:
-            createdAt: 2018-01-09T09:07:09+0000
-            flow: tasks
+            bareMetalId: '519'
+            createdAt: '2025-03-17T13:37:19+00:00'
+            currentTask:
+              uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
+              status: PENDING
+              description: dummy placeholder
+              onError: break
+              errorMessage: null
+              flow: main
+              statusTimestamps:
+                WAITING: '2025-03-17T13:37:19+00:00'
+                PENDING: '2025-03-17T13:37:19+00:00'
+              type: test_task
+              actor: server
+              createdAt: '2025-03-17T13:37:19+00:00'
+              updatedAt: '2025-03-17T13:37:19+00:00'
+              timeout: 32400
+            flow: main
             isRunning: true
-            node: 80:18:44:E0:AF:C4!JGNTQ92
+            metadata:
+              BATCH_ID: batch-id-123
+            node: 00:11:22:AA:BB:CC
             payload:
-              fileserverBaseUrl: ''
-              jobType: hardwareScan
-              pop: AMS-01
               powerCycle: true
-              serverId: '99944'
+              network:
+                public:
+                  ip: 192.168.1.1
+                  mac: 00:AA:BB:CC:DD:EE
+                  cidr: 192.168.1.1/27
+                  prefix: 27
+                  gateway: 192.168.1.1
+                  netmask: 255.255.255.224
+                  network: 192.168.1.0
+                  isCustom: false
+                  broadcast: 192.168.1.31
+                  nameservers:
+                    - 192.168.1.21
+                    - 127.0.0.1
+                  netmask_hex: '0xffffffe0'
+                internal:
+                  mac: '00:11:22:33:44:55'
+              serverBrand: SUPERMICRO
+              serverChassis: SM 846TQ (24xLFF)
+              serverHardwareRaid: true
+              site: AMS-01
+              fileserverBaseUrl: 192.168.1.123
+              initiatedBy: EMPLOYEE
             progress:
-              canceled: 0
-              expired: 0
-              failed: 0
-              finished: 0
-              inprogress: 0
+              total: 1
+              waiting: 0
               pending: 1
+              inprogress: 0
+              finished: 0
+              failed: 0
+              expired: 0
+              canceled: 0
+              warning: 0
+              skipped: 0
               percentage: 0
-              total: 5
-              waiting: 4
-            serverId: '99944'
+            serverId: '519'
             status: ACTIVE
             tasks:
-              - description: dummy
-                errorMessage: null
-                flow: tasks
-                onError: break
+              - uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
                 status: PENDING
+                description: dummy placeholder
+                onError: break
+                errorMessage: null
+                flow: main
                 statusTimestamps:
-                  PENDING: '2018-01-09T10:38:12+00:00'
-                  WAITING: '2018-01-09T10:38:12+00:00'
-                uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
+                  WAITING: '2025-03-17T13:37:19+00:00'
+                  PENDING: '2025-03-17T13:37:19+00:00'
+                type: test_task
+                actor: server
+                createdAt: '2025-03-17T13:37:19+00:00'
+                updatedAt: '2025-03-17T13:37:19+00:00'
+                timeout: 32400
             type: hardwareScan
-            updatedAt: 2018-01-09T09:07:09+0000
-            uuid: 2dcca92d-b5df-4837-bd99-b568ac54569a
+            updatedAt: '2025-03-17T13:37:19+00:00'
+            uuid: 43758e50-fb34-4c0a-9ab5-772c4e47208c
           schema:
             $ref: ../components/schemas/job.yaml
       description: Accepted.

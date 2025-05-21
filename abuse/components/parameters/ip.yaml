@@ -1,0 +1,7 @@
+name: ip
+in: query
+required: false
+schema:
+  type: string
+  format: ipv4
+description: Optional IP address to filter results

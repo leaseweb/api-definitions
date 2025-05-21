@@ -1,0 +1,22 @@
+type: object
+title: rescueModePayload
+allOf:
+  - $ref: ./payload.yaml
+  - properties:
+      rescueImageId:
+        description: The ID of the rescue image if job is for rescue mode
+        type: string
+      sshKeys:
+        $ref: ./sshKeys.yaml
+      callbackUrl:
+        description: The URL to be called when the job is finished
+        type: string
+        nullable: true
+      doEmailNotification:
+        description: Whether to send email notifications
+        type: boolean
+        nullable: true
+      configurable:
+        description: Whether the job is configurable
+        type: boolean
+        nullable: true

@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/ordering/v1/products/dedicatedServers/27f38ef06cf3bf62e21e75401feac6cd/order",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"location\":\"AMS-01\",\"connectedToAggregationPool\":true,\"contractTerm\":\"2_YEARS\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

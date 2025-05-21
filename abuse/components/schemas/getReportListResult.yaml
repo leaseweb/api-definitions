@@ -46,6 +46,13 @@ properties:
           type: string
           description: The deadline before when the report needs to be resolved.
           example: '2015-01-01T00:00:00+00:00'
+        detectedIpAddresses:
+          type: array
+          description: The IP-addresses detected in the report body.
+          items:
+            type: string
+            example:
+              - 127.0.0.1
   _metadata:
     $ref: ./_metadata.yaml
 type: object

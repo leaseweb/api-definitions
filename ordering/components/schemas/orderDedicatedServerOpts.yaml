@@ -1,0 +1,25 @@
+properties:
+  location:
+    description: The location of the server
+    example: AMS-01
+    type: string
+  connectedToAggregationPool:
+    description: Whether the server is connected to an aggregation pool
+    example: true
+    default: false
+    type: boolean
+  contractTerm:
+    description: The contract term of the server
+    example: 2_YEARS
+    default: 1_MONTH
+    type: string
+    enum:
+      - 1_MONTH
+      - 3_MONTHS
+      - 6_MONTHS
+      - 1_YEAR
+      - 2_YEARS
+      - 3_YEARS
+required:
+  - location
+type: object

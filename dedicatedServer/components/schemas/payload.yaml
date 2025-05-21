@@ -1,24 +1,80 @@
-required:
-  - jobType
 title: defaultPayload
 type: object
 properties:
-  fileserverBaseUrl:
+  powerCycle:
+    description: >-
+      Whether the server should be powered off and on automatically before the
+      job is started
+    type: boolean
+  network:
+    title: defaultPayloadNetwork
+    description: The network configuration of the server
+    type: object
+    properties:
+      public:
+        title: public
+        type: object
+        properties:
+          ip:
+            description: The IP address of the server
+            type: string
+          mac:
+            description: The MAC address of the server's first network interface
+            type: string
+          cidr:
+            description: The CIDR of the server
+            type: string
+          prefix:
+            description: The IP's prefix
+            type: integer
+          gateway:
+            description: The network gateway of the server
+            type: string
+          netmask:
+            description: The netmask of the server
+            type: string
+          network:
+            description: The network of the server
+            type: string
+          isCustom:
+            description: Whether the network is custom
+            type: boolean
+          broadcast:
+            description: The broadcast network of the server
+            type: string
+          nameservers:
+            description: The nameservers of the server
+            type: array
+            items:
+              type: string
+          netmask_hex:
+            description: The netmask of the server in hex
+            type: string
+      internal:
+        title: internal
+        type: object
+        properties:
+          mac:
+            description: The MAC address of the server's internal network interface
+            type: string
+  site:
+    description: Location of the server
     type: string
-  jobType:
+  initiatedBy:
+    description: Who initiated the job
     type: string
     enum:
-      - rescueMode
-      - hardwareScan
-      - ipmiReset
-  pop:
+      - EMPLOYEE
+      - CUSTOMER
+  serverBrand:
+    description: The brand of the server
     type: string
-  powerCycle:
-    type: boolean
-  isUnassignedServer:
-    type: boolean
-  serverId:
-    description: Id of the server
+  serverChassis:
+    description: The chassis of the server
     type: string
-discriminator:
-  propertyName: jobType
+  fileserverBaseUrl:
+    description: The base URL of the fileserver
+    type: string
+  serverHardwareRaid:
+    description: Whether the server has hardware RAID
+    type: boolean

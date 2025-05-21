@@ -1,2 +1,3 @@
+description: Id of the server
 type: string
 example: '62264'

@@ -8,7 +8,9 @@ $request->setRequestMethod('GET');
 $request->setQuery(new http\QueryString([
   'limit' => '10',
   'offset' => '0',
-  'type' => 'overview'
+  'type' => 'overview',
+  'domainName' => 'example.com',
+  'status' => 'ACTIVE'
 ]));
 
 $request->setHeaders([

@@ -8,7 +8,7 @@ const settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"callbackUrl\":\"http://example.com\",\"controlPanelId\":\"string\",\"device\":\"string\",\"hostname\":\"string\",\"operatingSystemId\":\"string\",\"partitions\":[{\"filesystem\":\"string\",\"mountpoint\":\"string\",\"size\":\"string\"}],\"password\":\"string\",\"postInstallScript\":\"string\",\"powerCycle\":true,\"raid\":{\"level\":0,\"numberOfDisks\":0,\"type\":\"HW\"},\"sshKeys\":\"string\",\"timezone\":\"string\"}"
+  "data": "{\"callbackUrl\":\"http://example.com\",\"controlPanelId\":\"string\",\"device\":\"string\",\"hostname\":\"string\",\"operatingSystemId\":\"string\",\"partitions\":[{\"mountpoint\":\"/home\",\"filesystem\":\"ext4\",\"size\":\"1024\"}],\"password\":\"string\",\"postInstallScript\":\"string\",\"powerCycle\":true,\"raid\":{\"level\":0,\"numberOfDisks\":0,\"type\":\"HW\"},\"sshKeys\":\"string\",\"timezone\":\"string\"}"
 };
 
 $.ajax(settings).done(function (response) {

@@ -31,18 +31,14 @@ allOf:
             description: The storage size unit
             example: GB
       state:
-        oneOf:
-          - type: 'null'
-          - $ref: ./imageState.yaml
+        $ref: ./imageStateName.yaml
       stateReason:
         nullable: true
         description: The reason in case of failure
         type: string
         example: Could not find configured bucket
       region:
-        oneOf:
-          - type: 'null'
-          - $ref: ./regionName.yaml
+        $ref: ./imageRegion.yaml
       createdAt:
         nullable: true
         type: string

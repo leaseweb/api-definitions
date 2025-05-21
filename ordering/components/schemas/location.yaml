@@ -1,0 +1,3 @@
+description: The datacenter location
+example: AMS-01
+type: string

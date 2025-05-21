@@ -8,7 +8,9 @@ $request->setRequestMethod('GET');
 $request->setQuery(new http\QueryString([
   'limit' => '20',
   'offset' => '10',
-  'status' => 'OPEN,WAITING,CLOSED'
+  'status' => 'OPEN,WAITING,CLOSED',
+  'ticketId' => 'SOME_STRING_VALUE',
+  'ip' => 'SOME_STRING_VALUE'
 ]));
 
 $request->setHeaders([

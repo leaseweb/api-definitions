@@ -11,58 +11,138 @@ post:
       content:
         application/json:
           example:
-            createdAt: 2021-01-09T08:54:06+0000
-            flow: '#stop'
-            isRunning: false
-            node: 80:18:44:E0:AF:C4!JGNTQ92
+            bareMetalId: '123'
+            createdAt: '2025-03-17T13:24:25+00:00'
+            currentTask:
+              uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
+              status: CANCELED
+              description: dummy placeholder
+              onError: break
+              errorMessage: null
+              flow: main
+              statusTimestamps:
+                PENDING: '2025-03-17T13:24:20+00:00'
+                WAITING: '2025-03-17T13:24:30+00:00'
+                CANCELED: '2025-03-17T13:24:40+00:00'
+              type: test_task
+              actor: server
+              createdAt: '2025-03-17T13:24:25+00:00'
+              updatedAt: '2025-03-17T13:24:40+00:00'
+              timeout: 32400
+            flow: finally
+            isRunning: true
+            metadata:
+              BATCH_ID: batch-id-123
+            node: 00:11:22:AA:BB:CC
             payload:
-              configurable: true
-              device: SATA2TB
-              fileserverBaseUrl: ''
-              jobType: install
-              numberOfDisks: null
-              operatingSystemId: UBUNTU_22_04_64BIT
               os:
-                architecture: 64bit
-                family: ubuntu
-                name: Ubuntu 22.04 LTS (Jammy Jellyfish) (amd64)
                 type: linux
-                version: '22.04'
+                name: Ubuntu 24.04 LTS (64bit)
+                family: ubuntu
+                version: '24.04'
+                architecture: 64bit
+                engine: tarbuilder
+              device: SSD256GB
               partitions:
+                - mountpoint: /boot
+                  filesystem: ext4
+                  size: '1024'
                 - filesystem: swap
-                  size: 4096
-              pop: AMS-01
-              powerCycle: true
-              raidLevel: null
-              serverId: '99944'
+                  size: '4096'
+                - mountpoint: /tmp
+                  filesystem: ext4
+                  size: '4096'
+                - mountpoint: /
+                  filesystem: ext4
+                  size: '*'
+              configurable: true
               timezone: UTC
-              x: 1
+              powerCycle: true
+              doEmailNotification: false
+              operatingSystemId: UBUNTU_24_04_64BIT
+              raid:
+                type: SW
+                level: 0
+              callbackUrl: http://leaseweb.com
+              hostname: s123.dedi.leaseweb.net
+              sshKeys: >-
+                ssh-ed25519
+                AAAAC3NzaC1lZDI1NTE5AAAAIKA8HyZ72HYYYtTCjHeN6rvMVkmTY2hb2nouORWMm8vv
+                noname
+              network:
+                public:
+                  ip: 192.168.1.1
+                  mac: 00:AA:BB:CC:DD:EE
+                  cidr: 192.168.1.1/27
+                  prefix: 27
+                  gateway: 192.168.1.1
+                  netmask: 255.255.255.224
+                  network: 192.168.1.0
+                  isCustom: false
+                  broadcast: 192.168.1.31
+                  nameservers:
+                    - 192.168.1.21
+                    - 127.0.0.1
+                  netmask_hex: '0xffffffe0'
+                internal:
+                  mac: '00:11:22:33:44:55'
+              featuresUtilized:
+                - PARTITIONING
+                - HOSTNAME
+                - SSH_KEYS
+                - SW_RAID
+                - TIMEZONE
+              features:
+                - PARTITIONING
+                - SW_RAID
+                - TIMEZONE
+                - HOSTNAME
+                - SSH_KEYS
+                - POST_INSTALL_SCRIPTS
+                - CONTROL_PANEL
+                - DB_MARIADB
+                - DB_REDIS
+                - DB_MONGODB
+                - DB_POSTGRESQL
+              serverBrand: SUPERMICRO
+              serverChassis: SM 846TQ (24xLFF)
+              serverHardwareRaid: true
+              site: AMS-01
+              fileserverBaseUrl: 192.168.1.123
+              initiatedBy: EMPLOYEE
             progress:
-              canceled: 1
-              expired: 0
-              failed: 0
-              finished: 0
-              inprogress: 0
-              pending: 0
-              percentage: 0
-              total: 1
+              total: 0
               waiting: 0
-            serverId: '99944'
+              pending: 0
+              inprogress: 0
+              finished: 0
+              failed: 0
+              expired: 0
+              canceled: 1
+              warning: 0
+              skipped: 0
+              percentage: 100
+            serverId: '123'
             status: CANCELED
             tasks:
-              - description: dummy
-                errorMessage: The job was canceled by the api consumer
-                flow: tasks
-                onError: break
+              - uuid: 8a10b74b-2a94-4a3b-88da-b9c07faa240d
                 status: CANCELED
+                description: dummy placeholder
+                onError: break
+                errorMessage: null
+                flow: main
                 statusTimestamps:
-                  CANCELED: '2021-01-09T08:54:15+00:00'
-                  PENDING: '2021-01-09T08:54:06+00:00'
-                  WAITING: '2021-01-09T08:54:06+00:00'
-                uuid: 085ce145-39bd-4cb3-8e2b-53f17a97a463
+                  PENDING: '2025-03-17T13:24:20+00:00'
+                  WAITING: '2025-03-17T13:24:30+00:00'
+                  CANCELED: '2025-03-17T13:24:40+00:00'
+                type: test_task
+                actor: server
+                createdAt: '2025-03-17T13:24:25+00:00'
+                updatedAt: '2025-03-17T13:24:40+00:00'
+                timeout: 32400
             type: install
-            updatedAt: 2021-01-09T08:54:15+0000
-            uuid: c77d8a6b-d255-4744-8b95-8bf4af6f8b48
+            updatedAt: '2025-03-17T13:24:34+00:00'
+            uuid: a1234567-ab0b-4ff1-af43-c4ca551ee3ff
           schema:
             $ref: ../components/schemas/job.yaml
       description: Ok.

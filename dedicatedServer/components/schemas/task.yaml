@@ -1,0 +1,87 @@
+title: task
+description: A task is a single unit of work that is part of a job
+type: object
+properties:
+  uuid:
+    description: Unique ID for this task
+    type: string
+  status:
+    description: The status of the task
+    type: string
+    enum:
+      - WAITING
+      - PENDING
+      - INPROGRESS
+      - REBOOTING
+      - FINISHED
+      - FAILED
+      - SKIPPED
+      - CANCELED
+      - WARNING
+      - EXPIRED
+  description:
+    description: Description of the task
+    type: string
+  onError:
+    description: The behaviour if this task fails
+    type: string
+  errorMessage:
+    description: An optional error message
+    nullable: true
+    type: string
+  flow:
+    description: The flow this task is part of
+    type: string
+  statusTimestamps:
+    title: statusTimestamps
+    description: Timestamp for each state change
+    type: object
+    properties:
+      WAITING:
+        type: string
+        format: date-time
+      PENDING:
+        type: string
+        format: date-time
+      INPROGRESS:
+        type: string
+        format: date-time
+      REBOOTING:
+        type: string
+        format: date-time
+      FINISHED:
+        type: string
+        format: date-time
+      FAILED:
+        type: string
+        format: date-time
+      SKIPPED:
+        type: string
+        format: date-time
+      CANCELED:
+        type: string
+        format: date-time
+      WARNING:
+        type: string
+        format: date-time
+      EXPIRED:
+        type: string
+        format: date-time
+  type:
+    description: The type of the task
+    type: string
+  actor:
+    description: The actor of the task
+    type: string
+  createdAt:
+    description: Creation timestamp
+    format: date-time
+    type: string
+  updatedAt:
+    description: Update timestamp
+    format: date-time
+    type: string
+  timeout:
+    description: The timeout for the task
+    type: integer
+    nullable: true

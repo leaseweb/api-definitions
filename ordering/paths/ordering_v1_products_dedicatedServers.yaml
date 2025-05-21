@@ -1,0 +1,117 @@
+get:
+  description: |
+    List available dedicated server configurations.
+  operationId: getDedicatedServerList
+  parameters:
+    - name: location
+      in: query
+      required: false
+      schema:
+        description: The datacenter location
+        example: AMS-01
+        type: string
+    - name: ram
+      in: query
+      required: false
+      schema:
+        description: The ram information
+        example: 64GB
+        type: string
+    - name: diskSize
+      in: query
+      required: false
+      schema:
+        description: The disk size information
+        example: SSD480GB
+        type: string
+    - name: diskAmount
+      in: query
+      required: false
+      schema:
+        description: The amount of disks
+        example: '2'
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 2
+              limit: 2
+              offset: 0
+            dedicatedServers:
+              - id: 27f38ef06cf3bf62e21e75401feac6cd
+                name: Dell R730XD (12xLFF) 2x Intel Xeon E5-2650v4
+                chassis: Dell R730XD (12xLFF)
+                cpu:
+                  coresPerCPU: '12'
+                  totalCores: '24'
+                  quantity: Dual
+                  speed: 2,2 GHz
+                  type: Intel Xeon E5-2650v4
+                deliveryMethod: 1 hour
+                hdd:
+                  - amount: '2'
+                    size: SSD480GB
+                ram:
+                  size: '32'
+                  unit: GB
+                location:
+                  - AMS-01
+                  - AMS-02
+              - id: e2f0e2f2a3083d9f4b5ca9ebe34ae5d3
+                name: Dell R7525 (16SFF+8NVMe) 2x AMD EPYC 7543
+                chassis: Dell R7525 (16SFF+8NVMe)
+                cpu:
+                  coresPerCPU: '32'
+                  totalCores: '64'
+                  quantity: Dual
+                  speed: 2,8 GHz
+                  type: AMD EPYC 7543
+                deliveryMethod: 1 hour
+                hdd:
+                  - amount: '2'
+                    size: SSD960GB
+                  - amount: '2'
+                    size: U2_3.2TB
+                ram:
+                  size: '128'
+                  unit: GB
+                location:
+                  - AMS-01
+          schema:
+            $ref: ../components/schemas/dedicatedServerList.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List available dedicated server configurations.
+  tags:
+    - Ordering
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ordering_v1_products_dedicatedServers/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ordering_v1_products_dedicatedServers/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/ordering_v1_products_dedicatedServers/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ordering_v1_products_dedicatedServers/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/ordering_v1_products_dedicatedServers/getundefined
