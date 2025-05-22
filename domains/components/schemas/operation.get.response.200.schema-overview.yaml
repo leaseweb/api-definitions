@@ -13,6 +13,7 @@ properties:
         - contractStartDate
         - webhostingContractOnly
         - hasWebhosting
+        - webhostingEquipmentId
       properties:
         domainName:
           type: string
@@ -31,6 +32,8 @@ properties:
           type: boolean
         hasWebhosting:
           type: boolean
+        webhostingEquipmentId:
+          type: string
         _links:
           type: object
           properties:
