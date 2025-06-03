@@ -1,5 +1,4 @@
 get:
-  tags: []
   description: Show all StorageVMs for the given customer.
   operationId: List StorageVMs
   parameters:
@@ -25,6 +24,8 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  tags:
+    - Storage
   x-codeSamples:
     - lang: Shell + Curl
       source:

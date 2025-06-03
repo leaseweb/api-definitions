@@ -1,5 +1,4 @@
 get:
-  tags: []
   description: Show all the volumes in a StorageVM.
   operationId: List volumes
   parameters:
@@ -51,6 +50,8 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  tags:
+    - Storage
   x-codeSamples:
     - lang: Shell + Curl
       source:

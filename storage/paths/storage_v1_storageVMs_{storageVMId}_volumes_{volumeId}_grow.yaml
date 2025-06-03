@@ -1,5 +1,4 @@
 post:
-  tags: []
   description: Grow the size of a volume in StorageVM.
   operationId: Grow volume
   parameters:
@@ -32,6 +31,8 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  tags:
+    - Storage
   x-codeSamples:
     - lang: Shell + Curl
       source:
