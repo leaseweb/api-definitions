@@ -94,6 +94,12 @@ allOf:
           type:
             description: Type of database
             type: string
+      aiFrameworks:
+        description: The AI frameworks that are being installed on the server
+        type: array
+        nullable: true
+        items:
+          type: string
       callbackUrl:
         description: The URL to be called when the job is finished
         type: string

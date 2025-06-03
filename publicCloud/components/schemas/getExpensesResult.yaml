@@ -21,7 +21,7 @@ properties:
             resources:
               $ref: ./resources.yaml
             contract:
-              $ref: ./contract.yaml
+              $ref: ./instanceContract.yaml
             startedAt:
               type: string
               description: Date when the instance was started

@@ -56,10 +56,10 @@ properties:
             description:
               description: Contract term description
               type: string
-            discount_text:
+            discountText:
               description: Discount in percentage
               type: string
-            discount_value:
+            discountValue:
               description: Discount value
               type: number
             total:

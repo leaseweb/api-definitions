@@ -100,6 +100,12 @@ get:
                     - DB_MARIADB
                     - DB_REDIS
                     - DB_POSTGRESQL
+                    - AI_FRAMEWORK_PYTORCH
+                    - AI_FRAMEWORK_TENSORFLOW
+                    - AI_FRAMEWORK_SCIKIT_LEARN
+                    - AI_FRAMEWORK_XGBOOST
+                    - AI_FRAMEWORK_HUGGING_FACE
+                    - AI_FRAMEWORK_NVIDIA_NGC
                   hostname: s123.dedi.leaseweb.net
                   timezone: UTC
                   partitions:
@@ -117,6 +123,11 @@ get:
                     - size: '*'
                       filesystem: ext4
                       mountpoint: /
+                  aiFrameworks:
+                    - PYTORCH
+                    - TENSORFLOW
+                    - SCIKIT_LEARN
+                    - XGBOOST
                   sshKeys: >-
                     ssh-ed25519
                     AAAAC3NzaC1lZDI1NTE5AAAAIMRnDNPjhz3WnGO6EPTj/rWqBGXxTNUrPW1uYXkGfQ3J

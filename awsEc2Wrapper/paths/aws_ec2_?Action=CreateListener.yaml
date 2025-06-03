@@ -59,7 +59,25 @@ get:
         application/xml:
           schema:
             $ref: ../components/schemas/createListenerResult.yaml
-          example: " <?xml version='1.0' encoding='UTF-8'?>\n <CreateListenerResponse xmlns='http://elasticloadbalancing.amazonaws.com/doc/2015-12-01/'>\n \t<CreateListenerResult>\n \t\t<Listeners>\n \t\t\t<member>\n \t\t\t\t<LoadBalancerArn>1ac942f4-cdd9-4c00-973f-ed82a92940cb</LoadBalancerArn>\n \t\t\t\t<Protocol>HTTP</Protocol>\n \t\t\t\t<Port>80</Port>,\n \t\t\t\t<ListenerArn>2ac942f4-cdd9-4c00-973f-ed82a92940cb</ListenerArn>\n \t\t\t</member>\n \t\t</Listeners>\n \t</CreateListenerResult>\n \t<ResponseMetadata>\n \t\t<RequestId>8008e3fb-f671-46ab-ade4-871ca5508845</RequestId>\n \t</ResponseMetadata>\n </CreateListenerResponse>\n "
+          example: >
+            <?xml version='1.0' encoding='UTF-8'?>
+
+            <CreateListenerResponse
+            xmlns='http://elasticloadbalancing.amazonaws.com/doc/2015-12-01/'>
+                <CreateListenerResult>
+                    <Listeners>
+                        <member>
+                            <LoadBalancerArn>1ac942f4-cdd9-4c00-973f-ed82a92940cb</LoadBalancerArn>
+                            <Protocol>HTTP</Protocol>
+                            <Port>80</Port>,
+                            <ListenerArn>2ac942f4-cdd9-4c00-973f-ed82a92940cb</ListenerArn>
+                        </member>
+                    </Listeners>
+                </CreateListenerResult>
+                <ResponseMetadata>
+                    <RequestId>8008e3fb-f671-46ab-ade4-871ca5508845</RequestId>
+                </ResponseMetadata>
+            </CreateListenerResponse>
     '400':
       $ref: ../components/responses/400.yaml
     '401':

@@ -2,3 +2,6 @@ type: string
 enum:
   - ACTIVE
   - DELETE_SCHEDULED
+  - PENDING
+  - INACTIVE
+  - CANCELLED

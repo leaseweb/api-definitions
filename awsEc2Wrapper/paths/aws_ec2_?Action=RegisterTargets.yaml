@@ -39,10 +39,9 @@ get:
     '200':
       content:
         application/xml:
-          example: |2-
-             <?xml version='1.0' encoding='UTF-8'?>
-             <Empty/>
-             
+          example: |
+            <?xml version='1.0' encoding='UTF-8'?>
+            <Empty/>
     '400':
       $ref: ../components/responses/400.yaml
     '401':

@@ -1,3 +1,5 @@
 curl --request DELETE \
   --url https://api.leaseweb.com/publicCloud/v1/instances/ace712e9-a166-47f1-9065-4af0f7e7fce1 \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"reasonCode":"string","reason":"string"}'

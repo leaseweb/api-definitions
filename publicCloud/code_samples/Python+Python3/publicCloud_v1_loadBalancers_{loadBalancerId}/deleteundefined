@@ -2,9 +2,14 @@ import http.client
 
 conn = http.client.HTTPSConnection("api.leaseweb.com")
 
-headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
+payload = "{\"reasonCode\":\"string\",\"reason\":\"string\"}"
 
-conn.request("DELETE", "/publicCloud/v1/loadBalancers/695ddd91-051f-4dd6-9120-938a927a47d0", headers=headers)
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("DELETE", "/publicCloud/v1/loadBalancers/695ddd91-051f-4dd6-9120-938a927a47d0", payload, headers)
 
 res = conn.getresponse()
 data = res.read()

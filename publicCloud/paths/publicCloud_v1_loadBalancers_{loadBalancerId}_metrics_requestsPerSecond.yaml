@@ -41,7 +41,9 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get load balancer requests per second metrics
+  summary: >-
+    Get load balancer requests per second metrics. Not available for listeners
+    with TCP protocol
   tags:
     - Public Clouds
   x-codeSamples:

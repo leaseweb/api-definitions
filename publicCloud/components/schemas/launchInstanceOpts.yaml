@@ -69,7 +69,5 @@ required:
   - imageId
   - contractType
   - rootDiskStorageType
-  - contractTerm
-  - billingFrequency
   - type
 type: object

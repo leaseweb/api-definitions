@@ -56,6 +56,12 @@ properties:
       List of public sshKeys to be setup in your installation, separated by new
       lines
     type: string
+  aiFrameworks:
+    description: The AI frameworks that are being installed on the server
+    type: array
+    nullable: true
+    items:
+      type: string
   timezone:
     description: Timezone represented as Geographical_Area/City
     type: string

@@ -16,6 +16,4 @@ required:
   - region
   - type
   - contractType
-  - contractTerm
-  - billingFrequency
 type: object

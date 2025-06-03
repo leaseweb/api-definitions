@@ -4,7 +4,7 @@ required:
   - term
   - billingFrequency
   - endsAt
-  - createdAt
+  - startsAt
   - state
   - id
   - sla
@@ -23,9 +23,9 @@ properties:
     format: date-time
     example: '2023-11-30T16:31:28+00:00'
     nullable: true
-  createdAt:
+  startsAt:
     type: string
-    description: Date when the contract was created
+    description: Date when the contract is starting
     format: date-time
     example: '2023-11-30T16:31:28+00:00'
   state:

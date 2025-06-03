@@ -41,7 +41,7 @@ properties:
   rootDiskStorageType:
     $ref: ./storageType.yaml
   contract:
-    $ref: ./contract.yaml
+    $ref: ./instanceContract.yaml
   autoScalingGroup:
     $ref: ./autoScalingGroup.yaml
   image:

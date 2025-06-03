@@ -73,7 +73,34 @@ get:
         application/xml:
           schema:
             $ref: ../components/schemas/describeLoadBalancersResult.yaml
-          example: " <?xml version='1.0' encoding='UTF-8'?>\n <DescribeLoadBalancersResponse xmlns='http://elasticloadbalancing.amazonaws.com/doc/2015-12-01/'>\n \t<DescribeLoadBalancersResult>\n \t\t<NextMarker>1</NextMarker>\n \t\t<LoadBalancers>\n \t\t\t<member>\n \t\t\t\t<LoadBalancerArn>1ac942f4-cdd9-4c00-973f-ed82a92940cb</LoadBalancerArn>\n \t\t\t\t<LoadBalancerName>Test</LoadBalancerArn>\n \t\t\t\t<CreatedTime>2024-06-14T09:02,:31+00:00</CreatedTime>,\n \t\t\t\t<Type>lsw.m3.large</Type>\n \t\t\t\t<State>\n \t\t\t\t\t<Code>active</Code>\n \t\t\t\t</State>\n \t\t\t\t<AvailabilityZones>\n \t\t\t\t\t<member>\n \t\t\t\t\t\t<ZoneName>eu-west-3</ZoneName>\n \t\t\t\t\t</member>\n \t\t\t\t</AvailabilityZones>\n \t\t\t</member>\n \t\t</LoadBalancers>\n \t</DescribeLoadBalancersResult>\n \t<ResponseMetadata>\n \t\t<RequestId>8008e3fb-f671-46ab-ade4-871ca5508845</RequestId>\n \t</ResponseMetadata>\n </DescribeLoadBalancersResponse>\n "
+          example: >
+            <?xml version='1.0' encoding='UTF-8'?>
+
+            <DescribeLoadBalancersResponse
+            xmlns='http://elasticloadbalancing.amazonaws.com/doc/2015-12-01/'>
+                <DescribeLoadBalancersResult>
+                    <NextMarker>1</NextMarker>
+                    <LoadBalancers>
+                        <member>
+                            <LoadBalancerArn>1ac942f4-cdd9-4c00-973f-ed82a92940cb</LoadBalancerArn>
+                            <LoadBalancerName>Test</LoadBalancerArn>
+                            <CreatedTime>2024-06-14T09:02,:31+00:00</CreatedTime>,
+                            <Type>lsw.m3.large</Type>
+                            <State>
+                                <Code>active</Code>
+                            </State>
+                            <AvailabilityZones>
+                                <member>
+                                    <ZoneName>eu-west-3</ZoneName>
+                                </member>
+                            </AvailabilityZones>
+                        </member>
+                    </LoadBalancers>
+                </DescribeLoadBalancersResult>
+                <ResponseMetadata>
+                    <RequestId>8008e3fb-f671-46ab-ade4-871ca5508845</RequestId>
+                </ResponseMetadata>
+            </DescribeLoadBalancersResponse>
     '400':
       $ref: ../components/responses/400.yaml
     '401':

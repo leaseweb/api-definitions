@@ -4,8 +4,11 @@ const settings = {
   "url": "https://api.leaseweb.com/publicCloud/v1/instances/ace712e9-a166-47f1-9065-4af0f7e7fce1",
   "method": "DELETE",
   "headers": {
-    "X-LSW-Auth": "REPLACE_KEY_VALUE"
-  }
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"reasonCode\":\"string\",\"reason\":\"string\"}"
 };
 
 $.ajax(settings).done(function (response) {

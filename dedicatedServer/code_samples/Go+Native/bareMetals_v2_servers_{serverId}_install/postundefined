@@ -11,7 +11,7 @@ func main() {
 
 	url := "https://api.leaseweb.com/bareMetals/v2/servers/12345/install"
 
-	payload := strings.NewReader("{\"callbackUrl\":\"http://example.com\",\"controlPanelId\":\"string\",\"device\":\"string\",\"hostname\":\"string\",\"operatingSystemId\":\"string\",\"partitions\":[{\"mountpoint\":\"/home\",\"filesystem\":\"ext4\",\"size\":\"1024\"}],\"password\":\"string\",\"postInstallScript\":\"string\",\"powerCycle\":true,\"raid\":{\"level\":0,\"numberOfDisks\":0,\"type\":\"HW\"},\"sshKeys\":\"string\",\"timezone\":\"string\"}")
+	payload := strings.NewReader("{\"callbackUrl\":\"http://example.com\",\"controlPanelId\":\"string\",\"device\":\"string\",\"hostname\":\"string\",\"operatingSystemId\":\"string\",\"partitions\":[{\"mountpoint\":\"/home\",\"filesystem\":\"ext4\",\"size\":\"1024\"}],\"password\":\"string\",\"postInstallScript\":\"string\",\"powerCycle\":true,\"raid\":{\"level\":0,\"numberOfDisks\":0,\"type\":\"HW\"},\"sshKeys\":\"string\",\"aiFrameworks\":[\"string\"],\"timezone\":\"string\"}")
 
 	req, _ := http.NewRequest("POST", url, payload)
 

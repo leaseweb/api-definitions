@@ -18,7 +18,7 @@ get:
               type: MONTHLY
               state: ACTIVE
               endsAt: '2024-10-24T21:13:25+00:00'
-              createdAt: '2024-10-24T21:13:25+00:00'
+              startsAt: '2024-10-24T21:13:25+00:00'
               sla: Basic
               controlPanel: cPanel Admin 5
               inModification: false
@@ -116,7 +116,7 @@ put:
               type: MONTHLY
               state: ACTIVE
               endsAt: '2024-10-24T21:13:25+00:00'
-              createdAt: '2024-10-24T21:13:25+00:00'
+              startsAt: '2024-10-24T21:13:25+00:00'
               sla: Basic
               controlPanel: cPanel Admin 5
               inModification: false

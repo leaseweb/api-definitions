@@ -38,6 +38,9 @@ post:
     content:
       application/json:
         example:
+          aiFrameworks:
+            - PYTORCH
+            - XGBOOST
           controlPanelId: PLESK_12
           device: SATA2TB
           hostname: ubuntu22.local

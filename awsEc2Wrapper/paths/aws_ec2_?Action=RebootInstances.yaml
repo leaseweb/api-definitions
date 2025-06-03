@@ -32,7 +32,14 @@ get:
         application/xml:
           schema:
             $ref: ../components/schemas/rebootInstancesResult.yaml
-          example: " <?xml version='1.0' encoding='UTF-8'?>\n <RebootInstancesResponse xmlns='http: //ec2.amazonaws.com/doc/2016-11-15/'>\n \t<return>true</return>\n \t<requestId>59dbff89-35bd-4eac-99ed-be587EXAMPLE</requestId>\n </RebootInstancesResponse>\n "
+          example: >
+            <?xml version='1.0' encoding='UTF-8'?>
+
+            <RebootInstancesResponse xmlns='http:
+            //ec2.amazonaws.com/doc/2016-11-15/'>
+                <return>true</return>
+                <requestId>59dbff89-35bd-4eac-99ed-be587EXAMPLE</requestId>
+            </RebootInstancesResponse>
     '400':
       $ref: ../components/responses/400.yaml
     '401':

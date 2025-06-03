@@ -43,7 +43,7 @@ properties:
   privateNetwork:
     $ref: ./privateNetwork.yaml
   contract:
-    $ref: ./contract.yaml
+    $ref: ./instanceContract.yaml
   ips:
     type: array
     items:

@@ -32,7 +32,18 @@ get:
         application/xml:
           schema:
             $ref: ../components/schemas/stopInstancesResult.yaml
-          example: " <?xml version='1.0' encoding='UTF-8'?>\n <StopInstancesResponse xmlns='http: //ec2.amazonaws.com/doc/2016-11-15/'>\n \t<instancesSet>\n \t\t<item>\n \t\t\t<instanceId>10a6163b-03c6-4303-a274-c96fa2217503</instanceId>\n \t\t</item>\n \t</instancesSet>\n \t<requestId>10a6163b-03c6-4303-a274</requestId>\n </StopInstancesResponse>\n "
+          example: >
+            <?xml version='1.0' encoding='UTF-8'?>
+
+            <StopInstancesResponse xmlns='http:
+            //ec2.amazonaws.com/doc/2016-11-15/'>
+                <instancesSet>
+                    <item>
+                        <instanceId>10a6163b-03c6-4303-a274-c96fa2217503</instanceId>
+                    </item>
+                </instancesSet>
+                <requestId>10a6163b-03c6-4303-a274</requestId>
+            </StopInstancesResponse>
     '400':
       $ref: ../components/responses/400.yaml
     '401':

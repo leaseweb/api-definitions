@@ -11,13 +11,16 @@ get:
           example:
             autoScalingGroup: null
             contract:
+              id: ''
               billingFrequency: 1
               term: 0
               type: HOURLY
-              endsAt: null
-              renewalsAt: '2024-04-09T15:28:28+00:00'
-              createdAt: '2024-04-09T15:11:21+00:00'
               state: ACTIVE
+              endsAt: null
+              startsAt: '2024-10-24T21:13:25+00:00'
+              sla: Basic
+              controlPanel: cPanel Admin 5
+              inModification: false
             hasPrivateNetwork: false
             hasPublicIpV4: true
             hasUserData: false
@@ -104,6 +107,13 @@ get:
 delete:
   description: Terminate Public Cloud instance
   operationId: terminateInstance
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/terminateInstanceOpts.yaml
+        example:
+          reasonCode: CANCEL_TRIAL_PERIOD
   responses:
     '200':
       description: >-
@@ -190,13 +200,16 @@ put:
           example:
             autoScalingGroup: null
             contract:
+              id: ''
               billingFrequency: 1
               term: 0
               type: HOURLY
-              endsAt: null
-              renewalsAt: '2024-04-09T15:28:28+00:00'
-              createdAt: '2024-04-09T15:11:21+00:00'
               state: ACTIVE
+              endsAt: null
+              startsAt: '2024-10-24T21:13:25+00:00'
+              sla: Basic
+              controlPanel: cPanel Admin 5
+              inModification: false
             hasPrivateNetwork: false
             hasPublicIpV4: true
             hasUserData: false

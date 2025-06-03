@@ -4,7 +4,7 @@ $client = new http\Client;
 $request = new http\Client\Request;
 
 $body = new http\Message\Body;
-$body->append('{"callbackUrl":"http://example.com","controlPanelId":"string","device":"string","hostname":"string","operatingSystemId":"string","partitions":[{"mountpoint":"/home","filesystem":"ext4","size":"1024"}],"password":"string","postInstallScript":"string","powerCycle":true,"raid":{"level":0,"numberOfDisks":0,"type":"HW"},"sshKeys":"string","timezone":"string"}');
+$body->append('{"callbackUrl":"http://example.com","controlPanelId":"string","device":"string","hostname":"string","operatingSystemId":"string","partitions":[{"mountpoint":"/home","filesystem":"ext4","size":"1024"}],"password":"string","postInstallScript":"string","powerCycle":true,"raid":{"level":0,"numberOfDisks":0,"type":"HW"},"sshKeys":"string","aiFrameworks":["string"],"timezone":"string"}');
 
 $request->setRequestUrl('https://api.leaseweb.com/bareMetals/v2/servers/12345/install');
 $request->setRequestMethod('POST');

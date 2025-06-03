@@ -4,8 +4,11 @@ const settings = {
   "url": "https://api.leaseweb.com/publicCloud/v1/loadBalancers/695ddd91-051f-4dd6-9120-938a927a47d0",
   "method": "DELETE",
   "headers": {
-    "X-LSW-Auth": "REPLACE_KEY_VALUE"
-  }
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"reasonCode\":\"string\",\"reason\":\"string\"}"
 };
 
 $.ajax(settings).done(function (response) {

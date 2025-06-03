@@ -112,7 +112,103 @@ get:
         application/xml:
           schema:
             $ref: ../components/schemas/describeInstancesResult.yaml
-          example: " <?xml version='1.0' encoding='UTF-8'?>\n <DescribeInstancesResponse xmlns='http://ec2.amazonaws.com/doc/2016-11-15/'>\n \t<nextToken>1</nextToken>\n \t<requestId>f7f55139-53d4-4b5f-bd7f-dbeddee039c0</requestId>\n \t<reservationSet>\n \t\t<item>\n \t\t\t<reservationId></reservationId>\n \t\t\t<instancesSet>\n \t\t\t\t<item>\n \t\t\t\t\t<instanceId>10a6163b-03c6-4303-a274-c96fa2217503</instanceId>\n \t\t\t\t\t<imageId>UBUNTU_22_04_64BIT</imageId>\n \t\t\t\t\t<instanceState>\n \t\t\t\t\t\t<code>16</code>\n \t\t\t\t\t\t<name>RUNNING</name>\n \t\t\t\t\t</instanceState>\n \t\t\t\t\t<amiLaunchIndex>-1</amiLaunchIndex>\n \t\t\t\t\t<instanceType>lsw.m3.large</instanceType>\n \t\t\t\t\t<launchTime>2024-05-07T12:02:49+0000</launchTime>\n \t\t\t\t\t<placement>\n \t\t\t\t\t\t<availabilityZone>eu-west-3</availabilityZone>\n \t\t\t\t\t\t<groupName></groupName>\n \t\t\t\t\t\t<tenancy></tenancy>\n \t\t\t\t\t</placement>\n \t\t\t\t\t<subnetId></subnetId>\n \t\t\t\t\t<vpcId></vpcId>\n \t\t\t\t\t<privateIpAddress></privateIpAddress>\n \t\t\t\t\t<ipAddress>85.17.17.88</ipAddress>\n \t\t\t\t\t<architecture>x86_64</architecture>\n \t\t\t\t\t<rootDeviceType></rootDeviceType>\n \t\t\t\t\t<virtualizationType></virtualizationType>\n \t\t\t\t\t<tagSet>\n \t\t\t\t\t\t<item>\n \t\t\t\t\t\t\t<key>reference</key>\n \t\t\t\t\t\t\t<value>test ono 3</value>\n \t\t\t\t\t\t</item>\n \t\t\t\t\t</tagSet>\n \t\t\t\t\t<cpuOptions>\n \t\t\t\t\t\t<coreCount>2</coreCount>\n \t\t\t\t\t\t<threadsPerCore>-1</threadsPerCore>\n \t\t\t\t\t</cpuOptions>\n \t\t\t\t\t<networkInterfaceSet>\n \t\t\t\t\t\t<item>\n \t\t\t\t\t\t\t<networkInterfaceId></networkInterfaceId>\n \t\t\t\t\t\t\t<subnetId></subnetId>\n \t\t\t\t\t\t\t<vpcId></vpcId>\n \t\t\t\t\t\t\t<description></description>\n \t\t\t\t\t\t\t<ownerId></ownerId>\n \t\t\t\t\t\t\t<status></status>\n \t\t\t\t\t\t\t<macAddress></macAddress>\n \t\t\t\t\t\t\t<privateIpAddress></privateIpAddress>\n \t\t\t\t\t\t\t<privateDnsName></privateDnsName>\n \t\t\t\t\t\t\t<sourceDestCheck></sourceDestCheck>\n \t\t\t\t\t\t\t<groupSet>\n \t\t\t\t\t\t\t\t<item>\n \t\t\t\t\t\t\t\t\t<groupId></groupId>\n \t\t\t\t\t\t\t\t\t<groupName></groupName>\n \t\t\t\t\t\t\t\t</item>\n \t\t\t\t\t\t\t</groupSet>\n \t\t\t\t\t\t\t<attachment>\n \t\t\t\t\t\t\t\t<attachmentId></attachmentId>\n \t\t\t\t\t\t\t\t<deviceIndex>-1</deviceIndex>\n \t\t\t\t\t\t\t\t<status></status>\n \t\t\t\t\t\t\t\t<attachTime>2000-01-01T00:00:00+0000</attachTime>\n \t\t\t\t\t\t\t\t<deleteOnTermination></deleteOnTermination>\n \t\t\t\t\t\t\t</attachment>\n \t\t\t\t\t\t\t<association>\n \t\t\t\t\t\t\t\t<publicIp>85.17.17.88</publicIp>\n \t\t\t\t\t\t\t\t<publicDnsName></publicDnsName>\n \t\t\t\t\t\t\t\t<ipOwnerId></ipOwnerId>\n \t\t\t\t\t\t\t</association>\n \t\t\t\t\t\t\t<privateIpAddressesSet>\n \t\t\t\t\t\t\t\t<item>\n \t\t\t\t\t\t\t\t\t<privateIpAddress></privateIpAddress>\n \t\t\t\t\t\t\t\t\t<privateDnsName></privateDnsName>\n \t\t\t\t\t\t\t\t\t<primary></primary>\n \t\t\t\t\t\t\t\t\t<association>\n \t\t\t\t\t\t\t\t\t\t<publicIp></publicIp>\n \t\t\t\t\t\t\t\t\t\t<publicDnsName></publicDnsName>\n \t\t\t\t\t\t\t\t\t\t<ipOwnerId></ipOwnerId>\n \t\t\t\t\t\t\t\t\t</association>\n \t\t\t\t\t\t\t\t</item>\n \t\t\t\t\t\t\t</privateIpAddressesSet>\n \t\t\t\t\t\t\t<ipv6AddressesSet>\n \t\t\t\t\t\t\t\t<item>\n \t\t\t\t\t\t\t\t\t\t<ipv6Address>85.17.17.88</ipv6Address>\n \t\t\t\t\t\t\t\t\t</item>\n \t\t\t\t\t\t\t</ipv6AddressesSet>\n \t\t\t\t\t\t</item>\n \t\t\t\t\t</networkInterfaceSet>\n \t\t\t\t</item>\n \t\t\t</instancesSet>\n \t\t</item>\n \t</reservationSet>\n </DescribeInstancesResponse>\n "
+          example: >
+            <?xml version='1.0' encoding='UTF-8'?>
+
+            <DescribeInstancesResponse
+            xmlns='http://ec2.amazonaws.com/doc/2016-11-15/'>
+                <nextToken>1</nextToken>
+                <requestId>f7f55139-53d4-4b5f-bd7f-dbeddee039c0</requestId>
+                <reservationSet>
+                    <item>
+                        <reservationId></reservationId>
+                        <instancesSet>
+                            <item>
+                                <instanceId>10a6163b-03c6-4303-a274-c96fa2217503</instanceId>
+                                <imageId>UBUNTU_22_04_64BIT</imageId>
+                                <instanceState>
+                                    <code>16</code>
+                                    <name>RUNNING</name>
+                                </instanceState>
+                                <amiLaunchIndex>-1</amiLaunchIndex>
+                                <instanceType>lsw.m3.large</instanceType>
+                                <launchTime>2024-05-07T12:02:49+0000</launchTime>
+                                <placement>
+                                    <availabilityZone>eu-west-3</availabilityZone>
+                                    <groupName></groupName>
+                                    <tenancy></tenancy>
+                                </placement>
+                                <subnetId></subnetId>
+                                <vpcId></vpcId>
+                                <privateIpAddress></privateIpAddress>
+                                <ipAddress>85.17.17.88</ipAddress>
+                                <architecture>x86_64</architecture>
+                                <rootDeviceType></rootDeviceType>
+                                <virtualizationType></virtualizationType>
+                                <tagSet>
+                                    <item>
+                                        <key>reference</key>
+                                        <value>test ono 3</value>
+                                    </item>
+                                </tagSet>
+                                <cpuOptions>
+                                    <coreCount>2</coreCount>
+                                    <threadsPerCore>-1</threadsPerCore>
+                                </cpuOptions>
+                                <networkInterfaceSet>
+                                    <item>
+                                        <networkInterfaceId></networkInterfaceId>
+                                        <subnetId></subnetId>
+                                        <vpcId></vpcId>
+                                        <description></description>
+                                        <ownerId></ownerId>
+                                        <status></status>
+                                        <macAddress></macAddress>
+                                        <privateIpAddress></privateIpAddress>
+                                        <privateDnsName></privateDnsName>
+                                        <sourceDestCheck></sourceDestCheck>
+                                        <groupSet>
+                                            <item>
+                                                <groupId></groupId>
+                                                <groupName></groupName>
+                                            </item>
+                                        </groupSet>
+                                        <attachment>
+                                            <attachmentId></attachmentId>
+                                            <deviceIndex>-1</deviceIndex>
+                                            <status></status>
+                                            <attachTime>2000-01-01T00:00:00+0000</attachTime>
+                                            <deleteOnTermination></deleteOnTermination>
+                                        </attachment>
+                                        <association>
+                                            <publicIp>85.17.17.88</publicIp>
+                                            <publicDnsName></publicDnsName>
+                                            <ipOwnerId></ipOwnerId>
+                                        </association>
+                                        <privateIpAddressesSet>
+                                            <item>
+                                                <privateIpAddress></privateIpAddress>
+                                                <privateDnsName></privateDnsName>
+                                                <primary></primary>
+                                                <association>
+                                                    <publicIp></publicIp>
+                                                    <publicDnsName></publicDnsName>
+                                                    <ipOwnerId></ipOwnerId>
+                                                </association>
+                                            </item>
+                                        </privateIpAddressesSet>
+                                        <ipv6AddressesSet>
+                                            <item>
+                                                <ipv6Address>85.17.17.88</ipv6Address>
+                                            </item>
+                                        </ipv6AddressesSet>
+                                    </item>
+                                </networkInterfaceSet>
+                            </item>
+                        </instancesSet>
+                    </item>
+                </reservationSet>
+            </DescribeInstancesResponse>
     '400':
       $ref: ../components/responses/400.yaml
     '401':

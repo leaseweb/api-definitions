@@ -29,8 +29,13 @@ get:
         enum:
           - CPANEL_30
           - CPANEL_100
+          - CPANEL_ADMIN
+          - CPANEL_PRO
+          - CPANEL_PLUS
+          - CPANEL_PREMIER
           - PLESK_WEB_PRO
           - PLESK_WEB_ADMIN
+          - PLESK_WEB_HOST
       description: Filters the list by the market app of standard images.
     - name: storageType
       required: false
