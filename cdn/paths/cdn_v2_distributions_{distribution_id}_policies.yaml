@@ -21,7 +21,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/PolicyIn.yaml
+          $ref: ../components/schemas/TemplatePolicyWithTemplateIn.yaml
         examples:
           Volume Policy:
             value:

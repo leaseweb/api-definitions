@@ -1,0 +1,47 @@
+get:
+  tags:
+    - CDN
+  summary: Get All Templates
+  operationId: get_all_templates_v1_policyTemplates_get
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            items:
+              $ref: ../components/schemas/PolicyTemplate.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ErrorResponse.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  servers:
+    - url: https://api.leaseweb.com
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_policyTemplates/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_policyTemplates/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_policyTemplates/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_policyTemplates/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_policyTemplates/getundefined

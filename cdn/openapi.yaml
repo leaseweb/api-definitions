@@ -87,6 +87,8 @@ paths:
     $ref: paths/cdn_v2_distributions_{distribution_id}_policies.yaml
   /cdn/v2/distributions/{distribution_id}/policies/{policy_id}:
     $ref: paths/cdn_v2_distributions_{distribution_id}_policies_{policy_id}.yaml
+  /cdn/v2/policyTemplates:
+    $ref: paths/cdn_v2_policyTemplates.yaml
   /cdn/v2/distributions/{distribution_id}/policies/{policy_id}/acls:
     $ref: >-
       paths/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls.yaml

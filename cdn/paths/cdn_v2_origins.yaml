@@ -23,6 +23,7 @@ post:
               enum:
                 - SIMPLE_ORIGIN
                 - ADVANCED_ORIGIN
+                - OBJECT_STORAGE_ORIGIN
               examples:
                 - SIMPLE_ORIGIN
             data:
@@ -94,6 +95,7 @@ post:
                 enum:
                   - SIMPLE_ORIGIN
                   - ADVANCED_ORIGIN
+                  - OBJECT_STORAGE_ORIGIN
                 examples:
                   - ADVANCED_ORIGIN
               data:

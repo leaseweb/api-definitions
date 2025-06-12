@@ -1,0 +1,210 @@
+type: object
+title: TemplatePolicyWithTemplateIn
+properties:
+  securityToken:
+    type: boolean
+    title: Securitytoken
+    default: false
+  securityTokenVendor:
+    title: Securitytokenvendor
+    anyOf:
+      - const: LEASEWEB
+      - type: 'null'
+  securityTokenMethod:
+    title: Securitytokenmethod
+    type: string
+    nullable: true
+    enum:
+      - SIMPLE
+      - ENCRYPTED
+  securityTokenSecret:
+    title: Securitytokensecret
+    type: string
+    nullable: true
+    maxLength: 125
+  securityTokenAesKey:
+    title: Securitytokenaeskey
+    type: string
+    nullable: true
+  securityTokenShaKey:
+    title: Securitytokenshakey
+    type: string
+    nullable: true
+  securityTokenClientIp:
+    type: boolean
+    title: Securitytokenclientip
+    default: false
+  securityTokenExpirationParam:
+    title: Securitytokenexpirationparam
+    type: string
+    nullable: true
+  securityTokenParam:
+    title: Securitytokenparam
+    type: string
+    nullable: true
+  securityTokenNumberOfPathComponents:
+    type: integer
+    title: Securitytokennumberofpathcomponents
+    minimum: -1
+    maximum: 10
+    default: -1
+  securityTokenEmbedIntoPath:
+    type: boolean
+    title: Securitytokenembedintopath
+    default: false
+  securityGeoAcl:
+    type: boolean
+    title: Securitygeoacl
+    default: false
+  securityGeoAclDefault:
+    title: Securitygeoacldefault
+    anyOf:
+      - type: string
+        enum:
+          - allow
+          - reject
+      - type: 'null'
+  securityIpAcl:
+    type: boolean
+    title: Securityipacl
+    default: false
+  securityIpAclDefault:
+    title: Securityipacldefault
+    anyOf:
+      - type: string
+        enum:
+          - allow
+          - reject
+      - type: 'null'
+  securityReferrerAcl:
+    type: boolean
+    title: Securityreferreracl
+    default: false
+  securityReferrerAclDefault:
+    title: Securityreferreracldefault
+    anyOf:
+      - type: string
+        enum:
+          - allow
+          - reject
+      - type: 'null'
+  originPullProtocol:
+    type: string
+    enum:
+      - HTTP
+      - HTTPS
+    title: Originpullprotocol
+    default: HTTP
+  originPullCompressed:
+    title: Originpullcompressed
+    anyOf:
+      - type: boolean
+      - type: 'null'
+  originPullHostHeader:
+    title: Originpullhostheader
+    anyOf:
+      - type: string
+      - type: 'null'
+  originPullId:
+    title: Originpullid
+    anyOf:
+      - type: string
+      - type: 'null'
+  originPullGroupId:
+    title: Originpullgroupid
+    anyOf:
+      - type: string
+      - type: 'null'
+  originPullShieldId:
+    title: Originpullshieldid
+    anyOf:
+      - type: string
+      - type: 'null'
+  originPullXff:
+    type: boolean
+    title: Originpullxff
+    default: false
+  originPullPassCookie:
+    type: boolean
+    title: Originpullpasscookie
+    default: false
+  originPullPassVary:
+    type: boolean
+    title: Originpullpassvary
+    default: false
+  cacheQueryString:
+    type: boolean
+    title: Cachequerystring
+    default: false
+  cacheDefaultTtl:
+    title: Cachedefaultttl
+    anyOf:
+      - type: integer
+      - type: 'null'
+  cacheHonorOriginTtl:
+    type: boolean
+    title: Cachehonororiginttl
+    default: false
+  cacheStale:
+    type: boolean
+    title: Cachestale
+    default: false
+  cacheByPass:
+    type: boolean
+    title: Cachebypass
+    default: false
+  cacheSegmented:
+    type: boolean
+    title: Cachesegmented
+    default: true
+  deliveryTtlInherit:
+    type: boolean
+    title: Deliveryttlinherit
+    default: false
+  deliveryTtlOverride:
+    type: integer
+    title: Deliveryttloverride
+    default: 0
+  deliveryCompress:
+    type: boolean
+    title: Deliverycompress
+    default: false
+  deliveryRateLimit:
+    type: boolean
+    title: Deliveryratelimit
+    default: false
+  deliveryTransferRate:
+    title: Deliverytransferrate
+    anyOf:
+      - type: integer
+      - type: 'null'
+  deliveryBurstSize:
+    title: Deliveryburstsize
+    anyOf:
+      - type: integer
+      - type: 'null'
+  deliveryForceHttps:
+    type: boolean
+    title: Deliveryforcehttps
+    default: false
+  deliveryPassThroughAllHeaders:
+    type: boolean
+    title: Deliverypassthroughallheaders
+    default: false
+  description:
+    type: string
+    title: Description
+  allowedMethods:
+    title: Allowedmethods
+    default: GET,HEAD
+    anyOf:
+      - type: string
+      - type: 'null'
+  path:
+    type: string
+    title: Path
+    default: /
+  templateId:
+    nullable: true
+    title: Template ID
+    type: string
