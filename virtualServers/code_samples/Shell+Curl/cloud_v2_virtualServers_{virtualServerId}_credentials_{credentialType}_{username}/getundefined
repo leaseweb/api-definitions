@@ -1,0 +1,3 @@
+curl --request GET \
+  --url https://api.leaseweb.com/cloud/v2/virtualServers/123242/credentials/%7BcredentialType%7D/%7Busername%7D \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

@@ -1,0 +1,3 @@
+curl --request POST \
+  --url https://api.leaseweb.com/cloud/v2/virtualServers/123242/snapshots/%7BsnapshotId%7D/restore \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

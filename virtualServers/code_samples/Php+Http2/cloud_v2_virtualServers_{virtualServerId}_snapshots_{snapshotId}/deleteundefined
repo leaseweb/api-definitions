@@ -1,0 +1,15 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/cloud/v2/virtualServers/123242/snapshots/8083e330-9888-4ae6-8f11-d372c5a50e63');
+$request->setRequestMethod('DELETE');
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

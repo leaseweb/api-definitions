@@ -1,0 +1,6 @@
+name: offset
+in: query
+schema:
+  default: 0
+  type: integer
+description: Return results starting from the given offset

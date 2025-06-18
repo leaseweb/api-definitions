@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
+
+conn.request("POST", "/cloud/v2/virtualServers/123242/snapshots/%7BsnapshotId%7D/restore", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

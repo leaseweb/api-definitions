@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/cloud/v2/virtualServers/123242/credentials/%7BcredentialType%7D?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

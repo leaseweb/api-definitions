@@ -1,0 +1,20 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/cloud/v2/virtualServers');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'limit' => 'SOME_INTEGER_VALUE',
+  'offset' => 'SOME_INTEGER_VALUE'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

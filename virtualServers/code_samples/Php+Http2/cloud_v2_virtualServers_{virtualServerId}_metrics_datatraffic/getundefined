@@ -1,0 +1,22 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/cloud/v2/virtualServers/123242/metrics/datatraffic');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'granularity' => 'SOME_STRING_VALUE',
+  'aggregation' => 'SOME_STRING_VALUE',
+  'from' => 'SOME_DATE_VALUE',
+  'to' => 'SOME_DATE_VALUE'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

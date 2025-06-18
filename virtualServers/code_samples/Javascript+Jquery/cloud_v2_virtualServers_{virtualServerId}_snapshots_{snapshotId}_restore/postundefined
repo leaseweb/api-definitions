@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/cloud/v2/virtualServers/123242/snapshots/%7BsnapshotId%7D/restore",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

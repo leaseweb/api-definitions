@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/cloud/v2/virtualServers/123242/snapshots \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"name":"string"}'

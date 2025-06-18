@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/cloud/v2/virtualServers?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'
