@@ -1,0 +1,7 @@
+schema:
+  type: string
+name: apiKeyId
+in: path
+required: true
+description: API Key id
+example: 1a2b3c

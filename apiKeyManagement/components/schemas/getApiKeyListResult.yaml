@@ -1,0 +1,47 @@
+type: object
+properties:
+  keys:
+    title: keys
+    type: array
+    description: Array of api keys
+    items:
+      type: object
+      title: key
+      properties:
+        id:
+          type: string
+          description: The unique id of an api key
+        username:
+          type: string
+          description: The unique username of an api key
+        reference:
+          type: string
+          description: The reference of an api key
+        createdAt:
+          type: string
+          description: The date, when the key is created
+        generatedAt:
+          type: string
+          description: The date, when the key is generated
+        generatedBy:
+          type: string
+          description: The email of the user whom last generated the key
+        requestMethods:
+          type: array
+          description: A list of request methods allowed by an api key
+          items:
+            type: string
+            enum:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+        whiteListedIps:
+          type: array
+          description: List of whitelisted ips of an api key
+          items:
+            type: string
+            format: ipv4
+        expiresAt:
+          type: string
+          description: The date and time when the key will expire

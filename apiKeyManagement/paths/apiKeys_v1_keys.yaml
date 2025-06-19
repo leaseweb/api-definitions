@@ -1,0 +1,80 @@
+get:
+  operationId: getApiKeyList
+  description: Get a list of api keys for a customer
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            keys:
+              - id: Adsf80
+                username: c071b507
+                reference: The reference
+                createdAt: 2020-02-26T09:35:22+0100
+                generatedAt: 2020-02-26T09:35:22+0100
+                generatedBy: email@foo.bar
+                requestMethods:
+                  - GET
+                  - POST
+                whiteListedIps:
+                  - 123.123.123.123
+                  - 231.231.231.231
+                expiresAt: 2021-02-26T09:35:22+0100
+              - id: 8d1f8d1f
+                username: e071b507
+                reference: The new reference
+                createdAt: 2020-02-26T09:35:22+0100
+                generatedAt: 2020-02-26T09:35:22+0100
+                generatedBy: email@foo.bar
+                requestMethods:
+                  - PUT
+                  - DELETE
+                whiteListedIps:
+                  - 123.123.123.123
+                  - 231.231.231.231
+                expiresAt: 2021-02-26T09:35:22+0100
+              - id: asd82ddas
+                username: d071b507
+                reference: The reference
+                createdAt: 2020-02-26T09:35:22+0100
+                generatedAt: 2020-02-26T09:35:22+0100
+                generatedBy: email@foo.bar
+                requestMethods:
+                  - POST
+                  - PUT
+                whiteListedIps:
+                  - 123.123.123.123
+                  - 231.231.231.231
+                expiresAt: 2021-02-26T09:35:22+0100
+          schema:
+            $ref: ../components/schemas/getApiKeyListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List API keys
+  tags:
+    - Api Key management
+  security:
+    - X-LSW-Auth: []
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/apiKeys_v1_keys/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/apiKeys_v1_keys/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/apiKeys_v1_keys/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/apiKeys_v1_keys/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/apiKeys_v1_keys/getundefined
