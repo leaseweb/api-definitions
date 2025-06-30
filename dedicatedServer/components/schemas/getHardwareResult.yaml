@@ -55,7 +55,10 @@ properties:
               type: object
               properties:
                 cpufreq:
-                  type: string
+                  title: cpuFreq
+                  oneOf:
+                    - type: string
+                    - type: boolean
                 ht:
                   type: string
                 vmx:
@@ -99,51 +102,54 @@ properties:
             size:
               type: string
             smartctl:
-              type: object
               title: smartctl
-              properties:
-                ata_version:
-                  type: string
-                attributes:
-                  type: object
-                  title: attributes
+              oneOf:
+                - type: object
+                  title: smartctl
                   properties:
-                    Power_On_Hours:
-                      $ref: ./attribute.yaml
-                    Reallocated_Sector_Ct:
-                      $ref: ./attribute.yaml
-                device_model:
-                  type: string
-                execution_status:
-                  type: string
-                firmware_version:
-                  type: string
-                is_sas:
-                  type: boolean
-                overall_health:
-                  type: string
-                rpm:
-                  type: string
-                sata_version:
-                  type: string
-                sector_size:
-                  type: string
-                serial_number:
-                  $ref: ./serialNumber.yaml
-                smart_error_log:
-                  type: string
-                smart_support:
-                  title: smartSupport
-                  type: object
-                  properties:
-                    available:
+                    ata_version:
+                      type: string
+                    attributes:
+                      type: object
+                      title: attributes
+                      properties:
+                        Power_On_Hours:
+                          $ref: ./attribute.yaml
+                        Reallocated_Sector_Ct:
+                          $ref: ./attribute.yaml
+                    device_model:
+                      type: string
+                    execution_status:
+                      type: string
+                    firmware_version:
+                      type: string
+                    is_sas:
                       type: boolean
-                    enabled:
-                      type: boolean
-                smartctl_version:
-                  type: string
-                user_capacity:
-                  type: string
+                    overall_health:
+                      type: string
+                    rpm:
+                      type: string
+                    sata_version:
+                      type: string
+                    sector_size:
+                      type: string
+                    serial_number:
+                      $ref: ./serialNumber.yaml
+                    smart_error_log:
+                      type: string
+                    smart_support:
+                      title: smartSupport
+                      type: object
+                      properties:
+                        available:
+                          type: boolean
+                        enabled:
+                          type: boolean
+                    smartctl_version:
+                      type: string
+                    user_capacity:
+                      type: string
+                - type: boolean
             vendor:
               $ref: ./vendor.yaml
       ipmi:

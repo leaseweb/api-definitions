@@ -15,4 +15,4 @@ properties:
           format: date-time
   unit:
     type: string
-    description: The unit of the returned values
+    example: B

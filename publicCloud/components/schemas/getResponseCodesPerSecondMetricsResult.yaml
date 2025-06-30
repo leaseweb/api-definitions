@@ -4,13 +4,13 @@ properties:
     type: object
     properties:
       2xx:
-        $ref: ./metricsProperties.yaml
+        $ref: ./metricsPropertiesResponsesPerSec.yaml
       3xx:
-        $ref: ./metricsProperties.yaml
+        $ref: ./metricsPropertiesResponsesPerSec.yaml
       4xx:
-        $ref: ./metricsProperties.yaml
+        $ref: ./metricsPropertiesResponsesPerSec.yaml
       5xx:
-        $ref: ./metricsProperties.yaml
+        $ref: ./metricsPropertiesResponsesPerSec.yaml
   _metadata:
     $ref: ./metricsMetadataProperties.yaml
 type: object

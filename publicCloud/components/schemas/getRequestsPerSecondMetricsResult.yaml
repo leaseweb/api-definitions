@@ -1,6 +1,6 @@
 properties:
   metrics:
-    $ref: ./metricsProperties.yaml
+    $ref: ./metricsPropertiesRequestsPerSec.yaml
   _metadata:
     $ref: ./metricsMetadataProperties.yaml
 type: object

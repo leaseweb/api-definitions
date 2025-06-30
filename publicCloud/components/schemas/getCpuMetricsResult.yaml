@@ -4,7 +4,7 @@ properties:
     type: object
     properties:
       cpuMetrics:
-        $ref: ./metricsProperties.yaml
+        $ref: ./metricsPropertiesPercentage.yaml
   _metadata:
     type: object
     title: cpuMetricsMetadata

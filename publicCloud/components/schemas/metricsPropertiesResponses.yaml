@@ -1,0 +1,7 @@
+allOf:
+  - $ref: ./metricsPropertiesBase.yaml
+  - properties:
+      unit:
+        type: string
+        example: responses
+        description: Unit representing number of responses

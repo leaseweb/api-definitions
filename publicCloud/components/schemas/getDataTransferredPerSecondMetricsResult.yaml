@@ -4,9 +4,9 @@ properties:
     type: object
     properties:
       dataIn:
-        $ref: ./metricsProperties.yaml
+        $ref: ./metricsPropertiesRequests.yaml
       dataOut:
-        $ref: ./metricsProperties.yaml
+        $ref: ./metricsPropertiesRequests.yaml
   _metadata:
     $ref: ./metricsMetadataProperties.yaml
 type: object

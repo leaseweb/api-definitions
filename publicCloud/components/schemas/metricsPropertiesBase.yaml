@@ -13,5 +13,3 @@ properties:
         timestamp:
           type: string
           format: date-time
-  unit:
-    $ref: ./metricsUnit.yaml
