@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"whiteListedIps":["192.168.0.1"]}');
+
+$request->setRequestUrl('https://api.leaseweb.com/apiKeys/v1/keys/1a2b3c/whiteListedIps');
+$request->setRequestMethod('PUT');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

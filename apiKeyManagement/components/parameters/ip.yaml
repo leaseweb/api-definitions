@@ -1,0 +1,6 @@
+schema:
+  type: string
+name: ip
+in: path
+required: true
+description: Whitelisted IP

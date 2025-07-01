@@ -52,6 +52,10 @@ paths:
     $ref: paths/apiKeys_v1_keys.yaml
   /apiKeys/v1/keys/{apiKeyId}:
     $ref: paths/apiKeys_v1_keys_{apiKeyId}.yaml
+  /apiKeys/v1/keys/{apiKeyId}/whiteListedIps:
+    $ref: paths/apiKeys_v1_keys_{apiKeyId}_whiteListedIps.yaml
+  /apiKeys/v1/keys/{apiKeyId}/whiteListedIps/{ip}:
+    $ref: paths/apiKeys_v1_keys_{apiKeyId}_whiteListedIps_{ip}.yaml
 components:
   securitySchemes:
     BearerAuth:

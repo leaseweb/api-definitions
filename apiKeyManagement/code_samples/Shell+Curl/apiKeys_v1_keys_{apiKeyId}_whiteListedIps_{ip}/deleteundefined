@@ -1,0 +1,3 @@
+curl --request DELETE \
+  --url https://api.leaseweb.com/apiKeys/v1/keys/1a2b3c/whiteListedIps/%7Bip%7D \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

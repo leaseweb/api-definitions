@@ -1,0 +1,8 @@
+type: object
+properties:
+  whiteListedIps:
+    type: array
+    description: List of whitelisted ips of an api key
+    items:
+      type: string
+      format: ipv4

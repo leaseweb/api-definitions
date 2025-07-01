@@ -2,15 +2,10 @@ openapi: 3.0.0
 info:
   title: VPS
   version: v1
-  description: >-
+  description: |-
     > The base URL for this API is: **https://api.leaseweb.com/publicCloud/v1/**
 
-
     This API provides ways to launch and manage VPS.
-
-
-    <div class="badge">BETA</div> This API is in BETA. Documentation might be
-    incorrect or incomplete. Functionality might change with the final release.>
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html

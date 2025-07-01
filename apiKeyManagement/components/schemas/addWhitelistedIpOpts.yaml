@@ -1,0 +1,6 @@
+type: object
+properties:
+  whiteListedIp:
+    type: string
+    description: An ip address to whitelist for an api key
+    format: ipv4

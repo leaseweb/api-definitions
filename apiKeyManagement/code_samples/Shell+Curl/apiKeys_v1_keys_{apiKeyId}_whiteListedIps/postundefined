@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/apiKeys/v1/keys/1a2b3c/whiteListedIps \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"whiteListedIp":"192.168.0.1"}'

@@ -1,0 +1,211 @@
+parameters:
+  - $ref: ../components/parameters/apiKeyId.yaml
+get:
+  operationId: getWhitelistedIpList
+  description: Get a list of whiteListedIps.
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            whiteListedIps:
+              - 123.123.123.123
+              - 231.231.231.231
+          schema:
+            $ref: ../components/schemas/getWhitelistedIpListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List allowed IPs
+  tags:
+    - Api Key management
+  security:
+    - X-LSW-Auth: []
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/getundefined
+post:
+  operationId: addWhitelistedIp
+  description: Add IP to allowed IP list for an API Key.
+  requestBody:
+    content:
+      application/json:
+        example:
+          whiteListedIp: 123.123.123.123
+        schema:
+          $ref: ../components/schemas/addWhitelistedIpOpts.yaml
+  responses:
+    '201':
+      description: ''
+      content:
+        application/json:
+          example:
+            whiteListedIps:
+              - 123.123.123.123
+              - 231.231.231.231
+          schema:
+            $ref: ../components/schemas/addWhitelistedIpResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Add IP to allowed IP list
+  tags:
+    - Api Key management
+  security:
+    - X-LSW-Auth: []
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/postundefined
+put:
+  operationId: replaceWhitelistedIpList
+  description: Replace allowed IP list of an API Key.
+  requestBody:
+    content:
+      application/json:
+        example:
+          whiteListedIps:
+            - 123.123.123.123
+            - 231.231.231.231
+        schema:
+          $ref: ../components/schemas/replaceWhitelistedIpListOpts.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            whiteListedIps:
+              - 123.123.123.123
+              - 231.231.231.231
+          schema:
+            $ref: ../components/schemas/replaceWhitelistedIpListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Replace allowed IP list
+  tags:
+    - Api Key management
+  security:
+    - X-LSW-Auth: []
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/putundefined
+delete:
+  summary: Delete all whitelisted ips for an API key.
+  operationId: deleteWhitelistedIpList
+  responses:
+    '204':
+      description: |
+        No Content.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  description: Delete all whitelisted ips for an API key.
+  tags:
+    - Api Key management
+  security:
+    - X-LSW-Auth: []
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/apiKeys_v1_keys_{apiKeyId}_whiteListedIps/deleteundefined

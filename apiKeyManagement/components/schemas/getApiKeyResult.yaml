@@ -1,5 +1,8 @@
 type: object
 properties:
+  id:
+    type: string
+    description: The unique id of an api key
   username:
     type: string
     description: The unique username of an api key

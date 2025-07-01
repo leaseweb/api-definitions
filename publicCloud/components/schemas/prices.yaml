@@ -1,26 +1,11 @@
 required:
-  - currency
-  - currencySymbol
-  - compute
-  - storage
+  - hourly
+  - monthly
 type: object
 properties:
-  currency:
+  hourly:
     type: string
-    example: USD
-  currencySymbol:
+    example: '0.1604'
+  monthly:
     type: string
-    example: $
-  compute:
-    $ref: ./price.yaml
-  storage:
-    required:
-      - local
-      - central
-    title: storage
-    type: object
-    properties:
-      local:
-        $ref: ./price.yaml
-      central:
-        $ref: ./price.yaml
+    example: '105.4500'

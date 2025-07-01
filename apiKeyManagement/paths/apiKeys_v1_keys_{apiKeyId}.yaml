@@ -9,6 +9,7 @@ get:
       content:
         application/json:
           example:
+            id: u71abd
             username: c071b507
             reference: the new reference
             createdAt: 2020-02-26T09:35:22+0100
@@ -29,6 +30,8 @@ get:
       $ref: ../components/responses/401.yaml
     '403':
       $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':

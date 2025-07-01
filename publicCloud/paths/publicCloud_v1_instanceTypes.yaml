@@ -55,18 +55,8 @@ get:
                     value: 100
                     unit: Mbps
                 prices:
-                  currency: EUR
-                  currencySymbol: €
-                  compute:
-                    hourlyPrice: '0.0395'
-                    monthlyPrice: '26.0200'
-                  storage:
-                    local:
-                      hourlyPrice: '0.00004'
-                      monthlyPrice: '0.03000'
-                    central:
-                      hourlyPrice: '0.00011'
-                      monthlyPrice: '0.08000'
+                  hourly: '0.0395'
+                  monthly: '26.0200'
                 storageTypes:
                   - CENTRAL
               - name: lsw.c3.xlarge
@@ -84,18 +74,8 @@ get:
                     value: 100
                     unit: Mbps
                 prices:
-                  currency: EUR
-                  currencySymbol: €
-                  compute:
-                    hourlyPrice: '0.0798'
-                    monthlyPrice: '52.5000'
-                  storage:
-                    local:
-                      hourlyPrice: '0.00004'
-                      monthlyPrice: '0.03000'
-                    central:
-                      hourlyPrice: '0.00011'
-                      monthlyPrice: '0.08000'
+                  hourly: '0.0798'
+                  monthly: '52.5000'
                 storageTypes:
                   - CENTRAL
               - name: lsw.c3.2xlarge
@@ -113,18 +93,8 @@ get:
                     value: 100
                     unit: Mbps
                 prices:
-                  currency: EUR
-                  currencySymbol: €
-                  compute:
-                    hourlyPrice: '0.1604'
-                    monthlyPrice: '105.4500'
-                  storage:
-                    local:
-                      hourlyPrice: '0.00004'
-                      monthlyPrice: '0.03000'
-                    central:
-                      hourlyPrice: '0.00011'
-                      monthlyPrice: '0.08000'
+                  hourly: '0.1604'
+                  monthly: '105.4500'
                 storageTypes:
                   - CENTRAL
               - name: lsw.c3.4xlarge
@@ -142,18 +112,8 @@ get:
                     value: 100
                     unit: Mbps
                 prices:
-                  currency: EUR
-                  currencySymbol: €
-                  compute:
-                    hourlyPrice: '0.3203'
-                    monthlyPrice: '210.5100'
-                  storage:
-                    local:
-                      hourlyPrice: '0.00004'
-                      monthlyPrice: '0.03000'
-                    central:
-                      hourlyPrice: '0.00011'
-                      monthlyPrice: '0.08000'
+                  hourly: '0.3203'
+                  monthly: '210.5100'
                 storageTypes:
                   - CENTRAL
               - name: lsw.m3.large
@@ -171,18 +131,8 @@ get:
                     value: 100
                     unit: Mbps
                 prices:
-                  currency: EUR
-                  currencySymbol: €
-                  compute:
-                    hourlyPrice: '0.0447'
-                    monthlyPrice: '29.4400'
-                  storage:
-                    local:
-                      hourlyPrice: '0.00004'
-                      monthlyPrice: '0.03000'
-                    central:
-                      hourlyPrice: '0.00011'
-                      monthlyPrice: '0.08000'
+                  hourly: '0.0447'
+                  monthly: '29.4400'
                 storageTypes:
                   - CENTRAL
               - name: lsw.m3.xlarge
@@ -200,18 +150,8 @@ get:
                     value: 100
                     unit: Mbps
                 prices:
-                  currency: EUR
-                  currencySymbol: €
-                  compute:
-                    hourlyPrice: '0.0902'
-                    monthlyPrice: '59.3300'
-                  storage:
-                    local:
-                      hourlyPrice: '0.00004'
-                      monthlyPrice: '0.03000'
-                    central:
-                      hourlyPrice: '0.00011'
-                      monthlyPrice: '0.08000'
+                  hourly: '0.0902'
+                  monthly: '59.3300'
                 storageTypes:
                   - CENTRAL
               - name: lsw.m3.2xlarge
@@ -229,18 +169,8 @@ get:
                     value: 100
                     unit: Mbps
                 prices:
-                  currency: EUR
-                  currencySymbol: €
-                  compute:
-                    hourlyPrice: '0.1799'
-                    monthlyPrice: '118.2700'
-                  storage:
-                    local:
-                      hourlyPrice: '0.00004'
-                      monthlyPrice: '0.03000'
-                    central:
-                      hourlyPrice: '0.00011'
-                      monthlyPrice: '0.08000'
+                  hourly: '0.1799'
+                  monthly: '118.2700'
                 storageTypes:
                   - CENTRAL
               - name: lsw.r3.large
@@ -258,18 +188,8 @@ get:
                     value: 100
                     unit: Mbps
                 prices:
-                  currency: EUR
-                  currencySymbol: €
-                  compute:
-                    hourlyPrice: '0.0555'
-                    monthlyPrice: '36.4900'
-                  storage:
-                    local:
-                      hourlyPrice: '0.00004'
-                      monthlyPrice: '0.03000'
-                    central:
-                      hourlyPrice: '0.00011'
-                      monthlyPrice: '0.08000'
+                  hourly: '0.0555'
+                  monthly: '36.4900'
                 storageTypes:
                   - CENTRAL
               - name: lsw.r3.xlarge
@@ -287,18 +207,8 @@ get:
                     value: 100
                     unit: Mbps
                 prices:
-                  currency: EUR
-                  currencySymbol: €
-                  compute:
-                    hourlyPrice: '0.1104'
-                    monthlyPrice: '72.5700'
-                  storage:
-                    local:
-                      hourlyPrice: '0.00004'
-                      monthlyPrice: '0.03000'
-                    central:
-                      hourlyPrice: '0.00011'
-                      monthlyPrice: '0.08000'
+                  hourly: '0.1104'
+                  monthly: '72.5700'
                 storageTypes:
                   - CENTRAL
               - name: lsw.r3.2xlarge
@@ -316,24 +226,16 @@ get:
                     value: 100
                     unit: Mbps
                 prices:
-                  currency: EUR
-                  currencySymbol: €
-                  compute:
-                    hourlyPrice: '0.2202'
-                    monthlyPrice: '144.7400'
-                  storage:
-                    local:
-                      hourlyPrice: '0.00004'
-                      monthlyPrice: '0.03000'
-                    central:
-                      hourlyPrice: '0.00011'
-                      monthlyPrice: '0.08000'
+                  hourly: '0.2202'
+                  monthly: '144.7400'
                 storageTypes:
                   - CENTRAL
             _metadata:
               totalCount: 10
               limit: 50
               offset: 0
+              currency: EUR
+              currencySymbol: €
     '401':
       $ref: ../components/responses/401.yaml
     '403':
