@@ -1,7 +1,6 @@
 get:
-  operationId: get/virtualServers/{id}/snapshots/{snapshotId}
-  summary: Get snapshot
   description: ''
+  operationId: get/virtualServers/{id}/snapshots/{snapshotId}
   responses:
     '200':
       description: ''
@@ -118,8 +117,12 @@ get:
                 type: string
               errorMessage:
                 type: string
+  summary: Get snapshot
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -142,9 +145,8 @@ get:
         $ref: >-
           ../code_samples/Go+Native/cloud_v2_virtualServers_{virtualServerId}_snapshots_{snapshotId}/getundefined
 delete:
-  operationId: delete/virtualServers/{id}/snapshots/{snapshotId}
-  summary: Delete snapshot
   description: ''
+  operationId: delete/virtualServers/{id}/snapshots/{snapshotId}
   responses:
     '202':
       description: ''
@@ -257,8 +259,12 @@ delete:
                 type: string
               errorMessage:
                 type: string
+  summary: Delete snapshot
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:

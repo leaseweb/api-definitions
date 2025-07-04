@@ -1,7 +1,6 @@
 get:
-  operationId: get/virtualServers/{id}
-  summary: Inspect a virtual server
   description: ''
+  operationId: get/virtualServers/{id}
   responses:
     '200':
       description: ''
@@ -309,8 +308,12 @@ get:
                 type: string
               errorMessage:
                 type: string
+  summary: Inspect a virtual server
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -333,9 +336,8 @@ get:
         $ref: >-
           ../code_samples/Go+Native/cloud_v2_virtualServers_{virtualServerId}/getundefined
 put:
-  operationId: put/virtualServers/{id}
-  summary: Update a virtual server
   description: ''
+  operationId: put/virtualServers/{id}
   requestBody:
     content:
       application/json:
@@ -660,8 +662,12 @@ put:
                 type: string
               errorMessage:
                 type: string
+  summary: Update a virtual server
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:

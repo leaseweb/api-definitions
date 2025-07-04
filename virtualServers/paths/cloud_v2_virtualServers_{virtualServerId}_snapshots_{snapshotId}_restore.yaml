@@ -1,9 +1,8 @@
 post:
-  operationId: post/virtualServers/{id}/snapshots/{snapshotId}
-  summary: Restore snapshot
   description: >-
     Restore the VPS state (disk and memory) to the snapshot. The VPS must be
     running in order to have its snapshot restored
+  operationId: post/virtualServers/{id}/snapshots/{snapshotId}
   responses:
     '202':
       description: ''
@@ -116,8 +115,12 @@ post:
                 type: string
               errorMessage:
                 type: string
+  summary: Restore snapshot
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:

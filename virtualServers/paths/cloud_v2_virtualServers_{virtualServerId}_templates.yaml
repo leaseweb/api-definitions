@@ -6,8 +6,10 @@ parameters:
     description: Id of the virtual server
     required: true
 get:
+  description: >-
+    Retrieves all the supported operating system templates for the specified
+    virtual server
   operationId: get-virtualServers-virtualServerId-templates
-  summary: List templates
   responses:
     '200':
       description: OK
@@ -130,11 +132,12 @@ get:
                 type: string
               errorMessage:
                 type: string
+  summary: List templates
   tags:
     - Virtual Servers
-  description: >-
-    Retrieves all the supported operating system templates for the specified
-    virtual server
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:

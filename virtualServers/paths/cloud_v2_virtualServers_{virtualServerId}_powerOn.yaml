@@ -1,9 +1,8 @@
 post:
-  operationId: post/virtualServers/{id}/powerOn
-  summary: Power on
   description: >
     The power on call is an asynchronous call, meaning the power on will be
     performed as soon as possible.
+  operationId: post/virtualServers/{id}/powerOn
   responses:
     '202':
       description: ''
@@ -116,8 +115,12 @@ post:
                 type: string
               errorMessage:
                 type: string
+  summary: Power on
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -1,6 +1,4 @@
 post:
-  operationId: post/virtualServers/{id}/reinstall
-  summary: Reinstall
   description: >-
     The virtual server will be reinstalled with any supported operating system.
     The reinstall call is an asynchronous call, meaning the reinstall will be
@@ -8,6 +6,7 @@ post:
 
     To get the list of supported operating system please check the api
     documentation for templates.
+  operationId: post/virtualServers/{id}/reinstall
   requestBody:
     content:
       application/json:
@@ -138,8 +137,12 @@ post:
                 type: string
               errorMessage:
                 type: string
+  summary: Reinstall
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -1,9 +1,8 @@
 post:
-  operationId: post/virtualServers/{id}/reboot
-  summary: Reboot
   description: >
     The reboot call is an asynchronous call, meaning the reboot will be
     performed as soon as possible.
+  operationId: post/virtualServers/{id}/reboot
   responses:
     '202':
       description: ''
@@ -116,8 +115,12 @@ post:
                 type: string
               errorMessage:
                 type: string
+  summary: Reboot
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -1,7 +1,6 @@
 get:
-  operationId: get/virtualServers/{id}/metrics/datatraffic
-  summary: Inspect datatraffic metrics
   description: ''
+  operationId: get/virtualServers/{id}/metrics/datatraffic
   parameters:
     - name: granularity
       in: query
@@ -232,8 +231,12 @@ get:
                 type: string
               errorMessage:
                 type: string
+  summary: Inspect datatraffic metrics
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:

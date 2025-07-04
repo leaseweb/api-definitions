@@ -1,9 +1,8 @@
 post:
-  operationId: post/virtualServers/{id}/powerOff
-  summary: Power off
   description: >-
     The power off call is an asynchronous call, meaning the power off will be
     performed as soon as possible.
+  operationId: post/virtualServers/{id}/powerOff
   responses:
     '202':
       description: ''
@@ -116,8 +115,12 @@ post:
                 type: string
               errorMessage:
                 type: string
+  summary: Power off
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:

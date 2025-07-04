@@ -1,7 +1,6 @@
 get:
-  operationId: get/virtualServers/{id}/snapshots
-  summary: List snapshots
   description: ''
+  operationId: get/virtualServers/{id}/snapshots
   parameters:
     - $ref: ../components/parameters/virtualServerId.yaml
     - $ref: ../components/parameters/limit.yaml
@@ -136,8 +135,12 @@ get:
                 type: string
               errorMessage:
                 type: string
+  summary: List snapshots
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -160,11 +163,10 @@ get:
         $ref: >-
           ../code_samples/Go+Native/cloud_v2_virtualServers_{virtualServerId}_snapshots/getundefined
 post:
-  operationId: post/virtualServers/{id}/snapshots
-  summary: Create snapshot
   description: >-
     To create a snapshot, the VPS must be Running and have a General Purpose
     (GP) pack
+  operationId: post/virtualServers/{id}/snapshots
   requestBody:
     content:
       application/json:
@@ -296,8 +298,12 @@ post:
                 type: string
               errorMessage:
                 type: string
+  summary: Create snapshot
   tags:
     - Virtual Servers
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   x-codeSamples:
     - lang: Shell + Curl
       source:

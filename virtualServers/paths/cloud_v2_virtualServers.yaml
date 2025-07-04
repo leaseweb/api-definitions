@@ -1,4 +1,7 @@
 get:
+  x-badges:
+    - name: DEPRECATED
+      color: '#FFC107'
   operationId: get/virtualServers
   summary: List virtual servers
   description: ''
