@@ -1,0 +1,11 @@
+content:
+  application/json:
+    example:
+      correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+      errorCode: Conflict
+      errorMessage: ZSK key rollover for example.com is in progress please wait for 50 hour
+    schema:
+      $ref: ../schemas/errorResult.yaml
+description: >-
+  If there is a conflict (for example item is already in processing state), you
+  will receive a 409 Conflict.

@@ -25,7 +25,6 @@ get:
               privateNetworkSpeed:
                 value: 100
                 unit: Mbps
-            autoScalingGroup: null
             region: eu-west-3
             reference: my-loadbalancer1
             state: RUNNING
@@ -184,7 +183,6 @@ put:
               privateNetworkSpeed:
                 value: 100
                 unit: Mbps
-            autoScalingGroup: null
             region: eu-west-3
             reference: my-loadbalancer1
             state: RUNNING

@@ -68,6 +68,8 @@ paths:
     $ref: paths/hosting_v2_domains_{domainName}_nameservers.yaml
   /hosting/v2/domains/{domainName}/dnssec:
     $ref: paths/hosting_v2_domains_{domainName}_dnssec.yaml
+  /hosting/v2/domains/{domainName}/keyRollover:
+    $ref: paths/hosting_v2_domains_{domainName}_keyRollover.yaml
   /hosting/v2/domains/{domainName}/resourceRecordSets:
     $ref: paths/hosting_v2_domains_{domainName}_resourceRecordSets.yaml
   /hosting/v2/domains/{domainName}/resourceRecordSets/{name}/{type}:

@@ -70,8 +70,8 @@ properties:
     anyOf:
       - type: string
         enum:
-          - allow
-          - reject
+          - ALLOW
+          - REJECT
       - type: 'null'
   securityIpAcl:
     type: boolean
@@ -82,8 +82,8 @@ properties:
     anyOf:
       - type: string
         enum:
-          - allow
-          - reject
+          - ALLOW
+          - REJECT
       - type: 'null'
   securityReferrerAcl:
     type: boolean
@@ -94,8 +94,8 @@ properties:
     anyOf:
       - type: string
         enum:
-          - allow
-          - reject
+          - ALLOW
+          - REJECT
       - type: 'null'
   originPullProtocol:
     type: string

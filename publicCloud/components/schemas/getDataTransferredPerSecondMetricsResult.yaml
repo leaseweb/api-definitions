@@ -1,6 +1,6 @@
 properties:
   metrics:
-    title: dataTransferredMetrics
+    title: dataTransferredMetricsPerSec
     type: object
     properties:
       dataIn:

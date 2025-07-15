@@ -10,7 +10,6 @@ required:
   - region
   - configuration
   - privateNetwork
-  - autoScalingGroup
   - ips
 properties:
   id:
@@ -38,12 +37,10 @@ properties:
     $ref: ./regionName.yaml
   configuration:
     $ref: ./loadBalancerConfiguration.yaml
-  autoScalingGroup:
-    $ref: ./autoScalingGroup.yaml
   privateNetwork:
     $ref: ./privateNetwork.yaml
   contract:
-    $ref: ./instanceContract.yaml
+    $ref: ./instanceContractDetails.yaml
   ips:
     type: array
     items:

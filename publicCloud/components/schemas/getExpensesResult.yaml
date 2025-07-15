@@ -2,6 +2,10 @@ properties:
   billing:
     title: billing
     type: object
+    required:
+      - instances
+      - traffic
+      - totalValue
     properties:
       instances:
         type: array
@@ -83,4 +87,23 @@ properties:
                 $ref: ./tier.yaml
               tier_3:
                 $ref: ./tier.yaml
+      totalValue:
+        type: string
+        description: Total estimated value for period
+  _metadata:
+    title: metadata
+    type: object
+    required:
+      - currency
+      - currencySymbol
+    properties:
+      currency:
+        type: string
+        example: EUR
+      currencySymbol:
+        type: string
+        example: €
+required:
+  - billing
+  - _metadata
 type: object

@@ -99,8 +99,6 @@ paths:
     $ref: paths/publicCloud_v1_vps_.yaml
   /publicCloud/v1/vps/{vpsId}:
     $ref: paths/publicCloud_v1_vps_{vpsId}.yaml
-  /publicCloud/v1/vps/images:
-    $ref: paths/publicCloud_v1_vps_images.yaml
   /publicCloud/v1/vps/isos:
     $ref: paths/publicCloud_v1_vps_isos.yaml
   /publicCloud/v1/vps/vps/{vpsId}/notificationSettings/dataTraffic:

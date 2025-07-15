@@ -1,0 +1,66 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+post:
+  description: >
+    Best practice for DNSSEC key management is to use different keys to sign
+    zone data (ZSK) and DNSKEY data (KSK).
+
+
+    - ZSK will be performed with Pre-publication approach
+
+    - KSK will be performed with Double-KSK approach
+  operationId: rolloverKey
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/rolloverKeyOpts.yaml
+        example:
+          type: ZSK
+  responses:
+    '202':
+      description: |
+        Accepted.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/infoMessageResult.yaml
+          example:
+            infoMessage: Resource record set is valid.
+    '400':
+      $ref: ../components/responses/4001.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '409':
+      $ref: ../components/responses/409.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Key Rollover
+  tags:
+    - DNS
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_keyRollover/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_keyRollover/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_keyRollover/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_keyRollover/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_keyRollover/postundefined

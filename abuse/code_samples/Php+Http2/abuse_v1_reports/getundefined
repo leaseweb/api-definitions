@@ -10,7 +10,8 @@ $request->setQuery(new http\QueryString([
   'offset' => '10',
   'status' => 'OPEN,WAITING,CLOSED',
   'ticketId' => 'SOME_STRING_VALUE',
-  'ip' => 'SOME_STRING_VALUE'
+  'ip' => 'SOME_STRING_VALUE',
+  'sort' => 'deadline,-reportedAt'
 ]));
 
 $request->setHeaders([

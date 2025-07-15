@@ -1,0 +1,6 @@
+properties:
+  type:
+    $ref: ./rolloverType.yaml
+required:
+  - type
+type: object

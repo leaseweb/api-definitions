@@ -32,6 +32,9 @@ get:
           schema:
             $ref: ../components/schemas/getExpensesResult.yaml
           example:
+            _metadata:
+              currency: EUR
+              currencySymbol: €
             billing:
               instances:
                 - id: b778824a-a96e-4f6f-9713-7b7196f09c4f
@@ -50,16 +53,9 @@ get:
                       value: 1000
                       unit: Mbps
                   contract:
-                    id: ''
                     billingFrequency: 1
                     term: 0
                     type: HOURLY
-                    state: ACTIVE
-                    endsAt: null
-                    startsAt: '2024-10-24T21:13:25+00:00'
-                    sla: Basic
-                    controlPanel: cPanel Admin 5
-                    inModification: false
                   startedAt: '2023-11-30T16:31:46+00:00'
                   endedAt: '2023-11-30T16:40:46+00:00'
                   rootDiskSize: 15
@@ -84,6 +80,7 @@ get:
                   tier_3:
                     usage: 34.5
                     price: 2.34
+              totalValue: 11.223,00
     '401':
       $ref: ../components/responses/401.yaml
     '403':

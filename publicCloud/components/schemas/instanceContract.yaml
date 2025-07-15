@@ -3,13 +3,6 @@ required:
   - type
   - term
   - billingFrequency
-  - endsAt
-  - startsAt
-  - state
-  - id
-  - sla
-  - controlPanel
-  - inModification
 properties:
   billingFrequency:
     $ref: ./billingFrequency.yaml
@@ -17,30 +10,3 @@ properties:
     $ref: ./contractTerm.yaml
   type:
     $ref: ./contractType.yaml
-  endsAt:
-    description: End date is null for hourly instances
-    type: string
-    format: date-time
-    example: '2023-11-30T16:31:28+00:00'
-    nullable: true
-  startsAt:
-    type: string
-    description: Date when the contract is starting
-    format: date-time
-    example: '2023-11-30T16:31:28+00:00'
-  state:
-    $ref: ./contractState.yaml
-  id:
-    description: Contract id is empty for hourly instances
-    type: string
-    example: '41228459000100'
-  sla:
-    type: string
-    example: Basic
-  controlPanel:
-    type: string
-    example: cPanel Admin 5
-    nullable: true
-  inModification:
-    type: boolean
-    example: false

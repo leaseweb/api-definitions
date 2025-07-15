@@ -62,19 +62,19 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/instance.yaml
+            $ref: ../components/schemas/instanceDetails.yaml
           example:
             autoScalingGroup: null
             contract:
-              id: '41228459000100'
+              id: ''
               billingFrequency: 1
               term: 12
-              type: MONTHLY
-              state: ACTIVE
+              type: HOURLY
+              state: PENDING
               endsAt: '2024-10-24T21:13:25+00:00'
               startsAt: '2024-10-24T21:13:25+00:00'
               sla: Basic
-              controlPanel: cPanel Admin 5
+              controlPanel: null
               inModification: false
             hasPrivateNetwork: false
             hasPublicIpV4: true
@@ -86,15 +86,10 @@ post:
               family: linux
               flavour: ubuntu
               custom: false
-            ips:
-              - ip: 10.32.60.12
-                prefixLength: '27'
-                version: 4
-                nullRouted: false
-                reverseLookup: null
-                mainIp: false
-                networkType: INTERNAL
+            ips: []
+            iso: null
             marketAppId: null
+            privateNetwork: null
             productType: INSTANCE
             reference: my webserver
             region: eu-west-3
@@ -114,7 +109,7 @@ post:
             rootDiskSize: 5
             rootDiskStorageType: CENTRAL
             startedAt: null
-            state: RUNNING
+            state: CREATING
             type: lsw.m3.large
     '400':
       $ref: ../components/responses/400.yaml
@@ -397,16 +392,9 @@ get:
                     networkType: INTERNAL
                 startedAt: '2024-04-09T15:11:37+00:00'
                 contract:
-                  id: ''
                   billingFrequency: 1
                   term: 0
                   type: HOURLY
-                  state: ACTIVE
-                  endsAt: null
-                  startsAt: '2024-10-24T21:13:25+00:00'
-                  sla: Basic
-                  controlPanel: cPanel Admin 5
-                  inModification: false
               - marketAppId: null
                 productType: INSTANCE
                 autoScalingGroup:
@@ -464,16 +452,9 @@ get:
                     networkType: INTERNAL
                 startedAt: '2024-04-09T15:11:37+00:00'
                 contract:
-                  id: ''
                   billingFrequency: 1
                   term: 0
                   type: HOURLY
-                  state: ACTIVE
-                  endsAt: null
-                  startsAt: '2024-10-24T21:13:25+00:00'
-                  sla: Basic
-                  controlPanel: cPanel Admin 5
-                  inModification: false
               - marketAppId: null
                 productType: INSTANCE
                 autoScalingGroup:
@@ -531,16 +512,9 @@ get:
                     networkType: INTERNAL
                 startedAt: '2024-04-09T15:11:37+00:00'
                 contract:
-                  id: ''
                   billingFrequency: 1
                   term: 0
                   type: HOURLY
-                  state: ACTIVE
-                  endsAt: null
-                  startsAt: '2024-10-24T21:13:25+00:00'
-                  sla: Basic
-                  controlPanel: cPanel Admin 5
-                  inModification: false
               - marketAppId: null
                 productType: INSTANCE
                 autoScalingGroup:
@@ -598,16 +572,9 @@ get:
                     networkType: INTERNAL
                 startedAt: '2024-04-09T15:11:37+00:00'
                 contract:
-                  id: ''
                   billingFrequency: 1
                   term: 0
                   type: HOURLY
-                  state: ACTIVE
-                  endsAt: null
-                  startsAt: '2024-10-24T21:13:25+00:00'
-                  sla: Basic
-                  controlPanel: cPanel Admin 5
-                  inModification: false
           schema:
             $ref: ../components/schemas/instanceList.yaml
     '401':

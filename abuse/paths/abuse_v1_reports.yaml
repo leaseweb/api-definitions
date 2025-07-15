@@ -7,6 +7,7 @@ get:
     - $ref: ../components/parameters/status.yaml
     - $ref: ../components/parameters/ticketId.yaml
     - $ref: ../components/parameters/ip.yaml
+    - $ref: ../components/parameters/sort.yaml
   responses:
     '200':
       description: |
@@ -43,6 +44,8 @@ get:
                   - 127.0.0.1
           schema:
             $ref: ../components/schemas/getReportListResult.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':

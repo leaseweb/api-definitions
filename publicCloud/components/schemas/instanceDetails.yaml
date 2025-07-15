@@ -41,7 +41,7 @@ properties:
   rootDiskStorageType:
     $ref: ./storageType.yaml
   contract:
-    $ref: ./instanceContract.yaml
+    $ref: ./instanceContractDetails.yaml
   autoScalingGroup:
     $ref: ./autoScalingGroup.yaml
   image:
@@ -71,7 +71,6 @@ required:
   - ips
   - contract
   - startedAt
-  - autoScalingGroup
   - image
   - iso
   - privateNetwork

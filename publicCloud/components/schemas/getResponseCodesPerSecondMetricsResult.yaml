@@ -1,6 +1,6 @@
 properties:
   metrics:
-    title: responseCodesMetrics
+    title: responseCodesMetricsPerSec
     type: object
     properties:
       2xx:

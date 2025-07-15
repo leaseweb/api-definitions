@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/keyRollover \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"type":"KSK"}'

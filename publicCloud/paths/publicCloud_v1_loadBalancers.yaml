@@ -46,7 +46,6 @@ post:
               privateNetworkSpeed:
                 value: 100
                 unit: Mbps
-            autoScalingGroup: null
             region: eu-west-3
             reference: my-loadbalancer1
             state: RUNNING
@@ -236,16 +235,9 @@ get:
                     mainIp: false
                 startedAt: '2024-04-09T15:11:37+00:00'
                 contract:
-                  id: ''
                   billingFrequency: 1
                   term: 0
                   type: HOURLY
-                  state: ACTIVE
-                  endsAt: null
-                  startsAt: '2024-10-24T21:13:25+00:00'
-                  sla: Basic
-                  controlPanel: cPanel Admin 5
-                  inModification: false
                 configuration:
                   stickySession:
                     enabled: true

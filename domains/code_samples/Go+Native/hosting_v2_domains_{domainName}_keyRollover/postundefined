@@ -2,17 +2,21 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"net/http"
 	"io/ioutil"
 )
 
 func main() {
 
-	url := "https://api.leaseweb.com/abuse/v1/reports?limit=20&offset=10&status=OPEN%2CWAITING%2CCLOSED&ticketId=SOME_STRING_VALUE&ip=SOME_STRING_VALUE&sort=deadline%2C-reportedAt"
+	url := "https://api.leaseweb.com/hosting/v2/domains/example.com/keyRollover"
 
-	req, _ := http.NewRequest("GET", url, nil)
+	payload := strings.NewReader("{\"type\":\"KSK\"}")
+
+	req, _ := http.NewRequest("POST", url, payload)
 
 	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+	req.Header.Add("content-type", "application/json")
 
 	res, _ := http.DefaultClient.Do(req)
 

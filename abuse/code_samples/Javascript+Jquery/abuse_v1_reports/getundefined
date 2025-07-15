@@ -1,7 +1,7 @@
 const settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://api.leaseweb.com/abuse/v1/reports?limit=20&offset=10&status=OPEN%2CWAITING%2CCLOSED&ticketId=SOME_STRING_VALUE&ip=SOME_STRING_VALUE",
+  "url": "https://api.leaseweb.com/abuse/v1/reports?limit=20&offset=10&status=OPEN%2CWAITING%2CCLOSED&ticketId=SOME_STRING_VALUE&ip=SOME_STRING_VALUE&sort=deadline%2C-reportedAt",
   "method": "GET",
   "headers": {
     "X-LSW-Auth": "REPLACE_KEY_VALUE"
