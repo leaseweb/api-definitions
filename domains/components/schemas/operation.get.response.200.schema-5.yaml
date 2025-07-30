@@ -1,82 +1,42 @@
 $schema: http://json-schema.org/draft-04/schema
 properties:
-  status:
-    type: string
-    description: DNSSEC status of a domain
-    enum:
-      - ENABLED
-      - DISABLED
-      - DISABLING_SCHEDULED
-      - ENABLED_WITH_EXTERNAL_NAMESERVERS
-      - UNSUPPORTED_TLD
-    examples:
-      - ENABLED
-  nsec3:
-    type: object
-    description: NSEC3 is an extension to DNSSEC and it requires DNSSEC to be enabled.
-    properties:
-      active:
-        type: boolean
-        description: Setting the state to active defines dnssec will be signed with nsec3
-        examples:
-          - true
-  dnssecKeys:
+  nameservers:
     type: array
-    description: Retrieve DNSSEC keys only when you have non-leaseweb nameserver.
+    description: Array of nameservers
     items:
       type: object
       properties:
-        flags:
-          type: integer
-          example: 257
-        protocol:
-          type: integer
-          example: 3
-        algorithm:
-          type: integer
-          example: 13
-          enum:
-            - 7
-            - 8
-            - 10
-            - 13
-            - 14
-        key:
-          type: string
-        keyTag:
-          type: integer
-          example: 8656
-        digest:
-          type: string
-        digestType:
-          type: integer
-          example: 2
         name:
           type: string
+          description: Name of the nameserver
+          examples:
+            - ns1.example.com
       required:
-        - protocol
-        - algorithm
-        - key
-  keyRollover:
-    type: object
-    properties:
-      type:
-        type: string
-      status:
-        type: string
-      message:
-        type: string
+        - name
+  status:
+    type: string
+    description: A human readable message.
+    examples:
+      - >-
+        Nameservers update request is accepted. This request will be processed
+        after 24 hours.
+      - The nameservers update request has been completed.
+  isLeasewebNameserver:
+    type: boolean
+    description: Determines if it's using leaseweb nameservers or not.
   _links:
     type: object
     description: Links to related resource locations
     properties:
       self:
         type: object
-        description: Link to get the domain DNSSEC status
+        description: Link to the nameservers
         properties:
           href:
             type: string
-            description: Hyperlink to get the domain DNSSEC status
+            description: Hyperlink to the nameservers location
             examples:
-              - /domains/example.com/dnssec
+              - /domains/example.com/nameservers
+required:
+  - nameservers
 type: object

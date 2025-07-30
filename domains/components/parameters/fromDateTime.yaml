@@ -1,0 +1,10 @@
+description: >-
+  Start of date interval in ISO-8601 format. The returned data will include
+  everything up from - and including - the specified date time.
+example: '2024-08-23T00:00:00Z'
+in: query
+name: from
+required: true
+schema:
+  format: date-time
+  type: string

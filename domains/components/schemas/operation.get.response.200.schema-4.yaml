@@ -1,42 +1,26 @@
 $schema: http://json-schema.org/draft-04/schema
 properties:
-  nameservers:
-    type: array
-    description: Array of nameservers
-    items:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the nameserver
-          examples:
-            - ns1.example.com
-      required:
-        - name
-  status:
+  domainName:
     type: string
-    description: A human readable message.
+    description: The domain name
     examples:
-      - >-
-        Nameservers update request is accepted. This request will be processed
-        after 24 hours.
-      - The nameservers update request has been completed.
-  isLeasewebNameserver:
+      - example.com
+  available:
     type: boolean
-    description: Determines if it's using leaseweb nameservers or not.
+    description: Boolean indicating whether the domain is available
+    examples:
+      - true
   _links:
     type: object
     description: Links to related resource locations
     properties:
       self:
         type: object
-        description: Link to the nameservers
+        description: Link to check domain availability
         properties:
           href:
             type: string
-            description: Hyperlink to the nameservers location
+            description: Hyperlink to check domain availability
             examples:
-              - /domains/example.com/nameservers
-required:
-  - nameservers
+              - /domains/example.com/available
 type: object

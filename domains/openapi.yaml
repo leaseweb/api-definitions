@@ -62,12 +62,20 @@ paths:
     $ref: paths/hosting_v2_domains.yaml
   /hosting/v2/domains/{domainName}:
     $ref: paths/hosting_v2_domains_{domainName}.yaml
+  /hosting/v2/domains/{domainName}/overview:
+    $ref: paths/hosting_v2_domains_{domainName}_overview.yaml
   /hosting/v2/domains/{domainName}/available:
     $ref: paths/hosting_v2_domains_{domainName}_available.yaml
   /hosting/v2/domains/{domainName}/nameservers:
     $ref: paths/hosting_v2_domains_{domainName}_nameservers.yaml
   /hosting/v2/domains/{domainName}/dnssec:
     $ref: paths/hosting_v2_domains_{domainName}_dnssec.yaml
+  /hosting/v2/domains/{domainName}/health:
+    $ref: paths/hosting_v2_domains_{domainName}_health.yaml
+  /hosting/v2/domains/{domainName}/locks:
+    $ref: paths/hosting_v2_domains_{domainName}_locks.yaml
+  /hosting/v2/domains/{domainName}/metrics/dnsQuery:
+    $ref: paths/hosting_v2_domains_{domainName}_metrics_dnsQuery.yaml
   /hosting/v2/domains/{domainName}/keyRollover:
     $ref: paths/hosting_v2_domains_{domainName}_keyRollover.yaml
   /hosting/v2/domains/{domainName}/resourceRecordSets:

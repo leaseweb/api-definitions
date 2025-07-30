@@ -1,0 +1,88 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  description: Get Domain Health
+  operationId: domains-health-get
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-7.yaml
+          examples:
+            example-1:
+              value:
+                registryStatus:
+                  - inactive
+                  - pendingCreate
+                nameservers:
+                  - name: NS0.DEV.LEASEWEB.COM
+                    resolvable: true
+                  - name: TEST2.CHEFSRANK.COM
+                    resolvable: false
+                dnssec:
+                  delegationChain:
+                    resolvable: false
+                    message: >-
+                      No valid RRSIGs made by a key corresponding to a DS RR
+                      were found covering the DNSKEY RRset, resulting in no
+                      secure entry point (SEP) into the zone.
+                contacts:
+                  - handleId: P-AUC406
+                    type: REGISTRANT
+                    status:
+                      - ok
+                      - linked
+                  - handleId: P-AUC406
+                    type: ADMIN
+                    status:
+                      - ok
+                      - linked
+                  - handleId: P-AUC407
+                    type: TECHNICAL
+                    status:
+                      - ok
+                      - linked
+                  - handleId: P-LSW406
+                    type: BILLING
+                    status:
+                      - failed
+                    message: Missing Contact
+                zone:
+                  available: true
+                formerDomain: false
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get Domain Health
+  tags:
+    - Domains
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_health/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_health/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_health/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_health/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_health/getundefined

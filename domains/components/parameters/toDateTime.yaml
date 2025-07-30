@@ -1,0 +1,10 @@
+description: >-
+  End of date interval in ISO-8601 format. The returned data will include
+  everything up until - but not including - the specified date time.
+example: '2024-09-03T00:00:00Z'
+in: query
+name: to
+required: true
+schema:
+  format: date-time
+  type: string

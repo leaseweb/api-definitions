@@ -1,0 +1,12 @@
+description: ''
+content:
+  application/json:
+    example:
+      value:
+        errorCode: I'M A TEAPOT
+    schema:
+      $schema: http://json-schema.org/draft-04/schema#
+      type: object
+      properties:
+        errorCode:
+          type: string

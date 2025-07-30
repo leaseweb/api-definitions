@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/hosting/v2/domains/example.com/metrics/dnsQuery?from=2024-08-23T00%3A00%3A00Z&to=2024-09-03T00%3A00%3A00Z&granularity=SOME_STRING_VALUE&aggregation=SOME_STRING_VALUE",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

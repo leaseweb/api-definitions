@@ -1,0 +1,80 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  operationId: getQueryMetrics
+  parameters:
+    - $ref: ../components/parameters/fromDateTime.yaml
+    - $ref: ../components/parameters/toDateTime.yaml
+    - description: >-
+        Specify the preferred interval for each metric. If granularity is
+        omitted from the request, only one metric is returned.
+      in: query
+      name: granularity
+      schema:
+        type: string
+        enum:
+          - 5MIN
+          - HOUR
+          - DAY
+          - WEEK
+          - MONTH
+    - description: Aggregate each metric using the given aggregation function.
+      in: query
+      name: aggregation
+      schema:
+        default: SUM
+        type: string
+        enum:
+          - SUM
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getQueryMetricsResult.yaml
+          example:
+            _metadata:
+              aggregation: SUM
+              granularity: HOUR
+              from: '2024-08-23T09:00:00Z'
+              to: '2024-09-03T11:00:00Z'
+            dnsQuery:
+              unit: query
+              values:
+                - timestamp: '2024-09-02T09:00:00Z'
+                  value: 200
+                - timestamp: '2016-09-03T10:00:00Z'
+                  value: 150
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Show Dns Query Metrics
+  tags:
+    - DNS
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_metrics_dnsQuery/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_metrics_dnsQuery/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_metrics_dnsQuery/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_metrics_dnsQuery/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_metrics_dnsQuery/getundefined

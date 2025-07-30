@@ -159,7 +159,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/operation.post.request.schema.yaml
+          $ref: ../components/schemas/operation.post.request.schema1.yaml
         examples:
           example:
             value:

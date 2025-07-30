@@ -1,113 +1,72 @@
-$schema: http://json-schema.org/draft-04/schema
 properties:
-  forwards:
-    type: array
-    description: Array of forwards for a mailbox
-    items:
-      type: object
-      properties:
-        active:
-          type: boolean
-          description: Boolean indicating whether the forward is active
-          examples:
-            - true
-        destination:
+  health:
+    type: object
+    properties:
+      registryStatus:
+        type: array
+        uniqueItems: true
+        items:
           type: string
-          description: The email address to which email messages will be forwarded
-          examples:
-            - destination@example.org
-        source:
-          type: string
-          description: >-
-            The email address of the mailbox for which email messages will be
-            forwarded
-          examples:
-            - mailbox@example.com
-        spamChecksEnabled:
-          type: boolean
-          description: Boolean indicating whether spam checks are enabled
-          examples:
-            - false
-        virusChecksEnabled:
-          type: boolean
-          description: Boolean indicating whether virus checks are enabled
-          examples:
-            - true
-        createdAt:
-          type: string
-          description: Indicate the time at which the alias is created
-          examples:
-            - '2023-05-01T00:00:00+00:00'
-        modifiedAt:
-          type: string
-          description: Indicate the time at which the alias is modified
-          examples:
-            - '2023-05-01T00:00:00+00:00'
-        _links:
+      nameservers:
+        type: array
+        items:
           type: object
-          description: Links to related resource locations
           properties:
-            self:
-              type: object
-              description: Link to the forward
-              properties:
-                href:
-                  type: string
-                  description: Hyperlink to the forward's location
-                  examples:
-                    - >-
-                      /domains/example.com/mailboxes/mailbox%40example.com/forwards/destination%40example.org
-            collection:
-              type: object
-              description: Link to the forward collection for the mailbox
-              properties:
-                href:
-                  type: string
-                  description: Hyperlink to the forward collection location for the mailbox
-                  examples:
-                    - >-
-                      /domains/example.com/mailboxes/mailbox%40example.com/forwards
-  _links:
-    type: object
-    description: Links to related resource locations
-    properties:
-      self:
+            name:
+              type: string
+              example: NS0.DEV.LEASEWEB.COM
+            resolvable:
+              type: boolean
+              example: 'true'
+      dnssec:
         type: object
-        description: Link to the forward collection for the mailbox
         properties:
-          href:
-            type: string
-            description: Hyperlink to the forward collection location for the mailbox
-            examples:
-              - /domains/example.com/mailbox%40example.com/forwards
-      parent:
+          delegationChain:
+            type: object
+            properties:
+              resolvable:
+                type: boolean
+                example: 'true'
+              message:
+                type:
+                  - string
+                  - 'null'
+      contacts:
+        type: array
+        items:
+          type: object
+          properties:
+            handleId:
+              type: string
+              example: P-AUC406
+            type:
+              type: string
+              example: REGISTRANT
+              enum:
+                - REGISTRANT
+                - ADMIN
+                - TECHNICAL
+                - BILLING
+            status:
+              type: array
+              uniqueItems: true
+              items:
+                type: string
+            message:
+              type:
+                - string
+                - 'null'
+      zone:
         type: object
-        description: Link to the parent resource
         properties:
-          href:
-            type: string
-            description: Hyperlink to the parent resource location
-            examples:
-              - /domains/example.com/mailbox%40example.com
-  _metadata:
-    type: object
-    description: Metadata about the collection
-    properties:
-      totalCount:
-        type: integer
-        description: The total number of forwards for the mailbox
+          available:
+            type: boolean
+            example: 'true'
+      formerDomain:
+        type: boolean
+        description: >-
+          Boolean indicating whether the domain has been deleted and in former
+          domains list or not
         examples:
-          - 2
-      limit:
-        type: integer
-        description: The maximum number of results returned
-        default: 10
-        examples:
-          - 25
-      offset:
-        type: integer
-        description: Results are returned starting at the given offset
-        default: 0
-        examples:
-          - 0
+          - false
 type: object

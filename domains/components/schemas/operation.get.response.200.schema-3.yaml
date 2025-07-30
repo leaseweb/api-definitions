@@ -5,22 +5,136 @@ properties:
     description: The domain name
     examples:
       - example.com
-  available:
+  suspended:
     type: boolean
-    description: Boolean indicating whether the domain is available
+    description: >-
+      Boolean indicating whether the domain is suspended, will be removed in v3.
+      Please use the status field
     examples:
       - true
-  _links:
+  dnsOnly:
+    type: boolean
+    description: Boolean indicating whether the domain is dns only
+    examples:
+      - true
+  status:
+    type: string
+    description: Status of the domain contract
+    enum:
+      - PENDING
+      - ACTIVE
+      - SUSPENDED
+    examples:
+      - ACTIVE
+  contractStartDate:
+    type: string
+    description: Contract start date in ISO 8601 format
+    examples:
+      - '2017-04-01T00:00:00+02:00'
+  contractEndDate:
+    type: string
+    description: Optional contract end date in ISO 8601 format
+    examples:
+      - '2018-04-01T00:00:00+02:00'
+  numberOfAutoResponders:
+    type: integer
+    description: The number of auto responders configured for the domain
+    examples:
+      - 3
+  numberOfEmailAliases:
+    type: integer
+    description: The number of email aliases configured for the domain
+    examples:
+      - 25
+  numberOfForwards:
+    type: integer
+    description: The number of forwards configured for the domain
+    examples:
+      - 11
+  numberOfMailboxes:
+    type: integer
+    description: The number of mailboxes configured for the domain
+    examples:
+      - 11
+  dnssec:
+    type: string
+    description: DNSSEC status of a domain
+    enum:
+      - ENABLED
+      - DISABLED
+      - DISABLING_SCHEDULED
+      - ENABLED_WITH_EXTERNAL_NAMESERVERS
+      - UNSUPPORTED_TLD
+    examples:
+      - ENABLED
+  keyRollover:
+    description: Key rollover status of a domain.
     type: object
-    description: Links to related resource locations
     properties:
-      self:
-        type: object
-        description: Link to check domain availability
-        properties:
-          href:
-            type: string
-            description: Hyperlink to check domain availability
-            examples:
-              - /domains/example.com/available
+      status:
+        type: string
+      type:
+        type: string
+      message:
+        type: string
+  nameservers:
+    type: string
+    description: Indicating whether the nameservers are leaseweb authoritative or external.
+    example: LEASEWEB
+    enum:
+      - LEASEWEB
+      - EXTERNAL
+  formerDomain:
+    type: boolean
+    description: >-
+      Boolean indicating whether the domain has been deleted and in former
+      domains list or not
+    examples:
+      - false
+  webhostingPacks:
+    type: array
+    description: The webhosting packs
+    items:
+      type: object
+      properties:
+        domainName:
+          type: string
+          description: The Domain name
+          examples:
+            - example.com
+        contractStartDate:
+          type: string
+          description: Contract start date in ISO 8601 format
+          examples:
+            - '2017-04-01T00:00:00+02:00'
+        contractEndDate:
+          type: string
+          description: Contract end date in ISO 8601 format
+          examples:
+            - '2018-04-01T00:00:00+02:00'
+        contractTerm:
+          type: string
+          description: Contract duration of the webhosting pack
+          examples:
+            - 1 year
+        pricePerMonth:
+          type: number
+          description: webhosting pack price per month
+          examples:
+            - 6.99
+        currency:
+          type: string
+          description: Currency of the entity
+          examples:
+            - EUR
+        packName:
+          type: string
+          description: Name of the webhosting pack
+          examples:
+            - Linux - M
+        equipmentId:
+          type: string
+          description: equipment id of the webhost
+          examples:
+            - '12345678'
 type: object

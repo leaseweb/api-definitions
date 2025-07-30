@@ -1,0 +1,54 @@
+properties:
+  dnsQuery:
+    type: object
+    title: dnsQuery
+    properties:
+      unit:
+        description: The metric unit that's used
+        type: string
+      values:
+        items:
+          title: metricValue
+          description: An array of metrics grouped by granularity
+          properties:
+            timestamp:
+              description: The time of the current metric
+              format: date-time
+              type: string
+            value:
+              description: The value of the current metric
+              type: integer
+          type: object
+          required:
+            - timestamp
+            - value
+        type: array
+    required:
+      - unit
+      - values
+  _metadata:
+    title: metricsMetaData
+    description: Metadata about the collection
+    properties:
+      aggregation:
+        $ref: ./aggregation.yaml
+      from:
+        description: Start of date interval in ISO-8601 format
+        format: date-time
+        type: string
+      granularity:
+        $ref: ./granularity.yaml
+      to:
+        description: End of date interval in ISO-8601 format
+        format: date-time
+        type: string
+    type: object
+    required:
+      - granularity
+      - aggregation
+      - from
+      - to
+required:
+  - _metadata
+  - dnsQuery
+type: object

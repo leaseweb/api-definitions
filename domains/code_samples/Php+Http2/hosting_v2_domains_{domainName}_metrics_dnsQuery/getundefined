@@ -1,0 +1,22 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/hosting/v2/domains/example.com/metrics/dnsQuery');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'from' => '2024-08-23T00:00:00Z',
+  'to' => '2024-09-03T00:00:00Z',
+  'granularity' => 'SOME_STRING_VALUE',
+  'aggregation' => 'SOME_STRING_VALUE'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

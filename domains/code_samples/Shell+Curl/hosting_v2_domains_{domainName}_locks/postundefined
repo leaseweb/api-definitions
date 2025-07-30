@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/locks \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"locks":["string"]}'

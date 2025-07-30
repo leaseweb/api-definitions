@@ -1,0 +1,7 @@
+enum:
+  - 5MIN
+  - HOUR
+  - DAY
+  - WEEK
+  - MONTH
+type: string

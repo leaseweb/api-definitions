@@ -1,0 +1,83 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  description: ''
+  operationId: domains-overview-get
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-3.yaml
+          examples:
+            example:
+              value:
+                domainName: example.com
+                contractStartDate: '2015-10-01T00:00:00+00:00'
+                contractEndDate: '2020-10-01T00:00:00+00:00'
+                dnsOnly: false
+                status: ACTIVE
+                suspended: false
+                numberOfAutoResponders: 3
+                numberOfEmailAliases: 4
+                numberOfForwards: 2
+                numberOfMailboxes: 1
+                dnssec: ENABLED
+                keyRollover:
+                  status: INITIALIZED
+                  type: KSK
+                  message: >-
+                    It would take 25 hours to complete the process from the time
+                    its been initialized
+                nameservers: LEASEWEB
+                locks:
+                  - TRANSFERLOCK
+                registryStatus:
+                  - clientTransferProhibited
+                formerDomain: false
+                webhostingPacks:
+                  - domainName: example.com
+                    contractStartDate: 2015-10-01T00:00:00+0000
+                    contractEndDate: 2020-09-30T00:00:00+0000
+                    contractTerm: 1 year
+                    pricePerMonth: 3.38
+                    currency: EUR
+                    packName: Small
+                    equipmentId: '1234567'
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '418':
+      $ref: ../components/responses/418.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Retrieve detailed information
+  tags:
+    - Domains
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_overview/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_overview/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_overview/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_overview/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_overview/getundefined

@@ -11,7 +11,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/operation.get.response.200.schema-8.yaml
+            $ref: ../components/schemas/operation.get.response.200.schema-81.yaml
           examples:
             example:
               value:

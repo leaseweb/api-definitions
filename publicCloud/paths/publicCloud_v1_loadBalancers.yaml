@@ -245,22 +245,6 @@ get:
                   balance: roundrobin
                   xForwardedFor: false
                   idleTimeOut: 60
-                autoScalingGroup:
-                  id: 8714e190-8ca1-49cf-8594-0d019deff809
-                  type: MANUAL
-                  state: ACTIVE
-                  desiredAmount: 1
-                  region: eu-west-3
-                  reference: ono
-                  createdAt: '2024-06-14T09:12:08+00:00'
-                  updatedAt: '2024-06-14T09:12:08+00:00'
-                  startsAt: null
-                  endsAt: null
-                  minimumAmount: null
-                  maximumAmount: null
-                  cpuThreshold: null
-                  warmupTime: null
-                  cooldownTime: null
           schema:
             $ref: ../components/schemas/loadBalancers.yaml
     '401':

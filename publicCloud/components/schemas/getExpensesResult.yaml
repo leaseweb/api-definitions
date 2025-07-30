@@ -91,7 +91,7 @@ properties:
         type: string
         description: Total estimated value for period
   _metadata:
-    title: metadata
+    title: expensesMetadata
     type: object
     required:
       - currency

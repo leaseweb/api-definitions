@@ -1,0 +1,107 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  description: This endpoint is used to list the domain protections enabled for the domain
+  operationId: domains-locks-get
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-8.yaml
+          examples:
+            example:
+              value:
+                locks:
+                  - TRANSFERLOCK
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get Domain locks
+  tags:
+    - Domains
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_locks/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_locks/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_locks/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_locks/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_locks/getundefined
+post:
+  description: >-
+    This endpoint is used to protect the domain name by enabling registry
+    lock(s). Can also disable a lock.
+  operationId: domains-locks-post
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.post.request.schema.yaml
+        examples:
+          example:
+            value:
+              locks:
+                - TRANSFERLOCK
+    description: >-
+      Payload should have domain lock(s) to be enabled. If the value is not
+      passed it will be disabled.
+  responses:
+    '204':
+      description: Domain name lock(s) updated.
+      content: {}
+    '400':
+      description: Bad Request
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '418':
+      description: I'm a teapot (RFC 2324)
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Domain locks
+  tags:
+    - Domains
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_locks/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_locks/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_locks/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_locks/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_locks/postundefined

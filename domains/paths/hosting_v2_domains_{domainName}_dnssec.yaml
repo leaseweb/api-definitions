@@ -9,7 +9,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/operation.get.response.200.schema-5.yaml
+            $ref: ../components/schemas/operation.get.response.200.schema-6.yaml
           examples:
             Example:
               value:
