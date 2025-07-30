@@ -1,0 +1,118 @@
+get:
+  description: Get Orders will return an overview of all the orders of the customer.
+  operationId: getOrders
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getOrdersResult.yaml
+          example:
+            orders:
+              - id: '41220000'
+                contractId: '55040000'
+                createdAt: '2025-07-18T09:26:50+00:00'
+                type: NEW_ORDER
+                origin: QUOTATION
+                services:
+                  - id: '41220000000100'
+                    productId: PUBLIC_CLOUD
+                    status: SCHEDULED
+                    deliveryEstimate: '2025-07-21T00:00:00+00:00'
+                    equipmentId: ''
+                    pricePerFrequency: 226.44
+                    currency: EUR
+                    contractTerm: ''
+                    billingCycle: 1 Month
+              - id: '41220001'
+                contractId: '55040001'
+                createdAt: '2025-07-10T11:09:33+00:00'
+                type: NEW_ORDER
+                origin: QUOTATION
+                services:
+                  - id: '41220000000100'
+                    productId: DEDICATED_SERVER
+                    status: ACTIVE
+                    deliveryEstimate: '2025-07-10T00:00:00+00:00'
+                    equipmentId: '838'
+                    pricePerFrequency: 186.44
+                    currency: EUR
+                    contractTerm: ''
+                    billingCycle: 1 Month
+              - id: '44010002'
+                contractId: '54216331'
+                createdAt: '2025-07-07T16:11:48+00:00'
+                type: NEW_ORDER
+                origin: WEBSITE
+                services:
+                  - id: '44010000000100'
+                    productId: DEDICATED_SERVER
+                    status: NEW_CONTRACT
+                    deliveryEstimate: 1 hour delivery
+                    equipmentId: ''
+                    pricePerFrequency: 127.38
+                    currency: EUR
+                    contractTerm: 1 year
+                    billingCycle: 1 Month
+                  - id: '44010000000200'
+                    productId: DEDICATED_SERVER
+                    status: NEW_CONTRACT
+                    deliveryEstimate: 1 hour delivery
+                    equipmentId: ''
+                    pricePerFrequency: 127.38
+                    currency: EUR
+                    contractTerm: 1 year
+                    billingCycle: 1 Month
+                  - id: '44010000000300'
+                    productId: DEDICATED_SERVER
+                    status: NEW_CONTRACT
+                    deliveryEstimate: 1-5 business days
+                    equipmentId: ''
+                    pricePerFrequency: 218.25
+                    currency: EUR
+                    contractTerm: 2 years
+                    billingCycle: 1 Year
+                  - id: '44010000000400'
+                    productId: DEDICATED_SERVER
+                    status: NEW_CONTRACT
+                    deliveryEstimate: 1 hour delivery
+                    equipmentId: ''
+                    pricePerFrequency: 127.38
+                    currency: EUR
+                    contractTerm: 1 year
+                    billingCycle: 1 Month
+            _metadata:
+              limit: 3
+              offset: 0
+              totalCount: 100
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List of orders
+  tags:
+    - Orders
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/account_v1_orders/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/account_v1_orders/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/account_v1_orders/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/account_v1_orders/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/account_v1_orders/getundefined

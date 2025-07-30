@@ -1,0 +1,41 @@
+properties:
+  orders:
+    type: array
+    description: Array of Orders
+    items:
+      type: object
+      title: order
+      properties:
+        id:
+          type: string
+          description: The unique id of the order
+          example: '41002016'
+        contractId:
+          type: string
+          description: The unique contract id of the order
+          example: '55045000'
+        createdAt:
+          type: string
+          description: The date the order was created
+          example: '2021-01-15T00:00:00'
+        type:
+          type: string
+          description: Type of the order
+          enum:
+            - NEW_ORDER
+            - MODIFICATION
+        origin:
+          type: string
+          description: Source of the order
+          enum:
+            - CUSTOMER_PORTAL
+            - QUOTATION
+            - WEBSITE
+            - OTHER
+        services:
+          type: array
+          description: Array of service properties
+          items:
+            $ref: ./service.yaml
+  _metadata:
+    $ref: ./_metadata.yaml

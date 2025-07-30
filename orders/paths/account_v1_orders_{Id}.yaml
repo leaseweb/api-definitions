@@ -1,0 +1,58 @@
+parameters:
+  - $ref: ../components/parameters/Id.yaml
+get:
+  description: Get Order will return a single order for the customer.
+  operationId: getOrder
+  responses:
+    '200':
+      description: |
+        OK.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getOrderResult.yaml
+          example:
+            id: '41999900'
+            contractId: '55045355'
+            createdAt: '2025-07-18T09:26:50+00:00'
+            type: NEW_ORDER
+            origin: QUOTATION
+            services:
+              - id: '41999900000100'
+                productId: DEDICATED_SERVER
+                status: ACTIVE
+                deliveryEstimate: '2025-07-21T00:00:00+00:00'
+                equipmentId: '12345678'
+                pricePerFrequency: 234.44
+                currency: EUR
+                contractTerm: ''
+                billingCycle: 1 Month
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Inspect an order
+  tags:
+    - Orders
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/account_v1_orders_{Id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/account_v1_orders_{Id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/account_v1_orders_{Id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/account_v1_orders_{Id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/account_v1_orders_{Id}/getundefined

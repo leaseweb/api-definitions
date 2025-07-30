@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/account/v1/orders?limit=20&offset=10' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

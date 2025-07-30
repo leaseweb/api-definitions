@@ -1,0 +1,9 @@
+content:
+  application/json:
+    example:
+      correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+      errorCode: '404'
+      errorMessage: Resource not found
+    schema:
+      $ref: ../schemas/errorResult.yaml
+description: Not Found.

@@ -1,0 +1,26 @@
+properties:
+  id:
+    type: string
+    description: The unique id of the order
+    example: '41002016000110'
+  contractId:
+    type: string
+    description: The unique contract id of the order
+    example: '55045000'
+  createdAt:
+    type: string
+    description: The timestamp indicating when the order was created
+    example: 2025-01-01T00:00:00+0100
+  type:
+    type: string
+    description: Indicates the type of order
+    example: NEW_ORDER
+  origin:
+    type: string
+    description: Specifies the source or location of the order
+    example: QUOTATION
+  services:
+    type: array
+    description: Array of service properties
+    items:
+      $ref: ./service.yaml
