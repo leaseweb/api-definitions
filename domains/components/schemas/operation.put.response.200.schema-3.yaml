@@ -1,28 +1,40 @@
 $schema: http://json-schema.org/draft-04/schema
 properties:
-  active:
-    type: boolean
-    description: Boolean indicating whether the email alias is active
-    examples:
-      - true
-  destination:
+  nameservers:
+    type: array
+    description: Array of nameservers
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the nameserver
+          examples:
+            - ns1.example.com
+      required:
+        - name
+  status:
     type: string
-    description: The email address to which email messages will be delivered
+    description: A human readable message.
     examples:
-      - destination@example.com
-  source:
-    type: string
-    description: The email address for which email messages will be forwarded
-    examples:
-      - source@example.com
-  spamChecksEnabled:
-    type: boolean
-    description: Boolean indicating whether spam checks are enabled
-    examples:
-      - true
-  virusChecksEnabled:
-    type: boolean
-    description: Boolean indicating whether virus checks are enabled
-    examples:
-      - true
+      - >-
+        Nameservers update request is accepted. This request will be processed
+        after 24 hours.
+      - The nameservers update request has been completed.
+  _links:
+    type: object
+    description: Links to related resource locations
+    properties:
+      self:
+        type: object
+        description: Link to the nameservers
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the nameservers location
+            examples:
+              - /domains/example.com/nameservers
+required:
+  - nameservers
+  - status
 type: object

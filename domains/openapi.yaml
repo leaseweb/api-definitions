@@ -66,6 +66,12 @@ paths:
     $ref: paths/hosting_v2_domains_{domainName}_overview.yaml
   /hosting/v2/domains/{domainName}/available:
     $ref: paths/hosting_v2_domains_{domainName}_available.yaml
+  /hosting/v2/domains/{domainName}/contacts:
+    $ref: paths/hosting_v2_domains_{domainName}_contacts.yaml
+  /hosting/v2/domains/{domainName}/contacts/{type}:
+    $ref: paths/hosting_v2_domains_{domainName}_contacts_{type}.yaml
+  /hosting/v2/domains/{domainName}/contacts/{type}/verify:
+    $ref: paths/hosting_v2_domains_{domainName}_contacts_{type}_verify.yaml
   /hosting/v2/domains/{domainName}/nameservers:
     $ref: paths/hosting_v2_domains_{domainName}_nameservers.yaml
   /hosting/v2/domains/{domainName}/dnssec:
@@ -111,6 +117,8 @@ paths:
   /hosting/v2/domains/{domainName}/mailboxes/{emailAddress}/autoResponder:
     $ref: >-
       paths/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder.yaml
+  /hosting/v2/domains/{domainName}/dkim:
+    $ref: paths/hosting_v2_domains_{domainName}_dkim.yaml
 components:
   securitySchemes:
     X-LSW-Auth:

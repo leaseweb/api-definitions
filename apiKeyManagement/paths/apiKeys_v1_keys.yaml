@@ -1,12 +1,33 @@
 get:
   operationId: getApiKeyList
-  description: Get a list of api keys for a customer
+  description: >-
+    Get a list of api keys for a customer. The list is sorted by createdAt in
+    descending order
+  parameters:
+    - name: limit
+      in: query
+      schema:
+        default: 10
+        maximum: 1000
+        type: integer
+      description: Limit the number of results returned.
+    - name: offset
+      in: query
+      schema:
+        default: 0
+        type: integer
+      description: Return results starting from the given offset.
   responses:
     '200':
-      description: ''
+      description: |
+        OK.
       content:
         application/json:
           example:
+            _metadata:
+              totalCount: 2
+              limit: 10
+              offset: 0
             keys:
               - id: Adsf80
                 username: c071b507
@@ -49,6 +70,8 @@ get:
                 expiresAt: 2021-02-26T09:35:22+0100
           schema:
             $ref: ../components/schemas/getApiKeyListResult.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':

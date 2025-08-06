@@ -45,3 +45,17 @@ properties:
         expiresAt:
           type: string
           description: The date and time when the key will expire
+  _metadata:
+    title: metadata
+    type: object
+    description: Metadata about the collection
+    properties:
+      limit:
+        type: integer
+        description: The limit used to generate the list of keys
+      offset:
+        type: integer
+        description: The offset used to generate the list of keys
+      totalCount:
+        type: integer
+        description: Total amount of elements in this collection

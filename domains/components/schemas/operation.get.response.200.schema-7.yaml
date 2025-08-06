@@ -1,72 +1,82 @@
+$schema: http://json-schema.org/draft-04/schema
 properties:
-  health:
+  status:
+    type: string
+    description: DNSSEC status of a domain
+    enum:
+      - ENABLED
+      - DISABLED
+      - DISABLING_SCHEDULED
+      - ENABLED_WITH_EXTERNAL_NAMESERVERS
+      - UNSUPPORTED_TLD
+    examples:
+      - ENABLED
+  nsec3:
+    type: object
+    description: NSEC3 is an extension to DNSSEC and it requires DNSSEC to be enabled.
+    properties:
+      active:
+        type: boolean
+        description: Setting the state to active defines dnssec will be signed with nsec3
+        examples:
+          - true
+  dnssecKeys:
+    type: array
+    description: Retrieve DNSSEC keys only when you have non-leaseweb nameserver.
+    items:
+      type: object
+      properties:
+        flags:
+          type: integer
+          example: 257
+        protocol:
+          type: integer
+          example: 3
+        algorithm:
+          type: integer
+          example: 13
+          enum:
+            - 7
+            - 8
+            - 10
+            - 13
+            - 14
+        key:
+          type: string
+        keyTag:
+          type: integer
+          example: 8656
+        digest:
+          type: string
+        digestType:
+          type: integer
+          example: 2
+        name:
+          type: string
+      required:
+        - protocol
+        - algorithm
+        - key
+  keyRollover:
     type: object
     properties:
-      registryStatus:
-        type: array
-        uniqueItems: true
-        items:
-          type: string
-      nameservers:
-        type: array
-        items:
-          type: object
-          properties:
-            name:
-              type: string
-              example: NS0.DEV.LEASEWEB.COM
-            resolvable:
-              type: boolean
-              example: 'true'
-      dnssec:
+      type:
+        type: string
+      status:
+        type: string
+      message:
+        type: string
+  _links:
+    type: object
+    description: Links to related resource locations
+    properties:
+      self:
         type: object
+        description: Link to get the domain DNSSEC status
         properties:
-          delegationChain:
-            type: object
-            properties:
-              resolvable:
-                type: boolean
-                example: 'true'
-              message:
-                type:
-                  - string
-                  - 'null'
-      contacts:
-        type: array
-        items:
-          type: object
-          properties:
-            handleId:
-              type: string
-              example: P-AUC406
-            type:
-              type: string
-              example: REGISTRANT
-              enum:
-                - REGISTRANT
-                - ADMIN
-                - TECHNICAL
-                - BILLING
-            status:
-              type: array
-              uniqueItems: true
-              items:
-                type: string
-            message:
-              type:
-                - string
-                - 'null'
-      zone:
-        type: object
-        properties:
-          available:
-            type: boolean
-            example: 'true'
-      formerDomain:
-        type: boolean
-        description: >-
-          Boolean indicating whether the domain has been deleted and in former
-          domains list or not
-        examples:
-          - false
+          href:
+            type: string
+            description: Hyperlink to get the domain DNSSEC status
+            examples:
+              - /domains/example.com/dnssec
 type: object

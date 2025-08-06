@@ -1,40 +1,80 @@
 $schema: http://json-schema.org/draft-04/schema
 properties:
-  nameservers:
+  contacts:
     type: array
-    description: Array of nameservers
+    description: An array of contacts belonging to a domain
     items:
       type: object
       properties:
+        type:
+          type: string
+          description: The type of the contact
+          examples:
+            - registrant
+          enum:
+            - administrative
+            - registrant
+            - technical
         name:
           type: string
-          description: Name of the nameserver
+          description: The name of the contact
           examples:
-            - ns1.example.com
-      required:
-        - name
-  status:
-    type: string
-    description: A human readable message.
-    examples:
-      - >-
-        Nameservers update request is accepted. This request will be processed
-        after 24 hours.
-      - The nameservers update request has been completed.
-  _links:
-    type: object
-    description: Links to related resource locations
-    properties:
-      self:
-        type: object
-        description: Link to the nameservers
-        properties:
-          href:
-            type: string
-            description: Hyperlink to the nameservers location
-            examples:
-              - /domains/example.com/nameservers
-required:
-  - nameservers
-  - status
+            - First Middle Last
+        organization:
+          type: string
+          description: The organization name of the contact
+          examples:
+            - Customer Company
+        countryCode:
+          type: string
+          description: The country code of the contact in ISO 3166-1 alpha-2 format
+          examples:
+            - NL
+        city:
+          type: string
+          description: The city of the contact
+          examples:
+            - Amsterdam
+        streetAddress:
+          type: string
+          description: The street address of the contact
+          examples:
+            - Street Address 123
+        state:
+          type: string
+          description: The state of the contact
+          examples:
+            - Customer State/Province
+        zipCode:
+          type: string
+          description: The ZIP code of the contact
+          examples:
+            - 1234AB
+        email:
+          type: string
+          description: The email address of the contact
+          examples:
+            - email@example.org
+        phone:
+          type: string
+          description: The phone number of the contact in E.164 format
+          examples:
+            - '+31.723542820'
+        handleType:
+          type: string
+          description: >-
+            The handle type refers to a contact being an Organization type or a
+            Person type
+          enum:
+            - ORGANIZATION
+            - PERSON
+          example: PERSON
+        isEditable:
+          type: boolean
+          description: if contact handle can be edited
+          example: true
+        isValid:
+          type: boolean
+          description: if contact details are missing or incomplete
+          example: true
 type: object

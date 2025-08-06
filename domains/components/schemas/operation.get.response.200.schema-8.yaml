@@ -1,8 +1,72 @@
-$schema: http://json-schema.org/draft-07/schema#
 properties:
-  locks:
-    type: array
-    description: List of domain locks that are currently enabled for the domain
-    items:
-      type: string
+  health:
+    type: object
+    properties:
+      registryStatus:
+        type: array
+        uniqueItems: true
+        items:
+          type: string
+      nameservers:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+              example: NS0.DEV.LEASEWEB.COM
+            resolvable:
+              type: boolean
+              example: 'true'
+      dnssec:
+        type: object
+        properties:
+          delegationChain:
+            type: object
+            properties:
+              resolvable:
+                type: boolean
+                example: 'true'
+              message:
+                type:
+                  - string
+                  - 'null'
+      contacts:
+        type: array
+        items:
+          type: object
+          properties:
+            handleId:
+              type: string
+              example: P-AUC406
+            type:
+              type: string
+              example: REGISTRANT
+              enum:
+                - REGISTRANT
+                - ADMIN
+                - TECHNICAL
+                - BILLING
+            status:
+              type: array
+              uniqueItems: true
+              items:
+                type: string
+            message:
+              type:
+                - string
+                - 'null'
+      zone:
+        type: object
+        properties:
+          available:
+            type: boolean
+            example: 'true'
+      formerDomain:
+        type: boolean
+        description: >-
+          Boolean indicating whether the domain has been deleted and in former
+          domains list or not
+        examples:
+          - false
 type: object

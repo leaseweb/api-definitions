@@ -1,0 +1,4 @@
+properties:
+  infoMessage:
+    type: string
+type: object

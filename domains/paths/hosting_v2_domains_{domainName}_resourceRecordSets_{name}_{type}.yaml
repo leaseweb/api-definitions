@@ -1,7 +1,7 @@
 parameters:
   - $ref: ../components/parameters/domainName.yaml
   - $ref: ../components/parameters/name.yaml
-  - $ref: ../components/parameters/type.yaml
+  - $ref: ../components/parameters/type1.yaml
 get:
   operationId: getResourceRecordSet
   responses:

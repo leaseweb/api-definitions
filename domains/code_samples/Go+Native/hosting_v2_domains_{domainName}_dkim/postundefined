@@ -1,0 +1,25 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://api.leaseweb.com/hosting/v2/domains/example.com/dkim"
+
+	req, _ := http.NewRequest("POST", url, nil)
+
+	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(res)
+	fmt.Println(string(body))
+
+}

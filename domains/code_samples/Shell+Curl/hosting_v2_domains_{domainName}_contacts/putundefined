@@ -1,0 +1,5 @@
+curl --request PUT \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/contacts \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"contacts":[{"type":"registrant","name":"First Middle Last","organization":"Customer Company","countryCode":"NL","city":"Amsterdam","streetAddress":"Street Address 123","state":"Customer State/Province","zipCode":"1234AB","email":"email@example.org","phone":"+31.723542820","handleType":"PERSON"}]}'

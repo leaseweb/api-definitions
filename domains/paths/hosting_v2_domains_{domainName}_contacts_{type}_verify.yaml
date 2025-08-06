@@ -1,0 +1,61 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - $ref: ../components/parameters/type.yaml
+put:
+  description: Send a verification request email to unverified contact.
+  operationId: sendContactVerificationRequest
+  responses:
+    '200':
+      description: Successfully sent verification request email
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/sendContactVerificationRequestResult.yaml
+          example:
+            infoMessage: Verification request email has been sent successfully.
+    '400':
+      description: when .nl domain name is provided
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/errorResponseSchema.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '409':
+      description: >-
+        when the contact is already verified or the request is made too
+        frequently
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/errorResponseSchema.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Contact Verification
+  tags:
+    - Domains
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_contacts_{type}_verify/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_contacts_{type}_verify/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_contacts_{type}_verify/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_contacts_{type}_verify/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_contacts_{type}_verify/putundefined

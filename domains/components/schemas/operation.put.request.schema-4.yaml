@@ -1,22 +1,57 @@
 $schema: http://json-schema.org/draft-04/schema
 properties:
-  active:
-    type: boolean
-    description: Boolean indicating whether the forward is active
+  status:
+    type: string
+    description: Domain DNSSEC status
     examples:
-      - true
-  spamChecksEnabled:
-    type: boolean
-    description: Boolean indicating whether spam checks are enabled
-    examples:
-      - false
-  virusChecksEnabled:
-    type: boolean
-    description: Boolean indicating whether virus checks are enabled
-    examples:
-      - true
+      - ENABLED
+    enum:
+      - ENABLED
+      - DISABLED
+  nsec3:
+    type: object
+    description: NSEC3 is an extension to DNSSEC and it requires DNSSEC to be enabled.
+    properties:
+      active:
+        type: boolean
+        default: true
+        description: >-
+          Dnssec will be signed with nsec3 by default. Setting this value to
+          false, disables use of nsec3
+        examples:
+          - true
+    required:
+      - active
+  dnssecKeys:
+    type: array
+    description: Add DNSSEC keys only when you have non-leaseweb nameservers.
+    items:
+      type: object
+      properties:
+        flags:
+          type: integer
+          example: 257
+        protocol:
+          type: integer
+          example: 3
+        algorithm:
+          type: integer
+          example: 13
+          enum:
+            - 7
+            - 8
+            - 10
+            - 13
+            - 14
+        key:
+          type: string
+        name:
+          type: string
+      required:
+        - flags
+        - protocol
+        - algorithm
+        - key
 required:
-  - active
-  - spamChecksEnabled
-  - virusChecksEnabled
+  - status
 type: object

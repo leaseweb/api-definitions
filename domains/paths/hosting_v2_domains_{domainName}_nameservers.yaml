@@ -9,7 +9,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/operation.get.response.200.schema-5.yaml
+            $ref: ../components/schemas/operation.get.response.200.schema-6.yaml
           examples:
             example:
               value:
@@ -69,7 +69,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/operation.put.request.schema.yaml
+          $ref: ../components/schemas/operation.put.request.schema-3.yaml
         examples:
           example:
             value:
@@ -82,7 +82,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/operation.put.response.200.schema.yaml
+            $ref: ../components/schemas/operation.put.response.200.schema-3.yaml
           examples:
             example:
               value:

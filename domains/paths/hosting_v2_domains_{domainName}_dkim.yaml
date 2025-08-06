@@ -1,0 +1,151 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  description: |
+    > Retrieve dkim record for domain.
+  operationId: domains-dkim-get
+  responses:
+    '200':
+      description: dkim record
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-10.yaml
+          examples:
+            example:
+              value:
+                name: lswdkim._domainkey.example.com
+                content: >-
+                  v=DKIM1; k=rsa;  
+                  p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDNUNWEpQcpSvfEmsrqfDjLNWJNIO7tpz76o5KeWNYbWQFa4idz7eTwKhrFLN/TVSKhRL/gr/Q6pMVpYF7Me37ik68kyo9WT+B8M9Wb9IkDaT8gA4DFWoSBSsuFebSfrFcgXdpwfcydH7IOhgdsg+ohjP6aiupU7YwU5+Xh+/RZewIDAQAB
+                type: TXT
+                nameserver: LEASEWEB
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '422':
+      $ref: ../components/responses/422.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Retrieve Dkim Record
+  tags:
+    - Emails
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_dkim/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_dkim/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_dkim/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_dkim/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_dkim/getundefined
+post:
+  description: |
+    > Create dkim record for domain.
+  operationId: domains-dkim-post
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.post.response.201.schema-4.yaml
+          examples:
+            example:
+              value:
+                name: lswdkim._domainkey.example.com
+                content: >-
+                  v=DKIM1; k=rsa;  
+                  p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDNUNWEpQcpSvfEmsrqfDjLNWJNIO7tpz76o5KeWNYbWQFa4idz7eTwKhrFLN/TVSKhRL/gr/Q6pMVpYF7Me37ik68kyo9WT+B8M9Wb9IkDaT8gA4DFWoSBSsuFebSfrFcgXdpwfcydH7IOhgdsg+ohjP6aiupU7YwU5+Xh+/RZewIDAQAB
+                type: TXT
+                nameserver: LEASEWEB
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create Dkim Record
+  tags:
+    - Emails
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_dkim/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_dkim/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_dkim/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_dkim/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_dkim/postundefined
+delete:
+  description: |
+    Delete dkim record for domain.
+  operationId: domains-dkim-delete
+  responses:
+    '204':
+      description: No Content
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      $ref: ../components/responses/422.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete Dkim Record
+  tags:
+    - Emails
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_dkim/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_dkim/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_dkim/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_dkim/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_dkim/deleteundefined

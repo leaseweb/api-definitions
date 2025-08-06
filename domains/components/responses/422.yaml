@@ -1,0 +1,10 @@
+description: Unprocessable Entity
+content:
+  application/json:
+    example:
+      value:
+        errorMessage: The API could not handle your request at this time.
+        userMessage: Sorry, the api is unable to process the request for domain.
+        correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+    schema:
+      $ref: ../schemas/errorResponseSchema.yaml

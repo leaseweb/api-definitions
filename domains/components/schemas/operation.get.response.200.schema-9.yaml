@@ -1,43 +1,8 @@
-$schema: http://json-schema.org/draft-04/schema
+$schema: http://json-schema.org/draft-07/schema#
 properties:
-  active:
-    type: boolean
-    description: Boolean indicating whether the auto responder is active
-    examples:
-      - true
-  body:
-    type: string
-    description: The body of the auto responder email message
-    examples:
-      - >-
-        I will be out of office until 14-12-2020. Please contact the reception
-        desk for urgent matters.
-  subject:
-    type: string
-    description: The subject of the auto responder email message
-    examples:
-      - Out of office
-  _links:
-    type: object
-    description: Links to related resource locations
-    properties:
-      self:
-        type: object
-        description: Link to the auto responder
-        properties:
-          href:
-            type: string
-            description: Hyperlink to the auto responder's location
-            examples:
-              - >-
-                /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
-      parent:
-        type: object
-        description: Link to the parent resource
-        properties:
-          href:
-            type: string
-            description: Hyperlink to the parent resource location
-            examples:
-              - /domains/example.com/mailboxes/mailbox%40example.com
+  locks:
+    type: array
+    description: List of domain locks that are currently enabled for the domain
+    items:
+      type: string
 type: object

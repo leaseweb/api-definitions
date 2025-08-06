@@ -1,57 +1,67 @@
 $schema: http://json-schema.org/draft-04/schema
 properties:
-  status:
+  name:
     type: string
-    description: Domain DNSSEC status
+    description: The name of the contact. Required if organization flag is set to false.
     examples:
-      - ENABLED
+      - First Middle Last
+  organization:
+    type: string
+    description: >-
+      The organization name of the contact. Required if organization flag is set
+      to true.
+    examples:
+      - Customer Company
+  countryCode:
+    type: string
+    description: The country code of the contact in ISO 3166-1 alpha-2 format
+    examples:
+      - NL
+  city:
+    type: string
+    description: The city of the contact
+    examples:
+      - Amsterdam
+  streetAddress:
+    type: string
+    description: The street address of the contact
+    examples:
+      - Street Address 123
+  state:
+    type: string
+    description: The state or province of the contact
+    examples:
+      - Customer State/Province
+  zipCode:
+    type: string
+    description: The ZIP code of the contact
+    examples:
+      - 1234AB
+  email:
+    type: string
+    description: The email address of the contact
+    examples:
+      - email@example.org
+  phone:
+    type: string
+    description: The phone number of the contact in E.164 format
+    examples:
+      - '+31.723542820'
+  handleType:
+    type: string
+    description: >-
+      The handle type refers to a contact being an Organization type or a Person
+      type
     enum:
-      - ENABLED
-      - DISABLED
-  nsec3:
-    type: object
-    description: NSEC3 is an extension to DNSSEC and it requires DNSSEC to be enabled.
-    properties:
-      active:
-        type: boolean
-        default: true
-        description: >-
-          Dnssec will be signed with nsec3 by default. Setting this value to
-          false, disables use of nsec3
-        examples:
-          - true
-    required:
-      - active
-  dnssecKeys:
-    type: array
-    description: Add DNSSEC keys only when you have non-leaseweb nameservers.
-    items:
-      type: object
-      properties:
-        flags:
-          type: integer
-          example: 257
-        protocol:
-          type: integer
-          example: 3
-        algorithm:
-          type: integer
-          example: 13
-          enum:
-            - 7
-            - 8
-            - 10
-            - 13
-            - 14
-        key:
-          type: string
-        name:
-          type: string
-      required:
-        - flags
-        - protocol
-        - algorithm
-        - key
+      - ORGANIZATION
+      - PERSON
+    example: PERSON
 required:
-  - status
+  - countryCode
+  - city
+  - streetAddress
+  - zipCode
+  - email
+  - phone
+  - handleType
 type: object

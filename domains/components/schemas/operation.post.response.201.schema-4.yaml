@@ -1,0 +1,13 @@
+properties:
+  name:
+    type: string
+  content:
+    type: string
+  type:
+    type: string
+  nameserver:
+    type: string
+    enum:
+      - LEASEWEB
+      - EXTERNAL
+type: object

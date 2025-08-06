@@ -1,7 +1,7 @@
 const settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://api.leaseweb.com/apiKeys/v1/keys",
+  "url": "https://api.leaseweb.com/apiKeys/v1/keys?limit=SOME_INTEGER_VALUE&offset=SOME_INTEGER_VALUE",
   "method": "GET",
   "headers": {
     "X-LSW-Auth": "REPLACE_KEY_VALUE"

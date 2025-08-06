@@ -70,7 +70,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/operation.put.request.schema-4.yaml
+          $ref: ../components/schemas/operation.put.request.schema-41.yaml
         examples:
           example:
             value:
@@ -83,7 +83,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/operation.put.response.200.schema-4.yaml
+            $ref: ../components/schemas/operation.put.response.200.schema-41.yaml
           examples:
             example:
               value:

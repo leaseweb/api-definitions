@@ -9,7 +9,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/operation.get.response.200.schema-6.yaml
+            $ref: ../components/schemas/operation.get.response.200.schema-7.yaml
           examples:
             Example:
               value:
@@ -133,7 +133,7 @@ put:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/operation.put.request.schema-2.yaml
+          $ref: ../components/schemas/operation.put.request.schema-4.yaml
         examples:
           Example - Disable DNSSEC:
             value:
@@ -160,7 +160,7 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/operation.put.response.200.schema-2.yaml
+            $ref: ../components/schemas/operation.put.response.200.schema-4.yaml
           examples:
             Example - Disable DNSSEC:
               value:

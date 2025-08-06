@@ -1,0 +1,155 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - $ref: ../components/parameters/type.yaml
+put:
+  description: >
+    Depending on the tld of the domain being updated a request can be successful
+    and completed synchronously. This will return a 200 response and the body of
+    the resource. 
+
+
+    A request can also be accepted and be processed asynchronously, This will
+    return a 202 and the body of the resource. 
+
+
+    Lastly updating a contact can require more actions. In this case the request
+    is also accepted with a 202 response code but the response will contain a
+    human readable message and a link to a ticket which can be opened inside the
+    customer portal.
+  operationId: domains-contacts-type-put
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.put.request.schema-2.yaml
+        examples:
+          organization:
+            value:
+              organization: Customer Company
+              countryCode: NL
+              city: Amsterdam
+              streetAddress: Street Address 123
+              state: Customer State/Province
+              zipCode: 1234AB
+              email: email@example.org
+              phone: '+31.723542820'
+              handleType: ORGANIZATION
+          person:
+            value:
+              name: First Middle Last
+              countryCode: NL
+              city: Amsterdam
+              streetAddress: Street Address 123
+              state: Customer State/Province
+              zipCode: 1234AB
+              email: email@example.org
+              phone: '+31.723542820'
+              handleType: PERSON
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.200.schema-2.yaml
+          examples:
+            organization:
+              value:
+                type: registrant
+                organization: Customer Company
+                countryCode: NL
+                city: Amsterdam
+                streetAddress: Street Address 123
+                state: Customer State/Province
+                zipCode: 1234AB
+                email: email@example.org
+                phone: '+31.723542820'
+                handleType: ORGANIZATION
+                _links:
+                  self:
+                    href: /domains/example.com/contacts/administrative
+                  collection:
+                    href: /domains/example.com/contacts
+            person:
+              value:
+                type: administrative
+                name: First Middle Last
+                countryCode: NL
+                city: Amsterdam
+                streetAddress: Street Address 123
+                state: Customer State/Province
+                zipCode: 1234AB
+                email: email@example.org
+                phone: '+31.723542820'
+                handleType: PERSON
+                _links:
+                  self:
+                    href: /domains/example.com/contacts/administrative
+                  collection:
+                    href: /domains/example.com/contacts
+    '202':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.202.schema.yaml
+          examples:
+            example:
+              value:
+                infoMessage: >-
+                  Changing the  details of the registrant of this domain will
+                  take a while.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '418':
+      $ref: ../components/responses/418.yaml
+    '422':
+      description: >-
+        The domain name is recognized but cannot be processed. This action is
+        not automated for this tld.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.422.schema.yaml
+          examples:
+            example:
+              value:
+                errorMessage: The action you requested is not automated for this tld.
+                userMessage: >-
+                  The action you requested is not automated for this tld. Please
+                  contact leaseweb support
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Updating a contact
+  tags:
+    - Domains
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_contacts_{type}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_contacts_{type}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_contacts_{type}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_contacts_{type}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_contacts_{type}/putundefined

@@ -5,6 +5,11 @@ $request = new http\Client\Request;
 
 $request->setRequestUrl('https://api.leaseweb.com/apiKeys/v1/keys');
 $request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'limit' => 'SOME_INTEGER_VALUE',
+  'offset' => 'SOME_INTEGER_VALUE'
+]));
+
 $request->setHeaders([
   'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
 ]);

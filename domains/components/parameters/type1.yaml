@@ -1,0 +1,19 @@
+schema:
+  type: string
+  enum:
+    - A
+    - AAA
+    - CAA
+    - CNAME
+    - MX
+    - TLSA
+    - NS
+    - SRV
+    - TXT
+    - SOA
+    - DS
+name: type
+in: path
+required: true
+description: Record type
+example: A

@@ -1,5 +1,88 @@
-$schema: http://json-schema.org/draft-04/schema#
+$schema: http://json-schema.org/draft-04/schema
 properties:
-  infoMessage:
+  type:
     type: string
+    description: The type of the contact
+    examples:
+      - administrative
+    enum:
+      - administrative
+      - registrant
+      - technical
+  name:
+    type: string
+    description: The name of the contact
+    examples:
+      - First Middle Last
+  organization:
+    type: string
+    description: The organization name of the contact
+    examples:
+      - Customer Company
+  countryCode:
+    type: string
+    description: The country code of the contact in ISO 3166-1 alpha-2 format
+    examples:
+      - NL
+  city:
+    type: string
+    description: The city of the contact
+    examples:
+      - Amsterdam
+  streetAddress:
+    type: string
+    description: The street address of the contact
+    examples:
+      - Street Address 123
+  state:
+    type: string
+    description: The state of the contact
+    examples:
+      - Customer State/Province
+  zipCode:
+    type: string
+    description: The ZIP code of the contact
+    examples:
+      - 1234AB
+  email:
+    type: string
+    description: The email address of the contact
+    examples:
+      - email@example.org
+  phone:
+    type: string
+    description: The phone number of the contact in E.164 format
+    examples:
+      - '+31.723542820'
+  handleType:
+    type: string
+    description: >-
+      The handle type refers to a contact being an Organization type or a Person
+      type
+    enum:
+      - ORGANIZATION
+      - PERSON
+    example: ORGANIZATION
+  _links:
+    type: object
+    description: Links to related resource locations
+    properties:
+      self:
+        type: object
+        description: Link to the contact resource
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the contact resource location
+            examples:
+              - /domains/example.com/contacts/administrative
+      collection:
+        type: object
+        description: Link to the contact collection
+        properties:
+          href:
+            type: string
+            description: Hyperlink to the contact collection location
+            examples:
+              - /domains/example.com/contacts
 type: object

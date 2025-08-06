@@ -1,0 +1,237 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  description: >-
+    > Organization name will not be available in response for Technical Contact
+    type.
+  operationId: domains-contacts-get
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-5.yaml
+          examples:
+            example:
+              value:
+                contacts:
+                  - type: registrant
+                    organization: Customer Company
+                    countryCode: NL
+                    city: Amsterdam
+                    streetAddress: Street Address 123
+                    state: Customer State/Province
+                    zipCode: 1234AB
+                    email: email@example.org
+                    phone: '+31.723542820'
+                    handleType: ORGANIZATION
+                    isVerified: true
+                    isEditable: true
+                    isValid: true
+                  - type: administrative
+                    name: First Middle Last
+                    countryCode: NL
+                    city: Amsterdam
+                    streetAddress: Street Address 123
+                    state: Customer State/Province
+                    zipCode: 1234AB
+                    email: admin@example.org
+                    phone: '+31.723542820'
+                    handleType: PERSON
+                    isVerified: true
+                    isEditable: true
+                    isValid: true
+                  - type: technical
+                    name: First Middle Last
+                    countryCode: NL
+                    city: Amsterdam
+                    streetAddress: Street Address 123
+                    state: Customer State/Province
+                    zipCode: 1234AB
+                    email: tech@example.org
+                    phone: '+31.723542820'
+                    handleType: PERSON
+                    isVerified: false
+                    isEditable: true
+                    isValid: true
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '418':
+      $ref: ../components/responses/418.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List contacts
+  tags:
+    - Domains
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_contacts/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_contacts/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_contacts/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_contacts/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_contacts/getundefined
+put:
+  description: '> Technical contact must always be a person handle type. '
+  operationId: domains-contacts-put
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.put.request.schema.yaml
+        examples:
+          person:
+            value:
+              contacts:
+                - type: registrant
+                  organization: Customer Company
+                  countryCode: NL
+                  city: Amsterdam
+                  streetAddress: Street Address 123
+                  state: Customer State/Province
+                  zipCode: 1234AB
+                  email: email@example.org
+                  phone: '+31.723542820'
+                  handleType: ORGANIZATION
+                - type: administrative
+                  name: First Middle Last
+                  countryCode: NL
+                  city: Amsterdam
+                  streetAddress: Street Address 123
+                  state: Customer State/Province
+                  zipCode: 1234AB
+                  email: admin@example.org
+                  phone: '+31.723542820'
+                  handleType: PERSON
+                - type: technical
+                  name: First Middle Last
+                  countryCode: NL
+                  city: Amsterdam
+                  streetAddress: Street Address 123
+                  state: Customer State/Province
+                  zipCode: 1234AB
+                  email: tech@example.org
+                  phone: '+31.723542820'
+                  handleType: PERSON
+    description: ''
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.200.schema.yaml
+          examples:
+            person:
+              value:
+                contacts:
+                  - type: registrant
+                    organization: Customer Company
+                    countryCode: NL
+                    city: Amsterdam
+                    streetAddress: Street Address 123
+                    state: Customer State/Province
+                    zipCode: 1234AB
+                    email: email@example.org
+                    phone: '+31.723542820'
+                    handleType: ORGANIZATION
+                    isEditable: true
+                    isValid: true
+                  - type: administrative
+                    name: First Middle Last
+                    countryCode: NL
+                    city: Amsterdam
+                    streetAddress: Street Address 123
+                    state: Customer State/Province
+                    zipCode: 1234AB
+                    email: admin@example.org
+                    phone: '+31.723542820'
+                    handleType: PERSON
+                    isEditable: true
+                    isValid: true
+                  - type: technical
+                    name: First Middle Last
+                    countryCode: NL
+                    city: Amsterdam
+                    streetAddress: Street Address 123
+                    state: Customer State/Province
+                    zipCode: 1234AB
+                    email: tech@example.org
+                    phone: '+31.723542820'
+                    handleType: PERSON
+                    isEditable: true
+                    isValid: true
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '418':
+      $ref: ../components/responses/418.yaml
+    '422':
+      description: >-
+        The domain name is recognized but cannot be processed. This action is
+        not automated for this tld.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.422.schema.yaml
+          examples:
+            example:
+              value:
+                errorMessage: The action you requested is not automated for this tld.
+                userMessage: >-
+                  The action you requested is not automated for this tld. Please
+                  contact leaseweb support
+                correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update all contacts
+  tags:
+    - Domains
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_contacts/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_contacts/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_contacts/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_contacts/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_contacts/putundefined
