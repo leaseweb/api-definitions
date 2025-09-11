@@ -4,7 +4,7 @@ conn = http.client.HTTPSConnection("api.leaseweb.com")
 
 headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
 
-conn.request("GET", "/publicCloud/v1/loadBalancers/695ddd91-051f-4dd6-9120-938a927a47d0/metrics/responseCodesPerSecond?from=2025-01-28T10%3A34%3A01%2B00%3A00&to=2025-01-28T11%3A44%3A01%2B00%3A00&granularity=SOME_STRING_VALUE", headers=headers)
+conn.request("GET", "/publicCloud/v1/loadBalancers/695ddd91-051f-4dd6-9120-938a927a47d0/metrics/responseCodesPerSecond?from=2025-01-28&to=2025-01-28&granularity=SOME_STRING_VALUE", headers=headers)
 
 res = conn.getresponse()
 data = res.read()

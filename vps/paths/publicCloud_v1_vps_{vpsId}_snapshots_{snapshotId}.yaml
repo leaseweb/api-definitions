@@ -1,11 +1,6 @@
 parameters:
   - $ref: ../components/parameters/vpsId.yaml
-  - name: snapshotId
-    required: true
-    schema:
-      type: string
-      format: uuid
-    in: path
+  - $ref: ../components/parameters/snapshotId.yaml
 get:
   operationId: getSnapshot
   responses:

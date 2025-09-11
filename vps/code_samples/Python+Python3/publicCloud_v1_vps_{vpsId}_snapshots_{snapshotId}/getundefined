@@ -4,7 +4,7 @@ conn = http.client.HTTPSConnection("api.leaseweb.com")
 
 headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
 
-conn.request("GET", "/publicCloud/v1/vps/999999999/snapshots/%7BsnapshotId%7D", headers=headers)
+conn.request("GET", "/publicCloud/v1/vps/999999999/snapshots/54eee4c2-aef2-4cda-9fd5-74bfbf438abf", headers=headers)
 
 res = conn.getresponse()
 data = res.read()

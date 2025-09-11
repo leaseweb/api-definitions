@@ -68,6 +68,7 @@ required:
   - region
   - imageId
   - contractType
+  - rootDiskSize
   - rootDiskStorageType
   - type
 type: object

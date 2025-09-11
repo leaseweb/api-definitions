@@ -8,9 +8,7 @@ properties:
     type: string
     format: date-time
   granularity:
-    oneOf:
-      - $ref: ./cpuGranularity.yaml
-      - $ref: ./loadBalancerMetricsGranularity.yaml
+    $ref: ./metricGranularity.yaml
   aggregation:
     type: string
     enum:

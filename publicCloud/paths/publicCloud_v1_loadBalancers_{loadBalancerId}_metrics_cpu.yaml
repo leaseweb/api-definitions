@@ -1,0 +1,73 @@
+parameters:
+  - $ref: ../components/parameters/loadBalancerId.yaml
+  - $ref: ../components/parameters/fromDate.yaml
+  - $ref: ../components/parameters/toDate.yaml
+  - $ref: ../components/parameters/metricGranularity.yaml
+get:
+  operationId: getLoadBalancerCpuMetrics
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            _metadata:
+              from: '2023-10-27T08:00:00+00:00'
+              to: '2023-10-28T08:00:00+00:00'
+              granularity: 5m
+              unit: '%'
+              summary:
+                cpuMetrics:
+                  average: 8.13
+                  expected: 8.13
+                  peak:
+                    value: 9.98
+                    timestamp: '2023-10-27T08:10:24+00:00'
+            metrics:
+              cpuMetrics:
+                values:
+                  - value: 5.45
+                    timestamp: '2023-10-27T08:00:00+00:00'
+                  - value: 8.98
+                    timestamp: '2023-10-27T08:05:32+00:00'
+                  - value: 9.98
+                    timestamp: '2023-10-27T08:10:24+00:00'
+                unit: '%'
+          schema:
+            $ref: ../components/schemas/getCpuMetricsResult.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get load balancer CPU metrics
+  tags:
+    - Public Clouds
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_cpu/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_cpu/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_cpu/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_cpu/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_cpu/getundefined

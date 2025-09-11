@@ -1,0 +1,76 @@
+get:
+  description: This endpoint will return an overview of all the invoices for the customer.
+  operationId: getInvoices
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getInvoicesResult.yaml
+          example:
+            invoices:
+              - id: '00000001'
+                date: '2019-05-06T00:00:00+00:00'
+                dueDate: '2019-05-30T00:00:00+00:00'
+                taxAmount: 0
+                netAmount: 1756.21
+                total: 1756.21
+                openAmount: 1756.21
+                currency: EUR
+                isPartialPaymentAllowed: true
+                status: OVERDUE
+              - id: '00000002'
+                date: '2019-05-06T00:00:00+00:00'
+                dueDate: '2019-05-30T00:00:00+00:00'
+                taxAmount: 0
+                netAmount: 34
+                total: 34
+                openAmount: 34
+                currency: EUR
+                isPartialPaymentAllowed: true
+                status: OPEN
+              - id: '00000003'
+                date: '2019-04-06T00:00:00+00:00'
+                dueDate: '2019-04-30T00:00:00+00:00'
+                taxAmount: 0
+                netAmount: 14.37
+                total: 14.37
+                openAmount: 0
+                currency: EUR
+                isPartialPaymentAllowed: false
+                status: PAID
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 3
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List Invoices
+  tags:
+    - Invoices
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/invoices_v1_invoices/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/invoices_v1_invoices/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/invoices_v1_invoices/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/invoices_v1_invoices/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/invoices_v1_invoices/getundefined

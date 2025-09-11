@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	url := "https://api.leaseweb.com/publicCloud/v1/vps/999999999/snapshots/%7BsnapshotId%7D"
+	url := "https://api.leaseweb.com/publicCloud/v1/vps/999999999/snapshots/54eee4c2-aef2-4cda-9fd5-74bfbf438abf"
 
 	req, _ := http.NewRequest("PUT", url, nil)
 

@@ -1,44 +1,22 @@
 properties:
-  _metadata:
-    description: Metadata about the collection
-    properties:
-      limit:
-        default: 10
-        description: The maximum number of results returned
-        type: integer
-      offset:
-        default: 0
-        description: Results are returned started at the given offset
-        type: integer
-      totalCount:
-        description: The total amount of results
-        type: integer
+  id:
+    type: string
+    description: ID of the storage service
+    minLength: 1
+  quantity:
     type: object
-  storages:
-    description: A list of storages for a customer
-    type: array
-    items:
-      description: A storage service
-      type: object
-      properties:
-        id:
-          type: string
-          description: ID of the storage service
-          minLength: 1
-        quantity:
-          type: object
-          description: The amount of GB assigned to this storage
-          properties:
-            value:
-              type: number
-              description: Size value
-              minimum: 0
-            unit:
-              type: string
-              description: Size unit
-              minLength: 1
-        type:
-          type: string
-          description: Storage type
-          minLength: 1
+    description: The amount of GB assigned to this storage
+    properties:
+      value:
+        type: number
+        description: Size value
+        minimum: 0
+      unit:
+        type: string
+        description: Size unit
+        minLength: 1
+  type:
+    type: string
+    description: Storage type
+    minLength: 1
 type: object

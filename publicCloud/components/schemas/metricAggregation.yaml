@@ -1,0 +1,4 @@
+type: string
+enum:
+  - SUM
+description: Defines the function used to aggregate the metrics

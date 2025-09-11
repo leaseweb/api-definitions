@@ -1,0 +1,77 @@
+type: object
+properties:
+  proformaDate:
+    type: string
+    description: The date of the next invoice on which this proforma is based on. (UTC)
+    example: '2020-06-01T00: 00: 00+00: 00'
+  total:
+    type: number
+    format: float
+    description: Total amount which will be invoiced the upcoming month.
+    example: 352.55
+  subTotal:
+    type: number
+    format: float
+    description: Total amount without vat which will be invoiced the upcoming month.
+    example: 300.04
+  vatAmount:
+    type: number
+    format: float
+    description: The total amount of tax.
+    example: 52.51
+  currency:
+    type: string
+    description: The currency of the service price
+    example: EUR
+    enum:
+      - EUR
+      - GBP
+      - USD
+      - SGD
+      - AUD
+      - HKD
+  contractItems:
+    type: array
+    description: Array of contract items
+    items:
+      type: object
+      title: lineItem
+      properties:
+        contractId:
+          type: string
+          description: The unique id of the contract
+        equipmentId:
+          type: string
+          description: The unique id of the equipment
+        startDate:
+          type: string
+          description: The start date of the contract (UTC)
+        endDate:
+          type: string
+          description: The end date of the contract (UTC)
+        poNumber:
+          type: string
+          description: The purchase order number.
+        product:
+          type: string
+          description: A string to indicate what kind of product this is
+        reference:
+          type: string
+          description: The reference a customer gave to the service
+        price:
+          type: number
+          format: float
+          description: The price of the contract item.
+        currency:
+          type: string
+          description: The currency of the service price
+          example: EUR
+          enum:
+            - EUR
+            - GBP
+            - USD
+            - SGD
+            - AUD
+            - HKD
+  _metadata:
+    $ref: ./_metadata.yaml

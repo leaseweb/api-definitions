@@ -146,11 +146,13 @@ paths:
     $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_ips_{ip}_unnull.yaml
   /publicCloud/v1/instances/{instanceId}/metrics/datatraffic:
     $ref: paths/publicCloud_v1_instances_{instanceId}_metrics_datatraffic.yaml
+  /publicCloud/v1/instances/{instanceId}/metrics/cpu:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_metrics_cpu.yaml
   /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/datatraffic:
     $ref: >-
       paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_datatraffic.yaml
-  /publicCloud/v1/instances/{instanceId}/metrics/cpu:
-    $ref: paths/publicCloud_v1_instances_{instanceId}_metrics_cpu.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/cpu:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_cpu.yaml
   /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/requests:
     $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_metrics_requests.yaml
   /publicCloud/v1/loadBalancers/{loadBalancerId}/metrics/requestsPerSecond:

@@ -1,0 +1,6 @@
+name: productId
+description: The id of the ObjectStorage product.
+in: query
+schema:
+  type: string
+required: true

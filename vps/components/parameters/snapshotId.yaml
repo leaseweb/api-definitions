@@ -1,0 +1,8 @@
+schema:
+  type: string
+  format: uuid
+name: snapshotId
+in: path
+required: true
+description: Snapshot's ID
+example: 54eee4c2-aef2-4cda-9fd5-74bfbf438abf

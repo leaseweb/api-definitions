@@ -1,0 +1,114 @@
+type: object
+properties:
+  id:
+    type: string
+    description: The unique id of the invoice
+    example: '00000001'
+  date:
+    type: string
+    description: The date the invoice was issued
+    example: '2019-05-06T00:00:00+00:00'
+  dueDate:
+    type: string
+    description: The date the invoice is due for payment
+    example: '2019-05-30T00:00:00+00:00'
+  taxAmount:
+    type: number
+    format: float
+    description: The tax amount of the invoice
+    example: 0
+  total:
+    type: number
+    format: float
+    description: The total amount of the invoice
+  netAmount:
+    type: number
+    format: float
+    description: The total amount of the invoice without the tax amount included
+    example: 0
+  openAmount:
+    type: number
+    format: float
+    description: The open amount of the invoice
+    example: 1756.21
+  currency:
+    type: string
+    description: The currency of the service price
+    example: EUR
+    enum:
+      - EUR
+      - GBP
+      - USD
+      - SGD
+      - AUD
+      - HKD
+  isPartialPaymentAllowed:
+    type: boolean
+    description: The invoice can be paid partially
+    example: true
+  status:
+    type: string
+    description: The status of the invoice.
+    enum:
+      - OPEN
+      - PAID
+      - OVERDUE
+      - CANCELLED
+  credits:
+    type: array
+    description: Array of Credits
+    items:
+      type: object
+      title: credit
+      properties:
+        id:
+          type: string
+          description: The unique id of the credit
+        date:
+          type: string
+          description: The date the credit was issued (UTC)
+        taxAmount:
+          type: number
+          format: float
+          description: The amount of tax on the credit
+        netAmount:
+          type: number
+          format: float
+          description: The total amount of the credit without the tax amount included
+        total:
+          type: number
+          format: float
+          description: The total amount of the credit
+  lineItems:
+    type: array
+    description: All the line items attached to the invoice
+    items:
+      type: object
+      title: lineItem
+      properties:
+        product:
+          type: string
+          description: A string to indicate what kind of product this is
+        unitAmount:
+          type: number
+          format: float
+          description: The amount it cost for a single product unit.
+        totalAmount:
+          type: number
+          format: float
+          description: The total amount of the product
+        fromDate:
+          type: string
+          description: The product start date (UTC)
+        toDate:
+          type: string
+          description: The product end date (UTC)
+        equipmentId:
+          type: string
+          description: The id of the equipment
+        contractId:
+          type: string
+          description: The id of the contract
+        quantity:
+          type: integer
+          description: The quantity of a product

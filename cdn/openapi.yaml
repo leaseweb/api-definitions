@@ -54,6 +54,8 @@ paths:
     $ref: paths/cdn_v2_origins.yaml
   /cdn/v2/origins/{origin_id}:
     $ref: paths/cdn_v2_origins_{origin_id}.yaml
+  /cdn/v2/origins/{origin_id}/resolve:
+    $ref: paths/cdn_v2_origins_{origin_id}_resolve.yaml
   /cdn/v2/originGroups:
     $ref: paths/cdn_v2_originGroups.yaml
   /cdn/v2/originGroups/{origin_group_id}:

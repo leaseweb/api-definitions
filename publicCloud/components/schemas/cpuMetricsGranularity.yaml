@@ -1,7 +1,0 @@
-type: string
-enum:
-  - 5m
-  - 10m
-  - 30m
-  - 60m
-description: Define the time interval for data aggregation

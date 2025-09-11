@@ -1,8 +1,8 @@
 parameters:
   - $ref: ../components/parameters/loadBalancerId.yaml
-  - $ref: ../components/parameters/fromDateTime.yaml
-  - $ref: ../components/parameters/toDateTime.yaml
-  - $ref: ../components/parameters/loadBalancerMetricsGranularity.yaml
+  - $ref: ../components/parameters/fromDate.yaml
+  - $ref: ../components/parameters/toDate.yaml
+  - $ref: ../components/parameters/metricGranularity.yaml
 get:
   operationId: getResponseCodesMetrics
   responses:
@@ -14,7 +14,7 @@ get:
             _metadata:
               from: '2024-09-14T00:00:00+00:00'
               to: '2024-09-15T00:00:00+00:00'
-              granularity: 1h
+              granularity: 60m
               aggregation: SUM
             metrics:
               2xx:

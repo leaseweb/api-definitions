@@ -1,8 +1,8 @@
 parameters:
   - $ref: ../components/parameters/loadBalancerId.yaml
-  - $ref: ../components/parameters/fromDateTime.yaml
-  - $ref: ../components/parameters/toDateTime.yaml
-  - $ref: ../components/parameters/loadBalancerMetricsGranularity.yaml
+  - $ref: ../components/parameters/fromDate.yaml
+  - $ref: ../components/parameters/toDate.yaml
+  - $ref: ../components/parameters/metricGranularity.yaml
 get:
   operationId: getDataTransferredPerSecondMetrics
   responses:

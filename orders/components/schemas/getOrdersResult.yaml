@@ -1,3 +1,4 @@
+type: object
 properties:
   orders:
     type: array
@@ -16,7 +17,7 @@ properties:
           example: '55045000'
         createdAt:
           type: string
-          description: The date the order was created
+          description: The date the order was created (UTC)
           example: '2021-01-15T00:00:00'
         type:
           type: string

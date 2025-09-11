@@ -2,20 +2,8 @@ parameters:
   - $ref: ../components/parameters/loadBalancerId.yaml
   - $ref: ../components/parameters/fromDate.yaml
   - $ref: ../components/parameters/toDate.yaml
-  - name: granularity
-    schema:
-      type: string
-      enum:
-        - DAY
-    in: query
-    description: How the metrics are grouped by
-  - name: aggregation
-    schema:
-      type: string
-      enum:
-        - SUM
-    in: query
-    description: How the metrics are aggregated
+  - $ref: ../components/parameters/dataTrafficMetricGranularity.yaml
+  - $ref: ../components/parameters/metricAggregation.yaml
 get:
   operationId: getLoadBalancerDataTrafficMetrics
   responses:

@@ -1,0 +1,68 @@
+parameters:
+  - $ref: ../components/parameters/Id.yaml
+get:
+  description: Get Invoice will return a single invoice for the customer.
+  operationId: getInvoice
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getInvoiceResult.yaml
+          example:
+            id: '00000001'
+            date: '2019-05-06T00:00:00+00:00'
+            dueDate: '2019-05-30T00:00:00+00:00'
+            taxAmount: 0
+            netAmount: 1756.21
+            total: 1756.21
+            openAmount: 1756.21
+            currency: EUR
+            isPartialPaymentAllowed: true
+            status: OPEN
+            credits:
+              - id: '00001211'
+                date: '2025-07-09T00:00:00+00:00'
+                taxAmount: 1.5
+                netAmount: 13.5
+                total: 15
+            lineItems:
+              - product: Rackspace
+                unitAmount: 151.5
+                totalAmount: 151.5
+                fromDate: '2023-02-01T00:00:00'
+                toDate: '2023-02-28T00:00:00Z'
+                equipmentId: '1234'
+                contractId: '12345678'
+                quantity: 1
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Inspect a invoice
+  tags:
+    - Invoices
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/invoices_v1_invoices_{Id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/invoices_v1_invoices_{Id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/invoices_v1_invoices_{Id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/invoices_v1_invoices_{Id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/invoices_v1_invoices_{Id}/getundefined

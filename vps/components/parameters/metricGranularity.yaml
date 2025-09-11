@@ -1,0 +1,13 @@
+name: granularity
+schema:
+  type: string
+  enum:
+    - 5m
+    - 10m
+    - 30m
+    - 60m
+    - DAY
+  description: Defines the time interval for data aggregation
+in: query
+description: The interval for each metric
+required: true

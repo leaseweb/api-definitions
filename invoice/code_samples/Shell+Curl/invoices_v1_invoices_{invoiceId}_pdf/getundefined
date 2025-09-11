@@ -1,3 +1,0 @@
-curl --request GET \
-  --url https://api.leaseweb.com/invoices/v1/invoices/00000001/pdf \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

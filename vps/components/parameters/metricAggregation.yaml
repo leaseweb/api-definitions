@@ -1,0 +1,9 @@
+name: aggregation
+schema:
+  type: string
+  enum:
+    - SUM
+  description: Defines the function used to aggregate the metrics
+in: query
+description: The metric aggregation function
+required: true

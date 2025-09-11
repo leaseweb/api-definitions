@@ -1,9 +1,8 @@
 get:
-  description: Show all storages for the given customer.
-  operationId: List storages
+  description: Get storage for the given customer.
+  operationId: Get storage
   parameters:
-    - $ref: ../components/parameters/limit.yaml
-    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/productId.yaml
   responses:
     '200':
       description: OK
@@ -12,26 +11,11 @@ get:
           schema:
             $ref: ../components/schemas/response.200.schema.yaml
           example:
-            _metadata:
-              limit: 10
-              offset: 0
-              totalCount: 3
-            storages:
-              - id: '10812374'
-                quantity:
-                  value: 70000
-                  unit: GB
-                type: SANS
-              - id: '10812375'
-                quantity:
-                  value: 350000
-                  unit: GB
-                type: SANS
-              - id: '10938904'
-                quantity:
-                  value: 65000
-                  unit: GB
-                type: SANS
+            id: '10812374'
+            quantity:
+              value: 70000
+              unit: GB
+            type: SANS
     '403':
       $ref: ../components/responses/403.yaml
     '500':

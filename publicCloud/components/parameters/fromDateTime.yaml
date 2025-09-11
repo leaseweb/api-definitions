@@ -1,7 +1,0 @@
-name: from
-schema:
-  type: string
-  format: datetime
-  example: '2025-01-28T10:34:01+00:00'
-in: query
-description: The start of the interval to get the metric, in ISO 8601 format

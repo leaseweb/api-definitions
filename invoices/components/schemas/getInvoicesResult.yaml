@@ -1,0 +1,57 @@
+type: object
+properties:
+  invoices:
+    type: array
+    description: Array of Invoices
+    items:
+      type: object
+      title: invoice
+      properties:
+        id:
+          type: string
+          description: The unique id of the invoice
+        date:
+          type: string
+          description: The date the invoice was issued (UTC)
+        dueDate:
+          type: string
+          description: The date the invoice is due for payment (UTC)
+        taxAmount:
+          type: number
+          format: float
+          description: The amount of tax on the invoice
+        netAmount:
+          type: number
+          format: float
+          description: The total amount without the tax amount included
+        total:
+          type: number
+          format: float
+          description: The total amount of the invoice
+        openAmount:
+          type: number
+          format: float
+          description: The open amount of the invoice
+        currency:
+          type: string
+          description: The currency of the invoice.
+          enum:
+            - EUR
+            - GBP
+            - USD
+            - SGD
+            - AUD
+            - HKD
+        isPartialPaymentAllowed:
+          type: boolean
+          description: The invoice can be paid partially
+        status:
+          type: string
+          description: The status of the invoice.
+          enum:
+            - OPEN
+            - PAID
+            - OVERDUE
+            - CANCELLED
+  _metadata:
+    $ref: ./_metadata.yaml

@@ -85,9 +85,9 @@ get:
                     contractTerm: 1 year
                     billingCycle: 1 Month
             _metadata:
-              limit: 3
+              limit: 10
               offset: 0
-              totalCount: 100
+              totalCount: 3
       description: Ok.
     '401':
       $ref: ../components/responses/401.yaml
