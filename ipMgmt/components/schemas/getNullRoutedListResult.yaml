@@ -1,0 +1,12 @@
+description: Object containing a list of null routed IPv6
+properties:
+  nullRoutes:
+    type: array
+    items:
+      $ref: ./nullRoutedIPv6.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - nullRoutes
+  - _metadata
+type: object

@@ -1,0 +1,16 @@
+required:
+  - ip
+  - nullLevel
+  - unnullingAllowed
+properties:
+  ip:
+    type: string
+    description: IP address
+  nullLevel:
+    type: integer
+    description: Null route level
+  unnullingAllowed:
+    description: Describes whether the current user is allowed to unnull the IP
+    type: boolean
+title: nullRoutedIPv6
+type: object

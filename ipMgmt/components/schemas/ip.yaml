@@ -6,6 +6,7 @@ required:
   - type
   - prefixLength
   - primary
+  - floatingIp
   - reverseLookup
   - nullRouted
   - nullLevel
@@ -30,6 +31,9 @@ properties:
   primary:
     type: boolean
     description: Boolean indicating if this is the primary IP of the assigned equipment
+  floatingIp:
+    type: boolean
+    description: Indicates if the IP is a Floating IP
   reverseLookup:
     type: string
     description: >-

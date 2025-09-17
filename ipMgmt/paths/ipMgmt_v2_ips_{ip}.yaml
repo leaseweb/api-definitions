@@ -13,6 +13,7 @@ get:
             type: NORMAL_IP
             prefixLength: 32
             primary: true
+            floatingIp: false
             reverseLookup: mydomain1.example.com
             nullRouted: false
             nullLevel: null
@@ -77,6 +78,7 @@ put:
             type: NORMAL_IP
             prefixLength: 32
             primary: true
+            floatingIp: false
             reverseLookup: mydomain1.example.com
             nullRouted: false
             nullLevel: null

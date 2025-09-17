@@ -1,0 +1,63 @@
+get:
+  description: Get null routed IPv6 addresses in the specified range
+  operationId: getNullRoutedList
+  parameters:
+    - name: ip
+      in: query
+      description: Filter the list by IP address
+      schema:
+        type: string
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: ''
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 3
+              offset: 0
+              limit: 2
+            nullRoutes:
+              - ip: 2001:db8::0
+                nullLevel: 3
+                unnullingAllowed: false
+              - ip: 2001:db8::1
+                nullLevel: 1
+                unnullingAllowed: true
+          schema:
+            $ref: ../components/schemas/getNullRoutedListResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List null routed IPv6
+  tags:
+    - IP management
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/ipMgmt_v2_ips_{ip}_nullRouted/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ipMgmt_v2_ips_{ip}_nullRouted/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/ipMgmt_v2_ips_{ip}_nullRouted/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ipMgmt_v2_ips_{ip}_nullRouted/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/ipMgmt_v2_ips_{ip}_nullRouted/getundefined
+parameters:
+  - $ref: ../components/parameters/ip.yaml

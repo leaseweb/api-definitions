@@ -53,6 +53,8 @@ paths:
     $ref: paths/ipMgmt_v2_ips_{ip}_reverseLookup.yaml
   /ipMgmt/v2/ips/{ip}/nullRoute:
     $ref: paths/ipMgmt_v2_ips_{ip}_nullRoute.yaml
+  /ipMgmt/v2/ips/{ip}/nullRouted:
+    $ref: paths/ipMgmt_v2_ips_{ip}_nullRouted.yaml
   /ipMgmt/v2/nullRoutes:
     $ref: paths/ipMgmt_v2_nullRoutes.yaml
   /ipMgmt/v2/nullRoutes/{id}:
