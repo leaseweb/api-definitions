@@ -97,10 +97,6 @@ paths:
   /cdn/v2/distributions/{distribution_id}/policies/{policy_id}/acls/{acl_id}:
     $ref: >-
       paths/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}.yaml
-  /cdn/v2/statistics/reseller:
-    $ref: paths/cdn_v2_statistics_reseller.yaml
-  /cdn/v2/statistics/reseller/totals:
-    $ref: paths/cdn_v2_statistics_reseller_totals.yaml
   /cdn/v2/statistics/customer:
     $ref: paths/cdn_v2_statistics_customer.yaml
   /cdn/v2/statistics/customer/totals:
