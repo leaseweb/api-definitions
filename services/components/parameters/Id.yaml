@@ -1,0 +1,6 @@
+schema:
+  type: string
+name: Id
+in: path
+required: true
+description: Serivice Id

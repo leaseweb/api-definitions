@@ -3,16 +3,8 @@
 $client = new http\Client;
 $request = new http\Client\Request;
 
-$request->setRequestUrl('https://api.leaseweb.com/services/v1/services');
+$request->setRequestUrl('https://api.leaseweb.com/services/v1/services/%7BId%7D');
 $request->setRequestMethod('GET');
-$request->setQuery(new http\QueryString([
-  'limit' => '20',
-  'offset' => '10',
-  'productId' => 'DEDICATED_SERVER',
-  'reference' => 'reference',
-  'equipmentId' => '12345678'
-]));
-
 $request->setHeaders([
   'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
 ]);

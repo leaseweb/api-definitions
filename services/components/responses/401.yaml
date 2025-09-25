@@ -1,4 +1,3 @@
-description: Not Authorized.
 content:
   application/json:
     example:
@@ -6,4 +5,5 @@ content:
       errorCode: '401'
       errorMessage: You are not authorized to view this resource.
     schema:
-      $ref: ../schemas/errorResponse.yaml
+      $ref: ../schemas/errorResult.yaml
+description: Not Authorized.

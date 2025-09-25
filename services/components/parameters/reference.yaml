@@ -1,5 +1,7 @@
-description: Filter the services endpoint with a reference
-in: query
 name: reference
+in: query
+required: false
 schema:
   type: string
+description: Optional reference to filter results
+example: reference

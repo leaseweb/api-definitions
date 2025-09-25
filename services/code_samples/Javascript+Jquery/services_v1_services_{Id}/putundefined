@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/services/v1/services/%7BId%7D",
+  "method": "PUT",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"reference\":\"string\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

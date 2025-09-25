@@ -1,3 +1,0 @@
-curl --request POST \
-  --url https://api.leaseweb.com/services/v1/services/41000000000000/uncancel \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

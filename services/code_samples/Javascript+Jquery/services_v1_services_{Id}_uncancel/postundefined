@@ -1,8 +1,8 @@
 const settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://api.leaseweb.com/services/v1/services?limit=20&offset=10&productId=DEDICATED_SERVER&reference=reference&equipmentId=12345678",
-  "method": "GET",
+  "url": "https://api.leaseweb.com/services/v1/services/%7BId%7D/uncancel",
+  "method": "POST",
   "headers": {
     "X-LSW-Auth": "REPLACE_KEY_VALUE"
   }

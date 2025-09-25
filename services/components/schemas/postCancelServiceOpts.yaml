@@ -1,0 +1,12 @@
+type: object
+properties:
+  reason:
+    type: string
+    description: >-
+      If `reasonCode` is set to `CANCEL_OTHER`, this field is required and
+      respresents the reason.
+  reasonCode:
+    type: string
+    description: The reason code respresents a defined reason.
+required:
+  - reasonCode

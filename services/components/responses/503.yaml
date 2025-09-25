@@ -1,4 +1,3 @@
-description: Service Unavailable.
 content:
   application/json:
     example:
@@ -6,4 +5,5 @@ content:
       errorCode: '503'
       errorMessage: The API is not available at the moment.
     schema:
-      $ref: ../schemas/errorResponse.yaml
+      $ref: ../schemas/errorResult.yaml
+description: Service Unavailable.

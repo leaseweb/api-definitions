@@ -1,6 +1,6 @@
-description: Limit the number of results returned
+description: Limit the number of results returned.
+example: 20
 in: query
 name: limit
 schema:
-  default: 10
   type: integer

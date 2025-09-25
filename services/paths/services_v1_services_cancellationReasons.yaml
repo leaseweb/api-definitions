@@ -1,11 +1,14 @@
 get:
-  description: |
-    This endpoint will return our predefined cancellation reasons.
-  operationId: services-cancel-reasons-get
+  description: >-
+    This endpoint will return our predefined cancellation reasons. That is
+    required within the cancel a service API call
+  operationId: getCancellationReasons
   responses:
     '200':
       content:
         application/json:
+          schema:
+            $ref: ../components/schemas/getCancellationReasonsResult.yaml
           example:
             cancellationReasons:
               - reason: End of trial period?
@@ -46,9 +49,11 @@ get:
                 reasonCode: CANCEL_RELIABILITY
               - reason: Other selection?
                 reasonCode: CANCEL_OTHER
-          schema:
-            $ref: ../components/schemas/response.200.schema-2.yaml
       description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':

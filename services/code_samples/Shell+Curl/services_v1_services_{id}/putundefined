@@ -1,5 +1,0 @@
-curl --request PUT \
-  --url https://api.leaseweb.com/services/v1/services/41000000000000 \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
-  --header 'content-type: application/json' \
-  --data '{"reference":"string"}'

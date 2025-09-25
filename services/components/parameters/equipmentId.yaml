@@ -1,5 +1,7 @@
-description: Filter the services endpoint with an equipmentId
-in: query
 name: equipmentId
+in: query
+required: false
 schema:
   type: string
+description: Optional equipmentId to filter results
+example: 12345678

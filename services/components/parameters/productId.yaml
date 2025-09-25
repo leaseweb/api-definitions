@@ -1,5 +1,7 @@
-description: Filter the services endpoint with a productId
-in: query
 name: productId
+in: query
+required: false
 schema:
   type: string
+description: Optional productId to filter results
+example: DEDICATED_SERVER

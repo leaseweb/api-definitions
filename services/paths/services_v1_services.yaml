@@ -1,54 +1,59 @@
 get:
-  description: |
-    This endpoint returns all your Services.
-  operationId: services-list-get
+  description: Get Services will return an overview of all the services of the customer.
+  operationId: getServices
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/productId.yaml
+    - $ref: ../components/parameters/reference.yaml
+    - $ref: ../components/parameters/equipmentId.yaml
   responses:
     '200':
       content:
         application/json:
+          schema:
+            $ref: ../components/schemas/getServicesResult.yaml
           example:
-            metadata:
-              limit: 2
-              offset: 0
-              totalCount: 10
             services:
-              - billingCycle: 1 MONTH
-                cancellable: false
+              - id: '10000000000010'
                 contractId: '00000110'
-                contractTerm: 1 YEAR
+                productId: DEDICATED_SERVER
+                status: ACTIVE
+                cancellable: false
+                uncancellable: true
+                startDate: '2019-01-01T00:00:00+00:00'
                 contractTermEndDate: '2020-01-31T00:00:00+00:00'
-                currency: EUR
-                deliveryDate: '2019-01-01T00:00:00+00:00'
+                pricePerFrequency: 396.01
                 deliveryEstimate: 5 - 7 business days
+                deliveryDate: '2019-01-01T00:00:00+00:00'
+                contractTerm: 1 YEAR
+                billingCycle: 1 MONTH
+                currency: EUR
+                orderDate: '2019-01-01T00:00:00+00:00'
                 endDate: '2020-01-31T00:00:00+00:00'
                 equipmentId: '12345678'
-                id: '10000000000010'
-                orderDate: '2019-01-01T00:00:00+00:00'
-                pricePerFrequency: 396.01
-                productId: DEDICATED_SERVER
                 reference: this is a reference
-                startDate: '2019-01-01T00:00:00+00:00'
-                status: ACTIVE
-                uncancellable: true
-              - attributes:
-                  domainName: test.com
-                billingCycle: 1 YEAR
-                cancellable: true
+              - id: '10000000000011'
                 contractId: '00000110'
-                contractTerm: 1 YEAR
-                contractTermEndDate: '2020-01-31T00:00:00+00:00'
-                currency: EUR
-                deliveryDate: '2019-01-01T00:00:00+00:00'
-                deliveryEstimate: 5 - 7 business days
-                id: '10000000000011'
-                orderDate: '2019-01-01T00:00:00+00:00'
-                pricePerFrequency: 139.99
                 productId: DOMAIN
-                startDate: '2019-01-01T00:00:00+00:00'
                 status: ACTIVE
+                cancellable: true
                 uncancellable: false
-          schema:
-            $ref: ../components/schemas/response.200.schema.yaml
+                startDate: '2019-01-01T00:00:00+00:00'
+                contractTermEndDate: '2020-01-31T00:00:00+00:00'
+                pricePerFrequency: 139.99
+                deliveryEstimate: 5 - 7 business days
+                deliveryDate: '2019-01-01T00:00:00+00:00'
+                contractTerm: 1 YEAR
+                billingCycle: 1 YEAR
+                currency: EUR
+                orderDate: '2019-01-01T00:00:00+00:00'
+                attributes:
+                  domainName: test.com
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 2
       description: Ok.
     '401':
       $ref: ../components/responses/401.yaml
@@ -58,7 +63,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get all your Services
+  summary: List Services
   tags:
     - Services
   x-codeSamples:
@@ -77,9 +82,3 @@ get:
     - lang: Go + Native
       source:
         $ref: ../code_samples/Go+Native/services_v1_services/getundefined
-parameters:
-  - $ref: ../components/parameters/limit.yaml
-  - $ref: ../components/parameters/offset.yaml
-  - $ref: ../components/parameters/productId.yaml
-  - $ref: ../components/parameters/reference.yaml
-  - $ref: ../components/parameters/equipmentId.yaml

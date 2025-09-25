@@ -1,6 +1,0 @@
-properties:
-  reference:
-    description: The reference of the service
-    type: string
-    minLength: 1
-type: object

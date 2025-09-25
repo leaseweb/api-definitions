@@ -1,0 +1,8 @@
+content:
+  application/json:
+    example:
+      errorCode: '423'
+      errorMessage: Resource is locked by other process
+    schema:
+      $ref: ../schemas/errorResult.yaml
+description: Locked.

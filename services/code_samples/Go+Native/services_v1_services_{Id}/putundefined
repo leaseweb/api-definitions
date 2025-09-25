@@ -2,17 +2,21 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"net/http"
 	"io/ioutil"
 )
 
 func main() {
 
-	url := "https://api.leaseweb.com/services/v1/services?limit=20&offset=10&productId=DEDICATED_SERVER&reference=reference&equipmentId=12345678"
+	url := "https://api.leaseweb.com/services/v1/services/%7BId%7D"
 
-	req, _ := http.NewRequest("GET", url, nil)
+	payload := strings.NewReader("{\"reference\":\"string\"}")
+
+	req, _ := http.NewRequest("PUT", url, payload)
 
 	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+	req.Header.Add("content-type", "application/json")
 
 	res, _ := http.DefaultClient.Do(req)
 

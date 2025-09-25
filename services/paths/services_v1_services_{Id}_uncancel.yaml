@@ -1,0 +1,59 @@
+parameters:
+  - $ref: ../components/parameters/Id.yaml
+post:
+  operationId: postUncancelService
+  description: This endpoint will uncancel an already cancelled service.
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '409':
+      description: >-
+        if there is a conflict (for example service has dependencies), you will
+        receive a 409 Conflict
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/409Result.yaml
+          example:
+            errorCode: CONFLICT
+            errorDetails:
+              - 40000123000100
+              - 40000123000150
+            errorMessage: Uncancellation is blocked with the following dependencies
+            correlationId: 3ca72eb3-3fdd-42ae-babf-d0201c3e22d6
+    '423':
+      $ref: ../components/responses/423.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Uncancel a Service.
+  tags:
+    - Services
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/services_v1_services_{Id}_uncancel/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/services_v1_services_{Id}_uncancel/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/services_v1_services_{Id}_uncancel/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/services_v1_services_{Id}_uncancel/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/services_v1_services_{Id}_uncancel/postundefined

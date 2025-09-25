@@ -1,0 +1,163 @@
+type: object
+properties:
+  id:
+    type: string
+    description: The unique id of the service
+    example: '10000000000010'
+  contractId:
+    type: string
+    description: The unique contract id of the service
+    example: '55045000'
+  productId:
+    type: string
+    description: The identifier of a product
+    example: DEDICATED_SERVER
+    enum:
+      - PRIVATE_CLOUD
+      - BACKUP
+      - VIRTUAL_SERVER
+      - ADDITIONAL_SERVICES
+      - REMOTE_HANDS
+      - ATS
+      - PDU
+      - DEDICATED_SERVER
+      - SWITCH
+      - FIREWALL
+      - LOADBALANCER
+      - NETWORK_CONNECTIVITY
+      - SAN_STORAGE
+      - OBJECT_STORAGE
+      - DOMAIN_PROTECTION
+      - DDOS_IP_PROTECTION
+      - CROSS_CONNECT
+      - METRO
+      - LONG_HAUL_ETHERNET
+      - WAVE
+      - DARK_FIBER
+      - DOMAIN
+      - WEBHOSTING
+      - OTHER_HARDWARE
+      - FLOATING_IP
+      - PRIVATE_CLOUD_NRC
+      - RACKSPACE_PRIVATE_COLOCATION_NRC
+      - DEDICATED_SERVER_NRC
+      - SWITCH_NRC
+      - FIREWALL_NRC
+      - LOADBALANCER_NRC
+      - SAN_STORAGE_NRC
+      - DDOS_IP_PROTECTION_NRC
+      - CROSS_CONNECT_NRC
+      - METRO_NRC
+      - LONG_HAUL_ETHERNET_NRC
+      - WAVE_NRC
+      - DARK_FIBER_NRC
+      - ADDITIONAL_SERVICES_NRC
+      - OTHER_COST
+      - OTHER_COST_NRC
+      - PRIVATE_COLOCATION
+      - RACK_UNIT
+      - DEDICATED_RACK
+      - CDN_MULTI_DELIVERY
+      - CDN_OBJECT_STORAGE
+      - DIRECT_INTERNET_ACCESS
+      - IP_TRANSIT
+      - GENERAL_MANAGEMENT_AND_SUPPORT
+      - NETWORK_MANAGEMENT_SUPPORT
+      - THIRD_LINE_SUPPORT
+      - MANAGEMENT_PACK
+      - SUPPLIER_SUPPORT_CONTRACT
+      - ETHERNET_SERVICES
+      - SSL_CERTIFICATE
+      - CAGE
+      - IMPERVA
+      - DEDICATED_PRIVATE_CLOUD
+      - IP_POOL
+      - SLA_POOL
+      - BARE_METAL_STORAGE
+      - CLOUD_CONNECT
+      - PROJECT_COST
+      - PUBLIC_CLOUD
+      - KUBERNETES
+  status:
+    type: string
+    description: Status of the service
+    enum:
+      - NEW_CONTRACT
+      - ACTIVE
+      - SCHEDULED
+      - TO_BE_MODIFIED
+      - TO_BE_PROVISIONED
+      - TO_BE_SUSPENDED
+      - SUSPENDED
+      - TO_BE_RECONNECTED
+  cancellable:
+    type: boolean
+    description: Indicates if the service can be cancelled
+  uncancellable:
+    type: boolean
+    description: Indicates if the service can be uncancelled
+  startDate:
+    type: string
+    description: The date the service started (UTC)
+    example: '2019-05-01T00:00:00+00:00'
+  contractTermEndDate:
+    type: string
+    description: End date of the current contract term (UTC)
+    example: '2019-05-01T00:00:00+00:00'
+  pricePerFrequency:
+    type: number
+    format: float
+    description: The price per frequency
+    example: 18.01
+  deliveryEstimate:
+    type: string
+    description: Estimated delivery of the service
+    example: 5 - 7 business days
+  deliveryDate:
+    type: string
+    description: Delivery date of the service (UTC)
+    example: '2019-05-01T00:00:00+00:00'
+  contractTerm:
+    type: string
+    description: The term of the contract
+    example: 1 YEAR
+  billingCycle:
+    type: string
+    description: The frequency of the billing
+    example: 1 MONTH
+  currency:
+    type: string
+    description: The currency of the service price
+    example: EUR
+    enum:
+      - EUR
+      - GBP
+      - USD
+      - SGD
+      - AUD
+      - HKD
+  orderDate:
+    type: string
+    description: The date of order (UTC)
+    example: '2019-05-01T00:00:00+00:00'
+  endDate:
+    type: string
+    description: The date the service is ended (UTC)
+    example: '2019-05-01T00:00:00+00:00'
+  equipmentId:
+    type: string
+    description: The id of the equipment
+    example: '12345678'
+  reference:
+    type: string
+    description: The reference a customer gave to the service
+    example: This is my reference
+  attributes:
+    type: object
+    title: attributes
+    description: an object product specific attributes
+    properties:
+      domainName:
+        type: string
+        description: Name of the domain
+        example: test.com

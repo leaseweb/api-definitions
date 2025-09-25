@@ -1,0 +1,7 @@
+type: object
+properties:
+  reference:
+    type: string
+    description: The reference of the service
+required:
+  - reference
