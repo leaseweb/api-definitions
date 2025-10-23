@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/publicCloud/v1/securityGroups/166cc685-8273-11f0-b4f8-2687367a8a5e",
+  "method": "PUT",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"name\":\"string\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

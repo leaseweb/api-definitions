@@ -1,0 +1,52 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+get:
+  operationId: exportResourceRecordSets
+  responses:
+    '200':
+      description: The response is a bind file format
+      content:
+        text/plain:
+          example: >
+            example.com 3600 IN NS ns0.nameserver.com.
+
+            example.com. 3600 IN NS ns1.nameserver.com.
+
+            example.com. 3600 IN SOA ns0.nameserver.com.
+            postmaster.nameserver.com. 2024101701 10800 3600 1209600 3600
+    '400':
+      $ref: ../components/responses/4001.yaml
+    '401':
+      $ref: ../components/responses/4011.yaml
+    '403':
+      $ref: ../components/responses/4031.yaml
+    '404':
+      $ref: ../components/responses/4041.yaml
+    '500':
+      $ref: ../components/responses/5001.yaml
+    '503':
+      $ref: ../components/responses/5031.yaml
+  summary: Export dns records as a bind file content
+  tags:
+    - DNS
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_resourceRecordSets_export/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_resourceRecordSets_export/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_resourceRecordSets_export/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_resourceRecordSets_export/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_resourceRecordSets_export/getundefined

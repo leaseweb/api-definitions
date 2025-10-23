@@ -63,6 +63,8 @@ tags:
   - name: Private Networks
   - name: Load Balancer
   - name: Security
+  - description: Operations related to security groups
+    name: Security Groups
   - name: Auto Scaling Groups
   - name: Reinstall
 paths:
@@ -180,6 +182,12 @@ paths:
     $ref: paths/publicCloud_v1_instances_{instanceId}_addToPrivateNetwork.yaml
   /publicCloud/v1/instances/{instanceId}/removeFromPrivateNetwork:
     $ref: paths/publicCloud_v1_instances_{instanceId}_removeFromPrivateNetwork.yaml
+  /publicCloud/v1/instances/{instanceId}/attachSecurityGroups:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_attachSecurityGroups.yaml
+  /publicCloud/v1/instances/{instanceId}/detachSecurityGroups:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_detachSecurityGroups.yaml
+  /publicCloud/v1/instances/{instanceId}/securityGroups:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_securityGroups.yaml
   /publicCloud/v1/instances/{instanceId}/snapshots:
     $ref: paths/publicCloud_v1_instances_{instanceId}_snapshots.yaml
   /publicCloud/v1/instances/{instanceId}/snapshots/{snapshotId}:
@@ -212,6 +220,18 @@ paths:
   /publicCloud/v1/instances/{instanceId}/notificationSettings/dataTraffic/{notificationSettingId}:
     $ref: >-
       paths/publicCloud_v1_instances_{instanceId}_notificationSettings_dataTraffic_{notificationSettingId}.yaml
+  /publicCloud/v1/securityGroups:
+    $ref: paths/publicCloud_v1_securityGroups.yaml
+  /publicCloud/v1/securityGroups/{securityGroupId}:
+    $ref: paths/publicCloud_v1_securityGroups_{securityGroupId}.yaml
+  /publicCloud/v1/securityGroups/{securityGroupId}/authorizeFirewallRules:
+    $ref: >-
+      paths/publicCloud_v1_securityGroups_{securityGroupId}_authorizeFirewallRules.yaml
+  /publicCloud/v1/securityGroups/{securityGroupId}/revokeFirewallRules:
+    $ref: >-
+      paths/publicCloud_v1_securityGroups_{securityGroupId}_revokeFirewallRules.yaml
+  /publicCloud/v1/securityGroups/{securityGroupId}/firewallRules:
+    $ref: paths/publicCloud_v1_securityGroups_{securityGroupId}_firewallRules.yaml
 components:
   securitySchemes:
     BearerAuth:

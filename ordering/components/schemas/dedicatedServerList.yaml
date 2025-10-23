@@ -1,8 +1,8 @@
 type: object
 properties:
-  _metadata:
-    $ref: ./_metadata.yaml
   dedicatedServers:
     type: array
     items:
       $ref: ./dedicatedServerDetail.yaml
+  _metadata:
+    $ref: ./_metadata.yaml

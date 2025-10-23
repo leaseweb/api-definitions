@@ -1,0 +1,10 @@
+name: dateFrom
+in: query
+description: |
+  Filter invoices starting from this date.
+  - Format: YYYY-MM-DD
+  - Example: 2025-01-01
+required: false
+schema:
+  type: string
+  format: date

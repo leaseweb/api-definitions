@@ -1,0 +1,48 @@
+parameters:
+  - $ref: ../components/parameters/DateFrom.yaml
+  - $ref: ../components/parameters/DateTo.yaml
+get:
+  description: This endpoint exports all invoices for the current customer as a CSV file.
+  operationId: getInvoicesExportCsv
+  responses:
+    '200':
+      content:
+        text/csv:
+          schema:
+            $ref: ../components/schemas/getInvoicesExportCsvResult.yaml
+          example: |
+            Invoice number,Date (UTC),Status,Open amount,Total
+            12341234,2025-09-30T12:00:00+00:00,PAID,0,120
+            12341235,2025-10-01T08:30:00+00:00,OPEN,50.50,200.50
+            12341236,2025-11-01T08:30:00+00:00,OPEN,10.99,220.99
+      description: CSV file with invoices.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Export Invoices (CSV)
+  tags:
+    - Invoices
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/invoices_v1_invoices_export_csv/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/invoices_v1_invoices_export_csv/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/invoices_v1_invoices_export_csv/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/invoices_v1_invoices_export_csv/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/invoices_v1_invoices_export_csv/getundefined

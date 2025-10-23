@@ -1,7 +1,7 @@
 const settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://api.leaseweb.com/ordering/v1/products/dedicatedServers?location=AMS-01&ram=64GB&diskSize=SSD480GB&diskAmount=2",
+  "url": "https://api.leaseweb.com/ordering/v1/products/dedicatedServers?location=AMS-01&ram=64GB&diskSize=SSD480GB&diskAmount=2&limit=20&offset=10",
   "method": "GET",
   "headers": {
     "X-LSW-Auth": "REPLACE_KEY_VALUE"

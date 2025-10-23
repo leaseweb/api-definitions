@@ -15,10 +15,6 @@ properties:
   caBundle:
     type: string
     title: Cabundle
-  validation:
-    type: boolean
-    title: Validation
-    default: true
 required:
   - certificate
   - privateKey

@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://api.leaseweb.com/publicCloud/v1/securityGroups/166cc685-8273-11f0-b4f8-2687367a8a5e/authorizeFirewallRules"
+
+	payload := strings.NewReader("{\"rules\":[{\"protocol\":\"TCP\",\"startPort\":65535,\"endPort\":65535,\"icmpType\":0,\"icmpCode\":0,\"source\":\"0.0.0.0/0\"}]}")
+
+	req, _ := http.NewRequest("POST", url, payload)
+
+	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+	req.Header.Add("content-type", "application/json")
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(res)
+	fmt.Println(string(body))
+
+}

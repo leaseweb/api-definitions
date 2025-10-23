@@ -8,7 +8,7 @@ const settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"description\":\"string\",\"certificate\":\"string\",\"privateKey\":\"string\",\"caBundle\":\"string\",\"validation\":true}"
+  "data": "{\"description\":\"string\",\"certificate\":\"string\",\"privateKey\":\"string\",\"caBundle\":\"string\"}"
 };
 
 $.ajax(settings).done(function (response) {

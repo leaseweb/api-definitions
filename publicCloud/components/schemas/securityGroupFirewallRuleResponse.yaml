@@ -1,0 +1,45 @@
+type: object
+title: securityGroupFirewallRuleResponse
+required:
+  - protocol
+  - startPort
+  - endPort
+  - icmpType
+  - icmpCode
+  - source
+  - state
+properties:
+  protocol:
+    type: string
+    enum:
+      - TCP
+      - UDP
+      - ICMP
+    description: The protocol of the firewall rule
+  startPort:
+    type: integer
+    minimum: 0
+    maximum: 65535
+    nullable: true
+    description: Start port for TCP/UDP rules, null for ICMP rules
+  endPort:
+    type: integer
+    minimum: 0
+    maximum: 65535
+    nullable: true
+    description: End port for TCP/UDP rules, null for ICMP rules
+  icmpType:
+    type: integer
+    nullable: true
+    description: ICMP type for ICMP protocol, null for TCP/UDP rules
+  icmpCode:
+    type: integer
+    nullable: true
+    description: ICMP code for ICMP protocol, null for TCP/UDP rules
+  source:
+    type: string
+    example: 0.0.0.0/0
+    description: Source IP address or CIDR block
+  state:
+    $ref: ./firewallRuleState.yaml
+    description: The current state of the firewall rule

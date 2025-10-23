@@ -1,0 +1,7 @@
+properties:
+  rules:
+    $ref: ./ids.yaml
+    description: Array of firewall rule ids to remove
+required:
+  - rules
+type: object

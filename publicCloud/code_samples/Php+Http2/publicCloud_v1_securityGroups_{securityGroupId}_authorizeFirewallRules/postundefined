@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"rules":[{"protocol":"TCP","startPort":65535,"endPort":65535,"icmpType":0,"icmpCode":0,"source":"0.0.0.0/0"}]}');
+
+$request->setRequestUrl('https://api.leaseweb.com/publicCloud/v1/securityGroups/166cc685-8273-11f0-b4f8-2687367a8a5e/authorizeFirewallRules');
+$request->setRequestMethod('POST');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

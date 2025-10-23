@@ -1,0 +1,151 @@
+parameters:
+  - $ref: ../components/parameters/securityGroupId.yaml
+get:
+  operationId: getSecurityGroup
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            default: false
+            id: 166cc685-8273-11f0-b4f8-2687367a8a5e
+            name: My Security Group
+            state: ACTIVE
+          schema:
+            $ref: ../components/schemas/securityGroup.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get Security Group details
+  tags:
+    - Public Clouds
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_securityGroups_{securityGroupId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_securityGroups_{securityGroupId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_securityGroups_{securityGroupId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_securityGroups_{securityGroupId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_securityGroups_{securityGroupId}/getundefined
+put:
+  description: Update a Security Group
+  operationId: updateSecurityGroup
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/updateSecurityGroupOpts.yaml
+        example:
+          name: My Security Group
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/securityGroup.yaml
+          example:
+            default: false
+            id: 166cc685-8273-11f0-b4f8-2687367a8a5e
+            name: My Security Group
+            state: ACTIVE
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update Security Group
+  tags:
+    - Public Clouds
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_securityGroups_{securityGroupId}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_securityGroups_{securityGroupId}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_securityGroups_{securityGroupId}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_securityGroups_{securityGroupId}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_securityGroups_{securityGroupId}/putundefined
+delete:
+  description: Delete a Security Group
+  operationId: deleteSecurityGroup
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete Security Group
+  tags:
+    - Public Clouds
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_securityGroups_{securityGroupId}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_securityGroups_{securityGroupId}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_securityGroups_{securityGroupId}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_securityGroups_{securityGroupId}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_securityGroups_{securityGroupId}/deleteundefined

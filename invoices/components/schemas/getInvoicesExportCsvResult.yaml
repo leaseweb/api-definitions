@@ -1,0 +1,9 @@
+type: string
+format: binary
+description: |
+  CSV file containing invoice data with the following columns:
+  - Invoice number
+  - Date (UTC)
+  - Status
+  - Open amount
+  - Total

@@ -1,0 +1,7 @@
+properties:
+  securityGroupIds:
+    $ref: ./ids.yaml
+    description: Array of security group IDs to detach from the instance
+required:
+  - securityGroupIds
+type: object

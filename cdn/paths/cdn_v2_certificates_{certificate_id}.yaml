@@ -30,7 +30,6 @@ get:
                 certificate: Hidden for security reasons
                 privateKey: Hidden for security reasons
                 caBundle: Hidden for security reasons
-                validation: true
                 id: ce-5g8wbh25
                 commonName: c1
                 issuer: c1

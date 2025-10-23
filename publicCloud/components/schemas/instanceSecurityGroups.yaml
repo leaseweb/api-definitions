@@ -1,0 +1,12 @@
+type: object
+properties:
+  securityGroups:
+    type: array
+    items:
+      $ref: ./securityGroup.yaml
+    description: List of security groups associated with the instance
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - securityGroups
+  - _metadata

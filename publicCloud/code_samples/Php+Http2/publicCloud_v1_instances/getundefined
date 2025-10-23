@@ -16,7 +16,8 @@ $request->setQuery(new http\QueryString([
   'imageId' => 'UBUNTU_22_04_64BIT',
   'state' => 'SOME_STRING_VALUE',
   'region' => 'eu-west-3',
-  'type' => 'lsw.c3.xlarge'
+  'type' => 'lsw.c3.xlarge',
+  'securityGroupIds' => '166cc685-8273-11f0-b4f8-2687367a8a5e,7e59b33d-05f3-4078-b251-c7831ae8fe14'
 ]));
 
 $request->setHeaders([

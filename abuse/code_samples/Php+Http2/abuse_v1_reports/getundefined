@@ -11,7 +11,7 @@ $request->setQuery(new http\QueryString([
   'status' => 'OPEN,WAITING,CLOSED',
   'ticketId' => 'SOME_STRING_VALUE',
   'ip' => 'SOME_STRING_VALUE',
-  'sort' => 'deadline,-reportedAt'
+  'sort' => 'deadline,-reportedAt,-updatedAt'
 ]));
 
 $request->setHeaders([

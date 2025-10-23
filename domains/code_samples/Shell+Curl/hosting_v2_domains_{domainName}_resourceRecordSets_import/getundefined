@@ -1,3 +1,0 @@
-curl --request GET \
-  --url https://api.leaseweb.com/hosting/v2/domains/example.com/resourceRecordSets/import \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

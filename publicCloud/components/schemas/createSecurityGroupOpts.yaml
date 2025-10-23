@@ -1,0 +1,7 @@
+properties:
+  name:
+    type: string
+    description: The name of the security group
+required:
+  - name
+type: object

@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/invoices/v1/invoices/export/csv?dateFrom=SOME_STRING_VALUE&dateTo=SOME_STRING_VALUE' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

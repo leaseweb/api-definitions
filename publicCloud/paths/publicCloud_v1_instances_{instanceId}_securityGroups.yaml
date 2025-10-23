@@ -1,0 +1,67 @@
+parameters:
+  - $ref: ../components/parameters/instanceId.yaml
+get:
+  description: List security groups associated with the instance
+  operationId: getInstanceSecurityGroups
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 3
+              limit: 10
+              offset: 0
+            securityGroups:
+              - id: 166cc685-8273-11f0-b4f8-2687367a8a5e
+                name: Default Security Group
+                default: true
+                state: ACTIVE
+              - id: 7e59b33d-05f3-4078-b251-c7831ae8fe14
+                name: My Security Group
+                default: false
+                state: ACTIVE
+              - id: fb769dab-3daa-47e4-89ed-06a4b6499176
+                name: My Security Group
+                default: false
+                state: ACTIVE
+          schema:
+            $ref: ../components/schemas/instanceSecurityGroups.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get Instance Security Groups
+  tags:
+    - Public Clouds
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_instances_{instanceId}_securityGroups/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_instances_{instanceId}_securityGroups/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_instances_{instanceId}_securityGroups/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_instances_{instanceId}_securityGroups/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_instances_{instanceId}_securityGroups/getundefined

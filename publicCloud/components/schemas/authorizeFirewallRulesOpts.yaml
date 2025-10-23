@@ -1,0 +1,48 @@
+properties:
+  rules:
+    type: array
+    items:
+      title: authorizeRule
+      type: object
+      required:
+        - protocol
+      properties:
+        protocol:
+          type: string
+          enum:
+            - TCP
+            - UDP
+            - ICMP
+          description: The protocol of the firewall rule
+        startPort:
+          type: integer
+          minimum: 0
+          maximum: 65535
+          nullable: true
+          description: >-
+            Start port for TCP/UDP rules. Required for TCP/UDP protocols, not
+            applicable for ICMP
+        endPort:
+          type: integer
+          minimum: 0
+          maximum: 65535
+          nullable: true
+          description: >-
+            End port for TCP/UDP rules. Required for TCP/UDP protocols, not
+            applicable for ICMP
+        icmpType:
+          type: integer
+          nullable: true
+          description: ICMP type. Required for ICMP protocol, not applicable for TCP/UDP
+        icmpCode:
+          type: integer
+          nullable: true
+          description: ICMP code. Required for ICMP protocol, not applicable for TCP/UDP
+        source:
+          type: string
+          example: 0.0.0.0/0
+          description: CIDR block
+    description: Array of firewall rules to authorize
+required:
+  - rules
+type: object

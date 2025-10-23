@@ -4,7 +4,7 @@ $client = new http\Client;
 $request = new http\Client\Request;
 
 $body = new http\Message\Body;
-$body->append('{"description":"string","certificate":"string","privateKey":"string","caBundle":"string","validation":true}');
+$body->append('{"description":"string","certificate":"string","privateKey":"string","caBundle":"string"}');
 
 $request->setRequestUrl('https://api.leaseweb.com/cdn/v2/certificates');
 $request->setRequestMethod('POST');

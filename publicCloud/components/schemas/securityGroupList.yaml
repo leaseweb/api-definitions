@@ -1,0 +1,11 @@
+properties:
+  securityGroups:
+    type: array
+    items:
+      $ref: ./securityGroup.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - securityGroups
+  - _metadata
+type: object

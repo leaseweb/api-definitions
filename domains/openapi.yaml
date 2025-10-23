@@ -91,6 +91,8 @@ paths:
       paths/hosting_v2_domains_{domainName}_resourceRecordSets_{name}_{type}.yaml
   /hosting/v2/domains/{domainName}/resourceRecordSets/import:
     $ref: paths/hosting_v2_domains_{domainName}_resourceRecordSets_import.yaml
+  /hosting/v2/domains/{domainName}/resourceRecordSets/export:
+    $ref: paths/hosting_v2_domains_{domainName}_resourceRecordSets_export.yaml
   /hosting/v2/domains/{domainName}/resourceRecordSets/validateSet:
     $ref: paths/hosting_v2_domains_{domainName}_resourceRecordSets_validateSet.yaml
   /hosting/v2/domains/{domainName}/validateZone:

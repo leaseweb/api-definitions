@@ -1,0 +1,8 @@
+properties:
+  firewallRules:
+    type: array
+    items:
+      $ref: ./securityGroupFirewallRuleResponse.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+type: object

@@ -324,6 +324,14 @@ get:
       description: >-
         Available instance types for your region can be obtained using
         `/v1/instanceTypes`.
+    - name: securityGroupIds
+      required: false
+      in: query
+      schema:
+        type: string
+      example: >-
+        166cc685-8273-11f0-b4f8-2687367a8a5e,7e59b33d-05f3-4078-b251-c7831ae8fe14
+      description: Filter instances by security group UUIDs, separated by commas.
   responses:
     '200':
       description: OK.

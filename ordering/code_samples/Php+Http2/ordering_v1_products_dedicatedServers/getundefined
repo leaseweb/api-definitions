@@ -9,7 +9,9 @@ $request->setQuery(new http\QueryString([
   'location' => 'AMS-01',
   'ram' => '64GB',
   'diskSize' => 'SSD480GB',
-  'diskAmount' => '2'
+  'diskAmount' => '2',
+  'limit' => '20',
+  'offset' => '10'
 ]));
 
 $request->setHeaders([

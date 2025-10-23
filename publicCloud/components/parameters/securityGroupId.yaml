@@ -1,0 +1,8 @@
+schema:
+  type: string
+  format: uuid
+name: securityGroupId
+in: path
+required: true
+description: Security Group ID
+example: 166cc685-8273-11f0-b4f8-2687367a8a5e

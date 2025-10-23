@@ -1,0 +1,11 @@
+description: Filter by state
+in: query
+name: state
+required: false
+schema:
+  type: string
+  enum:
+    - CREATING
+    - ACTIVE
+    - FAILED
+    - SYNCING

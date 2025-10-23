@@ -59,6 +59,7 @@ get:
                   monthly: '26.0200'
                 storageTypes:
                   - CENTRAL
+                minDiskSize: 5
               - name: lsw.c3.xlarge
                 resources:
                   cpu:
@@ -78,6 +79,7 @@ get:
                   monthly: '52.5000'
                 storageTypes:
                   - CENTRAL
+                minDiskSize: 5
               - name: lsw.c3.2xlarge
                 resources:
                   cpu:
@@ -97,6 +99,7 @@ get:
                   monthly: '105.4500'
                 storageTypes:
                   - CENTRAL
+                minDiskSize: 5
               - name: lsw.c3.4xlarge
                 resources:
                   cpu:
@@ -116,6 +119,7 @@ get:
                   monthly: '210.5100'
                 storageTypes:
                   - CENTRAL
+                minDiskSize: 5
               - name: lsw.m3.large
                 resources:
                   cpu:
@@ -135,6 +139,7 @@ get:
                   monthly: '29.4400'
                 storageTypes:
                   - CENTRAL
+                minDiskSize: 5
               - name: lsw.m3.xlarge
                 resources:
                   cpu:
@@ -154,6 +159,7 @@ get:
                   monthly: '59.3300'
                 storageTypes:
                   - CENTRAL
+                minDiskSize: 5
               - name: lsw.m3.2xlarge
                 resources:
                   cpu:
@@ -173,6 +179,7 @@ get:
                   monthly: '118.2700'
                 storageTypes:
                   - CENTRAL
+                minDiskSize: 5
               - name: lsw.r3.large
                 resources:
                   cpu:
@@ -192,6 +199,7 @@ get:
                   monthly: '36.4900'
                 storageTypes:
                   - CENTRAL
+                minDiskSize: 5
               - name: lsw.r3.xlarge
                 resources:
                   cpu:
@@ -211,6 +219,7 @@ get:
                   monthly: '72.5700'
                 storageTypes:
                   - CENTRAL
+                minDiskSize: 5
               - name: lsw.r3.2xlarge
                 resources:
                   cpu:
@@ -230,6 +239,7 @@ get:
                   monthly: '144.7400'
                 storageTypes:
                   - CENTRAL
+                minDiskSize: 5
             _metadata:
               totalCount: 10
               limit: 50

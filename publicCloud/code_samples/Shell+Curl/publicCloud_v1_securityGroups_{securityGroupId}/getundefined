@@ -1,0 +1,3 @@
+curl --request GET \
+  --url https://api.leaseweb.com/publicCloud/v1/securityGroups/166cc685-8273-11f0-b4f8-2687367a8a5e \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

@@ -50,6 +50,8 @@ tags:
 paths:
   /invoices/v1/invoices:
     $ref: paths/invoices_v1_invoices.yaml
+  /invoices/v1/invoices/export/csv:
+    $ref: paths/invoices_v1_invoices_export_csv.yaml
   /invoices/v1/invoices/{Id}:
     $ref: paths/invoices_v1_invoices_{Id}.yaml
   /invoices/v1/invoices/{Id}/pdf:

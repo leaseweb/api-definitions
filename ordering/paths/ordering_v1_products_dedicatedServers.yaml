@@ -31,15 +31,17 @@ get:
         description: The amount of disks
         example: '2'
         type: string
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
   responses:
     '200':
       content:
         application/json:
           example:
             _metadata:
-              totalCount: 2
-              limit: 2
+              limit: 10
               offset: 0
+              totalCount: 2
             dedicatedServers:
               - id: 27f38ef06cf3bf62e21e75401feac6cd
                 name: Dell R730XD (12xLFF) 2x Intel Xeon E5-2650v4
