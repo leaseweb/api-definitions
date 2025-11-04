@@ -30,9 +30,9 @@ post:
     endpoint and look for the corresponding diskset id from the hdd array.
 
 
-    For more information about Dedicated Server installation, [click
-    here](https://kb.leaseweb.com/products/dedicated-server/reinstalling-your-dedicated-server)
-    for our related Knowledge Base article.
+    For more information about Dedicated Server installation, check our
+    [Knowledge Base article on reinstalling your Dedicated
+    Server](https://kb.leaseweb.com/products/dedicated-server/reinstalling-your-dedicated-server).
   operationId: installOperatingSystem
   requestBody:
     content:

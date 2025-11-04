@@ -78,7 +78,7 @@ tags:
 
 
       The HTTP Authorization header is the most common method of authenticating
-      a request. All REST API operations require this header. 
+      a request. All REST API operations require this header.
 
 
       The following is an example of the Authorization header value. Line breaks
@@ -97,13 +97,13 @@ tags:
       ```
 
 
-      ### Amazon EC2 CLI 
+      ### Amazon EC2 CLI
 
 
       You are able to interact with the aws-cli via AWS compatible APIs, first
-      make sure you installed the aws-cli,
-      [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-      you can find how to install it.
+      make sure you installed the aws-cli. You can find [installation
+      instructions in the AWS CLI
+      documentation](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
 
       Now you need to configure aws-cli, for this you need to add the following
@@ -119,9 +119,9 @@ tags:
 
       2. AWS Secret Access Key: anything
 
-      3. Default region name: eu-west-3 
+      3. Default region name: eu-west-3
 
-      4. Default output format: json 
+      4. Default output format: json
 
       ```
 paths:
