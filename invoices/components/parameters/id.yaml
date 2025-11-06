@@ -1,0 +1,7 @@
+name: id
+in: query
+required: false
+schema:
+  type: string
+description: Filter - The unique id of the invoice. The filter only matches exact IDs.
+example: 1

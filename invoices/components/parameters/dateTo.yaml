@@ -1,0 +1,7 @@
+name: dateTo
+in: query
+required: false
+schema:
+  type: string
+  format: date-time
+description: Filter - Invoice creation date upper limit

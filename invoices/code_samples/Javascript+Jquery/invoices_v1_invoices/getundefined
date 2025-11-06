@@ -1,7 +1,7 @@
 const settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://api.leaseweb.com/invoices/v1/invoices?limit=20&offset=10",
+  "url": "https://api.leaseweb.com/invoices/v1/invoices?limit=20&offset=10&id=1&status=PAID&dateFrom=SOME_STRING_VALUE&dateTo=SOME_STRING_VALUE",
   "method": "GET",
   "headers": {
     "X-LSW-Auth": "REPLACE_KEY_VALUE"

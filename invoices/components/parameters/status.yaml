@@ -1,0 +1,13 @@
+name: status
+in: query
+required: false
+schema:
+  type: string
+  enum:
+    - OPEN
+    - PAID
+    - READY
+    - CANCELLED
+    - OVERDUE
+description: Filter - Invoice status
+example: PAID
