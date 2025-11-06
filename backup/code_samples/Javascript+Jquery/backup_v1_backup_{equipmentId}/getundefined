@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/backup/v1/backup/12345678",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

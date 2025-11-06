@@ -1,0 +1,59 @@
+type: object
+title: backup
+required:
+  - id
+  - location
+  - storageSize
+  - status
+  - startDate
+  - endDate
+  - contractTerm
+  - billingCycle
+properties:
+  id:
+    type: string
+    description: The equipmentId of the backup contract
+    example: '12345678'
+  location:
+    type: string
+    description: The location of the backup.
+    enum:
+      - EU2
+      - EU3
+      - US2
+      - SG1
+      - AU1
+      - CA1
+      - CA2
+    example: EU2
+  storageSize:
+    type: integer
+    description: The backup size in GB
+    example: 60
+  status:
+    type: string
+    description: Status of the backup contract
+    enum:
+      - PENDING
+      - ACTIVE
+      - SUSPENDED
+    example: ACTIVE
+  startDate:
+    type: string
+    format: date-time
+    description: Start date of the backup contract
+    example: '2020-05-01T00:00:00Z'
+  endDate:
+    type: string
+    format: date-time
+    nullable: true
+    description: End date of the backup contract
+    example: '2021-05-01T00:00:00Z'
+  contractTerm:
+    type: integer
+    description: Contract duration in months
+    example: 3
+  billingCycle:
+    type: integer
+    description: Time period in months between two consecutive payments for the service
+    example: 1

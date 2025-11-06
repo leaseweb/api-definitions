@@ -1,0 +1,13 @@
+type: object
+title: backupList
+required:
+  - backupItems
+  - _metadata
+properties:
+  backupItems:
+    type: array
+    description: An array of backup contracts
+    items:
+      $ref: ./backup.yaml
+  _metadata:
+    $ref: ./_metadata.yaml

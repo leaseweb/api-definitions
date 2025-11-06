@@ -1,0 +1,68 @@
+get:
+  operationId: getStorageMetrics
+  summary: Get usage metrics
+  parameters:
+    - name: locations
+      style: form
+      explode: false
+      schema:
+        type: array
+        items:
+          type: string
+          enum:
+            - EU2
+            - EU3
+            - US2
+            - SG1
+            - AU1
+            - CA1
+            - CA2
+      in: query
+      allowEmptyValue: false
+      required: true
+      description: Comma-separated list of locations
+      example: EU2,EU3
+  responses:
+    '200':
+      description: Response body contains storage values
+      content:
+        application/json:
+          example:
+            metrics:
+              EU2:
+                unit: GB
+                value: 45.67
+              EU3:
+                unit: GB
+                value: 0
+          schema:
+            $ref: ../components/schemas/getStorageMetricsResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  tags:
+    - Acronis Backup
+  security:
+    - X-LSW-Auth: []
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/backup_v1_metrics_storage/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/backup_v1_metrics_storage/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/backup_v1_metrics_storage/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/backup_v1_metrics_storage/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/backup_v1_metrics_storage/getundefined

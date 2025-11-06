@@ -1,0 +1,59 @@
+get:
+  operationId: getBackup
+  summary: Inspect a backup item
+  parameters:
+    - name: equipmentId
+      in: path
+      required: true
+      description: Equipment ID of the backup item.
+      schema:
+        type: string
+      example: '12345678'
+  responses:
+    '200':
+      description: Ok.
+      content:
+        application/json:
+          example:
+            id: '12345678'
+            location: EU2
+            storageSize: 60
+            status: ACTIVE
+            startDate: '2019-05-01T00:00:00Z'
+            endDate: '2021-04-30T00:00:00Z'
+            contractTerm: 3
+            billingCycle: 1
+          schema:
+            $ref: ../components/schemas/backup.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  tags:
+    - Acronis Backup
+  security:
+    - X-LSW-Auth: []
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/backup_v1_backup_{equipmentId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/backup_v1_backup_{equipmentId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/backup_v1_backup_{equipmentId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/backup_v1_backup_{equipmentId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/backup_v1_backup_{equipmentId}/getundefined

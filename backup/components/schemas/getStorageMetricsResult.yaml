@@ -1,0 +1,25 @@
+type: object
+title: metricsContainer
+required:
+  - metrics
+properties:
+  metrics:
+    type: object
+    title: storageMetrics
+    description: Contains a key for every location requested
+    additionalProperties:
+      type: object
+      description: Storage usage in one location
+      title: usage
+      required:
+        - unit
+        - value
+      properties:
+        unit:
+          type: string
+          enum:
+            - GB
+          description: Usage unit
+        value:
+          type: number
+          description: Usage value
