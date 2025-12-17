@@ -1,0 +1,15 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/publicCloud/v1/instances/ace712e9-a166-47f1-9065-4af0f7e7fce1/userData');
+$request->setRequestMethod('GET');
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

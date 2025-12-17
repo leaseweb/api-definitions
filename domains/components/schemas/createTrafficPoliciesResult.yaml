@@ -1,0 +1,16 @@
+allOf:
+  - properties:
+      name:
+        $ref: ./name1.yaml
+      ttl:
+        $ref: ./ttl.yaml
+    required:
+      - name
+      - ttl
+  - oneOf:
+      - $ref: ./WEIGHTED.yaml
+      - $ref: ./GEOGRAPHIC.yaml
+      - $ref: ./FAILOVER_URL.yaml
+      - $ref: ./FAILOVER_PORT.yaml
+      - $ref: ./AVAILABILITY_URL.yaml
+      - $ref: ./AVAILABILITY_PORT.yaml

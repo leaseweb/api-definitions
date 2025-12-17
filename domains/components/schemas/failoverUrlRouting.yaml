@@ -1,0 +1,28 @@
+title: FAILOVER_URL route
+type: object
+properties:
+  addressType:
+    $ref: ./addressType.yaml
+  url:
+    type: string
+    format: uri
+    description: URL to determine failover routing
+  addresses:
+    type: array
+    description: >-
+      Ip address to route. Ipv4 for IPV4 address type and Ipv6 for IPV6 address
+      type.
+    items:
+      type: string
+  secondaryAddresses:
+    type: array
+    description: >-
+      Ip address to route. Ipv4 for IPV4 address type and Ipv6 for IPV6 address
+      type.
+    items:
+      type: string
+required:
+  - addressType
+  - url
+  - addresses
+  - secondaryAddresses

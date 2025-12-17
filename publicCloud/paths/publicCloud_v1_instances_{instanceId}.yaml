@@ -68,6 +68,13 @@ get:
             startedAt: '2024-04-09T15:11:37+00:00'
             state: RUNNING
             type: lsw.m3.large
+            targetGroups:
+              - id: ace712e9-a166-47f1-9065-4af0f7e7fce1
+                name: Target group name
+                protocol: HTTP
+                port: 80
+                healthCheck: null
+                region: eu-west-2
           schema:
             $ref: ../components/schemas/instanceDetails.yaml
     '401':
@@ -257,6 +264,13 @@ put:
             startedAt: '2024-04-09T15:11:37+00:00'
             state: RUNNING
             type: lsw.m3.large
+            targetGroups:
+              - id: ace712e9-a166-47f1-9065-4af0f7e7fce1
+                name: Target group name
+                protocol: HTTP
+                port: 80
+                healthCheck: null
+                region: eu-west-2
     '400':
       $ref: ../components/responses/400.yaml
     '401':

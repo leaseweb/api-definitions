@@ -1,0 +1,759 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - schema:
+      type: string
+      example: test.example.com
+    name: recordName
+    in: path
+    required: true
+    description: >-
+      This is the traffic policies record name. Which can be a domain name or
+      subdomain name.
+get:
+  description: Retrieve traffic policies for the given record name.
+  operationId: getTrafficPolicies
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getTrafficPoliciesResult.yaml
+          examples:
+            availabilityPort:
+              summary: Availability Port routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: AVAILABILITY_PORT
+                routes:
+                  - addressType: IPV4
+                    port: 8080
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                  - addressType: IPV6
+                    port: 8080
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+            availabilityUrl:
+              summary: Availability URL routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: AVAILABILITY_URL
+                routes:
+                  - addressType: IPV4
+                    url: https://example.com
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                  - addressType: IPV6
+                    url: https://example.com
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+            failoverPort:
+              summary: Failover Port routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: FAILOVER_PORT
+                routes:
+                  - addressType: IPV4
+                    port: 8080
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                    secondaryAddresses:
+                      - 192.168.1.3
+                      - 192.168.1.4
+                  - addressType: IPV6
+                    port: 8080
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+                    secondaryAddresses:
+                      - 2001:db8::1
+                      - 2001:db8::2
+            failoverUrl:
+              summary: Failover URL routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: FAILOVER_URL
+                routes:
+                  - addressType: IPV4
+                    url: https://example.com
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                    secondaryAddresses:
+                      - 192.168.1.3
+                      - 192.168.1.4
+                  - addressType: IPV6
+                    url: https://example.com
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+                    secondaryAddresses:
+                      - 2001:db8::1
+                      - 2001:db8::2
+            geographic:
+              summary: Geographic routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: GEOGRAPHIC
+                routes:
+                  - addressType: IPV4
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                  - addressType: IPV6
+                    addresses:
+                      - 2001:db8::1
+                      - 2001:db8::2
+            weighted:
+              summary: Weighted routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: WEIGHTED
+                routes:
+                  - addressType: IPV4
+                    weights:
+                      - weight: 100
+                        address: 192.168.1.1
+                  - addressType: IPV6
+                    weights:
+                      - weight: 50
+                        address: 2001:db8::1
+                  - addressType: DOMAIN
+                    weights:
+                      - weight: 30
+                        address: https://example.com
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get all traffic policies
+  tags:
+    - Traffic Policy
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/getundefined
+post:
+  description: Create traffic policies for a given domain and record name.
+  operationId: createTrafficPolicies
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/createTrafficPoliciesOpts.yaml
+        examples:
+          availabilityPort:
+            summary: Availability Port routing type
+            value:
+              ttl: 3600
+              routingType: AVAILABILITY_PORT
+              routes:
+                - addressType: IPV4
+                  port: 8080
+                  addresses:
+                    - 192.168.1.1
+                    - 192.168.1.2
+                - addressType: IPV6
+                  port: 8080
+                  addresses:
+                    - 2001:db7::2
+                    - 2001:db7::4
+          availabilityUrl:
+            summary: Availability URL routing type
+            value:
+              ttl: 3600
+              routingType: AVAILABILITY_URL
+              routes:
+                - addressType: IPV4
+                  url: https://example.com
+                  addresses:
+                    - 192.168.1.1
+                    - 192.168.1.2
+                - addressType: IPV6
+                  url: https://example.com
+                  addresses:
+                    - 2001:db7::2
+                    - 2001:db7::4
+          failoverPort:
+            summary: Failover Port routing type
+            value:
+              ttl: 3600
+              routingType: FAILOVER_PORT
+              routes:
+                - addressType: IPV4
+                  port: 8080
+                  addresses:
+                    - 192.168.1.1
+                    - 192.168.1.2
+                  secondaryAddresses:
+                    - 192.168.1.3
+                    - 192.168.1.4
+                - addressType: IPV6
+                  port: 8080
+                  addresses:
+                    - 2001:db7::2
+                    - 2001:db7::4
+                  secondaryAddresses:
+                    - 2001:db8::1
+                    - 2001:db8::2
+          failoverUrl:
+            summary: Failover URL routing type
+            value:
+              ttl: 3600
+              routingType: FAILOVER_URL
+              routes:
+                - addressType: IPV4
+                  url: https://example.com
+                  addresses:
+                    - 192.168.1.1
+                    - 192.168.1.2
+                  secondaryAddresses:
+                    - 192.168.1.3
+                    - 192.168.1.4
+                - addressType: IPV6
+                  url: https://example.com
+                  addresses:
+                    - 2001:db7::2
+                    - 2001:db7::4
+                  secondaryAddresses:
+                    - 2001:db8::1
+                    - 2001:db8::2
+          geographic:
+            summary: Geographic routing type
+            value:
+              ttl: 3600
+              routingType: GEOGRAPHIC
+              routes:
+                - addressType: IPV4
+                  addresses:
+                    - 192.168.1.1
+                    - 192.168.1.2
+                - addressType: IPV6
+                  addresses:
+                    - 2001:db8::1
+                    - 2001:db8::2
+          weighted:
+            summary: Weighted routing type
+            value:
+              ttl: 3600
+              routingType: WEIGHTED
+              routes:
+                - addressType: IPV4
+                  weights:
+                    - weight: 100
+                      address: 192.168.1.1
+                - addressType: IPV6
+                  weights:
+                    - weight: 50
+                      address: 2001:db8::1
+                - addressType: DOMAIN
+                  weights:
+                    - weight: 30
+                      address: https://example.com
+    description: ''
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/createTrafficPoliciesResult.yaml
+          examples:
+            availabilityPort:
+              summary: Availability Port routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: AVAILABILITY_PORT
+                routes:
+                  - addressType: IPV4
+                    port: 8080
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                  - addressType: IPV6
+                    port: 8080
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+            availabilityUrl:
+              summary: Availability URL routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: AVAILABILITY_URL
+                routes:
+                  - addressType: IPV4
+                    url: https://example.com
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                  - addressType: IPV6
+                    url: https://example.com
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+            failoverPort:
+              summary: Failover Port routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: FAILOVER_PORT
+                routes:
+                  - addressType: IPV4
+                    port: 8080
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                    secondaryAddresses:
+                      - 192.168.1.3
+                      - 192.168.1.4
+                  - addressType: IPV6
+                    port: 8080
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+                    secondaryAddresses:
+                      - 2001:db8::1
+                      - 2001:db8::2
+            failoverUrl:
+              summary: Failover URL routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: FAILOVER_URL
+                routes:
+                  - addressType: IPV4
+                    url: https://example.com
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                    secondaryAddresses:
+                      - 192.168.1.3
+                      - 192.168.1.4
+                  - addressType: IPV6
+                    url: https://example.com
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+                    secondaryAddresses:
+                      - 2001:db8::1
+                      - 2001:db8::2
+            geographic:
+              summary: Geographic routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: GEOGRAPHIC
+                routes:
+                  - addressType: IPV4
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                  - addressType: IPV6
+                    addresses:
+                      - 2001:db8::1
+                      - 2001:db8::2
+            weighted:
+              summary: Weighted routing type
+              value:
+                name: test.example.com
+                ttl: 3600
+                routingType: WEIGHTED
+                routes:
+                  - addressType: IPV4
+                    weights:
+                      - weight: 100
+                        address: 192.168.1.1
+                  - addressType: IPV6
+                    weights:
+                      - weight: 50
+                        address: 2001:db8::1
+                  - addressType: DOMAIN
+                    weights:
+                      - weight: 30
+                        address: https://example.com
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create traffic policies
+  tags:
+    - Traffic Policy
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/postundefined
+patch:
+  description: Modify the TTL or policies for a given domain and record name.
+  operationId: updateTrafficPolicies
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/updateTrafficPoliciesOpts.yaml
+        examples:
+          updateAvailabilityPort:
+            summary: Availability Port routing type
+            value:
+              routingType: AVAILABILITY_PORT
+              routes:
+                - addressType: IPV4
+                  port: 8080
+                  addresses:
+                    - 192.168.1.1
+                    - 192.168.1.2
+                - addressType: IPV6
+                  port: 8080
+                  addresses:
+                    - 2001:db7::2
+                    - 2001:db7::4
+          updateAvailabilityUrl:
+            summary: Availability URL routing type
+            value:
+              routingType: AVAILABILITY_URL
+              routes:
+                - addressType: IPV4
+                  url: https://example.com
+                  addresses:
+                    - 192.168.1.1
+                    - 192.168.1.2
+                - addressType: IPV6
+                  url: https://example.com
+                  addresses:
+                    - 2001:db7::2
+                    - 2001:db7::4
+          updateFailoverPort:
+            summary: Failover Port routing type
+            value:
+              routingType: FAILOVER_PORT
+              routes:
+                - addressType: IPV4
+                  port: 8080
+                  addresses:
+                    - 192.168.1.1
+                    - 192.168.1.2
+                  secondaryAddresses:
+                    - 192.168.1.3
+                    - 192.168.1.4
+                - addressType: IPV6
+                  port: 8080
+                  addresses:
+                    - 2001:db7::2
+                    - 2001:db7::4
+                  secondaryAddresses:
+                    - 2001:db8::1
+                    - 2001:db8::2
+          updateFailoverUrl:
+            summary: Failover URL routing type
+            value:
+              routingType: FAILOVER_URL
+              routes:
+                - addressType: IPV4
+                  url: https://example.com
+                  addresses:
+                    - 192.168.1.1
+                    - 192.168.1.2
+                  secondaryAddresses:
+                    - 192.168.1.3
+                    - 192.168.1.4
+                - addressType: IPV6
+                  url: https://example.com
+                  addresses:
+                    - 2001:db7::2
+                    - 2001:db7::4
+                  secondaryAddresses:
+                    - 2001:db8::1
+                    - 2001:db8::2
+          updateGeographic:
+            summary: Geographic routing type
+            value:
+              routingType: GEOGRAPHIC
+              routes:
+                - addressType: IPV4
+                  addresses:
+                    - 192.168.1.1
+                    - 192.168.1.2
+                - addressType: IPV6
+                  addresses:
+                    - 2001:db8::1
+                    - 2001:db8::2
+          updateTtl:
+            summary: Partial update of TTL only
+            value:
+              ttl: 3600
+          updateWeighted:
+            summary: Weighted routing type
+            value:
+              routingType: WEIGHTED
+              routes:
+                - addressType: IPV4
+                  weights:
+                    - weight: 100
+                      address: 192.168.1.1
+                - addressType: IPV6
+                  weights:
+                    - weight: 50
+                      address: 2001:db8::1
+                - addressType: DOMAIN
+                  weights:
+                    - weight: 30
+                      address: https://example.com
+    description: ''
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/updateTrafficPoliciesResult.yaml
+          examples:
+            availabilityPort:
+              summary: Availability Port routing type
+              value:
+                name: test.example.com
+                routes:
+                  - routingType: AVAILABILITY_PORT
+                    addressType: IPV4
+                    port: 8080
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                  - routingType: AVAILABILITY_PORT
+                    addressType: IPV6
+                    port: 8080
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+            availabilityUrl:
+              summary: Availability URL routing type
+              value:
+                name: test.example.com
+                routes:
+                  - routingType: AVAILABILITY_URL
+                    addressType: IPV4
+                    url: https://example.com
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                  - routingType: AVAILABILITY_URL
+                    addressType: IPV6
+                    url: https://example.com
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+            failoverPort:
+              summary: Failover Port routing type
+              value:
+                name: test.example.com
+                routes:
+                  - routingType: FAILOVER_PORT
+                    addressType: IPV4
+                    port: 8080
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                    secondaryAddresses:
+                      - 192.168.1.3
+                      - 192.168.1.4
+                  - routingType: FAILOVER_PORT
+                    addressType: IPV6
+                    port: 8080
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+                    secondaryAddresses:
+                      - 2001:db8::1
+                      - 2001:db8::2
+            failoverUrl:
+              summary: Failover URL routing type
+              value:
+                name: test.example.com
+                routes:
+                  - routingType: FAILOVER_URL
+                    addressType: IPV4
+                    url: https://example.com
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                    secondaryAddresses:
+                      - 192.168.1.3
+                      - 192.168.1.4
+                  - routingType: FAILOVER_URL
+                    addressType: IPV6
+                    url: https://example.com
+                    addresses:
+                      - 2001:db7::2
+                      - 2001:db7::4
+                    secondaryAddresses:
+                      - 2001:db8::1
+                      - 2001:db8::2
+            geographic:
+              summary: Geographic routing type
+              value:
+                name: test.example.com
+                routes:
+                  - routingType: GEOGRAPHIC
+                    addressType: IPV4
+                    addresses:
+                      - 192.168.1.1
+                      - 192.168.1.2
+                  - routingType: GEOGRAPHIC
+                    addressType: IPV6
+                    addresses:
+                      - 2001:db8::1
+                      - 2001:db8::2
+            weighted:
+              summary: Weighted routing type
+              value:
+                name: test.example.com
+                routes:
+                  - routingType: WEIGHTED
+                    addressType: IPV4
+                    weights:
+                      - weight: 100
+                        address: 192.168.1.1
+                  - routingType: WEIGHTED
+                    addressType: IPV6
+                    weights:
+                      - weight: 50
+                        address: 2001:db8::1
+                  - routingType: WEIGHTED
+                    addressType: DOMAIN
+                    weights:
+                      - weight: 30
+                        address: https://example.com
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update traffic policies
+  tags:
+    - Traffic Policy
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/patchundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/patchundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/patchundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/patchundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/patchundefined
+delete:
+  description: Delete traffic policies for a given domain and record name.
+  operationId: deleteTrafficPolicies
+  responses:
+    '204':
+      description: When the traffic policies are deleted successfully.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete traffic policies
+  tags:
+    - Traffic Policy
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/deleteundefined

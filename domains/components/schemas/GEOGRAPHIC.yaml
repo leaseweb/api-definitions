@@ -1,0 +1,14 @@
+title: GEOGRAPHIC
+properties:
+  routingType:
+    type: string
+    enum:
+      - GEOGRAPHIC
+  routes:
+    type: array
+    items:
+      $ref: ./geographicRouting.yaml
+required:
+  - routingType
+  - routes
+type: object

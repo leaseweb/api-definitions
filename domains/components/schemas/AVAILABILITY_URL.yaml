@@ -1,0 +1,14 @@
+title: AVAILABILITY_URL
+properties:
+  routingType:
+    type: string
+    enum:
+      - AVAILABILITY_URL
+  routes:
+    type: array
+    items:
+      $ref: ./availabilityUrlRouting.yaml
+required:
+  - routingType
+  - routes
+type: object

@@ -192,6 +192,8 @@ paths:
     $ref: paths/publicCloud_v1_instances_{instanceId}_snapshots.yaml
   /publicCloud/v1/instances/{instanceId}/snapshots/{snapshotId}:
     $ref: paths/publicCloud_v1_instances_{instanceId}_snapshots_{snapshotId}.yaml
+  /publicCloud/v1/instances/{instanceId}/userData:
+    $ref: paths/publicCloud_v1_instances_{instanceId}_userData.yaml
   /publicCloud/v1/autoScalingGroups:
     $ref: paths/publicCloud_v1_autoScalingGroups.yaml
   /publicCloud/v1/autoScalingGroups/{autoScalingGroupId}:

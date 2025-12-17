@@ -1,0 +1,14 @@
+title: FAILOVER_URL
+properties:
+  routingType:
+    type: string
+    enum:
+      - FAILOVER_URL
+  routes:
+    type: array
+    items:
+      $ref: ./failoverUrlRouting.yaml
+required:
+  - routingType
+  - routes
+type: object

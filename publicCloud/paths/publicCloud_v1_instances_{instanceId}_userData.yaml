@@ -1,0 +1,52 @@
+parameters:
+  - $ref: ../components/parameters/instanceId.yaml
+get:
+  operationId: getUserData
+  responses:
+    '200':
+      description: OK.
+      content:
+        application/json:
+          example:
+            userData: |
+              #cloud-config
+              hostname: myhost
+              create_hostname_file: true
+              fqdn: myhost.example.com
+              prefer_fqdn_over_hostname: true
+          schema:
+            $ref: ../components/schemas/getUserDataResult.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get User Data supplied while launching the instance.
+  tags:
+    - Public Clouds
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_instances_{instanceId}_userData/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_instances_{instanceId}_userData/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_instances_{instanceId}_userData/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_instances_{instanceId}_userData/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_instances_{instanceId}_userData/getundefined

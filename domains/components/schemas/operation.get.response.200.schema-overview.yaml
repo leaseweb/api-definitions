@@ -13,6 +13,7 @@ properties:
         - contractStartDate
         - webhostingContractOnly
         - hasWebhosting
+        - hasMailhosting
         - webhostingEquipmentId
       properties:
         domainName:
@@ -31,6 +32,8 @@ properties:
         webhostingContractOnly:
           type: boolean
         hasWebhosting:
+          type: boolean
+        hasMailhosting:
           type: boolean
         webhostingEquipmentId:
           type: string
@@ -96,13 +99,10 @@ properties:
         type: number
       totalCount:
         type: number
-      allowedMailboxes:
-        type: number
     required:
       - limit
       - offset
       - totalCount
-      - allowedMailboxes
 required:
   - domains
   - _links

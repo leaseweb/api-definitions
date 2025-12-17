@@ -1,0 +1,14 @@
+title: WEIGHTED
+properties:
+  routingType:
+    type: string
+    enum:
+      - WEIGHTED
+  routes:
+    type: array
+    items:
+      $ref: ./weightedRouting.yaml
+required:
+  - routingType
+  - routes
+type: object

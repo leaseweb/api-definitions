@@ -54,6 +54,10 @@ properties:
     type: array
     items:
       $ref: ./ipDetails.yaml
+  targetGroups:
+    type: array
+    items:
+      $ref: ./targetGroup.yaml
 required:
   - id
   - type
@@ -74,4 +78,5 @@ required:
   - image
   - iso
   - privateNetwork
+  - targetGroups
 type: object

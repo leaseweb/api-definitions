@@ -1,0 +1,5 @@
+type: string
+enum:
+  - IPV4
+  - IPV6
+description: The type of address to route.

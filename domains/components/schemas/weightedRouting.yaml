@@ -1,0 +1,28 @@
+title: WEIGHTED route
+type: object
+properties:
+  addressType:
+    type: string
+    enum:
+      - IPV4
+      - IPV6
+      - DOMAIN
+    description: The type of address to route.
+  weights:
+    type: array
+    items:
+      type: object
+      properties:
+        weight:
+          type: integer
+        address:
+          type: string
+          description: >-
+            Address to route. Ipv4 for IPV4 address type, Ipv6 for IPV6 address
+            type and Domain for DOMAIN address type.
+      required:
+        - weight
+        - address
+required:
+  - addressType
+  - weights

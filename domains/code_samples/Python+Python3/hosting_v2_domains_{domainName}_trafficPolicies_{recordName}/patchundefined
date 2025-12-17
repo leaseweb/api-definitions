@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"routingType\":\"WEIGHTED\",\"routes\":[{\"addressType\":\"IPV4\",\"weights\":[{\"weight\":0,\"address\":\"string\"}]}]}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("PATCH", "/hosting/v2/domains/example.com/trafficPolicies/test.example.com", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

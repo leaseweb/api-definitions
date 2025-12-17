@@ -356,6 +356,7 @@ get:
                     contractStartDate: '2009-06-01T00:00:00+00:00'
                     webhostingContractOnly: false
                     hasWebhosting: true
+                    hasMailhosting: true
                     webhostingEquipmentId: '11815097'
                     _links:
                       self:
@@ -373,7 +374,6 @@ get:
                   limit: 1
                   offset: 0
                   totalCount: 1
-                  allowedMailboxes: 0
       headers: {}
     '401':
       $ref: ../components/responses/401.yaml

@@ -121,6 +121,10 @@ paths:
       paths/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder.yaml
   /hosting/v2/domains/{domainName}/dkim:
     $ref: paths/hosting_v2_domains_{domainName}_dkim.yaml
+  /hosting/v2/domains/{domainName}/trafficPolicies:
+    $ref: paths/hosting_v2_domains_{domainName}_trafficPolicies.yaml
+  /hosting/v2/domains/{domainName}/trafficPolicies/{recordName}:
+    $ref: paths/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}.yaml
 components:
   securitySchemes:
     X-LSW-Auth:

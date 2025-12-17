@@ -172,4 +172,27 @@ properties:
     enum:
       - LEASEWEB
       - EXTERNAL
+  contract:
+    type: object
+    description: contract details or null when contract does not exist
+    properties:
+      contractId:
+        type: string
+      contractType:
+        type: string
+        enum:
+          - WEBHOST
+          - MAILBOX
+      contractStatus:
+        type: string
+        enum:
+          - ACTIVE
+          - PENDING
+          - SUSPENDED
+      platform:
+        type: string
+      pack:
+        type: string
+      allowedMailboxes:
+        type: integer
 type: object

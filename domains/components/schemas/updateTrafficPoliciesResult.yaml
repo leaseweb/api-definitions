@@ -1,0 +1,9 @@
+properties:
+  name:
+    type: string
+  ttl:
+    type: integer
+required:
+  - name
+  - ttl
+type: object

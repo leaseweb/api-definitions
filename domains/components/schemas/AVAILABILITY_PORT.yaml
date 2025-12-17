@@ -1,0 +1,14 @@
+title: AVAILABILITY_PORT
+properties:
+  routingType:
+    type: string
+    enum:
+      - AVAILABILITY_PORT
+  routes:
+    type: array
+    items:
+      $ref: ./availabilityPortRouting.yaml
+required:
+  - routingType
+  - routes
+type: object

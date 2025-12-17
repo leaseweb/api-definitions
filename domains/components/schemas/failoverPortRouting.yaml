@@ -1,0 +1,27 @@
+title: FAILOVER_PORT route
+type: object
+properties:
+  addressType:
+    $ref: ./addressType.yaml
+  port:
+    type: integer
+    description: Port to determine failover routing
+  addresses:
+    type: array
+    description: >-
+      Ip address to route. Ipv4 for IPV4 address type and Ipv6 for IPV6 address
+      type.
+    items:
+      type: string
+  secondaryAddresses:
+    type: array
+    description: >-
+      Ip address to route. Ipv4 for IPV4 address type and Ipv6 for IPV6 address
+      type.
+    items:
+      type: string
+required:
+  - addressType
+  - port
+  - addresses
+  - secondaryAddresses

@@ -115,6 +115,13 @@ get:
                   allowedMailboxes: 250
                   limit: 25
                   offset: 0
+                contract:
+                  contractId: '1234567890'
+                  contractType: MAILBOX
+                  contractStatus: ACTIVE
+                  platform: Linux
+                  pack: Small
+                  allowedMailboxes: 250
     '401':
       $ref: ../components/responses/401.yaml
     '403':

@@ -1,0 +1,14 @@
+title: FAILOVER_PORT
+properties:
+  routingType:
+    type: string
+    enum:
+      - FAILOVER_PORT
+  routes:
+    type: array
+    items:
+      $ref: ./failoverPortRouting.yaml
+required:
+  - routingType
+  - routes
+type: object

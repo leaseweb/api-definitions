@@ -1,0 +1,5 @@
+curl --request PATCH \
+  --url https://api.leaseweb.com/hosting/v2/domains/example.com/trafficPolicies/test.example.com \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"routingType":"WEIGHTED","routes":[{"addressType":"IPV4","weights":[{"weight":0,"address":"string"}]}]}'
