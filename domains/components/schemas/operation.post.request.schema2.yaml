@@ -1,0 +1,7 @@
+description: ''
+properties:
+  dotNetVersion:
+    type: string
+required:
+  - dotNetVersion
+type: object

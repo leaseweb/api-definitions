@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/hosting/v2/webhosting/example.com/%7BequipmentId%7D/dotNet",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

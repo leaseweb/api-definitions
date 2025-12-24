@@ -1,0 +1,4 @@
+properties:
+  redirect:
+    type: boolean
+type: object

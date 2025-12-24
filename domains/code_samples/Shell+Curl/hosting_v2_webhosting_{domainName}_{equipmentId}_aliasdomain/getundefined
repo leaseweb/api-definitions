@@ -1,0 +1,3 @@
+curl --request GET \
+  --url https://api.leaseweb.com/hosting/v2/webhosting/example.com/%7BequipmentId%7D/aliasdomain \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

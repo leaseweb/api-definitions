@@ -1,0 +1,6 @@
+properties:
+  aliasDomain:
+    type: string
+  redirect:
+    type: boolean
+type: object

@@ -1,0 +1,55 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - $ref: ../components/parameters/equipmentId.yaml
+  - schema:
+      type: string
+    name: subDomainName
+    in: path
+    required: true
+    description: Sub domain name
+    example: sub.example.com
+delete:
+  description: Delete subdomain
+  operationId: webhosting-domain-subdomain-subdomainname-delete
+  responses:
+    '204':
+      description: Successfully deleted subdomain.
+      content: {}
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      description: Sub domain not found
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/errorResponseSchema.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete Sub Domain
+  tags:
+    - Web hosting
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain_{subDomainName}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain_{subDomainName}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain_{subDomainName}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain_{subDomainName}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain_{subDomainName}/deleteundefined

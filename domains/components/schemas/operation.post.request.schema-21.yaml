@@ -1,0 +1,4 @@
+properties:
+  subDomain:
+    type: string
+type: object

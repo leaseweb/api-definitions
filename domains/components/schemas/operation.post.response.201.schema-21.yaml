@@ -1,0 +1,18 @@
+properties:
+  aliasDomain:
+    type: string
+  redirect:
+    type: boolean
+  status:
+    type: string
+    description: Status of the alias domain
+    enum:
+      - ACTIVE
+      - DISABLED
+  ipv4:
+    type: string
+    format: ipv4
+  ipv6:
+    type: string
+    format: ipv6
+type: object

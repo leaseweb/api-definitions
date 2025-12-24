@@ -1,0 +1,103 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - $ref: ../components/parameters/equipmentId.yaml
+get:
+  description: >-
+    Get current selected dot net version for the domain along with available dot
+    net versions.
+  operationId: webhosting-dot-net-get
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema2.yaml
+          examples:
+            example-1:
+              value:
+                selectedVersion: '4.8'
+                availableVersions:
+                  - '3.5'
+                  - 4,8
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get current selected dot net version
+  tags:
+    - Web hosting
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet/getundefined
+post:
+  description: Sets a selected dot net version for the domain
+  operationId: webhosting-dot-net-post
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.post.request.schema2.yaml
+        examples:
+          example-1:
+            value:
+              dotNetVersion: '4.8'
+  responses:
+    '204':
+      description: No Content
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Change dot net version
+  tags:
+    - Web hosting
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet/postundefined

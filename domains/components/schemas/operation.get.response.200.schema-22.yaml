@@ -1,0 +1,13 @@
+description: ''
+properties:
+  subDomains:
+    type: array
+    items:
+      title: subDomain
+      type: object
+      properties:
+        subDomain:
+          type: string
+        rootDirectory:
+          type: string
+type: object

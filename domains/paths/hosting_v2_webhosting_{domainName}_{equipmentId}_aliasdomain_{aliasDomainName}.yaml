@@ -1,0 +1,123 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - $ref: ../components/parameters/equipmentId.yaml
+  - schema:
+      type: string
+    name: aliasDomainName
+    in: path
+    required: true
+    description: Alias domain name
+    example: aliasxyz.com
+put:
+  description: update alias domain settings
+  operationId: webhosting-domain-aliasdomain-aliasdomainname-put
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.put.request.schema2.yaml
+        examples:
+          example-1:
+            value:
+              redirect: true
+  responses:
+    '200':
+      description: Updated
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.put.response.200.schema2.yaml
+          examples:
+            example-1:
+              value:
+                aliasDomain: alias.com
+                redirect: true
+                status: ACTIVE
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '422':
+      description: Alias domain already exists
+      content:
+        application/json:
+          example:
+            value:
+              errorMessage: The API could not handle your request at this time.
+              userMessage: Sorry, the api is unable to process the request for domain.
+              correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+          schema:
+            $ref: ../components/schemas/errorResponseSchema.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update Alias Domain
+  tags:
+    - Web hosting
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}/putundefined
+delete:
+  description: Delete alias domain
+  operationId: webhosting-domain-aliasdomain-aliasdomainname-delete
+  responses:
+    '204':
+      description: Successfully deleted alias domain.
+      content: {}
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      description: Alias domain not found
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/errorResponseSchema.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete Alias Domain
+  tags:
+    - Web hosting
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}/deleteundefined

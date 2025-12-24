@@ -1,0 +1,116 @@
+parameters:
+  - $ref: ../components/parameters/domainName.yaml
+  - $ref: ../components/parameters/equipmentId.yaml
+get:
+  description: Get list of subdomains for the subscription domain
+  operationId: webhosting-domain-subdomain-get
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.get.response.200.schema-22.yaml
+          examples:
+            listOfSubdomains:
+              value:
+                subDomains:
+                  - subDomain: sub.test.com
+                    rootDirectory: /sub.test.com
+                  - subDomain: sub2.test.com
+                    rootDirectory: /sub2.test.com
+            whenNoSubdomains:
+              value:
+                subDomains: []
+  summary: Get Subdomains
+  tags:
+    - Web hosting
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain/getundefined
+post:
+  description: create a subdomain for the webhosting subscription
+  operationId: webhosting-domain-subdomain-post
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/operation.post.request.schema-21.yaml
+        examples:
+          example-1:
+            value:
+              subDomain: sub.test.com
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/operation.post.response.201.schema1.yaml
+          examples:
+            example-1:
+              value:
+                subDomain: sub.test.com
+                ipv4: 127.0.0.1
+                ipv6: 2001:db8:0:0:0:ff00:42:8329
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '422':
+      description: Subdomain already exists
+      content:
+        application/json:
+          example:
+            value:
+              errorMessage: The API could not handle your request at this time.
+              userMessage: Sorry, the api is unable to process the request for domain.
+              correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+          schema:
+            $ref: ../components/schemas/errorResponseSchema.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Add Subdomain
+  tags:
+    - Web hosting
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain/postundefined

@@ -1,0 +1,10 @@
+description: ''
+properties:
+  selectedVersion:
+    type: string
+  availableVersions:
+    type: array
+required:
+  - selectedVersion
+  - availableVersions
+type: object

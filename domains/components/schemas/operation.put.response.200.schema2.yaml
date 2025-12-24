@@ -1,0 +1,12 @@
+properties:
+  aliasDomain:
+    type: string
+  redirect:
+    type: boolean
+  status:
+    type: string
+    description: Status of the alias domain
+    enum:
+      - ACTIVE
+      - DISABLED
+type: object

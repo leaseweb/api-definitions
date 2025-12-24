@@ -121,6 +121,18 @@ paths:
       paths/hosting_v2_domains_{domainName}_mailboxes_{emailAddress}_autoResponder.yaml
   /hosting/v2/domains/{domainName}/dkim:
     $ref: paths/hosting_v2_domains_{domainName}_dkim.yaml
+  /hosting/v2/webhosting/{domainName}/{equipmentId}/dotNet:
+    $ref: paths/hosting_v2_webhosting_{domainName}_{equipmentId}_dotNet.yaml
+  /hosting/v2/webhosting/{domainName}/{equipmentId}/subdomain:
+    $ref: paths/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain.yaml
+  /hosting/v2/webhosting/{domainName}/{equipmentId}/subdomain/{subDomainName}:
+    $ref: >-
+      paths/hosting_v2_webhosting_{domainName}_{equipmentId}_subdomain_{subDomainName}.yaml
+  /hosting/v2/webhosting/{domainName}/{equipmentId}/aliasdomain:
+    $ref: paths/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain.yaml
+  /hosting/v2/webhosting/{domainName}/{equipmentId}/aliasdomain/{aliasDomainName}:
+    $ref: >-
+      paths/hosting_v2_webhosting_{domainName}_{equipmentId}_aliasdomain_{aliasDomainName}.yaml
   /hosting/v2/domains/{domainName}/trafficPolicies:
     $ref: paths/hosting_v2_domains_{domainName}_trafficPolicies.yaml
   /hosting/v2/domains/{domainName}/trafficPolicies/{recordName}:
