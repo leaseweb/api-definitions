@@ -16,6 +16,7 @@ get:
             contractId: '55045355'
             createdAt: '2025-07-18T09:26:50+00:00'
             type: NEW_ORDER
+            quotation: '12345678'
             origin: QUOTATION
             services:
               - id: '41999900000100'

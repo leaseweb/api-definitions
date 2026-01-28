@@ -16,6 +16,7 @@ get:
                 contractId: '55040000'
                 createdAt: '2025-07-18T09:26:50+00:00'
                 type: NEW_ORDER
+                quotation: '12345678'
                 origin: QUOTATION
                 services:
                   - id: '41220000000100'
@@ -32,6 +33,7 @@ get:
                 createdAt: '2025-07-10T11:09:33+00:00'
                 type: NEW_ORDER
                 origin: QUOTATION
+                quotation: '987654321'
                 services:
                   - id: '41220000000100'
                     productId: DEDICATED_SERVER
@@ -46,6 +48,7 @@ get:
                 contractId: '54216331'
                 createdAt: '2025-07-07T16:11:48+00:00'
                 type: NEW_ORDER
+                quotation: '123459876'
                 origin: WEBSITE
                 services:
                   - id: '44010000000100'

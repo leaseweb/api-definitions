@@ -25,6 +25,10 @@ properties:
           enum:
             - NEW_ORDER
             - MODIFICATION
+        quotation:
+          type: string
+          description: The quotation of the order
+          example: '12345678'
         origin:
           type: string
           description: Source of the order

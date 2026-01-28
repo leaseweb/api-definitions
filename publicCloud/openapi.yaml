@@ -206,6 +206,9 @@ paths:
   /publicCloud/v1/autoScalingGroups/{autoScalingGroupId}/deregisterTargetGroup:
     $ref: >-
       paths/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_deregisterTargetGroup.yaml
+  /publicCloud/v1/autoScalingGroups/{autoScalingGroupId}/refreshImage:
+    $ref: >-
+      paths/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_refreshImage.yaml
   /publicCloud/v1/targetGroups:
     $ref: paths/publicCloud_v1_targetGroups.yaml
   /publicCloud/v1/targetGroups/{targetGroupId}:

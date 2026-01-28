@@ -116,6 +116,10 @@ paths:
       paths/bareMetals_v2_servers_{serverId}_notificationSettings_datatraffic_{notificationSettingId}.yaml
   /bareMetals/v2/servers/{serverId}/hardwareInfo:
     $ref: paths/bareMetals_v2_servers_{serverId}_hardwareInfo.yaml
+  /bareMetals/v2/hardwareMonitoring:
+    $ref: paths/bareMetals_v2_hardwareMonitoring.yaml
+  /bareMetals/v2/servers/{serverId}/hardwareMonitoring:
+    $ref: paths/bareMetals_v2_servers_{serverId}_hardwareMonitoring.yaml
   /bareMetals/v2/controlPanels:
     $ref: paths/bareMetals_v2_controlPanels.yaml
   /bareMetals/v2/operatingSystems:

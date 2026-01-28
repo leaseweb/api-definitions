@@ -1,0 +1,10 @@
+properties:
+  _metadata:
+    $ref: ./_metadata.yaml
+  servers:
+    title: hardwareMonitoringMetricsServers
+    description: An array of servers with hardware monitoring metrics
+    items:
+      $ref: ./getHardwareMonitoringResult.yaml
+    type: array
+type: object

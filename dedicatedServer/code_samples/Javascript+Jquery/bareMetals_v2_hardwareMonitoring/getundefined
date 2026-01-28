@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/bareMetals/v2/hardwareMonitoring?limit=20&offset=10&site=FRA-10&location=FRA-10-5.1.10-RM-SW01",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

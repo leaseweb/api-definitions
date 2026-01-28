@@ -16,6 +16,10 @@ properties:
     type: string
     description: Indicates the type of order
     example: NEW_ORDER
+  quotation:
+    type: string
+    description: The quotation of the order
+    example: '12345678'
   origin:
     type: string
     description: Specifies the source or location of the order

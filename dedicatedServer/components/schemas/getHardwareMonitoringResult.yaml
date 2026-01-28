@@ -1,0 +1,54 @@
+description: Hardware monitoring data for a server
+properties:
+  serverId:
+    description: The ID of the server
+    type: string
+  scrapedAt:
+    description: The date and time the hardware monitoring data was scraped
+    type: string
+    format: date-time
+  ipmiInfo:
+    title: ipmiInfo
+    description: IPMI information for the server
+    type: object
+    properties:
+      bmcUrl:
+        description: The Baseboard Management Controller URL
+        type: string
+        nullable: true
+      firmwareRevision:
+        description: The firmware revision of the IPMI controller
+        type: string
+        nullable: true
+      manufacturerId:
+        description: The manufacturer ID of the IPMI controller
+        type: string
+        nullable: true
+      systemFirmwareVersion:
+        description: The system firmware version
+        type: string
+        nullable: true
+  metrics:
+    title: ipmiMonitoringMetrics
+    description: IPMI monitoring metrics
+    type: array
+    items:
+      title: ipmiMonitoringMetric
+      description: A single IPMI monitoring metric
+      type: object
+      properties:
+        metric:
+          description: The type of metric
+          type: string
+        name:
+          description: The name of the specific metric instance
+          type: string
+          nullable: true
+        value:
+          description: The value of the metric
+          type: string
+      required:
+        - metric
+        - value
+title: hardwareMonitoringMetrics
+type: object

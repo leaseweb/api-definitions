@@ -1,0 +1,210 @@
+get:
+  description: Get hardware monitoring data for all servers.
+  operationId: getHardwareMonitoringList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - description: Filter the list of servers by site.
+      example: FRA-10
+      in: query
+      name: site
+      schema:
+        type: string
+    - description: Filter the list of servers by location (rack).
+      example: FRA-10-5.1.10-RM-SW01
+      in: query
+      name: location
+      schema:
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              totalCount: 1
+              limit: 0
+              offset: 0
+            servers:
+              - serverId: '123'
+                ipmiInfo:
+                  bmcUrl: N/A
+                  firmwareRevision: '3.09'
+                  manufacturerId: Hewlett Packard Enterprise (47196)
+                  systemFirmwareVersion: null
+                metrics:
+                  - metric: ipmi_chassis_cooling_fault_state
+                    name: null
+                    value: '1'
+                  - metric: ipmi_chassis_drive_fault_state
+                    name: null
+                    value: '1'
+                  - metric: ipmi_chassis_power_state
+                    name: null
+                    value: '1'
+                  - metric: ipmi_fan_speed_ratio
+                    name: Fan 1 DutyCycle
+                    value: '0.4194'
+                  - metric: ipmi_fan_speed_ratio
+                    name: Fan 2 DutyCycle
+                    value: '0.4194'
+                  - metric: ipmi_fan_speed_ratio
+                    name: Fan 3 DutyCycle
+                    value: '0.4194'
+                  - metric: ipmi_fan_speed_state
+                    name: Fan 1 DutyCycle
+                    value: '0'
+                  - metric: ipmi_fan_speed_state
+                    name: Fan 2 DutyCycle
+                    value: '0'
+                  - metric: ipmi_fan_speed_state
+                    name: Fan 3 DutyCycle
+                    value: '0'
+                  - metric: ipmi_sensor_state
+                    name: SysHealth_Stat
+                    value: '0'
+                  - metric: ipmi_sensor_state
+                    name: Fan 1
+                    value: '0'
+                  - metric: ipmi_sensor_state
+                    name: Fan 1 Presence
+                    value: '0'
+                  - metric: ipmi_sensor_state
+                    name: Fan 2
+                    value: '0'
+                  - metric: ipmi_sensor_state
+                    name: Fan 2 Presence
+                    value: '0'
+                  - metric: ipmi_sensor_state
+                    name: Fan 3
+                    value: '0'
+                  - metric: ipmi_sensor_state
+                    name: Fan 3 Presence
+                    value: '0'
+                  - metric: ipmi_sensor_state
+                    name: Memory Status
+                    value: '0'
+                  - metric: ipmi_sensor_state
+                    name: CPU_Stat_C1
+                    value: '0'
+                  - metric: ipmi_temperature_celsius
+                    name: 01-Inlet Ambient
+                    value: '22'
+                  - metric: ipmi_temperature_celsius
+                    name: 02-CPU 1
+                    value: '40'
+                  - metric: ipmi_temperature_celsius
+                    name: 03-P1 DIMM 1-4
+                    value: '29'
+                  - metric: ipmi_temperature_celsius
+                    name: 06-Chipset
+                    value: '40'
+                  - metric: ipmi_temperature_celsius
+                    name: 07-VR P1
+                    value: '34'
+                  - metric: ipmi_temperature_celsius
+                    name: 09-BMC
+                    value: '61'
+                  - metric: ipmi_temperature_celsius
+                    name: 10-BMC Zone
+                    value: '25'
+                  - metric: ipmi_temperature_celsius
+                    name: 11-System Board
+                    value: '30'
+                  - metric: ipmi_temperature_celsius
+                    name: 14-PCI 1 Zone
+                    value: '32'
+                  - metric: ipmi_temperature_celsius
+                    name: 15-PCI 2 Zone
+                    value: '34'
+                  - metric: ipmi_temperature_celsius
+                    name: 17-HD Cntlr Zone
+                    value: '31'
+                  - metric: ipmi_temperature_celsius
+                    name: 18.1-LOM-Communi
+                    value: '48'
+                  - metric: ipmi_temperature_state
+                    name: 01-Inlet Ambient
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 02-CPU 1
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 03-P1 DIMM 1-4
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 06-Chipset
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 07-VR P1
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 09-BMC
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 10-BMC Zone
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 11-System Board
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 14-PCI 1 Zone
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 15-PCI 2 Zone
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 17-HD Cntlr Zone
+                    value: '0'
+                  - metric: ipmi_temperature_state
+                    name: 18.1-LOM-Communi
+                    value: '0'
+                  - metric: ipmi_up
+                    name: null
+                    value: '1'
+                  - metric: ipmi_up
+                    name: null
+                    value: '1'
+                  - metric: ipmi_up
+                    name: null
+                    value: '1'
+                  - metric: up
+                    name: null
+                    value: '1'
+          schema:
+            $ref: ../components/schemas/getHardwareMonitoringListResult.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/403.yaml
+  summary: Show hardware monitoring data for all servers
+  tags:
+    - Dedicated Servers
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/bareMetals_v2_hardwareMonitoring/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/bareMetals_v2_hardwareMonitoring/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/bareMetals_v2_hardwareMonitoring/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/bareMetals_v2_hardwareMonitoring/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/bareMetals_v2_hardwareMonitoring/getundefined

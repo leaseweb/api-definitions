@@ -1,0 +1,46 @@
+parameters:
+  - $ref: ../components/parameters/autoScalingGroupId.yaml
+post:
+  description: Refresh image for auto scaling group
+  operationId: refreshAutoScalingGroupImage
+  responses:
+    '202':
+      description: >-
+        Request has been accepted. Auto scaling group template will refresh and
+        its main instance will be ran
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Refresh auto scaling group image
+  tags:
+    - Public Clouds
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_refreshImage/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_refreshImage/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_refreshImage/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_refreshImage/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_autoScalingGroups_{autoScalingGroupId}_refreshImage/postundefined
