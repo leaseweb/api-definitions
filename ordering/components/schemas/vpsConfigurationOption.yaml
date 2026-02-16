@@ -1,0 +1,14 @@
+type: object
+properties:
+  name:
+    description: Option name
+    type: string
+  selected:
+    description: Whether this option is selected
+    type: boolean
+  price:
+    description: Price for this option
+    type: number
+  currency:
+    description: Currency for the price
+    type: string

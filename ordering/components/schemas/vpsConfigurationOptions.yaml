@@ -1,0 +1,29 @@
+type: object
+properties:
+  configurationOptions:
+    title: configurationOptions
+    description: Available configuration options for the VPS
+    type: object
+    properties:
+      diskUpgrade:
+        description: >-
+          Available disk upgrade options. Note: This will add additional storage
+          on top of the base NVMe Storage included with your package
+        type: array
+        items:
+          $ref: ./vpsConfigurationOption.yaml
+      operatingSystem:
+        description: Available operating system options
+        type: array
+        items:
+          $ref: ./vpsConfigurationOption.yaml
+      controlPanel:
+        description: Available control panel options
+        type: array
+        items:
+          $ref: ./vpsConfigurationOption.yaml
+      serviceLevelAgreement:
+        description: Available SLA options
+        type: array
+        items:
+          $ref: ./vpsConfigurationOption.yaml

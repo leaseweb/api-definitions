@@ -1,0 +1,9 @@
+default: 1_MONTH
+description: Billing cycle period
+example: 1_MONTH
+type: string
+enum:
+  - 1_MONTH
+  - 3_MONTHS
+  - 6_MONTHS
+  - 1_YEAR

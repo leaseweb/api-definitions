@@ -1,0 +1,7 @@
+description: The VPS ID
+example: VPS02_1
+in: path
+name: vpsId
+required: true
+schema:
+  type: string

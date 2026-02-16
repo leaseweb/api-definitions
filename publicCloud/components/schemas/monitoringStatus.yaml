@@ -1,0 +1,8 @@
+title: monitoringStatus
+type: string
+description: Monitoring status
+enum:
+  - UP
+  - DOWN
+  - NOT_MONITORED
+  - UNKNOWN

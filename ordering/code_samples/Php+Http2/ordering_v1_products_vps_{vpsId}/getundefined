@@ -1,0 +1,25 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/ordering/v1/products/vps/VPS02_1');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'location' => 'AMS-01',
+  'diskUpgrade' => '100 GB',
+  'operatingSystem' => 'Ubuntu 24.04',
+  'controlPanel' => 'Plesk Web Pro Edition (30 Domains) for VPS',
+  'contractTerm' => '3_YEARS',
+  'billingCycle' => '1_MONTH',
+  'serviceLevelAgreement' => 'Basic'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

@@ -1,0 +1,121 @@
+get:
+  description: |
+    Get a list of VPS and its price.
+  operationId: getVpsList
+  parameters:
+    - name: location
+      in: query
+      required: false
+      schema:
+        description: The datacenter location
+        example: AMS-01
+        type: string
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 6
+              offset: 0
+              totalCount: 6
+            vpss:
+              - id: VPS02_1
+                name: Leaseweb VPS 1
+                vCpu: '4'
+                vRam: '6'
+                nvmeStorage: 100 GB
+                traffic: 30 TB Volume
+                price:
+                  currency: EUR
+                  basePrice: 3.59
+                  discount: 0
+                  total: 3.59
+              - id: VPS02_2
+                name: Leaseweb VPS 2
+                vCpu: '6'
+                vRam: '16'
+                nvmeStorage: 200 GB
+                traffic: 30 TB Volume
+                price:
+                  currency: EUR
+                  basePrice: 8.09
+                  discount: 0
+                  total: 8.09
+              - id: VPS02_3
+                name: Leaseweb VPS 3
+                vCpu: '8'
+                vRam: '24'
+                nvmeStorage: 300 GB
+                traffic: 30 TB Volume
+                price:
+                  currency: EUR
+                  basePrice: 12.59
+                  discount: 0
+                  total: 12.59
+              - id: VPS02_4
+                name: Leaseweb VPS 4
+                vCpu: '12'
+                vRam: '48'
+                nvmeStorage: 400 GB
+                traffic: 30 TB Volume
+                price:
+                  currency: EUR
+                  basePrice: 23.38
+                  discount: -2.33
+                  total: 21.05
+              - id: VPS02_5
+                name: Leaseweb VPS 5
+                vCpu: '16'
+                vRam: '64'
+                nvmeStorage: 500 GB
+                traffic: 30 TB Volume
+                price:
+                  currency: EUR
+                  basePrice: 30.59
+                  discount: -4.59
+                  total: 26
+              - id: VPS02_6
+                name: Leaseweb VPS 6
+                vCpu: '24'
+                vRam: '120'
+                nvmeStorage: 600 GB
+                traffic: 30 TB Volume
+                price:
+                  currency: EUR
+                  basePrice: 59.39
+                  discount: -11.88
+                  total: 47.51
+          schema:
+            $ref: ../components/schemas/vpsList.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get a list of available VPS products and their prices.
+  tags:
+    - Ordering
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/ordering_v1_products_vps/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/ordering_v1_products_vps/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/ordering_v1_products_vps/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ordering_v1_products_vps/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/ordering_v1_products_vps/getundefined

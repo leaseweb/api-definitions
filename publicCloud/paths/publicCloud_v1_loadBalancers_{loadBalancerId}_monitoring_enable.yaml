@@ -1,0 +1,44 @@
+parameters:
+  - $ref: ../components/parameters/loadBalancerId.yaml
+post:
+  description: Enable service monitoring
+  operationId: enableLoadBalancerMonitoring
+  responses:
+    '204':
+      description: No content.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Enable monitoring
+  tags:
+    - Public Clouds
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_enable/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_enable/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_enable/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_enable/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_enable/postundefined

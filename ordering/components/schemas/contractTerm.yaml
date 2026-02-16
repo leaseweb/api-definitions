@@ -1,0 +1,11 @@
+default: 1_YEAR
+description: Order contract term
+example: 3_YEARS
+type: string
+enum:
+  - 1_MONTH
+  - 3_MONTHS
+  - 6_MONTHS
+  - 1_YEAR
+  - 2_YEARS
+  - 3_YEARS

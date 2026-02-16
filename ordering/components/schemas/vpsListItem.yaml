@@ -1,0 +1,37 @@
+type: object
+properties:
+  id:
+    description: Id of the VPS
+    type: string
+  name:
+    description: Name of the VPS
+    type: string
+  vCpu:
+    description: Number of virtual CPUs
+    type: string
+  vRam:
+    description: Virtual RAM in GB
+    type: string
+  nvmeStorage:
+    description: NVMe storage capacity
+    type: string
+  traffic:
+    description: Traffic allowance
+    type: string
+  price:
+    title: vpsListItemPrice
+    description: Price summary of the VPS
+    type: object
+    properties:
+      currency:
+        description: Price's currency
+        type: string
+      basePrice:
+        description: Base price
+        type: number
+      discount:
+        description: Discount amount
+        type: number
+      total:
+        description: Final price
+        type: number

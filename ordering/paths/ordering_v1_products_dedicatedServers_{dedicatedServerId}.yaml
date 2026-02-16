@@ -55,6 +55,28 @@ get:
                     value: -6.175
               total: 117.32
               billingCycle: 1 month
+              billingCycles:
+                - key: 1_MONTH
+                  description: 1 month
+                  discountText: 0%
+                  discountValue: 0
+                  total: 123.5
+                - key: 3_MONTHS
+                  description: 3 months
+                  discountText: '-1%'
+                  discountValue: -1.23
+                  total: 122.26
+                - key: 6_MONTHS
+                  description: 6 months
+                  discountText: '-3%'
+                  discountValue: -3.7
+                  total: 120.93
+                - key: 1_YEAR
+                  description: 1 year
+                  discountText: '-5%'
+                  discountValue: -6.17
+                  total: 117.32
+              contractTerm: 1 year
               contractTerms:
                 - key: 1_MONTH
                   description: 1 month

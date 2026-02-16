@@ -26,6 +26,12 @@ paths:
     $ref: paths/ordering_v1_products_dedicatedServers_{dedicatedServerId}.yaml
   /ordering/v1/products/dedicatedServers/{dedicatedServerId}/order:
     $ref: paths/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order.yaml
+  /ordering/v1/products/vps:
+    $ref: paths/ordering_v1_products_vps.yaml
+  /ordering/v1/products/vps/{vpsId}:
+    $ref: paths/ordering_v1_products_vps_{vpsId}.yaml
+  /ordering/v1/products/vps/{vpsId}/order:
+    $ref: paths/ordering_v1_products_vps_{vpsId}_order.yaml
 components:
   securitySchemes:
     BearerAuth:

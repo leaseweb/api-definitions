@@ -1,0 +1,4 @@
+allOf:
+  - $ref: ./vpsDetail.yaml
+  - $ref: ./productPrice.yaml
+  - $ref: ./vpsConfigurationOptions.yaml

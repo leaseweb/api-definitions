@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/ordering/v1/products/vps/VPS02_1?location=AMS-01&diskUpgrade=100%20GB&operatingSystem=Ubuntu%2024.04&controlPanel=Plesk%20Web%20Pro%20Edition%20(30%20Domains)%20for%20VPS&contractTerm=3_YEARS&billingCycle=1_MONTH&serviceLevelAgreement=Basic' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

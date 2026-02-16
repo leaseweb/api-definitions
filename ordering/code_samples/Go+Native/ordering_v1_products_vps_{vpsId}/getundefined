@@ -1,0 +1,25 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://api.leaseweb.com/ordering/v1/products/vps/VPS02_1?location=AMS-01&diskUpgrade=100%20GB&operatingSystem=Ubuntu%2024.04&controlPanel=Plesk%20Web%20Pro%20Edition%20(30%20Domains)%20for%20VPS&contractTerm=3_YEARS&billingCycle=1_MONTH&serviceLevelAgreement=Basic"
+
+	req, _ := http.NewRequest("GET", url, nil)
+
+	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(res)
+	fmt.Println(string(body))
+
+}

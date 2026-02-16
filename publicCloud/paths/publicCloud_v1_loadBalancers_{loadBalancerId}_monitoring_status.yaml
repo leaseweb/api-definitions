@@ -1,8 +1,8 @@
 parameters:
-  - $ref: ../components/parameters/vpsId.yaml
+  - $ref: ../components/parameters/loadBalancerId.yaml
 get:
   description: Get monitoring status
-  operationId: getVpsMonitoringStatus
+  operationId: getLoadBalancerMonitoringStatus
   responses:
     '200':
       description: OK.
@@ -27,25 +27,25 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get service monitoring status
   tags:
-    - VPS
+    - Public Clouds
   x-codeSamples:
     - lang: Shell + Curl
       source:
         $ref: >-
-          ../code_samples/Shell+Curl/publicCloud_v1_vps_{vpsId}_monitoring_status/getundefined
+          ../code_samples/Shell+Curl/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_status/getundefined
     - lang: Python + Python3
       source:
         $ref: >-
-          ../code_samples/Python+Python3/publicCloud_v1_vps_{vpsId}_monitoring_status/getundefined
+          ../code_samples/Python+Python3/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_status/getundefined
     - lang: Php + Http2
       source:
         $ref: >-
-          ../code_samples/Php+Http2/publicCloud_v1_vps_{vpsId}_monitoring_status/getundefined
+          ../code_samples/Php+Http2/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_status/getundefined
     - lang: Javascript + Jquery
       source:
         $ref: >-
-          ../code_samples/Javascript+Jquery/publicCloud_v1_vps_{vpsId}_monitoring_status/getundefined
+          ../code_samples/Javascript+Jquery/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_status/getundefined
     - lang: Go + Native
       source:
         $ref: >-
-          ../code_samples/Go+Native/publicCloud_v1_vps_{vpsId}_monitoring_status/getundefined
+          ../code_samples/Go+Native/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_status/getundefined

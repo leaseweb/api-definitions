@@ -1,0 +1,3 @@
+curl --request GET \
+  --url 'https://api.leaseweb.com/ordering/v1/products/vps?location=AMS-01&limit=20&offset=10' \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

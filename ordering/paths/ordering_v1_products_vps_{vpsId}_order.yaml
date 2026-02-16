@@ -1,16 +1,22 @@
 post:
   description: |
-    Dedicated Server ordering.
-  operationId: orderDedicatedServer
+    Order a VPS
+  operationId: orderVps
+  parameters:
+    - $ref: ../components/parameters/vpsId.yaml
   requestBody:
     content:
       application/json:
         example:
-          connectedToAggregationPool: true
-          contractTerm: 1_MONTH
+          billingCycle: 1_MONTH
+          contractTerm: 1_YEAR
+          controlPanel: Plesk Web Pro Edition (30 Domains) for VPS
+          diskUpgrade: 100GB
           location: AMS-01
+          operatingSystem: Ubuntu 24.04
+          serviceLevelAgreement: Basic
         schema:
-          $ref: ../components/schemas/orderDedicatedServerOpts.yaml
+          $ref: ../components/schemas/orderVpsOpts.yaml
   responses:
     '201':
       content:
@@ -30,29 +36,29 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Dedicated Server ordering.
+  summary: VPS ordering.
   tags:
     - Ordering
   x-codeSamples:
     - lang: Shell + Curl
       source:
         $ref: >-
-          ../code_samples/Shell+Curl/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+          ../code_samples/Shell+Curl/ordering_v1_products_vps_{vpsId}_order/postundefined
     - lang: Python + Python3
       source:
         $ref: >-
-          ../code_samples/Python+Python3/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+          ../code_samples/Python+Python3/ordering_v1_products_vps_{vpsId}_order/postundefined
     - lang: Php + Http2
       source:
         $ref: >-
-          ../code_samples/Php+Http2/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+          ../code_samples/Php+Http2/ordering_v1_products_vps_{vpsId}_order/postundefined
     - lang: Javascript + Jquery
       source:
         $ref: >-
-          ../code_samples/Javascript+Jquery/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+          ../code_samples/Javascript+Jquery/ordering_v1_products_vps_{vpsId}_order/postundefined
     - lang: Go + Native
       source:
         $ref: >-
-          ../code_samples/Go+Native/ordering_v1_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+          ../code_samples/Go+Native/ordering_v1_products_vps_{vpsId}_order/postundefined
 parameters:
-  - $ref: ../components/parameters/dedicatedServerId.yaml
+  - $ref: ../components/parameters/vpsId.yaml

@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/ordering/v1/products/vps/VPS02_1/order",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"location\":\"AMS-01\",\"diskUpgrade\":\"100 GB\",\"operatingSystem\":\"Ubuntu 24.04\",\"controlPanel\":\"Plesk Web Pro Edition (30 Domains) for VPS\",\"serviceLevelAgreement\":\"Basic\",\"contractTerm\":\"3_YEARS\",\"billingCycle\":\"1_MONTH\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

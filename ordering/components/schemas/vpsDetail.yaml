@@ -1,0 +1,25 @@
+type: object
+properties:
+  id:
+    description: Id of the VPS
+    type: string
+  name:
+    description: Name of the VPS
+    type: string
+  vCpu:
+    description: Number of virtual CPUs
+    type: string
+  vRam:
+    description: Virtual RAM in GB
+    type: string
+  nvmeStorage:
+    description: Included NVMe storage
+    type: string
+  traffic:
+    description: Traffic allowance
+    type: string
+  location:
+    description: Available locations for the VPS
+    type: array
+    items:
+      type: string

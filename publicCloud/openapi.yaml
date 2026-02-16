@@ -105,6 +105,10 @@ paths:
     $ref: paths/publicCloud_v1_instances_{instanceId}_resetPassword.yaml
   /publicCloud/v1/equipments/{equipmentId}/expenses:
     $ref: paths/publicCloud_v1_equipments_{equipmentId}_expenses.yaml
+  /publicCloud/v1/instance/{instanceId}/monitoring/status:
+    $ref: paths/publicCloud_v1_instance_{instanceId}_monitoring_status.yaml
+  /publicCloud/v1/instance/{instanceId}/monitoring/enable:
+    $ref: paths/publicCloud_v1_instance_{instanceId}_monitoring_enable.yaml
   /publicCloud/v1/isos:
     $ref: paths/publicCloud_v1_isos.yaml
   /publicCloud/v1/images:
@@ -130,6 +134,10 @@ paths:
   /publicCloud/v1/loadBalancers/{loadBalancerId}/listeners/{listenerId}:
     $ref: >-
       paths/publicCloud_v1_loadBalancers_{loadBalancerId}_listeners_{listenerId}.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/monitoring/status:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_status.yaml
+  /publicCloud/v1/loadBalancers/{loadBalancerId}/monitoring/enable:
+    $ref: paths/publicCloud_v1_loadBalancers_{loadBalancerId}_monitoring_enable.yaml
   /publicCloud/v1/instances/{instanceId}/ips:
     $ref: paths/publicCloud_v1_instances_{instanceId}_ips.yaml
   /publicCloud/v1/loadBalancers/{loadBalancerId}/ips:

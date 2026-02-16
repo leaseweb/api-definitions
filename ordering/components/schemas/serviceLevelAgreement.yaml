@@ -1,0 +1,9 @@
+description: Service level agreement option
+example: Basic
+type: string
+enum:
+  - Basic
+  - Bronze
+  - Silver
+  - Gold
+  - Platinum

@@ -1,0 +1,120 @@
+properties:
+  price:
+    description: Price details of the product
+    type: object
+    properties:
+      currency:
+        description: Price's currency
+        type: string
+      basePrice:
+        description: Initial price
+        type: number
+      tax:
+        description: Tax
+        type: number
+      setupFee:
+        description: Setup Fee
+        type: number
+      fee:
+        description: Fee amount
+        type: number
+      discounts:
+        title: productDiscounts
+        description: Discounts details
+        type: object
+        properties:
+          total:
+            description: Total discounts
+            type: number
+          details:
+            description: Discount details
+            type: array
+            items:
+              title: discountItems
+              type: object
+              properties:
+                description:
+                  description: Discount description
+                  type: string
+                value:
+                  description: Discount value
+                  type: number
+      total:
+        description: Final price
+        type: number
+      contractTerm:
+        description: Selected contract term
+        type: string
+        enum:
+          - 1 month
+          - 3 months
+          - 6 months
+          - 1 year
+          - 2 years
+          - 3 years
+      contractTerms:
+        title: contractTerms
+        description: Available contract terms
+        type: array
+        items:
+          title: contractTermItem
+          type: object
+          properties:
+            key:
+              description: Contract term key
+              type: string
+              enum:
+                - 1_MONTH
+                - 3_MONTHS
+                - 6_MONTHS
+                - 1_YEAR
+                - 2_YEARS
+                - 3_YEARS
+            description:
+              description: Contract term description
+              type: string
+            discountText:
+              description: Discount in percentage
+              type: string
+            discountValue:
+              description: Discount value
+              type: number
+            total:
+              description: Total price with discount
+              type: number
+      billingCycle:
+        description: Selected billing cycle
+        type: string
+        enum:
+          - 1 month
+          - 3 months
+          - 6 months
+          - 1 year
+      billingCycles:
+        title: billingCycles
+        description: Available billing cycles
+        type: array
+        items:
+          title: billingCycleItem
+          type: object
+          properties:
+            key:
+              description: Billing cycle key
+              type: string
+              enum:
+                - 1_MONTH
+                - 3_MONTHS
+                - 6_MONTHS
+                - 1_YEAR
+            description:
+              description: Billing cycle description
+              type: string
+            discountText:
+              description: Discount in percentage
+              type: string
+            discountValue:
+              description: Discount value
+              type: number
+            total:
+              description: Total price with discount
+              type: number

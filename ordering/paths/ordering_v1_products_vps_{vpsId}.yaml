@@ -1,0 +1,314 @@
+get:
+  description: |
+    Get a single VPS and its price.
+  operationId: getVps
+  parameters:
+    - $ref: ../components/parameters/vpsId.yaml
+    - name: location
+      in: query
+      required: true
+      schema:
+        description: The datacenter location
+        example: AMS-01
+        type: string
+    - name: diskUpgrade
+      in: query
+      required: false
+      schema:
+        description: Disk upgrade option
+        example: 100 GB
+        type: string
+    - name: operatingSystem
+      in: query
+      required: false
+      schema:
+        description: Operating system option
+        example: Ubuntu 24.04
+        type: string
+    - name: controlPanel
+      in: query
+      required: false
+      schema:
+        description: Control panel option
+        example: Plesk Web Pro Edition (30 Domains) for VPS
+        type: string
+    - name: contractTerm
+      in: query
+      required: false
+      schema:
+        default: 1_YEAR
+        description: Order contract term
+        example: 3_YEARS
+        type: string
+        enum:
+          - 1_MONTH
+          - 3_MONTHS
+          - 6_MONTHS
+          - 1_YEAR
+          - 2_YEARS
+          - 3_YEARS
+    - name: billingCycle
+      in: query
+      required: false
+      schema:
+        default: 1_MONTH
+        description: Billing cycle period
+        example: 1_MONTH
+        type: string
+        enum:
+          - 1_MONTH
+          - 3_MONTHS
+          - 6_MONTHS
+          - 1_YEAR
+    - name: serviceLevelAgreement
+      in: query
+      required: false
+      schema:
+        description: Service level agreement option
+        example: Basic
+        type: string
+        enum:
+          - Basic
+          - Bronze
+          - Silver
+          - Gold
+          - Platinum
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            configurationOptions:
+              diskUpgrade:
+                - name: 0 GB
+                  selected: true
+                  price: 0
+                  currency: EUR
+                - name: 100 GB
+                  selected: false
+                  price: 3
+                  currency: EUR
+                - name: 200 GB
+                  selected: false
+                  price: 6
+                  currency: EUR
+                - name: 300 GB
+                  selected: false
+                  price: 9
+                  currency: EUR
+                - name: 500 GB
+                  selected: false
+                  price: 15
+                  currency: EUR
+                - name: 1000 GB
+                  selected: false
+                  price: 30
+                  currency: EUR
+                - name: 50 GB
+                  selected: false
+                  price: 1.5
+                  currency: EUR
+              operatingSystem:
+                - name: Ubuntu 20.04
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: FreeBSD 13
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: AlmaLinux 8
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: Debian 11
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: RockyLinux 8
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: Ubuntu 22.04
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: Rocky Linux 9
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: AlmaLinux 9
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: Debian 12
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: FreeBSD 14
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: Ubuntu 24.04
+                  selected: true
+                  price: 0
+                  currency: EUR
+                - name: Rockylinux 10
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: Almalinux 10
+                  selected: false
+                  price: 0
+                  currency: EUR
+              controlPanel:
+                - name: No Control Panel
+                  selected: true
+                  price: 0
+                  currency: EUR
+                - name: Plesk Web Pro Edition (30 Domains) for VPS
+                  selected: false
+                  price: 15.75
+                  currency: EUR
+                - name: Plesk Web Admin Edition (10 Domains) for VPS
+                  selected: false
+                  price: 9
+                  currency: EUR
+                - name: Plesk Web Host Edition - Unlimited Domains
+                  selected: false
+                  price: 28.75
+                  currency: EUR
+              serviceLevelAgreement:
+                - name: Basic
+                  selected: true
+                  price: 0
+                  currency: EUR
+                - name: Bronze
+                  selected: false
+                  price: 31
+                  currency: EUR
+                - name: Silver
+                  selected: false
+                  price: 53
+                  currency: EUR
+                - name: Gold
+                  selected: false
+                  price: 85.3
+                  currency: EUR
+                - name: Platinum
+                  selected: false
+                  price: 129
+                  currency: EUR
+            id: VPS02_1
+            location:
+              - AMS-01
+            name: Leaseweb VPS 1
+            nvmeStorage: 100 GB
+            price:
+              currency: EUR
+              basePrice: 3.99
+              tax: 0
+              setupFee: 0
+              fee: 3.59
+              discounts:
+                total: -0.4
+                details:
+                  - description: Contract and Billing Term Discount
+                    value: -0.4
+              total: 3.59
+              contractTerm: 1 year
+              contractTerms:
+                - key: 1_MONTH
+                  description: 1 month
+                  discountText: 0%
+                  discountValue: 0
+                  total: 3.99
+                - key: 3_MONTHS
+                  description: 3 months
+                  discountText: '-3%'
+                  discountValue: -3
+                  total: 3.87
+                - key: 6_MONTHS
+                  description: 6 months
+                  discountText: '-5%'
+                  discountValue: -5
+                  total: 3.79
+                - key: 1_YEAR
+                  description: 1 year
+                  discountText: '-10%'
+                  discountValue: -10
+                  total: 3.59
+                - key: 2_YEARS
+                  description: 2 years
+                  discountText: '-20%'
+                  discountValue: -20
+                  total: 3.19
+                - key: 3_YEARS
+                  description: 3 years
+                  discountText: '-25%'
+                  discountValue: -25
+                  total: 2.99
+              billingCycle: 1 month
+              billingCycles:
+                - key: 1_MONTH
+                  description: 1 month
+                  discountText: 0%
+                  discountValue: 0
+                  total: 3.99
+                - key: 3_MONTHS
+                  description: 3 months
+                  discountText: '-2%'
+                  discountValue: -2
+                  total: 3.91
+                - key: 6_MONTHS
+                  description: 6 months
+                  discountText: '-3%'
+                  discountValue: -3
+                  total: 3.87
+                - key: 1_YEAR
+                  description: 1 year
+                  discountText: '-5%'
+                  discountValue: -5
+                  total: 3.79
+            traffic: 30 TB Volume
+            vCpu: '4'
+            vRam: '6'
+          schema:
+            $ref: ../components/schemas/vps.yaml
+      description: Ok.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get a single VPS and its price.
+  tags:
+    - Ordering
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ordering_v1_products_vps_{vpsId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ordering_v1_products_vps_{vpsId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/ordering_v1_products_vps_{vpsId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ordering_v1_products_vps_{vpsId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/ordering_v1_products_vps_{vpsId}/getundefined
+parameters:
+  - $ref: ../components/parameters/vpsId.yaml

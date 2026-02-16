@@ -1,0 +1,18 @@
+properties:
+  location:
+    $ref: ./location.yaml
+  diskUpgrade:
+    $ref: ./diskUpgrade.yaml
+  operatingSystem:
+    $ref: ./operatingSystem.yaml
+  controlPanel:
+    $ref: ./controlPanel.yaml
+  serviceLevelAgreement:
+    $ref: ./serviceLevelAgreement.yaml
+  contractTerm:
+    $ref: ./contractTerm.yaml
+  billingCycle:
+    $ref: ./billingCycle.yaml
+required:
+  - location
+type: object
