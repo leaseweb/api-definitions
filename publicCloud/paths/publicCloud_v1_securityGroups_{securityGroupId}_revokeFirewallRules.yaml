@@ -30,7 +30,7 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Remove firewall rules from security group
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

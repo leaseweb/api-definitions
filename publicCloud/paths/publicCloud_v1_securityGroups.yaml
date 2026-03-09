@@ -40,7 +40,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get Security Group list
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -94,7 +94,7 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create Security Group
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

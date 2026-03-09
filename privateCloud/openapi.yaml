@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Private Clouds
+  title: Private Cloud
   version: v2
   description: '> The base URL for this API is: **https://api.leaseweb.com/cloud/v2/**'
   x-logo:

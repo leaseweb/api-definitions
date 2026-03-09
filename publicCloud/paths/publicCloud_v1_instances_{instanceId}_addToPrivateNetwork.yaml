@@ -25,7 +25,7 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Add instance to Private Network
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

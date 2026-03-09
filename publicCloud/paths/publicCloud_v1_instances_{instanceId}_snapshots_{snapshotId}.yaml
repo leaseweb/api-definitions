@@ -27,7 +27,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get snapshot detail
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -70,7 +70,7 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Restore instance snapshot
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -113,7 +113,7 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete instance snapshot
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

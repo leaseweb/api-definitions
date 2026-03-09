@@ -43,7 +43,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get Instance Security Groups
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

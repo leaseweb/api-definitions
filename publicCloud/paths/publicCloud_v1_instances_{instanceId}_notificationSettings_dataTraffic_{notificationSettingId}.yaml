@@ -36,7 +36,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get details of a notification Setting
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -111,7 +111,7 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create a notification setting
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -183,7 +183,7 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Update Notification Setting details
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -222,7 +222,7 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete a notification setting setting
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

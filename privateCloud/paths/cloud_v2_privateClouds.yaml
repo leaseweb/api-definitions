@@ -289,7 +289,7 @@ get:
               errorMessage:
                 type: string
   tags:
-    - Private Clouds
+    - Private Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

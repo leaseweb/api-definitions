@@ -49,7 +49,7 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Update Custom Image
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

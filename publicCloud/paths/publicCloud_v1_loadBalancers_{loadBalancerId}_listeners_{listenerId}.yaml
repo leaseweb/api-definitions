@@ -44,7 +44,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get listener details
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -200,7 +200,7 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Update a listener
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -242,7 +242,7 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete load balancer listener
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

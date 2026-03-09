@@ -31,7 +31,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List available ISOs
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -71,7 +71,7 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create Auto Scaling Group
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -231,7 +231,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get Auto Scaling Group list
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

@@ -38,7 +38,7 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Remove an IP null route for a specific Instance
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

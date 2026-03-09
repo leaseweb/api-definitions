@@ -26,7 +26,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get Security Group details
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -85,7 +85,7 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Update Security Group
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -127,7 +127,7 @@ delete:
       $ref: ../components/responses/503.yaml
   summary: Delete Security Group
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

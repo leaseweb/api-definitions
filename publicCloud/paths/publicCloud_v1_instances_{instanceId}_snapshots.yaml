@@ -35,7 +35,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List snapshots
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -93,7 +93,7 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Create instance snapshot
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

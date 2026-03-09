@@ -47,7 +47,7 @@ get:
     Get load balancer requests metrics. Not available for listeners with TCP
     protocol
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

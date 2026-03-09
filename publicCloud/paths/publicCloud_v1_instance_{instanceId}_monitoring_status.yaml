@@ -27,7 +27,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get service monitoring status
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

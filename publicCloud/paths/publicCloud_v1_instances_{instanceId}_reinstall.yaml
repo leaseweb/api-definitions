@@ -42,7 +42,7 @@ put:
       $ref: ../components/responses/503.yaml
   summary: Reinstall an Instance
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:

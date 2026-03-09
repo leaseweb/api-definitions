@@ -56,7 +56,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: Get load balancer data transferred per second metrics
   tags:
-    - Public Clouds
+    - Public Cloud
   x-codeSamples:
     - lang: Shell + Curl
       source:
