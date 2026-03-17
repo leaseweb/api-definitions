@@ -23,25 +23,36 @@ get:
               - id: '000000'
                 subject: Report description
                 status: OPEN
+                tags:
+                  - Copyright
+                  - Infringement
                 reportedAt: '2015-01-01T00:00:00+00:00'
                 updatedAt: '2015-01-01T00:00:00+00:00'
+                notifiedAt: '2015-01-01T00:00:00+00:00'
                 notifier: REDACTED_FOR_PRIVACY
+                owner: john.doe@example.com
                 customerId: '10000001'
                 legalEntityId: '2000'
                 deadline: '2015-01-01T00:00:00+00:00'
                 detectedIpAddresses:
                   - 127.0.0.1
+                isNullRouted: true
               - id: '000001'
                 subject: Report description
                 status: CLOSED
+                tags:
+                  - SLM
                 reportedAt: '2015-01-01T00:00:00+00:00'
                 updatedAt: '2015-01-01T00:00:00+00:00'
+                notifiedAt: '2015-01-01T00:00:00+00:00'
                 notifier: REDACTED_FOR_PRIVACY
+                owner: jane.doe@example.com
                 customerId: '10000001'
                 legalEntityId: '2600'
                 deadline: '2015-01-01T00:00:00+00:00'
                 detectedIpAddresses:
                   - 127.0.0.1
+                isNullRouted: false
           schema:
             $ref: ../components/schemas/getReportListResult.yaml
     '400':
