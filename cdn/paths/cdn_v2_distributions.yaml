@@ -7,8 +7,8 @@ post:
 
     Available distribution types:
 
-    - DISTRIBUTION_VOLUME
-    - DISTRIBUTION_PREMIUM
+    - MULTI_CDN_VOLUME
+    - MULTI_CDN_PREMIUM
     - SHIELD_CDN
   operationId: create_distribution_v1_distributions_post
   requestBody:
@@ -20,7 +20,7 @@ post:
         examples:
           Create Volume Distribution:
             value:
-              resourceType: DISTRIBUTION_VOLUME
+              resourceType: MULTI_CDN_VOLUME
               data:
                 - key: description
                   value: Test Volume Distribution
@@ -30,7 +30,7 @@ post:
                   value: false
           Create Premium Distribution:
             value:
-              resourceType: DISTRIBUTION_PREMIUM
+              resourceType: MULTI_CDN_PREMIUM
               data:
                 - key: description
                   value: Test Premium Distribution

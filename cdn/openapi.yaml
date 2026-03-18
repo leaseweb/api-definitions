@@ -81,6 +81,8 @@ paths:
     $ref: paths/cdn_v2_distributions.yaml
   /cdn/v2/distributions/{distribution_id}:
     $ref: paths/cdn_v2_distributions_{distribution_id}.yaml
+  /cdn/v2/distributions/{distribution_id}/push:
+    $ref: paths/cdn_v2_distributions_{distribution_id}_push.yaml
   /cdn/v2/distributions/{distribution_id}/domains:
     $ref: paths/cdn_v2_distributions_{distribution_id}_domains.yaml
   /cdn/v2/distributions/{distribution_id}/domains/{domain_id}:
