@@ -13,7 +13,7 @@ func main() {
 
 	payload := strings.NewReader("{\"routingType\":\"WEIGHTED\",\"routes\":[{\"addressType\":\"IPV4\",\"weights\":[{\"weight\":0,\"address\":\"string\"}]}]}")
 
-	req, _ := http.NewRequest("PATCH", url, payload)
+	req, _ := http.NewRequest("PUT", url, payload)
 
 	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
 	req.Header.Add("content-type", "application/json")

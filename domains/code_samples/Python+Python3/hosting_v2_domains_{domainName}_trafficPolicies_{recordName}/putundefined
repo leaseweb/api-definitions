@@ -9,7 +9,7 @@ headers = {
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/hosting/v2/domains/example.com/trafficPolicies/test.example.com", payload, headers)
+conn.request("PUT", "/hosting/v2/domains/example.com/trafficPolicies/test.example.com", payload, headers)
 
 res = conn.getresponse()
 data = res.read()

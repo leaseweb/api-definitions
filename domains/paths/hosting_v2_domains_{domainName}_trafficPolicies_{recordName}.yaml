@@ -442,7 +442,7 @@ post:
       source:
         $ref: >-
           ../code_samples/Go+Native/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/postundefined
-patch:
+put:
   description: Modify the TTL or policies for a given domain and record name.
   operationId: updateTrafficPolicies
   requestBody:
@@ -700,23 +700,23 @@ patch:
     - lang: Shell + Curl
       source:
         $ref: >-
-          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/patchundefined
+          ../code_samples/Shell+Curl/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/putundefined
     - lang: Python + Python3
       source:
         $ref: >-
-          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/patchundefined
+          ../code_samples/Python+Python3/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/putundefined
     - lang: Php + Http2
       source:
         $ref: >-
-          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/patchundefined
+          ../code_samples/Php+Http2/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/putundefined
     - lang: Javascript + Jquery
       source:
         $ref: >-
-          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/patchundefined
+          ../code_samples/Javascript+Jquery/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/putundefined
     - lang: Go + Native
       source:
         $ref: >-
-          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/patchundefined
+          ../code_samples/Go+Native/hosting_v2_domains_{domainName}_trafficPolicies_{recordName}/putundefined
 delete:
   description: Delete traffic policies for a given domain and record name.
   operationId: deleteTrafficPolicies
