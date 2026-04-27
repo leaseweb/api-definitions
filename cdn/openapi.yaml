@@ -4,6 +4,9 @@ info:
   title: CDN
   summary: ''
   description: '> The base URL for this API is: **https://api.leaseweb.com/cdn/v2**'
+  license:
+    name: Apache 2.0
+    url: http://developer.leaseweb.com
   x-logo:
     url: https://developer.leaseweb.com/images/logo.png
     altText: Leaseweb CDN API Documentation
@@ -105,6 +108,9 @@ paths:
     $ref: paths/cdn_v2_statistics_customer_totals.yaml
 components:
   securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
     X-LSW-Auth:
       name: X-LSW-Auth
       type: apiKey

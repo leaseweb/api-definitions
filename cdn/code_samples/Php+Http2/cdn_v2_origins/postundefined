@@ -4,7 +4,7 @@ $client = new http\Client;
 $request = new http\Client\Request;
 
 $body = new http\Message\Body;
-$body->append('{"resourceType":"SIMPLE_ORIGIN","data":[{"key":"host","value":"backend.leaseweb.com"},{"key":"description","value":"Leaseweb Backend"},{"key":"enabled","value":true}]}');
+$body->append('{"resourceType":"string","data":[{"key":"string","value":"string"}]}');
 
 $request->setRequestUrl('https://api.leaseweb.com/cdn/v2/origins');
 $request->setRequestMethod('POST');

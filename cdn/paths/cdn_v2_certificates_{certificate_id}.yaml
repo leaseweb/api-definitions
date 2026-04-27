@@ -1,45 +1,31 @@
+parameters:
+  - $ref: ../components/parameters/certificateId.yaml
 get:
-  tags:
-    - CDN
-  summary: Get Certificate By Id
-  description: Get the details of a certificate by its ID
-  operationId: get_certificate_by_id_v1_certificates__certificate_id__get
-  parameters:
-    - name: certificate_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Certificate Id
+  description: |
+    Get the details of a certificate by its ID
+  operationId: getCertificate
   responses:
     '200':
       description: Successful Response
       content:
         application/json:
           schema:
-            title: >-
-              Response Get Certificate By Id V1 Certificates  Certificate Id 
-              Get
-            anyOf:
-              - $ref: ../components/schemas/NoValidationCertificate.yaml
-              - $ref: ../components/schemas/Certificate.yaml
-          examples:
-            Certificate:
-              value:
-                description: Main LSW Certificate 2024
-                certificate: Hidden for security reasons
-                privateKey: Hidden for security reasons
-                caBundle: Hidden for security reasons
-                id: ce-5g8wbh25
-                commonName: c1
-                issuer: c1
-                valid: true
-                trusted: true
-                daysLeft: 364
-                validFrom: 1723118047
-                validUntil: 1754646847
-                created: '2024-03-19T08:15:23'
-                updated: '2024-03-19T08:15:23'
+            $ref: ../components/schemas/getCertificateResult.yaml
+          example:
+            caBundle: Hidden for security reasons
+            certificate: Hidden for security reasons
+            commonName: c1
+            created: '2024-03-19T08:15:23'
+            daysLeft: 364
+            description: Main LSW Certificate 2024
+            id: ce-5g8wbh25
+            issuer: c1
+            privateKey: Hidden for security reasons
+            trusted: true
+            updated: '2024-03-19T08:15:23'
+            valid: true
+            validFrom: 1723118047
+            validUntil: 1754646847
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -48,18 +34,13 @@ get:
       $ref: ../components/responses/403.yaml
     '404':
       $ref: ../components/responses/404.yaml
-    '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Get Certificate By Id
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -82,20 +63,12 @@ get:
         $ref: >-
           ../code_samples/Go+Native/cdn_v2_certificates_{certificate_id}/getundefined
 delete:
-  tags:
-    - CDN
-  summary: Delete Certificate By Id
-  operationId: delete_certificate_by_id_v1_certificates__certificate_id__delete
-  parameters:
-    - name: certificate_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Certificate Id
+  description: |
+    Delete a certificate by its ID
+  operationId: deleteCertificate
   responses:
     '204':
-      description: No Content
+      $ref: ../components/responses/204.yaml
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -104,18 +77,13 @@ delete:
       $ref: ../components/responses/403.yaml
     '404':
       $ref: ../components/responses/404.yaml
-    '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Delete Certificate By Id
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:

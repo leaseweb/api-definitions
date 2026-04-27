@@ -1,0 +1,8 @@
+properties:
+  resolved:
+    type: boolean
+    title: resolved
+required:
+  - resolved
+title: Resource
+type: object

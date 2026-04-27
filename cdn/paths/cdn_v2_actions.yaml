@@ -1,11 +1,8 @@
 get:
-  tags:
-    - CDN
-  summary: Get All Actions
-  description: >-
+  description: >
     Get the list of all of the actions to monitor the progress of your
     background jobs.
-  operationId: get_all_actions_v1_actions_get
+  operationId: getActions
   parameters:
     - name: filters
       in: query
@@ -28,67 +25,58 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/ListResponse_ExternalAction_.yaml
-          examples:
-            All Actions:
-              value:
-                actions:
-                  - type: INVALIDATION
-                    resource:
-                      invalidation_id: in-gt7m1s5
-                      status: FINISHED
-                      url_status:
-                        - url: https://cdn-assets.leaseweb.com/styles.css
-                          distribution_group_id: ''
-                          status: SUCCESS
-                          message: ''
-                      submitted: '2024-07-10T13:10:14'
-                      completed: null
-                    status: FINISHED
-                    id: dac57900-0109-4615-b808-003f2c07cb40
-                    customerId: '59841258'
-                    created: '2024-07-10T13:10:15Z'
-                    updated: '2024-08-08T12:52:09Z'
-                  - type: INVALIDATION
-                    resource:
-                      invalidation_id: in-80ot20ls
-                      status: FINISHED
-                      url_status:
-                        - url: https://cdn-assets.leaseweb.com/logo.png
-                          distribution_group_id: ''
-                          status: SUCCESS
-                          message: ''
-                      submitted: '2024-07-10T13:11:12'
-                      completed: null
-                    status: FINISHED
-                    id: 755ad32d-264d-4ace-bd4c-c30399c71675
-                    customerId: '59841258'
-                    created: '2024-07-10T13:11:13Z'
-                    updated: '2024-08-08T12:52:09Z'
-                _metadata:
-                  totalCount: 2
-                  limit: -1
-                  offset: 0
+            $ref: ../components/schemas/getActionsResult.yaml
+          example:
+            _metadata:
+              totalCount: 2
+              limit: 10
+              offset: 0
+            actions:
+              - type: INVALIDATION
+                resource:
+                  invalidationId: in-gt7m1s5
+                  status: FINISHED
+                  urlStatus:
+                    - url: https://cdn-assets.leaseweb.com/styles.css
+                      distribution_group_id: ''
+                      status: SUCCESS
+                      message: ''
+                  submitted: '2024-07-10T13:10:14'
+                  completed: null
+                status: FINISHED
+                id: dac57900-0109-4615-b808-003f2c07cb40
+                customerId: '59841258'
+                created: '2024-07-10T13:10:15Z'
+                updated: '2024-08-08T12:52:09Z'
+              - type: INVALIDATION
+                resource:
+                  invalidationId: in-80ot20ls
+                  status: FINISHED
+                  urlStatus:
+                    - url: https://cdn-assets.leaseweb.com/logo.png
+                      distribution_group_id: ''
+                      status: SUCCESS
+                      message: ''
+                  submitted: '2024-07-10T13:11:12'
+                  completed: null
+                status: FINISHED
+                id: 755ad32d-264d-4ace-bd4c-c30399c71675
+                customerId: '59841258'
+                created: '2024-07-10T13:11:13Z'
+                updated: '2024-08-08T12:52:09Z'
     '400':
       $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':
       $ref: ../components/responses/403.yaml
-    '404':
-      $ref: ../components/responses/404.yaml
-    '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Get All Actions
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:

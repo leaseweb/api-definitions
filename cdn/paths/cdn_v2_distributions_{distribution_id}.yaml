@@ -1,50 +1,41 @@
+parameters:
+  - $ref: ../components/parameters/distributionId.yaml
 get:
-  tags:
-    - CDN
-  summary: Get Distribution By Id
-  description: Get the general details of a distribution by its ID.
-  operationId: get_distribution_by_id_v1_distributions__distribution_id__get
-  parameters:
-    - name: distribution_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Distribution Id
+  description: |
+    Get the general details of a distribution by its ID.
+  operationId: getDistribution
   responses:
     '200':
       description: Successful Response
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Resource.yaml
-          examples:
-            Volume Distribution:
-              value:
-                resourceType: DISTRIBUTION_VOLUME
-                data:
-                  - key: description
-                    value: Test Volume Distribution
-                  - key: enabled
-                    value: true
-                  - key: ipv6
-                    value: false
-                  - key: tls
-                    value: false
-                  - key: tlsType
-                    value: null
-                  - key: certificateId
-                    value: null
-                  - key: logging
-                    value: false
-                  - key: id
-                    value: di-6wnk5n2b
-                  - key: customerId
-                    value: cu-27h4kb2v
-                  - key: created
-                    value: '2024-08-07T10:25:00'
-                  - key: updated
-                    value: null
+            $ref: ../components/schemas/resource.yaml
+          example:
+            data:
+              - key: description
+                value: Test Volume Distribution
+              - key: enabled
+                value: true
+              - key: ipv6
+                value: false
+              - key: tls
+                value: false
+              - key: tlsType
+                value: null
+              - key: certificateId
+                value: null
+              - key: logging
+                value: false
+              - key: id
+                value: di-6wnk5n2b
+              - key: customerId
+                value: cu-27h4kb2v
+              - key: created
+                value: '2024-08-07T10:25:00'
+              - key: updated
+                value: null
+            resourceType: DISTRIBUTION_VOLUME
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -53,18 +44,13 @@ get:
       $ref: ../components/responses/403.yaml
     '404':
       $ref: ../components/responses/404.yaml
-    '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Get Distribution By Id
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -87,76 +73,74 @@ get:
         $ref: >-
           ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}/getundefined
 put:
-  tags:
-    - CDN
-  summary: Update Distribution By Id
-  operationId: update_distribution_by_id_v1_distributions__distribution_id__put
-  parameters:
-    - name: distribution_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Distribution Id
+  description: >
+    Update a distribution
+
+
+    After a successful call, the changes you made exists only in a pending
+    state.
+
+    To make it propagated across our network you must subsequently invoke the
+    Push Distribution endpoint for the related distribution.
+
+    Failure to call the Push Distribution endpoint will leave the resource
+    unavailable for your service.
+  operationId: updateDistribution
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/Resource.yaml
-        examples:
-          Update Distribution:
-            value:
-              resourceType: DISTRIBUTION_VOLUME
-              data:
-                - key: description
-                  value: Test Volume Distribution 2
-                - key: enabled
-                  value: true
-                - key: ipv6
-                  value: false
-                - key: tls
-                  value: false
-                - key: tlsType
-                  value: null
-                - key: certificateId
-                  value: null
-                - key: logging
-                  value: false
+          $ref: ../components/schemas/resource.yaml
+        example:
+          data:
+            - key: description
+              value: Test Volume Distribution 2
+            - key: enabled
+              value: true
+            - key: ipv6
+              value: false
+            - key: tls
+              value: false
+            - key: tlsType
+              value: null
+            - key: certificateId
+              value: null
+            - key: logging
+              value: false
+          resourceType: DISTRIBUTION_VOLUME
   responses:
     '200':
       description: Successful Response
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Resource.yaml
-          examples:
-            Updated Distribution:
-              value:
-                resourceType: DISTRIBUTION_VOLUME
-                data:
-                  - key: description
-                    value: Test Volume Distribution 2
-                  - key: enabled
-                    value: true
-                  - key: ipv6
-                    value: false
-                  - key: tls
-                    value: false
-                  - key: tlsType
-                    value: null
-                  - key: certificateId
-                    value: null
-                  - key: logging
-                    value: false
-                  - key: id
-                    value: di-6wnk5n2b
-                  - key: customerId
-                    value: cu-27h4kb2v
-                  - key: created
-                    value: '2024-08-07T10:25:00'
-                  - key: updated
-                    value: '2024-08-07T10:25:00'
+            $ref: ../components/schemas/resource.yaml
+          example:
+            data:
+              - key: description
+                value: Test Volume Distribution 2
+              - key: enabled
+                value: true
+              - key: ipv6
+                value: false
+              - key: tls
+                value: false
+              - key: tlsType
+                value: null
+              - key: certificateId
+                value: null
+              - key: logging
+                value: false
+              - key: id
+                value: di-6wnk5n2b
+              - key: customerId
+                value: cu-27h4kb2v
+              - key: created
+                value: '2024-08-07T10:25:00'
+              - key: updated
+                value: '2024-08-07T10:25:00'
+            resourceType: DISTRIBUTION_VOLUME
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -166,17 +150,14 @@ put:
     '404':
       $ref: ../components/responses/404.yaml
     '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
+      $ref: ../components/responses/422.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Update Distribution By Id
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -199,20 +180,22 @@ put:
         $ref: >-
           ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}/putundefined
 delete:
-  tags:
-    - CDN
-  summary: Delete Distribution By Id
-  operationId: delete_distribution_by_id_v1_distributions__distribution_id__delete
-  parameters:
-    - name: distribution_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Distribution Id
+  description: >
+    Delete a distribution by its ID
+
+
+    After a successful call, the changes you made exists only in a pending
+    state.
+
+    To make it propagated across our network you must subsequently invoke the
+    Push Distribution endpoint for the related distribution.
+
+    Failure to call the Push Distribution endpoint will leave the resource
+    unavailable for your service.
+  operationId: deleteDistribution
   responses:
     '204':
-      description: Successful Response
+      $ref: ../components/responses/204.yaml
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -221,18 +204,13 @@ delete:
       $ref: ../components/responses/403.yaml
     '404':
       $ref: ../components/responses/404.yaml
-    '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Delete Distribution By Id
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:

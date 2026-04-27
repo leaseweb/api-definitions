@@ -1,0 +1,6 @@
+name: origin_group_id
+in: path
+required: true
+schema:
+  type: string
+  title: Origin Group Id

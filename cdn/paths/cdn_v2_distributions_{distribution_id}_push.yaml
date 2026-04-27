@@ -1,18 +1,10 @@
+parameters:
+  - $ref: ../components/parameters/distributionId.yaml
 post:
-  tags:
-    - CDN
-  summary: Push Distribution
-  description: >-
+  description: >
     Trigger propagation across our network. Your Multi-CDN will become available
     once the propagation has completed.
-  operationId: push_distribution_v1_distributions__distribution_id__push_post
-  parameters:
-    - name: distribution_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Distribution Id
+  operationId: pushDistribution
   responses:
     '202':
       description: >-
@@ -30,6 +22,9 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  summary: Push Distribution
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:

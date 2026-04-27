@@ -8,7 +8,7 @@ const settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"files\":[\"http://leaseweb.com/test\"]}"
+  "data": "{\"files\":[\"string\"]}"
 };
 
 $.ajax(settings).done(function (response) {

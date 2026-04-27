@@ -4,7 +4,7 @@ $client = new http\Client;
 $request = new http\Client\Request;
 
 $body = new http\Message\Body;
-$body->append('{"resourceType":"string","data":[{"key":"string","value":null}]}');
+$body->append('{"resourceType":"string","data":[{"key":"string","value":"string"}]}');
 
 $request->setRequestUrl('https://api.leaseweb.com/cdn/v2/distributions');
 $request->setRequestMethod('POST');

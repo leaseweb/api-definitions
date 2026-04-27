@@ -1,43 +1,28 @@
+parameters:
+  - $ref: ../components/parameters/originGroupId.yaml
+  - $ref: ../components/parameters/originGroupMemberId.yaml
 get:
-  tags:
-    - CDN
-  summary: Get Origin Group Member By Id
-  description: Get the details of an origin group member by its ID.
-  operationId: >-
-    get_origin_group_member_by_id_v1_originGroups__origin_group_id__members__origin_group_member_id__get
-  parameters:
-    - name: origin_group_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Origin Group Id
-    - name: origin_group_member_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Origin Group Member Id
+  description: |
+    Get the details of an origin group member by its ID.
+  operationId: getOriginGroupMember
   responses:
     '200':
       description: Successful Response
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Resource.yaml
-          examples:
-            Origin Group:
-              value:
-                resourceType: ORIGIN_GROUP_MEMBER
-                data:
-                  - key: originId
-                    value: or-du7n2vo8
-                  - key: status
-                    value: active
-                  - key: id
-                    value: or-6j2vgb3
-                  - key: originHost
-                    value: origin.leaseweb.com
+            $ref: ../components/schemas/resource.yaml
+          example:
+            data:
+              - key: originId
+                value: or-du7n2vo8
+              - key: status
+                value: active
+              - key: id
+                value: or-6j2vgb3
+              - key: originHost
+                value: origin.leaseweb.com
+            resourceType: ORIGIN_GROUP_MEMBER
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -46,18 +31,13 @@ get:
       $ref: ../components/responses/403.yaml
     '404':
       $ref: ../components/responses/404.yaml
-    '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Get Origin Group Member By Id
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -80,60 +60,40 @@ get:
         $ref: >-
           ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/getundefined
 put:
-  tags:
-    - CDN
-  summary: Update Origin Group Member By Id
-  description: Update the parameters in an origin group member.
-  operationId: >-
-    update_origin_group_member_by_id_v1_originGroups__origin_group_id__members__origin_group_member_id__put
-  parameters:
-    - name: origin_group_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Origin Group Id
-    - name: origin_group_member_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Origin Group Member Id
+  description: |
+    Update the parameters in an origin group member.
+  operationId: updateOriginGroupMember
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/Resource.yaml
-        examples:
-          Updated Member:
-            value:
-              resourceType: ORIGIN_GROUP_MEMBER
-              data:
-                - key: originId
-                  value: or-du7n2vo8
-                - key: status
-                  value: inactive
+          $ref: ../components/schemas/resource.yaml
+        example:
+          data:
+            - key: originId
+              value: or-du7n2vo8
+            - key: status
+              value: inactive
+          resourceType: ORIGIN_GROUP_MEMBER
   responses:
     '200':
       description: Successful Response
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Resource.yaml
-          examples:
-            Updated Member:
-              value:
-                resourceType: ORIGIN_GROUP_MEMBER
-                data:
-                  - key: originId
-                    value: or-du7n2vo8
-                  - key: status
-                    value: inactive
-                  - key: id
-                    value: or-6j2vgb3
-                  - key: originHost
-                    value: origin.leaseweb.com
+            $ref: ../components/schemas/resource.yaml
+          example:
+            data:
+              - key: originId
+                value: or-du7n2vo8
+              - key: status
+                value: inactive
+              - key: id
+                value: or-6j2vgb3
+              - key: originHost
+                value: origin.leaseweb.com
+            resourceType: ORIGIN_GROUP_MEMBER
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -143,17 +103,14 @@ put:
     '404':
       $ref: ../components/responses/404.yaml
     '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
+      $ref: ../components/responses/422.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Update Origin Group Member By Id
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -176,27 +133,12 @@ put:
         $ref: >-
           ../code_samples/Go+Native/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}/putundefined
 delete:
-  tags:
-    - CDN
-  summary: Delete Origin Group Member By Id
-  operationId: >-
-    delete_origin_group_member_by_id_v1_originGroups__origin_group_id__members__origin_group_member_id__delete
-  parameters:
-    - name: origin_group_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Origin Group Id
-    - name: origin_group_member_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Origin Group Member Id
+  description: |
+    Delete a member from an origin group by its ID
+  operationId: deleteOriginGroupMember
   responses:
     '204':
-      description: No Content
+      $ref: ../components/responses/204.yaml
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -205,18 +147,13 @@ delete:
       $ref: ../components/responses/403.yaml
     '404':
       $ref: ../components/responses/404.yaml
-    '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Delete Origin Group Member By Id
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:

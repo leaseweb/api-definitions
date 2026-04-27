@@ -1,0 +1,9 @@
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/errorResult.yaml
+    example:
+      correlationId: 289346a1-3eaf-4da4-b707-62ef12eb08be
+      errorCode: '422'
+      errorMessage: Validation failed.
+description: Unprocessable Entity

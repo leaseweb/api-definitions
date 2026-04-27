@@ -1,0 +1,6 @@
+name: distributionId
+in: query
+required: false
+schema:
+  type: string
+  title: distributionId

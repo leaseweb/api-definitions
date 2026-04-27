@@ -4,7 +4,7 @@ $client = new http\Client;
 $request = new http\Client\Request;
 
 $body = new http\Message\Body;
-$body->append('{"files":["http://leaseweb.com/test"]}');
+$body->append('{"files":["string"]}');
 
 $request->setRequestUrl('https://api.leaseweb.com/cdn/v2/invalidations');
 $request->setRequestMethod('POST');

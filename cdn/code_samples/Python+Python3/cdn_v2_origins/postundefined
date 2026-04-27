@@ -2,7 +2,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("api.leaseweb.com")
 
-payload = "{\"resourceType\":\"SIMPLE_ORIGIN\",\"data\":[{\"key\":\"host\",\"value\":\"backend.leaseweb.com\"},{\"key\":\"description\",\"value\":\"Leaseweb Backend\"},{\"key\":\"enabled\",\"value\":true}]}"
+payload = "{\"resourceType\":\"string\",\"data\":[{\"key\":\"string\",\"value\":\"string\"}]}"
 
 headers = {
     'X-LSW-Auth': "REPLACE_KEY_VALUE",

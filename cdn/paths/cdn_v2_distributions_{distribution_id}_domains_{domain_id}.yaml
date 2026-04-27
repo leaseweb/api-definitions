@@ -1,37 +1,23 @@
+parameters:
+  - $ref: ../components/parameters/distributionId.yaml
+  - $ref: ../components/parameters/domainId.yaml
 get:
-  tags:
-    - CDN
-  summary: Get Domain By Id
-  description: Get the details of a custom domain attached to a dsitribution.
-  operationId: get_domain_by_id_v1_distributions__distribution_id__domains__domain_id__get
-  parameters:
-    - name: distribution_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Distribution Id
-    - name: domain_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Domain Id
+  description: |
+    Get the details of a custom domain attached to a dsitribution.
+  operationId: getDomain
   responses:
     '200':
       description: Successful Response
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Domain.yaml
-          examples:
-            Custom Domain:
-              value:
-                domain: test2.com
-                id: test2.com
-                distributionId: di-yt84vrj
-                created: '2024-07-31T02:15:32'
-                updated: '2024-08-04T23:24:29'
+            $ref: ../components/schemas/domain.yaml
+          example:
+            created: '2024-07-31T02:15:32'
+            distributionId: di-yt84vrj
+            domain: test2.com
+            id: test2.com
+            updated: '2024-08-04T23:24:29'
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -40,18 +26,13 @@ get:
       $ref: ../components/responses/403.yaml
     '404':
       $ref: ../components/responses/404.yaml
-    '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Get Domain By Id
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:
@@ -74,27 +55,22 @@ get:
         $ref: >-
           ../code_samples/Go+Native/cdn_v2_distributions_{distribution_id}_domains_{domain_id}/getundefined
 delete:
-  tags:
-    - CDN
-  summary: Delete Domain By Id
-  operationId: >-
-    delete_domain_by_id_v1_distributions__distribution_id__domains__domain_id__delete
-  parameters:
-    - name: distribution_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Distribution Id
-    - name: domain_id
-      in: path
-      required: true
-      schema:
-        type: string
-        title: Domain Id
+  description: >
+    Delete a domain by its ID
+
+
+    After a successful call, the changes you made exists only in a pending
+    state.
+
+    To make it propagated across our network you must subsequently invoke the
+    Push Distribution endpoint for the related distribution.
+
+    Failure to call the Push Distribution endpoint will leave the resource
+    unavailable for your service.
+  operationId: deleteDomain
   responses:
     '204':
-      description: Successful Response
+      $ref: ../components/responses/204.yaml
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -103,18 +79,13 @@ delete:
       $ref: ../components/responses/403.yaml
     '404':
       $ref: ../components/responses/404.yaml
-    '422':
-      description: Unprocessable Entity
-      content:
-        application/json:
-          schema:
-            $ref: ../components/schemas/ErrorResponse.yaml
     '500':
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  servers:
-    - url: https://api.leaseweb.com
+  summary: Delete Domain By Id
+  tags:
+    - CDN
   x-codeSamples:
     - lang: Shell + Curl
       source:

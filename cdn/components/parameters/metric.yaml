@@ -1,0 +1,15 @@
+name: metric
+in: query
+required: true
+schema:
+  type: string
+  title: metric
+  enum:
+    - DATATRANSFER
+    - BANDWIDTH
+    - REQUESTS
+    - STATUS_2XX
+    - STATUS_4XX
+    - STATUS_5XX
+    - CACHEHIT
+    - 95TH

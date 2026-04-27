@@ -1,0 +1,13 @@
+properties:
+  distributions:
+    type: array
+    title: Distributions
+    items:
+      $ref: ./resource.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - distributions
+  - _metadata
+title: ListResponse[Distribution]
+type: object

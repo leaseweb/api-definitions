@@ -8,7 +8,7 @@ const settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"resourceType\":\"SIMPLE_ORIGIN\",\"data\":[{\"key\":\"host\",\"value\":\"backend.leaseweb.com\"},{\"key\":\"description\",\"value\":\"Leaseweb Backend\"},{\"key\":\"enabled\",\"value\":true}]}"
+  "data": "{\"resourceType\":\"string\",\"data\":[{\"key\":\"string\",\"value\":\"string\"}]}"
 };
 
 $.ajax(settings).done(function (response) {

@@ -1,0 +1,11 @@
+name: groupBy
+in: query
+required: false
+schema:
+  type: string
+  title: groupBy
+  enum:
+    - PROVIDER
+    - DISTRIBUTION
+    - CUSTOMER
+    - REGION

@@ -11,7 +11,7 @@ func main() {
 
 	url := "https://api.leaseweb.com/cdn/v2/originGroups/%7Borigin_group_id%7D/members"
 
-	payload := strings.NewReader("{\"resourceType\":\"string\",\"data\":[{\"key\":\"string\",\"value\":null}]}")
+	payload := strings.NewReader("{\"resourceType\":\"string\",\"data\":[{\"key\":\"string\",\"value\":\"string\"}]}")
 
 	req, _ := http.NewRequest("POST", url, payload)
 

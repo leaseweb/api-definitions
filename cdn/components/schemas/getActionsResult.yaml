@@ -1,0 +1,13 @@
+properties:
+  actions:
+    type: array
+    title: Actions
+    items:
+      $ref: ./action.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - actions
+  - _metadata
+title: ListResponse[Action]
+type: object

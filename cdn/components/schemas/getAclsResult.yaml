@@ -1,0 +1,13 @@
+properties:
+  acls:
+    type: array
+    title: ACLs
+    items:
+      $ref: ./acl.yaml
+  _metadata:
+    $ref: ./_metadata.yaml
+required:
+  - acls
+  - _metadata
+title: ListResponse[ACL]
+type: object

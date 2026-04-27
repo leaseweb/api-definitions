@@ -1,0 +1,11 @@
+properties:
+  url:
+    type: string
+    title: Url
+    format: uri
+    minLength: 1
+    maxLength: 2083
+required:
+  - url
+title: DebugIn
+type: object

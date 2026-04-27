@@ -1,0 +1,46 @@
+properties:
+  type:
+    type: string
+    enum:
+      - INVALIDATION
+      - CREATE_DIST
+      - UPDATE_DIST
+      - DELETE_DIST
+    title: Type
+  status:
+    type: string
+    enum:
+      - PENDING
+      - IN_PROGRESS
+      - FINISHED
+      - ERROR
+    title: Status
+  id:
+    type: string
+    title: Id
+  customerId:
+    type: string
+    title: Customerid
+  created:
+    type: string
+    title: Created
+    format: date-time
+  updated:
+    title: Updated
+    anyOf:
+      - type: string
+        format: date-time
+      - type: 'null'
+  resource:
+    title: resource
+    type: object
+    additionalProperties: true
+required:
+  - type
+  - status
+  - id
+  - customerId
+  - created
+  - resource
+title: Action
+type: object

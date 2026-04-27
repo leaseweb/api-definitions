@@ -1,0 +1,43 @@
+properties:
+  type:
+    type: string
+  resource:
+    type: object
+    title: resource
+    properties:
+      invalidationId:
+        type: string
+      status:
+        type: string
+      urlStatus:
+        type: array
+        items:
+          type: object
+          title: urlStatus
+          properties:
+            url:
+              type: string
+            distribution_group_id:
+              type: string
+            status:
+              type: string
+            message:
+              type: string
+      submitted:
+        type: string
+      completed:
+        type: string
+        format: nullable
+  status:
+    type: string
+  id:
+    type: string
+  customerId:
+    type: string
+  created:
+    type: string
+    format: date-time
+  updated:
+    type: string
+    format: nullable
+type: object

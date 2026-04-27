@@ -1,0 +1,7 @@
+name: action_id
+in: path
+required: true
+schema:
+  type: string
+  title: Action Id
+  format: uuid

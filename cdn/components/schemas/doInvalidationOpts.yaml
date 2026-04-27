@@ -1,0 +1,8 @@
+properties:
+  files:
+    type: array
+    title: Files
+    items:
+      type: string
+title: InvalidationIn
+type: object
