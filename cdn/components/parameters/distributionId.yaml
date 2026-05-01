@@ -1,6 +1,5 @@
-name: distribution_id
+name: distributionId
 in: path
 required: true
 schema:
   type: string
-  title: Distribution Id

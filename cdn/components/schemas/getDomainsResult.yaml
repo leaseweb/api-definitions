@@ -1,7 +1,6 @@
 properties:
   domains:
     type: array
-    title: Domains
     items:
       $ref: ./domain.yaml
   _metadata:
@@ -9,5 +8,4 @@ properties:
 required:
   - domains
   - _metadata
-title: ListResponse[Domain]
 type: object

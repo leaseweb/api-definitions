@@ -1,7 +1,6 @@
-name: action_id
+name: actionId
 in: path
 required: true
 schema:
   type: string
-  title: Action Id
   format: uuid

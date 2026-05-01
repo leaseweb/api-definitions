@@ -1,6 +1,5 @@
-name: domain_id
+name: domainId
 in: path
 required: true
 schema:
   type: string
-  title: Domain Id

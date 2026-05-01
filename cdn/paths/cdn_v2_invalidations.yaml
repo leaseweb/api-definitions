@@ -29,7 +29,7 @@ post:
               status: PENDING
               urlStatus:
                 - url: https://cdn-assets.leaseweb.com/styles.css
-                  distribution_group_id: ''
+                  distributionGroupId: ''
                   status: PENDING
                   message: ''
               submitted: '2024-07-11T12:14:41'

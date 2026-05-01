@@ -1,0 +1,155 @@
+parameters:
+  - $ref: ../components/parameters/originGroupId.yaml
+post:
+  description: >
+    Add members (origins) to your origin group.
+
+
+    These are the backend servers that are going to be used within the
+    loadbalancer.
+  operationId: createOriginGroupMember
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/resource.yaml
+        example:
+          data:
+            - key: originId
+              value: or-du7n2vo8
+            - key: status
+              value: active
+          resourceType: ORIGIN_GROUP_MEMBER
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/resource.yaml
+          example:
+            data:
+              - key: originId
+                value: or-du7n2vo8
+              - key: status
+                value: active
+              - key: id
+                value: or-6j2vgb3
+              - key: originHost
+                value: origin.leaseweb.com
+            resourceType: ORIGIN_GROUP_MEMBER
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '422':
+      $ref: ../components/responses/422.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create Origin Group Member
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_originGroups_{originGroupId}_members/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_originGroups_{originGroupId}_members/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_originGroups_{originGroupId}_members/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_originGroups_{originGroupId}_members/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_originGroups_{originGroupId}_members/postundefined
+get:
+  description: |
+    Get all of the members belonging to an origin group.
+  operationId: getOriginGroupMembers
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getOriginGroupMembersResult.yaml
+          example:
+            _metadata:
+              totalCount: 2
+              limit: 25
+              offset: 0
+            originGroupMembers:
+              - resourceType: ORIGIN_GROUP_MEMBER
+                data:
+                  - key: originId
+                    value: or-du7n2vo8
+                  - key: status
+                    value: active
+                  - key: id
+                    value: or-g2n6l2v5
+                  - key: originHost
+                    value: origin1.leaseweb.com
+              - resourceType: ORIGIN_GROUP_MEMBER
+                data:
+                  - key: originId
+                    value: or-du7n2vo8
+                  - key: status
+                    value: backup
+                  - key: id
+                    value: or-kn6l2bb5
+                  - key: originHost
+                    value: origin2.leaseweb.com
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get All Origin Group Members
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_originGroups_{originGroupId}_members/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_originGroups_{originGroupId}_members/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_originGroups_{originGroupId}_members/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_originGroups_{originGroupId}_members/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_originGroups_{originGroupId}_members/getundefined

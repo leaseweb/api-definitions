@@ -1,6 +1,5 @@
-name: acl_id
+name: aclId
 in: path
 required: true
 schema:
   type: string
-  title: Acl Id

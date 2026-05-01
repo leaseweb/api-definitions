@@ -7,7 +7,8 @@ $request->setRequestUrl('https://api.leaseweb.com/bareMetals/v2/rescueImages');
 $request->setRequestMethod('GET');
 $request->setQuery(new http\QueryString([
   'limit' => '20',
-  'offset' => '10'
+  'offset' => '10',
+  'chassis' => 'HPE RL300 Gen11'
 ]));
 
 $request->setHeaders([

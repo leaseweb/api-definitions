@@ -1,17 +1,13 @@
 properties:
   url:
     type: string
-    title: Url
     readOnly: true
   success:
     type: boolean
-    title: Success
     readOnly: true
   providerResponses:
     type: array
-    title: Providerresponses
     readOnly: true
     items:
-      $ref: ./provider_response.yaml
-title: DebugResponse
+      $ref: ./providerResponse.yaml
 type: object

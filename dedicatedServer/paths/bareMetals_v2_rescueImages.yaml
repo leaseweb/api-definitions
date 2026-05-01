@@ -20,10 +20,32 @@ get:
     your
 
     server. It will require your server to be rebooted.
+
+
+    The optional `chassis` query parameter can be used to filter the list to
+    only
+
+    rescue images supported by a specific server chassis. Images that are not
+
+    compatible with the given chassis will be excluded from the response. For
+
+    example, FreeBSD is not available for ARM servers (HPE RL300 series) and
+    will
+
+    be omitted when the chassis of an ARM server is provided.
   operationId: getRescueImageList
   parameters:
     - $ref: ../components/parameters/limit.yaml
     - $ref: ../components/parameters/offset.yaml
+    - in: query
+      name: chassis
+      required: false
+      description: >-
+        Filter rescue images by server chassis. Images listed as unsupported for
+        the given chassis will be excluded from the response.
+      schema:
+        type: string
+      example: HPE RL300 Gen11
   responses:
     '200':
       content:

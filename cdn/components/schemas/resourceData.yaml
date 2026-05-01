@@ -1,0 +1,14 @@
+properties:
+  key:
+    type: string
+  value:
+    anyOf:
+      - type: string
+      - type: number
+      - type: integer
+      - type: boolean
+      - type: 'null'
+required:
+  - key
+  - value
+type: object

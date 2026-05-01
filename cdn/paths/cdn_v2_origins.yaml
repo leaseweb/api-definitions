@@ -9,7 +9,6 @@ post:
     - OBJECT_STORAGE_ORIGIN
   operationId: createOrigin
   requestBody:
-    description: ''
     required: true
     content:
       application/json:

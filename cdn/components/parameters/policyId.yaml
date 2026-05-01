@@ -1,6 +1,5 @@
-name: policy_id
+name: policyId
 in: path
 required: true
 schema:
   type: string
-  title: Policy Id

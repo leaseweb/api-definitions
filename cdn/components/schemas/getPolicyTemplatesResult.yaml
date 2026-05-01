@@ -1,4 +1,3 @@
-title: ListResponse[PolicyTemplate]
 type: array
 items:
-  $ref: ./policy_template.yaml
+  $ref: ./policyTemplate.yaml

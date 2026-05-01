@@ -1,7 +1,6 @@
 properties:
   origins:
     type: array
-    title: Origins
     items:
       $ref: ./resource.yaml
   _metadata:
@@ -9,5 +8,4 @@ properties:
 required:
   - origins
   - _metadata
-title: ListResponse[Resource]
 type: object

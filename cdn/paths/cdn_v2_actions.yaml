@@ -9,7 +9,6 @@ get:
       required: false
       schema:
         type: array
-        title: Filters
         items:
           type: string
           enum:
@@ -38,7 +37,7 @@ get:
                   status: FINISHED
                   urlStatus:
                     - url: https://cdn-assets.leaseweb.com/styles.css
-                      distribution_group_id: ''
+                      distributionGroupId: ''
                       status: SUCCESS
                       message: ''
                   submitted: '2024-07-10T13:10:14'
@@ -54,7 +53,7 @@ get:
                   status: FINISHED
                   urlStatus:
                     - url: https://cdn-assets.leaseweb.com/logo.png
-                      distribution_group_id: ''
+                      distributionGroupId: ''
                       status: SUCCESS
                       message: ''
                   submitted: '2024-07-10T13:11:12'

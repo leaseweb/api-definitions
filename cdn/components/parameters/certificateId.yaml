@@ -1,6 +1,5 @@
-name: certificate_id
+name: certificateId
 in: path
 required: true
 schema:
   type: string
-  title: Certificate Id

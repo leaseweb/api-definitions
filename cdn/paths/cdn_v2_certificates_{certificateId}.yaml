@@ -1,0 +1,107 @@
+parameters:
+  - $ref: ../components/parameters/certificateId.yaml
+get:
+  description: |
+    Get the details of a certificate by its ID
+  operationId: getCertificate
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getCertificateResult.yaml
+          example:
+            caBundle: Hidden for security reasons
+            certificate: Hidden for security reasons
+            commonName: c1
+            created: '2024-03-19T08:15:23'
+            daysLeft: 364
+            description: Main LSW Certificate 2024
+            id: ce-5g8wbh25
+            issuer: c1
+            privateKey: Hidden for security reasons
+            trusted: true
+            updated: '2024-03-19T08:15:23'
+            valid: true
+            validFrom: 1723118047
+            validUntil: 1754646847
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get Certificate By Id
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_certificates_{certificateId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_certificates_{certificateId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_certificates_{certificateId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_certificates_{certificateId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_certificates_{certificateId}/getundefined
+delete:
+  description: |
+    Delete a certificate by its ID
+  operationId: deleteCertificate
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete Certificate By Id
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_certificates_{certificateId}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_certificates_{certificateId}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_certificates_{certificateId}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_certificates_{certificateId}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_certificates_{certificateId}/deleteundefined

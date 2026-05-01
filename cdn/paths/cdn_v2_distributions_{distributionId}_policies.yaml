@@ -1,0 +1,242 @@
+parameters:
+  - $ref: ../components/parameters/distributionId.yaml
+post:
+  description: >
+    Apply custom configurations using policies.
+
+
+    **Note: Policies only exist for Volume and Shield distributions and only one
+    policy can be added for volume distributions.**
+
+
+    After a successful call, the changes you made exists only in a pending
+    state.
+
+    To make it propagated across our network you must subsequently invoke the
+    Push Distribution endpoint for the related distribution.
+
+    Failure to call the Push Distribution endpoint will leave the resource
+    unavailable for your service.
+  operationId: createPolicy
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/createPolicyOpts.yaml
+        example:
+          allowedMethods: GET,POST,HEAD,PUT,OPTIONS
+          cacheDefaultTtl: 86400
+          cacheHonorOriginTtl: false
+          cacheQueryString: false
+          cacheStale: false
+          deliveryCompress: false
+          deliveryForceHttps: false
+          deliveryTtlInherit: false
+          deliveryTtlOverride: 0
+          description: test-policy-1
+          originPullCompressed: false
+          originPullGroupId: null
+          originPullHostHeader: test.invalid
+          originPullId: or-r81jws
+          originPullProtocol: HTTP
+          originPullXff: false
+          securityGeoAcl: false
+          securityIpAcl: false
+          securityReferrerAcl: false
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/policy.yaml
+          example:
+            allowedMethods: GET,POST,HEAD,PUT,OPTIONS
+            cacheByPass: false
+            cacheDefaultTtl: 86400
+            cacheHonorOriginTtl: false
+            cacheQueryString: false
+            cacheSegmented: true
+            cacheStale: false
+            created: '2024-08-06T08:55:37'
+            customerId: cu-a4c79393
+            deliveryBurstSize: null
+            deliveryCompress: false
+            deliveryForceHttps: false
+            deliveryPassThroughAllHeaders: false
+            deliveryRateLimit: false
+            deliveryTransferRate: null
+            deliveryTtlInherit: false
+            deliveryTtlOverride: 0
+            description: test-policy-4
+            id: po-48nwon
+            originPullCompressed: false
+            originPullGroupId: null
+            originPullHostHeader: test.invalid
+            originPullId: or-r8n157f
+            originPullPassCookie: false
+            originPullPassVary: false
+            originPullProtocol: HTTP
+            originPullShieldId: null
+            originPullXff: false
+            path: /
+            securityGeoAcl: false
+            securityGeoAclDefault: null
+            securityIpAcl: true
+            securityIpAclDefault: null
+            securityReferrerAcl: false
+            securityReferrerAclDefault: null
+            securityToken: false
+            securityTokenAesKey: null
+            securityTokenClientIp: false
+            securityTokenEmbedIntoPath: false
+            securityTokenExpirationParam: null
+            securityTokenMethod: null
+            securityTokenNumberOfPathComponents: -1
+            securityTokenParam: null
+            securityTokenSecret: null
+            securityTokenShaKey: null
+            securityTokenVendor: null
+            updated: '2024-08-07T23:31:44'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create Policy
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distributionId}_policies/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distributionId}_policies/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distributionId}_policies/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distributionId}_policies/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distributionId}_policies/postundefined
+get:
+  description: |
+    Get the list of policies for a distribution.
+
+    **Note: Policies only exist for Volume and Shield distributions.**
+  operationId: getPolicies
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getPoliciesResult.yaml
+          example:
+            _metadata:
+              totalCount: 1
+              limit: 10
+              offset: 0
+            policies:
+              - securityToken: false
+                securityTokenVendor: null
+                securityTokenMethod: null
+                securityTokenSecret: null
+                securityTokenAesKey: null
+                securityTokenShaKey: null
+                securityTokenClientIp: false
+                securityTokenExpirationParam: null
+                securityTokenParam: null
+                securityTokenNumberOfPathComponents: -1
+                securityTokenEmbedIntoPath: false
+                securityGeoAcl: false
+                securityGeoAclDefault: null
+                securityIpAcl: true
+                securityIpAclDefault: null
+                securityReferrerAcl: false
+                securityReferrerAclDefault: null
+                originPullProtocol: HTTP
+                originPullCompressed: false
+                originPullHostHeader: test.invalid
+                originPullId: or-8g51win
+                originPullGroupId: null
+                originPullShieldId: null
+                originPullXff: false
+                originPullPassCookie: false
+                originPullPassVary: false
+                cacheQueryString: false
+                cacheDefaultTtl: 86400
+                cacheHonorOriginTtl: false
+                cacheStale: false
+                cacheByPass: false
+                cacheSegmented: true
+                deliveryTtlInherit: false
+                deliveryTtlOverride: 0
+                deliveryCompress: false
+                deliveryRateLimit: false
+                deliveryTransferRate: null
+                deliveryBurstSize: null
+                deliveryForceHttps: false
+                deliveryPassThroughAllHeaders: false
+                description: test-policy-4
+                allowedMethods: GET,POST,HEAD,PUT,OPTIONS
+                path: /
+                id: po-br8i1mf
+                customerId: cu-g89u1nem
+                created: '2024-08-06T08:55:37'
+                updated: '2024-08-07T23:31:44'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get All Policies
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/cdn_v2_distributions_{distributionId}_policies/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/cdn_v2_distributions_{distributionId}_policies/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/cdn_v2_distributions_{distributionId}_policies/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_distributions_{distributionId}_policies/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/cdn_v2_distributions_{distributionId}_policies/getundefined

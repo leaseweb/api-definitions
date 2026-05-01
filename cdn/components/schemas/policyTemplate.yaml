@@ -1,0 +1,12 @@
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  isPublic:
+    type: boolean
+    default: false
+required:
+  - id
+  - name
+type: object

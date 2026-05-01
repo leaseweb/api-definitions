@@ -1,7 +1,6 @@
 properties:
   distributions:
     type: array
-    title: Distributions
     items:
       $ref: ./resource.yaml
   _metadata:
@@ -9,5 +8,4 @@ properties:
 required:
   - distributions
   - _metadata
-title: ListResponse[Distribution]
 type: object

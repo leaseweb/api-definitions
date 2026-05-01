@@ -42,7 +42,6 @@ get:
       schema:
         type: string
         default: 5MIN
-        title: granularity
         enum:
           - 5MIN
           - 15MIN
@@ -55,7 +54,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/time_series.yaml
+            $ref: ../components/schemas/timeSeries.yaml
           example:
             distributionId: null
             fromTs: '2024-08-20T09:28:38'

@@ -1,0 +1,31 @@
+properties:
+  providerType:
+    type: string
+  success:
+    type: boolean
+  ip:
+    anyOf:
+      - type: string
+      - type: 'null'
+  statusCode:
+    anyOf:
+      - type: integer
+      - type: 'null'
+  message:
+    anyOf:
+      - type: string
+      - type: 'null'
+  headers:
+    anyOf:
+      - type: array
+        items:
+          $ref: ./header.yaml
+      - type: 'null'
+required:
+  - providerType
+  - success
+  - ip
+  - statusCode
+  - message
+  - headers
+type: object

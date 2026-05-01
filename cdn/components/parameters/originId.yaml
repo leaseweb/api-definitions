@@ -1,6 +1,5 @@
-name: origin_id
+name: originId
 in: path
 required: true
 schema:
   type: string
-  title: Origin Id

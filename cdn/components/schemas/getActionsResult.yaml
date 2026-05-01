@@ -1,7 +1,6 @@
 properties:
   actions:
     type: array
-    title: Actions
     items:
       $ref: ./action.yaml
   _metadata:
@@ -9,5 +8,4 @@ properties:
 required:
   - actions
   - _metadata
-title: ListResponse[Action]
 type: object

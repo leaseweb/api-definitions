@@ -1,7 +1,6 @@
 properties:
   acls:
     type: array
-    title: ACLs
     items:
       $ref: ./acl.yaml
   _metadata:
@@ -9,5 +8,4 @@ properties:
 required:
   - acls
   - _metadata
-title: ListResponse[ACL]
 type: object

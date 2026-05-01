@@ -1,0 +1,51 @@
+properties:
+  description:
+    anyOf:
+      - type: string
+      - type: 'null'
+  certificate:
+    type: string
+  privateKey:
+    type: string
+  caBundle:
+    type: string
+  id:
+    type: string
+  commonName:
+    anyOf:
+      - type: string
+      - type: 'null'
+  issuer:
+    anyOf:
+      - type: string
+      - type: 'null'
+  valid:
+    type: boolean
+    default: false
+  trusted:
+    type: boolean
+    default: false
+  daysLeft:
+    type: integer
+    default: 0
+  validFrom:
+    type: number
+    default: 1720173548.168787
+  validUntil:
+    type: number
+    default: 1720173548.168803
+  created:
+    type: string
+    format: date-time
+  updated:
+    anyOf:
+      - type: string
+        format: date-time
+      - type: 'null'
+required:
+  - certificate
+  - privateKey
+  - caBundle
+  - id
+  - created
+type: object

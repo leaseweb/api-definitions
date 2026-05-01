@@ -1,0 +1,3 @@
+curl --request DELETE \
+  --url https://api.leaseweb.com/cdn/v2/originGroups/%7BoriginGroupId%7D/members/%7BoriginGroupMemberId%7D \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

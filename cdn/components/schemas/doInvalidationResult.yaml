@@ -17,7 +17,7 @@ properties:
           properties:
             url:
               type: string
-            distribution_group_id:
+            distributionGroupId:
               type: string
             status:
               type: string

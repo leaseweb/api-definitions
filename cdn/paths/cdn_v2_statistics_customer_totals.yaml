@@ -38,7 +38,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/time_series.yaml
+            $ref: ../components/schemas/timeSeries.yaml
           example:
             distributionId: null
             fromTs: '2024-07-13T14:45:00'

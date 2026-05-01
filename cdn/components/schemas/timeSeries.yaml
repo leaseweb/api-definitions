@@ -1,0 +1,34 @@
+properties:
+  fromTs:
+    type: string
+    format: date-time
+  toTs:
+    type: string
+    format: date-time
+  service:
+    type: string
+    default: cdn
+  granularity:
+    type: string
+    default: 5MIN
+  groupBy:
+    anyOf:
+      - type: string
+      - type: 'null'
+  distributionId:
+    anyOf:
+      - type: string
+      - type: 'null'
+  series:
+    anyOf:
+      - items:
+          title: serie
+          type: object
+          additionalProperties: true
+        type: array
+      - type: 'null'
+required:
+  - fromTs
+  - toTs
+  - series
+type: object

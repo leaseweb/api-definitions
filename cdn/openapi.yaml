@@ -55,53 +55,52 @@ tags:
 paths:
   /cdn/v2/origins:
     $ref: paths/cdn_v2_origins.yaml
-  /cdn/v2/origins/{origin_id}:
-    $ref: paths/cdn_v2_origins_{origin_id}.yaml
-  /cdn/v2/origins/{origin_id}/resolve:
-    $ref: paths/cdn_v2_origins_{origin_id}_resolve.yaml
+  /cdn/v2/origins/{originId}:
+    $ref: paths/cdn_v2_origins_{originId}.yaml
+  /cdn/v2/origins/{originId}/resolve:
+    $ref: paths/cdn_v2_origins_{originId}_resolve.yaml
   /cdn/v2/originGroups:
     $ref: paths/cdn_v2_originGroups.yaml
-  /cdn/v2/originGroups/{origin_group_id}:
-    $ref: paths/cdn_v2_originGroups_{origin_group_id}.yaml
-  /cdn/v2/originGroups/{origin_group_id}/members:
-    $ref: paths/cdn_v2_originGroups_{origin_group_id}_members.yaml
-  /cdn/v2/originGroups/{origin_group_id}/members/{origin_group_member_id}:
+  /cdn/v2/originGroups/{originGroupId}:
+    $ref: paths/cdn_v2_originGroups_{originGroupId}.yaml
+  /cdn/v2/originGroups/{originGroupId}/members:
+    $ref: paths/cdn_v2_originGroups_{originGroupId}_members.yaml
+  /cdn/v2/originGroups/{originGroupId}/members/{originGroupMemberId}:
     $ref: >-
-      paths/cdn_v2_originGroups_{origin_group_id}_members_{origin_group_member_id}.yaml
+      paths/cdn_v2_originGroups_{originGroupId}_members_{originGroupMemberId}.yaml
   /cdn/v2/debug:
     $ref: paths/cdn_v2_debug.yaml
   /cdn/v2/invalidations:
     $ref: paths/cdn_v2_invalidations.yaml
   /cdn/v2/certificates:
     $ref: paths/cdn_v2_certificates.yaml
-  /cdn/v2/certificates/{certificate_id}:
-    $ref: paths/cdn_v2_certificates_{certificate_id}.yaml
+  /cdn/v2/certificates/{certificateId}:
+    $ref: paths/cdn_v2_certificates_{certificateId}.yaml
   /cdn/v2/actions:
     $ref: paths/cdn_v2_actions.yaml
-  /cdn/v2/actions/{action_id}:
-    $ref: paths/cdn_v2_actions_{action_id}.yaml
+  /cdn/v2/actions/{actionId}:
+    $ref: paths/cdn_v2_actions_{actionId}.yaml
   /cdn/v2/distributions:
     $ref: paths/cdn_v2_distributions.yaml
-  /cdn/v2/distributions/{distribution_id}:
-    $ref: paths/cdn_v2_distributions_{distribution_id}.yaml
-  /cdn/v2/distributions/{distribution_id}/push:
-    $ref: paths/cdn_v2_distributions_{distribution_id}_push.yaml
-  /cdn/v2/distributions/{distribution_id}/domains:
-    $ref: paths/cdn_v2_distributions_{distribution_id}_domains.yaml
-  /cdn/v2/distributions/{distribution_id}/domains/{domain_id}:
-    $ref: paths/cdn_v2_distributions_{distribution_id}_domains_{domain_id}.yaml
-  /cdn/v2/distributions/{distribution_id}/policies:
-    $ref: paths/cdn_v2_distributions_{distribution_id}_policies.yaml
-  /cdn/v2/distributions/{distribution_id}/policies/{policy_id}:
-    $ref: paths/cdn_v2_distributions_{distribution_id}_policies_{policy_id}.yaml
+  /cdn/v2/distributions/{distributionId}:
+    $ref: paths/cdn_v2_distributions_{distributionId}.yaml
+  /cdn/v2/distributions/{distributionId}/push:
+    $ref: paths/cdn_v2_distributions_{distributionId}_push.yaml
+  /cdn/v2/distributions/{distributionId}/domains:
+    $ref: paths/cdn_v2_distributions_{distributionId}_domains.yaml
+  /cdn/v2/distributions/{distributionId}/domains/{domainId}:
+    $ref: paths/cdn_v2_distributions_{distributionId}_domains_{domainId}.yaml
+  /cdn/v2/distributions/{distributionId}/policies:
+    $ref: paths/cdn_v2_distributions_{distributionId}_policies.yaml
+  /cdn/v2/distributions/{distributionId}/policies/{policyId}:
+    $ref: paths/cdn_v2_distributions_{distributionId}_policies_{policyId}.yaml
   /cdn/v2/policyTemplates:
     $ref: paths/cdn_v2_policyTemplates.yaml
-  /cdn/v2/distributions/{distribution_id}/policies/{policy_id}/acls:
+  /cdn/v2/distributions/{distributionId}/policies/{policyId}/acls:
+    $ref: paths/cdn_v2_distributions_{distributionId}_policies_{policyId}_acls.yaml
+  /cdn/v2/distributions/{distributionId}/policies/{policyId}/acls/{aclId}:
     $ref: >-
-      paths/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls.yaml
-  /cdn/v2/distributions/{distribution_id}/policies/{policy_id}/acls/{acl_id}:
-    $ref: >-
-      paths/cdn_v2_distributions_{distribution_id}_policies_{policy_id}_acls_{acl_id}.yaml
+      paths/cdn_v2_distributions_{distributionId}_policies_{policyId}_acls_{aclId}.yaml
   /cdn/v2/statistics/customer:
     $ref: paths/cdn_v2_statistics_customer.yaml
   /cdn/v2/statistics/customer/totals:

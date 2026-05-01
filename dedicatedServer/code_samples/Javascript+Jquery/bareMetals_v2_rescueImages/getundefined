@@ -1,7 +1,7 @@
 const settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://api.leaseweb.com/bareMetals/v2/rescueImages?limit=20&offset=10",
+  "url": "https://api.leaseweb.com/bareMetals/v2/rescueImages?limit=20&offset=10&chassis=HPE%20RL300%20Gen11",
   "method": "GET",
   "headers": {
     "X-LSW-Auth": "REPLACE_KEY_VALUE"

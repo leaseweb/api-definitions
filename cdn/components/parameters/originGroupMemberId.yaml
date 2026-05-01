@@ -1,6 +1,5 @@
-name: origin_group_member_id
+name: originGroupMemberId
 in: path
 required: true
 schema:
   type: string
-  title: Origin Group Member Id

@@ -1,7 +1,6 @@
 properties:
   originGroupMembers:
     type: array
-    title: OriginGroups
     items:
       $ref: ./resource.yaml
   _metadata:
@@ -9,5 +8,4 @@ properties:
 required:
   - originGroupMembers
   - _metadata
-title: ListResponse[Resource]
 type: object

@@ -1,15 +1,13 @@
 properties:
   certificates:
     type: array
-    title: Certificates
     items:
       anyOf:
         - $ref: ./certificate.yaml
-        - $ref: ./no_validation_certificate.yaml
+        - $ref: ./noValidationCertificate.yaml
   _metadata:
     $ref: ./_metadata.yaml
 required:
   - certificates
   - _metadata
-title: ListResponse[Certificate]
 type: object

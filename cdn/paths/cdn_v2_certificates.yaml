@@ -13,7 +13,6 @@ post:
     content:
       application/json:
         schema:
-          title: Resource Data
           $ref: ../components/schemas/createCertificateOpts.yaml
         example:
           caBundle: '-----BEGIN CERTIFICATE----- {***} -----END CERTIFICATE-----'
@@ -26,7 +25,6 @@ post:
       content:
         application/json:
           schema:
-            title: Response Create Certificate V1 Certificates Post
             $ref: ../components/schemas/certificate.yaml
           example:
             caBundle: Hidden for security reasons

@@ -1,7 +1,6 @@
 properties:
   policies:
     type: array
-    title: Policies
     items:
       $ref: ./policy.yaml
   _metadata:
@@ -9,5 +8,4 @@ properties:
 required:
   - policies
   - _metadata
-title: ListResponse[Policy]
 type: object

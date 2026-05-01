@@ -1,3 +1,0 @@
-curl --request GET \
-  --url https://api.leaseweb.com/cdn/v2/certificates/%7Bcertificate_id%7D \
-  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'
