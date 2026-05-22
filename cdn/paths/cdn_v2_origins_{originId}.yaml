@@ -2,7 +2,7 @@ parameters:
   - $ref: ../components/parameters/originId.yaml
 get:
   description: |
-    Get an origin by its ID.
+    Get an origin.
   operationId: getOrigin
   responses:
     '200':
@@ -11,25 +11,13 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/resource.yaml
-          example:
-            data:
-              - key: id
-                value: or-5dfg51fr
-              - key: customerId
-                value: cu-sndj3j24
-              - key: created
-                value: '2024-07-12T12:55:54'
-              - key: updated
-                value: '2024-07-12T12:55:54'
-              - key: host
-                value: backend.leaseweb.com
-              - key: description
-                value: Leaseweb Backend
-              - key: enabled
-                value: true
-            resourceType: SIMPLE_ORIGIN
-    '400':
-      $ref: ../components/responses/400.yaml
+          examples:
+            SimpleOrigin:
+              $ref: ../components/examples/simpleOriginResult.yaml
+            AdvancedOrigin:
+              $ref: ../components/examples/advancedOriginResult.yaml
+            ObjectStorageOrigin:
+              $ref: ../components/examples/objectStorageOriginResult.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':
@@ -40,7 +28,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get Origin By Id
+  summary: Get origin
   tags:
     - CDN
   x-codeSamples:
@@ -62,10 +50,14 @@ get:
         $ref: ../code_samples/Go+Native/cdn_v2_origins_{originId}/getundefined
 put:
   description: >
-    Update the options available in an origin.
+    Update an origin.
 
 
-    Note: Type of the origin can't be changed since it's considered a different
+    Refer to the "Create Origin" endpoint for a description of the available
+    data fields.
+
+
+    The type of the origin can't be changed since it's considered a different
     type of entity.
   operationId: updateOrigin
   requestBody:
@@ -74,15 +66,13 @@ put:
       application/json:
         schema:
           $ref: ../components/schemas/resource.yaml
-        example:
-          data:
-            - key: host
-              value: backend.leaseweb.com
-            - key: description
-              value: Leaseweb Backend 2
-            - key: enabled
-              value: true
-          resourceType: SIMPLE_ORIGIN
+        examples:
+          SimpleOrigin:
+            $ref: ../components/examples/simpleOriginOpts.yaml
+          AdvancedOrigin:
+            $ref: ../components/examples/advancedOriginOpts.yaml
+          ObjectStorageOrigin:
+            $ref: ../components/examples/objectStorageOriginOpts.yaml
   responses:
     '200':
       description: Successful Response
@@ -90,23 +80,13 @@ put:
         application/json:
           schema:
             $ref: ../components/schemas/resource.yaml
-          example:
-            data:
-              - key: id
-                value: or-5dfg51fr
-              - key: customerId
-                value: cu-sndj3j24
-              - key: created
-                value: '2024-07-12T12:55:54'
-              - key: updated
-                value: '2024-07-12T12:55:54'
-              - key: host
-                value: backend.leaseweb.com
-              - key: description
-                value: Leaseweb Backend 2
-              - key: enabled
-                value: true
-            resourceType: SIMPLE_ORIGIN
+          examples:
+            SimpleOrigin:
+              $ref: ../components/examples/simpleOriginResult.yaml
+            AdvancedOrigin:
+              $ref: ../components/examples/advancedOriginResult.yaml
+            ObjectStorageOrigin:
+              $ref: ../components/examples/objectStorageOriginResult.yaml
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -121,7 +101,7 @@ put:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Update Origin By Id
+  summary: Update origin
   tags:
     - CDN
   x-codeSamples:
@@ -143,13 +123,11 @@ put:
         $ref: ../code_samples/Go+Native/cdn_v2_origins_{originId}/putundefined
 delete:
   description: |
-    Delete an origin by its ID
+    Delete an origin.
   operationId: deleteOrigin
   responses:
     '204':
       $ref: ../components/responses/204.yaml
-    '400':
-      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':
@@ -160,7 +138,7 @@ delete:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Delete Origin By Id
+  summary: Delete origin
   tags:
     - CDN
   x-codeSamples:

@@ -1,0 +1,10 @@
+summary: simple origin
+value:
+  data:
+    - key: host
+      value: backend.leaseweb.com
+    - key: description
+      value: Leaseweb Backend
+    - key: enabled
+      value: true
+  resourceType: SIMPLE_ORIGIN

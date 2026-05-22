@@ -50,6 +50,7 @@ get:
                     status: SUSPENDED
                     contractStartDate: '2017-04-01T00:00:00+02:00'
                     contractEndDate: '2018-04-01T00:00:00+02:00'
+                    isTldAdditionalInfoRequired: true
                     _links:
                       self:
                         href: /domains/example.com
@@ -76,6 +77,7 @@ get:
                     dnsOnly: true
                     status: ACTIVE
                     contractStartDate: '2015-01-01T00:00:00+00:00'
+                    isTldAdditionalInfoRequired: false
                     _links:
                       self:
                         href: /domains/example.org
@@ -162,6 +164,7 @@ get:
                   totalCount: 4
                   limit: 10
                   offset: 0
+                isTldAdditionalInfoRequired: true
         type/dns:
           schema:
             $ref: ../components/schemas/operation.get.response.200.schema-dns.yaml
@@ -358,6 +361,7 @@ get:
                     hasWebhosting: true
                     hasMailhosting: true
                     webhostingEquipmentId: '11815097'
+                    isTldAdditionalInfoRequired: false
                     _links:
                       self:
                         href: /domains/domain.com
@@ -374,6 +378,7 @@ get:
                   limit: 1
                   offset: 0
                   totalCount: 1
+                isTldAdditionalInfoRequired: false
       headers: {}
     '401':
       $ref: ../components/responses/401.yaml

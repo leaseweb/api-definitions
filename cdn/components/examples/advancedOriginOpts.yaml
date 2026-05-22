@@ -1,0 +1,16 @@
+summary: advanced origin
+value:
+  data:
+    - key: host
+      value: backend.leaseweb.com
+    - key: description
+      value: Leaseweb Backend
+    - key: enabled
+      value: true
+    - key: path
+      value: /
+    - key: httpPort
+      value: 80
+    - key: httpsPort
+      value: 443
+  resourceType: ADVANCED_ORIGIN

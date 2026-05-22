@@ -42,6 +42,13 @@ properties:
           description: Optional contract end date in ISO 8601 format
           examples:
             - '2018-04-01T00:00:00+02:00'
+        isTldAdditionalInfoRequired:
+          type: boolean
+          description: >-
+            Indicates whether TLD-specific extra parameters are required for
+            this domain.
+          examples:
+            - true
         _links:
           type: object
           description: Links to related resource locations
@@ -192,4 +199,11 @@ properties:
         default: 0
         examples:
           - 0
+  isTldAdditionalInfoRequired:
+    type: boolean
+    description: >-
+      Indicates whether any domain in the full result set (across all pages)
+      requires TLD extra info.
+    examples:
+      - true
 type: object

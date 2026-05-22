@@ -35,6 +35,7 @@ get:
                   - TRANSFERLOCK
                 registryStatus:
                   - clientTransferProhibited
+                isTldAdditionalInfoRequired: true
                 formerDomain: false
                 webhostingPacks:
                   - domainName: example.com

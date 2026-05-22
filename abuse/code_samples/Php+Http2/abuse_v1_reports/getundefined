@@ -8,9 +8,9 @@ $request->setRequestMethod('GET');
 $request->setQuery(new http\QueryString([
   'limit' => '20',
   'offset' => '10',
-  'status' => 'OPEN,WAITING,CLOSED',
+  'status' => 'OPEN,CLOSED',
   'ticketId' => 'SOME_STRING_VALUE',
-  'ip' => 'SOME_STRING_VALUE',
+  'ip' => '1.2.3.4,1.2.3.5,1.2.3.6',
   'sort' => 'deadline,-reportedAt,-updatedAt'
 ]));
 

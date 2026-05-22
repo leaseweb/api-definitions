@@ -37,6 +37,8 @@ properties:
           type: boolean
         webhostingEquipmentId:
           type: string
+        isTldAdditionalInfoRequired:
+          type: boolean
         _links:
           type: object
           properties:
@@ -103,6 +105,11 @@ properties:
       - limit
       - offset
       - totalCount
+  isTldAdditionalInfoRequired:
+    type: boolean
+    description: >-
+      Indicates whether any domain in the full result set (across all pages)
+      requires TLD extra info.
 required:
   - domains
   - _links

@@ -2,7 +2,7 @@ parameters:
   - $ref: ../components/parameters/originId.yaml
 get:
   description: |
-    Validate if an origin can be resolved
+    Validate that an origin can be resolved.
   operationId: resolveOrigin
   responses:
     '200':
@@ -13,8 +13,6 @@ get:
             $ref: ../components/schemas/resolveOriginResult.yaml
           example:
             resolved: true
-    '400':
-      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':
@@ -25,7 +23,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Validate If Origin Can Be Resolved
+  summary: Resolve origin
   tags:
     - CDN
   x-codeSamples:

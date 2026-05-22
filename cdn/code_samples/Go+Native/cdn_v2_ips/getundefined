@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	url := "https://api.leaseweb.com/abuse/v1/reports?limit=20&offset=10&status=OPEN%2CCLOSED&ticketId=SOME_STRING_VALUE&ip=1.2.3.4%2C1.2.3.5%2C1.2.3.6&sort=deadline%2C-reportedAt%2C-updatedAt"
+	url := "https://api.leaseweb.com/cdn/v2/ips"
 
 	req, _ := http.NewRequest("GET", url, nil)
 

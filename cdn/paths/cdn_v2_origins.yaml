@@ -1,12 +1,90 @@
 post:
-  description: |
-    Create origin resource to be used within distributions.
+  description: >
+    Create an origin.
 
-    There are 2 types of origins:
 
-    - SIMPLE_ORIGIN
-    - ADVANCED_ORIGIN
-    - OBJECT_STORAGE_ORIGIN
+    There are 3 types of origins.
+
+
+
+    ### Request data fields
+
+
+    Here are the data fields, common to all types.  
+
+
+    | name        | type    | nullable | required | default |
+
+    |-------------|---------|----------|----------|---------|
+
+    | host        | string  | false    | yes      |         |
+
+    | description | string  | true     | no       | null    |
+
+    | enabled     | boolean | false    | no       | true    |
+
+
+    The extra data fields are described per type afterwards.
+
+
+    #### SIMPLE_ORIGIN
+
+
+    No extra data fields
+
+
+    #### ADVANCED_ORIGIN
+
+
+    | name      | type    | nullable | required | default |
+
+    |-----------|---------|----------|----------|---------|
+
+    | path      | string  | false    | no       | /       |
+
+    | httpPort  | integer | false    | no       | 80      |
+
+    | httpsPort | integer | false    | no       | 443     |
+
+
+    #### OBJECT_STORAGE_ORIGIN
+
+
+    | name              | type   | nullable | required |
+
+    |-------------------|--------|----------|----------|
+
+    | osBucket          | string | false    | yes      |
+
+    | osAccessKeyId     | string | false    | yes      |
+
+    | osSecretAccessKey | string | false    | yes      |
+
+    | osRegion          | string | false    | yes      |
+
+
+
+    ### Response data fields
+
+
+    Here are the data fields present in the response only.
+
+
+    | name       | type   | nullable |
+
+    |------------|--------|----------|
+
+    | id         | string | false    |
+
+    | customerId | string | false    |
+
+    | created    | string | false    |
+
+    | updated    | string | true     |
+
+
+    For all types, all the request fields are present in the response (even the
+    ones not required for the request)
   operationId: createOrigin
   requestBody:
     required: true
@@ -14,15 +92,13 @@ post:
       application/json:
         schema:
           $ref: ../components/schemas/resource.yaml
-        example:
-          data:
-            - key: host
-              value: backend.leaseweb.com
-            - key: description
-              value: Leaseweb Backend
-            - key: enabled
-              value: true
-          resourceType: SIMPLE_ORIGIN
+        examples:
+          SimpleOrigin:
+            $ref: ../components/examples/simpleOriginOpts.yaml
+          AdvancedOrigin:
+            $ref: ../components/examples/advancedOriginOpts.yaml
+          ObjectStorageOrigin:
+            $ref: ../components/examples/objectStorageOriginOpts.yaml
   responses:
     '201':
       description: Successful Response
@@ -30,23 +106,13 @@ post:
         application/json:
           schema:
             $ref: ../components/schemas/resource.yaml
-          example:
-            data:
-              - key: id
-                value: or-4njkb2g
-              - key: customerId
-                value: cu-sndj3j24
-              - key: created
-                value: '2024-07-12T12:55:54'
-              - key: updated
-                value: '2024-07-12T12:55:54'
-              - key: host
-                value: backend.leaseweb.com
-              - key: description
-                value: Leaseweb Backend
-              - key: enabled
-                value: true
-            resourceType: SIMPLE_ORIGIN
+          examples:
+            SimpleOrigin:
+              $ref: ../components/examples/simpleOriginResult.yaml
+            AdvancedOrigin:
+              $ref: ../components/examples/advancedOriginResult.yaml
+            ObjectStorageOrigin:
+              $ref: ../components/examples/objectStorageOriginResult.yaml
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -59,7 +125,7 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Create Origin
+  summary: Create origin
   tags:
     - CDN
   x-codeSamples:
@@ -79,9 +145,10 @@ post:
       source:
         $ref: ../code_samples/Go+Native/cdn_v2_origins/postundefined
 get:
-  description: >
-    Get the list of origins including all of the origin types. Types are
-    specified in each record.
+  description: |
+    List all the origins.
+
+    All types are included.
   operationId: getOrigins
   parameters:
     - $ref: ../components/parameters/limit.yaml
@@ -137,8 +204,6 @@ get:
                     value: 8080
                   - key: httpsPort
                     value: 8081
-    '400':
-      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':
@@ -147,7 +212,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get All Origins
+  summary: List origins
   tags:
     - CDN
   x-codeSamples:

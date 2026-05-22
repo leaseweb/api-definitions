@@ -36,6 +36,13 @@ properties:
     description: Optional contract end date in ISO 8601 format
     examples:
       - '2018-04-01T00:00:00+02:00'
+  isTldAdditionalInfoRequired:
+    type: boolean
+    description: >-
+      Indicates whether TLD-specific extra parameters are required for this
+      domain.
+    examples:
+      - true
   numberOfAutoResponders:
     type: integer
     description: The number of auto responders configured for the domain

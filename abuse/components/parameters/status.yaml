@@ -1,8 +1,14 @@
 name: status
 in: query
+required: false
 schema:
-  default: OPEN,WAITING,CLOSED
   type: string
-description: |
-  Comma separated list of report statuses to filter on.
-example: OPEN,WAITING,CLOSED
+  enum:
+    - OPEN
+    - WAITING
+    - CLOSED
+example: OPEN,CLOSED
+description: >
+  Filter reports by their status (`?status=OPEN,CLOSED`): returns reports that
+  have any of the listed statuses. Defaults to `OPEN,WAITING,CLOSED` if not
+  provided.

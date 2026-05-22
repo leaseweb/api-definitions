@@ -33,6 +33,7 @@ get:
                 owner: john.doe@example.com
                 customerId: '10000001'
                 legalEntityId: '2000'
+                customerDisplayName: Business Partner
                 deadline: '2015-01-01T00:00:00+00:00'
                 detectedIpAddresses:
                   - 127.0.0.1

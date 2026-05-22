@@ -1,0 +1,18 @@
+summary: object storage origin
+value:
+  data:
+    - key: host
+      value: backend.leaseweb.com
+    - key: description
+      value: Leaseweb Backend
+    - key: enabled
+      value: true
+    - key: osBucket
+      value: backend
+    - key: osAccessKeyId
+      value: abcd-1234
+    - key: osSecretAccessKey
+      value: efgh-5678
+    - key: osRegion
+      value: nl-01
+  resourceType: OBJECT_STORAGE_ORIGIN

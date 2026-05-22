@@ -1,0 +1,54 @@
+get:
+  description: >
+    List all CDN IP addresses and subnets.
+
+
+    These are the IP addresses and subnets used by the CDN providers and
+    Leaseweb infrastructure (including shield nodes). 
+
+
+    They can be used to configure firewall allowlists on origin servers to
+    restrict access to Leaseweb CDN infrastructure only.
+  operationId: getIps
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getIpsResult.yaml
+          example:
+            ipv4:
+              - 185.28.68.0/24
+              - 185.28.70.0/24
+              - 82.192.89.249/32
+            ipv6:
+              - 2a00:9d20:31::/48
+              - 2a00:9d20:101::/48
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List IP Addresses
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_ips/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_ips/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_ips/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_ips/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_ips/getundefined

@@ -1,0 +1,24 @@
+summary: advanced origin
+value:
+  data:
+    - key: id
+      value: or-4njkb2g
+    - key: customerId
+      value: cu-sndj3j24
+    - key: created
+      value: '2024-07-12T12:55:54'
+    - key: updated
+      value: '2024-07-12T12:55:54'
+    - key: host
+      value: backend.leaseweb.com
+    - key: description
+      value: Leaseweb Backend
+    - key: enabled
+      value: true
+    - key: path
+      value: /
+    - key: httpPort
+      value: 80
+    - key: httpsPort
+      value: 443
+  resourceType: ADVANCED_ORIGIN

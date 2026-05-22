@@ -3,5 +3,9 @@ in: query
 required: false
 schema:
   type: string
-  format: ipv4
-description: Optional IP address to filter results
+examples:
+  default:
+    $ref: ../examples/ipAddresses.yaml
+description: >
+  Filter reports by IP addresses (`?ip=1.2.3.4,1.2.3.5`): returns reports that
+  match any of the listed IP addresses.

@@ -1,0 +1,15 @@
+type: object
+required:
+  - ipv4
+  - ipv6
+properties:
+  ipv4:
+    type: array
+    items:
+      type: string
+    description: List of IPv4 subnets or addresses
+  ipv6:
+    type: array
+    items:
+      type: string
+    description: List of IPv6 subnets or addresses
