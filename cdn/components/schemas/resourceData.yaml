@@ -2,12 +2,12 @@ properties:
   key:
     type: string
   value:
-    anyOf:
-      - type: string
-      - type: number
-      - type: integer
-      - type: boolean
-      - type: 'null'
+    type:
+      - string
+      - number
+      - integer
+      - boolean
+      - 'null'
 required:
   - key
   - value

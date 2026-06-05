@@ -52,7 +52,7 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Create Certificate
+  summary: Create certificate
   tags:
     - CDN
   x-codeSamples:
@@ -115,7 +115,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get All Certificates
+  summary: List certificates
   tags:
     - CDN
   x-codeSamples:

@@ -73,7 +73,7 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Create Origin Group
+  summary: Create origin group
   tags:
     - CDN
   x-codeSamples:
@@ -166,7 +166,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get All Origin Groups
+  summary: List origin groups
   tags:
     - CDN
   x-codeSamples:

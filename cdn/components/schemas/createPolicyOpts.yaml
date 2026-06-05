@@ -3,42 +3,44 @@ properties:
     type: boolean
     default: false
   securityTokenVendor:
-    anyOf:
-      - type: string
-        enum:
-          - LEASEWEB
-      - type: 'null'
+    type:
+      - string
+      - 'null'
+    enum:
+      - LEASEWEB
+      - null
   securityTokenMethod:
-    anyOf:
-      - type: string
-        enum:
-          - SIMPLE
-          - ENCRYPTED
-      - type: 'null'
+    type:
+      - string
+      - 'null'
+    enum:
+      - SIMPLE
+      - ENCRYPTED
+      - null
   securityTokenSecret:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
     maxLength: 125
   securityTokenAesKey:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   securityTokenShaKey:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   securityTokenClientIp:
     type: boolean
     default: false
   securityTokenExpirationParam:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   securityTokenParam:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   securityTokenNumberOfPathComponents:
     type: integer
     minimum: -1
@@ -51,32 +53,35 @@ properties:
     type: boolean
     default: false
   securityGeoAclDefault:
-    anyOf:
-      - type: string
-        enum:
-          - ALLOW
-          - REJECT
-      - type: 'null'
+    type:
+      - string
+      - 'null'
+    enum:
+      - ALLOW
+      - REJECT
+      - null
   securityIpAcl:
     type: boolean
     default: false
   securityIpAclDefault:
-    anyOf:
-      - type: string
-        enum:
-          - ALLOW
-          - REJECT
-      - type: 'null'
+    type:
+      - string
+      - 'null'
+    enum:
+      - ALLOW
+      - REJECT
+      - null
   securityReferrerAcl:
     type: boolean
     default: false
   securityReferrerAclDefault:
-    anyOf:
-      - type: string
-        enum:
-          - ALLOW
-          - REJECT
-      - type: 'null'
+    type:
+      - string
+      - 'null'
+    enum:
+      - ALLOW
+      - REJECT
+      - null
   originPullProtocol:
     type: string
     enum:
@@ -84,25 +89,25 @@ properties:
       - HTTPS
     default: HTTP
   originPullCompressed:
-    anyOf:
-      - type: boolean
-      - type: 'null'
+    type:
+      - boolean
+      - 'null'
   originPullHostHeader:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   originPullId:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   originPullGroupId:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   originPullShieldId:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   originPullXff:
     type: boolean
     default: false
@@ -116,9 +121,9 @@ properties:
     type: boolean
     default: false
   cacheDefaultTtl:
-    anyOf:
-      - type: integer
-      - type: 'null'
+    type:
+      - integer
+      - 'null'
   cacheHonorOriginTtl:
     type: boolean
     default: false
@@ -144,13 +149,13 @@ properties:
     type: boolean
     default: false
   deliveryTransferRate:
-    anyOf:
-      - type: integer
-      - type: 'null'
+    type:
+      - integer
+      - 'null'
   deliveryBurstSize:
-    anyOf:
-      - type: integer
-      - type: 'null'
+    type:
+      - integer
+      - 'null'
   deliveryForceHttps:
     type: boolean
     default: false
@@ -161,14 +166,14 @@ properties:
     type: string
   allowedMethods:
     default: GET,HEAD
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   path:
     type: string
     default: /
   templateId:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
 type: object

@@ -111,7 +111,7 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Create Policy
+  summary: Create policy
   tags:
     - CDN
   x-codeSamples:
@@ -216,7 +216,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get All Policies
+  summary: List policies
   tags:
     - CDN
   x-codeSamples:

@@ -63,7 +63,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get Total Statistics For Customer
+  summary: Get statistics total
   tags:
     - CDN
   x-codeSamples:

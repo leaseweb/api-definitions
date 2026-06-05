@@ -1,8 +1,8 @@
 properties:
   description:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   certificate:
     type: string
   privateKey:
@@ -12,13 +12,13 @@ properties:
   id:
     type: string
   commonName:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   issuer:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   valid:
     type: boolean
     default: false
@@ -38,10 +38,10 @@ properties:
     type: string
     format: date-time
   updated:
-    anyOf:
-      - type: string
-        format: date-time
-      - type: 'null'
+    type:
+      - string
+      - 'null'
+    format: date-time
 required:
   - certificate
   - privateKey

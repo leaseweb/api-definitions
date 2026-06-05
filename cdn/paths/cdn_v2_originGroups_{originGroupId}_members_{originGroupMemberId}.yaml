@@ -35,7 +35,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get Origin Group Member By Id
+  summary: Get origin group member
   tags:
     - CDN
   x-codeSamples:
@@ -108,7 +108,7 @@ put:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Update Origin Group Member By Id
+  summary: Update origin group member
   tags:
     - CDN
   x-codeSamples:
@@ -151,7 +151,7 @@ delete:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Delete Origin Group Member By Id
+  summary: Delete origin group member
   tags:
     - CDN
   x-codeSamples:

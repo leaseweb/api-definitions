@@ -38,7 +38,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get Certificate By Id
+  summary: Get certificate
   tags:
     - CDN
   x-codeSamples:
@@ -81,7 +81,7 @@ delete:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Delete Certificate By Id
+  summary: Delete certificate
   tags:
     - CDN
   x-codeSamples:

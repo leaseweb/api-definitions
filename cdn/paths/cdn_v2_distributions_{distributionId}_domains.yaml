@@ -47,7 +47,7 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Create Domain
+  summary: Create domain
   tags:
     - CDN
   x-codeSamples:
@@ -108,7 +108,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get All Domains
+  summary: List domains
   tags:
     - CDN
   x-codeSamples:

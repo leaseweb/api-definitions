@@ -73,7 +73,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get All Actions
+  summary: List actions
   tags:
     - CDN
   x-codeSamples:

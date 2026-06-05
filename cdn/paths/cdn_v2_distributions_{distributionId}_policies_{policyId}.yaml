@@ -72,7 +72,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get Policy By Id
+  summary: Get policy
   tags:
     - CDN
   x-codeSamples:
@@ -227,7 +227,7 @@ put:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Update Policy By Id
+  summary: Update policy
   tags:
     - CDN
   x-codeSamples:
@@ -280,7 +280,7 @@ delete:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Delete Policy By Id
+  summary: Delete policy
   tags:
     - CDN
   x-codeSamples:

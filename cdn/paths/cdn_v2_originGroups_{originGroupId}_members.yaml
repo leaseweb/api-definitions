@@ -53,7 +53,7 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Create Origin Group Member
+  summary: Create origin group member
   tags:
     - CDN
   x-codeSamples:
@@ -129,7 +129,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get All Origin Group Members
+  summary: List origin group members
   tags:
     - CDN
   x-codeSamples:

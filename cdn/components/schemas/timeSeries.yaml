@@ -12,21 +12,21 @@ properties:
     type: string
     default: 5MIN
   groupBy:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   distributionId:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   series:
-    anyOf:
-      - items:
-          title: serie
-          type: object
-          additionalProperties: true
-        type: array
-      - type: 'null'
+    type:
+      - array
+      - 'null'
+    items:
+      title: serie
+      type: object
+      additionalProperties: true
 required:
   - fromTs
   - toTs

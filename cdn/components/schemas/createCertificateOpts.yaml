@@ -1,8 +1,8 @@
 properties:
   description:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   certificate:
     type: string
   privateKey:

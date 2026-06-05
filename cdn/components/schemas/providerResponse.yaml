@@ -4,23 +4,23 @@ properties:
   success:
     type: boolean
   ip:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   statusCode:
-    anyOf:
-      - type: integer
-      - type: 'null'
+    type:
+      - integer
+      - 'null'
   message:
-    anyOf:
-      - type: string
-      - type: 'null'
+    type:
+      - string
+      - 'null'
   headers:
-    anyOf:
-      - type: array
-        items:
-          $ref: ./header.yaml
-      - type: 'null'
+    type:
+      - array
+      - 'null'
+    items:
+      $ref: ./header.yaml
 required:
   - providerType
   - success

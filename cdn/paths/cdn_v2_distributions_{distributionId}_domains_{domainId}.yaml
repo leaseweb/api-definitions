@@ -30,7 +30,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get Domain By Id
+  summary: Get domain
   tags:
     - CDN
   x-codeSamples:
@@ -83,7 +83,7 @@ delete:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Delete Domain By Id
+  summary: Delete domain
   tags:
     - CDN
   x-codeSamples:

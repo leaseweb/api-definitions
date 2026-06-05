@@ -21,10 +21,10 @@ properties:
     type: string
     format: date-time
   updated:
-    anyOf:
-      - type: string
-        format: date-time
-      - type: 'null'
+    type:
+      - string
+      - 'null'
+    format: date-time
 required:
   - value
   - type

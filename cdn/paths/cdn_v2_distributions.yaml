@@ -81,7 +81,7 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Create Distribution
+  summary: Create distribution
   tags:
     - CDN
   x-codeSamples:
@@ -154,7 +154,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get All Distributions
+  summary: List distributions
   tags:
     - CDN
   x-codeSamples:

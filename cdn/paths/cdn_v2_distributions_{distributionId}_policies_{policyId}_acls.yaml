@@ -62,7 +62,7 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Create Acl
+  summary: Create ACL
   tags:
     - CDN
   x-codeSamples:
@@ -139,7 +139,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get All Acls
+  summary: List ACLs
   tags:
     - CDN
   x-codeSamples:

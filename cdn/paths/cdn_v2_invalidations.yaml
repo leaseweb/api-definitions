@@ -47,7 +47,7 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Do Invalidation
+  summary: Do invalidation
   tags:
     - CDN
   x-codeSamples:
