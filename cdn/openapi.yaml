@@ -103,6 +103,8 @@ paths:
       paths/cdn_v2_distributions_{distributionId}_policies_{policyId}_acls_{aclId}.yaml
   /cdn/v2/ips:
     $ref: paths/cdn_v2_ips.yaml
+  /cdn/v2/rawLogsSettings:
+    $ref: paths/cdn_v2_rawLogsSettings.yaml
   /cdn/v2/statistics/customer:
     $ref: paths/cdn_v2_statistics_customer.yaml
   /cdn/v2/statistics/customer/totals:

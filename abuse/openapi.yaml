@@ -47,6 +47,7 @@ tags:
     x-traitTag: true
   - name: Abuse Notifications
   - name: Abuse Reports
+  - name: Abuse Filter Presets
 paths:
   /abuse/v1/reports:
     $ref: paths/abuse_v1_reports.yaml

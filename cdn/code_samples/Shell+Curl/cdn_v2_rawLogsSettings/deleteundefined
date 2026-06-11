@@ -1,0 +1,3 @@
+curl --request DELETE \
+  --url https://api.leaseweb.com/cdn/v2/rawLogsSettings \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE'

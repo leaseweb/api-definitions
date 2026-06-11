@@ -1,0 +1,25 @@
+properties:
+  host:
+    type:
+      - string
+      - 'null'
+    description: null for AWS S3
+  bucket:
+    type: string
+  region:
+    type: string
+  created:
+    type: string
+    format: date-time
+  updated:
+    type:
+      - string
+      - 'null'
+    format: date-time
+required:
+  - host
+  - bucket
+  - region
+  - created
+  - updated
+type: object

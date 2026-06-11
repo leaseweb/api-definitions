@@ -1,0 +1,18 @@
+properties:
+  host:
+    type: string
+    description: Do not send for AWS S3
+  bucket:
+    type: string
+  region:
+    type: string
+  accessKeyId:
+    type: string
+    description: Keep previous access key id if missing
+  secretAccessKey:
+    type: string
+    description: Keep previous secret access key if missing
+required:
+  - bucket
+  - region
+type: object

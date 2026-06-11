@@ -1,0 +1,201 @@
+post:
+  description: |
+    Create settings for raw logs.
+
+    This defines your bucket where the raw logs will be uploaded.
+  operationId: createRawLogsSettings
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/createRawLogsSettingsOpts.yaml
+        example:
+          accessKeyId: qKcc0nmubSbW72scUJMdrLglQCY53s
+          bucket: test-bucket
+          host: https://nl.object-storage.io
+          region: nl-01
+          secretAccessKey: PJWHIBCBKRD7ZAAPT0ZJ
+  responses:
+    '201':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/rawLogsSettingsResult.yaml
+          example:
+            bucket: test-bucket
+            created: '2026-05-20T12:55:54'
+            host: https://nl.object-storage.io
+            region: nl-01
+            updated: '2026-05-21T14:35:23'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create raw logs settings
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_rawLogsSettings/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_rawLogsSettings/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_rawLogsSettings/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_rawLogsSettings/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_rawLogsSettings/postundefined
+get:
+  description: |
+    Get the settings for raw logs.
+  operationId: getRawLogsSettings
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/rawLogsSettingsResult.yaml
+          example:
+            bucket: test-bucket
+            created: '2026-05-20T12:55:54'
+            host: https://nl.object-storage.io
+            region: nl-01
+            updated: '2026-05-21T14:35:23'
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get raw logs settings
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_rawLogsSettings/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_rawLogsSettings/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_rawLogsSettings/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_rawLogsSettings/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_rawLogsSettings/getundefined
+put:
+  description: |
+    Update settings for raw logs.
+  operationId: updateRawLogsSettings
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/updateRawLogsSettingsOpts.yaml
+        example:
+          bucket: test-bucket
+          host: https://nl.object-storage.io
+          region: nl-01
+  responses:
+    '200':
+      description: Successful Response
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/rawLogsSettingsResult.yaml
+          example:
+            bucket: test-bucket
+            created: '2026-05-20T12:55:54'
+            host: https://nl.object-storage.io
+            region: nl-01
+            updated: '2026-05-21T14:35:23'
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update raw logs settings
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_rawLogsSettings/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_rawLogsSettings/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_rawLogsSettings/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/cdn_v2_rawLogsSettings/putundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_rawLogsSettings/putundefined
+delete:
+  description: |
+    Delete settings for raw logs.
+  operationId: deleteRawLogsSettings
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete raw logs settings
+  tags:
+    - CDN
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/cdn_v2_rawLogsSettings/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/cdn_v2_rawLogsSettings/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/cdn_v2_rawLogsSettings/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/cdn_v2_rawLogsSettings/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/cdn_v2_rawLogsSettings/deleteundefined
