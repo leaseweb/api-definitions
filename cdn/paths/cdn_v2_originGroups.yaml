@@ -57,7 +57,7 @@ post:
               - key: customerId
                 value: cu-47dbh4n2
               - key: created
-                value: '2024-08-07T10:38:49'
+                value: '2024-08-07T10:38:49Z'
               - key: updated
                 value: null
             resourceType: ORIGIN_GROUP
@@ -131,9 +131,9 @@ get:
                   - key: customerId
                     value: cu-4kb3vb64
                   - key: created
-                    value: '2020-12-14T11:52:17'
+                    value: '2020-12-14T11:52:17Z'
                   - key: updated
-                    value: '2024-07-05T11:38:45'
+                    value: '2024-07-05T11:38:45Z'
               - resourceType: ORIGIN_GROUP
                 data:
                   - key: balancingMethod
@@ -153,9 +153,9 @@ get:
                   - key: customerId
                     value: cu-4kb3vb64
                   - key: created
-                    value: '2020-12-17T14:02:37'
+                    value: '2020-12-17T14:02:37Z'
                   - key: updated
-                    value: '2021-11-29T11:27:03'
+                    value: '2021-11-29T11:27:03Z'
     '400':
       $ref: ../components/responses/400.yaml
     '401':

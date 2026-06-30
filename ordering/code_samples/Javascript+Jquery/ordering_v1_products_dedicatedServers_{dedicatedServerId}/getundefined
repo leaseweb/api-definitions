@@ -1,7 +1,7 @@
 const settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://api.leaseweb.com/ordering/v1/products/dedicatedServers/27f38ef06cf3bf62e21e75401feac6cd?location=AMS-01&connectedToAggregationPool=true",
+  "url": "https://api.leaseweb.com/ordering/v1/products/dedicatedServers/27f38ef06cf3bf62e21e75401feac6cd?location=AMS-01&connectedToAggregationPool=true&contractTerm=3_YEARS&billingCycle=1_MONTH&operatingSystem=Windows%20Server%202022%20Datacenter",
   "method": "GET",
   "headers": {
     "X-LSW-Auth": "REPLACE_KEY_VALUE"

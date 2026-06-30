@@ -65,7 +65,7 @@ post:
               - key: customerId
                 value: cu-27h4kb2v
               - key: created
-                value: '2024-08-07T10:25:00'
+                value: '2024-08-07T10:25:00Z'
               - key: updated
                 value: null
             resourceType: DISTRIBUTION_VOLUME
@@ -141,9 +141,9 @@ get:
                   - key: customerId
                     value: cu-8smmd9n
                   - key: created
-                    value: '2020-11-03T12:04:43'
+                    value: '2020-11-03T12:04:43Z'
                   - key: updated
-                    value: '2024-02-22T20:29:14'
+                    value: '2024-02-22T20:29:14Z'
     '400':
       $ref: ../components/responses/400.yaml
     '401':

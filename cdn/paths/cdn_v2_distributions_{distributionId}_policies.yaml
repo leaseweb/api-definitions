@@ -59,7 +59,7 @@ post:
             cacheQueryString: false
             cacheSegmented: true
             cacheStale: false
-            created: '2024-08-06T08:55:37'
+            created: '2024-08-06T08:55:37Z'
             customerId: cu-a4c79393
             deliveryBurstSize: null
             deliveryCompress: false
@@ -98,7 +98,7 @@ post:
             securityTokenSecret: null
             securityTokenShaKey: null
             securityTokenVendor: null
-            updated: '2024-08-07T23:31:44'
+            updated: '2024-08-07T23:31:44Z'
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -202,8 +202,8 @@ get:
                 path: /
                 id: po-br8i1mf
                 customerId: cu-g89u1nem
-                created: '2024-08-06T08:55:37'
-                updated: '2024-08-07T23:31:44'
+                created: '2024-08-06T08:55:37Z'
+                updated: '2024-08-07T23:31:44Z'
     '400':
       $ref: ../components/responses/400.yaml
     '401':

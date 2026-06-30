@@ -1,3 +1,6 @@
-description: Operating system option
-example: Ubuntu 24.04
+description: >-
+  Operating system option. Matched case-insensitively and ignoring the
+  licensing/core suffix, so "windows server 2022 datacenter" matches "Windows
+  Server 2022 Datacenter (2-Cores)".
+example: Windows Server 2022 Datacenter
 type: string

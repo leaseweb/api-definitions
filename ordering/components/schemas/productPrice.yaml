@@ -90,6 +90,8 @@ properties:
           - 3 months
           - 6 months
           - 1 year
+          - 2 years
+          - 3 years
       billingCycles:
         title: billingCycles
         description: Available billing cycles
@@ -106,6 +108,8 @@ properties:
                 - 3_MONTHS
                 - 6_MONTHS
                 - 1_YEAR
+                - 2_YEARS
+                - 3_YEARS
             description:
               description: Billing cycle description
               type: string
@@ -118,3 +122,14 @@ properties:
             total:
               description: Total price with discount
               type: number
+      details:
+        title: priceDetails
+        description: >-
+          Per-component price breakdown grouped by section (e.g. Server,
+          Connectivity, Software, Services, Discounts). Each section maps a line
+          description to its formatted price (e.g. "incl." or "€ 513.00").
+        type: object
+        additionalProperties:
+          type: object
+          additionalProperties:
+            type: string

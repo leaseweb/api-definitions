@@ -15,14 +15,14 @@ get:
             caBundle: Hidden for security reasons
             certificate: Hidden for security reasons
             commonName: c1
-            created: '2024-03-19T08:15:23'
+            created: '2024-03-19T08:15:23Z'
             daysLeft: 364
             description: Main LSW Certificate 2024
             id: ce-5g8wbh25
             issuer: c1
             privateKey: Hidden for security reasons
             trusted: true
-            updated: '2024-03-19T08:15:23'
+            updated: '2024-03-19T08:15:23Z'
             valid: true
             validFrom: 1723118047
             validUntil: 1754646847

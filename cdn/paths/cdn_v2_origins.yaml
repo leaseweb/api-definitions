@@ -3,7 +3,14 @@ post:
     Create an origin.
 
 
-    There are 3 types of origins.
+    There are 3 types of origins:
+
+
+    - SIMPLE_ORIGIN
+
+    - ADVANCED_ORIGIN
+
+    - OBJECT_STORAGE_ORIGIN
 
 
 
@@ -78,6 +85,8 @@ post:
 
     | customerId | string | false    |
 
+    | salesOrgId | string | false    |
+
     | created    | string | false    |
 
     | updated    | string | true     |
@@ -85,13 +94,17 @@ post:
 
     For all types, all the request fields are present in the response (even the
     ones not required for the request)
+
+
+    More information can be found in the [Knowledge
+    Base](https://kb.leaseweb.com/kb/multi-cdn/multi-cdn-origins/)
   operationId: createOrigin
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/resource.yaml
+          $ref: ../components/schemas/originResource.yaml
         examples:
           SimpleOrigin:
             $ref: ../components/examples/simpleOriginOpts.yaml
@@ -105,7 +118,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/resource.yaml
+            $ref: ../components/schemas/originResource.yaml
           examples:
             SimpleOrigin:
               $ref: ../components/examples/simpleOriginResult.yaml
@@ -172,10 +185,12 @@ get:
                     value: or-5dfg51fr
                   - key: customerId
                     value: cu-sndj3j24
+                  - key: salesOrgId
+                    value: '2000'
                   - key: created
-                    value: '2024-07-12T12:55:54'
+                    value: '2024-07-12T12:55:54Z'
                   - key: updated
-                    value: '2024-07-12T12:55:54'
+                    value: '2024-07-12T12:55:54Z'
                   - key: host
                     value: backend.leaseweb.com
                   - key: description
@@ -188,10 +203,12 @@ get:
                     value: or-y71sg45
                   - key: customerId
                     value: cu-sndj3j24
+                  - key: salesOrgId
+                    value: '2000'
                   - key: created
-                    value: '2020-12-10T07:07:35'
+                    value: '2020-12-10T07:07:35Z'
                   - key: updated
-                    value: '2021-12-08T12:20:25'
+                    value: '2021-12-08T12:20:25Z'
                   - key: host
                     value: backend.leaseweb.com
                   - key: description

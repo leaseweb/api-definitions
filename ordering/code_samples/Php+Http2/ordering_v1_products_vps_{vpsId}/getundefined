@@ -8,7 +8,7 @@ $request->setRequestMethod('GET');
 $request->setQuery(new http\QueryString([
   'location' => 'AMS-01',
   'diskUpgrade' => '100 GB',
-  'operatingSystem' => 'Ubuntu 24.04',
+  'operatingSystem' => 'Windows Server 2022 Datacenter',
   'controlPanel' => 'Plesk Web Pro Edition (30 Domains) for VPS',
   'contractTerm' => '3_YEARS',
   'billingCycle' => '1_MONTH',

@@ -1,9 +1,12 @@
 post:
   description: >
-    Dedicated Server ordering. Only verified existing customers who do not need
-    to do prepayment while placing an order via website can place orders via
-    API. If you are a new customer, Know Your Customer (KYC) process needs to be
-    done first.
+    The Ordering API can only be used by existing, verified Leaseweb customers
+    who are on invoice payment with no prepayment obligation. If you are a new
+    customer, you must first complete the Know Your Customer (KYC) process
+    before you can place orders via API. If you are already on invoice payment
+    but receive an error when placing an order via API, this is likely due to a
+    prepayment requirement on your account. Please contact Leaseweb Sales or
+    Support to have the prepayment obligation removed.
   operationId: orderDedicatedServer
   requestBody:
     content:

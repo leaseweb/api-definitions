@@ -2,7 +2,7 @@ properties:
   origins:
     type: array
     items:
-      $ref: ./resource.yaml
+      $ref: ./originResource.yaml
   _metadata:
     $ref: ./_metadata.yaml
 required:

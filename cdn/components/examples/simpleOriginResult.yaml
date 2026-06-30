@@ -5,10 +5,12 @@ value:
       value: or-4njkb2g
     - key: customerId
       value: cu-sndj3j24
+    - key: salesOrgId
+      value: '2000'
     - key: created
-      value: '2024-07-12T12:55:54'
+      value: '2024-07-12T12:55:54Z'
     - key: updated
-      value: '2024-07-12T12:55:54'
+      value: '2024-07-12T12:55:54Z'
     - key: host
       value: backend.leaseweb.com
     - key: description

@@ -1,0 +1,15 @@
+properties:
+  resourceType:
+    type: string
+    enum:
+      - SIMPLE_ORIGIN
+      - ADVANCED_ORIGIN
+      - OBJECT_STORAGE_ORIGIN
+  data:
+    type: array
+    items:
+      $ref: ./resourceData.yaml
+required:
+  - resourceType
+  - data
+type: object

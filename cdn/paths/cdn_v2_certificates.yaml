@@ -30,7 +30,7 @@ post:
             caBundle: Hidden for security reasons
             certificate: Hidden for security reasons
             commonName: c1
-            created: '2024-03-19T08:15:23'
+            created: '2024-03-19T08:15:23Z'
             customerId: '215468472'
             daysLeft: 364
             description: Main LSW Certificate 2024
@@ -38,7 +38,7 @@ post:
             issuer: c1
             privateKey: Hidden for security reasons
             trusted: true
-            updated: '2024-03-19T08:15:23'
+            updated: '2024-03-19T08:15:23Z'
             valid: true
             validFrom: 1723118047
             validUntil: 1754646847
@@ -103,8 +103,8 @@ get:
                 daysLeft: 364
                 validFrom: 1723118047
                 validUntil: 1754646847
-                created: '2024-03-19T08:15:23'
-                updated: '2024-03-19T08:15:23'
+                created: '2024-03-19T08:15:23Z'
+                updated: '2024-03-19T08:15:23Z'
     '400':
       $ref: ../components/responses/400.yaml
     '401':

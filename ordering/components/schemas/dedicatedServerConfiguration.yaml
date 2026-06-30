@@ -1,0 +1,41 @@
+type: object
+description: Selected configuration of the server
+properties:
+  operatingSystem:
+    description: Selected operating system
+    type: string
+  installOsOnHdd:
+    description: Disk set where the OS is installed
+    type: string
+  controlPanel:
+    description: Selected control panel
+    type: string
+  ipConnectivityType:
+    description: IP connectivity type
+    type: string
+  dataPackConfiguration:
+    description: Data pack configuration
+    type: string
+  uplinkPortSpeed:
+    description: Uplink port speed
+    type: string
+  privateNetwork1xvlan:
+    description: Private network configuration
+    type: string
+  ipV4Configuration:
+    description: IPv4 configuration
+    type: string
+  additionalServices:
+    description: Additional services
+    type: array
+    items:
+      type: string
+  monitoringType:
+    description: Monitoring type
+    type: string
+  ddosIpProtection:
+    description: DDoS IP protection
+    type: string
+  serviceLevelAgreement:
+    description: Service level agreement
+    type: string

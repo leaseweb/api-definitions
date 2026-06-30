@@ -20,6 +20,10 @@ properties:
       - 1_YEAR
       - 2_YEARS
       - 3_YEARS
+  operatingSystem:
+    description: Operating system option. Defaults to no OS when omitted.
+    example: Windows Server 2022 Standard
+    type: string
 required:
   - location
 type: object

@@ -22,8 +22,11 @@ get:
       in: query
       required: false
       schema:
-        description: Operating system option
-        example: Ubuntu 24.04
+        description: >-
+          Operating system option. Matched case-insensitively and ignoring the
+          licensing/core suffix, so "windows server 2022 datacenter" matches
+          "Windows Server 2022 Datacenter (2-Cores)".
+        example: Windows Server 2022 Datacenter
         type: string
     - name: controlPanel
       in: query
@@ -81,60 +84,44 @@ get:
             configurationOptions:
               diskUpgrade:
                 - name: 0 GB
-                  selected: true
-                  price: 0
+                  selected: false
+                  price: -1.5
                   currency: EUR
                 - name: 100 GB
                   selected: false
-                  price: 3
+                  price: 1.5
                   currency: EUR
                 - name: 200 GB
                   selected: false
-                  price: 6
+                  price: 4.5
                   currency: EUR
                 - name: 300 GB
                   selected: false
-                  price: 9
+                  price: 7.5
                   currency: EUR
                 - name: 500 GB
                   selected: false
-                  price: 15
+                  price: 13.5
                   currency: EUR
                 - name: 1000 GB
                   selected: false
-                  price: 30
+                  price: 28.5
                   currency: EUR
                 - name: 50 GB
-                  selected: false
-                  price: 1.5
+                  selected: true
+                  price: 0
                   currency: EUR
               operatingSystem:
-                - name: Ubuntu 20.04
-                  selected: false
-                  price: 0
-                  currency: EUR
-                - name: FreeBSD 13
-                  selected: false
-                  price: 0
-                  currency: EUR
                 - name: AlmaLinux 8
                   selected: false
                   price: 0
                   currency: EUR
-                - name: Debian 11
-                  selected: false
-                  price: 0
-                  currency: EUR
-                - name: RockyLinux 8
+                - name: Rocky Linux 8
                   selected: false
                   price: 0
                   currency: EUR
                 - name: Ubuntu 22.04
-                  selected: false
-                  price: 0
-                  currency: EUR
-                - name: Rocky Linux 9
-                  selected: false
+                  selected: true
                   price: 0
                   currency: EUR
                 - name: AlmaLinux 9
@@ -145,38 +132,46 @@ get:
                   selected: false
                   price: 0
                   currency: EUR
-                - name: FreeBSD 14
-                  selected: false
-                  price: 0
-                  currency: EUR
                 - name: Ubuntu 24.04
-                  selected: true
-                  price: 0
-                  currency: EUR
-                - name: Rockylinux 10
                   selected: false
                   price: 0
                   currency: EUR
-                - name: Almalinux 10
+                - name: Debian 13
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: AlmaLinux 10
                   selected: false
                   price: 0
                   currency: EUR
               controlPanel:
                 - name: No Control Panel
+                  selected: false
+                  price: -15.75
+                  currency: EUR
+                - name: Plesk Web Pro Edition (30 Domains) for VPS
                   selected: true
                   price: 0
                   currency: EUR
-                - name: Plesk Web Pro Edition (30 Domains) for VPS
+                - name: cPanel Premier Cloud 100
                   selected: false
-                  price: 15.75
+                  price: 26
                   currency: EUR
                 - name: Plesk Web Admin Edition (10 Domains) for VPS
                   selected: false
-                  price: 9
+                  price: -6.75
                   currency: EUR
                 - name: Plesk Web Host Edition - Unlimited Domains
                   selected: false
-                  price: 28.75
+                  price: 13
+                  currency: EUR
+                - name: cPanel Admin 5
+                  selected: false
+                  price: 1.75
+                  currency: EUR
+                - name: cPanel Pro 30
+                  selected: false
+                  price: 8.25
                   currency: EUR
               serviceLevelAgreement:
                 - name: Basic
@@ -209,67 +204,91 @@ get:
               basePrice: 3.99
               tax: 0
               setupFee: 0
-              fee: 3.59
+              fee: 4.12
               discounts:
-                total: -0.4
+                total: -1.37
                 details:
                   - description: Contract and Billing Term Discount
-                    value: -0.4
-              total: 3.59
-              contractTerm: 1 year
+                    value: -1.37
+              total: 4.12
+              contractTerm: 3 years
               contractTerms:
                 - key: 1_MONTH
                   description: 1 month
                   discountText: 0%
                   discountValue: 0
-                  total: 3.99
+                  total: 5.49
                 - key: 3_MONTHS
                   description: 3 months
                   discountText: '-3%'
                   discountValue: -3
-                  total: 3.87
+                  total: 5.33
                 - key: 6_MONTHS
                   description: 6 months
                   discountText: '-5%'
                   discountValue: -5
-                  total: 3.79
+                  total: 5.22
                 - key: 1_YEAR
                   description: 1 year
                   discountText: '-10%'
                   discountValue: -10
-                  total: 3.59
+                  total: 4.94
                 - key: 2_YEARS
                   description: 2 years
                   discountText: '-20%'
                   discountValue: -20
-                  total: 3.19
+                  total: 4.39
                 - key: 3_YEARS
                   description: 3 years
                   discountText: '-25%'
                   discountValue: -25
-                  total: 2.99
+                  total: 4.12
               billingCycle: 1 month
               billingCycles:
                 - key: 1_MONTH
                   description: 1 month
                   discountText: 0%
                   discountValue: 0
-                  total: 3.99
+                  total: 4.12
                 - key: 3_MONTHS
                   description: 3 months
                   discountText: '-2%'
                   discountValue: -2
-                  total: 3.91
+                  total: 4.04
                 - key: 6_MONTHS
                   description: 6 months
                   discountText: '-3%'
                   discountValue: -3
-                  total: 3.87
+                  total: 4
                 - key: 1_YEAR
                   description: 1 year
                   discountText: '-5%'
                   discountValue: -5
-                  total: 3.79
+                  total: 3.91
+                - key: 2_YEARS
+                  description: 2 years
+                  discountText: '-10%'
+                  discountValue: -10
+                  total: 3.71
+                - key: 3_YEARS
+                  description: 3 years
+                  discountText: '-15%'
+                  discountValue: -15
+                  total: 3.5
+              details:
+                Connectivity:
+                  30 TB Volume: incl.
+                  1 X 10GE port Virtual: incl.
+                  1 x IPv4 address (Individual): incl.
+                Cloud Instance:
+                  1 x 4 vCPU - 6 GB vRAM - 100 GB NVMe Disk: incl.
+                  1 x Disk upgrade 50 GB: € 1.50
+                Software:
+                  1 x Parallels Plesk Panel Web Pro for VPS: incl.
+                  1 x Ubuntu 22.04: incl.
+                Services:
+                  Basic: incl.
+                  DDOS IP Protection Standard: incl.
             traffic: 30 TB Volume
             vCpu: '4'
             vRam: '6'

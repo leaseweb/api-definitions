@@ -30,11 +30,11 @@ post:
           schema:
             $ref: ../components/schemas/domain.yaml
           example:
-            created: '2024-07-31T02:15:32'
+            created: '2024-07-31T02:15:32Z'
             distributionId: di-yt84vrj
             domain: test2.com
             id: test2.com
-            updated: '2024-08-04T23:24:29'
+            updated: '2024-08-04T23:24:29Z'
     '400':
       $ref: ../components/responses/400.yaml
     '401':
@@ -94,8 +94,8 @@ get:
               - domain: test2.com
                 id: test2.com
                 distributionId: di-y8n5spi
-                created: '2024-07-31T02:15:32'
-                updated: '2024-08-04T23:24:29'
+                created: '2024-07-31T02:15:32Z'
+                updated: '2024-08-04T23:24:29Z'
     '400':
       $ref: ../components/responses/400.yaml
     '401':

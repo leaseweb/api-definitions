@@ -1,3 +1,4 @@
 allOf:
   - $ref: ./dedicatedServerDetail.yaml
+  - $ref: ./dedicatedServerConfiguration.yaml
   - $ref: ./productPrice.yaml

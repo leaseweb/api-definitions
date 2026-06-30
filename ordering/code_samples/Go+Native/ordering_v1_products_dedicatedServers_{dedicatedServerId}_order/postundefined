@@ -11,7 +11,7 @@ func main() {
 
 	url := "https://api.leaseweb.com/ordering/v1/products/dedicatedServers/27f38ef06cf3bf62e21e75401feac6cd/order"
 
-	payload := strings.NewReader("{\"location\":\"AMS-01\",\"connectedToAggregationPool\":true,\"contractTerm\":\"2_YEARS\"}")
+	payload := strings.NewReader("{\"location\":\"AMS-01\",\"connectedToAggregationPool\":true,\"contractTerm\":\"2_YEARS\",\"operatingSystem\":\"Windows Server 2022 Standard\"}")
 
 	req, _ := http.NewRequest("POST", url, payload)
 

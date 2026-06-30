@@ -4,7 +4,7 @@ conn = http.client.HTTPSConnection("api.leaseweb.com")
 
 headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
 
-conn.request("GET", "/ordering/v1/products/vps/VPS02_1?location=AMS-01&diskUpgrade=100%20GB&operatingSystem=Ubuntu%2024.04&controlPanel=Plesk%20Web%20Pro%20Edition%20(30%20Domains)%20for%20VPS&contractTerm=3_YEARS&billingCycle=1_MONTH&serviceLevelAgreement=Basic", headers=headers)
+conn.request("GET", "/ordering/v1/products/vps/VPS02_1?location=AMS-01&diskUpgrade=100%20GB&operatingSystem=Windows%20Server%202022%20Datacenter&controlPanel=Plesk%20Web%20Pro%20Edition%20(30%20Domains)%20for%20VPS&contractTerm=3_YEARS&billingCycle=1_MONTH&serviceLevelAgreement=Basic", headers=headers)
 
 res = conn.getresponse()
 data = res.read()

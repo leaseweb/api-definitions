@@ -7,7 +7,10 @@ $request->setRequestUrl('https://api.leaseweb.com/ordering/v1/products/dedicated
 $request->setRequestMethod('GET');
 $request->setQuery(new http\QueryString([
   'location' => 'AMS-01',
-  'connectedToAggregationPool' => 'true'
+  'connectedToAggregationPool' => 'true',
+  'contractTerm' => '3_YEARS',
+  'billingCycle' => '1_MONTH',
+  'operatingSystem' => 'Windows Server 2022 Datacenter'
 ]));
 
 $request->setHeaders([

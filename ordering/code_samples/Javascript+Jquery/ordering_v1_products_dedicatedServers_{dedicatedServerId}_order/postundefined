@@ -8,7 +8,7 @@ const settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"location\":\"AMS-01\",\"connectedToAggregationPool\":true,\"contractTerm\":\"2_YEARS\"}"
+  "data": "{\"location\":\"AMS-01\",\"connectedToAggregationPool\":true,\"contractTerm\":\"2_YEARS\",\"operatingSystem\":\"Windows Server 2022 Standard\"}"
 };
 
 $.ajax(settings).done(function (response) {

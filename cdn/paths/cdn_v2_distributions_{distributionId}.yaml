@@ -32,7 +32,7 @@ get:
               - key: customerId
                 value: cu-27h4kb2v
               - key: created
-                value: '2024-08-07T10:25:00'
+                value: '2024-08-07T10:25:00Z'
               - key: updated
                 value: null
             resourceType: DISTRIBUTION_VOLUME
@@ -137,9 +137,9 @@ put:
               - key: customerId
                 value: cu-27h4kb2v
               - key: created
-                value: '2024-08-07T10:25:00'
+                value: '2024-08-07T10:25:00Z'
               - key: updated
-                value: '2024-08-07T10:25:00'
+                value: '2024-08-07T10:25:00Z'
             resourceType: DISTRIBUTION_VOLUME
     '400':
       $ref: ../components/responses/400.yaml

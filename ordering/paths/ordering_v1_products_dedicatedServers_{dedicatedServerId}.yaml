@@ -18,99 +18,160 @@ get:
         description: To add the dedicated server in the connectivity aggregation pool
         example: 'true'
         type: boolean
+    - name: contractTerm
+      in: query
+      required: false
+      schema:
+        default: 1_YEAR
+        description: Order contract term
+        example: 3_YEARS
+        type: string
+        enum:
+          - 1_MONTH
+          - 3_MONTHS
+          - 6_MONTHS
+          - 1_YEAR
+          - 2_YEARS
+          - 3_YEARS
+    - name: billingCycle
+      in: query
+      required: false
+      schema:
+        default: 1_MONTH
+        description: Billing cycle period
+        example: 1_MONTH
+        type: string
+        enum:
+          - 1_MONTH
+          - 3_MONTHS
+          - 6_MONTHS
+          - 1_YEAR
+    - name: operatingSystem
+      in: query
+      required: false
+      schema:
+        description: >-
+          Operating system option. Matched case-insensitively and ignoring the
+          licensing/core suffix, so "windows server 2022 datacenter" matches
+          "Windows Server 2022 Datacenter (2-Cores)".
+        example: Windows Server 2022 Datacenter
+        type: string
   responses:
     '200':
       content:
         application/json:
           example:
-            chassis: Dell R730XD (12xLFF)
+            additionalServices:
+              - Monitoring
+              - Remote Management
+            chassis: Dell R630 (8xSFF)
+            controlPanel: No Control Panel
             cpu:
               coresPerCPU: '12'
               totalCores: '24'
               quantity: Dual
-              speed: 2,2 GHz
-              type: Intel Xeon E5-2650v4
+              speed: 2,3 GHz
+              type: Intel Xeon E5-2670v3
+            dataPackConfiguration: 30 TB|Metered|Volume
+            ddosIpProtection: DDOS IP Protection Standard
             deliveryMethod: 1 hour
             hdd:
               - amount: '2'
                 size: SSD480GB
-            id: dd41f6fa95aa88bcea58eddd15eb0fa0
-            location:
+            id: >-
+              WyJERURTRVIwMl9ORVdfT1JERVJfQlVTSU5FU1NfUjYzMC04U0ZGLUU1MjY3MHYzIiwiMiIsIjQ4MEdCIFNTRCBXSSIsIjEyOCBHQiJd
+            installOsOnHdd: Set 1
+            ipConnectivityType: Direct Connectivity
+            ipV4Configuration: 1 x IP V4
+            locations:
               - AMS-01
-            name: Dell R730XD (12xLFF) 2x Intel Xeon E5-2650v4
+            monitoringType: Leaseweb Monitoring
+            name: Dell R630 (8xSFF) 2x Intel Xeon E5-2670v3
+            operatingSystem: Windows Server 2025 Standard (2-Cores)
             price:
               currency: EUR
-              basePrice: 147.5
-              tax: 1
-              setupFee: 2
-              fee: 3
+              basePrice: 170.55
+              tax: 0
+              setupFee: 0
+              fee: 219.36
               discounts:
-                total: -30
+                total: -7.28
                 details:
-                  - description: Black Friday
-                    value: -20
-                  - description: Reseller
-                    value: -10
-                  - description: 1 year (-5%)
-                    value: -6.175
-              total: 117.32
+                  - description: Contract and Billing Term Discount
+                    value: -7.28
+              total: 219.36
+              contractTerm: 6 months
+              contractTerms:
+                - key: 1_MONTH
+                  description: 1 month
+                  discountText: 0%
+                  discountValue: 0
+                  total: 230.91
+                - key: 3_MONTHS
+                  description: 3 months
+                  discountText: '-3%'
+                  discountValue: -3
+                  total: 223.98
+                - key: 6_MONTHS
+                  description: 6 months
+                  discountText: '-5%'
+                  discountValue: -5
+                  total: 219.36
+                - key: 1_YEAR
+                  description: 1 year
+                  discountText: '-10%'
+                  discountValue: -10
+                  total: 207.81
+                - key: 2_YEARS
+                  description: 2 years
+                  discountText: '-20%'
+                  discountValue: -20
+                  total: 184.72
+                - key: 3_YEARS
+                  description: 3 years
+                  discountText: '-25%'
+                  discountValue: -25
+                  total: 173.18
               billingCycle: 1 month
               billingCycles:
                 - key: 1_MONTH
                   description: 1 month
                   discountText: 0%
                   discountValue: 0
-                  total: 123.5
+                  total: 219.36
                 - key: 3_MONTHS
                   description: 3 months
-                  discountText: '-1%'
-                  discountValue: -1.23
-                  total: 122.26
+                  discountText: '-2%'
+                  discountValue: -2
+                  total: 214.97
                 - key: 6_MONTHS
                   description: 6 months
                   discountText: '-3%'
-                  discountValue: -3.7
-                  total: 120.93
-                - key: 1_YEAR
-                  description: 1 year
-                  discountText: '-5%'
-                  discountValue: -6.17
-                  total: 117.32
-              contractTerm: 1 year
-              contractTerms:
-                - key: 1_MONTH
-                  description: 1 month
-                  discountText: 0%
-                  discountValue: 0
-                  total: 123.5
-                - key: 3_MONTHS
-                  description: 3 months
-                  discountText: '-1%'
-                  discountValue: -1.23
-                  total: 122.26
-                - key: 6_MONTHS
-                  description: 6 months
-                  discountText: '-3%'
-                  discountValue: -3.7
-                  total: 120.93
-                - key: 1_YEAR
-                  description: 1 year
-                  discountText: '-5%'
-                  discountValue: -6.17
-                  total: 117.32
-                - key: 2_YEARS
-                  description: 2 years
-                  discountText: '-10%'
-                  discountValue: -12.35
-                  total: 113.59
-                - key: 3_YEARS
-                  description: 3 years
-                  discountText: '-15%'
-                  discountValue: -18.52
-                  total: 109.86
+                  discountValue: -3
+                  total: 212.78
+              details:
+                Server:
+                  Dell R630 (8xSFF) Intel E5-2670v3: incl.
+                  128GB RAM: incl.
+                  2 x SSD480GB (set 1): incl.
+                Connectivity:
+                  Metered Volume 30TB: incl.
+                  1 X GE port UTP: incl.
+                  1 x IPv4 address (Individual): incl.
+                Software:
+                  1 x No control panel: incl.
+                  12 x Windows Server 2025 Standard 2-cores: € 81.00
+                Services:
+                  Basic: incl.
+                  DDOS IP Protection Standard: incl.
+                Delivery discount:
+                  Automatic delivery (-20.0%): '- € 24.91'
+            privateNetwork1xvlan: No Private Network
             ram:
-              size: '32'
+              size: '128'
               unit: GB
+            serviceLevelAgreement: Basic
+            uplinkPortSpeed: 1 x GE port UTP
           schema:
             $ref: ../components/schemas/dedicatedServer.yaml
       description: Ok.
