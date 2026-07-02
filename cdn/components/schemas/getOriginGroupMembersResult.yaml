@@ -2,7 +2,7 @@ properties:
   originGroupMembers:
     type: array
     items:
-      $ref: ./resource.yaml
+      $ref: ./originGroupMemberResource.yaml
   _metadata:
     $ref: ./_metadata.yaml
 required:

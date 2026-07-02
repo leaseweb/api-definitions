@@ -2,7 +2,7 @@ parameters:
   - $ref: ../components/parameters/originGroupId.yaml
 get:
   description: |
-    Get the details of an origin group by its ID.
+    Get an origin group.
   operationId: getOriginGroup
   responses:
     '200':
@@ -10,7 +10,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/resource.yaml
+            $ref: ../components/schemas/originGroupResource.yaml
           example:
             data:
               - key: balancingMethod
@@ -29,13 +29,13 @@ get:
                 value: og-3h47bjs
               - key: customerId
                 value: cu-47dbh4n2
+              - key: salesOrgId
+                value: '2000'
               - key: created
                 value: '2024-08-07T10:38:49Z'
               - key: updated
                 value: null
             resourceType: ORIGIN_GROUP
-    '400':
-      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':
@@ -71,23 +71,25 @@ get:
         $ref: >-
           ../code_samples/Go+Native/cdn_v2_originGroups_{originGroupId}/getundefined
 put:
-  description: |
-    Update the parameters in an origin group.
+  description: >
+    Update an origin group.
 
-    Note: members are managed by another endpoint.
+
+    Refer to the "Create origin group" endpoint for a description of the
+    available data fields.
   operationId: updateOriginGroup
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/resource.yaml
+          $ref: ../components/schemas/originGroupResource.yaml
         example:
           data:
             - key: balancingMethod
               value: CONSISTENT
             - key: description
-              value: LSW Origin Group 2
+              value: LSW Origin Group
             - key: failTimeOut
               value: 8
             - key: keepAlive
@@ -103,13 +105,13 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/resource.yaml
+            $ref: ../components/schemas/originGroupResource.yaml
           example:
             data:
               - key: balancingMethod
                 value: CONSISTENT
               - key: description
-                value: LSW Origin Group 2
+                value: LSW Origin Group
               - key: failTimeOut
                 value: 8
               - key: keepAlive
@@ -122,6 +124,8 @@ put:
                 value: og-3h47bjs
               - key: customerId
                 value: cu-47dbh4n2
+              - key: salesOrgId
+                value: '2000'
               - key: created
                 value: '2024-08-07T10:38:49Z'
               - key: updated
@@ -167,13 +171,11 @@ put:
           ../code_samples/Go+Native/cdn_v2_originGroups_{originGroupId}/putundefined
 delete:
   description: |
-    Delete an origin group by its ID.
+    Delete an origin group.
   operationId: deleteOriginGroup
   responses:
     '204':
       $ref: ../components/responses/204.yaml
-    '400':
-      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':

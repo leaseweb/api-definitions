@@ -65,6 +65,20 @@ get:
               - Monitoring
               - Remote Management
             chassis: Dell R630 (8xSFF)
+            configurationOptions:
+              operatingSystem:
+                - name: no OS
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: Ubuntu 22.04
+                  selected: true
+                  price: 0
+                  currency: EUR
+                - name: Windows Server 2022 Standard
+                  selected: false
+                  price: 513
+                  currency: EUR
             controlPanel: No Control Panel
             cpu:
               coresPerCPU: '12'

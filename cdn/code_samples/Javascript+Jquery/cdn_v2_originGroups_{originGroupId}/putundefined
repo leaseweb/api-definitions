@@ -8,7 +8,7 @@ const settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"resourceType\":\"string\",\"data\":[{\"key\":\"string\",\"value\":\"string\"}]}"
+  "data": "{\"resourceType\":\"ORIGIN_GROUP\",\"data\":[{\"key\":\"string\",\"value\":\"string\"}]}"
 };
 
 $.ajax(settings).done(function (response) {

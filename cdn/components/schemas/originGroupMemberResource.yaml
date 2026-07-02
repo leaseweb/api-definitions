@@ -1,0 +1,13 @@
+properties:
+  resourceType:
+    type: string
+    enum:
+      - ORIGIN_GROUP_MEMBER
+  data:
+    type: array
+    items:
+      $ref: ./resourceData.yaml
+required:
+  - resourceType
+  - data
+type: object

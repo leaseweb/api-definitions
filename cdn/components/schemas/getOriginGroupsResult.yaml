@@ -2,9 +2,10 @@ properties:
   originGroups:
     type: array
     items:
-      $ref: ./resource.yaml
+      $ref: ./originGroupResource.yaml
   _metadata:
     $ref: ./_metadata.yaml
 required:
+  - originGroups
   - _metadata
 type: object

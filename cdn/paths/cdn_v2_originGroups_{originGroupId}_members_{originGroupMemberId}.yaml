@@ -3,7 +3,7 @@ parameters:
   - $ref: ../components/parameters/originGroupMemberId.yaml
 get:
   description: |
-    Get the details of an origin group member by its ID.
+    Get an origin group member.
   operationId: getOriginGroupMember
   responses:
     '200':
@@ -11,20 +11,24 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/resource.yaml
+            $ref: ../components/schemas/originGroupMemberResource.yaml
           example:
             data:
+              - key: id
+                value: or-6j2vgb3
+              - key: originGroupId
+                value: og-3h47bjs
               - key: originId
                 value: or-du7n2vo8
               - key: status
-                value: active
-              - key: id
-                value: or-6j2vgb3
+                value: ACTIVE
               - key: originHost
                 value: origin.leaseweb.com
+              - key: created
+                value: '2026-03-11T16:34:22Z'
+              - key: updated
+                value: '2026-06-01T15:04:03Z'
             resourceType: ORIGIN_GROUP_MEMBER
-    '400':
-      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':
@@ -60,21 +64,25 @@ get:
         $ref: >-
           ../code_samples/Go+Native/cdn_v2_originGroups_{originGroupId}_members_{originGroupMemberId}/getundefined
 put:
-  description: |
-    Update the parameters in an origin group member.
+  description: >
+    Update an origin group member.
+
+
+    Refer to the "Create origin group member" endpoint for a description of the
+    available data fields.
   operationId: updateOriginGroupMember
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/resource.yaml
+          $ref: ../components/schemas/originGroupMemberResource.yaml
         example:
           data:
             - key: originId
               value: or-du7n2vo8
             - key: status
-              value: inactive
+              value: ACTIVE
           resourceType: ORIGIN_GROUP_MEMBER
   responses:
     '200':
@@ -82,17 +90,23 @@ put:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/resource.yaml
+            $ref: ../components/schemas/originGroupMemberResource.yaml
           example:
             data:
+              - key: id
+                value: or-6j2vgb3
+              - key: originGroupId
+                value: og-3h47bjs
               - key: originId
                 value: or-du7n2vo8
               - key: status
-                value: inactive
-              - key: id
-                value: or-6j2vgb3
+                value: ACTIVE
               - key: originHost
                 value: origin.leaseweb.com
+              - key: created
+                value: '2026-03-11T16:34:22Z'
+              - key: updated
+                value: '2026-06-01T15:04:03Z'
             resourceType: ORIGIN_GROUP_MEMBER
     '400':
       $ref: ../components/responses/400.yaml
@@ -134,13 +148,11 @@ put:
           ../code_samples/Go+Native/cdn_v2_originGroups_{originGroupId}_members_{originGroupMemberId}/putundefined
 delete:
   description: |
-    Delete a member from an origin group by its ID
+    Remove an origin from an origin group.
   operationId: deleteOriginGroupMember
   responses:
     '204':
       $ref: ../components/responses/204.yaml
-    '400':
-      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':

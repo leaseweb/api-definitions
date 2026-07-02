@@ -1,21 +1,76 @@
 post:
-  description: |+
-    Using origin groups you can define loadbalancers on top of your origins. 
+  description: >
+    Create an origin group.
 
-    Available loadbalancing methods:
+
+
+    ### Request data fields
+
+
+    | name             | type    | nullable | required | default |
+
+    |------------------|---------|----------|----------|---------|
+
+    | balancingMethod  | string  | false    | yes      |         |
+
+    | description      | string  | true     | no       | null    |
+
+    | failTimeOut      | integer | false    | no       | 5       |
+
+    | keepAlive        | boolean | false    | no       | false   |
+
+    | keepAliveSeconds | integer | false    | no       | 5       |
+
+    | enabled          | boolean | false    | no       | true    |
+
+
+    Available load balancing methods:
+
 
     - ROUNDROBIN
+
     - CONSISTENT
+
     - STICKY
+
     - FAILOVER
 
+
+
+    ### Response data fields
+
+
+    Here are the data fields present in the response only.
+
+
+    | name       | type   | nullable |
+
+    |------------|--------|----------|
+
+    | id         | string | false    |
+
+    | customerId | string | false    |
+
+    | salesOrgId | string | false    |
+
+    | created    | string | false    |
+
+    | updated    | string | true     |
+
+
+    All the request fields are present in the response (even the ones not
+    required for the request)
+
+
+    More information can be found in the [Knowledge
+    Base](https://kb.leaseweb.com/kb/multi-cdn/multi-cdn-origins/)
   operationId: createOriginGroup
   requestBody:
     required: true
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/resource.yaml
+          $ref: ../components/schemas/originGroupResource.yaml
         example:
           data:
             - key: balancingMethod
@@ -37,7 +92,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/resource.yaml
+            $ref: ../components/schemas/originGroupResource.yaml
           example:
             data:
               - key: balancingMethod
@@ -56,6 +111,8 @@ post:
                 value: og-3h47bjs
               - key: customerId
                 value: cu-47dbh4n2
+              - key: salesOrgId
+                value: '2000'
               - key: created
                 value: '2024-08-07T10:38:49Z'
               - key: updated
@@ -94,7 +151,7 @@ post:
         $ref: ../code_samples/Go+Native/cdn_v2_originGroups/postundefined
 get:
   description: |
-    Get the list of your origin groups.
+    List all the origin groups.
   operationId: getOriginGroups
   parameters:
     - $ref: ../components/parameters/limit.yaml
@@ -130,6 +187,8 @@ get:
                     value: og-84ynk6g
                   - key: customerId
                     value: cu-4kb3vb64
+                  - key: salesOrgId
+                    value: '2000'
                   - key: created
                     value: '2020-12-14T11:52:17Z'
                   - key: updated
@@ -152,12 +211,12 @@ get:
                     value: og-dg9enj3
                   - key: customerId
                     value: cu-4kb3vb64
+                  - key: salesOrgId
+                    value: '2000'
                   - key: created
                     value: '2020-12-17T14:02:37Z'
                   - key: updated
                     value: '2021-11-29T11:27:03Z'
-    '400':
-      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':
