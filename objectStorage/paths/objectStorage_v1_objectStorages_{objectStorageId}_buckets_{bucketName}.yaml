@@ -1,0 +1,113 @@
+put:
+  description: Update tenant bucket for the given ObjectStorage product and bucket name.
+  operationId: put/objectStorageBucket
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+    - $ref: ../components/parameters/bucketName.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/request.schema-7.yaml
+        example:
+          isVersioningEnabled: true
+          quota: 1000
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/bucket.yaml
+          example:
+            creationTime: '2024-01-15T08:30:00Z'
+            isBeingDeleted: false
+            isVersioningEnabled: true
+            name: test-bucket-01
+            objectCount: 1000
+            quota:
+              unit: GB
+              value: 1000
+            region: nl-01
+            used:
+              unit: GB
+              value: 250
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Update an object storage bucket
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/putundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/putundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/putundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/putundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/putundefined
+delete:
+  description: Delete tenant bucket of the given ObjectStorage product and bucket.
+  operationId: delete/objectStorageBucket
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+    - $ref: ../components/parameters/bucketName.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete an object storage bucket
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/deleteundefined

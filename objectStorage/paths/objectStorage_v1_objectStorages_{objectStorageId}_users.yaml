@@ -1,0 +1,121 @@
+get:
+  description: Show tenant users for the given ObjectStorage product.
+  operationId: get/objectStorageUsers
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/response.200.schema-2.yaml
+          example:
+            users:
+              - id: d5f82e19-6a4c-4b3d-a890-1f2c3d4e5f60
+                fullName: Root
+                uniqueName: root
+                groups: []
+              - id: 9576bc36-84e2-4ed7-92ff-6bb8fa25a2d5
+                fullName: test
+                uniqueName: user/test
+                groups:
+                  - 5e479608-e62d-4936-9095-6f3be82b564e
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List object storage users
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_users/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_users/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_users/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_users/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_users/getundefined
+post:
+  description: Create tenant user for the given ObjectStorage product.
+  operationId: post/objectStorageUsers
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/request.schema.yaml
+        example:
+          fullName: testUser
+          groups:
+            - 5e479608-e62d-4936-9095-6f3be82b564e
+          uniqueName: user/testUser
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/user.yaml
+          example:
+            fullName: testUser
+            groups:
+              - 5e479608-e62d-4936-9095-6f3be82b564e
+            id: c7e4a1f2-8b3d-4e9c-a5f7-2d6b9e0c1a83
+            uniqueName: user/testUser
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create an object storage user
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_users/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_users/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_users/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_users/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_users/postundefined

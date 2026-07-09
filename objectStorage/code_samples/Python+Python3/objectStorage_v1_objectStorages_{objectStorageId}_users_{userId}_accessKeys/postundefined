@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"expiresAt\":\"2019-08-24T14:15:22Z\"}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/objectStorage/v1/objectStorages/10242480/users/%7BuserId%7D/accessKeys", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

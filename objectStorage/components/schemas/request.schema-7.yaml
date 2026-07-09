@@ -1,0 +1,13 @@
+properties:
+  isVersioningEnabled:
+    description: Indicates if versioning is enabled for the bucket.
+    type: boolean
+  quota:
+    description: The quota for the size of the bucket in GB (1–1,000,000).
+    type: integer
+    minimum: 1
+    maximum: 1000000
+    nullable: true
+required:
+  - isVersioningEnabled
+type: object

@@ -1,0 +1,46 @@
+delete:
+  description: >-
+    Delete tenant user access key given ObjectStorage product, user and access
+    key id.
+  operationId: delete/objectStorageAccessKey
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+    - $ref: ../components/parameters/userId.yaml
+    - $ref: ../components/parameters/accessKeyId.yaml
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Delete a user access key
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys_{accessKeyId}/deleteundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys_{accessKeyId}/deleteundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys_{accessKeyId}/deleteundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys_{accessKeyId}/deleteundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys_{accessKeyId}/deleteundefined

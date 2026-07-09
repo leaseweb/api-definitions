@@ -1,0 +1,152 @@
+get:
+  description: Show tenant buckets for the given ObjectStorage product.
+  operationId: get/objectStorageBuckets
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/response.200.schema-5.yaml
+          example:
+            buckets:
+              - name: abcdef
+                region: nl-01
+                isVersioningEnabled: true
+                quota:
+                  value: 1000000000
+                  unit: GB
+                objectCount: 1000
+                used:
+                  value: 500000000
+                  unit: GB
+                creationTime: '2024-01-15T08:30:00Z'
+                isBeingDeleted: false
+              - name: emmer-public
+                region: nl-01
+                isVersioningEnabled: false
+                quota: null
+                objectCount: 0
+                used:
+                  value: 0
+                  unit: GB
+                creationTime: '2024-02-20T10:00:00Z'
+                isBeingDeleted: false
+              - name: emmer1
+                region: nl-01
+                isVersioningEnabled: true
+                quota:
+                  value: 2000000000
+                  unit: GB
+                objectCount: 2000
+                used:
+                  value: 1000000000
+                  unit: GB
+                creationTime: '2024-03-10T14:15:00Z'
+                isBeingDeleted: false
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List object storage buckets
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_buckets/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_buckets/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_buckets/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_buckets/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_buckets/getundefined
+post:
+  description: Create tenant bucket for the given ObjectStorage product.
+  operationId: post/objectStorageBuckets
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/request.schema-6.yaml
+        example:
+          isVersioningEnabled: true
+          name: test-bucket-01
+          quota: 1000
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/bucket.yaml
+          example:
+            creationTime: null
+            isBeingDeleted: false
+            isVersioningEnabled: true
+            name: test-bucket-01
+            objectCount: 0
+            quota:
+              unit: GB
+              value: 1000
+            region: nl-01
+            used:
+              unit: GB
+              value: 0
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create an object storage bucket
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_buckets/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_buckets/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_buckets/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_buckets/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_buckets/postundefined

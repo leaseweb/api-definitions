@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$body = new http\Message\Body;
+$body->append('{"expiresAt":"2019-08-24T14:15:22Z"}');
+
+$request->setRequestUrl('https://api.leaseweb.com/objectStorage/v1/objectStorages/10242480/users/%7BuserId%7D/accessKeys');
+$request->setRequestMethod('POST');
+$request->setBody($body);
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE',
+  'content-type' => 'application/json'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

@@ -1,0 +1,122 @@
+get:
+  description: Show tenant groups for the given ObjectStorage product.
+  operationId: get/objectStorageGroups
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/response.200.schema-4.yaml
+          example:
+            groups:
+              - id: 9576bc36-84e2-4ed7-92ff-6bb8fa25a2d5
+                displayName: allPowerful
+                uniqueName: group/allPowerful
+                s3Policies: >-
+                  {"Statement": [{"Effect": "Allow","Action": "s3:*","Resource":
+                  "arn:aws:s3:::*"}]}
+              - id: 5e479608-e62d-4936-9095-6f3be82b564e
+                displayName: NoAccess
+                uniqueName: group/NoAccess
+                s3Policies: null
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List object storage groups
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_groups/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_groups/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_groups/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_groups/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_groups/getundefined
+post:
+  description: Create tenant group for the given ObjectStorage product.
+  operationId: post/objectStorageGroups
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/request.schema-4.yaml
+        example:
+          displayName: testGroup
+          s3Policies: null
+          uniqueName: testGroup
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/group.yaml
+          example:
+            displayName: allPowerful
+            id: 3f8fad42-73c1-4b5a-9d23-8e1f2c47b890
+            s3Policies: >-
+              {"Statement": [{"Effect": "Deny","Action": "s3:*","Resource":
+              "arn:aws:s3:::*"}]}
+            uniqueName: group/allPowerful
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create an object storage group
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_groups/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_groups/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_groups/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_groups/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_groups/postundefined

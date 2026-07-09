@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/objectStorage/v1/objectStorages/10242480/users \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"fullName":"string","uniqueName":"string","groups":["497f6eca-6276-4993-bfeb-53cbbbba6f08"]}'

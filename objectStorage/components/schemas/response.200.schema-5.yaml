@@ -1,0 +1,7 @@
+properties:
+  buckets:
+    description: A list of tenant buckets.
+    type: array
+    items:
+      $ref: ./bucket.yaml
+type: object

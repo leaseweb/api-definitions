@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/objectStorage/v1/objectStorages/10242480/groups \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"displayName":"string","uniqueName":"string","s3Policies":"string"}'

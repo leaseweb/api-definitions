@@ -1,0 +1,7 @@
+name: objectStorageId
+description: The id of the ObjectStorage.
+in: path
+schema:
+  type: string
+required: true
+example: '10242480'

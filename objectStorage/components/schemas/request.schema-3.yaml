@@ -1,0 +1,9 @@
+properties:
+  expiresAt:
+    description: >-
+      The expire date for the access key in ISO 8601 datetime format. Can be
+      null.
+    type: string
+    format: date-time
+    nullable: true
+type: object

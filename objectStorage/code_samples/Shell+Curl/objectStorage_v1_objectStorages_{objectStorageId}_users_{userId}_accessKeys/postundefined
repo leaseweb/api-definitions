@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/objectStorage/v1/objectStorages/10242480/users/%7BuserId%7D/accessKeys \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"expiresAt":"2019-08-24T14:15:22Z"}'

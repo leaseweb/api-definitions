@@ -1,0 +1,24 @@
+properties:
+  id:
+    description: The access key id.
+    type: string
+  displayName:
+    description: The access key name.
+    type: string
+  accountId:
+    description: The account identifier this key belongs to.
+    type: string
+  expiresAt:
+    description: >-
+      The datetime string of the key expire date if it as been set, null
+      otherwise.
+    type: string
+    format: date-time
+    nullable: true
+  accessKey:
+    description: The access key.
+    type: string
+  secretAccessKey:
+    description: The access key secret.
+    type: string
+type: object

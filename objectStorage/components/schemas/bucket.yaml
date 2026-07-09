@@ -1,0 +1,49 @@
+description: Object Storage bucket
+type: object
+properties:
+  name:
+    description: The bucket name.
+    type: string
+  region:
+    description: The bucket region.
+    type: string
+  isVersioningEnabled:
+    description: Indicates if the bucket versioning is enabled.
+    type: boolean
+  quota:
+    description: The quota for the size of the bucket.
+    type: object
+    nullable: true
+    properties:
+      value:
+        description: The value of the quota.
+        type: number
+      unit:
+        description: The unit of the quota, e.g., GB.
+        type: string
+        enum:
+          - GB
+  objectCount:
+    description: The bucket object count, null if not set.
+    type: integer
+    nullable: true
+  used:
+    description: The bucket used space.
+    type: object
+    properties:
+      value:
+        description: The value of the used space.
+        type: number
+      unit:
+        description: The unit of the used space, e.g., GB.
+        type: string
+        enum:
+          - GB
+  creationTime:
+    description: The date and time the bucket was created, or null if not yet available.
+    type: string
+    format: date-time
+    nullable: true
+  isBeingDeleted:
+    description: Indicates if the bucket is currently being deleted.
+    type: boolean

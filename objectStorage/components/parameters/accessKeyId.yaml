@@ -1,0 +1,6 @@
+name: accessKeyId
+description: The access key id, UUID format
+in: path
+schema:
+  type: string
+required: true

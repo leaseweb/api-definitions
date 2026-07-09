@@ -1,0 +1,23 @@
+properties:
+  name:
+    description: The bucket name. Must be 3–63 characters, alphanumeric and hyphens only.
+    type: string
+    minLength: 3
+    maxLength: 63
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9]$
+  isVersioningEnabled:
+    description: Indicates if versioning is enabled for the bucket.
+    type: boolean
+  quota:
+    description: >-
+      The quota for the size of the bucket in GB (1–1,000,000). Omit or set to
+      null for no quota. In responses, quota is returned as an object with
+      `value` and `unit` fields.
+    type: integer
+    minimum: 1
+    maximum: 1000000
+    nullable: true
+required:
+  - name
+  - isVersioningEnabled
+type: object

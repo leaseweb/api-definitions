@@ -1,0 +1,120 @@
+get:
+  description: Show tenant user access keys for the given ObjectStorage product and user.
+  operationId: get/objectStorageAccessKeys
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+    - $ref: ../components/parameters/userId.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/response.200.schema-3.yaml
+          example:
+            keys:
+              - accountId: '000000000000'
+                displayName: Root
+                expiresAt: null
+                id: a2fc3b8d-15e6-4f9a-b072-6c3d8e91f540
+              - accountId: '000000000001'
+                displayName: test
+                expiresAt: '2026-07-10T13:14:42Z'
+                id: 9576bc36-84e2-4ed7-92ff-6bb8fa25a2d5
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List user access keys
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/getundefined
+post:
+  description: Create tenant user access keys for the given ObjectStorage product and user.
+  operationId: post/objectStorageAccessKeys
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+    - $ref: ../components/parameters/userId.yaml
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/request.schema-3.yaml
+        example:
+          expiresAt: '1975-07-10T13:14:42Z'
+  responses:
+    '201':
+      description: Created
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/response.201.schema.yaml
+          example:
+            accessKey: BHGWSRW4OQ7QKIV5YTP0
+            accountId: '58053652363364670478'
+            displayName: '****************ser'
+            expiresAt: '2026-07-10T13:14:42Z'
+            id: SGKH6ZNxutUyt5e-WRxE8XiT2KiSGAkwPP1nJoyXAg==
+            secretAccessKey: WsndsW+WjRz14LP6p33LTpiO6byDhK1xxswCxUvy
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create a user access key
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/postundefined

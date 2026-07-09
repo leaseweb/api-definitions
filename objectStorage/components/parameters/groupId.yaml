@@ -1,0 +1,6 @@
+name: groupId
+description: The group id.
+in: path
+schema:
+  type: string
+required: true

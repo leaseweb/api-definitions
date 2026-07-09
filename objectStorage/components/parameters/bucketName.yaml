@@ -1,0 +1,6 @@
+name: bucketName
+description: The bucket name.
+in: path
+schema:
+  type: string
+required: true

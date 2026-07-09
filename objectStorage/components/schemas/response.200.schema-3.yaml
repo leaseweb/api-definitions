@@ -1,0 +1,8 @@
+description: An ObjectStorage access key
+properties:
+  keys:
+    description: A list of access keys.
+    type: array
+    items:
+      $ref: ./accessKey.yaml
+type: object

@@ -1,0 +1,22 @@
+properties:
+  fullName:
+    description: The full name of the user.
+    type: string
+    minLength: 1
+    maxLength: 128
+  uniqueName:
+    description: The unique name identifier for the user.
+    type: string
+    minLength: 1
+    maxLength: 1024
+  groups:
+    description: Array of group UUIDs to assign the user to.
+    type: array
+    items:
+      type: string
+      format: uuid
+required:
+  - fullName
+  - uniqueName
+  - groups
+type: object

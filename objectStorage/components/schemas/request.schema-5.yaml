@@ -1,0 +1,15 @@
+properties:
+  displayName:
+    description: The display name of the group.
+    type: string
+    minLength: 1
+    maxLength: 32
+  s3Policies:
+    description: >-
+      Optional JSON string defining the S3 policies and permissions for users in
+      this group.
+    type: string
+    nullable: true
+required:
+  - displayName
+type: object

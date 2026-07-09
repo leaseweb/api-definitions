@@ -1,0 +1,36 @@
+properties:
+  objectStorages:
+    description: A list of object storage products
+    type: array
+    items:
+      description: An objectStorage product.
+      type: object
+      properties:
+        id:
+          type: string
+        customerId:
+          type: string
+        salesOrgId:
+          type: string
+        contractId:
+          type: string
+        quantity:
+          type: string
+        description:
+          type: string
+  _metadata:
+    description: Metadata about the collection
+    properties:
+      limit:
+        default: 10
+        description: The maximum number of results returned
+        type: integer
+      offset:
+        default: 0
+        description: Results are returned starting at the given offset
+        type: integer
+      totalCount:
+        description: The total amount of results
+        type: integer
+    type: object
+type: object

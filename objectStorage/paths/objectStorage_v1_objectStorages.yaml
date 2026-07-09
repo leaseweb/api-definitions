@@ -1,0 +1,59 @@
+get:
+  description: Show all objectStorage products.
+  operationId: get/objectStorages
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/response.200.schema.yaml
+          example:
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 2
+            objectStorages:
+              - id: '12316650'
+                customerId: '10085996'
+                salesOrgId: '2000'
+                contractId: '42001021000100'
+                quantity: 100GB
+                description: 'Committed space: 100GB.'
+              - id: '12316651'
+                customerId: '10085996'
+                salesOrgId: '2000'
+                contractId: '42001021000100'
+                quantity: 100GB
+                description: 'Committed space: 100GB.'
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+  summary: List all Object Storages
+  tags:
+    - Object Storage
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/objectStorage_v1_objectStorages/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/objectStorage_v1_objectStorages/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/objectStorage_v1_objectStorages/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/objectStorage_v1_objectStorages/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/objectStorage_v1_objectStorages/getundefined

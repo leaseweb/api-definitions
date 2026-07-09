@@ -1,0 +1,7 @@
+properties:
+  users:
+    description: A list of tenant users.
+    type: array
+    items:
+      $ref: ./user.yaml
+type: object

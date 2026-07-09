@@ -1,0 +1,19 @@
+description: Object Storage tenant group
+type: object
+properties:
+  id:
+    description: The group id.
+    type: string
+  displayName:
+    description: The group name.
+    type: string
+  uniqueName:
+    description: The group unique name.
+    type: string
+  s3Policies:
+    description: >-
+      A JSON-encoded IAM-style policy document (e.g.
+      `{"Statement":[{"Effect":"Allow","Action":"s3:*","Resource":"arn:aws:s3:::*"}]}`),
+      or null if no policy is set.
+    type: string
+    nullable: true

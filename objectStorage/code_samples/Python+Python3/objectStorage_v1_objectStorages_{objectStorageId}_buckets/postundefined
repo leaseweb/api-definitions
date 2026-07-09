@@ -1,0 +1,17 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+payload = "{\"name\":\"string\",\"isVersioningEnabled\":true,\"quota\":1}"
+
+headers = {
+    'X-LSW-Auth': "REPLACE_KEY_VALUE",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/objectStorage/v1/objectStorages/10242480/buckets", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
