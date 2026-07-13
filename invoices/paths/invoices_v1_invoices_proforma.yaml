@@ -55,16 +55,18 @@ get:
   x-codeSamples:
     - lang: Shell + Curl
       source:
-        $ref: ../code_samples/Shell+Curl/invoices_v1_proforma/getundefined
+        $ref: ../code_samples/Shell+Curl/invoices_v1_invoices_proforma/getundefined
     - lang: Python + Python3
       source:
-        $ref: ../code_samples/Python+Python3/invoices_v1_proforma/getundefined
+        $ref: >-
+          ../code_samples/Python+Python3/invoices_v1_invoices_proforma/getundefined
     - lang: Php + Http2
       source:
-        $ref: ../code_samples/Php+Http2/invoices_v1_proforma/getundefined
+        $ref: ../code_samples/Php+Http2/invoices_v1_invoices_proforma/getundefined
     - lang: Javascript + Jquery
       source:
-        $ref: ../code_samples/Javascript+Jquery/invoices_v1_proforma/getundefined
+        $ref: >-
+          ../code_samples/Javascript+Jquery/invoices_v1_invoices_proforma/getundefined
     - lang: Go + Native
       source:
-        $ref: ../code_samples/Go+Native/invoices_v1_proforma/getundefined
+        $ref: ../code_samples/Go+Native/invoices_v1_invoices_proforma/getundefined

@@ -3,7 +3,7 @@
 $client = new http\Client;
 $request = new http\Client\Request;
 
-$request->setRequestUrl('https://api.leaseweb.com/invoices/v1/proforma');
+$request->setRequestUrl('https://api.leaseweb.com/invoices/v1/invoices/proforma');
 $request->setRequestMethod('GET');
 $request->setHeaders([
   'X-LSW-Auth' => 'REPLACE_KEY_VALUE'

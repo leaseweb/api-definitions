@@ -56,8 +56,8 @@ paths:
     $ref: paths/invoices_v1_invoices_{Id}.yaml
   /invoices/v1/invoices/{Id}/pdf:
     $ref: paths/invoices_v1_invoices_{Id}_pdf.yaml
-  /invoices/v1/proforma:
-    $ref: paths/invoices_v1_proforma.yaml
+  /invoices/v1/invoices/proforma:
+    $ref: paths/invoices_v1_invoices_proforma.yaml
 components:
   securitySchemes:
     BearerAuth:

@@ -7,9 +7,7 @@ info:
     url: https://www.apache.org/licenses/LICENSE-2.0.html
   description: >
     > The base URL for this API is: **https://api.leaseweb.com**<br> <div
-    class="badge" style="margin-right: 0.5rem;">BETA</div><div
-    class="badge-red">LIMITED ACCESS</div> To use this API, please request
-    access via your account manager.
+    class="badge" style="margin-right: 0.5rem;">BETA</div>
   x-logo:
     url: /images/logo.png
     altText: Leaseweb developer documentation
