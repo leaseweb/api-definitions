@@ -1,8 +1,10 @@
 properties:
   providerType:
     type: string
+    description: Name of the provider
   success:
     type: boolean
+    description: True if the request is considered successful (status code is 2XX or 3XX)
   ip:
     type:
       - string
@@ -15,12 +17,21 @@ properties:
     type:
       - string
       - 'null'
+    description: error message in case of unsuccessful request
   headers:
     type:
       - array
       - 'null'
     items:
-      $ref: ./header.yaml
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+      required:
+        - name
+        - value
+      type: object
 required:
   - providerType
   - success

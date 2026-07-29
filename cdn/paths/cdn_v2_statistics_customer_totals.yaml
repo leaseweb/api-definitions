@@ -1,31 +1,11 @@
 get:
   description: >
-    Query total statistics for customer
-
-    This endpoint is intended to be used for getting the summed (total)
-    statistics from the reporting backend
+    Get the statistics totals of your distributions.
 
 
-    It currently supports DATATRANSFER, BANDWIDTH, REQUESTS, STATUS_2XX,
-    STATUS_4XX, STATUS_5XX, CACHEHIT and 95TH as a metric.
-
-        DATATRANSFER: used to get the consumed amount of traffic (in bytes) in the queried period.
-        BANDWIDTH: used to get the mean amount of bits per second in the queried period.
-        STATUS_2XX/4XX/5XX: used to get a percentage of the amount of response codes in the queried period.
-        CACHEHIT: used to get the mean cache-hit ratio in the queried period.
-        REQUESTS: used to get the total amount of serviced requests in the queried period.
-        95TH: used to get the 95th percentile in bits per second for the queried period.
-
-    The fromDt and toDt must use the format YYYY-MM-ddTHH:mm:ss eg..
-    2024-07-14T13:40:00.
-
-
-    Using the 'groupBy' parameter will allow you to group results together.
-    Supported groupings are PROVIDER, DISTRIBUTION, CUSTOMER and REGION.
-
-    By specifying the distributionId as an additional filter the query will run
-    just for the specified distribution.
-  operationId: getStatisticsTotal
+    Refer to the "Get statistics" endpoint for a description of the available
+    metrics.
+  operationId: getStatisticsTotals
   parameters:
     - $ref: ../components/parameters/fromDt.yaml
     - $ref: ../components/parameters/toDt.yaml
@@ -38,12 +18,12 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/timeSeries.yaml
+            $ref: ../components/schemas/getStatisticsTotalsResult.yaml
           example:
             distributionId: null
             fromTs: '2024-07-13T14:45:00'
-            granularity: 5MIN
-            groupBy: PROVIDER
+            granularity: 5m
+            groupBy: provider
             series:
               - edgio:
                   - total: 237047731.04000002
@@ -63,7 +43,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get statistics total
+  summary: Get statistics totals
   tags:
     - CDN
   x-codeSamples:

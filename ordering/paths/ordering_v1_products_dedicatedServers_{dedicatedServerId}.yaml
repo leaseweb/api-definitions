@@ -97,7 +97,7 @@ get:
             installOsOnHdd: Set 1
             ipConnectivityType: Direct Connectivity
             ipV4Configuration: 1 x IP V4
-            locations:
+            location:
               - AMS-01
             monitoringType: Leaseweb Monitoring
             name: Dell R630 (8xSFF) 2x Intel Xeon E5-2670v3

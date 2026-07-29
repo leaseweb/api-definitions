@@ -5,13 +5,18 @@ properties:
       - 'null'
   certificate:
     type: string
+    description: hidden for security reason
   privateKey:
     type: string
+    description: hidden for security reason
   caBundle:
     type: string
+    description: hidden for security reason
   id:
     type: string
   customerId:
+    type: string
+  salesOrgId:
     type: string
   commonName:
     type:
@@ -23,19 +28,21 @@ properties:
       - 'null'
   valid:
     type: boolean
-    default: false
+    description: whether the certificate is expired or not
   trusted:
     type: boolean
-    default: false
+    description: whether the private key and CA bundle match the certificate
   daysLeft:
     type: integer
-    default: 0
+    description: number of days left until certificate expiration
   validFrom:
     type: number
-    default: 1720173548.166699
+    description: start of certificate valid period
+    format: timestamp
   validUntil:
     type: number
-    default: 1720173548.166715
+    description: end of certificate valid period
+    format: timestamp
   created:
     type: string
     format: date-time
@@ -45,10 +52,20 @@ properties:
       - 'null'
     format: date-time
 required:
+  - description
   - certificate
   - privateKey
   - caBundle
   - id
   - customerId
+  - salesOrgId
+  - commonName
+  - issuer
+  - valid
+  - trusted
+  - daysLeft
+  - validFrom
+  - validUntil
   - created
+  - updated
 type: object

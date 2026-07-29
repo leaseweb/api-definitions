@@ -1,13 +1,11 @@
 properties:
   url:
     type: string
-    readOnly: true
   success:
     type: boolean
-    readOnly: true
+    description: True if all the provider responses are successful
   providerResponses:
     type: array
-    readOnly: true
     items:
       $ref: ./providerResponse.yaml
 type: object

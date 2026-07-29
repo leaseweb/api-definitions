@@ -1,0 +1,64 @@
+properties:
+  fromTs:
+    type: string
+    format: YYYY-MM-ddTHH:mm:ss
+  toTs:
+    type: string
+    format: YYYY-MM-ddTHH:mm:ss
+  service:
+    type: string
+    enum:
+      - cdn
+  granularity:
+    type: string
+    enum:
+      - 5m
+      - 15m
+      - 1h
+      - 1d
+      - 7d
+    description: >-
+      WARNING please be aware that unfortunately the values are different from
+      the input ones.
+  groupBy:
+    type:
+      - string
+      - 'null'
+    enum:
+      - provider
+      - distribution
+      - customer
+      - region
+    description: >-
+      WARNING please be aware that unfortunately the values are different from
+      the input ones.
+  distributionId:
+    type:
+      - string
+      - 'null'
+  series:
+    type: array
+    items:
+      title: serie
+      type: object
+      additionalProperties:
+        type: array
+        items:
+          title: total
+          type: object
+          properties:
+            total:
+              type:
+                - number
+                - 'null'
+          required:
+            - total
+required:
+  - distributionId
+  - fromTs
+  - granularity
+  - groupBy
+  - series
+  - service
+  - toTs
+type: object

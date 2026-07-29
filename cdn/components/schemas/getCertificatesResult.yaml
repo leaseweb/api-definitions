@@ -2,9 +2,7 @@ properties:
   certificates:
     type: array
     items:
-      anyOf:
-        - $ref: ./certificate.yaml
-        - $ref: ./noValidationCertificate.yaml
+      $ref: ./certificate.yaml
   _metadata:
     $ref: ./_metadata.yaml
 required:

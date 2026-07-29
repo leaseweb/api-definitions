@@ -1,8 +1,12 @@
 post:
   description: >
-    You can use this endpoint to debug your distributions on each CDN provider
-    independently. All of the returned headers per provider are included in the
-    response.
+    Debug a distribution URL.
+
+
+    You can use this endpoint to debug a distribution on each CDN provider
+    independently.  
+
+    All of the returned headers per provider are included in the response.
 
 
     Note: Use the specific domain you want to debug since each distribution can
@@ -17,7 +21,7 @@ post:
         example:
           url: https://cdn-assets.leaseweb.com/asset.css?t=1
   responses:
-    '201':
+    '200':
       description: Successful Response
       content:
         application/json:
@@ -31,13 +35,13 @@ post:
                 statusCode: 301
                 message: null
                 headers:
-                  - name: connection
+                  - name: Connection
                     value: keep-alive
-                  - name: content-length
+                  - name: Content-Length
                     value: '0'
-                  - name: date
+                  - name: Date
                     value: Thu, 05 Aug 2024 11:34:36 GMT
-                  - name: location
+                  - name: Location
                     value: https://cdn-assets-redirected.leaseweb.com/asset.css?t=1
               - providerType: edgio
                 success: true
@@ -45,13 +49,13 @@ post:
                 statusCode: 301
                 message: null
                 headers:
-                  - name: connection
+                  - name: Connection
                     value: keep-alive
-                  - name: content-length
+                  - name: Content-Length
                     value: '0'
-                  - name: date
+                  - name: Date
                     value: Thu, 05 Aug 2024 11:34:36 GMT
-                  - name: location
+                  - name: Location
                     value: https://cdn-assets-redirected.leaseweb.com/asset.css?t=1
             success: true
             url: https://cdn-assets.leaseweb.com/asset.css?t=1

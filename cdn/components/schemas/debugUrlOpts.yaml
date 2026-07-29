@@ -2,8 +2,6 @@ properties:
   url:
     type: string
     format: uri
-    minLength: 1
-    maxLength: 2083
 required:
   - url
 type: object

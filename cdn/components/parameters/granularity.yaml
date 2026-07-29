@@ -1,0 +1,12 @@
+name: granularity
+in: query
+required: false
+schema:
+  type: string
+  default: 5MIN
+  enum:
+    - 5MIN
+    - 15MIN
+    - HOUR
+    - DAY
+    - WEEK

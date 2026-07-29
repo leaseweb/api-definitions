@@ -3,3 +3,4 @@ in: query
 required: false
 schema:
   type: string
+description: restrict statistics to a single distribution

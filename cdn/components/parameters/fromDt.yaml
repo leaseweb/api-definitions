@@ -3,4 +3,4 @@ in: query
 required: true
 schema:
   type: string
-  format: date-time
+  format: YYYY-MM-ddTHH:mm:ss

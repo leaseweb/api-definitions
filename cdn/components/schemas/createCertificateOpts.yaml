@@ -5,10 +5,13 @@ properties:
       - 'null'
   certificate:
     type: string
+    description: certificate in PEM format with newlines replaced by "\n"
   privateKey:
     type: string
+    description: private key in PEM format with newlines replaced by "\n"
   caBundle:
     type: string
+    description: certificate authority bundle in PEM format with newlines replaced by "\n"
 required:
   - certificate
   - privateKey

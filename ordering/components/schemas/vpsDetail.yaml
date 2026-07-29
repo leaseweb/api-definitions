@@ -19,7 +19,9 @@ properties:
     description: Traffic allowance
     type: string
   location:
-    description: Available locations for the VPS
+    description: >-
+      All locations where the VPS is available, regardless of the API key's
+      entity
     type: array
     items:
       type: string

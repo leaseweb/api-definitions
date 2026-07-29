@@ -1,12 +1,13 @@
 post:
   description: >
-    Using this endpoint, you can upload your custom TLS certificates to be used
-    in your distributions.
+    Upload a custom TLS certificate to be used in distributions.
 
 
     Note: some CDN providers need more time to apply your new certificate to
-    your newly created distribution. Please be aware and always try to upload
-    your certificates as soon as possible.
+    your newly created distribution.  
+
+    Please be aware and always try to upload your certificates as early as
+    possible.
   operationId: createCertificate
   requestBody:
     required: true
@@ -15,10 +16,19 @@ post:
         schema:
           $ref: ../components/schemas/createCertificateOpts.yaml
         example:
-          caBundle: '-----BEGIN CERTIFICATE----- {***} -----END CERTIFICATE-----'
-          certificate: '-----BEGIN CERTIFICATE----- {***} -----END CERTIFICATE-----'
+          caBundle: |-
+            -----BEGIN CERTIFICATE-----
+            {***}
+            -----END CERTIFICATE-----
+          certificate: |-
+            -----BEGIN CERTIFICATE-----
+            {***}
+            -----END CERTIFICATE-----
           description: Main LSW Certificate 2024
-          privateKey: '-----BEGIN PRIVATE KEY----- {***} -----END PRIVATE KEY-----'
+          privateKey: |-
+            -----BEGIN PRIVATE KEY-----
+            {***}
+            -----END PRIVATE KEY-----
   responses:
     '201':
       description: Successful Response
@@ -37,6 +47,7 @@ post:
             id: ce-5g8wbh25
             issuer: c1
             privateKey: Hidden for security reasons
+            salesOrgId: '2000'
             trusted: true
             updated: '2024-03-19T08:15:23Z'
             valid: true
@@ -52,7 +63,7 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Create certificate
+  summary: Upload certificate
   tags:
     - CDN
   x-codeSamples:
@@ -73,7 +84,7 @@ post:
         $ref: ../code_samples/Go+Native/cdn_v2_certificates/postundefined
 get:
   description: |
-    Get the list of your certificates.
+    List all the certificates.
   operationId: getCertificates
   parameters:
     - $ref: ../components/parameters/limit.yaml
@@ -103,10 +114,10 @@ get:
                 daysLeft: 364
                 validFrom: 1723118047
                 validUntil: 1754646847
+                customerId: '215468472'
+                salesOrgId: '2000'
                 created: '2024-03-19T08:15:23Z'
                 updated: '2024-03-19T08:15:23Z'
-    '400':
-      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':

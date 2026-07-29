@@ -197,6 +197,15 @@ get:
             id: VPS02_1
             location:
               - AMS-01
+              - FRA-01
+              - LAX-12
+              - LON-01
+              - MTL-02
+              - SFO-12
+              - SIN-01
+              - SYD-12
+              - TYO-11
+              - WDC-02
             name: Leaseweb VPS 1
             nvmeStorage: 100 GB
             price:

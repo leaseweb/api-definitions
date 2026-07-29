@@ -1,9 +1,0 @@
-properties:
-  name:
-    type: string
-  value:
-    type: string
-required:
-  - name
-  - value
-type: object

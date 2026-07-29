@@ -1,3 +1,0 @@
-anyOf:
-  - $ref: ./noValidationCertificate.yaml
-  - $ref: ./certificate.yaml
