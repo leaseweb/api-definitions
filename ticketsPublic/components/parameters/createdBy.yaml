@@ -1,0 +1,7 @@
+name: createdBy
+in: query
+required: false
+schema:
+  type: string
+description: Filter - Ticket creator email
+example: johndoe@gmail.com

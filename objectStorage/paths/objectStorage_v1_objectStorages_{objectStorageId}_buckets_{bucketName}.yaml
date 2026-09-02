@@ -1,14 +1,14 @@
+parameters:
+  - $ref: ../components/parameters/objectStorageId.yaml
+  - $ref: ../components/parameters/bucketName.yaml
 put:
   description: Update tenant bucket for the given ObjectStorage product and bucket name.
-  operationId: put/objectStorageBucket
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/bucketName.yaml
+  operationId: updateObjectStorageBucket
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/request.schema-7.yaml
+          $ref: ../components/schemas/updateObjectStorageBucketOpts.yaml
         example:
           isVersioningEnabled: true
           quota: 1000
@@ -44,6 +44,8 @@ put:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Update an object storage bucket
   tags:
     - Object Storage
@@ -70,10 +72,7 @@ put:
           ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_buckets_{bucketName}/putundefined
 delete:
   description: Delete tenant bucket of the given ObjectStorage product and bucket.
-  operationId: delete/objectStorageBucket
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/bucketName.yaml
+  operationId: deleteObjectStorageBucket
   responses:
     '204':
       $ref: ../components/responses/204.yaml
@@ -87,6 +86,8 @@ delete:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Delete an object storage bucket
   tags:
     - Object Storage

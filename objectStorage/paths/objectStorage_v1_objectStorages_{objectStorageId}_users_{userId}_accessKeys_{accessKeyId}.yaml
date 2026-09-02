@@ -1,12 +1,12 @@
+parameters:
+  - $ref: ../components/parameters/objectStorageId.yaml
+  - $ref: ../components/parameters/userId.yaml
+  - $ref: ../components/parameters/accessKeyId.yaml
 delete:
   description: >-
     Delete tenant user access key given ObjectStorage product, user and access
     key id.
-  operationId: delete/objectStorageAccessKey
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/userId.yaml
-    - $ref: ../components/parameters/accessKeyId.yaml
+  operationId: deleteObjectStorageAccessKey
   responses:
     '204':
       $ref: ../components/responses/204.yaml
@@ -20,6 +20,8 @@ delete:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Delete a user access key
   tags:
     - Object Storage

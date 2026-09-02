@@ -1,0 +1,39 @@
+type: object
+properties:
+  tickets:
+    type: array
+    description: Array of Tickets
+    items:
+      type: object
+      title: ticket
+      properties:
+        id:
+          type: string
+          description: The unique id of the ticket
+        createdAt:
+          type: string
+          format: date-time
+          description: The date time the ticket was created (UTC)
+        createdBy:
+          type: string
+          description: The person who created the ticket
+        status:
+          type: string
+          description: The status of the ticket
+          enum:
+            - NEW
+            - IN_PROGRESS
+            - CLOSED
+            - COMPLETED
+            - CUSTOMER_INPUT_REQUIRED
+            - SCHEDULED
+            - RESOLVED
+        subject:
+          type: string
+          description: The subject/title of the ticket
+        updatedAt:
+          type: string
+          format: date-time
+          description: The date time the ticket was last updated (UTC)
+  _metadata:
+    $ref: ./_metadata.yaml

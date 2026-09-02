@@ -1,0 +1,7 @@
+schema:
+  type: integer
+name: id
+in: path
+required: true
+description: Unique numeric identifier of the ticket
+example: 1430295

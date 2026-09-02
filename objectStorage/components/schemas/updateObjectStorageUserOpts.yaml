@@ -1,0 +1,17 @@
+title: updateObjectStorageUserOpts
+type: object
+required:
+  - fullName
+  - groups
+properties:
+  fullName:
+    description: The full name of the user.
+    type: string
+    minLength: 1
+    maxLength: 128
+  groups:
+    description: Array of group UUIDs to assign the user to.
+    type: array
+    items:
+      type: string
+      format: uuid

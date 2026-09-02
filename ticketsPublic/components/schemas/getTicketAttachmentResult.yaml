@@ -1,0 +1,3 @@
+type: string
+format: binary
+description: The attached file

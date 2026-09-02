@@ -1,0 +1,10 @@
+name: sortBy
+in: query
+required: false
+schema:
+  type: string
+  enum:
+    - createdAt
+    - updatedAt
+description: Sorting - define the field used to sort tickets
+example: createdAt

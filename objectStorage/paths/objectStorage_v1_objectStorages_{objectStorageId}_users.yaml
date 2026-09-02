@@ -1,15 +1,15 @@
+parameters:
+  - $ref: ../components/parameters/objectStorageId.yaml
 get:
   description: Show tenant users for the given ObjectStorage product.
-  operationId: get/objectStorageUsers
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
+  operationId: getObjectStorageUserList
   responses:
     '200':
       description: OK
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/response.200.schema-2.yaml
+            $ref: ../components/schemas/getObjectStorageUserListResult.yaml
           example:
             users:
               - id: d5f82e19-6a4c-4b3d-a890-1f2c3d4e5f60
@@ -31,6 +31,8 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: List object storage users
   tags:
     - Object Storage
@@ -57,14 +59,12 @@ get:
           ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_users/getundefined
 post:
   description: Create tenant user for the given ObjectStorage product.
-  operationId: post/objectStorageUsers
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
+  operationId: createObjectStorageUser
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/request.schema.yaml
+          $ref: ../components/schemas/createObjectStorageUserOpts.yaml
         example:
           fullName: testUser
           groups:
@@ -95,6 +95,8 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Create an object storage user
   tags:
     - Object Storage

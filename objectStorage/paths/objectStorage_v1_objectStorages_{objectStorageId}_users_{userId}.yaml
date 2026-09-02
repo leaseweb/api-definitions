@@ -1,9 +1,9 @@
+parameters:
+  - $ref: ../components/parameters/objectStorageId.yaml
+  - $ref: ../components/parameters/userId.yaml
 get:
   description: Get tenant user information of the given ObjectStorage product and user.
-  operationId: get/objectStorageUser
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/userId.yaml
+  operationId: getObjectStorageUser
   responses:
     '200':
       description: OK
@@ -27,6 +27,8 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Get an object storage user
   tags:
     - Object Storage
@@ -53,15 +55,12 @@ get:
           ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}/getundefined
 put:
   description: Updates tenant user information of the given ObjectStorage product and user.
-  operationId: put/objectStorageUser
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/userId.yaml
+  operationId: updateObjectStorageUser
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/request.schema-2.yaml
+          $ref: ../components/schemas/updateObjectStorageUserOpts.yaml
         example:
           fullName: testUser
           groups:
@@ -91,6 +90,8 @@ put:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Update an object storage user
   tags:
     - Object Storage
@@ -117,10 +118,7 @@ put:
           ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}/putundefined
 delete:
   description: Delete tenant user information of the given ObjectStorage product and user.
-  operationId: delete/objectStorageUser
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/userId.yaml
+  operationId: deleteObjectStorageUser
   responses:
     '204':
       $ref: ../components/responses/204.yaml
@@ -134,6 +132,8 @@ delete:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Delete an object storage user
   tags:
     - Object Storage

@@ -1,0 +1,6 @@
+type: object
+properties:
+  id:
+    type: string
+    description: The id of the ticket just created
+    example: '1111111'

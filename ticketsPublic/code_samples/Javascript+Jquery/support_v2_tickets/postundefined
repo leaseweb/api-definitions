@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/support/v2/tickets",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"attachments\":[{\"content\":\"VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIGEgbGF6eSBkb2c=\",\"mimeType\":\"text/plain\",\"name\":\"attachment.txt\"}],\"body\":\"Hi, hello this is my problem\",\"equipments\":[{\"equipmentId\":\"string\"}],\"subject\":\"Hello world\",\"email\":\"johndoe@example.com\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

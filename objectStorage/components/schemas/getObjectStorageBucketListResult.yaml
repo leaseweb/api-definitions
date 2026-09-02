@@ -1,0 +1,8 @@
+title: objectStorageBucketList
+type: object
+properties:
+  buckets:
+    description: A list of tenant buckets.
+    type: array
+    items:
+      $ref: ./bucket.yaml

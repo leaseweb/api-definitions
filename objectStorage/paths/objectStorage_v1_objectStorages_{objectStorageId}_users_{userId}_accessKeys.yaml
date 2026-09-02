@@ -1,16 +1,16 @@
+parameters:
+  - $ref: ../components/parameters/objectStorageId.yaml
+  - $ref: ../components/parameters/userId.yaml
 get:
   description: Show tenant user access keys for the given ObjectStorage product and user.
-  operationId: get/objectStorageAccessKeys
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/userId.yaml
+  operationId: getObjectStorageAccessKeyList
   responses:
     '200':
       description: OK
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/response.200.schema-3.yaml
+            $ref: ../components/schemas/getObjectStorageAccessKeyListResult.yaml
           example:
             keys:
               - accountId: '000000000000'
@@ -31,6 +31,8 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: List user access keys
   tags:
     - Object Storage
@@ -57,15 +59,12 @@ get:
           ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_users_{userId}_accessKeys/getundefined
 post:
   description: Create tenant user access keys for the given ObjectStorage product and user.
-  operationId: post/objectStorageAccessKeys
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/userId.yaml
+  operationId: createObjectStorageAccessKey
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/request.schema-3.yaml
+          $ref: ../components/schemas/createObjectStorageAccessKeyOpts.yaml
         example:
           expiresAt: '1975-07-10T13:14:42Z'
   responses:
@@ -74,7 +73,7 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/response.201.schema.yaml
+            $ref: ../components/schemas/createObjectStorageAccessKeyResult.yaml
           example:
             accessKey: BHGWSRW4OQ7QKIV5YTP0
             accountId: '58053652363364670478'
@@ -94,6 +93,8 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Create a user access key
   tags:
     - Object Storage

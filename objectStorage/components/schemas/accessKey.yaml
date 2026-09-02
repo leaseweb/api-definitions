@@ -1,3 +1,4 @@
+title: accessKey
 description: Tenant user keys.
 type: object
 properties:
@@ -12,7 +13,7 @@ properties:
     type: string
   expiresAt:
     description: >-
-      The datetime string of the key expire date if it as been set, null
+      The datetime string of the key expire date if it has been set, null
       otherwise.
     type: string
     format: date-time

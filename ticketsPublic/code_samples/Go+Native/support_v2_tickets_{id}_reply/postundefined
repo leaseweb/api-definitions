@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+	"net/http"
+	"io/ioutil"
+)
+
+func main() {
+
+	url := "https://api.leaseweb.com/support/v2/tickets/1430295/reply"
+
+	payload := strings.NewReader("{\"body\":\"Hi, hello this is my problem\",\"email\":\"johndoe@example.com\",\"attachments\":[{\"name\":\"attachment.txt\",\"mimeType\":\"text/plain\",\"content\":\"VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIGEgbGF6eSBkb2c=\"}]}")
+
+	req, _ := http.NewRequest("POST", url, payload)
+
+	req.Header.Add("X-LSW-Auth", "REPLACE_KEY_VALUE")
+	req.Header.Add("content-type", "application/json")
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(res)
+	fmt.Println(string(body))
+
+}

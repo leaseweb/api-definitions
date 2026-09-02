@@ -1,0 +1,51 @@
+parameters:
+  - $ref: ../components/parameters/id.yaml
+post:
+  operationId: postTicketReply
+  description: This endpoint will create a reply to a ticket
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/postTicketReplyOpts.yaml
+        example:
+          body: Hi, the issue is still ongoing after the last update.
+          email: johndoe@example.com
+          attachments:
+            - content: VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIGEgbGF6eSBkb2c=
+              mimeType: text/plain
+              name: logs.txt
+  responses:
+    '201':
+      description: Created
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Reply to a ticket
+  tags:
+    - Tickets
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/support_v2_tickets_{id}_reply/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/support_v2_tickets_{id}_reply/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/support_v2_tickets_{id}_reply/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/support_v2_tickets_{id}_reply/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/support_v2_tickets_{id}_reply/postundefined

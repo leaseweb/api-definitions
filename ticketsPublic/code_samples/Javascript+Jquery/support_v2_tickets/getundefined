@@ -1,0 +1,13 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/support/v2/tickets?limit=20&offset=10&subject=test&status=NEW%2CIN_PROGRESS&createdBy=johndoe%40gmail.com&creationDateFrom=2025-01-01T00%3A00%3A00Z&creationDateTo=2025-12-31T00%3A00%3A00Z&lastUpdateDateFrom=2025-01-01T00%3A00%3A00Z&lastUpdateDateTo=2025-12-31T00%3A00%3A00Z&sortBy=createdAt&sortDirection=DESC",
+  "method": "GET",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

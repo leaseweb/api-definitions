@@ -1,0 +1,155 @@
+get:
+  description: Get Tickets will return a list of tickets
+  operationId: getTickets
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - $ref: ../components/parameters/subject.yaml
+    - $ref: ../components/parameters/status.yaml
+    - $ref: ../components/parameters/createdBy.yaml
+    - $ref: ../components/parameters/creationDateFrom.yaml
+    - $ref: ../components/parameters/creationDateTo.yaml
+    - $ref: ../components/parameters/lastUpdateDateFrom.yaml
+    - $ref: ../components/parameters/lastUpdateDateTo.yaml
+    - $ref: ../components/parameters/sortBy.yaml
+    - $ref: ../components/parameters/sortDirection.yaml
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getTicketsResult.yaml
+          example:
+            tickets:
+              - id: '1111111'
+                createdAt: '2025-09-30T00:01:00Z'
+                createdBy: johndoe@gmail.com
+                status: NEW
+                subject: help me please
+                updatedAt: '2025-09-30T00:01:00Z'
+              - id: '1200000'
+                createdAt: '2025-01-10T00:01:00Z'
+                createdBy: johndoe@gmail.com
+                status: IN_PROGRESS
+                subject: problem with server
+                updatedAt: '2025-01-11T20:01:00Z'
+              - id: '1200020'
+                createdAt: '2025-02-28T11:01:00Z'
+                createdBy: johndoe@gmail.com
+                status: CLOSED
+                subject: domain issue
+                updatedAt: '2025-03-01T02:01:00Z'
+              - id: '1200030'
+                createdAt: '2025-01-30T00:01:00Z'
+                createdBy: johndoe@gmail.com
+                status: COMPLETED
+                subject: i would like to buy
+                updatedAt: '2025-06-21T11:01:00Z'
+              - id: '1200035'
+                createdAt: '2025-01-30T00:01:00Z'
+                createdBy: johndoe@gmail.com
+                status: CUSTOMER_INPUT_REQUIRED
+                subject: datacenter access
+                updatedAt: '2025-03-01T00:01:00Z'
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 5
+      description: Ok.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List tickets
+  tags:
+    - Tickets
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/support_v2_tickets/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/support_v2_tickets/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/support_v2_tickets/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/support_v2_tickets/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/support_v2_tickets/getundefined
+post:
+  operationId: postTickets
+  description: Creates a new support ticket on behalf of the customer.
+  requestBody:
+    content:
+      application/json:
+        example:
+          body: Hi, hello this is my problem
+          subject: Problem
+          email: johndoe@example.com
+          equipments:
+            - equipmentId: '12345'
+          attachments:
+            - content: VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIGEgbGF6eSBkb2c=
+              mimeType: text/plain
+              name: file.txt
+        schema:
+          $ref: ../components/schemas/postTicketsOpts.yaml
+  responses:
+    '201':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/postTicketsResult.yaml
+          example:
+            id: '1111111'
+      description: Ok.
+    '400':
+      description: Bad Request.
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/postTickets400Result.yaml
+          example:
+            correlationId: 0a2b76b2-1a95-4479-8b1b-8425f8a7c288
+            errorCode: BAD_REQUEST
+            errorMessage: The API could not interpret your request correctly.
+            userMessage: Your request contains errors, please check the details.
+            errorDetails: Field equipments supports at most 1 item.
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Create a ticket
+  tags:
+    - Tickets
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/support_v2_tickets/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/support_v2_tickets/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/support_v2_tickets/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/support_v2_tickets/postundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/support_v2_tickets/postundefined

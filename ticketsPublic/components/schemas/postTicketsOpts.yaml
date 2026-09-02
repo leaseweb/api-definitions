@@ -1,0 +1,69 @@
+type: object
+properties:
+  attachments:
+    type: array
+    description: Array of attachments
+    items:
+      type: object
+      title: attachment
+      properties:
+        content:
+          type: string
+          description: >-
+            The contents of the attachment. These contents need to be base64
+            encoded.
+          example: VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIGEgbGF6eSBkb2c=
+        mimeType:
+          type: string
+          description: The mime type of the attachment
+          example: text/plain
+        name:
+          type: string
+          description: The name of the attachment
+          example: attachment.txt
+      required:
+        - content
+        - mimeType
+        - name
+  body:
+    type: string
+    description: The body of the ticket
+    example: Hi, hello this is my problem
+  equipments:
+    type: array
+    description: >-
+      Array of equipments. Currently only 1 equipment is supported, providing
+      more than 1 item will result in an error.
+    maxItems: 1
+    items:
+      type: object
+      title: equipment
+      properties:
+        equipmentId:
+          type: string
+          description: >-
+            The unique ID of the equipment. Equipment must be owned by the
+            customer or entity submitting the ticket. If the provided ID does
+            not exist or does not belong to your account, a `409 Conflict` error
+            will be returned.
+      required:
+        - equipmentId
+  subject:
+    type: string
+    description: The subject of the ticket
+    example: Hello world
+  email:
+    type: string
+    format: email
+    description: >
+      The email address of the contact to associate with this ticket. The
+      provided email is matched against your account's existing contacts — if a
+      match is found, that contact is attached to the ticket. If no match is
+      found, the ticket is created with your account's primary contact instead.
+      The associated contact will receive email notifications when the ticket is
+      updated. Contacts can be managed at
+      https://secure.leaseweb.com/account-management/.
+    example: johndoe@example.com
+required:
+  - subject
+  - body

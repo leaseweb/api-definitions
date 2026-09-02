@@ -1,0 +1,43 @@
+title: objectStorageList
+type: object
+properties:
+  objectStorages:
+    description: A list of object storage products.
+    type: array
+    items:
+      title: objectStorageListItem
+      description: An objectStorage product.
+      type: object
+      properties:
+        id:
+          type: string
+        customerId:
+          type: string
+        salesOrgId:
+          type: string
+        contractId:
+          type: string
+        quantity:
+          type: string
+        description:
+          type: string
+        regionUrl:
+          description: The region-specific endpoint URL for this Object Storage product.
+          type: string
+          format: uri
+  _metadata:
+    title: objectStorageListMetadata
+    description: Metadata about the collection.
+    type: object
+    properties:
+      limit:
+        description: The maximum number of results returned.
+        type: integer
+        default: 10
+      offset:
+        description: Results are returned starting at the given offset.
+        type: integer
+        default: 0
+      totalCount:
+        description: The total amount of results.
+        type: integer

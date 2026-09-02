@@ -1,0 +1,10 @@
+name: sortDirection
+in: query
+required: false
+schema:
+  type: string
+  enum:
+    - ASC
+    - DESC
+description: Sorting - define the order used to sort tickets
+example: DESC

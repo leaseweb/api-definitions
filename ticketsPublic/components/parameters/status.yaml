@@ -1,0 +1,12 @@
+name: status
+in: query
+required: false
+schema:
+  type: string
+description: >
+  Filter by ticket status. Accepts a single value or multiple comma-separated
+  values.
+
+  Accepted values: `NEW`, `IN_PROGRESS`, `CLOSED`, `COMPLETED`,
+  `CUSTOMER_INPUT_REQUIRED`, `SCHEDULED`, `RESOLVED`
+example: NEW,IN_PROGRESS

@@ -1,15 +1,15 @@
+parameters:
+  - $ref: ../components/parameters/objectStorageId.yaml
 get:
   description: Show tenant buckets for the given ObjectStorage product.
-  operationId: get/objectStorageBuckets
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
+  operationId: getObjectStorageBucketList
   responses:
     '200':
       description: OK
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/response.200.schema-5.yaml
+            $ref: ../components/schemas/getObjectStorageBucketListResult.yaml
           example:
             buckets:
               - name: abcdef
@@ -56,6 +56,8 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: List object storage buckets
   tags:
     - Object Storage
@@ -82,14 +84,12 @@ get:
           ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_buckets/getundefined
 post:
   description: Create tenant bucket for the given ObjectStorage product.
-  operationId: post/objectStorageBuckets
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
+  operationId: createObjectStorageBucket
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/request.schema-6.yaml
+          $ref: ../components/schemas/createObjectStorageBucketOpts.yaml
         example:
           isVersioningEnabled: true
           name: test-bucket-01
@@ -126,6 +126,8 @@ post:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Create an object storage bucket
   tags:
     - Object Storage

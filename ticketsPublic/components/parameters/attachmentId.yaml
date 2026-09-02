@@ -1,0 +1,6 @@
+schema:
+  type: string
+name: attachmentId
+in: path
+required: true
+description: Attachment Id

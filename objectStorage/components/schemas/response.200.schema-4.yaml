@@ -1,7 +1,0 @@
-properties:
-  groups:
-    description: A list of tenant groups.
-    type: array
-    items:
-      $ref: ./group.yaml
-type: object

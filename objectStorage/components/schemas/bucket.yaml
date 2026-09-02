@@ -1,4 +1,5 @@
-description: Object Storage bucket
+title: bucket
+description: Object Storage tenant bucket.
 type: object
 properties:
   name:
@@ -11,6 +12,7 @@ properties:
     description: Indicates if the bucket versioning is enabled.
     type: boolean
   quota:
+    title: bucketQuota
     description: The quota for the size of the bucket.
     type: object
     nullable: true
@@ -28,6 +30,7 @@ properties:
     type: integer
     nullable: true
   used:
+    title: bucketUsedSpace
     description: The bucket used space.
     type: object
     properties:

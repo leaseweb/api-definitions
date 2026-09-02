@@ -1,0 +1,8 @@
+name: creationDateFrom
+in: query
+required: false
+schema:
+  type: string
+  format: date-time
+description: Filter - Ticket creation date lower limit
+example: '2025-01-01T00:00:00Z'

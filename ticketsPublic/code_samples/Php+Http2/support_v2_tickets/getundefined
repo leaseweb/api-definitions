@@ -1,0 +1,29 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/support/v2/tickets');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'limit' => '20',
+  'offset' => '10',
+  'subject' => 'test',
+  'status' => 'NEW,IN_PROGRESS',
+  'createdBy' => 'johndoe@gmail.com',
+  'creationDateFrom' => '2025-01-01T00:00:00Z',
+  'creationDateTo' => '2025-12-31T00:00:00Z',
+  'lastUpdateDateFrom' => '2025-01-01T00:00:00Z',
+  'lastUpdateDateTo' => '2025-12-31T00:00:00Z',
+  'sortBy' => 'createdAt',
+  'sortDirection' => 'DESC'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

@@ -1,0 +1,8 @@
+name: lastUpdateDateTo
+in: query
+required: false
+schema:
+  type: string
+  format: date-time
+description: Filter - Ticket last update date upper limit
+example: '2025-12-31T00:00:00Z'

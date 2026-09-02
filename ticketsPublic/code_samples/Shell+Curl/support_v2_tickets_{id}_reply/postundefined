@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/support/v2/tickets/1430295/reply \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"body":"Hi, hello this is my problem","email":"johndoe@example.com","attachments":[{"name":"attachment.txt","mimeType":"text/plain","content":"VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIGEgbGF6eSBkb2c="}]}'

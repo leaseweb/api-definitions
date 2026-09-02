@@ -1,0 +1,7 @@
+name: subject
+in: query
+required: false
+schema:
+  type: string
+description: Filter - Ticket subject
+example: test

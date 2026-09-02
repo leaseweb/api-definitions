@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/support/v2/tickets/1430295/reply",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"body\":\"Hi, hello this is my problem\",\"email\":\"johndoe@example.com\",\"attachments\":[{\"name\":\"attachment.txt\",\"mimeType\":\"text/plain\",\"content\":\"VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIGEgbGF6eSBkb2c=\"}]}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

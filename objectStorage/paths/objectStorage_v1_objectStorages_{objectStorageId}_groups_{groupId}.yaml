@@ -1,9 +1,9 @@
+parameters:
+  - $ref: ../components/parameters/objectStorageId.yaml
+  - $ref: ../components/parameters/groupId.yaml
 get:
   description: Show tenant group for the given ObjectStorage product and group id.
-  operationId: get/objectStorageGroup
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/groupId.yaml
+  operationId: getObjectStorageGroup
   responses:
     '200':
       description: OK
@@ -26,6 +26,8 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Get an object storage group
   tags:
     - Object Storage
@@ -52,15 +54,12 @@ get:
           ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_groups_{groupId}/getundefined
 put:
   description: Update tenant group for the given ObjectStorage product and group id.
-  operationId: put/objectStorageGroup
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/groupId.yaml
+  operationId: updateObjectStorageGroup
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/request.schema-5.yaml
+          $ref: ../components/schemas/updateObjectStorageGroupOpts.yaml
         example:
           displayName: testGroup
           s3Policies: >-
@@ -90,6 +89,8 @@ put:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Update an object storage group
   tags:
     - Object Storage
@@ -116,10 +117,7 @@ put:
           ../code_samples/Go+Native/objectStorage_v1_objectStorages_{objectStorageId}_groups_{groupId}/putundefined
 delete:
   description: Delete tenant group of the given ObjectStorage product and group.
-  operationId: delete/objectStorageGroup
-  parameters:
-    - $ref: ../components/parameters/objectStorageId.yaml
-    - $ref: ../components/parameters/groupId.yaml
+  operationId: deleteObjectStorageGroup
   responses:
     '204':
       $ref: ../components/responses/204.yaml
@@ -133,6 +131,8 @@ delete:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: Delete an object storage group
   tags:
     - Object Storage

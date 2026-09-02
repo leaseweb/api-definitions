@@ -1,0 +1,44 @@
+type: object
+properties:
+  body:
+    type: string
+    description: The body of the reply
+    example: Hi, hello this is my problem
+  email:
+    type: string
+    format: email
+    description: >
+      The email address of the contact to associate with this reply. The
+      provided email is matched against your account's existing contacts — if a
+      match is found, that contact is attached to the ticket. If no match is
+      found, the reply is created with your account's primary contact instead.
+      Contacts can be managed at
+      https://secure.leaseweb.com/account-management/.
+    example: johndoe@example.com
+  attachments:
+    type: array
+    description: Array of attachments
+    items:
+      type: object
+      title: attachment
+      properties:
+        name:
+          type: string
+          description: The name of the attachment
+          example: attachment.txt
+        mimeType:
+          type: string
+          description: The mime type of the attachment
+          example: text/plain
+        content:
+          type: string
+          description: >-
+            The contents of the attachment. These contents need to be base64
+            encoded.
+          example: VGhlIHF1aWNrIGJyb3duIGZveCBqdW1wcyBvdmVyIGEgbGF6eSBkb2c=
+      required:
+        - content
+        - mimeType
+        - name
+required:
+  - body

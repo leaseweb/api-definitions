@@ -1,4 +1,5 @@
-description: Object Storage tenant user
+title: user
+description: Object Storage tenant user.
 type: object
 properties:
   id:
@@ -11,7 +12,7 @@ properties:
     description: The user unique name identifier.
     type: string
   groups:
-    description: The user control groups this user belongs.
+    description: The user control groups this user belongs to.
     type: array
     items:
       type: string

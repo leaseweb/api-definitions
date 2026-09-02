@@ -1,0 +1,82 @@
+parameters:
+  - $ref: ../components/parameters/id.yaml
+get:
+  description: Get details of a specific ticket
+  operationId: getTicket
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/getTicketResult.yaml
+          example:
+            id: '1430295'
+            createdAt: '2025-06-19T12:59:38Z'
+            createdBy: lotofservices@devleaseweb.com
+            status: RESOLVED
+            subject: test
+            updatedAt: '2025-06-19T12:59:42Z'
+            messages:
+              - messageId: FBD5D8DEF66F1FE093A1A86E9EE37C47
+                body: hello
+                date: '2025-06-19T12:59:41Z'
+                createdBy: Customer
+                attachments:
+                  - id: 0ABC87E445831FE0A7D6768A568C2E11
+                    name: x.txt
+                    mimeType: text/plain
+                    bytes: '2'
+                    disposition: standalone
+              - messageId: ED1E804D95741EDEA6E67B45BED07B1E
+                body: |-
+                  Dear support,
+
+                  We see that port 49 of our rack switch 1 is down
+                date: '2025-06-20T13:00:00Z'
+                createdBy: Customer
+                attachments:
+                  - id: 0BBC87E445831FE0A7D6768A568C2E12
+                    name: logs.txt
+                    mimeType: text/plain
+                    bytes: '2'
+                    disposition: standalone
+              - messageId: AC3F91B256842GEF1B8E8C56D679F3C29
+                body: |-
+                  Dear Customer,
+                  The link on the port in question should be up by now.
+                date: '2025-06-21T14:00:00Z'
+                createdBy: Leaseweb
+            equipments:
+              equipmentId: '674'
+      description: Ok.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get ticket
+  tags:
+    - Tickets
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: ../code_samples/Shell+Curl/support_v2_tickets_{id}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: ../code_samples/Python+Python3/support_v2_tickets_{id}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: ../code_samples/Php+Http2/support_v2_tickets_{id}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: ../code_samples/Javascript+Jquery/support_v2_tickets_{id}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: ../code_samples/Go+Native/support_v2_tickets_{id}/getundefined

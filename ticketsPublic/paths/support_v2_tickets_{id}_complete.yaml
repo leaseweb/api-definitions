@@ -1,0 +1,42 @@
+parameters:
+  - $ref: ../components/parameters/id.yaml
+post:
+  operationId: postTicketComplete
+  description: This endpoint will put the status of a ticket to completed.
+  responses:
+    '204':
+      $ref: ../components/responses/204.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Complete a ticket
+  tags:
+    - Tickets
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/support_v2_tickets_{id}_complete/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/support_v2_tickets_{id}_complete/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/support_v2_tickets_{id}_complete/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/support_v2_tickets_{id}_complete/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/support_v2_tickets_{id}_complete/postundefined

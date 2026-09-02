@@ -1,4 +1,5 @@
-description: Object Storage tenant group
+title: group
+description: Object Storage tenant group.
 type: object
 properties:
   id:

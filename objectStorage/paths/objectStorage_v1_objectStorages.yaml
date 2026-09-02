@@ -1,6 +1,6 @@
 get:
   description: Show all objectStorage products.
-  operationId: get/objectStorages
+  operationId: getObjectStorageList
   parameters:
     - $ref: ../components/parameters/limit.yaml
     - $ref: ../components/parameters/offset.yaml
@@ -10,7 +10,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/response.200.schema.yaml
+            $ref: ../components/schemas/getObjectStorageListResult.yaml
           example:
             _metadata:
               limit: 10
@@ -23,18 +23,24 @@ get:
                 contractId: '42001021000100'
                 quantity: 100GB
                 description: 'Committed space: 100GB.'
+                regionUrl: https://nl.object-storage.io
               - id: '12316651'
                 customerId: '10085996'
                 salesOrgId: '2000'
                 contractId: '42001021000100'
                 quantity: 100GB
                 description: 'Committed space: 100GB.'
+                regionUrl: https://nl.object-storage.io
     '401':
       $ref: ../components/responses/401.yaml
     '403':
       $ref: ../components/responses/403.yaml
     '500':
       $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  security:
+    - X-LSW-Auth: []
   summary: List all Object Storages
   tags:
     - Object Storage
