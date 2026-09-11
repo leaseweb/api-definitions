@@ -6,6 +6,8 @@ properties:
       - CREATE_DIST
       - UPDATE_DIST
       - DELETE_DIST
+      - SAVE_SHIELD
+      - DELETE_SHIELD
   status:
     type: string
     enum:
@@ -16,6 +18,8 @@ properties:
   id:
     type: string
   customerId:
+    type: string
+  salesOrgId:
     type: string
   created:
     type: string
@@ -29,11 +33,18 @@ properties:
     title: resource
     type: object
     additionalProperties: true
+  correlationId:
+    type:
+      - string
+      - 'null'
 required:
   - type
   - status
   - id
   - customerId
+  - salesOrgId
   - created
+  - updated
   - resource
+  - correlationId
 type: object

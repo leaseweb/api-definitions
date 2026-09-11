@@ -1,43 +1,97 @@
 properties:
   type:
     type: string
-  resource:
-    type: object
-    title: resource
-    properties:
-      invalidationId:
-        type: string
-      status:
-        type: string
-      urlStatus:
-        type: array
-        items:
-          type: object
-          title: urlStatus
-          properties:
-            url:
-              type: string
-            distributionGroupId:
-              type: string
-            status:
-              type: string
-            message:
-              type: string
-      submitted:
-        type: string
-      completed:
-        type: string
-        format: nullable
+    enum:
+      - INVALIDATION
   status:
     type: string
+    enum:
+      - PENDING
+      - IN_PROGRESS
+      - FINISHED
+      - ERROR
   id:
     type: string
   customerId:
+    type: string
+  salesOrgId:
     type: string
   created:
     type: string
     format: date-time
   updated:
-    type: string
-    format: nullable
+    type:
+      - string
+      - 'null'
+    format: date-time
+  resource:
+    title: resource
+    properties:
+      invalidations:
+        type: array
+        items:
+          type: object
+          title: invalidation
+          properties:
+            distributionId:
+              type: string
+            url:
+              type: string
+            responses:
+              type:
+                - array
+                - 'null'
+              items:
+                title: response
+                type: object
+                properties:
+                  providerName:
+                    type: string
+                  success:
+                    type: boolean
+                  errorMessage:
+                    type:
+                      - string
+                      - 'null'
+                required:
+                  - providerName
+                  - success
+                  - errorMessage
+            status:
+              type: string
+              enum:
+                - PENDING
+                - ERROR
+            errorMessage:
+              type:
+                - string
+                - 'null'
+            providers:
+              type: array
+              items:
+                type: string
+          required:
+            - distributionId
+            - url
+            - responses
+            - status
+            - errorMessage
+            - providers
+    required:
+      - invalidations
+    type: object
+  correlationId:
+    type:
+      - string
+      - 'null'
+required:
+  - type
+  - status
+  - id
+  - customerId
+  - salesOrgId
+  - created
+  - updated
+  - resource
+  - correlationId
 type: object

@@ -2,7 +2,7 @@ parameters:
   - $ref: ../components/parameters/actionId.yaml
 get:
   description: |
-    Get an action by ID to monitor the progress.
+    Get an action to monitor its progress.
   operationId: getAction
   responses:
     '200':
@@ -12,24 +12,16 @@ get:
           schema:
             $ref: ../components/schemas/action.yaml
           example:
+            correlationId: ab9fe88b-0d41-02fe-9d03-309d0a8bef28
             created: '2019-08-24T14:15:22Z'
             customerId: '215468472'
             id: 50ea5204-4827-41d2-a940-cb5afdfb2426
             resource:
-              invalidationId: in-80ot20ls
-              status: FINISHED
-              urlStatus:
-                - url: https://cdn-assets.leaseweb.com/logo.png
-                  distributionGroupId: ''
-                  status: SUCCESS
-                  message: ''
-              submitted: '2024-07-10T13:11:12'
-              completed: null
+              info_hidden: info_hidden
+            salesOrgId: '2000'
             status: PENDING
-            type: INVALIDATION
+            type: UPDATE_DIST
             updated: '2019-08-24T14:15:22Z'
-    '400':
-      $ref: ../components/responses/400.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':

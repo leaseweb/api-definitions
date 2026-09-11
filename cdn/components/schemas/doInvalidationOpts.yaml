@@ -3,4 +3,6 @@ properties:
     type: array
     items:
       type: string
+required:
+  - files
 type: object

@@ -1,8 +1,10 @@
 post:
   description: >
-    You can submit multiple URLs to be invalidated and purged on all of the CDN
-    PoPs. The time to finish the purge depends on the CDN providers and the
-    number of cached files.
+    Send URLs to be invalidated.
+
+
+    More information can be found in the [Knowledge
+    Base](https://kb.leaseweb.com/kb/multi-cdn/multi-cdn-invalidations/)
   operationId: doInvalidation
   requestBody:
     required: true
@@ -21,22 +23,24 @@ post:
           schema:
             $ref: ../components/schemas/doInvalidationResult.yaml
           example:
+            correlationId: null
             created: '2024-07-11T12:14:43Z'
             customerId: '47927462'
             id: 0533396e-e5c6-4de2-bd08-06dfa91a3ab6
             resource:
-              invalidationId: in-f141ghed5
-              status: PENDING
-              urlStatus:
-                - url: https://cdn-assets.leaseweb.com/styles.css
-                  distributionGroupId: ''
+              invalidations:
+                - distributionId: di-yt84vrj
+                  url: https://cdn-assets.leaseweb.com/styles.css
+                  responses: null
                   status: PENDING
-                  message: ''
-              submitted: '2024-07-11T12:14:41'
-              completed: ''
+                  errorMessage: null
+                  providers:
+                    - edgeio
+                    - gcore
+            salesOrgId: '2000'
             status: PENDING
             type: INVALIDATION
-            updated: ''
+            updated: null
     '400':
       $ref: ../components/responses/400.yaml
     '401':

@@ -1,7 +1,6 @@
 get:
-  description: >
-    Get the list of all of the actions to monitor the progress of your
-    background jobs.
+  description: |
+    List all the actions to monitor their progress.
   operationId: getActions
   parameters:
     - name: filters
@@ -16,6 +15,8 @@ get:
             - CREATE_DIST
             - UPDATE_DIST
             - DELETE_DIST
+            - SAVE_SHIELD
+            - DELETE_SHIELD
     - $ref: ../components/parameters/limit.yaml
     - $ref: ../components/parameters/offset.yaml
   responses:
@@ -31,40 +32,26 @@ get:
               limit: 10
               offset: 0
             actions:
-              - type: INVALIDATION
+              - type: CREATE_DIST
                 resource:
-                  invalidationId: in-gt7m1s5
-                  status: FINISHED
-                  urlStatus:
-                    - url: https://cdn-assets.leaseweb.com/styles.css
-                      distributionGroupId: ''
-                      status: SUCCESS
-                      message: ''
-                  submitted: '2024-07-10T13:10:14'
-                  completed: null
+                  info_hidden: info_hidden
                 status: FINISHED
                 id: dac57900-0109-4615-b808-003f2c07cb40
                 customerId: '59841258'
+                salesOrgId: '2000'
                 created: '2024-07-10T13:10:15Z'
                 updated: '2024-08-08T12:52:09Z'
-              - type: INVALIDATION
+                correlationId: null
+              - type: UPDATE_DIST
                 resource:
-                  invalidationId: in-80ot20ls
-                  status: FINISHED
-                  urlStatus:
-                    - url: https://cdn-assets.leaseweb.com/logo.png
-                      distributionGroupId: ''
-                      status: SUCCESS
-                      message: ''
-                  submitted: '2024-07-10T13:11:12'
-                  completed: null
+                  info_hidden: info_hidden
                 status: FINISHED
                 id: 755ad32d-264d-4ace-bd4c-c30399c71675
                 customerId: '59841258'
+                salesOrgId: '2000'
                 created: '2024-07-10T13:11:13Z'
                 updated: '2024-08-08T12:52:09Z'
-    '400':
-      $ref: ../components/responses/400.yaml
+                correlationId: null
     '401':
       $ref: ../components/responses/401.yaml
     '403':
