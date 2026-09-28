@@ -2,7 +2,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("api.leaseweb.com")
 
-payload = "{\"body\":\"I have resolved this issue.\"}"
+payload = "{\"body\":\"I have resolved this issue.\",\"uploadId\":\"string\"}"
 
 headers = {
     'X-LSW-Auth': "REPLACE_KEY_VALUE",

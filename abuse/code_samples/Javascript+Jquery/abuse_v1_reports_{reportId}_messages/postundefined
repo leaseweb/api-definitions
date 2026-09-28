@@ -8,7 +8,7 @@ const settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"body\":\"I have resolved this issue.\"}"
+  "data": "{\"body\":\"I have resolved this issue.\",\"uploadId\":\"string\"}"
 };
 
 $.ajax(settings).done(function (response) {

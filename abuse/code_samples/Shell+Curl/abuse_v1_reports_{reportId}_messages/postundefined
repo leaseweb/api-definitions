@@ -2,4 +2,4 @@ curl --request POST \
   --url https://api.leaseweb.com/abuse/v1/reports/abc123/messages \
   --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
   --header 'content-type: application/json' \
-  --data '{"body":"I have resolved this issue."}'
+  --data '{"body":"I have resolved this issue.","uploadId":"string"}'

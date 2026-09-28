@@ -6,7 +6,25 @@ properties:
   isPublic:
     type: boolean
     default: false
+  customerId:
+    type: string
+  salesOrgId:
+    type: string
+  created:
+    type: string
+    format: date-time
+  updated:
+    type:
+      - string
+      - 'null'
+    format: date-time
 required:
   - id
   - name
+  - isPublic
+  - customerId
+  - salesOrgId
+  - created
+  - updated
 type: object
+additionalProperties: true

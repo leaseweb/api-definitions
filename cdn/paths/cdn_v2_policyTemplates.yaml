@@ -1,6 +1,6 @@
 get:
   description: |
-    Get all the policy templates
+    List all the policy templates.
   operationId: getPolicyTemplates
   responses:
     '200':
@@ -9,8 +9,57 @@ get:
         application/json:
           schema:
             $ref: ../components/schemas/getPolicyTemplatesResult.yaml
-    '400':
-      $ref: ../components/responses/400.yaml
+          example:
+            - id: pt-99108de
+              name: Live Streaming
+              isPublic: true
+              customerId: '59841258'
+              salesOrgId: '2000'
+              created: '2025-05-28T17:03:51Z'
+              updated: null
+              securityReferrerAcl: false
+              securityTokenShaKey: null
+              originPullXff: true
+              deliveryRateLimit: false
+              cacheHonorOriginTtl: true
+              securityReferrerAclDefault: null
+              securityTokenClientIp: false
+              originPullHeaders: null
+              deliveryTransferRate: null
+              cacheStale: true
+              securityToken: false
+              securityTokenExpirationParam: null
+              originPullPassCookie: false
+              deliveryBurstSize: null
+              cacheByPass: false
+              securityTokenVendor: null
+              securityTokenParam: null
+              originPullPassVary: false
+              deliveryForceHttps: false
+              cacheSegmented: false
+              securityGeoAcl: false
+              securityTokenMethod: null
+              securityTokenNumberOfPathComponents: -1
+              deliveryStaticHeaders: null
+              deliveryPassThroughAllHeaders: null
+              description: Live Streaming Template
+              securityGeoAclDefault: null
+              securityTokenSecret: null
+              securityTokenEmbedIntoPath: false
+              deliveryTtlInherit: true
+              deliveryPassThroughHeaders: null
+              allowedMethods: GET,OPTIONS,HEAD
+              securityIpAcl: false
+              securityTokenAesKey: null
+              originPullCompressed: true
+              deliveryTtlOverride: 0
+              cacheQueryString: true
+              longMinUses: null
+              securityIpAclDefault: null
+              originPullHostHeader: null
+              deliveryCompress: false
+              cacheDefaultTtl: 0
+              shortMinUses: null
     '401':
       $ref: ../components/responses/401.yaml
     '403':
@@ -19,7 +68,7 @@ get:
       $ref: ../components/responses/500.yaml
     '503':
       $ref: ../components/responses/503.yaml
-  summary: Get All Templates
+  summary: List policy templates
   tags:
     - CDN
   x-codeSamples:

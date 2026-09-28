@@ -4,7 +4,7 @@ $client = new http\Client;
 $request = new http\Client\Request;
 
 $body = new http\Message\Body;
-$body->append('{"body":"I have resolved this issue."}');
+$body->append('{"body":"I have resolved this issue.","uploadId":"string"}');
 
 $request->setRequestUrl('https://api.leaseweb.com/abuse/v1/reports/abc123/messages');
 $request->setRequestMethod('POST');
