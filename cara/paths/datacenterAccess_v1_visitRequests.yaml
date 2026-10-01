@@ -22,23 +22,28 @@ get:
       schema:
         type: string
       description: Show requests for this datacenter
-    - name: email
+    - name: visitor
       in: query
       schema:
         type: string
-      description: Filter access requests by email
-    - name: createdBy
+      description: >-
+        Filter access requests by visitor. Partial match on the visitor's first
+        name, last name, full name (e.g. "John Doe") or email address
+    - name: requestor
       in: query
       schema:
         type: string
-      description: Filter by createdBy
+      description: >-
+        Filter access requests by requestor. Partial match on the user that
+        created the request (createdByUser)
     - name: q
       in: query
       schema:
         type: string
       description: >-
-        Search for access request by site (e.g. "AMS-01") or email or createdBy
-        (e.g. "test@example.com") or first name (e.g. "John") or last name
+        Search for access request by site (e.g. "AMS-01") or email or
+        createdByUser (e.g. "test@example.com") or first name (e.g. "John") or
+        last name
     - name: sort
       in: query
       schema:
@@ -59,6 +64,8 @@ get:
               totalCount: 2
               offset: 0
               limit: 2
+              sites:
+                - AMS-01
             requests:
               - id: '1'
                 requestCode: ASDF1234

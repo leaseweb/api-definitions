@@ -11,8 +11,8 @@ $request->setQuery(new http\QueryString([
   'fromDate' => 'SOME_STRING_VALUE',
   'toDate' => 'SOME_STRING_VALUE',
   'site' => 'SOME_STRING_VALUE',
-  'email' => 'SOME_STRING_VALUE',
-  'createdBy' => 'SOME_STRING_VALUE',
+  'visitor' => 'SOME_STRING_VALUE',
+  'requestor' => 'SOME_STRING_VALUE',
   'q' => 'SOME_STRING_VALUE',
   'sort' => 'SOME_STRING_VALUE'
 ]));

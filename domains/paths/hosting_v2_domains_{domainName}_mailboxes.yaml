@@ -185,7 +185,11 @@ post:
           schema:
             $ref: ../components/schemas/operation.post.response.201.schema.yaml
           examples:
-            example:
+            withAutoResponder:
+              summary: Mailbox with auto responder
+              description: >-
+                The `_embedded.autoResponder` object is present because the
+                mailbox has an auto responder configured.
               value:
                 active: true
                 currentSize: 123456789
@@ -201,6 +205,31 @@ post:
                       self:
                         href: >-
                           /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                _links:
+                  self:
+                    href: /domains/example.com/mailboxes/mailbox%40example.com
+                  collection:
+                    href: /domains/example.com/mailboxes
+                  autoResponder:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/autoResponder
+                  forwards:
+                    href: >-
+                      /domains/example.com/mailboxes/mailbox%40example.com/forwards
+            withoutAutoResponder:
+              summary: Mailbox without auto responder
+              description: >-
+                The `_embedded` object is omitted because the mailbox has no
+                auto responder configured.
+              value:
+                active: true
+                currentSize: 123456789
+                emailAddress: mailbox@example.com
+                maximumSize: 5368709120
+                spamChecksEnabled: true
+                suspended: false
+                virusChecksEnabled: false
+                localDelivery: true
                 _links:
                   self:
                     href: /domains/example.com/mailboxes/mailbox%40example.com

@@ -4,7 +4,22 @@ properties:
     items:
       $ref: ./request.yaml
   _metadata:
-    $ref: ./_metadata.yaml
+    allOf:
+      - $ref: ./_metadata.yaml
+      - type: object
+        properties:
+          sites:
+            type: array
+            description: >-
+              All distinct sites present in the filtered result set, regardless
+              of the current limit and offset
+            items:
+              type: string
+            example:
+              - AMS-01
+              - WDC-02
+        required:
+          - sites
 required:
   - requests
   - _metadata

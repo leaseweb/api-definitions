@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	url := "https://api.leaseweb.com/datacenterAccess/v1/visitRequests?limit=20&offset=10&fromDate=SOME_STRING_VALUE&toDate=SOME_STRING_VALUE&site=SOME_STRING_VALUE&email=SOME_STRING_VALUE&createdBy=SOME_STRING_VALUE&q=SOME_STRING_VALUE&sort=SOME_STRING_VALUE"
+	url := "https://api.leaseweb.com/datacenterAccess/v1/visitRequests?limit=20&offset=10&fromDate=SOME_STRING_VALUE&toDate=SOME_STRING_VALUE&site=SOME_STRING_VALUE&visitor=SOME_STRING_VALUE&requestor=SOME_STRING_VALUE&q=SOME_STRING_VALUE&sort=SOME_STRING_VALUE"
 
 	req, _ := http.NewRequest("GET", url, nil)
 
