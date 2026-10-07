@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  description: >-
+    This document outlines version 2 of the ordering API for dedicated servers.
+    The API is only available for customers with invoice payment method.
+
+
+    Version 2 serves the dedicated server catalogue from Leaseweb stock and
+    prices it directly against SAP, so it only lists servers that can be
+    delivered within the hour. VPS ordering remains on version 1.
+  title: Ordering
+  version: v2
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    altText: Leaseweb developer documentation
+    backgroundColor: '#5484c6'
+    href: https://developer.leaseweb.com
+    url: https://developer.leaseweb.com/images/logo.png
+servers:
+  - url: https://api.leaseweb.com
+security:
+  - X-LSW-Auth: []
+tags:
+  - name: Servers
+paths:
+  /ordering/v2/products/dedicatedServers:
+    $ref: paths/ordering_v2_products_dedicatedServers.yaml
+  /ordering/v2/products/dedicatedServers/{dedicatedServerId}:
+    $ref: paths/ordering_v2_products_dedicatedServers_{dedicatedServerId}.yaml
+  /ordering/v2/products/dedicatedServers/{dedicatedServerId}/order:
+    $ref: paths/ordering_v2_products_dedicatedServers_{dedicatedServerId}_order.yaml
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+    X-LSW-Auth:
+      name: X-LSW-Auth
+      type: apiKey
+      in: header
+      description: API key authentication by setting `X-LSW-Auth` header.

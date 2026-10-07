@@ -1,0 +1,12 @@
+import http.client
+
+conn = http.client.HTTPSConnection("api.leaseweb.com")
+
+headers = { 'X-LSW-Auth': "REPLACE_KEY_VALUE" }
+
+conn.request("GET", "/ordering/v2/products/dedicatedServers/973bfe00e8dbce7adf47a2c2ad4783aa20396cd1b00ff1fc8a2bf97c83210234?location=AMS-01&contractTerm=1_YEAR&billingCycle=3_MONTHS&connectedToAggregationPool=true", headers=headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))

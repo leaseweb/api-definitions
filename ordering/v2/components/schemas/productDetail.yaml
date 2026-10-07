@@ -1,0 +1,63 @@
+allOf:
+  - $ref: ./product.yaml
+  - type: object
+    properties:
+      stock:
+        description: How many of this configuration are in stock at the requested location
+        type: integer
+      operatingSystem:
+        description: Selected operating system
+        type: string
+      controlPanel:
+        description: Selected control panel
+        type: string
+      ipConnectivityType:
+        description: IP connectivity type
+        type: string
+      uplinkPortSpeed:
+        description: Uplink port speed
+        type: string
+      privateNetwork1xvlan:
+        description: Private network configuration
+        type: string
+      dataPackConfiguration:
+        description: Data pack configuration
+        type: string
+      ipV4Configuration:
+        description: IPv4 configuration
+        type: string
+      monitoringType:
+        description: Monitoring type
+        type: string
+      ddosIpProtection:
+        description: DDoS IP protection
+        type: string
+      serviceLevelAgreement:
+        description: Service level agreement
+        type: string
+      price:
+        $ref: ./price.yaml
+      configurationOptions:
+        title: configurationOptions
+        description: Options the server can be ordered with
+        type: object
+        properties:
+          operatingSystem:
+            type: array
+            items:
+              title: operatingSystemOption
+              type: object
+              properties:
+                name:
+                  description: Name of the operating system
+                  type: string
+                selected:
+                  description: Whether it is the one currently selected
+                  type: boolean
+                price:
+                  description: >-
+                    Monthly price of this operating system, on top of the server
+                    price
+                  type: number
+                currency:
+                  $ref: ./currency.yaml

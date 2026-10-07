@@ -1,0 +1,8 @@
+type: object
+properties:
+  dedicatedServers:
+    type: array
+    items:
+      $ref: ./product.yaml
+  _metadata:
+    $ref: ./_metadata.yaml

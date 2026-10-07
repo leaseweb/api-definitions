@@ -1,0 +1,7 @@
+description: The ID of a dedicated server configuration, as returned by the list endpoint
+example: 973bfe00e8dbce7adf47a2c2ad4783aa20396cd1b00ff1fc8a2bf97c83210234
+in: path
+name: dedicatedServerId
+required: true
+schema:
+  type: string

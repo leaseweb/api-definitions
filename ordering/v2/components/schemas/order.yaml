@@ -1,0 +1,5 @@
+type: object
+properties:
+  orderId:
+    description: Order Id
+    type: integer

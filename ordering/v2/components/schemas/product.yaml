@@ -1,0 +1,65 @@
+type: object
+properties:
+  id:
+    description: >-
+      Id of the configuration. Derived from the hardware, so the same
+      configuration keeps the same id across locations.
+    type: string
+  name:
+    description: Name of the server
+    type: string
+  deliveryMethod:
+    description: Time to get the server ready
+    type: string
+  cpu:
+    description: CPU info of the server
+    title: cpu
+    type: object
+    properties:
+      coresPerCPU:
+        description: Quantity of cores per CPU
+        type: string
+      totalCores:
+        description: Sum of CPU cores
+        type: string
+      quantity:
+        description: Quantity of CPUs
+        type: string
+      speed:
+        description: CPU speed
+        type: string
+      type:
+        description: CPU type
+        type: string
+  chassis:
+    description: Chassis of the server
+    type: string
+  hdd:
+    description: Disk sets of the server
+    type: array
+    items:
+      title: hdd
+      type: object
+      properties:
+        amount:
+          description: Amount of disks
+          type: string
+        size:
+          description: Disk size
+          type: string
+  ram:
+    description: Ram info of the server
+    title: ram
+    type: object
+    properties:
+      size:
+        description: Amount of memory
+        type: string
+      unit:
+        description: Unit the amount is expressed in
+        type: string
+  location:
+    description: Datacenters where this configuration is in stock
+    type: array
+    items:
+      type: string

@@ -14,7 +14,9 @@ get:
           example:
             displayName: allPowerful
             id: 3f8fad42-73c1-4b5a-9d23-8e1f2c47b890
-            s3Policies: null
+            s3Policies: >-
+              {"Statement": [{"Effect": "Deny","Action": "s3:*","Resource":
+              "arn:aws:s3:::*"}]}
             uniqueName: group/allPowerful
     '401':
       $ref: ../components/responses/401.yaml
@@ -61,7 +63,7 @@ put:
         schema:
           $ref: ../components/schemas/updateObjectStorageGroupOpts.yaml
         example:
-          displayName: testGroup
+          displayName: allPowerful
           s3Policies: >-
             {"Statement": [{"Effect": "Deny","Action": "s3:*","Resource":
             "arn:aws:s3:::*"}]}
@@ -75,7 +77,9 @@ put:
           example:
             displayName: allPowerful
             id: 3f8fad42-73c1-4b5a-9d23-8e1f2c47b890
-            s3Policies: null
+            s3Policies: >-
+              {"Statement": [{"Effect": "Deny","Action": "s3:*","Resource":
+              "arn:aws:s3:::*"}]}
             uniqueName: group/allPowerful
     '400':
       $ref: ../components/responses/400.yaml

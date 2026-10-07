@@ -1,0 +1,5 @@
+description: >-
+  The datacenter location. Must belong to the sales organization the API key is
+  issued for.
+example: AMS-01
+type: string

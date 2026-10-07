@@ -1,0 +1,14 @@
+properties:
+  location:
+    $ref: ./location.yaml
+  contractTerm:
+    $ref: ./contractTerm.yaml
+  billingCycle:
+    $ref: ./billingCycle.yaml
+  connectedToAggregationPool:
+    $ref: ./connectedToAggregationPool.yaml
+  operatingSystem:
+    $ref: ./operatingSystem.yaml
+required:
+  - location
+type: object

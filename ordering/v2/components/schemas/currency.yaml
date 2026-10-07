@@ -1,0 +1,14 @@
+title: currency
+description: >-
+  Currency of the sales organization the API key belongs to. Prices are never
+  converted, so one key always sees one currency.
+type: string
+enum:
+  - AUD
+  - CAD
+  - EUR
+  - GBP
+  - HKD
+  - JPY
+  - SGD
+  - USD

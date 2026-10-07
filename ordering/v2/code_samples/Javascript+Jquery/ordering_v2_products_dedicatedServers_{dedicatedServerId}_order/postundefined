@@ -1,0 +1,16 @@
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://api.leaseweb.com/ordering/v2/products/dedicatedServers/973bfe00e8dbce7adf47a2c2ad4783aa20396cd1b00ff1fc8a2bf97c83210234/order",
+  "method": "POST",
+  "headers": {
+    "X-LSW-Auth": "REPLACE_KEY_VALUE",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"location\":\"AMS-01\",\"contractTerm\":\"1_YEAR\",\"billingCycle\":\"3_MONTHS\",\"connectedToAggregationPool\":\"true\",\"operatingSystem\":\"Ubuntu 24.04 LTS (64bit)\"}"
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});

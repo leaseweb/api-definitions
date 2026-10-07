@@ -38,7 +38,7 @@ post:
       $ref: ../components/responses/503.yaml
   summary: Dedicated Server ordering.
   tags:
-    - Ordering
+    - Ordering v1
   x-codeSamples:
     - lang: Shell + Curl
       source:

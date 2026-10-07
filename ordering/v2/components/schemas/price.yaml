@@ -1,0 +1,66 @@
+title: price
+description: >-
+  Price of the server, in the currency of the sales organization the API key
+  belongs to
+type: object
+properties:
+  currency:
+    $ref: ./currency.yaml
+  basePrice:
+    description: Monthly price before discounts
+    type: string
+  tax:
+    description: Tax
+    type: string
+  setupFee:
+    description: One time setup fee
+    type: string
+  discounts:
+    title: discounts
+    type: object
+    properties:
+      total:
+        description: Total discounts
+        type: string
+      details:
+        type: array
+        items:
+          title: discountItem
+          type: object
+          properties:
+            description:
+              type: string
+            value:
+              type: string
+  total:
+    description: Monthly price after discounts
+    type: string
+  contractTerm:
+    description: Selected contract term
+    type: string
+  contractTerms:
+    description: Price for each contract term
+    type: array
+    items:
+      $ref: ./priceTier.yaml
+  billingCycle:
+    description: Selected billing cycle
+    type: string
+  billingCycles:
+    description: Price for each billing cycle
+    type: array
+    items:
+      $ref: ./priceTier.yaml
+  details:
+    title: priceDetails
+    description: >-
+      Price broken down by category, as SAP composes it. Keys are the category
+      names and vary with what the server is made of.
+    type: object
+    additionalProperties:
+      description: >-
+        Lines in the category, keyed by what each one prices. A line carrying no
+        charge of its own reads "incl.".
+      type: object
+      additionalProperties:
+        type: string

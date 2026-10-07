@@ -1,0 +1,13 @@
+title: priceTier
+type: object
+properties:
+  key:
+    type: string
+  description:
+    type: string
+  discountValue:
+    description: Discount percentage applied to this option
+    type: number
+  total:
+    description: Monthly price for this option
+    type: string

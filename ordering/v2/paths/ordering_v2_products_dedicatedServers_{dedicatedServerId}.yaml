@@ -1,0 +1,194 @@
+get:
+  description: >
+    Returns one dedicated server configuration with its configuration options
+    and its price at the requested location.
+
+
+    The price is calculated for the contract term and billing cycle you ask for,
+    defaulting to a monthly contract billed monthly, and is expressed in the
+    currency of the sales organization your API key belongs to. `price.details`
+    breaks it down by category, exactly as it is composed on the SAP side, so
+    the categories present depend on what the server is made of.
+
+
+    `stock` reports how many of this configuration are in stock at that
+    location.
+  operationId: getDedicatedServer
+  parameters:
+    - in: query
+      name: location
+      required: true
+      schema:
+        description: >-
+          The datacenter location. Must belong to the sales organization the API
+          key is issued for.
+        example: AMS-01
+        type: string
+    - in: query
+      name: contractTerm
+      schema:
+        default: 1_MONTH
+        description: Order contract term
+        example: 1_YEAR
+        type: string
+        enum:
+          - 1_MONTH
+          - 3_MONTHS
+          - 6_MONTHS
+          - 1_YEAR
+          - 2_YEARS
+          - 3_YEARS
+    - in: query
+      name: billingCycle
+      schema:
+        default: 1_MONTH
+        description: Billing cycle period
+        example: 3_MONTHS
+        type: string
+        enum:
+          - 1_MONTH
+          - 3_MONTHS
+          - 6_MONTHS
+          - 1_YEAR
+          - 2_YEARS
+          - 3_YEARS
+    - in: query
+      name: connectedToAggregationPool
+      schema:
+        default: 'false'
+        description: To add the dedicated server in the connectivity aggregation pool
+        example: 'true'
+        type: boolean
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            chassis: Dell R630 (8xSFF)
+            configurationOptions:
+              operatingSystem:
+                - name: Ubuntu 24.04 LTS (64bit)
+                  selected: true
+                  price: 0
+                  currency: EUR
+                - name: Windows Server 2022 Standard
+                  selected: false
+                  price: 20.64
+                  currency: EUR
+            controlPanel: No Control Panel
+            cpu:
+              coresPerCPU: '12'
+              totalCores: '24'
+              quantity: Dual
+              speed: 2.3 GHz
+              type: Intel Xeon E5-2670v3
+            dataPackConfiguration: 30|30|02
+            ddosIpProtection: Standard
+            deliveryMethod: 1 hour
+            hdd:
+              - amount: '2'
+                size: 480GB SSD WI
+            id: 973bfe00e8dbce7adf47a2c2ad4783aa20396cd1b00ff1fc8a2bf97c83210234
+            ipConnectivityType: Direct Connectivity
+            ipV4Configuration: 1 x IPv4 address (Individual)
+            location:
+              - AMS-01
+            monitoringType: Leaseweb Monitoring
+            name: Dell R630 (8xSFF) Dual Intel Xeon E5-2670v3
+            operatingSystem: Ubuntu 24.04 LTS (64bit)
+            price:
+              currency: EUR
+              basePrice: '70.77'
+              tax: '0.00'
+              setupFee: '98.98'
+              discounts:
+                total: '-5.33'
+                details:
+                  - description: Automatic delivery
+                    value: '-5.33'
+              total: '65.44'
+              contractTerm: 1 month
+              contractTerms:
+                - key: 1_MONTH
+                  description: 1 month
+                  discountValue: 0
+                  total: '65.44'
+                - key: 1_YEAR
+                  description: 1 year
+                  discountValue: -10
+                  total: '58.90'
+              billingCycle: 1 month
+              billingCycles:
+                - key: 1_MONTH
+                  description: 1 month
+                  discountValue: 0
+                  total: '65.44'
+                - key: 3_MONTHS
+                  description: 3 months
+                  discountValue: -2
+                  total: '64.13'
+              details:
+                Server:
+                  Dell R630 (8xSFF), Intel Xeon E5-2670v3: '2.52'
+                  128GB RAM: '17.62'
+                  2 x SSD480GB (set 1): incl.
+                Server Discounts:
+                  Automatic delivery: '-5.33'
+                Rackspace:
+                  1U: '29.19'
+                Network Connectivity:
+                  1 X GE port UTP: '2.50'
+                IP Address:
+                  IPv4 address (Individual): '2.50'
+                Software:
+                  1 x No control panel: incl.
+                Services:
+                  Basic: incl.
+            privateNetwork1xvlan: 'No'
+            ram:
+              size: '128'
+              unit: GB
+            serviceLevelAgreement: Basic
+            stock: 4
+            uplinkPortSpeed: 1 x 1.000 Mbps UTP
+          schema:
+            $ref: ../components/schemas/productDetail.yaml
+      description: OK.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get a dedicated server with its price
+  tags:
+    - Ordering v2
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ordering_v2_products_dedicatedServers_{dedicatedServerId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ordering_v2_products_dedicatedServers_{dedicatedServerId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/ordering_v2_products_dedicatedServers_{dedicatedServerId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ordering_v2_products_dedicatedServers_{dedicatedServerId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/ordering_v2_products_dedicatedServers_{dedicatedServerId}/getundefined
+parameters:
+  - $ref: ../components/parameters/dedicatedServerId.yaml

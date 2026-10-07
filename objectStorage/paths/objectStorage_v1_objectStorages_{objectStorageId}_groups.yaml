@@ -12,11 +12,11 @@ get:
             $ref: ../components/schemas/getObjectStorageGroupListResult.yaml
           example:
             groups:
-              - id: 9576bc36-84e2-4ed7-92ff-6bb8fa25a2d5
+              - id: 3f8fad42-73c1-4b5a-9d23-8e1f2c47b890
                 displayName: allPowerful
                 uniqueName: group/allPowerful
                 s3Policies: >-
-                  {"Statement": [{"Effect": "Allow","Action": "s3:*","Resource":
+                  {"Statement": [{"Effect": "Deny","Action": "s3:*","Resource":
                   "arn:aws:s3:::*"}]}
               - id: 5e479608-e62d-4936-9095-6f3be82b564e
                 displayName: NoAccess
@@ -67,9 +67,11 @@ post:
         schema:
           $ref: ../components/schemas/createObjectStorageGroupOpts.yaml
         example:
-          displayName: testGroup
-          s3Policies: null
-          uniqueName: testGroup
+          displayName: allPowerful
+          s3Policies: >-
+            {"Statement": [{"Effect": "Deny","Action": "s3:*","Resource":
+            "arn:aws:s3:::*"}]}
+          uniqueName: group/allPowerful
   responses:
     '201':
       description: Created

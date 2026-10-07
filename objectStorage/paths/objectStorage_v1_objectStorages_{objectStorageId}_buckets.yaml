@@ -12,6 +12,18 @@ get:
             $ref: ../components/schemas/getObjectStorageBucketListResult.yaml
           example:
             buckets:
+              - name: test-bucket-01
+                region: nl-01
+                isVersioningEnabled: true
+                quota:
+                  value: 1000
+                  unit: GB
+                objectCount: 0
+                used:
+                  value: 0
+                  unit: GB
+                creationTime: null
+                isBeingDeleted: false
               - name: abcdef
                 region: nl-01
                 isVersioningEnabled: true

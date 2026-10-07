@@ -95,7 +95,7 @@ get:
       $ref: ../components/responses/503.yaml
   summary: List available dedicated server configurations.
   tags:
-    - Ordering
+    - Ordering v1
   x-codeSamples:
     - lang: Shell + Curl
       source:

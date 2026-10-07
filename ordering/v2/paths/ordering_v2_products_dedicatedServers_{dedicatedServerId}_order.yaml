@@ -1,0 +1,73 @@
+post:
+  description: >
+    Orders the dedicated server configuration at the requested location.
+
+
+    The Ordering API can only be used by existing, verified Leaseweb customers
+    who are on invoice payment with no prepayment obligation. If you are a new
+    customer, you must first complete the Know Your Customer (KYC) process
+    before you can place orders via API. If you are already on invoice payment
+    but receive an error when placing an order via API, this is likely due to a
+    prepayment requirement on your account. Please contact Leaseweb Sales or
+    Support to have the prepayment obligation removed.
+
+
+    The server is ordered with the contract term and billing cycle you pass,
+    which are the same options the detail endpoint prices.
+  operationId: orderDedicatedServer
+  requestBody:
+    content:
+      application/json:
+        example:
+          billingCycle: 3_MONTHS
+          contractTerm: 1_YEAR
+          location: AMS-01
+        schema:
+          $ref: ../components/schemas/orderDedicatedServerOpts.yaml
+  responses:
+    '201':
+      content:
+        application/json:
+          example:
+            orderId: 43000007
+          schema:
+            $ref: ../components/schemas/order.yaml
+      description: Created.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Order a dedicated server
+  tags:
+    - Ordering v2
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ordering_v2_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ordering_v2_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/ordering_v2_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ordering_v2_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/ordering_v2_products_dedicatedServers_{dedicatedServerId}_order/postundefined
+parameters:
+  - $ref: ../components/parameters/dedicatedServerId.yaml

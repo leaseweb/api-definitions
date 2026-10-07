@@ -1,0 +1,108 @@
+get:
+  description: >
+    Lists the dedicated server configurations currently in stock that can be
+    delivered within the hour.
+
+
+    Configurations are grouped by hardware, so one entry can be available in
+    more than one datacenter; the `location` field lists them all. Only
+    locations belonging to the sales organization your API key is issued for are
+    returned, and passing a `location` outside it is rejected.
+  operationId: getDedicatedServerList
+  parameters:
+    - $ref: ../components/parameters/limit.yaml
+    - $ref: ../components/parameters/offset.yaml
+    - in: query
+      name: location
+      schema:
+        description: >-
+          The datacenter location. Must belong to the sales organization the API
+          key is issued for.
+        example: AMS-01
+        type: string
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            _metadata:
+              limit: 10
+              offset: 0
+              totalCount: 2
+            dedicatedServers:
+              - id: >-
+                  973bfe00e8dbce7adf47a2c2ad4783aa20396cd1b00ff1fc8a2bf97c83210234
+                name: Dell R630 (8xSFF) Dual Intel Xeon E5-2670v3
+                deliveryMethod: 1 hour
+                cpu:
+                  coresPerCPU: '12'
+                  totalCores: '24'
+                  quantity: Dual
+                  speed: 2.3 GHz
+                  type: Intel Xeon E5-2670v3
+                chassis: Dell R630 (8xSFF)
+                hdd:
+                  - amount: '2'
+                    size: 480GB SSD WI
+                ram:
+                  size: '128'
+                  unit: GB
+                location:
+                  - AMS-01
+              - id: >-
+                  0df2671bd12635a4e8c0152b4c76bcea314f603bbcc1ff3433cd4dfc392f9844
+                name: Dell R240 (4xLFF-HW) Single Intel Xeon E-2274G
+                deliveryMethod: 1 hour
+                cpu:
+                  coresPerCPU: '4'
+                  totalCores: '4'
+                  quantity: Single
+                  speed: 4 GHz
+                  type: Intel Xeon E-2274G
+                chassis: Dell R240 (4xLFF-HW)
+                hdd:
+                  - amount: '2'
+                    size: 480GB SSD WI
+                ram:
+                  size: '32'
+                  unit: GB
+                location:
+                  - WDC-02
+                  - NYC-01
+          schema:
+            $ref: ../components/schemas/productList.yaml
+      description: OK.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: List dedicated servers available within the hour
+  tags:
+    - Ordering v2
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ordering_v2_products_dedicatedServers/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ordering_v2_products_dedicatedServers/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/ordering_v2_products_dedicatedServers/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ordering_v2_products_dedicatedServers/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/ordering_v2_products_dedicatedServers/getundefined
