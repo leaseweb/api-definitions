@@ -9,10 +9,8 @@ properties:
     example: Report description
   status:
     type: string
-    enum:
-      - OPEN
-      - WAITING
-      - CLOSED
+    anyOf:
+      - $ref: ./statusValue.yaml
     description: The current status of the report.
     example: OPEN
   abuseType:

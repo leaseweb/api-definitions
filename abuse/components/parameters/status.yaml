@@ -3,10 +3,8 @@ in: query
 required: false
 schema:
   type: string
-  enum:
-    - OPEN
-    - WAITING
-    - CLOSED
+  anyOf:
+    - $ref: ../schemas/statusValue.yaml
 example: OPEN,CLOSED
 description: >
   Filter reports by their status (`?status=OPEN,CLOSED`): returns reports that

@@ -1,0 +1,15 @@
+title: installPartition
+allOf:
+  - $ref: ./partition.yaml
+  - properties:
+      raid:
+        description: >-
+          Software RAID level for this partition. Only allowed when `raid.type`
+          is `SW` and not allowed for the `/boot` partition. If not specified,
+          the partition uses the global `raid.level`
+        properties:
+          level:
+            $ref: ./raidLevel.yaml
+        required:
+          - level
+        type: object

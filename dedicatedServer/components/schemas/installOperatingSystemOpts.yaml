@@ -22,7 +22,7 @@ properties:
   partitions:
     description: Array of partition objects that should be installed per partition
     items:
-      $ref: ./partition.yaml
+      $ref: ./installPartition.yaml
     type: array
   password:
     description: Server root password. If not provided, it would be automatically generated

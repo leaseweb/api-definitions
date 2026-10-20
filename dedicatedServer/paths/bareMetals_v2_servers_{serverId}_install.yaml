@@ -30,6 +30,21 @@ post:
     endpoint and look for the corresponding diskset id from the hdd array.
 
 
+    When using software RAID (`raid.type` set to `SW`) you can specify a RAID
+
+    level per partition with `partitions[].raid.level`. Partitions without a
+    RAID
+
+    level use the global `raid.level`. The `/boot` partition is never part of a
+
+    RAID array, so a RAID level is not allowed for it. Each RAID level requires
+    a
+
+    minimum number of disks: 2 for RAID 0 and RAID 1, 3 for RAID 5 and 4 for
+
+    RAID 10. Partition RAID levels are not supported with hardware RAID.
+
+
     For more information about Dedicated Server installation, check our
     [Knowledge Base article on reinstalling your Dedicated
     Server](https://kb.leaseweb.com/products/dedicated-server/reinstalling-your-dedicated-server).
@@ -53,10 +68,15 @@ post:
               size: '4096'
             - filesystem: ext4
               mountpoint: /tmp
+              raid:
+                level: 0
               size: '4096'
             - filesystem: ext4
               mountpoint: /
               size: '*'
+          raid:
+            level: 1
+            type: SW
           sshKeys: ssh-rsa AAAAB3NzaC1y... user@domain.com
         schema:
           $ref: ../components/schemas/installOperatingSystemOpts.yaml
