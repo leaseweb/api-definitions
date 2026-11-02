@@ -46,6 +46,20 @@ get:
             updatedAt: 2015-01-01T00:00:00+0100
           schema:
             $ref: ../components/schemas/getReportResult.yaml
+    '202':
+      description: >-
+        The report is archived. Requesting it starts unarchiving it in the
+        background; poll this endpoint until it responds with `200` and the
+        report details.
+      content:
+        application/json:
+          example:
+            statusCode: ACCEPTED
+            exceptionMessage: >-
+              The requested ticket is archived. It will be unarchived, so please
+              try again later.
+          schema:
+            $ref: ../components/schemas/getReportArchivedResult.yaml
     '401':
       $ref: ../components/responses/401.yaml
     '403':

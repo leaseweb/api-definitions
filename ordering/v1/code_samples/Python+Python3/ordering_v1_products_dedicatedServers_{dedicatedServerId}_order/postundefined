@@ -2,7 +2,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("api.leaseweb.com")
 
-payload = "{\"location\":\"AMS-01\",\"connectedToAggregationPool\":true,\"contractTerm\":\"2_YEARS\",\"operatingSystem\":\"Windows Server 2022 Standard\"}"
+payload = "{\"location\":\"AMS-01\",\"connectedToAggregationPool\":true,\"contractTerm\":\"2_YEARS\",\"operatingSystem\":\"Windows Server 2022 Standard\",\"dryRun\":true}"
 
 headers = {
     'X-LSW-Auth': "REPLACE_KEY_VALUE",

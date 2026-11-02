@@ -1,0 +1,6 @@
+description: >-
+  Validates the order and reports whether it would be accepted, without creating
+  a contract. Nothing is ordered and nothing is charged.
+example: true
+default: false
+type: boolean

@@ -8,7 +8,7 @@ const settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"location\":\"AMS-01\",\"contractTerm\":\"1_YEAR\",\"billingCycle\":\"3_MONTHS\",\"connectedToAggregationPool\":\"true\",\"operatingSystem\":\"Ubuntu 24.04 LTS (64bit)\"}"
+  "data": "{\"location\":\"AMS-01\",\"contractTerm\":\"1_YEAR\",\"connectedToAggregationPool\":\"true\",\"operatingSystem\":\"Ubuntu 24.04 LTS (64bit)\",\"dryRun\":true}"
 };
 
 $.ajax(settings).done(function (response) {

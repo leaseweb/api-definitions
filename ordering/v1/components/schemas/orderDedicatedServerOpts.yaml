@@ -24,6 +24,8 @@ properties:
     description: Operating system option. Defaults to no OS when omitted.
     example: Windows Server 2022 Standard
     type: string
+  dryRun:
+    $ref: ./dryRun.yaml
 required:
   - location
 type: object

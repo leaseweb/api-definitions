@@ -13,6 +13,8 @@ properties:
     $ref: ./contractTerm.yaml
   billingCycle:
     $ref: ./billingCycle.yaml
+  dryRun:
+    $ref: ./dryRun.yaml
 required:
   - location
 type: object

@@ -12,14 +12,19 @@ post:
     Support to have the prepayment obligation removed.
 
 
-    The server is ordered with the contract term and billing cycle you pass,
-    which are the same options the detail endpoint prices.
+    The server is ordered with the contract term you pass, which is one of the
+    options the detail endpoint prices.
+
+
+    Pass `dryRun` to check an order without placing it. The request is validated
+    the same way, your payment eligibility is checked, and the response comes
+    back with `dryRun: true` and a placeholder `orderId`. No contract is created
+    and nothing is charged.
   operationId: orderDedicatedServer
   requestBody:
     content:
       application/json:
         example:
-          billingCycle: 3_MONTHS
           contractTerm: 1_YEAR
           location: AMS-01
         schema:

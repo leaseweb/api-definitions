@@ -8,6 +8,13 @@ get:
       schema:
         type: string
       description: Filter access cards by email address
+    - name: name
+      in: query
+      schema:
+        type: string
+      description: >-
+        Filter access cards by name. Partial match on the access card's first
+        name, last name, full name (e.g. "John Doe")
     - name: sort
       in: query
       schema:

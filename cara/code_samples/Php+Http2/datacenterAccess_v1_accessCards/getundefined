@@ -9,6 +9,7 @@ $request->setQuery(new http\QueryString([
   'limit' => '20',
   'offset' => '10',
   'email' => 'SOME_STRING_VALUE',
+  'name' => 'SOME_STRING_VALUE',
   'sort' => 'SOME_STRING_VALUE'
 ]));
 

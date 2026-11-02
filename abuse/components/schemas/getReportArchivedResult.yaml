@@ -1,0 +1,17 @@
+type: object
+properties:
+  statusCode:
+    type: string
+    description: Always `ACCEPTED` when the requested report is archived.
+    enum:
+      - ACCEPTED
+    example: ACCEPTED
+  exceptionMessage:
+    type: string
+    description: A human-readable explanation that the report is being unarchived.
+    example: >-
+      The requested ticket is archived. It will be unarchived, so please try
+      again later.
+required:
+  - statusCode
+  - exceptionMessage

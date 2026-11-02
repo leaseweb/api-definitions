@@ -1,5 +1,8 @@
 type: object
 properties:
   orderId:
-    description: Order Id
+    description: Order Id. On a dry run this is a placeholder, not an order that exists.
     type: integer
+  dryRun:
+    description: Present and true when the order was a dry run, so no contract was created.
+    type: boolean

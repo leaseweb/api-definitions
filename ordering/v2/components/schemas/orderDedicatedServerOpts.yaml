@@ -3,12 +3,12 @@ properties:
     $ref: ./location.yaml
   contractTerm:
     $ref: ./contractTerm.yaml
-  billingCycle:
-    $ref: ./billingCycle.yaml
   connectedToAggregationPool:
     $ref: ./connectedToAggregationPool.yaml
   operatingSystem:
     $ref: ./operatingSystem.yaml
+  dryRun:
+    $ref: ./dryRun.yaml
 required:
   - location
 type: object

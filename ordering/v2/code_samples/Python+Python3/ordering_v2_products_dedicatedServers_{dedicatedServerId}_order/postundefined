@@ -2,7 +2,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("api.leaseweb.com")
 
-payload = "{\"location\":\"AMS-01\",\"contractTerm\":\"1_YEAR\",\"billingCycle\":\"3_MONTHS\",\"connectedToAggregationPool\":\"true\",\"operatingSystem\":\"Ubuntu 24.04 LTS (64bit)\"}"
+payload = "{\"location\":\"AMS-01\",\"contractTerm\":\"1_YEAR\",\"connectedToAggregationPool\":\"true\",\"operatingSystem\":\"Ubuntu 24.04 LTS (64bit)\",\"dryRun\":true}"
 
 headers = {
     'X-LSW-Auth': "REPLACE_KEY_VALUE",
