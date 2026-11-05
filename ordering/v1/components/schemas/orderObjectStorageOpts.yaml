@@ -1,0 +1,12 @@
+properties:
+  location:
+    $ref: ./objectStorageLocation.yaml
+  storageQuantity:
+    $ref: ./storageQuantity.yaml
+  contractTerm:
+    $ref: ./objectStorageContractTerm.yaml
+  dryRun:
+    $ref: ./dryRun.yaml
+required:
+  - location
+type: object

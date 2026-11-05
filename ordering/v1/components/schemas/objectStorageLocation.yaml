@@ -1,0 +1,10 @@
+description: The datacenter location
+example: AMS-01
+type: string
+enum:
+  - AMS-01
+  - FRA-01
+  - LON-01
+  - MTL-02
+  - SIN-01
+  - WDC-02

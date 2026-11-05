@@ -1,0 +1,9 @@
+description: >-
+  Reserved storage capacity in GB, a multiple of 100 between 500 and 1000000.
+  Only for `reserved`.
+example: 1000
+default: 500
+minimum: 500
+maximum: 1000000
+multipleOf: 100
+type: integer

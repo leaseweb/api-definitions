@@ -1,0 +1,5 @@
+curl --request POST \
+  --url https://api.leaseweb.com/ordering/v1/products/objectStorages/reserved/order \
+  --header 'X-LSW-Auth: REPLACE_KEY_VALUE' \
+  --header 'content-type: application/json' \
+  --data '{"location":"AMS-01","storageQuantity":1000,"contractTerm":"1_YEAR","dryRun":true}'

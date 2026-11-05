@@ -1,0 +1,129 @@
+type: object
+properties:
+  id:
+    description: Id of the Object Storage product
+    type: string
+    enum:
+      - reserved
+      - onDemand
+  name:
+    description: Name of the Object Storage product
+    type: string
+  description:
+    description: Description of the Object Storage product
+    type: string
+  location:
+    description: >-
+      All locations where the Object Storage product is available, regardless of
+      the API key's entity
+    type: array
+    items:
+      type: string
+  storageQuantity:
+    description: Selected storage capacity in GB. Only for `reserved`.
+    type: integer
+  configurationOptions:
+    title: objectStorageConfigurationOptions
+    description: Available configuration options. Only for `reserved`.
+    type: object
+    properties:
+      storageQuantity:
+        title: objectStorageStorageQuantityOption
+        description: Accepted storage capacity range
+        type: object
+        properties:
+          minimum:
+            description: Smallest storage capacity
+            type: integer
+          maximum:
+            description: Largest storage capacity
+            type: integer
+          step:
+            description: The storage capacity must be a multiple of this value
+            type: integer
+          unit:
+            description: Unit of the storage capacity
+            type: string
+  price:
+    title: objectStoragePrice
+    description: Price details of the Object Storage product
+    type: object
+    properties:
+      currency:
+        description: Price's currency
+        type: string
+      setupFee:
+        description: Setup fee
+        type: number
+      total:
+        description: >-
+          Periodic price for the selected configuration, with the contract term
+          discount applied. Usage is billed on top of it.
+        type: number
+      contractTerm:
+        description: Selected contract term
+        type: string
+        enum:
+          - 1_MONTH
+          - 3_MONTHS
+          - 6_MONTHS
+          - 1_YEAR
+          - 2_YEARS
+          - 3_YEARS
+      contractTerms:
+        title: objectStorageContractTerms
+        description: Available contract terms
+        type: array
+        items:
+          title: objectStorageContractTermItem
+          type: object
+          properties:
+            key:
+              description: Contract term key
+              type: string
+              enum:
+                - 1_MONTH
+                - 3_MONTHS
+                - 6_MONTHS
+                - 1_YEAR
+                - 2_YEARS
+                - 3_YEARS
+            description:
+              description: Contract term description
+              type: string
+            discountText:
+              description: Discount in percentage
+              type: string
+            discountValue:
+              description: Discount value
+              type: number
+            total:
+              description: Total price with discount
+              type: number
+      billingCycle:
+        description: Selected billing cycle
+        type: string
+        enum:
+          - 1_MONTH
+          - 3_MONTHS
+          - 6_MONTHS
+          - 1_YEAR
+          - 2_YEARS
+          - 3_YEARS
+      usagePrices:
+        title: objectStorageUsagePrices
+        description: Prices per unit of usage, billed on top of the total
+        type: array
+        items:
+          title: objectStorageUsagePrice
+          type: object
+          properties:
+            description:
+              description: What the usage is
+              type: string
+            price:
+              description: Price per unit, with up to 5 decimals
+              type: number
+            currency:
+              description: Price's currency
+              type: string

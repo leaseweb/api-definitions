@@ -18,6 +18,13 @@ properties:
   traffic:
     description: Traffic allowance
     type: string
+  location:
+    description: >-
+      All locations where the VPS is available, regardless of the API key's
+      entity
+    type: array
+    items:
+      type: string
   price:
     title: vpsListItemPrice
     description: Price summary of the VPS

@@ -28,6 +28,17 @@ get:
                 vRam: '6'
                 nvmeStorage: 100 GB
                 traffic: 30 TB Volume
+                location:
+                  - AMS-01
+                  - FRA-01
+                  - LAX-12
+                  - LON-01
+                  - MTL-02
+                  - SFO-12
+                  - SIN-01
+                  - SYD-12
+                  - TYO-11
+                  - WDC-02
                 price:
                   currency: EUR
                   basePrice: 3.59
@@ -39,6 +50,17 @@ get:
                 vRam: '16'
                 nvmeStorage: 200 GB
                 traffic: 30 TB Volume
+                location:
+                  - AMS-01
+                  - FRA-01
+                  - LAX-12
+                  - LON-01
+                  - MTL-02
+                  - SFO-12
+                  - SIN-01
+                  - SYD-12
+                  - TYO-11
+                  - WDC-02
                 price:
                   currency: EUR
                   basePrice: 8.09
@@ -50,6 +72,17 @@ get:
                 vRam: '24'
                 nvmeStorage: 300 GB
                 traffic: 30 TB Volume
+                location:
+                  - AMS-01
+                  - FRA-01
+                  - LAX-12
+                  - LON-01
+                  - MTL-02
+                  - SFO-12
+                  - SIN-01
+                  - SYD-12
+                  - TYO-11
+                  - WDC-02
                 price:
                   currency: EUR
                   basePrice: 12.59
@@ -61,6 +94,17 @@ get:
                 vRam: '48'
                 nvmeStorage: 400 GB
                 traffic: 30 TB Volume
+                location:
+                  - AMS-01
+                  - FRA-01
+                  - LAX-12
+                  - LON-01
+                  - MTL-02
+                  - SFO-12
+                  - SIN-01
+                  - SYD-12
+                  - TYO-11
+                  - WDC-02
                 price:
                   currency: EUR
                   basePrice: 23.38
@@ -72,6 +116,17 @@ get:
                 vRam: '64'
                 nvmeStorage: 500 GB
                 traffic: 30 TB Volume
+                location:
+                  - AMS-01
+                  - FRA-01
+                  - LAX-12
+                  - LON-01
+                  - MTL-02
+                  - SFO-12
+                  - SIN-01
+                  - SYD-12
+                  - TYO-11
+                  - WDC-02
                 price:
                   currency: EUR
                   basePrice: 30.59
@@ -83,6 +138,17 @@ get:
                 vRam: '120'
                 nvmeStorage: 600 GB
                 traffic: 30 TB Volume
+                location:
+                  - AMS-01
+                  - FRA-01
+                  - LAX-12
+                  - LON-01
+                  - MTL-02
+                  - SFO-12
+                  - SIN-01
+                  - SYD-12
+                  - TYO-11
+                  - WDC-02
                 price:
                   currency: EUR
                   basePrice: 59.39

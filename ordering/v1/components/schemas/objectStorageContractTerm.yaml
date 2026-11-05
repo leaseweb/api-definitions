@@ -1,0 +1,11 @@
+description: Order contract term. Only for `reserved`.
+example: 1_YEAR
+default: 1_MONTH
+type: string
+enum:
+  - 1_MONTH
+  - 3_MONTHS
+  - 6_MONTHS
+  - 1_YEAR
+  - 2_YEARS
+  - 3_YEARS

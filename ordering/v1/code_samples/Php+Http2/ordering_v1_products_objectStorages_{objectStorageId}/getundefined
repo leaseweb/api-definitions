@@ -1,0 +1,21 @@
+<?php
+
+$client = new http\Client;
+$request = new http\Client\Request;
+
+$request->setRequestUrl('https://api.leaseweb.com/ordering/v1/products/objectStorages/reserved');
+$request->setRequestMethod('GET');
+$request->setQuery(new http\QueryString([
+  'location' => 'AMS-01',
+  'storageQuantity' => '1000',
+  'contractTerm' => '1_YEAR'
+]));
+
+$request->setHeaders([
+  'X-LSW-Auth' => 'REPLACE_KEY_VALUE'
+]);
+
+$client->enqueue($request)->send();
+$response = $client->getResponse();
+
+echo $response->getBody();

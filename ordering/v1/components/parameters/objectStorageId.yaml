@@ -1,0 +1,10 @@
+description: 'The Object Storage product: `reserved` or `onDemand`'
+example: reserved
+in: path
+name: objectStorageId
+required: true
+schema:
+  type: string
+  enum:
+    - reserved
+    - onDemand

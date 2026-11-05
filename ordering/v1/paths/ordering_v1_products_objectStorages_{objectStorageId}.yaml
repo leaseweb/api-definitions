@@ -1,0 +1,179 @@
+get:
+  description: >
+    Get an Object Storage product and its price.
+
+
+    Object Storage comes in two products:
+
+
+    - `reserved`: a fixed storage capacity for a contract term. Choose the
+    capacity with `storageQuantity` and the term with `contractTerm`. Longer
+    terms have a discount.
+
+    - `onDemand`: no fixed capacity and no contract term. You only pay for
+    usage, so `storageQuantity` and `contractTerm` are not accepted.
+
+
+    Usage (stored data, outgoing traffic and API calls) is billed on top of the
+    total, at the prices listed in `price.usagePrices`.
+  operationId: getObjectStorage
+  parameters:
+    - $ref: ../components/parameters/objectStorageId.yaml
+    - name: location
+      in: query
+      required: true
+      schema:
+        description: The datacenter location
+        example: AMS-01
+        type: string
+        enum:
+          - AMS-01
+          - FRA-01
+          - LON-01
+          - MTL-02
+          - SIN-01
+          - WDC-02
+    - name: storageQuantity
+      in: query
+      required: false
+      schema:
+        description: >-
+          Reserved storage capacity in GB, a multiple of 100 between 500 and
+          1000000. Only for `reserved`.
+        example: 1000
+        default: 500
+        minimum: 500
+        maximum: 1000000
+        multipleOf: 100
+        type: integer
+    - name: contractTerm
+      in: query
+      required: false
+      schema:
+        description: Order contract term. Only for `reserved`.
+        example: 1_YEAR
+        default: 1_MONTH
+        type: string
+        enum:
+          - 1_MONTH
+          - 3_MONTHS
+          - 6_MONTHS
+          - 1_YEAR
+          - 2_YEARS
+          - 3_YEARS
+  responses:
+    '200':
+      content:
+        application/json:
+          example:
+            configurationOptions:
+              storageQuantity:
+                minimum: 500
+                maximum: 1000000
+                step: 100
+                unit: GB
+            description: >-
+              Leaseweb Object Storage Reserved provides consistent storage
+              capacity for large data volumes, with lower prices when you commit
+              for longer.
+            id: reserved
+            location:
+              - AMS-01
+              - FRA-01
+              - LON-01
+              - MTL-02
+              - SIN-01
+              - WDC-02
+            name: Object Storage - Reserved
+            price:
+              currency: EUR
+              setupFee: 0
+              total: 7.43
+              contractTerm: 1_MONTH
+              contractTerms:
+                - key: 1_MONTH
+                  description: 1 month
+                  discountText: 0%
+                  discountValue: 0
+                  total: 7.43
+                - key: 3_MONTHS
+                  description: 3 months
+                  discountText: '-3%'
+                  discountValue: -3
+                  total: 7.21
+                - key: 6_MONTHS
+                  description: 6 months
+                  discountText: '-5%'
+                  discountValue: -5
+                  total: 7.06
+                - key: 1_YEAR
+                  description: 1 year
+                  discountText: '-10%'
+                  discountValue: -10
+                  total: 6.69
+                - key: 2_YEARS
+                  description: 2 years
+                  discountText: '-20%'
+                  discountValue: -20
+                  total: 5.94
+                - key: 3_YEARS
+                  description: 3 years
+                  discountText: '-25%'
+                  discountValue: -25
+                  total: 5.57
+              billingCycle: 1_MONTH
+              usagePrices:
+                - description: 'Usage: Object Storage per GB/Month'
+                  price: 0.01733
+                  currency: EUR
+                - description: 'Usage: Transfer Out per GB/Month'
+                  price: 0.0022
+                  currency: EUR
+                - description: API calls (PUT, COPY, POST, LIST) x1000
+                  price: 0.00382
+                  currency: EUR
+                - description: API calls (GET, SELECT and other) x1000
+                  price: 0.00031
+                  currency: EUR
+            storageQuantity: 500
+          schema:
+            $ref: ../components/schemas/objectStorage.yaml
+      description: Ok.
+    '400':
+      $ref: ../components/responses/400.yaml
+    '401':
+      $ref: ../components/responses/401.yaml
+    '403':
+      $ref: ../components/responses/403.yaml
+    '404':
+      $ref: ../components/responses/404.yaml
+    '500':
+      $ref: ../components/responses/500.yaml
+    '503':
+      $ref: ../components/responses/503.yaml
+  summary: Get an Object Storage product and its price.
+  tags:
+    - Ordering v1
+  x-codeSamples:
+    - lang: Shell + Curl
+      source:
+        $ref: >-
+          ../code_samples/Shell+Curl/ordering_v1_products_objectStorages_{objectStorageId}/getundefined
+    - lang: Python + Python3
+      source:
+        $ref: >-
+          ../code_samples/Python+Python3/ordering_v1_products_objectStorages_{objectStorageId}/getundefined
+    - lang: Php + Http2
+      source:
+        $ref: >-
+          ../code_samples/Php+Http2/ordering_v1_products_objectStorages_{objectStorageId}/getundefined
+    - lang: Javascript + Jquery
+      source:
+        $ref: >-
+          ../code_samples/Javascript+Jquery/ordering_v1_products_objectStorages_{objectStorageId}/getundefined
+    - lang: Go + Native
+      source:
+        $ref: >-
+          ../code_samples/Go+Native/ordering_v1_products_objectStorages_{objectStorageId}/getundefined
+parameters:
+  - $ref: ../components/parameters/objectStorageId.yaml

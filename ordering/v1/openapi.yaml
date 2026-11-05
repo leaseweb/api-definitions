@@ -32,6 +32,10 @@ paths:
     $ref: paths/ordering_v1_products_vps_{vpsId}.yaml
   /ordering/v1/products/vps/{vpsId}/order:
     $ref: paths/ordering_v1_products_vps_{vpsId}_order.yaml
+  /ordering/v1/products/objectStorages/{objectStorageId}:
+    $ref: paths/ordering_v1_products_objectStorages_{objectStorageId}.yaml
+  /ordering/v1/products/objectStorages/{objectStorageId}/order:
+    $ref: paths/ordering_v1_products_objectStorages_{objectStorageId}_order.yaml
 components:
   securitySchemes:
     BearerAuth:
