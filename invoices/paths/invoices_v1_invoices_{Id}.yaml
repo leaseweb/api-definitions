@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ../components/parameters/Id.yaml
+  - $ref: ../components/parameters/InvoiceId.yaml
 get:
   description: Get Invoice will return a single invoice for the customer.
   operationId: getInvoice

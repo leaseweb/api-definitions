@@ -1,6 +1,6 @@
 parameters:
-  - $ref: ../components/parameters/DateFrom.yaml
-  - $ref: ../components/parameters/DateTo.yaml
+  - $ref: ../components/parameters/ExportDateFrom.yaml
+  - $ref: ../components/parameters/ExportDateTo.yaml
 get:
   description: This endpoint exports all invoices for the current customer as a CSV file.
   operationId: getInvoicesExportCsv

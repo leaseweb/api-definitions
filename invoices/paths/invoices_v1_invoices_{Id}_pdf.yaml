@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ../components/parameters/Id.yaml
+  - $ref: ../components/parameters/InvoiceId.yaml
 get:
   description: This endpoint will return a PDF of a single invoice for the customer.
   operationId: getInvoicePdf
