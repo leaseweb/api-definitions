@@ -26,7 +26,11 @@ properties:
       type: string
   allItemsAllowed:
     type: boolean
-    description: Are all equipments allowed. If true then `allowedItems` must be empty.
+    deprecated: true
+    description: >-
+      Deprecated, kept for compatibility. Use `allowedItems` instead. If set to
+      true, `allowedItems` is automatically filled with all available colocation
+      IDs, replacing any value passed in `allowedItems`.
   hasPermanentBadge:
     type: boolean
     description: If true then a permanent badge will be requested for this user
@@ -35,6 +39,5 @@ required:
   - firstName
   - lastName
   - multipleAccess
-  - allItemsAllowed
   - hasUser
 type: object

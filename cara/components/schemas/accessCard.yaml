@@ -43,7 +43,10 @@ properties:
       type: string
   allItemsAllowed:
     type: boolean
-    description: Are all equipments allowed
+    deprecated: true
+    description: >-
+      Deprecated, kept for compatibility. Always returns false; see
+      `allowedItems` for the allowed colocation IDs.
   hasPermanentBadge:
     type: boolean
     description: Whether or not this user has a permanent badge

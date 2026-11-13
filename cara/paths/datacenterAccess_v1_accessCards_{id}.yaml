@@ -73,8 +73,9 @@ put:
         schema:
           $ref: ../components/schemas/updateAccessCardOpts.yaml
         example:
-          allItemsAllowed: true
-          allowedItems: []
+          allowedItems:
+            - '123'
+            - '456'
           enabled: false
           firstName: John
           hasPermanentBadge: false

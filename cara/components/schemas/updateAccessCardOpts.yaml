@@ -19,7 +19,11 @@ properties:
       type: string
   allItemsAllowed:
     type: boolean
-    description: Are all equipments allowed
+    deprecated: true
+    description: >-
+      Deprecated, kept for compatibility. Use `allowedItems` instead. If set to
+      true, `allowedItems` is automatically filled with all available colocation
+      IDs, replacing any value passed in `allowedItems`.
   enabled:
     type: boolean
     description: Is access card enabled

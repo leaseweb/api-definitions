@@ -69,8 +69,11 @@ get:
                 multipleAccess: false
                 approved: true
                 enabled: false
-                allowedItems: []
-                allItemsAllowed: true
+                allowedItems:
+                  - '22'
+                  - '232323'
+                  - '454545'
+                allItemsAllowed: false
                 hasPermanentBadge: false
                 isAccessCardHolder: true
                 createdBy: john.doe@example.com
@@ -119,7 +122,6 @@ post:
         schema:
           $ref: ../components/schemas/createAccessCardOpts.yaml
         example:
-          allItemsAllowed: false
           allowedItems:
             - '123'
             - '456'
