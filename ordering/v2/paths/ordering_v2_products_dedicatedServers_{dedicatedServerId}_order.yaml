@@ -12,8 +12,9 @@ post:
     Support to have the prepayment obligation removed.
 
 
-    The server is ordered with the contract term you pass, which is one of the
-    options the detail endpoint prices.
+    The server is ordered with the contract term and service level agreement you
+    pass, which are options the detail endpoint prices. A service level
+    agreement the server does not offer is refused with a 400.
 
 
     Pass `dryRun` to check an order without placing it. The request is validated
@@ -27,6 +28,7 @@ post:
         example:
           contractTerm: 1_YEAR
           location: AMS-01
+          serviceLevelAgreement: GOLD
         schema:
           $ref: ../components/schemas/orderDedicatedServerOpts.yaml
   responses:

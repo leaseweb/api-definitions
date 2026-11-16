@@ -11,6 +11,12 @@ get:
     the categories present depend on what the server is made of.
 
 
+    `configurationOptions` lists the operating systems and service level
+    agreements the server can be ordered with, each with its monthly price on
+    top of the server price. Pass `serviceLevelAgreement` to price the server
+    with one of them; it defaults to Basic.
+
+
     `stock` reports how many of this configuration are in stock at that
     location.
   operationId: getDedicatedServer
@@ -59,6 +65,21 @@ get:
         description: To add the dedicated server in the connectivity aggregation pool
         example: 'true'
         type: boolean
+    - in: query
+      name: serviceLevelAgreement
+      schema:
+        default: BASIC
+        description: >-
+          Service level agreement. Must be one of the options the detail
+          endpoint lists for the server.
+        example: GOLD
+        type: string
+        enum:
+          - BASIC
+          - BRONZE
+          - SILVER
+          - GOLD
+          - PLATINUM
   responses:
     '200':
       content:
@@ -74,6 +95,27 @@ get:
                 - name: Windows Server 2022 Standard
                   selected: false
                   price: 20.64
+                  currency: EUR
+              serviceLevelAgreement:
+                - name: Basic
+                  selected: true
+                  price: 0
+                  currency: EUR
+                - name: Bronze
+                  selected: false
+                  price: 31
+                  currency: EUR
+                - name: Silver
+                  selected: false
+                  price: 53
+                  currency: EUR
+                - name: Gold
+                  selected: false
+                  price: 85.3
+                  currency: EUR
+                - name: Platinum
+                  selected: false
+                  price: 129
                   currency: EUR
             controlPanel: No Control Panel
             cpu:

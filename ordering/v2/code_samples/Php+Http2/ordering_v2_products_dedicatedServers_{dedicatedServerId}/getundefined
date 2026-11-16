@@ -9,7 +9,8 @@ $request->setQuery(new http\QueryString([
   'location' => 'AMS-01',
   'contractTerm' => '1_YEAR',
   'billingCycle' => '3_MONTHS',
-  'connectedToAggregationPool' => 'true'
+  'connectedToAggregationPool' => 'true',
+  'serviceLevelAgreement' => 'GOLD'
 ]));
 
 $request->setHeaders([

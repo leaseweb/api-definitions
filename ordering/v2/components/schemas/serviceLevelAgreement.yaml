@@ -1,0 +1,12 @@
+default: BASIC
+description: >-
+  Service level agreement. Must be one of the options the detail endpoint lists
+  for the server.
+example: GOLD
+type: string
+enum:
+  - BASIC
+  - BRONZE
+  - SILVER
+  - GOLD
+  - PLATINUM

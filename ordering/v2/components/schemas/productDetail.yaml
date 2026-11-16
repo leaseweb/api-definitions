@@ -61,3 +61,26 @@ allOf:
                   type: number
                 currency:
                   $ref: ./currency.yaml
+          serviceLevelAgreement:
+            type: array
+            items:
+              title: serviceLevelAgreementOption
+              type: object
+              properties:
+                name:
+                  description: Name of the service level agreement
+                  type: string
+                selected:
+                  description: >-
+                    Whether the price in this response includes it: the level
+                    passed in `serviceLevelAgreement`, or Basic when it is
+                    omitted. An order placed without `serviceLevelAgreement`
+                    gets Basic.
+                  type: boolean
+                price:
+                  description: >-
+                    Monthly price of this service level agreement, on top of the
+                    server price
+                  type: number
+                currency:
+                  $ref: ./currency.yaml

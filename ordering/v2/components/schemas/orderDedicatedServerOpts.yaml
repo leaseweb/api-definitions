@@ -7,6 +7,8 @@ properties:
     $ref: ./connectedToAggregationPool.yaml
   operatingSystem:
     $ref: ./operatingSystem.yaml
+  serviceLevelAgreement:
+    $ref: ./serviceLevelAgreement.yaml
   dryRun:
     $ref: ./dryRun.yaml
 required:
