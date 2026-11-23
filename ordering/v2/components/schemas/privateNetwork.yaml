@@ -1,0 +1,6 @@
+description: >-
+  Private network port, by its name as the detail endpoint lists it in
+  `configurationOptions.privateNetwork`. An option the server does not offer is
+  refused with a 400.
+example: 1000Mbps port
+type: string

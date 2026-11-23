@@ -1,0 +1,11 @@
+description: >-
+  How the data pack is billed: `DATA_TRAFFIC` is a monthly traffic commit in TB,
+  `UNMETERED` a flat fee bandwidth in Mbps and `METERED` a bandwidth commit in
+  Mbps. `dataPackQuantity` is required with it. When a data pack is chosen
+  without it, `DATA_TRAFFIC` is used.
+example: DATA_TRAFFIC
+type: string
+enum:
+  - DATA_TRAFFIC
+  - UNMETERED
+  - METERED

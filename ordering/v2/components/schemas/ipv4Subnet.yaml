@@ -1,0 +1,8 @@
+description: >-
+  Prefix length of the IPv4 subnet, e.g. 29 for a /29. Must be one of the
+  subnets the detail endpoint lists in `configurationOptions.ipv4.subnet`.
+  Cannot be combined with `ipv4Quantity`.
+example: 29
+type: integer
+minimum: 16
+maximum: 31

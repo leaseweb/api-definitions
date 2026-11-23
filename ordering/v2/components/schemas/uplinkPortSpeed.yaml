@@ -1,0 +1,6 @@
+description: >-
+  Uplink port speed, by its name as the detail endpoint lists it in
+  `configurationOptions.uplinkPortSpeed`. An option the server does not offer is
+  refused with a 400.
+example: 1 x 10.000 Mbps UTP
+type: string

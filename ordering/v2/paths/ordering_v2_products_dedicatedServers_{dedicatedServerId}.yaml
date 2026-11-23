@@ -11,10 +11,29 @@ get:
     the categories present depend on what the server is made of.
 
 
-    `configurationOptions` lists the operating systems and service level
-    agreements the server can be ordered with, each with its monthly price on
-    top of the server price. Pass `serviceLevelAgreement` to price the server
-    with one of them; it defaults to Basic.
+    `configurationOptions` lists the operating systems, service level
+    agreements, data packs, uplink port speeds, private network ports and IPv4
+    options the server can be ordered with, each with its monthly price on top
+    of the server price. Pass the matching query parameters to price the server
+    with them; anything you leave out keeps the server default, marked
+    `selected` in the list:
+
+
+    - `serviceLevelAgreement`, which defaults to Basic.
+
+    - `dataPackType`, `dataPackBilling` and `dataPackQuantity` together choose a
+    data pack, which replaces the default one. `dataPackQuantity` is required
+    and must be one of the quantities listed for that type and billing.
+
+    - `uplinkPortSpeed` and `privateNetwork`, by the name listed for them.
+
+    - `ipv4Quantity` for up to 1000 individual IPv4 addresses, or `ipv4Subnet`
+    with the prefix length of one of the listed subnets. The two cannot be
+    combined; sending both is refused with a 400.
+
+
+    An option the server does not offer, or a combination of options it cannot
+    be delivered with, is refused with a 400.
 
 
     `stock` reports how many of this configuration are in stock at that
@@ -80,6 +99,98 @@ get:
           - SILVER
           - GOLD
           - PLATINUM
+    - in: query
+      name: dataPackType
+      schema:
+        description: >-
+          Network type of the data pack. Choosing a data pack replaces the
+          default one the server comes with, so `dataPackQuantity` is required
+          with it. When a data pack is chosen without it, `VOLUME` is used.
+        example: PREMIUM
+        type: string
+        enum:
+          - VOLUME
+          - PREMIUM
+    - in: query
+      name: dataPackBilling
+      schema:
+        description: >-
+          How the data pack is billed: `DATA_TRAFFIC` is a monthly traffic
+          commit in TB, `UNMETERED` a flat fee bandwidth in Mbps and `METERED` a
+          bandwidth commit in Mbps. `dataPackQuantity` is required with it. When
+          a data pack is chosen without it, `DATA_TRAFFIC` is used.
+        example: DATA_TRAFFIC
+        type: string
+        enum:
+          - DATA_TRAFFIC
+          - UNMETERED
+          - METERED
+    - in: query
+      name: dataPackQuantity
+      schema:
+        description: >-
+          Size of the data pack, in TB for `DATA_TRAFFIC` and in Mbps for
+          `UNMETERED` and `METERED`. Must be one of the quantities the detail
+          endpoint lists in `configurationOptions.dataPack` for the chosen type
+          and billing; any other is refused with a 400. When no data pack field
+          is passed, the server keeps its default data pack.
+        example: 10
+        type: integer
+        minimum: 1
+    - in: query
+      name: uplinkPortSpeed
+      schema:
+        description: >-
+          Uplink port speed, by its name as the detail endpoint lists it in
+          `configurationOptions.uplinkPortSpeed`. An option the server does not
+          offer is refused with a 400.
+        example: 1 x 10.000 Mbps UTP
+        type: string
+    - in: query
+      name: privateNetwork
+      schema:
+        description: >-
+          Private network port, by its name as the detail endpoint lists it in
+          `configurationOptions.privateNetwork`. An option the server does not
+          offer is refused with a 400.
+        example: 1000Mbps port
+        type: string
+    - in: query
+      name: ipv4Type
+      schema:
+        description: >-
+          Whether the server gets individual IPv4 addresses or an IPv4 subnet.
+          It follows from the other IPv4 field when omitted: `SUBNET` when
+          `ipv4Subnet` is passed, `INDIVIDUAL` otherwise. `SUBNET` requires
+          `ipv4Subnet` and `INDIVIDUAL` refuses it.
+        example: SUBNET
+        type: string
+        enum:
+          - INDIVIDUAL
+          - SUBNET
+    - in: query
+      name: ipv4Quantity
+      schema:
+        description: >-
+          Number of individual IPv4 addresses. Cannot be combined with
+          `ipv4Subnet`. When no IPv4 field is passed, the server gets one
+          individual address.
+        example: 4
+        type: integer
+        minimum: 1
+        maximum: 1000
+    - in: query
+      name: ipv4Subnet
+      schema:
+        description: >-
+          Prefix length of the IPv4 subnet, e.g. 29 for a /29. Must be one of
+          the subnets the detail endpoint lists in
+          `configurationOptions.ipv4.subnet`. Cannot be combined with
+          `ipv4Quantity`.
+        example: 29
+        type: integer
+        minimum: 16
+        maximum: 31
   responses:
     '200':
       content:
@@ -117,6 +228,103 @@ get:
                   selected: false
                   price: 129
                   currency: EUR
+              dataPack:
+                - type: VOLUME
+                  billing: DATA_TRAFFIC
+                  quantity: 10
+                  unit: TB
+                  name: 10 TB
+                  selected: false
+                  price: 10.3
+                  currency: EUR
+                - type: VOLUME
+                  billing: DATA_TRAFFIC
+                  quantity: 30
+                  unit: TB
+                  name: 30 TB
+                  selected: true
+                  price: 10.8
+                  currency: EUR
+                - type: VOLUME
+                  billing: UNMETERED
+                  quantity: 100
+                  unit: Mbps
+                  name: 100 Mbps
+                  selected: false
+                  price: 32.4
+                  currency: EUR
+                - type: VOLUME
+                  billing: METERED
+                  quantity: 100
+                  unit: Mbps
+                  name: 100 Mbps
+                  selected: false
+                  price: 45.5
+                  currency: EUR
+                - type: PREMIUM
+                  billing: DATA_TRAFFIC
+                  quantity: 10
+                  unit: TB
+                  name: 10 TB
+                  selected: false
+                  price: 20.5
+                  currency: EUR
+                - type: PREMIUM
+                  billing: UNMETERED
+                  quantity: 100
+                  unit: Mbps
+                  name: 100 Mbps
+                  selected: false
+                  price: 64.8
+                  currency: EUR
+              uplinkPortSpeed:
+                - name: 1 x 100 Mbps UTP
+                  selected: false
+                  price: 0
+                  currency: EUR
+                - name: 1 x 1.000 Mbps UTP
+                  selected: true
+                  price: 2.5
+                  currency: EUR
+                - name: 1 x 10.000 Mbps UTP
+                  selected: false
+                  price: 19.35
+                  currency: EUR
+              privateNetwork:
+                - name: 'No'
+                  selected: true
+                  price: 0
+                  currency: EUR
+                - name: 1000Mbps port
+                  selected: false
+                  price: 10.8
+                  currency: EUR
+                - name: 10GE port
+                  selected: false
+                  price: 27
+                  currency: EUR
+              ipv4:
+                individual:
+                  selected: true
+                  maximumQuantity: 1000
+                  pricePerAddress: 2.7
+                  currency: EUR
+                subnet:
+                  - name: /30 - 4 usable IPv4
+                    selected: false
+                    prefixLength: 30
+                    price: 10.8
+                    currency: EUR
+                  - name: /29 - 8 IPs (3 usable)
+                    selected: false
+                    prefixLength: 29
+                    price: 21.6
+                    currency: EUR
+                  - name: /28 - 16 IPs (11 usable)
+                    selected: false
+                    prefixLength: 28
+                    price: 43.2
+                    currency: EUR
             controlPanel: No Control Panel
             cpu:
               coresPerCPU: '12'
@@ -124,7 +332,7 @@ get:
               quantity: Dual
               speed: 2.3 GHz
               type: Intel Xeon E5-2670v3
-            dataPackConfiguration: 30|30|02
+            dataPackConfiguration: 30 TB|Data Traffic Metered (TB)|Volume
             ddosIpProtection: Standard
             deliveryMethod: 1 hour
             hdd:

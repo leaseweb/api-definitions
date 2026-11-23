@@ -1,0 +1,9 @@
+description: >-
+  Network type of the data pack. Choosing a data pack replaces the default one
+  the server comes with, so `dataPackQuantity` is required with it. When a data
+  pack is chosen without it, `VOLUME` is used.
+example: PREMIUM
+type: string
+enum:
+  - VOLUME
+  - PREMIUM

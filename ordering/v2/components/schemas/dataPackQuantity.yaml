@@ -1,0 +1,9 @@
+description: >-
+  Size of the data pack, in TB for `DATA_TRAFFIC` and in Mbps for `UNMETERED`
+  and `METERED`. Must be one of the quantities the detail endpoint lists in
+  `configurationOptions.dataPack` for the chosen type and billing; any other is
+  refused with a 400. When no data pack field is passed, the server keeps its
+  default data pack.
+example: 10
+type: integer
+minimum: 1

@@ -1,0 +1,10 @@
+description: >-
+  Whether the server gets individual IPv4 addresses or an IPv4 subnet. It
+  follows from the other IPv4 field when omitted: `SUBNET` when `ipv4Subnet` is
+  passed, `INDIVIDUAL` otherwise. `SUBNET` requires `ipv4Subnet` and
+  `INDIVIDUAL` refuses it.
+example: SUBNET
+type: string
+enum:
+  - INDIVIDUAL
+  - SUBNET

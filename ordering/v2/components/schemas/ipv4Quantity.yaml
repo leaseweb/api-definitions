@@ -1,0 +1,7 @@
+description: >-
+  Number of individual IPv4 addresses. Cannot be combined with `ipv4Subnet`.
+  When no IPv4 field is passed, the server gets one individual address.
+example: 4
+type: integer
+minimum: 1
+maximum: 1000

@@ -84,3 +84,135 @@ allOf:
                   type: number
                 currency:
                   $ref: ./currency.yaml
+          dataPack:
+            description: >-
+              Data packs the server can take. Choose one with `dataPackType`,
+              `dataPackBilling` and `dataPackQuantity`.
+            type: array
+            items:
+              title: dataPackOption
+              type: object
+              properties:
+                type:
+                  description: Network type, passed as `dataPackType`
+                  type: string
+                  enum:
+                    - VOLUME
+                    - PREMIUM
+                billing:
+                  description: How it is billed, passed as `dataPackBilling`
+                  type: string
+                  enum:
+                    - DATA_TRAFFIC
+                    - UNMETERED
+                    - METERED
+                quantity:
+                  description: Size of the data pack, passed as `dataPackQuantity`
+                  type: integer
+                unit:
+                  description: >-
+                    Unit of the quantity: TB for `DATA_TRAFFIC`, Mbps for
+                    `UNMETERED` and `METERED`
+                  type: string
+                  enum:
+                    - TB
+                    - Mbps
+                name:
+                  description: Name of the data pack
+                  type: string
+                selected:
+                  description: >-
+                    Whether the price in this response includes it: the data
+                    pack passed, or the server's default one when none is
+                  type: boolean
+                price:
+                  description: Monthly price of this data pack, on top of the server price
+                  type: number
+                currency:
+                  $ref: ./currency.yaml
+          uplinkPortSpeed:
+            type: array
+            items:
+              title: uplinkPortSpeedOption
+              type: object
+              properties:
+                name:
+                  description: Name of the uplink port speed; pass it as is to choose it
+                  type: string
+                selected:
+                  description: Whether the price in this response includes it
+                  type: boolean
+                price:
+                  description: >-
+                    Monthly price of this uplink port speed, on top of the
+                    server price
+                  type: number
+                currency:
+                  $ref: ./currency.yaml
+          privateNetwork:
+            type: array
+            items:
+              title: privateNetworkOption
+              type: object
+              properties:
+                name:
+                  description: >-
+                    Name of the private network option; pass it as is to choose
+                    it
+                  type: string
+                selected:
+                  description: Whether the price in this response includes it
+                  type: boolean
+                price:
+                  description: >-
+                    Monthly price of this private network option, on top of the
+                    server price
+                  type: number
+                currency:
+                  $ref: ./currency.yaml
+          ipv4:
+            title: ipv4Options
+            description: >-
+              IPv4 options. Choose individual addresses with `ipv4Quantity`, or
+              a subnet with `ipv4Subnet`.
+            type: object
+            properties:
+              individual:
+                title: ipv4IndividualOption
+                type: object
+                properties:
+                  selected:
+                    description: >-
+                      Whether the price in this response includes individual
+                      addresses
+                    type: boolean
+                  maximumQuantity:
+                    description: Most individual addresses one order can take
+                    type: integer
+                  pricePerAddress:
+                    description: >-
+                      Monthly price of each individual address, on top of the
+                      server price
+                    type: number
+                  currency:
+                    $ref: ./currency.yaml
+              subnet:
+                type: array
+                items:
+                  title: ipv4SubnetOption
+                  type: object
+                  properties:
+                    name:
+                      description: Name of the subnet
+                      type: string
+                    selected:
+                      description: Whether the price in this response includes it
+                      type: boolean
+                    prefixLength:
+                      description: Prefix length of the subnet, passed as `ipv4Subnet`
+                      type: integer
+                    price:
+                      description: Monthly price of this subnet, on top of the server price
+                      type: number
+                    currency:
+                      $ref: ./currency.yaml

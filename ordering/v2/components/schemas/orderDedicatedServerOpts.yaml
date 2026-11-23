@@ -3,12 +3,30 @@ properties:
     $ref: ./location.yaml
   contractTerm:
     $ref: ./contractTerm.yaml
+  billingCycle:
+    $ref: ./billingCycle.yaml
   connectedToAggregationPool:
     $ref: ./connectedToAggregationPool.yaml
   operatingSystem:
     $ref: ./operatingSystem.yaml
   serviceLevelAgreement:
     $ref: ./serviceLevelAgreement.yaml
+  dataPackType:
+    $ref: ./dataPackType.yaml
+  dataPackBilling:
+    $ref: ./dataPackBilling.yaml
+  dataPackQuantity:
+    $ref: ./dataPackQuantity.yaml
+  uplinkPortSpeed:
+    $ref: ./uplinkPortSpeed.yaml
+  privateNetwork:
+    $ref: ./privateNetwork.yaml
+  ipv4Type:
+    $ref: ./ipv4Type.yaml
+  ipv4Quantity:
+    $ref: ./ipv4Quantity.yaml
+  ipv4Subnet:
+    $ref: ./ipv4Subnet.yaml
   dryRun:
     $ref: ./dryRun.yaml
 required:
