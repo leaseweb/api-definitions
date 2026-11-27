@@ -55,6 +55,7 @@ properties:
   equipmentId:
     type: string
     description: ID of the equipment using the IP
+    nullable: true
   assignedContract:
     $ref: ./assignedContract.yaml
   subnet:

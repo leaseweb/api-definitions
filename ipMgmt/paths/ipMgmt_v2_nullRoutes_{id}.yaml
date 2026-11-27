@@ -5,20 +5,9 @@ get:
       description: ''
       content:
         application/json:
-          example:
-            assignedContract:
-              id: '123456'
-            automatedUnnullingAt: '2015-06-25T11:13:00Z'
-            comment: This IP is evil
-            equipmentId: '456'
-            id: '4534536'
-            ip: 192.0.2.1
-            nullLevel: 1
-            nulledAt: '2015-06-28T12:00:00Z'
-            nulledBy: john.doe@example.com
-            ticketId: '188612'
-            unnulledAt: null
-            unnulledBy: null
+          examples:
+            default:
+              $ref: ../components/examples/nullRoutedIP.yaml
           schema:
             $ref: ../components/schemas/nullRoutedIP.yaml
     '401':
@@ -65,20 +54,9 @@ put:
       description: ''
       content:
         application/json:
-          example:
-            assignedContract:
-              id: '123456'
-            automatedUnnullingAt: '2015-06-25T11:13:00Z'
-            comment: This IP is evil
-            equipmentId: '456'
-            id: '4534536'
-            ip: 192.0.2.1
-            nullLevel: 1
-            nulledAt: '2015-06-28T12:00:00Z'
-            nulledBy: john.doe@example.com
-            ticketId: '188612'
-            unnulledAt: null
-            unnulledBy: null
+          examples:
+            default:
+              $ref: ../components/examples/nullRoutedIP.yaml
           schema:
             $ref: ../components/schemas/nullRoutedIP.yaml
     '401':

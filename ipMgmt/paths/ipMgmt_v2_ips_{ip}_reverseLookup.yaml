@@ -73,12 +73,9 @@ put:
   requestBody:
     content:
       application/json:
-        example:
-          reverseLookups:
-            - ip: 2001:db8::0
-              reverseLookup: name1.example.com
-            - ip: 2001:db8::1
-              reverseLookup: name2.example.com
+        examples:
+          default:
+            $ref: ../components/examples/updateReverseLookupRecordsOptsExample.yaml
         schema:
           $ref: ../components/schemas/updateReverseLookupRecordsOpts.yaml
   responses:

@@ -1,0 +1,33 @@
+summary: Example
+value:
+  _metadata:
+    totalCount: 2
+    offset: 0
+    limit: 50
+  nullroutes:
+    - id: '4534536'
+      ip: 192.0.2.1
+      nulledAt: '2015-06-28T12:00:00Z'
+      nulledBy: john.doe@example.com
+      nullLevel: 1
+      automatedUnnullingAt: '2015-06-28T13:00:00Z'
+      unnulledAt: null
+      unnulledBy: null
+      ticketId: '188612'
+      comment: This IP is evil
+      equipmentId: '456'
+      assignedContract:
+        id: '123456'
+    - id: '4534535'
+      ip: 192.0.2.1
+      nulledAt: '2015-06-27T12:00:00Z'
+      nulledBy: john.doe@example.com
+      nullLevel: 1
+      automatedUnnullingAt: '2015-06-27T13:00:00Z'
+      unnulledAt: '2015-06-27T13:00:05Z'
+      unnulledBy: UnnullRunner
+      ticketId: '188612'
+      comment: This IP is evil
+      equipmentId: '456'
+      assignedContract:
+        id: '123456'

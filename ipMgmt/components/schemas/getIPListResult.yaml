@@ -4,7 +4,8 @@ properties:
     items:
       $ref: ./ip.yaml
   _metadata:
-    $ref: ./_metadata.yaml
+    allOf:
+      - $ref: ./_metadata.yaml
 required:
   - ips
   - _metadata

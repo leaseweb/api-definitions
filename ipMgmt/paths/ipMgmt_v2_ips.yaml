@@ -68,48 +68,9 @@ get:
       description: ''
       content:
         application/json:
-          example:
-            _metadata:
-              totalCount: 2
-              offset: 0
-              limit: 50
-            ips:
-              - ip: 192.0.2.1
-                version: 4
-                type: NORMAL_IP
-                prefixLength: 32
-                primary: true
-                floatingIp: false
-                reverseLookup: mydomain1.example.com
-                nullRouted: false
-                nullLevel: null
-                unnullingAllowed: false
-                equipmentId: '1234'
-                assignedContract:
-                  id: '5643634'
-                subnet:
-                  id: 192.0.2.0_24
-                  networkIp: 192.0.2.0
-                  prefixLength: 24
-                  gateway: 192.0.2.254
-              - ip: 192.0.2.2
-                version: 4
-                type: NORMAL_IP
-                prefixLength: 32
-                primary: false
-                floatingIp: false
-                reverseLookup: mydomain2.example.com
-                nullRouted: false
-                nullLevel: null
-                unnullingAllowed: false
-                equipmentId: '1235'
-                assignedContract:
-                  id: '4363465'
-                subnet:
-                  id: 192.0.2.0_24
-                  networkIp: 192.0.2.0
-                  prefixLength: 24
-                  gateway: 192.0.2.254
+          examples:
+            default:
+              $ref: ../components/examples/getIPListExample.yaml
           schema:
             $ref: ../components/schemas/getIPListResult.yaml
     '401':

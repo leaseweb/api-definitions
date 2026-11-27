@@ -1,0 +1,7 @@
+summary: Example
+value:
+  reverseLookups:
+    - ip: 2001:db8::0
+      reverseLookup: name1.example.com
+    - ip: 2001:db8::1
+      reverseLookup: name2.example.com
